@@ -1,0 +1,12 @@
+{
+  "name": "ow-friend-ranking",
+  "version": "1.0.0",
+  "private": true,
+  "description": "OW2 身内ランキング(静的ページ + OverFast API 自動更新)",
+  "type": "module",
+  "scripts": {
+    "update": "node update.mjs",
+    "dry": "node update.mjs --dry"
+  },
+  "engines": { "node": ">=18" }
+}

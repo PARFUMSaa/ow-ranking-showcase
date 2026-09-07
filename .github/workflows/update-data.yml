@@ -1,0 +1,37 @@
+name: update-data
+
+on:
+  schedule:
+    # 毎日 11:15 JST (02:15 UTC) に自動更新
+    - cron: '15 2 * * *'
+  workflow_dispatch: # 手動実行も可能(リポジトリ > Actions > update-data > Run workflow)
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch player data (OverFast API)
+        run: node update.mjs
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add players-data.js
+          if git diff --cached --quiet; then
+            echo "データに変更なし"
+          else
+            git commit -m "chore: プレイヤーデータを自動更新 [skip ci]"
+            git push
+          fi
