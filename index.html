@@ -194,6 +194,25 @@ table.mini td:first-child{text-align:left;white-space:nowrap}
 .rr img{width:15px;height:15px;border-radius:4px;display:block}
 .rr.unrank{background:#f6f7f9;color:#98a2b3;border:1px dashed #d3d9e0}
 
+/* ヒーロー別パワーランキング */
+.power-sec{margin-top:24px;border:1px solid var(--border);border-radius:12px;padding:16px 18px;background:#fff;box-shadow:0 1px 3px rgba(16,24,40,.05)}
+.power-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.power-head h2{font-size:17px;font-weight:800;margin:0}
+.power-head .sub{color:#6b7280;font-size:12px;margin-top:2px}
+.power-controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.power-sel{padding:6px 10px;border-radius:9px;border:1px solid var(--border);background:#fff;font:inherit;font-size:13px;color:#111827;cursor:pointer}
+.big-sr{font-size:15px;font-weight:800;font-variant-numeric:tabular-nums}
+
+/* バトルスコア解説 */
+details.pformula{margin-top:14px;border:1px dashed #d6deea;border-radius:10px;background:#fbfcfe;padding:0 16px}
+details.pformula summary{cursor:pointer;font-weight:800;font-size:13px;color:var(--blue);padding:11px 0;user-select:none}
+details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px}
+.pf-body{padding-bottom:12px}
+.pf-body h4{margin:14px 0 4px;font-size:13px;color:#111827}
+.pf-body p{margin:2px 0 6px;font-size:12.5px;line-height:1.85;color:#374151}
+.pf-body ul{margin:2px 0 8px 18px;font-size:12.5px;line-height:1.9;color:#374151}
+.pf-body pre{background:#eef2f8;border:1px solid #e2e8f0;border-radius:8px;padding:9px 12px;font-size:12.5px;line-height:1.7;overflow-x:auto;color:#0f172a;font-family:Consolas,Menlo,monospace;white-space:pre-wrap}
+
 /* フッター */
 .foot{color:#9ca3af;font-size:11.5px;margin-top:18px;text-align:center;line-height:1.9}
 </style>
@@ -243,6 +262,61 @@ table.mini td:first-child{text-align:left;white-space:nowrap}
       </table>
     </div>
     <div class="note" id="filterInfo" style="margin-top:8px"></div>
+
+    <!-- ヒーロー別パワーランキング -->
+    <div class="power-sec">
+      <div class="power-head">
+        <div>
+          <h2>🎖️ Hero Power Rankings</h2>
+          <div class="sub">バトルスコア = 調整勝率×0.5 + min(KDA,5)×10×0.3 + 試合数ボーナス×0.2（ベイズ調整）</div>
+        </div>
+        <div class="power-controls"><span class="note">▼ ヒーロー行クリックで「使い手ランキング」(バトルスコア順)を開きます</span></div>
+      </div>
+      <div id="powerBody"></div>
+
+      <details class="pformula">
+        <summary>💡 バトルスコアの計算式を詳しく解説</summary>
+        <div class="pf-body">
+          <h4>定義式</h4>
+          <pre>バトルスコア = 調整勝率 × 0.5 + (min(KDA, 5.0) × 10 × 0.3) + 試合数ボーナス × 0.2</pre>
+
+          <h4>① 調整勝率（重み 50% → 最大50点）</h4>
+          <p>試合数が少ないヒーローが「1戦100%勝率」などで不当に上位に来るのを防ぐため、
+             実勝率を<b>全体平均（50%）</b>側へ引き寄せるベイズ推定を行います。</p>
+          <pre>調整勝率 = (実勝率 × 試合数 + 50 × 10) ÷ (試合数 + 10)</pre>
+          <ul>
+            <li>例: 1試合で100%勝率 → (100×1 + 500) ÷ 11 = <b>54.5%</b>（過大評価を補正）</li>
+            <li>例: 25試合で64%勝率 → (64×25 + 500) ÷ 35 = <b>60.0%</b></li>
+            <li>例: 100試合で50%勝率 → ほぼ<b>50.0%</b>のまま</li>
+          </ul>
+          <p>①の得点 = 調整勝率 × 0.5（勝率100%で最大50点）</p>
+
+          <h4>② KDA（重み 30%）</h4>
+          <p>キル・デス・アシスト比（例:KDA 2.5 = 死ぬ1回あたり2.5キル相当）。
+             極端に高い値は事故の可能性があるため <b>5.0で打ち切り</b> ます。</p>
+          <pre>得点 = min(KDA, 5.0) × 10 × 0.3</pre>
+          <ul>
+            <li>KDA 3.0 → 9点 / KDA 5.0（上限）→ 15点</li>
+          </ul>
+
+          <h4>③ 試合数ボーナス（重み 20% → 最大20点）</h4>
+          <p>試合数を重ねた信頼性への加点。<b>30試合で満点</b>、それ以上は一律。</p>
+          <pre>ボーナス = min(試合数, 30) ÷ 30 × 100 × 0.2</pre>
+          <ul>
+            <li>10試合 → 6.7点 / 30試合以上 → 20.0点</li>
+          </ul>
+
+          <h4>合計の目安・実例</h4>
+          <p>上限は 50 + 15 + 20 = <b>約85点</b>（勝率100%でもベイズ補正があるため勝率枠は50点が最大）。
+             例: ひよりのソルジャー76（勝率58.89%・KDA 2.52・90試合）</p>
+          <pre>調整勝率 = (58.89×90 + 500) ÷ 100 = 58.0 → 58.0×0.5 = 29.0点
+KDA      = 2.52 × 10 × 0.3 = 7.6点
+試合ボーナス = 20.0点（30試合以上）
+バトルスコア = 29.0 + 7.6 + 20.0 = 56.6点</pre>
+          <p style="color:#9ca3af">※ 重み(0.5/0.3/0.2)・ベイズ係数(10)・KDA上限(5.0)・30試合基準は調整できます。</p>
+        </div>
+      </details>
+    </div>
 
     <div class="foot">
       ※ 緑=勝率55%超 / 赤=勝率40%未満 / 青=KDA3.0超 / 橙=KDA1.5未満<br />
@@ -549,6 +623,7 @@ const P3={
 PLAYERS.push(P3);
 
 
+
 /* =====================================================================
  * ヒーロー画像(公式 Blizzard CDN / heroes ページのポートレート)
  * =================================================================== */
@@ -614,7 +689,7 @@ function kdaCls(v){const n=num(v);return n>3.0?'kda-good':n<1.5?'kda-bad':''}
 function wrCell(v){const n=v===null||v===undefined?null:num(v);return `<td class="num cell ${n===null?'':wrCls(n)}">${n===null?'—':fmt1(n)+'%'}</td>`}
 function kdaCell(v){const n=v===null||v===undefined?null:num(v);return `<td class="num cell ${n===null?'':kdaCls(n)}">${n===null?'—':fmt2(n)}</td>`}
 
-const state={filter:'All',sortKey:'rank',sortAsc:false,open:new Set(),focus:'hiyori'};
+const state={filter:'All',sortKey:'rank',sortAsc:false,open:new Set(),focus:'hiyori',powerKey:'rate',powerAsc:false,powerOpen:new Set()};
 
 /* ランク順ソート用(division階層 + tierは小さいほど上位) */
 const DIV_ORDER=['bronze','silver','gold','platinum','diamond','emerald','master','grandmaster'];
@@ -876,6 +951,7 @@ function renderTable(){
   const note=filterNote();
   const noteEl=document.getElementById('filterInfo');
   if(noteEl)noteEl.textContent=note;
+  renderPower();
 }
 
 function updateArrows(){
@@ -885,6 +961,130 @@ function updateArrows(){
     else{a.textContent='';a.classList.remove('on');}
   });
 }
+
+/* ---- ヒーローパワーランキング(バトルスコア = ベイズ推定で算出) ---- */
+/* バトルスコア(上限は実質約85点):
+ *   調整勝率 = (勝率×試合数 + 50×10) / (試合数 + 10)   ※ベイズ係数10
+ *   調整KDA  = min(KDA, 5.0)
+ *   試合数ボーナス = min(試合数/30, 1) × 100
+ *   score = 調整勝率×0.5 + 調整KDA×10×0.3 + 試合数ボーナス×0.2
+ */
+function estRate(h){
+  const g=num(h.g);
+  const adjWr=(num(h.wr)*g + 50*10)/(g+10);
+  const adjKda=Math.min(num(h.kda)||0,5.0);
+  const gamesBonus=Math.min(g/30,1)*100;
+  return adjWr*0.5 + adjKda*10*0.3 + gamesBonus*0.2;
+}
+function heroStatRows(){
+  const map=new Map();
+  for(const p of PLAYERS){
+    if(!p.heroes)continue;
+    for(const h of p.heroes){
+      if(state.filter!=='All'&&h.role!==state.filter)continue;
+      let r=map.get(h.slug);
+      if(!r){
+        r={slug:h.slug,role:h.role,g:0,wrW:0,kdaW:0,users:[]};
+        map.set(h.slug,r);
+      }
+      r.g+=h.g; r.wrW+=h.g*num(h.wr); r.kdaW+=h.g*(num(h.kda)||0);
+      r.users.push({p,h,rate:estRate(h)});
+    }
+  }
+  const out=[];
+  for(const r of map.values()){
+    r.users.sort((a,b)=>b.rate-a.rate);
+    out.push({
+      slug:r.slug,role:r.role,
+      g:r.g,wr:r.g?r.wrW/r.g:0,kda:r.g?r.kdaW/r.g:0,
+      users:r.users,
+      champ:r.users[0],          // 使い手トップ
+      rate:r.users[0].rate       // そのヒーローのバトルスコア(トップ使い手の値)
+    });
+  }
+  return out;
+}
+function powerName(p){return `<div class="pl-cell"><span class="pl-av ${roleCls(p.role)}">${faceMarkup(p)}</span><span class="pl-name" style="cursor:default">${esc(p.name)}</span></div>`;}
+/* そのヒーローの使い手(バトルスコア順) */
+function powerUsageRows(slug){
+  const rows=[];
+  for(const p of PLAYERS){
+    const h=p.heroes&&p.heroes.find(x=>x.slug===slug);
+    if(!h)continue;
+    rows.push({p,h,rate:estRate(h)});
+  }
+  rows.sort((a,b)=>b.rate-a.rate);
+  return rows;
+}
+function usageDetailHtml(slug){
+  const nm=SLUG_NAME[slug]||slug;
+  const us=powerUsageRows(slug);
+  const rows=us.map((u,i)=>`
+    <tr>
+      <td style="font-weight:800">${i+1}</td>
+      <td>${powerName(u.p)}${i===0?' <b style="color:#047857">TOP</b>':''}</td>
+      <td class="big-sr">${Math.round(u.rate)}</td>
+      <td class="num">${fmtN(u.h.g)}</td>
+      <td class="num cell ${wrCls(u.h.wr)}">${fmt1(u.h.wr)}%</td>
+      <td class="num cell ${kdaCls(u.h.kda)}">${fmt2(u.h.kda)}</td>
+    </tr>`).join('');
+  return `
+    <div style="padding:6px 0 8px">
+      <div style="margin-bottom:8px"><b style="font-size:14px">${esc(nm)} の使い手ランキング</b>
+      <span style="color:#9ca3af;font-size:12px;margin-left:8px">バトルスコア順 ・ 調整勝率×0.5 + min(KDA,5)×10×0.3 + 試合数ボーナス×0.2</span></div>
+      <table class="mini">
+        <thead><tr><th>順位</th><th>Player</th><th>バトルスコア</th><th>試合</th><th>WR</th><th>KDA</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+}
+function renderPower(){
+  const body=$('#powerBody');
+  if(!body)return;
+  const rows=heroStatRows();
+  if(!rows.length){
+    body.innerHTML='<div style="color:#9ca3af;padding:12px 0">ヒーロー実績データがありません</div>';
+    return;
+  }
+  const dir=state.powerAsc?1:-1;
+  rows.sort((a,b)=>{
+    if(state.powerKey==='name')return 0;
+    return (num(a[state.powerKey])-num(b[state.powerKey]))*dir;
+  });
+  const arrow=k=>state.powerKey===k?`<span class="arrow on">${state.powerAsc?'▲':'▼'}</span>`:'<span class="arrow"></span>';
+  const open=state.powerOpen;
+  const html=rows.map((r,i)=>{
+    const nm=SLUG_NAME[r.slug]||r.slug;
+    const isOpen=open.has(r.slug);
+    return `
+      <tr class="row ${isOpen?'open':''}" data-hslug="${r.slug}">
+        <td><span class="medal ${i===0?'m1':i===1?'m2':i===2?'m3':'n'}">${i+1}</span></td>
+        <td><div class="hl">${heroThumb(nm,34,r.role,r.slug)}<span class="hn" style="font-size:14px">${esc(nm)}</span>
+          <span class="role-chip ${roleCls(r.role)}" style="margin-left:6px">${roleIcon(r.role)} ${esc(r.role)}</span>
+          <span class="chev">▼</span></div></td>
+        <td>${powerName(r.champ.p)}</td>
+        <td class="big-sr">${Math.round(r.rate)}</td>
+        <td class="num">${fmtN(r.g)}</td>
+        <td class="num cell ${wrCls(r.wr)}">${fmt1(r.wr)}%</td>
+        <td class="num cell ${kdaCls(r.kda)}">${fmt2(r.kda)}</td>
+      </tr>
+      ${isOpen?`<tr class="detail-row"><td colspan="7">${usageDetailHtml(r.slug)}</td></tr>`:''}`;
+  }).join('');
+  body.innerHTML=`
+    <div class="scroll-x" style="border-radius:10px"><table class="rank">
+      <thead><tr>
+        <th style="width:44px">順位</th>
+        <th style="width:300px">Hero</th>
+        <th>使い手トップ</th>
+        <th><button class="sortable" data-pkey="rate">バトルスコア${arrow('rate')}</button></th>
+        <th>試合(計)</th>
+        <th><button class="sortable" data-pkey="wr">WR${arrow('wr')}</button></th>
+        <th><button class="sortable" data-pkey="kda">KDA${arrow('kda')}</button></th>
+      </tr></thead>
+      <tbody>${html}</tbody>
+    </table></div>`;
+}
+
 
 /* イベント */
 $('#rankBody').addEventListener('click',e=>{
@@ -919,6 +1119,21 @@ $('#pfSel').addEventListener('click',e=>{
   state.focus=b.dataset.pid;
   $('#pfSel').querySelectorAll('.filter-btn').forEach(x=>x.classList.toggle('active',x===b));
   renderProfile(focusPlayer());
+});
+$('#powerBody').addEventListener('click',e=>{
+  const sortBtn=e.target.closest('.sortable[data-pkey]');
+  if(sortBtn){
+    const k=sortBtn.dataset.pkey;
+    if(state.powerKey===k)state.powerAsc=!state.powerAsc;
+    else{state.powerKey=k;state.powerAsc=false;}
+    renderPower();
+    return;
+  }
+  const tr=e.target.closest('tr[data-hslug]');
+  if(!tr)return;
+  const slug=tr.dataset.hslug;
+  if(state.powerOpen.has(slug))state.powerOpen.delete(slug);else state.powerOpen.add(slug);
+  renderPower();
 });
 
 renderSel();
