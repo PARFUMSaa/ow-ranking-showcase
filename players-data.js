@@ -1,7 +1,7 @@
 'use strict';
 
 /* 生成データ: update.mjs が自動生成(手編集は上書き) ・ 元データ: OverFast API */
-const LAST_UPDATED_ISO = "2026-09-07T22:27:31.244Z";
+const LAST_UPDATED_ISO = "2026-09-08T04:39:11.850Z";
 /* ライバル・プレイ(コンペティティブ)のみ */
 const PLAYERS_COMP = [
   {
@@ -687,16 +687,16 @@ const PLAYERS_ALL = [
     },
     "rankTier": "Platinum 2",
     "overall": {
-      "matches": 1003,
-      "wins": 495,
-      "losses": 508,
-      "wr": 49.35,
+      "matches": 1009,
+      "wins": 498,
+      "losses": 511,
+      "wr": 49.36,
       "kda": 2.38,
-      "elim": 16.75,
+      "elim": 16.76,
       "deaths": 7.67,
-      "dmg": 9801.29,
-      "heal": 2052.24,
-      "time": 509159
+      "dmg": 9809.97,
+      "heal": 2039.84,
+      "time": 512329
     },
     "roles": {
       "Tank": {
@@ -712,16 +712,16 @@ const PLAYERS_ALL = [
         "heal": 713.72
       },
       "Damage": {
-        "g": 466,
-        "w": 241,
-        "l": 225,
-        "time": 238059,
-        "wr": 51.72,
-        "kda": 2.2,
-        "elim": 18.18,
-        "deaths": 8.38,
-        "dmg": 10896.62,
-        "heal": 351.25
+        "g": 472,
+        "w": 244,
+        "l": 228,
+        "time": 241229,
+        "wr": 51.69,
+        "kda": 2.21,
+        "elim": 18.19,
+        "deaths": 8.36,
+        "dmg": 10900.66,
+        "heal": 347.28
       },
       "Support": {
         "g": 237,
@@ -746,6 +746,14 @@ const PLAYERS_ALL = [
         "kda": 2.52
       },
       {
+        "slug": "tracer",
+        "n": "Tracer",
+        "role": "Damage",
+        "g": 44,
+        "wr": 54.55,
+        "kda": 1.97
+      },
+      {
         "slug": "pharah",
         "n": "Pharah",
         "role": "Damage",
@@ -762,20 +770,12 @@ const PLAYERS_ALL = [
         "kda": 4.46
       },
       {
-        "slug": "tracer",
-        "n": "Tracer",
-        "role": "Damage",
-        "g": 43,
-        "wr": 53.49,
-        "kda": 1.97
-      },
-      {
         "slug": "sojourn",
         "n": "Sojourn",
         "role": "Damage",
-        "g": 41,
-        "wr": 48.78,
-        "kda": 2.27
+        "g": 42,
+        "wr": 47.62,
+        "kda": 2.26
       },
       {
         "slug": "kiriko",
@@ -786,20 +786,20 @@ const PLAYERS_ALL = [
         "kda": 1.89
       },
       {
+        "slug": "ashe",
+        "n": "Ashe",
+        "role": "Damage",
+        "g": 34,
+        "wr": 44.12,
+        "kda": 2.7
+      },
+      {
         "slug": "lucio",
         "n": "Lúcio",
         "role": "Support",
         "g": 32,
         "wr": 50,
         "kda": 2.24
-      },
-      {
-        "slug": "ashe",
-        "n": "Ashe",
-        "role": "Damage",
-        "g": 31,
-        "wr": 45.16,
-        "kda": 2.57
       },
       {
         "slug": "mauga",
@@ -1007,7 +1007,15 @@ const PLAYERS_ALL = [
         "role": "Damage",
         "g": 11,
         "wr": 27.27,
-        "kda": 1.95
+        "kda": 1.97
+      },
+      {
+        "slug": "freja",
+        "n": "Freja",
+        "role": "Damage",
+        "g": 10,
+        "wr": 60,
+        "kda": 1.4
       },
       {
         "slug": "roadhog",
@@ -1016,14 +1024,6 @@ const PLAYERS_ALL = [
         "g": 10,
         "wr": 40,
         "kda": 2.93
-      },
-      {
-        "slug": "freja",
-        "n": "Freja",
-        "role": "Damage",
-        "g": 9,
-        "wr": 55.56,
-        "kda": 1.46
       },
       {
         "slug": "reinhardt",
