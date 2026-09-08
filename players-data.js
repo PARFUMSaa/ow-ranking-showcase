@@ -1,7 +1,7 @@
 'use strict';
 
 /* 生成データ: update.mjs が自動生成(手編集は上書き) ・ 元データ: OverFast API */
-const LAST_UPDATED_ISO = "2026-09-08T07:53:23.095Z";
+const LAST_UPDATED_ISO = "2026-09-08T21:51:53.825Z";
 /* ライバル・プレイ(コンペティティブ)のみ */
 const PLAYERS_COMP = [
   {
@@ -24,29 +24,29 @@ const PLAYERS_COMP = [
     },
     "rankTier": "Platinum 2",
     "overall": {
-      "matches": 39,
-      "wins": 25,
-      "losses": 14,
-      "wr": 64.1,
-      "kda": 2.39,
-      "elim": 19.9,
-      "deaths": 8.33,
-      "dmg": 11653.86,
-      "heal": 1032.46,
-      "time": 25720
+      "matches": 48,
+      "wins": 29,
+      "losses": 19,
+      "wr": 60.42,
+      "kda": 2.36,
+      "elim": 19.41,
+      "deaths": 8.23,
+      "dmg": 11476.06,
+      "heal": 946.33,
+      "time": 31931
     },
     "roles": {
       "Damage": {
-        "g": 38,
-        "w": 24,
-        "l": 14,
-        "time": 25002,
-        "wr": 63.16,
-        "kda": 2.36,
-        "elim": 19.8,
-        "deaths": 8.4,
-        "dmg": 11845.33,
-        "heal": 779.79
+        "g": 47,
+        "w": 28,
+        "l": 19,
+        "time": 31213,
+        "wr": 59.57,
+        "kda": 2.33,
+        "elim": 19.32,
+        "deaths": 8.29,
+        "dmg": 11625.35,
+        "heal": 741.96
       },
       "Support": {
         "g": 1,
@@ -66,40 +66,40 @@ const PLAYERS_COMP = [
         "slug": "soldier-76",
         "n": "Soldier: 76",
         "role": "Damage",
-        "g": 25,
-        "wr": 64,
-        "kda": 2.45
+        "g": 29,
+        "wr": 58.62,
+        "kda": 2.39
       },
       {
         "slug": "cassidy",
         "n": "Cassidy",
         "role": "Damage",
-        "g": 3,
-        "wr": 100,
-        "kda": 2.11
+        "g": 5,
+        "wr": 80,
+        "kda": 2.06
       },
       {
         "slug": "shion",
         "n": "Shion",
         "role": "Damage",
-        "g": 3,
-        "wr": 66.67,
-        "kda": 4.33
+        "g": 4,
+        "wr": 75,
+        "kda": 4.64
       },
       {
         "slug": "ashe",
         "n": "Ashe",
         "role": "Damage",
-        "g": 1,
+        "g": 2,
         "wr": 0,
-        "kda": 1.25
+        "kda": 1.8
       },
       {
         "slug": "bastion",
         "n": "Bastion",
         "role": "Damage",
-        "g": 1,
-        "wr": 0,
+        "g": 2,
+        "wr": 50,
         "kda": 2.67
       },
       {
@@ -148,7 +148,7 @@ const PLAYERS_COMP = [
         "role": "Damage",
         "g": 1,
         "wr": 100,
-        "kda": 1.71
+        "kda": 1.5
       }
     ]
   },
@@ -156,7 +156,7 @@ const PLAYERS_COMP = [
     "id": "voidglove",
     "name": "ぼいどぐらぶ",
     "tag": "",
-    "endorse": 2,
+    "endorse": 3,
     "title": "Café Cutie",
     "avatar": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/7daa20c3503d9754bed64a948dd5532ae128ed9b04dde0d61e76e6683cecd28d.png",
     "namecard": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/293db3a1b56e50fb5531a64980fa86812516fa9ef86acef925bfffb138bf0724.png",
@@ -180,16 +180,16 @@ const PLAYERS_COMP = [
     },
     "rankTier": "Platinum 3",
     "overall": {
-      "matches": 91,
-      "wins": 52,
-      "losses": 39,
-      "wr": 57.14,
-      "kda": 2.71,
-      "elim": 13.69,
-      "deaths": 5.97,
-      "dmg": 7185.78,
-      "heal": 4419.21,
-      "time": 60085
+      "matches": 97,
+      "wins": 55,
+      "losses": 42,
+      "wr": 56.7,
+      "kda": 2.69,
+      "elim": 13.31,
+      "deaths": 5.93,
+      "dmg": 6912.37,
+      "heal": 4878.07,
+      "time": 64223
     },
     "roles": {
       "Tank": {
@@ -217,16 +217,16 @@ const PLAYERS_COMP = [
         "heal": 210.53
       },
       "Support": {
-        "g": 49,
-        "w": 30,
-        "l": 19,
-        "time": 32100,
-        "wr": 61.22,
-        "kda": 2.83,
-        "elim": 11.27,
+        "g": 55,
+        "w": 33,
+        "l": 22,
+        "time": 36238,
+        "wr": 60,
+        "kda": 2.78,
+        "elim": 10.88,
         "deaths": 5.38,
-        "dmg": 5340.39,
-        "heal": 7750.69
+        "dmg": 5066.57,
+        "heal": 8183.5
       }
     },
     "heroes": [
@@ -242,9 +242,9 @@ const PLAYERS_COMP = [
         "slug": "kiriko",
         "n": "Kiriko",
         "role": "Support",
-        "g": 12,
-        "wr": 58.33,
-        "kda": 2.31
+        "g": 17,
+        "wr": 52.94,
+        "kda": 2.35
       },
       {
         "slug": "cassidy",
@@ -405,6 +405,14 @@ const PLAYERS_COMP = [
         "g": 1,
         "wr": 100,
         "kda": 4.4
+      },
+      {
+        "slug": "zenyatta",
+        "n": "Zenyatta",
+        "role": "Support",
+        "g": 1,
+        "wr": 100,
+        "kda": 1.5
       }
     ]
   },
@@ -436,41 +444,41 @@ const PLAYERS_COMP = [
     },
     "rankTier": "Emerald 4",
     "overall": {
-      "matches": 146,
-      "wins": 86,
-      "losses": 60,
-      "wr": 58.9,
-      "kda": 2.93,
-      "elim": 16.84,
-      "deaths": 6.3,
-      "dmg": 9604,
-      "heal": 4058.77,
-      "time": 97184
+      "matches": 161,
+      "wins": 91,
+      "losses": 70,
+      "wr": 56.52,
+      "kda": 2.87,
+      "elim": 16.77,
+      "deaths": 6.42,
+      "dmg": 9831.08,
+      "heal": 3766.25,
+      "time": 106746
     },
     "roles": {
       "Tank": {
-        "g": 51,
-        "w": 32,
-        "l": 19,
-        "time": 33654,
-        "wr": 62.75,
-        "kda": 4.13,
-        "elim": 20.75,
-        "deaths": 5.99,
-        "dmg": 14068.96,
-        "heal": 1136.16
+        "g": 62,
+        "w": 37,
+        "l": 25,
+        "time": 40935,
+        "wr": 59.68,
+        "kda": 3.88,
+        "elim": 20.15,
+        "deaths": 6.16,
+        "dmg": 13841.76,
+        "heal": 1108.19
       },
       "Damage": {
-        "g": 45,
+        "g": 49,
         "w": 25,
-        "l": 20,
-        "time": 27158,
-        "wr": 55.56,
-        "kda": 2.5,
-        "elim": 17.08,
-        "deaths": 6.87,
-        "dmg": 9994.96,
-        "heal": 255.33
+        "l": 24,
+        "time": 29439,
+        "wr": 51.02,
+        "kda": 2.35,
+        "elim": 16.69,
+        "deaths": 7.13,
+        "dmg": 9999.67,
+        "heal": 251.05
       },
       "Support": {
         "g": 50,
@@ -487,6 +495,14 @@ const PLAYERS_COMP = [
     },
     "heroes": [
       {
+        "slug": "mauga",
+        "n": "Mauga",
+        "role": "Tank",
+        "g": 34,
+        "wr": 67.65,
+        "kda": 4.69
+      },
+      {
         "slug": "moira",
         "n": "Moira",
         "role": "Support",
@@ -495,28 +511,28 @@ const PLAYERS_COMP = [
         "kda": 2.86
       },
       {
-        "slug": "mauga",
-        "n": "Mauga",
-        "role": "Tank",
-        "g": 30,
-        "wr": 66.67,
-        "kda": 4.73
-      },
-      {
         "slug": "anran",
         "n": "Anran",
         "role": "Damage",
         "g": 13,
         "wr": 76.92,
-        "kda": 2.72
+        "kda": 2.61
       },
       {
         "slug": "sierra",
         "n": "Sierra",
         "role": "Damage",
         "g": 12,
+        "wr": 41.67,
+        "kda": 2.88
+      },
+      {
+        "slug": "ramattra",
+        "n": "Ramattra",
+        "role": "Tank",
+        "g": 10,
         "wr": 50,
-        "kda": 3.08
+        "kda": 3.14
       },
       {
         "slug": "kiriko",
@@ -543,28 +559,28 @@ const PLAYERS_COMP = [
         "kda": 1.39
       },
       {
-        "slug": "ramattra",
-        "n": "Ramattra",
+        "slug": "reinhardt",
+        "n": "Reinhardt",
         "role": "Tank",
         "g": 5,
-        "wr": 60,
-        "kda": 4
+        "wr": 20,
+        "kda": 1.76
       },
       {
         "slug": "bastion",
         "n": "Bastion",
         "role": "Damage",
         "g": 4,
-        "wr": 25,
-        "kda": 1.91
+        "wr": 0,
+        "kda": 1.76
       },
       {
-        "slug": "reinhardt",
-        "n": "Reinhardt",
-        "role": "Tank",
+        "slug": "cassidy",
+        "n": "Cassidy",
+        "role": "Damage",
         "g": 4,
-        "wr": 25,
-        "kda": 1.8
+        "wr": 50,
+        "kda": 1.28
       },
       {
         "slug": "ashe",
@@ -575,12 +591,20 @@ const PLAYERS_COMP = [
         "kda": 1.41
       },
       {
-        "slug": "cassidy",
-        "n": "Cassidy",
-        "role": "Damage",
+        "slug": "orisa",
+        "n": "Orisa",
+        "role": "Tank",
         "g": 3,
         "wr": 33.33,
-        "kda": 1.31
+        "kda": 3.13
+      },
+      {
+        "slug": "soldier-76",
+        "n": "Soldier: 76",
+        "role": "Damage",
+        "g": 3,
+        "wr": 66.67,
+        "kda": 2.05
       },
       {
         "slug": "ana",
@@ -589,6 +613,14 @@ const PLAYERS_COMP = [
         "g": 2,
         "wr": 50,
         "kda": 1.44
+      },
+      {
+        "slug": "echo",
+        "n": "Echo",
+        "role": "Damage",
+        "g": 2,
+        "wr": 50,
+        "kda": 1.08
       },
       {
         "slug": "freja",
@@ -604,15 +636,7 @@ const PLAYERS_COMP = [
         "role": "Damage",
         "g": 2,
         "wr": 50,
-        "kda": 2.5
-      },
-      {
-        "slug": "orisa",
-        "n": "Orisa",
-        "role": "Tank",
-        "g": 2,
-        "wr": 50,
-        "kda": 3.91
+        "kda": 2.4
       },
       {
         "slug": "shion",
@@ -621,22 +645,6 @@ const PLAYERS_COMP = [
         "g": 2,
         "wr": 100,
         "kda": 5.4
-      },
-      {
-        "slug": "soldier-76",
-        "n": "Soldier: 76",
-        "role": "Damage",
-        "g": 2,
-        "wr": 100,
-        "kda": 2.18
-      },
-      {
-        "slug": "echo",
-        "n": "Echo",
-        "role": "Damage",
-        "g": 1,
-        "wr": 0,
-        "kda": 0.71
       },
       {
         "slug": "pharah",
@@ -652,7 +660,15 @@ const PLAYERS_COMP = [
         "role": "Tank",
         "g": 1,
         "wr": 0,
-        "kda": 1.44
+        "kda": 1.91
+      },
+      {
+        "slug": "torbjorn",
+        "n": "Torbjörn",
+        "role": "Damage",
+        "g": 1,
+        "wr": 0,
+        "kda": 2
       },
       {
         "slug": "zarya",
@@ -687,16 +703,16 @@ const PLAYERS_ALL = [
     },
     "rankTier": "Platinum 2",
     "overall": {
-      "matches": 1009,
-      "wins": 498,
-      "losses": 511,
-      "wr": 49.36,
+      "matches": 1019,
+      "wins": 502,
+      "losses": 517,
+      "wr": 49.26,
       "kda": 2.38,
       "elim": 16.76,
       "deaths": 7.67,
-      "dmg": 9809.97,
-      "heal": 2039.84,
-      "time": 512329
+      "dmg": 9820.13,
+      "heal": 2021.54,
+      "time": 518780
     },
     "roles": {
       "Tank": {
@@ -712,16 +728,16 @@ const PLAYERS_ALL = [
         "heal": 713.72
       },
       "Damage": {
-        "g": 472,
-        "w": 244,
-        "l": 228,
-        "time": 241229,
-        "wr": 51.69,
+        "g": 482,
+        "w": 248,
+        "l": 234,
+        "time": 247680,
+        "wr": 51.45,
         "kda": 2.21,
-        "elim": 18.19,
-        "deaths": 8.36,
-        "dmg": 10900.66,
-        "heal": 347.28
+        "elim": 18.16,
+        "deaths": 8.35,
+        "dmg": 10893.52,
+        "heal": 353.02
       },
       "Support": {
         "g": 237,
@@ -741,9 +757,9 @@ const PLAYERS_ALL = [
         "slug": "soldier-76",
         "n": "Soldier: 76",
         "role": "Damage",
-        "g": 90,
-        "wr": 58.89,
-        "kda": 2.52
+        "g": 94,
+        "wr": 57.45,
+        "kda": 2.49
       },
       {
         "slug": "tracer",
@@ -751,7 +767,7 @@ const PLAYERS_ALL = [
         "role": "Damage",
         "g": 44,
         "wr": 54.55,
-        "kda": 1.97
+        "kda": 1.96
       },
       {
         "slug": "pharah",
@@ -789,9 +805,9 @@ const PLAYERS_ALL = [
         "slug": "ashe",
         "n": "Ashe",
         "role": "Damage",
-        "g": 34,
-        "wr": 44.12,
-        "kda": 2.7
+        "g": 35,
+        "wr": 42.86,
+        "kda": 2.68
       },
       {
         "slug": "lucio",
@@ -866,6 +882,14 @@ const PLAYERS_ALL = [
         "kda": 2.81
       },
       {
+        "slug": "cassidy",
+        "n": "Cassidy",
+        "role": "Damage",
+        "g": 24,
+        "wr": 41.67,
+        "kda": 1.85
+      },
+      {
         "slug": "juno",
         "n": "Juno",
         "role": "Support",
@@ -882,12 +906,12 @@ const PLAYERS_ALL = [
         "kda": 1.78
       },
       {
-        "slug": "cassidy",
-        "n": "Cassidy",
+        "slug": "shion",
+        "n": "Shion",
         "role": "Damage",
-        "g": 22,
-        "wr": 40.91,
-        "kda": 1.83
+        "g": 21,
+        "wr": 66.67,
+        "kda": 2.66
       },
       {
         "slug": "ana",
@@ -906,20 +930,20 @@ const PLAYERS_ALL = [
         "kda": 1.79
       },
       {
-        "slug": "shion",
-        "n": "Shion",
-        "role": "Damage",
-        "g": 20,
-        "wr": 65,
-        "kda": 2.55
-      },
-      {
         "slug": "wrecking-ball",
         "n": "Wrecking Ball",
         "role": "Tank",
         "g": 20,
         "wr": 55,
         "kda": 2.02
+      },
+      {
+        "slug": "bastion",
+        "n": "Bastion",
+        "role": "Damage",
+        "g": 19,
+        "wr": 52.63,
+        "kda": 2.77
       },
       {
         "slug": "echo",
@@ -936,14 +960,6 @@ const PLAYERS_ALL = [
         "g": 19,
         "wr": 42.11,
         "kda": 1.98
-      },
-      {
-        "slug": "bastion",
-        "n": "Bastion",
-        "role": "Damage",
-        "g": 18,
-        "wr": 50,
-        "kda": 2.77
       },
       {
         "slug": "moira",
@@ -1002,20 +1018,20 @@ const PLAYERS_ALL = [
         "kda": 1.64
       },
       {
+        "slug": "freja",
+        "n": "Freja",
+        "role": "Damage",
+        "g": 11,
+        "wr": 54.55,
+        "kda": 1.38
+      },
+      {
         "slug": "reaper",
         "n": "Reaper",
         "role": "Damage",
         "g": 11,
         "wr": 27.27,
         "kda": 1.97
-      },
-      {
-        "slug": "freja",
-        "n": "Freja",
-        "role": "Damage",
-        "g": 10,
-        "wr": 60,
-        "kda": 1.4
       },
       {
         "slug": "roadhog",
@@ -1079,7 +1095,7 @@ const PLAYERS_ALL = [
         "role": "Damage",
         "g": 5,
         "wr": 80,
-        "kda": 1.64
+        "kda": 1.6
       },
       {
         "slug": "sierra",
@@ -1143,7 +1159,7 @@ const PLAYERS_ALL = [
     "id": "voidglove",
     "name": "ぼいどぐらぶ",
     "tag": "",
-    "endorse": 2,
+    "endorse": 3,
     "title": "Café Cutie",
     "avatar": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/7daa20c3503d9754bed64a948dd5532ae128ed9b04dde0d61e76e6683cecd28d.png",
     "namecard": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/293db3a1b56e50fb5531a64980fa86812516fa9ef86acef925bfffb138bf0724.png",
@@ -1167,16 +1183,16 @@ const PLAYERS_ALL = [
     },
     "rankTier": "Platinum 3",
     "overall": {
-      "matches": 698,
-      "wins": 362,
-      "losses": 336,
-      "wr": 51.86,
-      "kda": 2.79,
-      "elim": 15.71,
-      "deaths": 6.27,
-      "dmg": 8091.85,
-      "heal": 3037.36,
-      "time": 369770
+      "matches": 704,
+      "wins": 365,
+      "losses": 339,
+      "wr": 51.85,
+      "kda": 2.78,
+      "elim": 15.62,
+      "deaths": 6.26,
+      "dmg": 8034.86,
+      "heal": 3131.47,
+      "time": 373908
     },
     "roles": {
       "Tank": {
@@ -1204,16 +1220,16 @@ const PLAYERS_ALL = [
         "heal": 243.56
       },
       "Support": {
-        "g": 273,
-        "w": 134,
-        "l": 139,
-        "time": 146824,
-        "wr": 49.08,
-        "kda": 2.74,
-        "elim": 12.24,
-        "deaths": 5.79,
-        "dmg": 5390.03,
-        "heal": 6841.17
+        "g": 279,
+        "w": 137,
+        "l": 142,
+        "time": 150962,
+        "wr": 49.1,
+        "kda": 2.73,
+        "elim": 12.12,
+        "deaths": 5.78,
+        "dmg": 5322.94,
+        "heal": 6969.99
       }
     },
     "heroes": [
@@ -1237,9 +1253,9 @@ const PLAYERS_ALL = [
         "slug": "kiriko",
         "n": "Kiriko",
         "role": "Support",
-        "g": 49,
-        "wr": 53.06,
-        "kda": 2.08
+        "g": 54,
+        "wr": 51.85,
+        "kda": 2.12
       },
       {
         "slug": "genji",
@@ -1482,6 +1498,14 @@ const PLAYERS_ALL = [
         "kda": 3.7
       },
       {
+        "slug": "zenyatta",
+        "n": "Zenyatta",
+        "role": "Support",
+        "g": 6,
+        "wr": 50,
+        "kda": 2.26
+      },
+      {
         "slug": "brigitte",
         "n": "Brigitte",
         "role": "Support",
@@ -1496,14 +1520,6 @@ const PLAYERS_ALL = [
         "g": 5,
         "wr": 60,
         "kda": 2.52
-      },
-      {
-        "slug": "zenyatta",
-        "n": "Zenyatta",
-        "role": "Support",
-        "g": 5,
-        "wr": 40,
-        "kda": 2.41
       },
       {
         "slug": "dva",
@@ -1647,53 +1663,53 @@ const PLAYERS_ALL = [
     },
     "rankTier": "Emerald 4",
     "overall": {
-      "matches": 538,
-      "wins": 279,
-      "losses": 259,
-      "wr": 51.86,
-      "kda": 2.6,
-      "elim": 14.93,
-      "deaths": 6.35,
-      "dmg": 8842.42,
-      "heal": 4238.46,
-      "time": 290260
+      "matches": 557,
+      "wins": 284,
+      "losses": 273,
+      "wr": 50.99,
+      "kda": 2.59,
+      "elim": 14.96,
+      "deaths": 6.39,
+      "dmg": 8963.14,
+      "heal": 4148.72,
+      "time": 301670
     },
     "roles": {
       "Tank": {
-        "g": 133,
-        "w": 73,
-        "l": 60,
-        "time": 71398,
-        "wr": 54.89,
-        "kda": 3.96,
-        "elim": 19.57,
-        "deaths": 5.82,
-        "dmg": 13489.09,
-        "heal": 1172.91
+        "g": 147,
+        "w": 77,
+        "l": 70,
+        "time": 79904,
+        "wr": 52.38,
+        "kda": 3.83,
+        "elim": 19.29,
+        "deaths": 5.92,
+        "dmg": 13403.31,
+        "heal": 1224.76
       },
       "Damage": {
-        "g": 178,
+        "g": 182,
         "w": 89,
-        "l": 89,
-        "time": 94146,
-        "wr": 50,
-        "kda": 2.14,
-        "elim": 15.65,
-        "deaths": 7.34,
-        "dmg": 10136.34,
-        "heal": 193.67
+        "l": 93,
+        "time": 96427,
+        "wr": 48.9,
+        "kda": 2.11,
+        "elim": 15.57,
+        "deaths": 7.41,
+        "dmg": 10134.44,
+        "heal": 193.83
       },
       "Support": {
-        "g": 227,
-        "w": 117,
+        "g": 228,
+        "w": 118,
         "l": 110,
-        "time": 124716,
-        "wr": 51.54,
+        "time": 125339,
+        "wr": 51.75,
         "kda": 2.26,
         "elim": 11.72,
         "deaths": 5.91,
-        "dmg": 5205.52,
-        "heal": 9046.79
+        "dmg": 5231.4,
+        "heal": 9055.37
       }
     },
     "heroes": [
@@ -1701,9 +1717,9 @@ const PLAYERS_ALL = [
         "slug": "moira",
         "n": "Moira",
         "role": "Support",
-        "g": 84,
-        "wr": 65.48,
-        "kda": 3.22
+        "g": 85,
+        "wr": 65.88,
+        "kda": 3.2
       },
       {
         "slug": "kiriko",
@@ -1717,17 +1733,17 @@ const PLAYERS_ALL = [
         "slug": "mauga",
         "n": "Mauga",
         "role": "Tank",
-        "g": 54,
-        "wr": 64.81,
-        "kda": 5.02
+        "g": 59,
+        "wr": 64.41,
+        "kda": 4.97
       },
       {
         "slug": "sierra",
         "n": "Sierra",
         "role": "Damage",
         "g": 39,
-        "wr": 51.28,
-        "kda": 2.45
+        "wr": 48.72,
+        "kda": 2.4
       },
       {
         "slug": "mizuki",
@@ -1743,7 +1759,15 @@ const PLAYERS_ALL = [
         "role": "Damage",
         "g": 27,
         "wr": 59.26,
-        "kda": 2.55
+        "kda": 2.5
+      },
+      {
+        "slug": "cassidy",
+        "n": "Cassidy",
+        "role": "Damage",
+        "g": 21,
+        "wr": 47.62,
+        "kda": 1.5
       },
       {
         "slug": "sigma",
@@ -1758,16 +1782,8 @@ const PLAYERS_ALL = [
         "n": "Bastion",
         "role": "Damage",
         "g": 20,
-        "wr": 45,
-        "kda": 2.14
-      },
-      {
-        "slug": "cassidy",
-        "n": "Cassidy",
-        "role": "Damage",
-        "g": 20,
-        "wr": 45,
-        "kda": 1.52
+        "wr": 40,
+        "kda": 2.09
       },
       {
         "slug": "zarya",
@@ -1776,6 +1792,14 @@ const PLAYERS_ALL = [
         "g": 16,
         "wr": 37.5,
         "kda": 3.49
+      },
+      {
+        "slug": "ramattra",
+        "n": "Ramattra",
+        "role": "Tank",
+        "g": 15,
+        "wr": 53.33,
+        "kda": 3.19
       },
       {
         "slug": "shion",
@@ -1794,6 +1818,22 @@ const PLAYERS_ALL = [
         "kda": 1.56
       },
       {
+        "slug": "orisa",
+        "n": "Orisa",
+        "role": "Tank",
+        "g": 12,
+        "wr": 33.33,
+        "kda": 3.12
+      },
+      {
+        "slug": "reinhardt",
+        "n": "Reinhardt",
+        "role": "Tank",
+        "g": 12,
+        "wr": 41.67,
+        "kda": 1.94
+      },
+      {
         "slug": "ashe",
         "n": "Ashe",
         "role": "Damage",
@@ -1802,36 +1842,12 @@ const PLAYERS_ALL = [
         "kda": 2.13
       },
       {
-        "slug": "orisa",
-        "n": "Orisa",
-        "role": "Tank",
-        "g": 11,
-        "wr": 36.36,
-        "kda": 3.27
-      },
-      {
-        "slug": "reinhardt",
-        "n": "Reinhardt",
-        "role": "Tank",
-        "g": 11,
-        "wr": 45.45,
-        "kda": 2.02
-      },
-      {
-        "slug": "ramattra",
-        "n": "Ramattra",
-        "role": "Tank",
-        "g": 10,
-        "wr": 60,
-        "kda": 3.69
-      },
-      {
         "slug": "roadhog",
         "n": "Roadhog",
         "role": "Tank",
-        "g": 8,
-        "wr": 62.5,
-        "kda": 3.48
+        "g": 10,
+        "wr": 40,
+        "kda": 3.26
       },
       {
         "slug": "freja",
@@ -1847,15 +1863,15 @@ const PLAYERS_ALL = [
         "role": "Damage",
         "g": 7,
         "wr": 42.86,
-        "kda": 2.07
+        "kda": 1.98
       },
       {
         "slug": "soldier-76",
         "n": "Soldier: 76",
         "role": "Damage",
-        "g": 6,
-        "wr": 83.33,
-        "kda": 2.03
+        "g": 7,
+        "wr": 71.43,
+        "kda": 1.98
       },
       {
         "slug": "pharah",
@@ -1895,7 +1911,7 @@ const PLAYERS_ALL = [
         "role": "Damage",
         "g": 4,
         "wr": 25,
-        "kda": 2.15
+        "kda": 2.11
       },
       {
         "slug": "juno",
@@ -1922,6 +1938,14 @@ const PLAYERS_ALL = [
         "kda": 1.72
       },
       {
+        "slug": "echo",
+        "n": "Echo",
+        "role": "Damage",
+        "g": 3,
+        "wr": 66.67,
+        "kda": 1.63
+      },
+      {
         "slug": "wuyang",
         "n": "Wuyang",
         "role": "Support",
@@ -1936,14 +1960,6 @@ const PLAYERS_ALL = [
         "g": 2,
         "wr": 50,
         "kda": 2.92
-      },
-      {
-        "slug": "echo",
-        "n": "Echo",
-        "role": "Damage",
-        "g": 2,
-        "wr": 50,
-        "kda": 1.69
       },
       {
         "slug": "emre",
@@ -1978,12 +1994,20 @@ const PLAYERS_ALL = [
         "kda": 2.55
       },
       {
+        "slug": "torbjorn",
+        "n": "Torbjörn",
+        "role": "Damage",
+        "g": 2,
+        "wr": 0,
+        "kda": 2.33
+      },
+      {
         "slug": "dva",
         "n": "D.Va",
         "role": "Tank",
         "g": 1,
         "wr": 0,
-        "kda": 2
+        "kda": 2.5
       },
       {
         "slug": "sombra",
@@ -1992,14 +2016,6 @@ const PLAYERS_ALL = [
         "g": 1,
         "wr": 100,
         "kda": 1
-      },
-      {
-        "slug": "torbjorn",
-        "n": "Torbjörn",
-        "role": "Damage",
-        "g": 1,
-        "wr": 0,
-        "kda": 2.25
       },
       {
         "slug": "tracer",
