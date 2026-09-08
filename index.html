@@ -222,6 +222,10 @@ details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px
 
 /* フッター */
 .foot{color:#9ca3af;font-size:11.5px;margin-top:18px;text-align:center;line-height:1.9}
+/* 戦績など小さめ文字の可読性改善 */
+.pf-note{color:#4b5563!important}
+.stat-box .s{color:#52606e!important}
+.pc-kpi .s{color:#5b6b7c!important}
 </style>
 </head>
 <body>
@@ -280,7 +284,10 @@ details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px
           <h2>🎖️ Hero Power Rankings</h2>
           <div class="sub">バトルスコア = 調整勝率×0.5 + min(KDA,5)×10×0.3 + 試合数ボーナス×0.2（ベイズ調整）</div>
         </div>
-        <div class="power-controls"><span class="note">▼ ヒーロー行クリックで「使い手ランキング」(バトルスコア順)を開きます</span></div>
+        <div class="power-controls" id="powerControls">
+          <button class="filter-btn" data-ex="makky">Makky を除く</button>
+          <span class="note">▼ ヒーロー行クリックで「使い手ランキング」(バトルスコア順)を開きます</span>
+        </div>
       </div>
       <div id="powerBody"></div>
 
@@ -414,10 +421,10 @@ function kdaCls(v){const n=num(v);return n>3.0?'kda-good':n<1.5?'kda-bad':''}
 function wrCell(v){const n=v===null||v===undefined?null:num(v);return `<td class="num cell ${n===null?'':wrCls(n)}">${n===null?'—':fmt1(n)+'%'}</td>`}
 function kdaCell(v){const n=v===null||v===undefined?null:num(v);return `<td class="num cell ${n===null?'':kdaCls(n)}">${n===null?'—':fmt2(n)}</td>`}
 
-const state={filter:'All',sortKey:'rank',sortAsc:false,open:new Set(),focus:'hiyori',powerKey:'rate',powerAsc:false,powerOpen:new Set(),mode:'comp'};
+const state={filter:'All',sortKey:'rank',sortAsc:false,open:new Set(),focus:'hiyori',powerKey:'rate',powerAsc:false,powerOpen:new Set(),mode:'comp',exMakky:false};
 
 /* ランク順ソート用(division階層 + tierは小さいほど上位) */
-const DIV_ORDER=['bronze','silver','gold','platinum','diamond','emerald','master','grandmaster'];
+const DIV_ORDER=['bronze','silver','gold','platinum','emerald','diamond','master','grandmaster'];
 /* 各プレイヤーの「最高ランク」のロール(ランクなしならメインロールを返す) */
 function bestRankOf(p){
   let bestRole=null,bestScore=-1;
@@ -516,7 +523,6 @@ function renderProfile(p){
   const f=state.filter;
   const noteParts=[];
   if(f!=='All')noteParts.push(`${f}ロールの成績`);
-  if(s.wins!=null)noteParts.push(`戦績 ${s.wins}勝 ${s.losses}敗`);
   const note=noteParts.join(' ・ ');
   // 判明しているロールのランクをすべて表示
   const knownRanks=['Tank','Damage','Support'].filter(r=>
@@ -534,7 +540,7 @@ function renderProfile(p){
   const roleBoxes=roleSummaryKeys(p).map(k=>sum(k)).join('');
   const pb=$('#profileBox');
   if(p.namecard){
-    pb.style.backgroundImage=`linear-gradient(rgba(255,255,255,.8),rgba(255,255,255,.9)),url("${p.namecard}")`;
+    pb.style.backgroundImage=`linear-gradient(rgba(255,255,255,.55),rgba(255,255,255,.78)),url("${p.namecard}")`;
     pb.style.backgroundSize='cover';pb.style.backgroundPosition='center';pb.style.backgroundRepeat='no-repeat';
   }else{pb.style.backgroundImage='none';}
   $('#profileBox').innerHTML=`
@@ -553,7 +559,8 @@ function renderProfile(p){
     </div>
     <div class="pf-stats">
       <div class="stat-box"><div class="k">Matches</div><div class="v">${fmtN(s.matches)}</div><div class="s">${f==='All'?'通算':`${f}のみ`}</div></div>
-      <div class="stat-box"><div class="k">Win Rate</div><div class="v" style="color:${s.wr>55?'#16a34a':s.wr<40?'#dc2626':'#111827'}">${fmt1(s.wr)}%</div><div class="s">${s.wins!=null?`${s.wins}勝 / ${s.losses}敗`:'勝敗データなし'}</div></div>
+      <div class="stat-box"><div class="k">Win Rate</div><div class="v" style="color:${s.wr>55?'#16a34a':s.wr<40?'#dc2626':'#111827'}">${fmt1(s.wr)}%</div><div class="s">勝率</div></div>
+      <div class="stat-box"><div class="k">戦績 (W-L)</div><div class="v">${s.wins!=null?`${s.wins} - ${s.losses}`:'—'}</div><div class="s">${s.wins!=null?(f==='All'?'通算':`${f}のみ`):'勝敗データなし'}</div></div>
       <div class="stat-box"><div class="k">KDA</div><div class="v">${fmt2(s.kda)}</div><div class="s">${fmt1(s.elim)} ELIM${s.deaths!=null?` / ${fmt1(s.deaths)} DEATH`:''}</div></div>
       <div class="stat-box"><div class="k">Time</div><div class="v">${fmtTime(s.time)}</div><div class="s">プレイ時間</div></div>
       ${roleBoxes}
@@ -734,6 +741,7 @@ function estRate(h){
 function heroStatRows(){
   const map=new Map();
   for(const p of PLAYERS){
+    if(state.exMakky&&p.id==='makky')continue;
     if(!p.heroes)continue;
     for(const h of p.heroes){
       if(state.filter!=='All'&&h.role!==state.filter)continue;
@@ -764,6 +772,7 @@ function powerName(p){return `<div class="pl-cell"><span class="pl-av ${roleCls(
 function powerUsageRows(slug){
   const rows=[];
   for(const p of PLAYERS){
+    if(state.exMakky&&p.id==='makky')continue;
     const h=p.heroes&&p.heroes.find(x=>x.slug===slug);
     if(!h)continue;
     rows.push({p,h,rate:estRate(h)});
@@ -902,6 +911,14 @@ $('#powerBody').addEventListener('click',e=>{
   if(!tr)return;
   const slug=tr.dataset.hslug;
   if(state.powerOpen.has(slug))state.powerOpen.delete(slug);else state.powerOpen.add(slug);
+  renderPower();
+});
+$('#powerControls').addEventListener('click',e=>{
+  const b=e.target.closest('[data-ex]');
+  if(!b)return;
+  state.exMakky=!state.exMakky;
+  $('#powerControls').querySelectorAll('[data-ex]').forEach(x=>x.classList.toggle('active',state.exMakky));
+  state.powerOpen.clear();
   renderPower();
 });
 

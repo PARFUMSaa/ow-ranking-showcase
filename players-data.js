@@ -1,7 +1,7 @@
 'use strict';
 
 /* 生成データ: update.mjs が自動生成(手編集は上書き) ・ 元データ: OverFast API */
-const LAST_UPDATED_ISO = "2026-09-08T21:58:01.641Z";
+const LAST_UPDATED_ISO = "2026-09-08T22:01:43.693Z";
 /* ライバル・プレイ(コンペティティブ)のみ */
 const PLAYERS_COMP = [
   {
@@ -677,6 +677,202 @@ const PLAYERS_COMP = [
         "g": 1,
         "wr": 0,
         "kda": 2.6
+      }
+    ]
+  },
+  {
+    "id": "makky",
+    "name": "Makky",
+    "tag": "",
+    "endorse": 3,
+    "title": ":3",
+    "avatar": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/53f1a2e4a71661e9686ee4f9fa99b2056d73bb4b4a7a5e4d3ed424e57cd93c2f.png",
+    "namecard": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/4f57d4bae6d479b52d262975c730e1f763123975a3dc08395709d963ea7dd6b9.png",
+    "role": "Support",
+    "ranks": {
+      "Tank": null,
+      "Damage": {
+        "division": "diamond",
+        "tier": 5,
+        "icon": "https://static.playoverwatch.com/images/pages/career/icons/rank/Rank_DiamondTier.bc8c5d6005f916c62c51728087aeb26f4facaa9b.png"
+      },
+      "Support": {
+        "division": "diamond",
+        "tier": 4,
+        "icon": "https://static.playoverwatch.com/images/pages/career/icons/rank/Rank_DiamondTier.bc8c5d6005f916c62c51728087aeb26f4facaa9b.png"
+      }
+    },
+    "rankTier": "Diamond 4",
+    "overall": {
+      "matches": 60,
+      "wins": 33,
+      "losses": 27,
+      "wr": 55,
+      "kda": 2.79,
+      "elim": 16.98,
+      "deaths": 6.32,
+      "dmg": 9136.98,
+      "heal": 1643.22,
+      "time": 37096
+    },
+    "roles": {
+      "Tank": {
+        "g": 2,
+        "w": 1,
+        "l": 1,
+        "time": 1141,
+        "wr": 50,
+        "kda": 5.57,
+        "elim": 18.93,
+        "deaths": 3.68,
+        "dmg": 15204.03,
+        "heal": 261.88
+      },
+      "Damage": {
+        "g": 49,
+        "w": 28,
+        "l": 21,
+        "time": 29157,
+        "wr": 57.14,
+        "kda": 2.86,
+        "elim": 18.25,
+        "deaths": 6.42,
+        "dmg": 9831.05,
+        "heal": 123.68
+      },
+      "Support": {
+        "g": 9,
+        "w": 4,
+        "l": 5,
+        "time": 6798,
+        "wr": 44.44,
+        "kda": 2.21,
+        "elim": 11.21,
+        "deaths": 6.35,
+        "dmg": 5141.75,
+        "heal": 8392.5
+      }
+    },
+    "heroes": [
+      {
+        "slug": "sojourn",
+        "n": "Sojourn",
+        "role": "Damage",
+        "g": 11,
+        "wr": 63.64,
+        "kda": 2.89
+      },
+      {
+        "slug": "tracer",
+        "n": "Tracer",
+        "role": "Damage",
+        "g": 11,
+        "wr": 54.55,
+        "kda": 2.86
+      },
+      {
+        "slug": "genji",
+        "n": "Genji",
+        "role": "Damage",
+        "g": 9,
+        "wr": 66.67,
+        "kda": 2.73
+      },
+      {
+        "slug": "cassidy",
+        "n": "Cassidy",
+        "role": "Damage",
+        "g": 6,
+        "wr": 50,
+        "kda": 3.16
+      },
+      {
+        "slug": "freja",
+        "n": "Freja",
+        "role": "Damage",
+        "g": 6,
+        "wr": 50,
+        "kda": 2.57
+      },
+      {
+        "slug": "moira",
+        "n": "Moira",
+        "role": "Support",
+        "g": 3,
+        "wr": 66.67,
+        "kda": 2.88
+      },
+      {
+        "slug": "ana",
+        "n": "Ana",
+        "role": "Support",
+        "g": 2,
+        "wr": 0,
+        "kda": 1.7
+      },
+      {
+        "slug": "echo",
+        "n": "Echo",
+        "role": "Damage",
+        "g": 2,
+        "wr": 50,
+        "kda": 4.33
+      },
+      {
+        "slug": "illari",
+        "n": "Illari",
+        "role": "Support",
+        "g": 2,
+        "wr": 50,
+        "kda": 3.45
+      },
+      {
+        "slug": "kiriko",
+        "n": "Kiriko",
+        "role": "Support",
+        "g": 2,
+        "wr": 50,
+        "kda": 1.39
+      },
+      {
+        "slug": "pharah",
+        "n": "Pharah",
+        "role": "Damage",
+        "g": 2,
+        "wr": 50,
+        "kda": 2.42
+      },
+      {
+        "slug": "ashe",
+        "n": "Ashe",
+        "role": "Damage",
+        "g": 1,
+        "wr": 0,
+        "kda": 2.64
+      },
+      {
+        "slug": "ramattra",
+        "n": "Ramattra",
+        "role": "Tank",
+        "g": 1,
+        "wr": 0,
+        "kda": 3.2
+      },
+      {
+        "slug": "reaper",
+        "n": "Reaper",
+        "role": "Damage",
+        "g": 1,
+        "wr": 100,
+        "kda": 1.91
+      },
+      {
+        "slug": "sigma",
+        "n": "Sigma",
+        "role": "Tank",
+        "g": 1,
+        "wr": 100,
+        "kda": 23
       }
     ]
   }
@@ -2032,6 +2228,482 @@ const PLAYERS_ALL = [
         "g": 1,
         "wr": 0,
         "kda": 0.55
+      }
+    ]
+  },
+  {
+    "id": "makky",
+    "name": "Makky",
+    "tag": "",
+    "endorse": 3,
+    "title": ":3",
+    "avatar": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/53f1a2e4a71661e9686ee4f9fa99b2056d73bb4b4a7a5e4d3ed424e57cd93c2f.png",
+    "namecard": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/4f57d4bae6d479b52d262975c730e1f763123975a3dc08395709d963ea7dd6b9.png",
+    "role": "Support",
+    "ranks": {
+      "Tank": null,
+      "Damage": {
+        "division": "diamond",
+        "tier": 5,
+        "icon": "https://static.playoverwatch.com/images/pages/career/icons/rank/Rank_DiamondTier.bc8c5d6005f916c62c51728087aeb26f4facaa9b.png"
+      },
+      "Support": {
+        "division": "diamond",
+        "tier": 4,
+        "icon": "https://static.playoverwatch.com/images/pages/career/icons/rank/Rank_DiamondTier.bc8c5d6005f916c62c51728087aeb26f4facaa9b.png"
+      }
+    },
+    "rankTier": "Diamond 4",
+    "overall": {
+      "matches": 9986,
+      "wins": 5200,
+      "losses": 4786,
+      "wr": 52.07,
+      "kda": 3.21,
+      "elim": 15.03,
+      "deaths": 5.53,
+      "dmg": 7777.26,
+      "heal": 4226.34,
+      "time": 5225043
+    },
+    "roles": {
+      "Tank": {
+        "g": 1433,
+        "w": 763,
+        "l": 670,
+        "time": 759981,
+        "wr": 53.24,
+        "kda": 3.92,
+        "elim": 19.76,
+        "deaths": 5.42,
+        "dmg": 12138.37,
+        "heal": 592.62
+      },
+      "Damage": {
+        "g": 3957,
+        "w": 2060,
+        "l": 1897,
+        "time": 2056345,
+        "wr": 52.06,
+        "kda": 2.93,
+        "elim": 18.46,
+        "deaths": 6.35,
+        "dmg": 9927.93,
+        "heal": 77.95
+      },
+      "Support": {
+        "g": 4596,
+        "w": 2377,
+        "l": 2219,
+        "time": 2408717,
+        "wr": 51.72,
+        "kda": 3.26,
+        "elim": 10.61,
+        "deaths": 4.88,
+        "dmg": 4565.24,
+        "heal": 8914.34
+      }
+    },
+    "heroes": [
+      {
+        "slug": "ana",
+        "n": "Ana",
+        "role": "Support",
+        "g": 2399,
+        "wr": 52.86,
+        "kda": 3.51
+      },
+      {
+        "slug": "genji",
+        "n": "Genji",
+        "role": "Damage",
+        "g": 1515,
+        "wr": 55.31,
+        "kda": 3.26
+      },
+      {
+        "slug": "kiriko",
+        "n": "Kiriko",
+        "role": "Support",
+        "g": 769,
+        "wr": 49.93,
+        "kda": 2.88
+      },
+      {
+        "slug": "tracer",
+        "n": "Tracer",
+        "role": "Damage",
+        "g": 500,
+        "wr": 51,
+        "kda": 2.82
+      },
+      {
+        "slug": "sojourn",
+        "n": "Sojourn",
+        "role": "Damage",
+        "g": 342,
+        "wr": 48.83,
+        "kda": 3.29
+      },
+      {
+        "slug": "brigitte",
+        "n": "Brigitte",
+        "role": "Support",
+        "g": 321,
+        "wr": 49.84,
+        "kda": 2.94
+      },
+      {
+        "slug": "ashe",
+        "n": "Ashe",
+        "role": "Damage",
+        "g": 305,
+        "wr": 52.46,
+        "kda": 2.78
+      },
+      {
+        "slug": "lucio",
+        "n": "Lúcio",
+        "role": "Support",
+        "g": 278,
+        "wr": 51.44,
+        "kda": 3.63
+      },
+      {
+        "slug": "cassidy",
+        "n": "Cassidy",
+        "role": "Damage",
+        "g": 274,
+        "wr": 44.89,
+        "kda": 2.57
+      },
+      {
+        "slug": "doomfist",
+        "n": "Doomfist",
+        "role": "Tank",
+        "g": 272,
+        "wr": 51.1,
+        "kda": 2.92
+      },
+      {
+        "slug": "sigma",
+        "n": "Sigma",
+        "role": "Tank",
+        "g": 182,
+        "wr": 57.14,
+        "kda": 4.98
+      },
+      {
+        "slug": "moira",
+        "n": "Moira",
+        "role": "Support",
+        "g": 180,
+        "wr": 58.33,
+        "kda": 3.61
+      },
+      {
+        "slug": "reinhardt",
+        "n": "Reinhardt",
+        "role": "Tank",
+        "g": 159,
+        "wr": 56.6,
+        "kda": 3.23
+      },
+      {
+        "slug": "widowmaker",
+        "n": "Widowmaker",
+        "role": "Damage",
+        "g": 154,
+        "wr": 44.81,
+        "kda": 2.02
+      },
+      {
+        "slug": "pharah",
+        "n": "Pharah",
+        "role": "Damage",
+        "g": 149,
+        "wr": 53.02,
+        "kda": 2.92
+      },
+      {
+        "slug": "baptiste",
+        "n": "Baptiste",
+        "role": "Support",
+        "g": 148,
+        "wr": 54.05,
+        "kda": 2.5
+      },
+      {
+        "slug": "winston",
+        "n": "Winston",
+        "role": "Tank",
+        "g": 142,
+        "wr": 48.59,
+        "kda": 3.76
+      },
+      {
+        "slug": "zenyatta",
+        "n": "Zenyatta",
+        "role": "Support",
+        "g": 133,
+        "wr": 53.38,
+        "kda": 3.81
+      },
+      {
+        "slug": "orisa",
+        "n": "Orisa",
+        "role": "Tank",
+        "g": 122,
+        "wr": 52.46,
+        "kda": 4.22
+      },
+      {
+        "slug": "ramattra",
+        "n": "Ramattra",
+        "role": "Tank",
+        "g": 112,
+        "wr": 62.5,
+        "kda": 4.75
+      },
+      {
+        "slug": "juno",
+        "n": "Juno",
+        "role": "Support",
+        "g": 111,
+        "wr": 47.75,
+        "kda": 2.97
+      },
+      {
+        "slug": "echo",
+        "n": "Echo",
+        "role": "Damage",
+        "g": 110,
+        "wr": 54.55,
+        "kda": 2.65
+      },
+      {
+        "slug": "hanzo",
+        "n": "Hanzo",
+        "role": "Damage",
+        "g": 108,
+        "wr": 48.15,
+        "kda": 2.19
+      },
+      {
+        "slug": "freja",
+        "n": "Freja",
+        "role": "Damage",
+        "g": 100,
+        "wr": 50,
+        "kda": 3.07
+      },
+      {
+        "slug": "illari",
+        "n": "Illari",
+        "role": "Support",
+        "g": 96,
+        "wr": 52.08,
+        "kda": 3.42
+      },
+      {
+        "slug": "zarya",
+        "n": "Zarya",
+        "role": "Tank",
+        "g": 88,
+        "wr": 50,
+        "kda": 4.74
+      },
+      {
+        "slug": "wrecking-ball",
+        "n": "Wrecking Ball",
+        "role": "Tank",
+        "g": 85,
+        "wr": 42.35,
+        "kda": 2.72
+      },
+      {
+        "slug": "dva",
+        "n": "D.Va",
+        "role": "Tank",
+        "g": 82,
+        "wr": 47.56,
+        "kda": 5.45
+      },
+      {
+        "slug": "junker-queen",
+        "n": "Junker Queen",
+        "role": "Tank",
+        "g": 73,
+        "wr": 65.75,
+        "kda": 4.43
+      },
+      {
+        "slug": "symmetra",
+        "n": "Symmetra",
+        "role": "Damage",
+        "g": 70,
+        "wr": 60,
+        "kda": 2.59
+      },
+      {
+        "slug": "mercy",
+        "n": "Mercy",
+        "role": "Support",
+        "g": 67,
+        "wr": 40.3,
+        "kda": 1.03
+      },
+      {
+        "slug": "junkrat",
+        "n": "Junkrat",
+        "role": "Damage",
+        "g": 65,
+        "wr": 46.15,
+        "kda": 2.37
+      },
+      {
+        "slug": "wuyang",
+        "n": "Wuyang",
+        "role": "Support",
+        "g": 65,
+        "wr": 36.92,
+        "kda": 2.56
+      },
+      {
+        "slug": "reaper",
+        "n": "Reaper",
+        "role": "Damage",
+        "g": 61,
+        "wr": 55.74,
+        "kda": 2.5
+      },
+      {
+        "slug": "sombra",
+        "n": "Sombra",
+        "role": "Damage",
+        "g": 59,
+        "wr": 44.07,
+        "kda": 3.76
+      },
+      {
+        "slug": "roadhog",
+        "n": "Roadhog",
+        "role": "Tank",
+        "g": 46,
+        "wr": 45.65,
+        "kda": 4.65
+      },
+      {
+        "slug": "mauga",
+        "n": "Mauga",
+        "role": "Tank",
+        "g": 41,
+        "wr": 63.41,
+        "kda": 6.08
+      },
+      {
+        "slug": "bastion",
+        "n": "Bastion",
+        "role": "Damage",
+        "g": 33,
+        "wr": 51.52,
+        "kda": 1.98
+      },
+      {
+        "slug": "hazard",
+        "n": "Hazard",
+        "role": "Tank",
+        "g": 28,
+        "wr": 46.43,
+        "kda": 3.87
+      },
+      {
+        "slug": "venture",
+        "n": "Venture",
+        "role": "Damage",
+        "g": 26,
+        "wr": 65.38,
+        "kda": 2.78
+      },
+      {
+        "slug": "torbjorn",
+        "n": "Torbjörn",
+        "role": "Damage",
+        "g": 22,
+        "wr": 59.09,
+        "kda": 2.65
+      },
+      {
+        "slug": "emre",
+        "n": "Emre",
+        "role": "Damage",
+        "g": 21,
+        "wr": 47.62,
+        "kda": 3.74
+      },
+      {
+        "slug": "mei",
+        "n": "Mei",
+        "role": "Damage",
+        "g": 20,
+        "wr": 45,
+        "kda": 3.27
+      },
+      {
+        "slug": "soldier-76",
+        "n": "Soldier: 76",
+        "role": "Damage",
+        "g": 18,
+        "wr": 33.33,
+        "kda": 1.14
+      },
+      {
+        "slug": "mizuki",
+        "n": "Mizuki",
+        "role": "Support",
+        "g": 17,
+        "wr": 35.29,
+        "kda": 1.57
+      },
+      {
+        "slug": "lifeweaver",
+        "n": "Lifeweaver",
+        "role": "Support",
+        "g": 10,
+        "wr": 50,
+        "kda": 1.15
+      },
+      {
+        "slug": "anran",
+        "n": "Anran",
+        "role": "Damage",
+        "g": 4,
+        "wr": 75,
+        "kda": 2.29
+      },
+      {
+        "slug": "jetpack-cat",
+        "n": "Jetpack Cat",
+        "role": "Support",
+        "g": 2,
+        "wr": 50,
+        "kda": 2
+      },
+      {
+        "slug": "domina",
+        "n": "Domina",
+        "role": "Tank",
+        "g": 1,
+        "wr": 0,
+        "kda": 1.25
+      },
+      {
+        "slug": "vendetta",
+        "n": "Vendetta",
+        "role": "Damage",
+        "g": 1,
+        "wr": 0,
+        "kda": 1.3
       }
     ]
   }

@@ -20,7 +20,7 @@ const API = 'https://overfast-api.tekrop.fr';
 const UA = 'ow-friend-rankings-updater/2.0 (personal use)';
 const DRY = process.argv.includes('--dry');
 const PLAYER_ORDER = ['Tank', 'Damage', 'Support'];
-const RANK_ORDER = ['bronze', 'silver', 'gold', 'platinum', 'diamond', 'emerald', 'master', 'grandmaster'];
+const RANK_ORDER = ['bronze', 'silver', 'gold', 'platinum', 'emerald', 'diamond', 'master', 'grandmaster'];
 
 const cfg = JSON.parse(readFileSync(resolve(ROOT, 'players.json'), 'utf8'));
 
@@ -76,8 +76,10 @@ function loadPrevious() {
 const PREV = loadPrevious();
 
 /* ---------------- 検索・取得 ---------------- */
-async function resolvePlayerId(searchName) {
-  const data = await apiGet(`${API}/players?name=${encodeURIComponent(searchName)}&limit=10`);
+/* player_id 直接指定 or 名前検索で解決 */
+async function resolvePlayerId(cfgItem) {
+  if (cfgItem.playerId) return [cfgItem.playerId];
+  const data = await apiGet(`${API}/players?name=${encodeURIComponent(cfgItem.search)}&limit=10`);
   const list = (data && data.results) || [];
   return list.map((x) => x.player_id).filter(Boolean);
 }
@@ -205,8 +207,8 @@ function toPlayerStats(merged) {
 
 /* ---------------- 1プレイヤー ---------------- */
 async function fetchPlayer(cfgItem) {
-  const ids = await resolvePlayerId(cfgItem.search);
-  if (!ids || !ids.length) throw new Error(`検索結果なし: ${cfgItem.search}`);
+  const ids = await resolvePlayerId(cfgItem);
+  if (!ids || !ids.length) throw new Error(`検索結果なし: ${cfgItem.search || cfgItem.id}`);
   let lastErr = null;
   for (const pid of ids) {
     const summary = await apiGet(`${API}/players/${encodeURIComponent(pid)}/summary`);
@@ -232,7 +234,7 @@ function buildPlayer(cfgItem, summary, compRaw, qpRaw) {
 
   const identity = {
     id: cfgItem.id,
-    name: summary.username || cfgItem.search,
+    name: summary.username || cfgItem.name || cfgItem.search || cfgItem.id,
     tag: cfgItem.tag || '',
     endorse: summary.endorsement && summary.endorsement.level != null ? summary.endorsement.level : null,
     title: summary.title || null,
@@ -276,7 +278,7 @@ for (const item of cfg.players) {
     COMP_OUT.push(both.comp);
     ALL_OUT.push(both.all);
     const c = both.comp, a = both.all;
-    console.log(`  ✓ ${item.search}: comp ${c.overall.matches}戦(WR${c.overall.wr}%) / all ${a.overall.matches}戦(WR${a.overall.wr}%) / メイン:${c.role} ${c.rankTier || ''}`);
+    console.log(`  ✓ ${both.comp.name}: comp ${c.overall.matches}戦(WR${c.overall.wr}%) / all ${a.overall.matches}戦(WR${a.overall.wr}%) / メイン:${c.role} ${c.rankTier || ''}`);
   } catch (e) {
     console.error(`  ✗ ${item.search}: ${e.message}`);
     if (prev) {
