@@ -319,18 +319,57 @@ details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px
   details.pformula{padding:0 12px}
   .pf-body pre{font-size:11.5px;padding:7px 9px}
   .scroll-x{border-radius:8px;scrollbar-width:thin}
-  /* ランキング表: 先頭2列(順位・プレイヤー)を固定して横スクロールを見やすく */
-  table.rank tbody td:first-child,
-  table.rank tbody td:nth-child(2),
-  table.rank thead th:first-child,
-  table.rank thead th:nth-child(2){position:sticky}
-  table.rank thead th:first-child{left:0;z-index:8}
-  table.rank thead th:nth-child(2){left:44px;z-index:8}
-  table.rank tbody td:first-child{left:0;z-index:4;background:#fff;box-shadow:2px 0 3px rgba(16,24,40,.05)}
-  table.rank tbody td:nth-child(2){left:44px;z-index:4;background:#fff}
-  table.rank tbody tr.row:hover td:first-child{background:#f9fafb}
-  table.rank tbody tr.row.open td:first-child{background:#f6f8ff}
-  table.rank tbody tr.row.open td:nth-child(2){background:#f6f8ff}
+}
+/* 狭い画面では横スクロールをやめ、1行=カード表示にして全項目を縦に見せる */
+@media(max-width:640px){
+  .scroll-x{border:0;box-shadow:none;border-radius:0;background:transparent}
+  #rankTable,#powerTable{min-width:0;font-size:12px}
+  #rankTable thead,#powerTable thead{display:none}
+  #rankTable tbody,#powerTable tbody{display:block}
+  #rankTable tr.row,#powerTable tr.row{
+    display:block;position:relative;cursor:pointer;border:1px solid var(--border);
+    border-radius:12px;background:#fff;box-shadow:0 1px 2px rgba(16,24,40,.05);
+    padding:9px 12px;margin:0 0 9px;
+  }
+  #rankTable tr.row.open,#powerTable tr.row.open{background:#f6f8ff;border-color:#2563eb55}
+  /* セルを縦積みラベル行に変換 */
+  #rankTable tr.row td,#powerTable tr.row td{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    border:0;padding:2px 0;text-align:left;white-space:nowrap;
+    font-variant-numeric:tabular-nums;
+  }
+  /* ラベル */
+  #rankTable tr.row td[data-label]:not([data-label=""])::before,
+  #powerTable tr.row td[data-label]:not([data-label=""])::before{
+    content:attr(data-label);
+    font-size:10px;font-weight:800;color:#64748b;letter-spacing:.04em;flex:0 0 auto;
+  }
+  /* 順位バッジは左上に小さく固定 */
+  #rankTable tr.row td.r1,#powerTable tr.row td.r1{display:flex;flex:0 0 auto;justify-content:flex-start}
+  #rankTable tr.row td.r1{position:absolute;top:8px;right:10px;border:0}
+  #powerTable tr.row td.r1{position:absolute;top:8px;right:10px;border:0}
+  #rankTable tr.row td.r1::before,#powerTable tr.row td.r1::before{content:none}
+  #rankTable tr.row td.r1 .medal,#powerTable tr.row td.r1 .medal{margin:0}
+  /* 名前・ヒーロー行は大きく左寄せ(ラベルなし) */
+  #rankTable tr.row td.r2,#powerTable tr.row td.r2{
+    display:block;font-weight:800;font-size:15px;padding:0 26px 4px 0;white-space:normal;
+  }
+  #powerTable tr.row td.r2 .hl{font-size:14px;flex-wrap:wrap;row-gap:2px}
+  #powerTable tr.row td.r2 .hl .chev{margin-left:auto}
+  /* カラー背景(WR/KDA等)は値側の文字色だけ残す */
+  #rankTable tr.row td.wr-good,#rankTable tr.row td.wr-bad,
+  #rankTable tr.row td.kda-good,#rankTable tr.row td.kda-bad{background:none;padding-left:0}
+  #rankTable tr.row td.wr-good{color:#166534;font-weight:700}
+  #rankTable tr.row td.wr-bad{color:#991b1b;font-weight:700}
+  #rankTable tr.row td.kda-good{color:#1e40af;font-weight:700}
+  #rankTable tr.row td.kda-bad{color:#9a3412;font-weight:700}
+  /* メインヒーロー列は複数行を許容 */
+  #rankTable tr.row td[data-label="メインヒーロー"]{display:block;white-space:normal;padding-top:4px}
+  #rankTable tr.row td[data-label="メインヒーロー"] .heroes-cell{margin-left:0}
+  /* 詳細(アコーディオン) */
+  #rankTable tr.detail-row td,#powerTable tr.detail-row td{display:block;border:0;padding:0!important}
+  #rankTable tr.detail-row,#powerTable tr.detail-row{display:block;margin:-6px 0 10px}
+  .acc-inner{padding:8px 6px 12px}
 }
 @media(max-width:520px){
   body{font-size:13px}
@@ -611,8 +650,8 @@ function roleIcon(r){
 
 function wrCls(v){const n=num(v);return n>55?'wr-good':n<40?'wr-bad':''}
 function kdaCls(v){const n=num(v);return n>3.0?'kda-good':n<1.5?'kda-bad':''}
-function wrCell(v){const n=v===null||v===undefined?null:num(v);return `<td class="num cell ${n===null?'':wrCls(n)}">${n===null?'—':fmt1(n)+'%'}</td>`}
-function kdaCell(v){const n=v===null||v===undefined?null:num(v);return `<td class="num cell ${n===null?'':kdaCls(n)}">${n===null?'—':fmt2(n)}</td>`}
+function wrCell(v,label){const n=v===null||v===undefined?null:num(v);return `<td class="num cell ${n===null?'':wrCls(n)}" ${label?`data-label="${label}"`:''}>${n===null?'—':fmt1(n)+'%'}</td>`}
+function kdaCell(v,label){const n=v===null||v===undefined?null:num(v);return `<td class="num cell ${n===null?'':kdaCls(n)}" ${label?`data-label="${label}"`:''}>${n===null?'—':fmt2(n)}</td>`}
 
 const state={filter:'All',sortKey:'rank',sortAsc:false,open:new Set(),focus:'hiyori',powerKey:'rate',powerAsc:false,powerOpen:new Set(),mode:'all',exMakky:false};
 
@@ -901,18 +940,18 @@ function renderTable(){
     const open=state.open.has(p.id)?'open':'';
     return `
       <tr class="row ${open}" data-id="${p.id}">
-        <td><span class="medal ${medal(i)}">${i+1}</span></td>
-        <td>${playerCell(p,i)}</td>
-        <td style="text-align:left"><span class="role-chip ${roleCls(p.role)}">${roleIcon(p.role)} ${p.role}</span></td>
-        <td style="text-align:left">${rankChip(p,roleKeyOf(p))}</td>
-        <td>${heroesCell(p)}</td>
-        <td class="num">${fmtN(o.matches)}</td>
-        ${wrCell(o.wr)}
-        ${kdaCell(o.kda)}
-        <td class="num cell">${fmt1(o.elim)}</td>
-        <td class="num cell">${fmtN(o.dmg)}</td>
-        <td class="num cell">${fmtN(o.heal)}</td>
-        <td class="num" ${o.time!=null?`title="${Math.floor(o.time/3600)}時間${Math.floor((o.time%3600)/60)}分"`:''}>${fmtTime(o.time)}</td>
+        <td class="r1" data-label="順位"><span class="medal ${medal(i)}">${i+1}</span></td>
+        <td class="r2" data-label="">${playerCell(p,i)}</td>
+        <td data-label="ロール" style="text-align:left"><span class="role-chip ${roleCls(p.role)}">${roleIcon(p.role)} ${p.role}</span></td>
+        <td data-label="ランク" style="text-align:left">${rankChip(p,roleKeyOf(p))}</td>
+        <td data-label="メインヒーロー">${heroesCell(p)}</td>
+        <td class="num" data-label="試合">${fmtN(o.matches)}</td>
+        ${wrCell(o.wr,'WR')}
+        ${kdaCell(o.kda,'KDA')}
+        <td class="num cell" data-label="ELIM/10">${fmt1(o.elim)}</td>
+        <td class="num cell" data-label="DMG/10">${fmtN(o.dmg)}</td>
+        <td class="num cell" data-label="HEAL/10">${fmtN(o.heal)}</td>
+        <td class="num" data-label="プレイ時間" ${o.time!=null?`title="${Math.floor(o.time/3600)}時間${Math.floor((o.time%3600)/60)}分"`:''}>${fmtTime(o.time)}</td>
       </tr>
       ${open?`<tr class="detail-row" data-detail="${p.id}"><td colspan="12">${accHtml(p)}</td></tr>`:''}`;
   }).join('');
@@ -1027,18 +1066,18 @@ function renderPower() {
     const isOpen = open.has(r.slug);
     return `
       <tr class="row ${isOpen ? 'open' : ''}" data-hslug="${r.slug}">
-        <td><span class="medal ${i === 0 ? 'm1' : i === 1 ? 'm2' : i === 2 ? 'm3' : 'n'}">${i + 1}</span></td>
-        <td><div class="hl">${heroThumb(nm, 34, r.role, r.slug)}<span class="hn" style="font-size:14px">${esc(nm)}</span>${easyBadge(r.slug)}
+        <td class="r1" data-label="順位"><span class="medal ${i === 0 ? 'm1' : i === 1 ? 'm2' : i === 2 ? 'm3' : 'n'}">${i + 1}</span></td>
+        <td class="r2" data-label=""><div class="hl">${heroThumb(nm, 34, r.role, r.slug)}<span class="hn" style="font-size:14px">${esc(nm)}</span>${easyBadge(r.slug)}
           <span class="role-chip ${roleCls(r.role)}" style="margin-left:6px">${roleIcon(r.role)} ${esc(r.role)}</span>
           <span class="chev">▼</span></div></td>
-        <td>${powerName(r.champ.p)}</td>
-        <td class="big-sr">${Math.round(r.rate * 100) / 100}</td>
-        <td class="num">${r.champ.h ? fmtN(r.champ.h.g) : '—'}</td>
+        <td data-label="使い手トップ">${powerName(r.champ.p)}</td>
+        <td class="big-sr" data-label="Power Rating">${Math.round(r.rate * 100) / 100}</td>
+        <td class="num" data-label="試合">${r.champ.h ? fmtN(r.champ.h.g) : '—'}</td>
       </tr>
       ${isOpen ? `<tr class="detail-row"><td colspan="5">${usageDetailV6(r.slug)}</td></tr>` : ''}`;
   }).join('');
   body.innerHTML = `
-    <div class="scroll-x" style="border-radius:10px"><table class="rank">
+    <div class="scroll-x" style="border-radius:10px"><table class="rank" id="powerTable">
       <thead><tr>
         <th style="width:44px">順位</th>
         <th style="width:300px">Hero</th>
