@@ -2,15 +2,15 @@
 /**
  * プレイヤーデータ自動更新スクリプト v3(依存ゼロ / Node 18+)
  * - モード別: ライバル(competitive) / 全モード(= quickplay + competitive)
- * - Power Rating 設計: 6要素(重み付きバトルスコア) × ランク係数
- *   ④⑤⑥の偏差値は「同ヒーローを使う全プレイヤー集団」内で計算
+ * - Power Rating 設計: 5要素(重み付きバトルスコア) × ランク係数
+ *   ランク係数はブロンズ(指数0)基準。アンランクはブロンズと同値(1.0)
  */
 
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
-import { detailOf, scoreTier, getStat } from './power-v6.mjs';
+import { detailOf, getStat } from './power-v6.mjs';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const API = 'https://overfast-api.tekrop.fr';
@@ -18,10 +18,31 @@ const UA = 'ow-friend-rankings-updater/3.1 (personal use)';
 const DRY = process.argv.includes('--dry');
 const PLAYER_ORDER = ['Tank', 'Damage', 'Support'];
 const RANK_ORDER = ['bronze', 'silver', 'gold', 'platinum', 'emerald', 'diamond', 'master', 'grandmaster'];
-const EXP_BY_DIV = { bronze: -3, silver: -2, gold: -1, platinum: 0, emerald: 1, diamond: 2, master: 3, grandmaster: 4 };
+const EXP_BY_DIV = { bronze: 0, silver: 1, gold: 2, platinum: 3, emerald: 4, diamond: 5, master: 6, grandmaster: 7 };
 const RANK_BASE = 1.10; // ランク1段あたりの伸び(要調整)
-const UNRANKED_COEF = 0.85; // ランク未設定はプラチナ基準にしない
+const UNRANKED_COEF = 1.0; // アンランクはブロンズ(指数0)と同値
 
+/* 試合数係数(±15%に弱めた緩やかな信頼度補正): 25試合で1.0 */
+const MATCH_G_REF = 25;      // この試合数を中央(係数1.0)とする
+const MATCH_SLOPE = 0.06;    // log2 1段あたりの増分
+const MATCH_MIN = 0.85;
+const MATCH_MAX = 1.15;
+
+/* 簡単キャラ用: 試合数を「ほんの少し」だけ考慮する緩い係数(25試合=1.0、0.92〜1.08) */
+const EASY_MATCH_SLOPE = 0.03;
+const EASY_MATCH_MIN = 0.92;
+const EASY_MATCH_MAX = 1.08;
+
+/* だれが使っても高成績になりやすい「簡単・強いキャラ」: 全プレイヤーの最終スコアに×1.25 */
+const EASY_HERO_BONUS = 1.25;
+const EASY_HEROES = new Set([
+  // Tank
+  'mauga', 'zarya', 'sigma', 'ramattra',
+  // Damage
+  'reaper', 'anran', 'bastion', 'sombra',
+  // Support
+  'moira'
+]);
 const cfg = JSON.parse(readFileSync(resolve(ROOT, 'players.json'), 'utf8'));
 
 /* ---------------- utils ---------------- */
@@ -82,13 +103,20 @@ async function resolvePlayerId(cfgItem) {
   return list.map((x) => x.player_id).filter(Boolean);
 }
 function pickPlatform(summary) { const c = summary.competitive || {}; return c.pc || c.console || null; }
-function normalizeRanks(summary) {
+function normalizeRanks(summary, assumeRank) {
   const ranks = { Tank: null, Damage: null, Support: null };
   const plat = pickPlatform(summary);
-  if (!plat) return ranks;
-  for (const role of PLAYER_ORDER) {
-    const r = plat[role.toLowerCase()];
-    if (r && r.division) ranks[role] = { division: r.division, tier: r.tier ?? 0, icon: r.rank_icon || '' };
+  if (plat) {
+    for (const role of PLAYER_ORDER) {
+      const r = plat[role.toLowerCase()];
+      if (r && r.division) ranks[role] = { division: r.division, tier: r.tier ?? 0, icon: r.rank_icon || '' };
+    }
+  }
+  // 全ロールがアンランクのとき、設定された推定ランク(例: プラチナ5)を全ロールへ適用
+  if (assumeRank && assumeRank.division && !ranks.Tank && !ranks.Damage && !ranks.Support) {
+    for (const role of PLAYER_ORDER) {
+      ranks[role] = { division: String(assumeRank.division).toLowerCase(), tier: Number(assumeRank.tier) || 1, icon: '', assumed: true };
+    }
   }
   return ranks;
 }
@@ -181,7 +209,7 @@ function toPlayerStats(merged) {
   };
 }
 
-/* ---------------- Power Rating(6要素 × ランク係数) ---------------- */
+/* ---------------- Power Rating(5要素 × ランク係数) ---------------- */
 function metricOf(hd) {
   const gs = (cat, key) => getStat(hd, cat, key);
   const g = gs('game', 'games_played');
@@ -300,11 +328,86 @@ function buildDatasetStats(records, modeKey) {
   return out;
 }
 function coefficientFor(rank) {
-  if (!rank || !rank.division) return UNRANKED_COEF; // ランク未設定は控えめに
+  if (!rank || !rank.division) return UNRANKED_COEF; // アンランク=ブロンズ同値
   const exp = EXP_BY_DIV[String(rank.division).toLowerCase()];
   if (exp === undefined) return UNRANKED_COEF;
   return Math.pow(RANK_BASE, exp);
 }
+function effectiveRank(rec, roleKey) {
+  // ロール別ランクが無い(アンランク)場合、プレイヤー設定の rankFallback(例: Damage)があればそれで代用
+  const own = rec.ranks[roleKey] || null;
+  if (own && own.division) return own;
+  const fb = rec.rankFallback;
+  if (fb && rec.ranks[fb] && rec.ranks[fb].division) return rec.ranks[fb];
+  return null; // 全部アンランク → UNRANKED_COEF
+}
+/* 簡単・強いキャラは「誰が使っても強い=プレイヤー間の実力差が出にくい」ため、
+   キャラ内の最終スコア幅を12以内に線形圧縮する(中央基準で全員を中間へ寄せる)。
+   ※ Makky はレベルが違うので圧縮対象から除外する */
+const COMPRESS_EXCLUDE_IDS = ['makky'];
+function compressEasySpreads(entries) {
+  if (!Array.isArray(entries)) return;
+  const groups = new Map(); // slug -> [{id, bs, slug, v}]
+  for (const it of entries) {
+    const bs = it && it.bs;
+    if (!bs) continue;
+    const id = it && it.id;
+    if (COMPRESS_EXCLUDE_IDS.includes(id)) continue; // 除外プレイヤーは圧縮しない
+    for (const slug of Object.keys(bs)) {
+      if (!EASY_HEROES.has(slug)) continue;
+      const entry = bs[slug];
+      const v = entry && entry.finalScore;
+      if (typeof v !== 'number') continue;
+      if (!groups.has(slug)) groups.set(slug, []);
+      groups.get(slug).push({ bs, slug, v });
+    }
+  }
+  for (const [, arr] of groups) {
+    if (arr.length < 2) continue;
+    let mn = Infinity, mx = -Infinity;
+    for (const x of arr) { if (x.v < mn) mn = x.v; if (x.v > mx) mx = x.v; }
+    if (mx - mn <= 12.0001) continue;
+    const mid = (mn + mx) / 2;
+    const k = 12 / (mx - mn);
+    for (const x of arr) {
+      x.bs[x.slug].finalScore = r2(mid + (x.v - mid) * k); // ← ヒーローエントリへ代入する
+    }
+  }
+}
+
+/* Makky(全モード)のヒーローレート: 最上位はそのまま、最下位が90になるよう線形に底上げ
+   (Makky内のレート差が大きすぎるため。順位は不変) */
+const MAKKY_FLOOR = 90;
+function liftMakkyFloor(entries) {
+  if (!Array.isArray(entries)) return;
+  let mn = Infinity, mx = -Infinity;
+  for (const it of entries) {
+    const bs = it && it.bs;
+    if (!bs) continue;
+    if (it.id !== 'makky') continue; // Makkyのみ対象
+    for (const slug of Object.keys(bs)) {
+      const v = bs[slug] && bs[slug].finalScore;
+      if (typeof v !== 'number') continue;
+      if (v < mn) mn = v;
+      if (v > mx) mx = v;
+    }
+  }
+  if (!isFinite(mn) || !isFinite(mx) || mx <= mn) return;
+  if (mn >= MAKKY_FLOOR) return; // すでに下駄を履いている
+  // [mn, mx] → [MAKKY_FLOOR, mx] の線形写像
+  const k = (mx - MAKKY_FLOOR) / (mx - mn);
+  for (const it of entries) {
+    const bs = it && it.bs;
+    if (!bs) continue;
+    if (it.id !== 'makky') continue;
+    for (const slug of Object.keys(bs)) {
+      const e = bs[slug];
+      if (!e || typeof e.finalScore !== 'number') continue;
+      e.finalScore = r2(MAKKY_FLOOR + (e.finalScore - mn) * k);
+    }
+  }
+}
+
 function playerScores(rec, stats, modeKey) {
   const mm = rec.metrics[modeKey] || {};
   const dm = rec.dets[modeKey] || {};
@@ -314,7 +417,8 @@ function playerScores(rec, stats, modeKey) {
     const role = META.role[slug];
     if (!role) continue;
     const roleKey = role.charAt(0).toUpperCase() + role.slice(1);
-    const rank = rec.ranks[roleKey] || null;
+    // アンランクロールは rankFallback(Damage等)のランクで代用(例: MakkyのTankヒーロー→Damageランク)
+    const rank = effectiveRank(rec, roleKey);
     const st = stats.get(slug) || {};
     const dv = (key, rev) => { let x = devValue(m[key], st[key]); return rev ? 100 - x : x; };
 
@@ -337,6 +441,7 @@ function playerScores(rec, stats, modeKey) {
     for (const k of ['solo10', 'fire10']) if (st[k] && st[k].n >= 3 && st[k].sd >= 1e-6) impDevs.push(devValue(m[k], st[k]));
     const impactAvg = impDevs.length ? impDevs.reduce((a, b) => a + b, 0) / impDevs.length : 50;
 
+    const pid = (rec.comp && rec.comp.id) || (rec.all && rec.all.id) || '';
     const adjWr = (m.wr * m.g + 500) / (m.g + 10);
     const battle =
       adjWr * 0.30 +                          // ① 勝率30%
@@ -345,9 +450,17 @@ function playerScores(rec, stats, modeKey) {
       accDev * 0.10 +                         // ⑤ 命中率10%
       impactAvg * 0.10;                       // ⑥ インパクト10%(③使用率は加算から除外→係数へ)
     const coeff = coefficientFor(rank);
-    // 試合数係数(指数・独立): 少試合は減点、500試合級は大きく加点
-    const matchCoef = Math.min(2.0, Math.max(0.25, 0.45 + 0.25 * Math.log2(m.g / 10)));
-    const final = battle * coeff * matchCoef;
+    // 試合数係数: Makky は全モード時、全ロールで「試合数の多いキャラを上位に」するため従来式(0.25〜2.0)へ戻す
+    const isMakkyAll = modeKey === 'all' && pid === 'makky';
+    // 簡単キャラは「ほんの少しだけ」試合数を考慮(0.92〜1.08)。Makkyの全モードは従来式
+    const matchCoef = isMakkyAll
+      ? Math.min(2.0, Math.max(0.25, 0.45 + 0.25 * Math.log2(m.g / 10)))
+      : EASY_HEROES.has(slug)
+        ? Math.min(EASY_MATCH_MAX, Math.max(EASY_MATCH_MIN, 1 + EASY_MATCH_SLOPE * Math.log2(m.g / MATCH_G_REF)))
+        : Math.min(MATCH_MAX, Math.max(MATCH_MIN, 1 + MATCH_SLOPE * Math.log2(m.g / MATCH_G_REF)));
+    // 簡単・強いキャラは誰でも高成績になりやすいため、全プレイヤーのスコアに×1.25
+    const bonus = EASY_HEROES.has(slug) ? EASY_HERO_BONUS : 1;
+    const final = battle * coeff * matchCoef * bonus;
 
     out[slug] = {
       finalScore: r2(final),
@@ -356,7 +469,6 @@ function playerScores(rec, stats, modeKey) {
       matchCoef: r2(matchCoef),
       gamesPlayed: m.g,
       rankIndex: rank ? (EXP_BY_DIV[String(rank.division).toLowerCase()] ?? 0) : 0,
-      tier: scoreTier(final),
       det: dm[slug] || null
     };
   }
@@ -385,7 +497,7 @@ function buildPlayer(cfgItem, summary, compRaw, qpRaw, compDetail, qpDetail) {
   const qpStats = qpRaw && qpRaw.general ? qpRaw : null;
   const allStats = mergeStats([qpStats, compStats]);
   const compMerged = mergeStats([compStats]);
-  const ranks = normalizeRanks(summary);
+  const ranks = normalizeRanks(summary, cfgItem.assumeRank);
 
   const allGames = {};
   for (const role of PLAYER_ORDER) allGames[role.toLowerCase()] = (allStats.roles[role.toLowerCase()] || {}).g || 0;
@@ -408,6 +520,7 @@ function buildPlayer(cfgItem, summary, compRaw, qpRaw, compDetail, qpDetail) {
     comp: { ...identity, ...toPlayerStats(compMerged || { general: {}, roles: {}, heroes: {} }) },
     all: { ...identity, ...toPlayerStats(allStats) },
     ranks,
+    rankFallback: cfgItem.rankFallback || null,
     metrics: {
       comp: metricsMap(compDetail),
       all: combineMetricsMap(metricsMap(compDetail), metricsMap(qpDetail))
@@ -435,7 +548,7 @@ const PLAYERS_ALL = ${JSON.stringify(allList, null, 2)};
 }
 
 /* ---------------- main ---------------- */
-console.log('== OW 身内ランキング: データ更新(Power Rating 6要素) ==');
+console.log('== OW 身内ランキング: データ更新(Power Rating 5要素 / ブロンズ基準ランク係数) ==');
 const RECS = [];
 for (const item of cfg.players) {
   const prev = PREV.find((p) => p.id === item.id);
@@ -464,9 +577,14 @@ if (!DRY) {
     rec.all.bscore = playerScores(rec, statsAll, 'all');
     rec.all.bscoreAll = rec.all.bscore;
   }
+  // 簡単・強いキャラ: プレイヤー間のスコア幅を12以内に圧縮(全プレイヤー分をまとめてから・Makkyは除外)
+  compressEasySpreads(RECS.map((r) => ({ id: r.comp && r.comp.id, bs: r.comp && r.comp.bscore })));
+  compressEasySpreads(RECS.map((r) => ({ id: r.all && r.all.id, bs: r.all && r.all.bscore })));
+  // Makky(全モード)のレート差が大きすぎるため、最上位はそのまま・最下位が90になるよう線形に底上げ
+  liftMakkyFloor(RECS.map((r) => ({ id: r.all && r.all.id, bs: r.all && r.all.bscore })));
 }
 const COMP_OUT = RECS.map((r) => r.comp);
 const ALL_OUT = RECS.map((r) => r.all);
 if (DRY) { console.log('(--dry: 書き込みなし)'); process.exit(0); }
 writeFileSync(resolve(ROOT, 'players-data.js'), serialize(COMP_OUT, ALL_OUT), 'utf8');
-console.log(`\n✓ players-data.js 更新完了 (${COMP_OUT.length}人 × 2モード / Power Rating 6要素)`);
+console.log(`\n✓ players-data.js 更新完了 (${COMP_OUT.length}人 × 2モード / Power Rating 5要素・ブロンズ基準)`);

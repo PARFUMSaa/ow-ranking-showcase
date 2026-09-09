@@ -61,6 +61,8 @@ body{font-family:"Inter","Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Yu 
 }
 .filter-btn:hover{border-color:#cbd5e1;background:#f9fafb}
 .filter-btn.active{background:#111827;color:#fff;border-color:#111827}
+.filter-btn.mode-static{cursor:default}
+.filter-btn.mode-static:hover{border-color:#111827;background:#111827}
 .note{font-size:11px;color:#9ca3af}
 
 .scroll-x{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 3px rgba(16,24,40,.05)}
@@ -154,7 +156,7 @@ table.mini td:first-child{text-align:left;white-space:nowrap}
 .himg i{position:absolute;font-style:normal;font-weight:800;color:#8b98ab;font-size:.62em}
 .himg img{position:relative;width:100%;height:100%;object-fit:cover;object-position:center 18%}
 .himg.s16{width:16px;height:16px}.himg.s20{width:20px;height:20px}
-.himg.s26{width:26px;height:26px}.himg.s34{width:34px;height:34px}
+.himg.s22{width:22px;height:22px}.himg.s26{width:26px;height:26px}.himg.s34{width:34px;height:34px}
 .himg.s44{width:44px;height:44px}.himg.s56{width:56px;height:56px}
 .himg.tank{outline:2px solid #ef444466}.himg.damage{outline:2px solid #f9731666}.himg.support{outline:2px solid #10b98166}
 .himg.tank i{color:#b91c1c}.himg.damage i{color:#c2410c}.himg.support i{color:#047857}
@@ -209,7 +211,6 @@ table.mini td:first-child{text-align:left;white-space:nowrap}
 .power-controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .power-sel{padding:6px 10px;border-radius:9px;border:1px solid var(--border);background:#fff;font:inherit;font-size:13px;color:#111827;cursor:pointer}
 .big-sr{font-size:15px;font-weight:800;font-variant-numeric:tabular-nums}
-.btier{display:inline-block;font-size:12px;font-weight:900;padding:1px 9px;border-radius:6px;border:1px solid;min-width:22px;text-align:center}
 
 /* Power Rating解説 */
 details.pformula{margin-top:14px;border:1px dashed #d6deea;border-radius:10px;background:#fbfcfe;padding:0 16px}
@@ -221,6 +222,51 @@ details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px
 .pf-body ul{margin:2px 0 8px 18px;font-size:12.5px;line-height:1.9;color:#374151}
 .pf-body pre{background:#eef2f8;border:1px solid #e2e8f0;border-radius:8px;padding:9px 12px;font-size:12.5px;line-height:1.7;overflow-x:auto;color:#0f172a;font-family:Consolas,Menlo,monospace;white-space:pre-wrap}
 
+/* チームビルダー */
+.tb-wrap{display:flex;flex-direction:column;gap:10px}
+.tb-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:8px 12px;background:#f8fafc;border:1px solid var(--border);border-radius:10px;font-size:12.5px}
+.tb-bar b.pts{font-size:16px;font-variant-numeric:tabular-nums}
+.tb-bar b.pts.over{color:#dc2626}
+.tb-meter{flex:1;min-width:140px;height:10px;background:#e2e8f0;border-radius:99px;overflow:hidden}
+.tb-meter i{display:block;height:100%;width:0%;background:linear-gradient(90deg,#10b981,#84cc16);border-radius:99px;transition:width .25s}
+.tb-meter i.over{background:linear-gradient(90deg,#ef4444,#f97316)}
+.tb-rolechips{display:inline-flex;gap:5px;align-items:center;flex-wrap:wrap}
+.tb-rolechips span{font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:99px;background:#eef2f7;color:#475569;border:1px solid #e2e8f0;letter-spacing:.02em}
+.tb-rolechips span.full{background:#fee2e2;color:#b91c1c;border-color:#fecaca}
+.tb-rolechips span.ok{background:#dcfce7;color:#15803d;border-color:#bbf7d0}
+.tb-rows{display:flex;flex-direction:column;gap:8px}
+.tb-row{display:grid;grid-template-columns:250px 1fr;gap:10px;align-items:start;padding:10px 12px;border:1px solid var(--border);border-radius:10px;background:#fff}
+.tb-row.locked{border-color:#2563eb55;background:#eff6ff}
+.tb-row .tb-pid{display:flex;align-items:center;gap:8px;font-weight:800;font-size:13px;min-width:0}
+.tb-row .tb-pid .sl-num{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:6px;background:#111827;color:#fff;font-size:11px;flex:none}
+.tb-row .tb-role{font-size:10.5px;font-weight:800;color:#6b7280;background:#f1f5f9;border-radius:6px;padding:1px 7px;display:inline-block;margin-left:6px}
+/* チームビルダー: 各プレイヤーのロール絞り込み */
+.tb-filters{display:flex;align-items:center;gap:4px;flex-wrap:wrap;margin:7px 0 2px;grid-column:1/-1}
+.tb-filters .lbl{font-size:10px;color:#94a3b8;font-weight:700;margin-right:2px}
+.tb-fbtn{appearance:none;border:1px solid #e2e8f0;background:#fff;color:#64748b;font:inherit;font-size:10.5px;font-weight:800;padding:2px 9px;border-radius:99px;cursor:pointer;line-height:1.4}
+.tb-fbtn:hover{border-color:#94a3b8;color:#0f172a}
+.tb-fbtn.active{background:#111827;color:#fff;border-color:#111827}
+.tb-row .tb-pid{padding-right:2px}
+.tb-row .tb-pidcol{display:flex;flex-direction:column;min-width:0}
+.tb-row .tb-pidrow{display:flex;align-items:center;gap:8px;font-weight:800;font-size:13px;min-width:0}
+.tb-herolist{display:flex;flex-wrap:wrap;gap:6px}
+.tb-hero{position:relative;display:inline-flex;align-items:center;gap:6px;border:1px solid #dbe3ee;background:#fff;border-radius:9px;padding:3px 8px 3px 3px;cursor:pointer;font-size:11.5px;transition:.12s;color:#0f172a}
+.tb-hero:hover{border-color:#60a5fa;background:#f5f9ff;transform:translateY(-1px)}
+.tb-hero.sel{border-color:#2563eb;background:#dbeafe;box-shadow:0 0 0 1px #2563eb;font-weight:800}
+.tb-hero.off{opacity:.4;cursor:not-allowed;filter:grayscale(.7);text-decoration:line-through}
+.tb-hero.off:hover{transform:none;border-color:#dbe3ee;background:#fff}
+.tb-hero .cst{font-weight:900;color:#b45309;font-variant-numeric:tabular-nums}
+.tb-hero.sel .cst{color:#1d4ed8}
+.tb-hero img{width:22px;height:22px;border-radius:5px;object-fit:cover}
+.tb-hero .ezm{font-style:normal;font-size:9px;color:#f59e0b}
+.tb-hero .offtag{color:#dc2626;font-size:9px;font-weight:900}
+.tb-note{font-size:11px;color:#94a3b8;grid-column:2;margin-top:-2px}
+.tb-empty{color:#9ca3af;padding:10px;font-size:12.5px}
+
+/* 簡単・強いキャラ バッジ */
+.easy-badge{display:inline-flex;align-items:center;gap:3px;font-size:9px;font-weight:900;letter-spacing:.04em;padding:1px 6px;border-radius:99px;background:linear-gradient(90deg,#fbbf24,#fb923c);color:#7c2d12;border:1px solid #f59e0b;vertical-align:1px;white-space:nowrap}
+.easy-badge::before{content:'★';font-size:8px}
+.pf-h .easy-badge,.heroes-cell .easy-badge{font-size:8px;padding:0 5px;margin-left:2px}
 /* フッター */
 .foot{color:#9ca3af;font-size:11.5px;margin-top:18px;text-align:center;line-height:1.9}
 /* 戦績など小さめ文字の可読性改善 */
@@ -259,8 +305,7 @@ details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px
         <div class="sub">出典: OverFast API(2025年1月時点) / 列ヘッダークリックでソート / 行クリックでヒーロー別詳細</div>
       </div>
       <div class="tools" id="toolbar">
-        <button class="filter-btn active" data-mode="comp">ライバル・プレイのみ</button>
-        <button class="filter-btn" data-mode="all">全モード</button>
+        <span class="filter-btn active mode-static" title="コンペ(ライバル・プレイのみ)表示は廃止しました">全モード(ライバル+QP)</span>
         <span class="tools-div"></span>
         <button class="filter-btn active" data-role="All">All</button>
         <button class="filter-btn" data-role="Tank">Tank</button>
@@ -297,7 +342,7 @@ details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px
       <div class="power-head">
         <div>
           <h2>🎖️ Hero Power Rankings</h2>
-          <div class="sub">5要素(勝率30/KDA20/ロール20/命中10/インパクト10)×ランク係数×試合数係数(指数) ・ 詳細statsから算出</div>
+          <div class="sub">5要素(勝率30/KDA20/ロール20/命中10/インパクト10)×ランク係数(ブロンズ基準)×試合数係数 ・ 簡単キャラ9体: 試合数わずか考慮+全員×1.25 ・ Makkyの全ロール(全モード)は試合数重視</div>
         </div>
         <div class="power-controls" id="powerControls">
           <button class="filter-btn" data-ex="makky">Makky を除く</button>
@@ -308,7 +353,8 @@ details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px
 
       <details class="pformula"><summary>📐 Power Rating 設計仕様書(くわしく)</summary><div class="pf-body">
 <h4>1. 全体構造</h4>
-<pre>最終 Power Rating = バトルスコア(加算・5要素) × ランク係数 × 試合数係数</pre>
+<pre>最終 Power Rating = バトルスコア(加算・5要素) × ランク係数 × 試合数係数 × 簡単キャラ補正
+(簡単・強いキャラ9体のみ: 試合数はわずかに考慮(0.92〜1.08) + ×1.25)</pre>
 <p>「1試合あたりの実力」を5要素で測り、ランクと試合数の信頼性を<b>乗算</b>で効かせる構成。
 バトルスコアは単独では0〜80点の範囲(理論上限)。係数により100を超える場合があります。</p>
 
@@ -316,7 +362,7 @@ details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px
 <h5>① 調整勝率スコア(重み30% / 上限30点)</h5>
 <pre>調整勝率 = (実勝率×試合数 + 50×10) ÷ (試合数+10)   ※全体平均50へベイズ収束
 得点 = 調整勝率 × 0.30</pre>
-<p>試合数が少ないヒーローの極端な勝率(100%等)を補正します。</p>
+<p>試合数が少ないヒーローの極端な勝率(100%等)を補正します。(MakkyのWR圧縮は実施していません。レート差の調整は§5の「最下位90への線形底上げ」で行います)</p>
 
 <h5>② KDAスコア(重み20% / 上限10点)</h5>
 <pre>得点 = min(KDA, 5.0) × 10 × 0.20</pre>
@@ -343,30 +389,47 @@ details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px
 </ul>
 
 <h4>4. ランク係数(乗数)</h4>
-<pre>ランク係数 = 1.10^ランク指数(プラチナ=0基準) ・ ランク未設定は0.85</pre>
+<pre>ランク係数 = 1.10^ランク指数(ブロンズ=0基準) ・ アンランクはブロンズと同値(1.0)
+※ そのロールがアンランクでも、プレイヤー設定 rankFallback(Damage等)があれば
+   そのロールのランクで代用(例: Makky の Tank ヒーロー → Damage ロール ダイヤで 1.61)</pre>
 <table class="mini" style="margin:4px 0">
 <thead><tr><th>ランク</th><th>指数</th><th>係数</th><th>ランク</th><th>指数</th><th>係数</th></tr></thead>
 <tbody>
-<tr><td>Bronze</td><td>-3</td><td>0.751</td><td>Emerald</td><td>1</td><td>1.100</td></tr>
-<tr><td>Silver</td><td>-2</td><td>0.826</td><td>Diamond</td><td>2</td><td>1.210</td></tr>
-<tr><td>Gold</td><td>-1</td><td>0.909</td><td>Master</td><td>3</td><td>1.331</td></tr>
-<tr><td>Platinum</td><td>0</td><td>1.000</td><td>Grandmaster</td><td>4</td><td>1.464</td></tr>
+<tr><td>Bronze</td><td>0</td><td>1.000</td><td>Emerald</td><td>4</td><td>1.464</td></tr>
+<tr><td>Silver</td><td>1</td><td>1.100</td><td>Diamond</td><td>5</td><td>1.611</td></tr>
+<tr><td>Gold</td><td>2</td><td>1.210</td><td>Master</td><td>6</td><td>1.772</td></tr>
+<tr><td>Platinum</td><td>3</td><td>1.331</td><td>Grandmaster</td><td>7</td><td>1.949</td></tr>
 </tbody></table>
 
-<h4>5. 試合数係数(乗数・独立)</h4>
-<pre>試合数係数 = min(2.0, max(0.25, 0.45 + 0.25 × log2(試合数÷10)))</pre>
-<ul><li>4試合≒0.25 / 26試合≒0.79 / 500試合≒1.86 / 超多プレイは2.0で頭打ち</li>
-<li>プレイ数の多いキャラを正当に評価(メインキャラ優遇)。③使用率は加算要素ではなくこの係数に一本化</li></ul>
+<h4>5. 試合数係数(乗数・独立・±15%に制限)</h4>
+<pre>標準キャラ:  試合数係数 = clamp(0.85, 1.15, 1 + 0.06 × log2(試合数÷25))
+簡単キャラ:  試合数係数 = clamp(0.92, 1.08, 1 + 0.03 × log2(試合数÷25))   ← 試合数をほんの少しだけ考慮
+25試合=1.0 / 少なすぎても0.85〜0.92まで・多すぎても1.15〜1.08までしか変わらない
+※ Makky は全ロール(Tank/Damage/Support)で従来式へ戻す:
+   試合数係数 = clamp(0.25, 2.0, 0.45 + 0.25 × log2(試合数÷10))
+   「試合数の多いキャラほど上位」にしたいため(Makkyの全モードのみ。コンペ表示は廃止)</pre>
+<ul><li>「試合数が少ない=低評価」「500試合級=大幅加点」という旧仕様(0.25〜2.0)はやめ、試合数による増減は±15%に抑えた</li>
+<li>簡単・強いキャラだけ「試合数を完全に無視」するとプレイヤー間の数値が狂うため、係数を完全除去せず 0.92〜1.08 の範囲でほんの少しだけ考慮する</li>
+<li><b>Makky(全モードのみ)のレート差が大きすぎるため、最上位ヒーローを基準に「最下位が90」になるよう全ヒーローを線形に底上げ</b>(順位は不変・実WR表示は不変)</li></ul>
 
-<h4>6. 計算例(イメージ)</h4>
-<pre>例: Makky / Tracer(全モード・500試合・プラチナ相当)
- バトルスコア=43.3 → 43.3 × 1.000(ランク) × 1.86(試合) = 80.5…(実際値は他要素により変動)</pre>
+<h4>6. 「簡単・強いキャラ」(試合数わずかに考慮 + 全員×1.25)</h4>
+<pre>指定9体: Mauga / Zarya / Sigma / Ramattra / Reaper / Anran / Bastion / Sombra / Moira
+(Soldier:76 と Illari は簡単キャラから除外 → 標準の±15%扱いに)
+最終スコア = バトル × ランク係数 × 簡単キャラ用試合数係数(0.92〜1.08) × 1.25</pre>
+<ul><li>誰が使っても高成績になりやすいキャラは「使い手の実力差」が点に出にくいため、全プレイヤーのスコアを×1.25して加点</li>
+<li>ただし試合数をゼロにはせず、少試合(0.92)〜多試合(1.08)の範囲でわずかに信頼度を反映する</li>
+<li>さらに同キャラ内のプレイヤー間スコアは「幅が12点を超えたら12点に線形圧縮」し、★バッジ付きで表示。ただし <b>Makky はレベルが違うため圧縮対象から除外</b>(実スコアのまま表示)</li></ul>
 
-<h4>7. 補足</h4>
+<h4>7. 計算例(イメージ)</h4>
+<pre>例: Makky / Tracer(全モード・500試合・Damageロール ダイヤ=指数5)
+ バトルスコア=43.3 → 43.3 × 1.611(ダイヤ) × 1.15(試合数上限) = 80.2…(実際値は他要素により変動)</pre>
+
+<h4>8. 補足</h4>
 <ul>
-<li>データは OverFast /stats の詳細統計(コンペ or 全モード=QP+コンペの重み付き統合)</li>
+<li>データは OverFast /stats の詳細統計(全モード = クイック・プレイ + ライバル・プレイの合算)。コンペ(ライバルのみ)表示は廃止</li>
 <li>ヒーロー/キーが存在しない統計は0として扱い、偏差値は50固定にフォールバック</li>
-<li>調整パラメータ: ランク基数1.10 / 未設定係数0.85 / 試合係数0.25〜2.0 などは自由に変更可能</li>
+<li>調整パラメータ: ランク基数1.10 / アンランク=ブロンズ同値(1.0) / 試合数係数: 標準0.85〜1.15・簡単キャラ0.92〜1.08(25試合基準)・Makky全モード0.25〜2.0 / 簡単キャラボーナス1.25 / Makky最下位90底上げ などは自由に変更可能</li>
+<li>ランク係数はブロンズを基準(指数0)に1段上がるごとに1.10倍。階級(S/A/B/C/D)は廃止したので素点で見る</li>
 </ul>
 </div></details>
 
@@ -375,9 +438,37 @@ details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px
 
     </div>
 
+
+
+    <!-- チームビルダー(ポイント制限) -->
+    <div class="power-sec" style="margin-top:24px">
+      <div class="power-head">
+        <div>
+          <h2>⚔️ チームビルダー(ポイント制限)</h2>
+          <div class="sub">各ヒーローの Power Rating をポイントとして使用。メンバーを選んで予算(ポイント制限)を決め、上のプレイヤーから順にヒーローを選ぶと残りポイントに応じて「選べるヒーロー」が自動で絞られます</div>
+        </div>
+        <div class="power-controls" id="teamCtl">
+          <span class="filter-btn active mode-static" title="コンペ(ライバル・プレイのみ)表示は廃止しました">全モード(ライバル+QP)</span>
+          <span class="tools-div"></span>
+          <button class="filter-btn" data-tbrule="1">ロール制約(1/2/2)</button>
+          <button class="filter-btn active" data-tbdup="1">同ヒーロー禁止</button>
+          <span class="tools-div"></span>
+          <label style="display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700">ポイント制限
+            <input type="number" id="teamBudget" min="1" step="1" value="250" style="width:86px;padding:6px 8px;border:1px solid var(--border);border-radius:9px" />
+          </label>
+          <button class="filter-btn" data-tb="150">150</button>
+          <button class="filter-btn" data-tb="200">200</button>
+          <button class="filter-btn active" data-tb="250">250</button>
+          <button class="filter-btn" data-tb="300">300</button>
+          <button class="filter-btn" data-tb="400">400</button>
+          <button class="filter-btn" data-tb="reset">リセット</button>
+        </div>
+      </div>
+      <div id="teamBody"></div>
+    </div>
     <div class="foot">
       ※ 緑=勝率55%超 / 赤=勝率40%未満 / 青=KDA3.0超 / 橙=KDA1.5未満<br />
-      データ: OverFast API(competitive)<br />
+      データ: OverFast API(全モード = ライバル・プレイ + クイック・プレイ合算)<br />
       <span class="upd">最終データ更新: <span id="lastUpd">—</span></span>
     </div>
   </div>
@@ -386,8 +477,8 @@ details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px
 <script src="players-data.js"></script>
 <script>
 'use strict';
-/* モード別データ(players-data.js): 初期はライバル・プレイのみ */
-let PLAYERS = (typeof PLAYERS_COMP !== 'undefined') ? PLAYERS_COMP : [];
+/* モード別データ(players-data.js): コンペ(ライバルのみ)表示は廃止 → 常に全モード */
+let PLAYERS = (typeof PLAYERS_ALL !== 'undefined') ? PLAYERS_ALL : [];
 /* =====================================================================
  * データ(与えられたOverFast実データ)
  * =================================================================== */
@@ -461,7 +552,7 @@ function kdaCls(v){const n=num(v);return n>3.0?'kda-good':n<1.5?'kda-bad':''}
 function wrCell(v){const n=v===null||v===undefined?null:num(v);return `<td class="num cell ${n===null?'':wrCls(n)}">${n===null?'—':fmt1(n)+'%'}</td>`}
 function kdaCell(v){const n=v===null||v===undefined?null:num(v);return `<td class="num cell ${n===null?'':kdaCls(n)}">${n===null?'—':fmt2(n)}</td>`}
 
-const state={filter:'All',sortKey:'rank',sortAsc:false,open:new Set(),focus:'hiyori',powerKey:'rate',powerAsc:false,powerOpen:new Set(),mode:'comp',exMakky:false};
+const state={filter:'All',sortKey:'rank',sortAsc:false,open:new Set(),focus:'hiyori',powerKey:'rate',powerAsc:false,powerOpen:new Set(),mode:'all',exMakky:false};
 
 /* ランク順ソート用(division階層 + tierは小さいほど上位) */
 const DIV_ORDER=['bronze','silver','gold','platinum','emerald','diamond','master','grandmaster'];
@@ -531,7 +622,7 @@ function pfHeroes(p){
   const top=heroesOfRole(p,state.filter).slice(0,5);
   return top.map(h=>`
     <div class="pf-h">${heroThumb(h.n,34,h.role,h.slug)}
-      <div class="pf-hl"><b>${esc(h.n)}</b>${h.g}試合・WR ${fmt1(h.wr)}%</div></div>`).join('');
+      <div class="pf-hl"><b>${esc(h.n)}</b>${easyBadge(h.slug)}${h.g}試合・WR ${fmt1(h.wr)}%</div></div>`).join('');
 }
 function rankName(rk){
   if(!rk||!rk.division)return '';
@@ -541,13 +632,16 @@ function rankName(rk){
 function rankChip(p,role){
   const rk=p.ranks&&p.ranks[role];
   if(!rk)return '<span class="rr unrank">アンランク</span>';
-  return `<span class="rr">${rk.icon?`<img src="${rk.icon}" alt="" loading="lazy" onerror="this.remove()">`:''}${esc(rankName(rk))}</span>`;
+  const tag=rk.assumed?' 推定':'';
+  return `<span class="rr" ${rk.assumed?'style="border-style:dashed;color:#b45309;background:#fffbeb"':''}>${rk.icon?`<img src="${rk.icon}" alt="" loading="lazy" onerror="this.remove()">`:''}${esc(rankName(rk))}${tag}</span>`;
 }
 function tierPill(p){
   if(!p.rankTier)return '';
-  const ic=(p.ranks&&p.ranks[p.role]&&p.ranks[p.role].icon)
-    ?`<img src="${p.ranks[p.role].icon}" alt="" loading="lazy" onerror="this.remove()">`:'';
-  return `<span class="rank-pill rank-tier">${ic}${esc(p.rankTier)}</span>`;
+  const rk=p.ranks&&p.ranks[p.role];
+  const ic=(rk&&rk.icon)
+    ?`<img src="${rk.icon}" alt="" loading="lazy" onerror="this.remove()">`:'';
+  const tag=(rk&&rk.assumed)?' 推定':'';
+  return `<span class="rank-pill rank-tier">${ic}${esc(p.rankTier)}${tag}</span>`;
 }
 function faceMarkup(p){
   const init=esc(p.name.trim().charAt(0));
@@ -613,7 +707,7 @@ function heroesCell(p){
   if(!top.length)return `<div class="heroes-cell"><span style="color:#9ca3af;font-size:12px">—</span></div>`;
   return `<div class="heroes-cell">`+top.map(h=>`
     <div class="hl">${heroThumb(h.n,20,h.role,h.slug)}
-      <span class="hn">${esc(h.n)}</span>
+      <span class="hn">${esc(h.n)}</span>${easyBadge(h.slug)}
       <span class="hm">${h.g}試合・${fmt1(h.wr)}%</span></div>`).join('')+`</div>`;
 }
 /* プレイヤーカード(アコーディオン上部に表示) */
@@ -680,9 +774,19 @@ function sortRows(list){
 
 /* アコーディオン詳細(ロールフィルタ対応:ヒーロー別 + ロール別) */
 function accHtml(p){
-  const hs=heroesOfRole(p,state.filter);
+  const hs0=heroesOfRole(p,state.filter);
+  // Power Rating 付きでソート(Power Ratingが無いヒーローは末尾)
+  const hs=hs0.slice().sort((a,b)=>{
+    const pa=scoreOf(p,a.slug), pb=scoreOf(p,b.slug);
+    const va=pa&&typeof pa.finalScore==='number'?pa.finalScore:-1;
+    const vb=pb&&typeof pb.finalScore==='number'?pb.finalScore:-1;
+    return vb-va;
+  });
   const roleLabel=state.filter==='All'?'':`(${state.filter})`;
-  const hrows=hs.map(h=>`
+  const hrows=hs.map(h=>{
+    const b=scoreOf(p,h.slug);
+    const pr=b&&typeof b.finalScore==='number'?b.finalScore:null;
+    return `
     <tr>
       <td style="display:flex;align-items:center;gap:7px">${heroThumb(h.n,26,h.role,h.slug)}
         <span class="hero-name">${esc(h.n)}</span>
@@ -690,7 +794,9 @@ function accHtml(p){
       <td class="num">${h.g}</td>
       ${wrCell(h.wr)}
       ${kdaCell(h.kda)}
-    </tr>`).join('');
+      <td class="num"><b>${pr==null?'—':Math.round(pr*100)/100}</b></td>
+    </tr>`;
+  }).join('');
   const hEmpty=hs.length?``:`<div style="color:#9ca3af;font-size:12px;padding:6px 0">該当ロールのヒーロー記録はありません</div>`;
   let roleBlock='';
   if(p.roles){
@@ -717,9 +823,9 @@ function accHtml(p){
     ${playerCard(p)}
     <div class="acc-grid">
       ${roleBlock}
-      <div><h4>Hero Breakdown(ヒーロー別・試合数順)${roleLabel}</h4>
+      <div><h4>Hero Breakdown(ヒーロー別・Power順)${roleLabel}</h4>
         <div class="scroll-x" style="border-radius:8px"><table class="mini">
-          <thead><tr><th>Hero</th><th>Matches</th><th>WR</th><th>KDA</th></tr></thead>
+          <thead><tr><th>Hero</th><th>Matches</th><th>WR</th><th>KDA</th><th>Power Rating</th></tr></thead>
           <tbody>${hrows}</tbody></table></div>
         ${hEmpty}</div>
     </div></div></div>`;
@@ -769,12 +875,13 @@ function updateArrows(){
   });
 }
 
-/* ---- ヒーローパワーランキング(V6Power Rating(全モード時はコンペ+QP加算)) ---- */
-function scoreOf(p, slug) { const pool = p && (state.mode === 'all' ? (p.bscoreAll || p.bscore) : p.bscore); return pool && pool[slug] ? pool[slug] : null; }
-function btierChip(t) {
-  const col = { S: '#a855f7', A: '#7c3aed', B: '#2563eb', C: '#16a34a', D: '#d97706', E: '#dc2626' }[t] || '#64748b';
-  return `<span class="btier" style="color:${col};border-color:${col}66;background:${col}1a">${t}</span>`;
+/* ---- ヒーローパワーランキング(V6 Power Rating / 常に全モード=QP+コンペ合算) ---- */
+/* 簡単・強いキャラ(だれが使っても高成績になりやすい): 試合数わずか考慮 + 全員×1.25 + プレイヤー間差12以内 */
+const EASY_SLUGS = new Set(['mauga','zarya','sigma','ramattra','reaper','anran','bastion','sombra','moira']);
+function easyBadge(slug) {
+  return EASY_SLUGS.has(slug) ? `<span class="easy-badge" title="簡単・強いキャラ: 全員×1.25 / 試合数はわずかに考慮 / プレイヤー間の差は12以内に補正(ただしMakkyは圧縮対象外)">簡単</span>` : '';
 }
+function scoreOf(p, slug) { const pool = p && (state.mode === 'all' ? (p.bscoreAll || p.bscore) : p.bscore); return pool && pool[slug] ? pool[slug] : null; }
 function powerName(p) {
   return `<div class="pl-cell"><span class="pl-av ${roleCls(p.role)}">${faceMarkup(p)}</span><span class="pl-name" style="cursor:default">${esc(p.name)}</span></div>`;
 }
@@ -835,7 +942,7 @@ function usageDetailV6(slug) {
   ].map(([k, v]) => `<span style="display:inline-flex;align-items:baseline;gap:6px;border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:4px 11px;font-size:12px;white-space:nowrap;color:#0f172a"><b style="font-size:10.5px;color:#475569;letter-spacing:.03em">${k}</b><span style="font-weight:800;font-variant-numeric:tabular-nums">${v}</span></span>`).join('') : '';
   return `
     <div style="padding:6px 0 8px">
-      <div style="margin-bottom:8px"><b style="font-size:14px">${esc(nm)} の使い手ランキング</b>
+      <div style="margin-bottom:8px"><b style="font-size:14px">${esc(nm)} ${easyBadge(slug)}の使い手ランキング</b>
         <span style="color:#9ca3af;font-size:12px;margin-left:8px">Power Rating順(詳細stats)</span></div>
       ${detChips ? `<div style="display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 10px">${detChips}</div>
         <div style="font-size:11px;color:#9ca3af;margin:-4px 0 8px">↑ ヒーロー詳細データ(最上位プレイヤー / OverFast詳細stats)</div>` : ''}
@@ -859,7 +966,7 @@ function renderPower() {
     return `
       <tr class="row ${isOpen ? 'open' : ''}" data-hslug="${r.slug}">
         <td><span class="medal ${i === 0 ? 'm1' : i === 1 ? 'm2' : i === 2 ? 'm3' : 'n'}">${i + 1}</span></td>
-        <td><div class="hl">${heroThumb(nm, 34, r.role, r.slug)}<span class="hn" style="font-size:14px">${esc(nm)}</span>
+        <td><div class="hl">${heroThumb(nm, 34, r.role, r.slug)}<span class="hn" style="font-size:14px">${esc(nm)}</span>${easyBadge(r.slug)}
           <span class="role-chip ${roleCls(r.role)}" style="margin-left:6px">${roleIcon(r.role)} ${esc(r.role)}</span>
           <span class="chev">▼</span></div></td>
         <td>${powerName(r.champ.p)}</td>
@@ -881,6 +988,185 @@ function renderPower() {
     </table></div>`;
 }
 
+/* =====================================================================
+ * チームビルダー(ポイント制限付きヒーロードラフト)
+ * =================================================================== */
+const tb = { mode: 'all', cap: 250, roleLock: false, dupBan: true, members: null, picks: {}, roleF: {} };
+const TB_ROLE_CAP = { Tank: 1, Damage: 2, Support: 2 };
+function tbPool() {
+  if (typeof PLAYERS_ALL !== 'undefined') return PLAYERS_ALL; // 常に全モード(コンペは廃止)
+  return PLAYERS;
+}
+function tbScore(p, slug) {
+  const pool = p && (p.bscoreAll || p.bscore);
+  return pool && pool[slug] ? pool[slug] : null;
+}
+function tbMembersArr() {
+  const pool = tbPool();
+  let ids = tb.members;
+  if (ids === null) ids = pool.map(p => p.id); // 未操作 = 全員
+  return ids.map(id => pool.find(p => p.id === id)).filter(Boolean);
+}
+function tbNum(v) { return Math.round((Number(v) || 0) * 10) / 10; }
+function tbOpts(p) {
+  const out = [];
+  for (const h of (p.heroes || [])) {
+    const sc = tbScore(p, h.slug);
+    if (!sc || typeof sc.finalScore !== 'number') continue;
+    const role = h.role || SLUG_ROLE[h.slug] || '';
+    out.push({ slug: h.slug, n: h.n || SLUG_NAME[h.slug] || h.slug, role, g: h.g, wr: h.wr, cost: sc.finalScore });
+  }
+  out.sort((a, b) => b.cost - a.cost);
+  return out;
+}
+function tbLocks() {
+  const locks = {};
+  for (const p of tbMembersArr()) {
+    const slug = tb.picks[p.id];
+    if (!slug) continue;
+    const h = (p.heroes || []).find(x => x.slug === slug);
+    const sc = h && tbScore(p, slug);
+    if (!h || !sc || typeof sc.finalScore !== 'number') { delete tb.picks[p.id]; continue; }
+    locks[p.id] = { p, h, cost: sc.finalScore };
+  }
+  return locks;
+}
+function tbPrune() {
+  const pool = tbPool();
+  // メンバー外・モードに無いピックを破棄
+  const ids = new Set((tb.members && tb.members.length ? tb.members : pool.map(p => p.id)));
+  const locks = tbLocks();
+  // メンバー順で制約を再検証(重複ヒーロー → 先勝ち / ロール枠 → 先勝ち)
+  const seen = new Set(), roles = { Tank: 0, Damage: 0, Support: 0 };
+  for (const p of tbMembersArr()) {
+    const slug = tb.picks[p.id];
+    if (!slug) { continue; }
+    if (!ids.has(p.id)) { delete tb.picks[p.id]; continue; }
+    const L = locks[p.id];
+    if (!L) { delete tb.picks[p.id]; continue; }
+    if (tb.dupBan && seen.has(slug)) { delete tb.picks[p.id]; continue; }
+    if (tb.roleLock && roles[L.h.role] >= TB_ROLE_CAP[L.h.role]) { delete tb.picks[p.id]; continue; }
+    seen.add(slug); roles[L.h.role] = (roles[L.h.role] || 0) + 1;
+  }
+}
+function tbSetMembers(ids) { tb.members = ids.slice(); tbPrune(); }
+function renderTeam() {
+  const body = $('#teamBody');
+  if (!body) return;
+  tbPrune();
+  /* コントロールのactive状態を同期 */
+  $('#teamCtl').querySelectorAll('[data-tbrule]').forEach(x=>x.classList.toggle('active',tb.roleLock));
+  $('#teamCtl').querySelectorAll('[data-tbdup]').forEach(x=>x.classList.toggle('active',tb.dupBan));
+  $('#teamCtl').querySelectorAll('[data-tb]').forEach(x=>{
+    const isReset=x.dataset.tb==='reset';
+    x.classList.toggle('active',!isReset&&Number(x.dataset.tb)===tb.cap);
+  });
+  const pool = tbPool();
+  const members = tbMembersArr();
+  const locks = tbLocks();
+  const sumCost = Object.values(locks).reduce((s, l) => s + l.cost, 0);
+  const over = sumCost > tb.cap + 1e-9;
+  const rem = Math.max(0, tbNum(tb.cap - sumCost));
+  const allLocked = members.length > 0 && members.every(p => tb.picks[p.id]);
+
+  // --- メンバー選択チップ ---
+  const memChips = pool.map(p => {
+    const on = members.some(m => m.id === p.id);
+    return `<button class="filter-btn ${on ? 'active' : ''}" data-tbid="${p.id}">${esc(p.name)}</button>`;
+  }).join('');
+
+  // --- ロール内訳チップ ---
+  const roles = { Tank: 0, Damage: 0, Support: 0 };
+  Object.values(locks).forEach(l => { roles[l.h.role] = (roles[l.h.role] || 0) + 1; });
+  const roleChips = ['Tank', 'Damage', 'Support'].map(r => {
+    const n = roles[r] || 0;
+    const lim = TB_ROLE_CAP[r];
+    const cls = tb.roleLock ? (n >= lim ? 'full' : 'ok') : (n ? '' : '');
+    return `<span class="${cls}">${r} ${n}${tb.roleLock ? '/' + lim : ''}</span>`;
+  }).join('');
+
+  // --- ポイントバー ---
+  const pct = tb.cap > 0 ? Math.min(100, sumCost / tb.cap * 100) : 100;
+  const barCls = over ? 'over' : '';
+  const meter = `<div class="tb-meter"><i class="${barCls}" style="width:${pct}%"></i></div>`;
+  const summary = `
+    <div class="tb-bar">
+      <span>合計</span><b class="pts ${over ? 'over' : ''}">${tbNum(sumCost)}</b><span>/ 上限 ${tb.cap} pt</span>
+      ${meter}
+      <span>残り <b class="pts ${over ? 'over' : ''}">${over ? '-' + tbNum(Math.abs(tb.cap - sumCost)) : rem}</b> pt</span>
+      ${over ? '<span style="color:#dc2626;font-weight:800">⚠ 予算超過</span>' : (allLocked ? '<span style="color:#16a34a;font-weight:800">✓ チーム完成(予算内)</span>' : '')}
+    </div>
+    <div class="tb-bar">
+      <span style="font-weight:800">メンバー</span>
+      <span class="tb-rolechips">${roleChips}</span>
+      <span style="color:#94a3b8;font-size:11px">${tb.roleLock ? 'ロール制約ON(枠いっぱいで赤)' : 'ロール自由'} ・ ${tb.dupBan ? '同ヒーロー禁止ON' : '重複OK'} ・ 行のヒーローをクリックで選択/解除</span>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap">${memChips}</div>`;
+
+  // --- 各メンバーのドラフト行 ---
+  const rows = members.map((p, i) => {
+    const optsAll = tbOpts(p);
+    const rf = tb.roleF[p.id] || 'All';
+    const opts = rf === 'All' ? optsAll.slice() : optsAll.filter(h => h.role === rf);
+    const own = locks[p.id];
+    // 選択中のヒーローがロール絞り込みで隠れないよう先頭に出す
+    if (own && !opts.some(h => h.slug === own.h.slug)) {
+      const o = optsAll.find(h => h.slug === own.h.slug);
+      if (o) opts.unshift(o);
+    }
+    const othersSum = Object.entries(locks)
+      .filter(([id]) => id !== p.id).reduce((s, [, l]) => s + l.cost, 0);
+    const slack = tb.cap - othersSum; // この行に割り当てられる残り
+    const otherRoles = { Tank: 0, Damage: 0, Support: 0 };
+    const otherSlugs = new Set();
+    Object.entries(locks).forEach(([id, l]) => {
+      if (id === p.id) return;
+      otherRoles[l.h.role] = (otherRoles[l.h.role] || 0) + 1;
+      otherSlugs.add(l.h.slug);
+    });
+    const chips = opts.map(h => {
+      const sel = own && own.h.slug === h.slug;
+      let off = false, reason = '';
+      if (!sel) {
+        if (h.cost > slack + 1e-9) { off = true; reason = `予算超過(残り${tbNum(Math.max(0, slack))}pt)`; }
+        else if (tb.dupBan && otherSlugs.has(h.slug)) { off = true; reason = '他メンバーが使用中'; }
+        else if (tb.roleLock && otherRoles[h.role] >= TB_ROLE_CAP[h.role]) { off = true; reason = `ロール枠超過(${h.role})`; }
+      }
+      const title = `${esc(h.n)} ${tbNum(h.cost)}pt ・ ${h.g}試合 WR${fmt1(h.wr)}%${off ? ' ・ ' + reason : ''}${EASY_SLUGS.has(h.slug) ? ' ・ 簡単キャラ' : ''}`;
+      return `<button class="tb-hero ${sel ? 'sel' : ''} ${off ? 'off' : ''}" data-pid="${p.id}" data-slug="${h.slug}" title="${title}">
+        ${heroThumb(h.n, 22, h.role, h.slug)}<span>${esc(h.n)}</span>${EASY_SLUGS.has(h.slug) ? '<i class="ezm" title="簡単キャラ">★</i>' : ''}${off ? `<span class="offtag">✕</span>` : ''}<span class="cst">${tbNum(h.cost)}</span>
+      </button>`;
+    }).join('');
+    const roleBtns = ['All', 'Tank', 'Damage', 'Support'].map(r => {
+      const short = r === 'Tank' ? 'T' : r === 'Damage' ? 'D' : r === 'Support' ? 'S' : 'All';
+      return `<button class="tb-fbtn ${rf === r ? 'active' : ''}" data-tbf="${p.id}|${r}" title="${r}">${short}</button>`;
+    }).join('');
+    const heroArea = opts.length
+      ? `<div class="tb-herolist">${chips}</div>`
+      : `<div class="tb-empty">${rf === 'All' ? 'このモードにPower Ratingデータのあるヒーローがいません' : 'このロールにPower Ratingデータのあるヒーローがいません'}</div>`;
+    const curTxt = own
+      ? `選択中: ${esc(own.h.n)} <b>${tbNum(own.cost)}pt</b> ・ この行の残り枠: ${tbNum(Math.max(0, slack))}pt`
+      : `未選択 ・ この行に使える残り: ${tbNum(Math.max(0, slack))}pt`;
+    return `<div class="tb-row ${own ? 'locked' : ''}" style="${over ? 'border-color:#fca5a5' : ''}">
+      <div class="tb-pidcol">
+        <div class="tb-pidrow">
+          <span class="sl-num">${i + 1}</span>
+          <span class="pl-av ${roleCls(p.role)}">${faceMarkup(p)}</span>
+          <span style="min-width:0;overflow:hidden;text-overflow:ellipsis">${esc(p.name)}</span>
+          <span class="tb-role">${esc(p.role)}</span>
+        </div>
+        <div class="tb-filters"><span class="lbl">ロール</span>${roleBtns}</div>
+      </div>
+      <div>
+        ${heroArea}
+        <div class="tb-note">${curTxt}</div>
+      </div>
+    </div>`;
+  }).join('');
+
+  body.innerHTML = summary +
+    (rows ? `<div class="tb-rows">${rows}</div>` : `<div class="tb-empty">メンバーがいません(上のメンバーチップで選択)</div>`);
+}
 
 /* イベント */
 $('#rankBody').addEventListener('click',e=>{
@@ -901,21 +1187,18 @@ $('#rankTable thead').addEventListener('click',e=>{
   else{state.sortKey=key;state.sortAsc=key==='name';}
   updateArrows();renderTable();
 });
-function setMode(m){
-  state.mode=m;
-  if(m==='all'&&typeof PLAYERS_ALL!=='undefined')PLAYERS=PLAYERS_ALL;
-  else if(m==='comp'&&typeof PLAYERS_COMP!=='undefined')PLAYERS=PLAYERS_COMP;
-  if(!PLAYERS.length)PLAYERS=(typeof PLAYERS_COMP!=='undefined')?PLAYERS_COMP:[];
+function setMode(){
+  state.mode='all'; // コンペ(ライバルのみ)表示は廃止 → 常に全モード
+  if(typeof PLAYERS_ALL!=='undefined')PLAYERS=PLAYERS_ALL;
+  if(!PLAYERS.length)PLAYERS=(typeof PLAYERS_ALL!=='undefined')?PLAYERS_ALL:[];
   if(!PLAYERS.some(p=>p.id===state.focus))state.focus=(PLAYERS[0]&&PLAYERS[0].id)||'';
-  $('#toolbar').querySelectorAll('[data-mode]').forEach(x=>x.classList.toggle('active',x.dataset.mode===m));
+  $('#toolbar').querySelectorAll('[data-mode]').forEach(x=>x.classList.remove('active'));
   state.open.clear();
   renderSel();
   renderProfile(focusPlayer());
   renderTable();
 }
 $('#toolbar').addEventListener('click',e=>{
-  const mb=e.target.closest('[data-mode]');
-  if(mb){setMode(mb.dataset.mode);return;}
   const f=e.target.closest('[data-role]');
   if(!f)return;
   state.filter=f.dataset.role;
@@ -954,11 +1237,60 @@ $('#powerControls').addEventListener('click',e=>{
   renderPower();
 });
 
+/* ---- チームビルダー操作 ---- */
+$('#teamCtl').addEventListener('click',e=>{
+  const ruleB=e.target.closest('[data-tbrule]');
+  if(ruleB){ tb.roleLock=!tb.roleLock; tbPrune(); renderTeam(); return; }
+  const dupB=e.target.closest('[data-tbdup]');
+  if(dupB){ tb.dupBan=!tb.dupBan; tbPrune(); renderTeam(); return; }
+  const tbB=e.target.closest('[data-tb]');
+  if(!tbB)return;
+  if(tbB.dataset.tb==='reset'){ tb.picks={}; tb.roleF={}; renderTeam(); return; }
+  tb.cap=Number(tbB.dataset.tb)||250;
+  const inp=document.getElementById('teamBudget');
+  if(inp)inp.value=tb.cap;
+  renderTeam();
+});
+$('#teamBudget').addEventListener('change',e=>{
+  const v=parseInt(e.target.value,10);
+  if(Number.isFinite(v)&&v>0){ tb.cap=v; tbPrune(); renderTeam(); }
+});
+$('#teamBudget').addEventListener('input',e=>{
+  const v=parseInt(e.target.value,10);
+  if(Number.isFinite(v)&&v>0){ tb.cap=v; renderTeam(); }
+});
+$('#teamBody').addEventListener('click',e=>{
+  const rfB=e.target.closest('[data-tbf]');
+  if(rfB){
+    const [pid, role] = rfB.dataset.tbf.split('|');
+    tb.roleF[pid] = role;
+    renderTeam(); return;
+  }
+  const memB=e.target.closest('[data-tbid]');
+  if(memB){
+    const id=memB.dataset.tbid;
+    const pool=tbPool();
+    let cur=tb.members===null?pool.map(p=>p.id):tb.members.slice();
+    if(cur.includes(id)){cur=cur.filter(x=>x!==id);delete tb.picks[id];delete tb.roleF[id];}
+    else cur.push(id);
+    tb.members=cur; tbPrune(); renderTeam(); return;
+  }
+  const hB=e.target.closest('[data-pid][data-slug]');
+  if(!hB)return;
+  if(hB.classList.contains('off'))return;
+  const pid=hB.dataset.pid, slug=hB.dataset.slug;
+  if(tb.picks[pid]===slug) delete tb.picks[pid];
+  else tb.picks[pid]=slug;
+  tbPrune();
+  renderTeam();
+});
+
 renderSel();
 renderProfile(focusPlayer());
 renderTable();
 updateArrows();
-setMode('comp'); // 初期表示をライバル・プレイのみに確定(ボタンactive化)
+setMode();      // 常に全モード(コンペ表示は廃止)
+renderTeam();   // チームビルダー初期描画
 
 /* 最終更新日(players-data.js の LAST_UPDATED_ISO)を表示 */
 (function(){

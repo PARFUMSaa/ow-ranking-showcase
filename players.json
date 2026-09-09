@@ -3,7 +3,9 @@
     { "id": "hiyori",   "search": "ひよりっつぁっん", "tag": "#3327" },
     { "id": "voidglove","search": "ぼいどぐらぶ" },
     { "id": "maru",     "search": "まる熊" },
-    { "id": "makky",    "name": "Makky", "playerId": "df5fa781aa3cc8fcb0a42e|7151d64f9225de961a555336eb49b484" },
-    { "id": "p5",       "name": "monsterlumix", "playerId": "ff51a299a77489a1fcfd7ee8c902a10944|1135587ecccb4c908589fccfd617a51b" }
+    { "id": "makky",    "name": "Makky", "playerId": "df5fa781aa3cc8fcb0a42e|7151d64f9225de961a555336eb49b484", "rankFallback": "Damage" },
+    { "id": "p5",       "name": "monsterlumix", "playerId": "ff51a299a77489a1fcfd7ee8c902a10944|1135587ecccb4c908589fccfd617a51b" },
+    { "id": "p6",       "name": "ぼんやりリッチ", "playerId": "71bf70095182184f0d73951a07b23cdaffe87714138babe0e152|a2b9c2e5b32c51c94cb79749c9d6a226", "assumeRank": { "division": "platinum", "tier": 5 } },
+    { "id": "p7",       "name": "りんご", "playerId": "71bc46095182184c1dbd24a2d108|119124eab6231dd6a018190f27d1c6d1" }
   ]
 }
