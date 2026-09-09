@@ -39,7 +39,7 @@ const EASY_HEROES = new Set([
   // Tank
   'mauga', 'zarya', 'sigma', 'ramattra',
   // Damage
-  'reaper', 'anran', 'bastion', 'sombra',
+  'reaper', 'anran', 'bastion',
   // Support
   'moira'
 ]);
@@ -56,7 +56,9 @@ async function apiGet(url, tries = 3) {
     try {
       const res = await fetch(url, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(30000) });
       if (res.ok) return await res.json();
-      if (res.status === 404 || res.status === 422) return null;
+      if (res.status === 422) return null;
+      // 404 は「存在しない」ことが多いが OverFast のデータ更新中に一時的に出る場合があるため少し待って再試行
+      if (res.status === 404) { if (i === tries - 1) return null; await sleep(1500 * (i + 1)); continue; }
       if (res.status === 429 || res.status >= 500) { await sleep(1200 * (i + 1)); continue; }
       return null;
     } catch {
@@ -84,14 +86,16 @@ const META = loadSlugMeta();
 
 function loadPrevious() {
   const file = resolve(ROOT, 'players-data.js');
-  if (!existsSync(file)) return [];
+  if (!existsSync(file)) return { comp: [], all: [] };
   try {
     const sandbox = {};
     vm.createContext(sandbox);
-    const src = readFileSync(file, 'utf8') + '\n;globalThis.__PREV__ = (typeof PLAYERS_COMP!=="undefined"?PLAYERS_COMP:[]);';
+    const src = readFileSync(file, 'utf8')
+      + '\n;globalThis.__PC = (typeof PLAYERS_COMP!=="undefined"?PLAYERS_COMP:[]);'
+      + '\n;globalThis.__PA = (typeof PLAYERS_ALL!=="undefined"?PLAYERS_ALL:[]);';
     vm.runInContext(src, sandbox, { filename: 'players-data.js' });
-    return Array.isArray(sandbox.__PREV__) ? sandbox.__PREV__ : [];
-  } catch { return []; }
+    return { comp: Array.isArray(sandbox.__PC) ? sandbox.__PC : [], all: Array.isArray(sandbox.__PA) ? sandbox.__PA : [] };
+  } catch { return { comp: [], all: [] }; }
 }
 const PREV = loadPrevious();
 
@@ -551,7 +555,8 @@ const PLAYERS_ALL = ${JSON.stringify(allList, null, 2)};
 console.log('== OW 身内ランキング: データ更新(Power Rating 5要素 / ブロンズ基準ランク係数) ==');
 const RECS = [];
 for (const item of cfg.players) {
-  const prev = PREV.find((p) => p.id === item.id);
+  const prevC = PREV.comp.find((p) => p.id === item.id);
+  const prevA = PREV.all.find((p) => p.id === item.id);
   try {
     const rec = await fetchPlayer(item);
     rec.fresh = true;
@@ -560,10 +565,10 @@ for (const item of cfg.players) {
     console.log(`  ✓ ${rec.comp.name}: comp ${c.overall.matches}戦 / all ${a.overall.matches}戦 / メイン:${c.role} ${c.rankTier || ''}`);
   } catch (e) {
     console.error(`  ✗ ${item.search || item.id}: ${e.message}`);
-    if (prev) {
+    if (prevC || prevA) {
       console.log('    → 前回データを維持');
-      RECS.push({ comp: prev, all: prev, ranks: prev.ranks || {}, metrics: { comp: {}, all: {} }, dets: { comp: {}, all: {} } });
-    } else throw new Error(`更新失敗: ${item.search || item.id}`);
+      RECS.push({ comp: prevC, all: prevA, ranks: (prevC && prevC.ranks) || {}, metrics: { comp: {}, all: {} }, dets: { comp: {}, all: {} } });
+    } else throw new Error(`更新失敗(前回データなし): ${item.search || item.id}`);
   }
   await sleep(400);
 }
