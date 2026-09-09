@@ -1,26 +1,26 @@
 'use strict';
 /**
- * プレイヤーデータ自動更新スクリプト v2(依存ゼロ / Node 18+)
- * - モード別に「ライバル・プレイのみ(competitive)」と「全モード(= quickplay + competitive の合算)」を出力
- * - players.json の各プレイヤーを OverFast API で名前検索 → summary / stats 取得
- * - players-data.js を再生成
- *
- * 使い方:
- *   node update.mjs            # 通常更新
- *   node update.mjs --dry      # 結果だけ表示
+ * プレイヤーデータ自動更新スクリプト v3(依存ゼロ / Node 18+)
+ * - モード別: ライバル(competitive) / 全モード(= quickplay + competitive)
+ * - Power Rating 設計: 6要素(重み付きバトルスコア) × ランク係数
+ *   ④⑤⑥の偏差値は「同ヒーローを使う全プレイヤー集団」内で計算
  */
 
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
+import { detailOf, scoreTier, getStat } from './power-v6.mjs';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const API = 'https://overfast-api.tekrop.fr';
-const UA = 'ow-friend-rankings-updater/2.0 (personal use)';
+const UA = 'ow-friend-rankings-updater/3.1 (personal use)';
 const DRY = process.argv.includes('--dry');
 const PLAYER_ORDER = ['Tank', 'Damage', 'Support'];
 const RANK_ORDER = ['bronze', 'silver', 'gold', 'platinum', 'emerald', 'diamond', 'master', 'grandmaster'];
+const EXP_BY_DIV = { bronze: -3, silver: -2, gold: -1, platinum: 0, emerald: 1, diamond: 2, master: 3, grandmaster: 4 };
+const RANK_BASE = 1.10; // ランク1段あたりの伸び(要調整)
+const UNRANKED_COEF = 0.85; // ランク未設定はプラチナ基準にしない
 
 const cfg = JSON.parse(readFileSync(resolve(ROOT, 'players.json'), 'utf8'));
 
@@ -61,7 +61,6 @@ function loadSlugMeta() {
 }
 const META = loadSlugMeta();
 
-/* 前回データ(失敗時フォールバック) */
 function loadPrevious() {
   const file = resolve(ROOT, 'players-data.js');
   if (!existsSync(file)) return [];
@@ -76,27 +75,20 @@ function loadPrevious() {
 const PREV = loadPrevious();
 
 /* ---------------- 検索・取得 ---------------- */
-/* player_id 直接指定 or 名前検索で解決 */
 async function resolvePlayerId(cfgItem) {
   if (cfgItem.playerId) return [cfgItem.playerId];
   const data = await apiGet(`${API}/players?name=${encodeURIComponent(cfgItem.search)}&limit=10`);
   const list = (data && data.results) || [];
   return list.map((x) => x.player_id).filter(Boolean);
 }
-
-function pickPlatform(summary) {
-  const c = summary.competitive || {};
-  return c.pc || c.console || null;
-}
+function pickPlatform(summary) { const c = summary.competitive || {}; return c.pc || c.console || null; }
 function normalizeRanks(summary) {
   const ranks = { Tank: null, Damage: null, Support: null };
   const plat = pickPlatform(summary);
   if (!plat) return ranks;
   for (const role of PLAYER_ORDER) {
     const r = plat[role.toLowerCase()];
-    if (r && r.division) {
-      ranks[role] = { division: r.division, tier: r.tier ?? 0, icon: r.rank_icon || '' };
-    }
+    if (r && r.division) ranks[role] = { division: r.division, tier: r.tier ?? 0, icon: r.rank_icon || '' };
   }
   return ranks;
 }
@@ -108,27 +100,19 @@ function roleRankVal(rk) {
 }
 function pickMainRole(ranks, allGames) {
   let best = null, bestScore = -1;
-  for (const r of PLAYER_ORDER) {
-    const sc = roleRankVal(ranks[r]);
-    if (sc > bestScore) { bestScore = sc; best = r; }
-  }
+  for (const r of PLAYER_ORDER) { const sc = roleRankVal(ranks[r]); if (sc > bestScore) { bestScore = sc; best = r; } }
   if (best) return best;
   let bestN = -1;
-  for (const r of PLAYER_ORDER) {
-    const g = allGames[r.toLowerCase()] || 0;
-    if (g > bestN) { bestN = g; best = r; }
-  }
+  for (const r of PLAYER_ORDER) { const g = allGames[r.toLowerCase()] || 0; if (g > bestN) { bestN = g; best = r; } }
   return best || 'Damage';
 }
 
-/* ---------------- 統計マージ/整形 ---------------- */
+/* ---------------- 統計マージ/整形(Player Rankings用) ---------------- */
 function nodeInt(s) {
   const tot = (s && s.total) || {};
   return {
-    g: num(s && s.games_played), w: num(s && s.games_won), l: num(s && s.games_lost),
-    time: num(s && s.time_played),
-    elims: num(tot.eliminations), assists: num(tot.assists), deaths: num(tot.deaths),
-    dmg: num(tot.damage), heal: num(tot.healing)
+    g: num(s && s.games_played), w: num(s && s.games_won), l: num(s && s.games_lost), time: num(s && s.time_played),
+    elims: num(tot.eliminations), assists: num(tot.assists), deaths: num(tot.deaths), dmg: num(tot.damage), heal: num(tot.healing)
   };
 }
 const zero = () => ({ g: 0, w: 0, l: 0, time: 0, elims: 0, assists: 0, deaths: 0, dmg: 0, heal: 0 });
@@ -148,11 +132,9 @@ function toFields(x) {
     heal: x.time ? Math.round((x.heal / x.time) * 60000) / 100 : 0
   };
 }
-/* 複数gamemodeの旧形式stats {general,roles,heroes} を1つに合算 */
 function mergeStats(list) {
   const out = { general: {}, roles: {}, heroes: {} };
-  const rolesAll = new Set();
-  const heroesAll = new Set();
+  const rolesAll = new Set(), heroesAll = new Set();
   for (const st of list) {
     if (!st) continue;
     if (st.roles) for (const k of Object.keys(st.roles)) rolesAll.add(k);
@@ -160,11 +142,9 @@ function mergeStats(list) {
   }
   for (const r of rolesAll) out.roles[r] = null;
   for (const h of heroesAll) out.heroes[h] = null;
-
   let gen = zero();
   for (const st of list) if (st && st.general) gen = addNodes(gen, nodeInt(st.general));
   out.general = gen;
-
   for (const r of rolesAll) {
     let acc = zero();
     for (const st of list) if (st && st.roles && st.roles[r]) acc = addNodes(acc, nodeInt(st.roles[r]));
@@ -177,7 +157,6 @@ function mergeStats(list) {
   }
   return out;
 }
-/* 合算済みオブジェクトをページ用データに変換 */
 function toPlayerStats(merged) {
   const overall = toFields(merged.general);
   const roles = {};
@@ -196,13 +175,192 @@ function toPlayerStats(merged) {
   }
   heroes.sort((a, b) => b.g - a.g);
   return {
-    overall: {
-      matches: overall.g, wins: overall.w, losses: overall.l, wr: overall.wr, kda: overall.kda,
-      elim: overall.elim, deaths: overall.deaths, dmg: overall.dmg, heal: overall.heal, time: overall.time
-    },
-    roles,
-    heroes
+    overall: { matches: overall.g, wins: overall.w, losses: overall.l, wr: overall.wr, kda: overall.kda,
+      elim: overall.elim, deaths: overall.deaths, dmg: overall.dmg, heal: overall.heal, time: overall.time },
+    roles, heroes
   };
+}
+
+/* ---------------- Power Rating(6要素 × ランク係数) ---------------- */
+function metricOf(hd) {
+  const gs = (cat, key) => getStat(hd, cat, key);
+  const g = gs('game', 'games_played');
+  const elim = gs('combat', 'eliminations'), death = gs('combat', 'deaths');
+  return {
+    g, time: gs('game', 'time_played'), wr: gs('game', 'win_percentage'),
+    kda: death > 0 ? elim / death : 0,
+    multi: gs('combat', 'multikills'),
+    obj10: gs('average', 'objective_time_avg_per_10_min'),
+    allDmg10: gs('average', 'all_damage_done_avg_per_10_min'),
+    heroDmg10: gs('average', 'hero_damage_done_avg_per_10_min'),
+    elim10: gs('average', 'eliminations_avg_per_10_min'),
+    heal10: gs('average', 'healing_done_avg_per_10_min'),
+    assist10: gs('average', 'assists_avg_per_10_min'),
+    death10: gs('average', 'deaths_avg_per_10_min'),
+    solo10: gs('average', 'solo_kills_avg_per_10_min'),
+    fire10: gs('average', 'time_spent_on_fire_avg_per_10_min'),
+    wa: gs('combat', 'weapon_accuracy'),
+    ca: gs('combat', 'critical_hit_accuracy'),
+    scoped: gs('hero_specific', 'scoped_accuracy')
+  };
+}
+function metricsMap(raw) {
+  const out = {};
+  if (!raw || typeof raw !== 'object') return out;
+  for (const slug of Object.keys(raw)) {
+    if (slug === 'all-heroes') continue;
+    const hd = raw[slug];
+    if (!Array.isArray(hd)) continue;
+    const m = metricOf(hd);
+    if (m.g > 0) out[slug] = { slug, ...m };
+  }
+  return out;
+}
+function weightedMetrics(c, q, key) {
+  const t = c.g + q.g;
+  return t ? (c[key] * c.g + q[key] * q.g) / t : (c[key] || q[key] || 0);
+}
+function combineMetricsMap(compMap, qpMap) {
+  const out = {};
+  const keys = new Set([...Object.keys(compMap), ...Object.keys(qpMap)]);
+  for (const slug of keys) {
+    const c = compMap[slug], q = qpMap[slug];
+    if (c && q) {
+      const t = c.g + q.g;
+      const m = { slug, g: t, time: c.time + q.time, kda: t ? (c.kda * c.g + q.kda * q.g) / t : 0, multi: c.multi + q.multi };
+      for (const k of ['wr', 'obj10', 'allDmg10', 'heroDmg10', 'elim10', 'heal10', 'assist10', 'death10', 'solo10', 'fire10', 'wa', 'ca', 'scoped']) m[k] = weightedMetrics(c, q, k);
+      out[slug] = m;
+    } else out[slug] = c || q;
+  }
+  return out;
+}
+function detMap(raw) {
+  const out = {};
+  if (!raw || typeof raw !== 'object') return out;
+  for (const slug of Object.keys(raw)) {
+    if (slug === 'all-heroes') continue;
+    const hd = raw[slug];
+    if (!Array.isArray(hd)) continue;
+    const d = detailOf(hd);
+    if (d.g > 0) out[slug] = d;
+  }
+  return out;
+}
+function combineDetMap(compD, qpD) {
+  const out = {};
+  const keys = new Set([...Object.keys(compD), ...Object.keys(qpD)]);
+  for (const slug of keys) {
+    const c = compD[slug], q = qpD[slug];
+    if (c && q) {
+      const t = c.g + q.g;
+      const d = { g: t, time: c.time + q.time };
+      for (const k of ['wr', 'el10', 'de10', 'dm10', 'he10', 'as10', 'wa', 'ca']) d[k] = t ? (c[k] * c.g + q[k] * q.g) / t : 0;
+      out[slug] = d;
+    } else out[slug] = c || q;
+  }
+  return out;
+}
+
+/* 偏差値(集団: 同ヒーローを登録している全プレイヤー) */
+function devStats(vals) {
+  const n = vals.length;
+  if (!n) return null;
+  const mean = vals.reduce((a, b) => a + b, 0) / n;
+  const variance = vals.reduce((a, b) => a + (b - mean) * (b - mean), 0) / n;
+  return { n, mean, sd: Math.sqrt(variance) };
+}
+function devValue(val, st) {
+  if (!st || st.n < 3 || st.sd < 1e-6) return 50; // 母集団不足は50固定
+  return Math.max(0, Math.min(100, 50 + 10 * (val - st.mean) / st.sd));
+}
+function buildDatasetStats(records, modeKey) {
+  const groups = new Map();
+  for (const rec of records) {
+    const mm = rec.metrics[modeKey];
+    if (!mm) continue;
+    for (const slug of Object.keys(mm)) {
+      let g = groups.get(slug);
+      if (!g) { g = new Map(); groups.set(slug, g); }
+      const m = mm[slug];
+      const push = (k, v) => { if (v !== undefined && v !== null && isFinite(v)) { let arr = g.get(k); if (!arr) { arr = []; g.set(k, arr); } arr.push(v); } };
+      push('wr', m.wr); push('kda', m.kda);
+      push('multi', m.g ? m.multi / m.g : 0);
+      push('obj10', m.obj10); push('allDmg10', m.allDmg10); push('heroDmg10', m.heroDmg10);
+      push('elim10', m.elim10); push('heal10', m.heal10); push('assist10', m.assist10);
+      push('death10', m.death10); push('solo10', m.solo10); push('fire10', m.fire10);
+      push('wa', m.wa); push('ca', m.ca); push('scoped', m.scoped);
+    }
+  }
+  const out = new Map();
+  for (const [slug, g] of groups) {
+    const st = {};
+    for (const [k, arr] of g) st[k] = devStats(arr);
+    out.set(slug, st);
+  }
+  return out;
+}
+function coefficientFor(rank) {
+  if (!rank || !rank.division) return UNRANKED_COEF; // ランク未設定は控えめに
+  const exp = EXP_BY_DIV[String(rank.division).toLowerCase()];
+  if (exp === undefined) return UNRANKED_COEF;
+  return Math.pow(RANK_BASE, exp);
+}
+function playerScores(rec, stats, modeKey) {
+  const mm = rec.metrics[modeKey] || {};
+  const dm = rec.dets[modeKey] || {};
+  const out = {};
+  for (const slug of Object.keys(mm)) {
+    const m = mm[slug];
+    const role = META.role[slug];
+    if (!role) continue;
+    const roleKey = role.charAt(0).toUpperCase() + role.slice(1);
+    const rank = rec.ranks[roleKey] || null;
+    const st = stats.get(slug) || {};
+    const dv = (key, rev) => { let x = devValue(m[key], st[key]); return rev ? 100 - x : x; };
+
+    // ④ ロール別パフォーマンス(偏差値平均)
+    const roleList = role === 'tank' ? [{ k: 'obj10' }, { k: 'allDmg10' }, { k: 'death10', rev: true }]
+      : role === 'damage' ? [{ k: 'heroDmg10' }, { k: 'elim10' }]
+        : [{ k: 'heal10' }, { k: 'assist10' }];
+    const roleDevs = roleList.map((x) => dv(x.k, x.rev));
+    const roleAvg = roleDevs.length ? roleDevs.reduce((a, b) => a + b, 0) / roleDevs.length : 50;
+
+    // ⑤ 命中率(weapon_accuracy→scoped→crit の順でフォールバック)
+    let accDev = 50;
+    for (const k of ['wa', 'scoped', 'ca']) {
+      if (st[k] && st[k].n >= 3 && st[k].sd >= 1e-6) { accDev = devValue(m[k], st[k]); break; }
+    }
+
+    // ⑥ インパクト(マルチキル/試合・ソロキル10分・on fire 10分)
+    const impDevs = [];
+    if (st.multi && st.multi.n >= 3 && st.multi.sd >= 1e-6) impDevs.push(devValue(m.g ? m.multi / m.g : 0, st.multi));
+    for (const k of ['solo10', 'fire10']) if (st[k] && st[k].n >= 3 && st[k].sd >= 1e-6) impDevs.push(devValue(m[k], st[k]));
+    const impactAvg = impDevs.length ? impDevs.reduce((a, b) => a + b, 0) / impDevs.length : 50;
+
+    const adjWr = (m.wr * m.g + 500) / (m.g + 10);
+    const battle =
+      adjWr * 0.30 +                          // ① 勝率30%
+      Math.min(m.kda, 5) * 10 * 0.20 +        // ② KDA20%
+      roleAvg * 0.20 +                        // ④ ロール指標20%
+      accDev * 0.10 +                         // ⑤ 命中率10%
+      impactAvg * 0.10;                       // ⑥ インパクト10%(③使用率は加算から除外→係数へ)
+    const coeff = coefficientFor(rank);
+    // 試合数係数(指数・独立): 少試合は減点、500試合級は大きく加点
+    const matchCoef = Math.min(2.0, Math.max(0.25, 0.45 + 0.25 * Math.log2(m.g / 10)));
+    const final = battle * coeff * matchCoef;
+
+    out[slug] = {
+      finalScore: r2(final),
+      battleScore: r2(battle),
+      coeff: r2(coeff),
+      matchCoef: r2(matchCoef),
+      gamesPlayed: m.g,
+      rankIndex: rank ? (EXP_BY_DIV[String(rank.division).toLowerCase()] ?? 0) : 0,
+      tier: scoreTier(final),
+      det: dm[slug] || null
+    };
+  }
+  return out;
 }
 
 /* ---------------- 1プレイヤー ---------------- */
@@ -215,20 +373,20 @@ async function fetchPlayer(cfgItem) {
     if (!summary) { lastErr = new Error('summary取得失敗'); continue; }
     const compRaw = await apiGet(`${API}/players/${encodeURIComponent(pid)}/stats/summary?gamemode=competitive&platform=pc`);
     const qpRaw = await apiGet(`${API}/players/${encodeURIComponent(pid)}/stats/summary?gamemode=quickplay&platform=pc`);
+    const compDetail = await apiGet(`${API}/players/${encodeURIComponent(pid)}/stats?gamemode=competitive`);
+    const qpDetail = await apiGet(`${API}/players/${encodeURIComponent(pid)}/stats?gamemode=quickplay`);
     if (!compRaw && !qpRaw) { lastErr = new Error('stats取得失敗'); continue; }
-    return buildPlayer(cfgItem, summary, compRaw, qpRaw);
+    return buildPlayer(cfgItem, summary, compRaw, qpRaw, compDetail, qpDetail);
   }
   throw lastErr || new Error('取得失敗');
 }
-function buildPlayer(cfgItem, summary, compRaw, qpRaw) {
+function buildPlayer(cfgItem, summary, compRaw, qpRaw, compDetail, qpDetail) {
   const compStats = compRaw && compRaw.general ? compRaw : null;
   const qpStats = qpRaw && qpRaw.general ? qpRaw : null;
-  // 全モード = quickplay + competitive(どちらか欠けたら片方で代用)
   const allStats = mergeStats([qpStats, compStats]);
   const compMerged = mergeStats([compStats]);
   const ranks = normalizeRanks(summary);
 
-  // メインロール決定用: 全モードの各ロール試合数
   const allGames = {};
   for (const role of PLAYER_ORDER) allGames[role.toLowerCase()] = (allStats.roles[role.toLowerCase()] || {}).g || 0;
 
@@ -241,17 +399,25 @@ function buildPlayer(cfgItem, summary, compRaw, qpRaw) {
     avatar: summary.avatar || '',
     namecard: summary.namecard || '',
     role: cfgItem.role || pickMainRole(ranks, allGames),
-    ranks,
+    ranks
   };
   const mainRank = ranks[identity.role];
   identity.rankTier = mainRank ? `${cap(mainRank.division)} ${mainRank.tier ?? ''}`.trim() : null;
 
-  const comp = toPlayerStats(compMerged || { general: {}, roles: {}, heroes: {} });
-  const all = toPlayerStats(allStats);
-  return {
-    comp: { ...identity, ...comp },
-    all: { ...identity, ...all }
+  const rec = {
+    comp: { ...identity, ...toPlayerStats(compMerged || { general: {}, roles: {}, heroes: {} }) },
+    all: { ...identity, ...toPlayerStats(allStats) },
+    ranks,
+    metrics: {
+      comp: metricsMap(compDetail),
+      all: combineMetricsMap(metricsMap(compDetail), metricsMap(qpDetail))
+    },
+    dets: {
+      comp: detMap(compDetail),
+      all: combineDetMap(detMap(compDetail), detMap(qpDetail))
+    }
   };
+  return rec;
 }
 
 /* ---------------- serialize ---------------- */
@@ -269,26 +435,38 @@ const PLAYERS_ALL = ${JSON.stringify(allList, null, 2)};
 }
 
 /* ---------------- main ---------------- */
-console.log('== OW 身内ランキング: データ更新(2モード) ==');
-const COMP_OUT = [], ALL_OUT = [];
+console.log('== OW 身内ランキング: データ更新(Power Rating 6要素) ==');
+const RECS = [];
 for (const item of cfg.players) {
   const prev = PREV.find((p) => p.id === item.id);
   try {
-    const both = await fetchPlayer(item);
-    COMP_OUT.push(both.comp);
-    ALL_OUT.push(both.all);
-    const c = both.comp, a = both.all;
-    console.log(`  ✓ ${both.comp.name}: comp ${c.overall.matches}戦(WR${c.overall.wr}%) / all ${a.overall.matches}戦(WR${a.overall.wr}%) / メイン:${c.role} ${c.rankTier || ''}`);
+    const rec = await fetchPlayer(item);
+    rec.fresh = true;
+    RECS.push(rec);
+    const c = rec.comp, a = rec.all;
+    console.log(`  ✓ ${rec.comp.name}: comp ${c.overall.matches}戦 / all ${a.overall.matches}戦 / メイン:${c.role} ${c.rankTier || ''}`);
   } catch (e) {
-    console.error(`  ✗ ${item.search}: ${e.message}`);
+    console.error(`  ✗ ${item.search || item.id}: ${e.message}`);
     if (prev) {
       console.log('    → 前回データを維持');
-      COMP_OUT.push(prev);
-      ALL_OUT.push(prev);
-    } else throw new Error(`更新失敗: ${item.search}`);
+      RECS.push({ comp: prev, all: prev, ranks: prev.ranks || {}, metrics: { comp: {}, all: {} }, dets: { comp: {}, all: {} } });
+    } else throw new Error(`更新失敗: ${item.search || item.id}`);
   }
   await sleep(400);
 }
+if (!DRY) {
+  // 偏差値を「同ヒーローを使う全プレイヤー」で計算してから各プレイヤーへ適用
+  const statsComp = buildDatasetStats(RECS, 'comp');
+  const statsAll = buildDatasetStats(RECS, 'all');
+  for (const rec of RECS) {
+    if (!rec.fresh) continue; // フォールバック時は既存データ保持
+    rec.comp.bscore = playerScores(rec, statsComp, 'comp');
+    rec.all.bscore = playerScores(rec, statsAll, 'all');
+    rec.all.bscoreAll = rec.all.bscore;
+  }
+}
+const COMP_OUT = RECS.map((r) => r.comp);
+const ALL_OUT = RECS.map((r) => r.all);
 if (DRY) { console.log('(--dry: 書き込みなし)'); process.exit(0); }
 writeFileSync(resolve(ROOT, 'players-data.js'), serialize(COMP_OUT, ALL_OUT), 'utf8');
-console.log(`\n✓ players-data.js 更新完了 (${COMP_OUT.length}人 × 2モード)`);
+console.log(`\n✓ players-data.js 更新完了 (${COMP_OUT.length}人 × 2モード / Power Rating 6要素)`);

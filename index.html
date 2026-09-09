@@ -209,8 +209,9 @@ table.mini td:first-child{text-align:left;white-space:nowrap}
 .power-controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .power-sel{padding:6px 10px;border-radius:9px;border:1px solid var(--border);background:#fff;font:inherit;font-size:13px;color:#111827;cursor:pointer}
 .big-sr{font-size:15px;font-weight:800;font-variant-numeric:tabular-nums}
+.btier{display:inline-block;font-size:12px;font-weight:900;padding:1px 9px;border-radius:6px;border:1px solid;min-width:22px;text-align:center}
 
-/* バトルスコア解説 */
+/* Power Rating解説 */
 details.pformula{margin-top:14px;border:1px dashed #d6deea;border-radius:10px;background:#fbfcfe;padding:0 16px}
 details.pformula summary{cursor:pointer;font-weight:800;font-size:13px;color:var(--blue);padding:11px 0;user-select:none}
 details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px}
@@ -226,6 +227,20 @@ details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px
 .pf-note{color:#4b5563!important}
 .stat-box .s{color:#52606e!important}
 .pc-kpi .s{color:#5b6b7c!important}
+
+/* Makky除くボタン: RGBグラデーション枠 */
+#powerControls .filter-btn[data-ex="makky"]{
+  border:2px solid transparent;
+  color:#0f172a;
+  background-image:linear-gradient(#ffffff,#ffffff),linear-gradient(90deg,#ff4d6d,#ffb84d,#5ef09d,#38d6c5,#4d9bff,#b45dff,#ff4d6d);
+  background-origin:border-box;
+  background-clip:padding-box,border-box;
+  background-size:auto,300% 100%;
+  animation:makkyrgb 6s linear infinite;
+}
+@keyframes makkyrgb{0%{background-position:0 0,0% 0}100%{background-position:0 0,300% 0}}
+#powerControls .filter-btn[data-ex="makky"]:hover{filter:brightness(1.07)}
+#powerControls .filter-btn[data-ex="makky"].active{box-shadow:0 0 14px rgba(139,92,246,.5)}
 </style>
 </head>
 <body>
@@ -282,57 +297,82 @@ details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px
       <div class="power-head">
         <div>
           <h2>🎖️ Hero Power Rankings</h2>
-          <div class="sub">バトルスコア = 調整勝率×0.5 + min(KDA,5)×10×0.3 + 試合数ボーナス×0.2（ベイズ調整）</div>
+          <div class="sub">5要素(勝率30/KDA20/ロール20/命中10/インパクト10)×ランク係数×試合数係数(指数) ・ 詳細statsから算出</div>
         </div>
         <div class="power-controls" id="powerControls">
           <button class="filter-btn" data-ex="makky">Makky を除く</button>
-          <span class="note">▼ ヒーロー行クリックで「使い手ランキング」(バトルスコア順)を開きます</span>
+          <span class="note">▼ ヒーロー行クリックで「使い手ランキング」(Power Rating順)を開きます</span>
         </div>
       </div>
       <div id="powerBody"></div>
 
-      <details class="pformula">
-        <summary>💡 バトルスコアの計算式を詳しく解説</summary>
-        <div class="pf-body">
-          <h4>定義式</h4>
-          <pre>バトルスコア = 調整勝率 × 0.5 + (min(KDA, 5.0) × 10 × 0.3) + 試合数ボーナス × 0.2</pre>
+      <details class="pformula"><summary>📐 Power Rating 設計仕様書(くわしく)</summary><div class="pf-body">
+<h4>1. 全体構造</h4>
+<pre>最終 Power Rating = バトルスコア(加算・5要素) × ランク係数 × 試合数係数</pre>
+<p>「1試合あたりの実力」を5要素で測り、ランクと試合数の信頼性を<b>乗算</b>で効かせる構成。
+バトルスコアは単独では0〜80点の範囲(理論上限)。係数により100を超える場合があります。</p>
 
-          <h4>① 調整勝率（重み 50% → 最大50点）</h4>
-          <p>試合数が少ないヒーローが「1戦100%勝率」などで不当に上位に来るのを防ぐため、
-             実勝率を<b>全体平均（50%）</b>側へ引き寄せるベイズ推定を行います。</p>
-          <pre>調整勝率 = (実勝率 × 試合数 + 50 × 10) ÷ (試合数 + 10)</pre>
-          <ul>
-            <li>例: 1試合で100%勝率 → (100×1 + 500) ÷ 11 = <b>54.5%</b>（過大評価を補正）</li>
-            <li>例: 25試合で64%勝率 → (64×25 + 500) ÷ 35 = <b>60.0%</b></li>
-            <li>例: 100試合で50%勝率 → ほぼ<b>50.0%</b>のまま</li>
-          </ul>
-          <p>①の得点 = 調整勝率 × 0.5（勝率100%で最大50点）</p>
+<h4>2. バトルスコア(5つの加算要素)</h4>
+<h5>① 調整勝率スコア(重み30% / 上限30点)</h5>
+<pre>調整勝率 = (実勝率×試合数 + 50×10) ÷ (試合数+10)   ※全体平均50へベイズ収束
+得点 = 調整勝率 × 0.30</pre>
+<p>試合数が少ないヒーローの極端な勝率(100%等)を補正します。</p>
 
-          <h4>② KDA（重み 30%）</h4>
-          <p>キル・デス・アシスト比（例:KDA 2.5 = 死ぬ1回あたり2.5キル相当）。
-             極端に高い値は事故の可能性があるため <b>5.0で打ち切り</b> ます。</p>
-          <pre>得点 = min(KDA, 5.0) × 10 × 0.3</pre>
-          <ul>
-            <li>KDA 3.0 → 9点 / KDA 5.0（上限）→ 15点</li>
-          </ul>
+<h5>② KDAスコア(重み20% / 上限10点)</h5>
+<pre>得点 = min(KDA, 5.0) × 10 × 0.20</pre>
+<p>事故的な高KDAを防ぐため5.0で打ち切り。</p>
 
-          <h4>③ 試合数ボーナス（重み 20% → 最大20点）</h4>
-          <p>試合数を重ねた信頼性への加点。<b>30試合で満点</b>、それ以上は一律。</p>
-          <pre>ボーナス = min(試合数, 30) ÷ 30 × 100 × 0.2</pre>
-          <ul>
-            <li>10試合 → 6.7点 / 30試合以上 → 20.0点</li>
-          </ul>
+<h5>③ ロール別パフォーマンス(重み20% / 上限20点)</h5>
+<pre>偏差値 = 50 + 10 × (自分の値 − 同ヒーロー全プレイヤー平均) ÷ 標準偏差
+得点 = 偏差値の平均 × 0.20</pre>
+<p>指標(全て per 10分) — タンク: objective_time / all_damage_done / deaths(逆転)・ダメージ: hero_damage_done / eliminations・サポート: healing_done / assists</p>
 
-          <h4>合計の目安・実例</h4>
-          <p>上限は 50 + 15 + 20 = <b>約85点</b>（勝率100%でもベイズ補正があるため勝率枠は50点が最大）。
-             例: ひよりのソルジャー76（勝率58.89%・KDA 2.52・90試合）</p>
-          <pre>調整勝率 = (58.89×90 + 500) ÷ 100 = 58.0 → 58.0×0.5 = 29.0点
-KDA      = 2.52 × 10 × 0.3 = 7.6点
-試合ボーナス = 20.0点（30試合以上）
-バトルスコア = 29.0 + 7.6 + 20.0 = 56.6点</pre>
-          <p style="color:#9ca3af">※ 重み(0.5/0.3/0.2)・ベイズ係数(10)・KDA上限(5.0)・30試合基準は調整できます。</p>
-        </div>
-      </details>
+<h5>④ 命中率スコア(重み10% / 上限10点)</h5>
+<pre>得点 = weapon_accuracy の偏差値 × 0.10
+(キーが無ければ scoped_accuracy → critical_hit_accuracy の順で代替)</pre>
+
+<h5>⑤ インパクトプレイ(重み10% / 上限10点)</h5>
+<pre>指標: multikills(試合数あたり) / solo_kills_avg_per_10_min / time_spent_on_fire_avg_per_10_min
+得点 = 3指標の偏差値平均 × 0.10</pre>
+
+<h4>3. 偏差値の仕様</h4>
+<ul>
+<li>母集団 = 「そのヒーローを使う身内プレイヤー全員」(OverFastに全体統計が無いため身内グループ内の相対評価)</li>
+<li>0〜100にクリップ。母集団が3人未満、または標準偏差がほぼ0の指標は<b>50固定</b>(フォールバック)</li>
+<li>死亡系指標は「低いほど良い」ため、偏差値を反転(100−偏差値)してから平均</li>
+</ul>
+
+<h4>4. ランク係数(乗数)</h4>
+<pre>ランク係数 = 1.10^ランク指数(プラチナ=0基準) ・ ランク未設定は0.85</pre>
+<table class="mini" style="margin:4px 0">
+<thead><tr><th>ランク</th><th>指数</th><th>係数</th><th>ランク</th><th>指数</th><th>係数</th></tr></thead>
+<tbody>
+<tr><td>Bronze</td><td>-3</td><td>0.751</td><td>Emerald</td><td>1</td><td>1.100</td></tr>
+<tr><td>Silver</td><td>-2</td><td>0.826</td><td>Diamond</td><td>2</td><td>1.210</td></tr>
+<tr><td>Gold</td><td>-1</td><td>0.909</td><td>Master</td><td>3</td><td>1.331</td></tr>
+<tr><td>Platinum</td><td>0</td><td>1.000</td><td>Grandmaster</td><td>4</td><td>1.464</td></tr>
+</tbody></table>
+
+<h4>5. 試合数係数(乗数・独立)</h4>
+<pre>試合数係数 = min(2.0, max(0.25, 0.45 + 0.25 × log2(試合数÷10)))</pre>
+<ul><li>4試合≒0.25 / 26試合≒0.79 / 500試合≒1.86 / 超多プレイは2.0で頭打ち</li>
+<li>プレイ数の多いキャラを正当に評価(メインキャラ優遇)。③使用率は加算要素ではなくこの係数に一本化</li></ul>
+
+<h4>6. 計算例(イメージ)</h4>
+<pre>例: Makky / Tracer(全モード・500試合・プラチナ相当)
+ バトルスコア=43.3 → 43.3 × 1.000(ランク) × 1.86(試合) = 80.5…(実際値は他要素により変動)</pre>
+
+<h4>7. 補足</h4>
+<ul>
+<li>データは OverFast /stats の詳細統計(コンペ or 全モード=QP+コンペの重み付き統合)</li>
+<li>ヒーロー/キーが存在しない統計は0として扱い、偏差値は50固定にフォールバック</li>
+<li>調整パラメータ: ランク基数1.10 / 未設定係数0.85 / 試合係数0.25〜2.0 などは自由に変更可能</li>
+</ul>
+</div></details>
+
+
+
+
     </div>
 
     <div class="foot">
@@ -627,7 +667,12 @@ function sortRows(list){
   const dir=state.sortAsc?1:-1;
   return list.slice().sort((a,b)=>{
     if(state.sortKey==='name')return String(a.name).localeCompare(String(b.name),'ja')*dir;
-    if(state.sortKey==='rank')return (rankScore(a,roleKeyOf(a))-rankScore(b,roleKeyOf(b)))*dir;
+    if(state.sortKey==='rank'){
+      const sa=rankScore(a,roleKeyOf(a)), sb=rankScore(b,roleKeyOf(b));
+      if(sa!==sb)return (sa-sb)*dir;
+      // ランク同値(アンランク同士など)はWRで比較
+      return (num(statsFor(a).wr)-num(statsFor(b).wr))*dir;
+    }
     const va=statsFor(a)[state.sortKey],vb=statsFor(b)[state.sortKey];
     return (num(va)-num(vb))*dir;
   });
@@ -724,126 +769,113 @@ function updateArrows(){
   });
 }
 
-/* ---- ヒーローパワーランキング(バトルスコア = ベイズ推定で算出) ---- */
-/* バトルスコア(上限は実質約85点):
- *   調整勝率 = (勝率×試合数 + 50×10) / (試合数 + 10)   ※ベイズ係数10
- *   調整KDA  = min(KDA, 5.0)
- *   試合数ボーナス = min(試合数/30, 1) × 100
- *   score = 調整勝率×0.5 + 調整KDA×10×0.3 + 試合数ボーナス×0.2
- */
-function estRate(h){
-  const g=num(h.g);
-  const adjWr=(num(h.wr)*g + 50*10)/(g+10);
-  const adjKda=Math.min(num(h.kda)||0,5.0);
-  const gamesBonus=Math.min(g/30,1)*100;
-  return adjWr*0.5 + adjKda*10*0.3 + gamesBonus*0.2;
+/* ---- ヒーローパワーランキング(V6Power Rating(全モード時はコンペ+QP加算)) ---- */
+function scoreOf(p, slug) { const pool = p && (state.mode === 'all' ? (p.bscoreAll || p.bscore) : p.bscore); return pool && pool[slug] ? pool[slug] : null; }
+function btierChip(t) {
+  const col = { S: '#a855f7', A: '#7c3aed', B: '#2563eb', C: '#16a34a', D: '#d97706', E: '#dc2626' }[t] || '#64748b';
+  return `<span class="btier" style="color:${col};border-color:${col}66;background:${col}1a">${t}</span>`;
 }
-function heroStatRows(){
-  const map=new Map();
-  for(const p of PLAYERS){
-    if(state.exMakky&&p.id==='makky')continue;
-    if(!p.heroes)continue;
-    for(const h of p.heroes){
-      if(state.filter!=='All'&&h.role!==state.filter)continue;
-      let r=map.get(h.slug);
-      if(!r){
-        r={slug:h.slug,role:h.role,g:0,wrW:0,kdaW:0,users:[]};
-        map.set(h.slug,r);
-      }
-      r.g+=h.g; r.wrW+=h.g*num(h.wr); r.kdaW+=h.g*(num(h.kda)||0);
-      r.users.push({p,h,rate:estRate(h)});
+function powerName(p) {
+  return `<div class="pl-cell"><span class="pl-av ${roleCls(p.role)}">${faceMarkup(p)}</span><span class="pl-name" style="cursor:default">${esc(p.name)}</span></div>`;
+}
+function heroRowsV6() {
+  const map = new Map();
+  for (const p of PLAYERS) {
+    if (state.exMakky && p.id === 'makky') continue;
+    if (!p.heroes) continue;
+    for (const h of p.heroes) {
+      if (state.filter !== 'All' && h.role !== state.filter) continue;
+      const b = scoreOf(p, h.slug);
+      if (!b) continue;
+      let r = map.get(h.slug);
+      if (!r) { r = { slug: h.slug, role: h.role, g: 0, wrW: 0, kdaW: 0, users: [] }; map.set(h.slug, r); }
+      r.g += h.g; r.wrW += h.g * num(h.wr); r.kdaW += h.g * (num(h.kda) || 0);
+      r.users.push({ p, h, score: b });
     }
   }
-  const out=[];
-  for(const r of map.values()){
-    r.users.sort((a,b)=>b.rate-a.rate);
-    out.push({
-      slug:r.slug,role:r.role,
-      g:r.g,wr:r.g?r.wrW/r.g:0,kda:r.g?r.kdaW/r.g:0,
-      users:r.users,
-      champ:r.users[0],          // 使い手トップ
-      rate:r.users[0].rate       // そのヒーローのバトルスコア(トップ使い手の値)
-    });
+  const out = [];
+  for (const r of map.values()) {
+    r.users.sort((a, b) => b.score.finalScore - a.score.finalScore);
+    r.wr = r.g ? r.wrW / r.g : 0;
+    r.kda = r.g ? r.kdaW / r.g : 0;
+    out.push({ slug: r.slug, role: r.role, g: r.g, wr: r.wr, kda: r.kda, users: r.users, champ: r.users[0], rate: r.users[0].score.finalScore });
   }
   return out;
 }
-function powerName(p){return `<div class="pl-cell"><span class="pl-av ${roleCls(p.role)}">${faceMarkup(p)}</span><span class="pl-name" style="cursor:default">${esc(p.name)}</span></div>`;}
-/* そのヒーローの使い手(バトルスコア順) */
-function powerUsageRows(slug){
-  const rows=[];
-  for(const p of PLAYERS){
-    if(state.exMakky&&p.id==='makky')continue;
-    const h=p.heroes&&p.heroes.find(x=>x.slug===slug);
-    if(!h)continue;
-    rows.push({p,h,rate:estRate(h)});
+function usageDetailV6(slug) {
+  const nm = SLUG_NAME[slug] || slug;
+  const us = [];
+  for (const p of PLAYERS) {
+    if (state.exMakky && p.id === 'makky') continue;
+    const b = scoreOf(p, slug);
+    if (!b) continue;
+    const h = p.heroes && p.heroes.find((x) => x.slug === slug);
+    if (!h) continue;
+    us.push({ p, h, b });
   }
-  rows.sort((a,b)=>b.rate-a.rate);
-  return rows;
-}
-function usageDetailHtml(slug){
-  const nm=SLUG_NAME[slug]||slug;
-  const us=powerUsageRows(slug);
-  const rows=us.map((u,i)=>`
+  us.sort((a, b) => b.b.finalScore - a.b.finalScore);
+  const rows = us.map((u, i) => `
     <tr>
-      <td style="font-weight:800">${i+1}</td>
-      <td>${powerName(u.p)}${i===0?' <b style="color:#047857">TOP</b>':''}</td>
-      <td class="big-sr">${Math.round(u.rate)}</td>
-      <td class="num">${fmtN(u.h.g)}</td>
-      <td class="num cell ${wrCls(u.h.wr)}">${fmt1(u.h.wr)}%</td>
-      <td class="num cell ${kdaCls(u.h.kda)}">${fmt2(u.h.kda)}</td>
+      <td style="font-weight:800">${i + 1}</td>
+      <td>${powerName(u.p)}${i === 0 ? ' <b style="color:#047857">TOP</b>' : ''}</td>
+      <td class="big-sr">${u.b.finalScore}</td>
+      <td class="num">${fmtN(u.b.gamesPlayed)}</td>
+      <td class="num cell ${u.h ? wrCls(u.h.wr) : ''}">${u.h ? fmt1(u.h.wr) + '%' : '—'}</td>
+      <td class="num cell ${u.h ? kdaCls(u.h.kda) : ''}">${u.h ? fmt2(u.h.kda) : '—'}</td>
     </tr>`).join('');
+  // URL(詳細stats)由来のヒーローデータ(最上位プレイヤー)
+  const det = us.length ? us[0].b.det : null;
+  const intV = (v) => (v === undefined || v === null || isNaN(v)) ? '—' : Math.round(v).toLocaleString('en-US');
+  const d1 = (v) => (v === undefined || v === null || isNaN(v)) ? '—' : (Math.round(v * 10) / 10).toFixed(1);
+  const pct = (v) => (v === undefined || v === null || isNaN(v)) ? '—' : (Math.round(v * 10) / 10) + '%';
+  const detChips = det ? [
+    ['試合', intV(det.g)], ['時間', fmtTime(det.time)], ['WR', pct(det.wr)],
+    ['Elim/10', d1(det.el10)], ['Death/10', d1(det.de10)], ['DMG/10', intV(det.dm10)],
+    ['HEAL/10', intV(det.he10)], ['Assist/10', d1(det.as10)], ['ACC', pct(det.wa)], ['CRIT', pct(det.ca)]
+  ].map(([k, v]) => `<span style="display:inline-flex;align-items:baseline;gap:6px;border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:4px 11px;font-size:12px;white-space:nowrap;color:#0f172a"><b style="font-size:10.5px;color:#475569;letter-spacing:.03em">${k}</b><span style="font-weight:800;font-variant-numeric:tabular-nums">${v}</span></span>`).join('') : '';
   return `
     <div style="padding:6px 0 8px">
       <div style="margin-bottom:8px"><b style="font-size:14px">${esc(nm)} の使い手ランキング</b>
-      <span style="color:#9ca3af;font-size:12px;margin-left:8px">バトルスコア順 ・ 調整勝率×0.5 + min(KDA,5)×10×0.3 + 試合数ボーナス×0.2</span></div>
+        <span style="color:#9ca3af;font-size:12px;margin-left:8px">Power Rating順(詳細stats)</span></div>
+      ${detChips ? `<div style="display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 10px">${detChips}</div>
+        <div style="font-size:11px;color:#9ca3af;margin:-4px 0 8px">↑ ヒーロー詳細データ(最上位プレイヤー / OverFast詳細stats)</div>` : ''}
       <table class="mini">
-        <thead><tr><th>順位</th><th>Player</th><th>バトルスコア</th><th>試合</th><th>WR</th><th>KDA</th></tr></thead>
+        <thead><tr><th>順位</th><th>Player</th><th>Power Rating</th><th>試合</th><th>WR</th><th>KDA</th></tr></thead>
         <tbody>${rows}</tbody>
       </table>
     </div>`;
 }
-function renderPower(){
-  const body=$('#powerBody');
-  if(!body)return;
-  const rows=heroStatRows();
-  if(!rows.length){
-    body.innerHTML='<div style="color:#9ca3af;padding:12px 0">ヒーロー実績データがありません</div>';
-    return;
-  }
-  const dir=state.powerAsc?1:-1;
-  rows.sort((a,b)=>{
-    if(state.powerKey==='name')return 0;
-    return (num(a[state.powerKey])-num(b[state.powerKey]))*dir;
-  });
-  const arrow=k=>state.powerKey===k?`<span class="arrow on">${state.powerAsc?'▲':'▼'}</span>`:'<span class="arrow"></span>';
-  const open=state.powerOpen;
-  const html=rows.map((r,i)=>{
-    const nm=SLUG_NAME[r.slug]||r.slug;
-    const isOpen=open.has(r.slug);
+function renderPower() {
+  const body = $('#powerBody');
+  if (!body) return;
+  const rows = heroRowsV6();
+  if (!rows.length) { body.innerHTML = '<div style="color:#9ca3af;padding:12px 0">V6スコアを算出できるヒーローがいません(詳細statsを取得してから再読込)</div>'; return; }
+  rows.sort((a, b) => (state.powerAsc ? a.rate - b.rate : b.rate - a.rate));
+  const arrow = (k) => state.powerKey === k ? `<span class="arrow on">${state.powerAsc ? '▲' : '▼'}</span>` : '<span class="arrow"></span>';
+  const open = state.powerOpen;
+  const html = rows.map((r, i) => {
+    const nm = SLUG_NAME[r.slug] || r.slug;
+    const isOpen = open.has(r.slug);
     return `
-      <tr class="row ${isOpen?'open':''}" data-hslug="${r.slug}">
-        <td><span class="medal ${i===0?'m1':i===1?'m2':i===2?'m3':'n'}">${i+1}</span></td>
-        <td><div class="hl">${heroThumb(nm,34,r.role,r.slug)}<span class="hn" style="font-size:14px">${esc(nm)}</span>
+      <tr class="row ${isOpen ? 'open' : ''}" data-hslug="${r.slug}">
+        <td><span class="medal ${i === 0 ? 'm1' : i === 1 ? 'm2' : i === 2 ? 'm3' : 'n'}">${i + 1}</span></td>
+        <td><div class="hl">${heroThumb(nm, 34, r.role, r.slug)}<span class="hn" style="font-size:14px">${esc(nm)}</span>
           <span class="role-chip ${roleCls(r.role)}" style="margin-left:6px">${roleIcon(r.role)} ${esc(r.role)}</span>
           <span class="chev">▼</span></div></td>
         <td>${powerName(r.champ.p)}</td>
-        <td class="big-sr">${Math.round(r.rate)}</td>
-        <td class="num">${fmtN(r.g)}</td>
-        <td class="num cell ${wrCls(r.wr)}">${fmt1(r.wr)}%</td>
-        <td class="num cell ${kdaCls(r.kda)}">${fmt2(r.kda)}</td>
+        <td class="big-sr">${Math.round(r.rate * 100) / 100}</td>
+        <td class="num">${r.champ.h ? fmtN(r.champ.h.g) : '—'}</td>
       </tr>
-      ${isOpen?`<tr class="detail-row"><td colspan="7">${usageDetailHtml(r.slug)}</td></tr>`:''}`;
+      ${isOpen ? `<tr class="detail-row"><td colspan="5">${usageDetailV6(r.slug)}</td></tr>` : ''}`;
   }).join('');
-  body.innerHTML=`
+  body.innerHTML = `
     <div class="scroll-x" style="border-radius:10px"><table class="rank">
       <thead><tr>
         <th style="width:44px">順位</th>
         <th style="width:300px">Hero</th>
         <th>使い手トップ</th>
-        <th><button class="sortable" data-pkey="rate">バトルスコア${arrow('rate')}</button></th>
-        <th>試合(計)</th>
-        <th><button class="sortable" data-pkey="wr">WR${arrow('wr')}</button></th>
-        <th><button class="sortable" data-pkey="kda">KDA${arrow('kda')}</button></th>
+        <th><button class="sortable" data-pkey="rate">Power Rating${arrow('rate')}</button></th>
+        <th>試合</th>
       </tr></thead>
       <tbody>${html}</tbody>
     </table></div>`;

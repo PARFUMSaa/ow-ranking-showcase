@@ -3,6 +3,7 @@
     { "id": "hiyori",   "search": "ひよりっつぁっん", "tag": "#3327" },
     { "id": "voidglove","search": "ぼいどぐらぶ" },
     { "id": "maru",     "search": "まる熊" },
-    { "id": "makky",    "name": "Makky", "playerId": "df5fa781aa3cc8fcb0a42e|7151d64f9225de961a555336eb49b484" }
+    { "id": "makky",    "name": "Makky", "playerId": "df5fa781aa3cc8fcb0a42e|7151d64f9225de961a555336eb49b484" },
+    { "id": "p5",       "name": "monsterlumix", "playerId": "ff51a299a77489a1fcfd7ee8c902a10944|1135587ecccb4c908589fccfd617a51b" }
   ]
 }
