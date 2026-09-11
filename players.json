@@ -1,8 +1,8 @@
 {
   "players": [
-    { "id": "hiyori",   "search": "ひよりっつぁっん", "tag": "#3327" },
-    { "id": "voidglove","search": "ぼいどぐらぶ" },
-    { "id": "maru",     "search": "まる熊" },
+    { "id": "hiyori",   "search": "ひよりっつぁっん", "tag": "#3327", "playerId": "71bf7e095199184f0373963307b032dafdea771631451a4bf458092eb1|fc2ba3f2117372f760ba9195a971d346" },
+    { "id": "voidglove","search": "ぼいどぐらぶ", "playerId": "71bf70095295184c2073960007b31fdafdddb9a6a594a1|0a08671b7adbc97eb1182bc68bdf60f7" },
+    { "id": "maru",     "search": "まる熊", "playerId": "71bf7209519a1c4b03bd24a4d001|37984cd41cd1e33a63f96d42d8022aa7" },
     { "id": "makky",    "name": "Makky", "playerId": "df5fa781aa3cc8fcb0a42e|7151d64f9225de961a555336eb49b484", "rankFallback": "Damage" },
     { "id": "p5",       "name": "monsterlumix", "playerId": "ff51a299a77489a1fcfd7ee8c902a10944|1135587ecccb4c908589fccfd617a51b" },
     { "id": "p6",       "name": "ぼんやりリッチ", "playerId": "71bf70095182184f0d73951a07b23cdaffe87714138babe0e152|a2b9c2e5b32c51c94cb79749c9d6a226", "assumeRank": { "division": "platinum", "tier": 5 } },

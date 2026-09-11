@@ -100,11 +100,20 @@ function loadPrevious() {
 const PREV = loadPrevious();
 
 /* ---------------- 検索・取得 ---------------- */
-async function resolvePlayerId(cfgItem) {
-  if (cfgItem.playerId) return [cfgItem.playerId];
-  const data = await apiGet(`${API}/players?name=${encodeURIComponent(cfgItem.search)}&limit=10`);
-  const list = (data && data.results) || [];
-  return list.map((x) => x.player_id).filter(Boolean);
+/* playerId 固定が無ければ名前検索。同名アカウントが複数ある場合は前回使ったIDを最優先する */
+async function resolvePlayerId(cfgItem, preferPid) {
+  const out = [];
+  if (cfgItem.playerId) out.push(cfgItem.playerId);
+  if (cfgItem.search) {
+    const data = await apiGet(`${API}/players?name=${encodeURIComponent(cfgItem.search)}&limit=10`);
+    const list = (data && data.results) || [];
+    for (const x of list) if (x.player_id && !out.includes(x.player_id)) out.push(x.player_id);
+  }
+  if (out.length > 1 && preferPid) {
+    const i = out.indexOf(preferPid);
+    if (i > 0) { out.splice(i, 1); out.unshift(preferPid); }   // 前回と同じアカウントを優先(取り違え防止)
+  }
+  return out;
 }
 function pickPlatform(summary) { const c = summary.competitive || {}; return c.pc || c.console || null; }
 function normalizeRanks(summary, assumeRank) {
@@ -480,8 +489,8 @@ function playerScores(rec, stats, modeKey) {
 }
 
 /* ---------------- 1プレイヤー ---------------- */
-async function fetchPlayer(cfgItem) {
-  const ids = await resolvePlayerId(cfgItem);
+async function fetchPlayer(cfgItem, preferPid) {
+  const ids = await resolvePlayerId(cfgItem, preferPid);
   if (!ids || !ids.length) throw new Error(`検索結果なし: ${cfgItem.search || cfgItem.id}`);
   let lastErr = null;
   for (const pid of ids) {
@@ -492,11 +501,11 @@ async function fetchPlayer(cfgItem) {
     const compDetail = await apiGet(`${API}/players/${encodeURIComponent(pid)}/stats?gamemode=competitive`);
     const qpDetail = await apiGet(`${API}/players/${encodeURIComponent(pid)}/stats?gamemode=quickplay`);
     if (!compRaw && !qpRaw) { lastErr = new Error('stats取得失敗'); continue; }
-    return buildPlayer(cfgItem, summary, compRaw, qpRaw, compDetail, qpDetail);
+    return buildPlayer(cfgItem, summary, compRaw, qpRaw, compDetail, qpDetail, pid);
   }
   throw lastErr || new Error('取得失敗');
 }
-function buildPlayer(cfgItem, summary, compRaw, qpRaw, compDetail, qpDetail) {
+function buildPlayer(cfgItem, summary, compRaw, qpRaw, compDetail, qpDetail, pid) {
   const compStats = compRaw && compRaw.general ? compRaw : null;
   const qpStats = qpRaw && qpRaw.general ? qpRaw : null;
   const allStats = mergeStats([qpStats, compStats]);
@@ -508,6 +517,7 @@ function buildPlayer(cfgItem, summary, compRaw, qpRaw, compDetail, qpDetail) {
 
   const identity = {
     id: cfgItem.id,
+    pid: pid || summary.player_id || '',
     name: summary.username || cfgItem.name || cfgItem.search || cfgItem.id,
     tag: cfgItem.tag || '',
     endorse: summary.endorsement && summary.endorsement.level != null ? summary.endorsement.level : null,
@@ -592,11 +602,11 @@ for (const item of cfg.players) {
   const prevC = PREV.comp.find((p) => p.id === item.id);
   const prevA = PREV.all.find((p) => p.id === item.id);
   try {
-    const rec = await fetchPlayer(item);
+    const rec = await fetchPlayer(item, (prevA && prevA.pid) || (prevC && prevC.pid) || null);
     rec.fresh = true;
     RECS.push(rec);
     const c = rec.comp, a = rec.all;
-    console.log(`  ✓ ${rec.comp.name}: comp ${c.overall.matches}戦 / all ${a.overall.matches}戦 / メイン:${c.role} ${c.rankTier || ''}`);
+    console.log(`  ✓ ${rec.comp.name}: comp ${c.overall.matches}戦 / all ${a.overall.matches}戦 / メイン:${c.role} ${c.rankTier || ''} / id:${(rec.comp.pid || '').slice(0, 12)}…`);
   } catch (e) {
     console.error(`  ✗ ${item.search || item.id}: ${e.message}`);
     if (prevC || prevA) {
