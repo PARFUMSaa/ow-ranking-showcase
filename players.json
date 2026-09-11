@@ -6,6 +6,8 @@
     { "id": "makky",    "name": "Makky", "playerId": "df5fa781aa3cc8fcb0a42e|7151d64f9225de961a555336eb49b484", "rankFallback": "Damage" },
     { "id": "p5",       "name": "monsterlumix", "playerId": "ff51a299a77489a1fcfd7ee8c902a10944|1135587ecccb4c908589fccfd617a51b" },
     { "id": "p6",       "name": "ぼんやりリッチ", "playerId": "71bf70095182184f0d73951a07b23cdaffe87714138babe0e152|a2b9c2e5b32c51c94cb79749c9d6a226", "assumeRank": { "division": "platinum", "tier": 5 } },
-    { "id": "p7",       "name": "りんご", "playerId": "71bc46095182184c1dbd24a2d108|119124eab6231dd6a018190f27d1c6d1" }
+    { "id": "p7",       "name": "りんご", "playerId": "71bc46095182184c1dbd24a2d108|119124eab6231dd6a018190f27d1c6d1" },
+    { "id": "p8",       "name": "センチネル後藤", "playerId": "71bc770950a2184e0873941d07b23ddcc2e77c00368babe9ed5b|7a6bfeecad03bc198ea7f97517e765fb" },
+    { "id": "p9",       "name": "Miyasho", "playerId": "df57b58ba07994e0b8a122a7d7|cd6cf51152735dd8913954bd8b4cd0e6" }
   ]
 }
