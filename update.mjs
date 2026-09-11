@@ -537,6 +537,40 @@ function buildPlayer(cfgItem, summary, compRaw, qpRaw, compDetail, qpDetail) {
   return rec;
 }
 
+/* ---------------- 前回ランキングとの順位変動(ヒーロー単位) ---------------- */
+/* そのプレイヤーのヒーローを Power Rating(finalScore) 降順に並べた順位を作る */
+function heroRanks(pool) {
+  const list = Object.keys(pool || {})
+    .filter((s) => pool[s] && typeof pool[s].finalScore === 'number')
+    .map((s) => ({ slug: s, v: pool[s].finalScore }))
+    .sort((a, b) => b.v - a.v);
+  const m = new Map();
+  list.forEach((x, i) => m.set(x.slug, i + 1));
+  return m;
+}
+/* 前回ファイルのプールと比較して rankDelta(正=順位アップ) / rankNew を各ヒーローへ埋め込む */
+function applyHeroRankDelta(recs, prevList, poolOf) {
+  const prevById = new Map();
+  for (const p of (prevList || [])) if (p && p.id) prevById.set(p.id, heroRanks(poolOf(p)));
+  for (const rec of recs) {
+    if (!rec || !rec.id) continue;
+    const pool = poolOf(rec);
+    if (!pool) continue;
+    const prev = prevById.get(rec.id);
+    const cur = heroRanks(pool);
+    for (const [slug, rank] of cur) {
+      const b = pool[slug];
+      if (!b) continue;
+      delete b.rankDelta;
+      delete b.rankNew;
+      if (!prev) continue;                                  // 前回データ無し=比較不能(バッジを出さない)
+      const pr = prev.get(slug);
+      if (pr == null) b.rankNew = true;                      // 前回のランキングに無いヒーロー
+      else if (pr !== rank) b.rankDelta = pr - rank;          // 正=順位アップ / 負=順位ダウン
+    }
+  }
+}
+
 /* ---------------- serialize ---------------- */
 function serialize(compList, allList) {
   const now = new Date().toISOString();
@@ -587,6 +621,9 @@ if (!DRY) {
   compressEasySpreads(RECS.map((r) => ({ id: r.all && r.all.id, bs: r.all && r.all.bscore })));
   // Makky(全モード)のレート差が大きすぎるため、最上位はそのまま・最下位が90になるよう線形に底上げ
   liftMakkyFloor(RECS.map((r) => ({ id: r.all && r.all.id, bs: r.all && r.all.bscore })));
+  // 前回のランキング(生成前の players-data.js)と比べたヒーロー順位の変動を埋め込む
+  applyHeroRankDelta(RECS.map((r) => r.all).filter(Boolean), PREV.all, (p) => p.bscoreAll || p.bscore);
+  applyHeroRankDelta(RECS.map((r) => r.comp).filter(Boolean), PREV.comp, (p) => p.bscore);
 }
 const COMP_OUT = RECS.map((r) => r.comp);
 const ALL_OUT = RECS.map((r) => r.all);

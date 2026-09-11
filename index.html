@@ -265,9 +265,16 @@ details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px
 .hb-legend b{color:#1d4ed8;font-variant-numeric:tabular-nums}
 .hb-rows{display:flex;flex-direction:column}
 /* 行の列幅は固定(バーと平均基準線が全行でピタリ揃うように) */
-.hb-row{display:grid;grid-template-columns:200px 268px minmax(90px,1fr) 118px;align-items:center;gap:8px;padding:3px 2px;border-bottom:1px solid #f1f5f9}
+.hb-row{display:grid;grid-template-columns:240px 268px minmax(90px,1fr) 118px;align-items:center;gap:8px;padding:3px 2px;border-bottom:1px solid #f1f5f9}
 .hb-row:hover{background:#f8fafc}
 .hb-hero{display:flex;align-items:center;gap:6px;min-width:0}
+/* 前回更新とのヒーロー順位の変動バッジ(文字なし・▲/▼/★+数字のみ) */
+.hb-delta{flex:0 0 34px;text-align:center;font-size:11px;font-weight:900;line-height:1.5;border-radius:4px;
+  font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.hb-delta.up{color:#15803d;background:#dcfce7}
+.hb-delta.dn{color:#b91c1c;background:#fee2e2}
+.hb-delta.new{color:#1d4ed8;background:#dbeafe}
+.hb-delta.none{background:transparent;color:#e2e8f0}
 .hb-name{font-size:12px;font-weight:700;color:#0f172a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .hb-coef{font-size:9.5px;font-weight:800;color:#1d4ed8;background:#eff6ff;border:1px solid #dbeafe;border-radius:5px;padding:0 4px;white-space:nowrap;font-variant-numeric:tabular-nums}
 .hb-stats{display:flex;flex-wrap:wrap;gap:1px 9px;align-items:baseline;font-size:11px;color:#64748b;font-variant-numeric:tabular-nums}
@@ -316,7 +323,7 @@ details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px
 .hb-avg i.sw.grp{border-top:2px dashed #2563eb}
 .hb-avg.diff-up{color:#166534;background:#dcfce7;border-color:#bbf7d0}
 .hb-avg.diff-dn{color:#b91c1c;background:#fee2e2;border-color:#fecaca}
-.hb-axis{display:grid;grid-template-columns:200px 268px minmax(90px,1fr) 118px;gap:8px;align-items:center;padding:0 2px;font-size:9.5px;color:#a8b3c2;font-variant-numeric:tabular-nums;margin:0 0 2px}
+.hb-axis{display:grid;grid-template-columns:240px 268px minmax(90px,1fr) 118px;gap:8px;align-items:center;padding:0 2px;font-size:9.5px;color:#a8b3c2;font-variant-numeric:tabular-nums;margin:0 0 2px}
 .hb-axis .hb-ax-scale{display:flex;justify-content:space-between}
 .hb-empty{color:#9ca3af;font-size:12px;padding:6px 0}
 .hb-foot{margin:8px 0 0;font-size:10.5px;line-height:1.7;color:#94a3b8}
@@ -1700,7 +1707,9 @@ function heroBreakdownHtml(p) {
       coef,
       after: bs == null ? null : bs * coef,
       rankIdx: b && typeof b.rankIndex === 'number' ? b.rankIndex : null,
-      matchCoef: b && typeof b.matchCoef === 'number' ? b.matchCoef : null
+      matchCoef: b && typeof b.matchCoef === 'number' ? b.matchCoef : null,
+      delta: b && typeof b.rankDelta === 'number' ? b.rankDelta : null,
+      isNew: !!(b && b.rankNew)
     };
   });
   const withBs = rows.filter(r => r.bs != null);
@@ -1722,14 +1731,24 @@ function heroBreakdownHtml(p) {
     const wBase = r.bs == null ? 0 : Math.max(1.5, basePct);
     const wExt = r.bs == null ? 0 : Math.max(0, Math.min(100, (r.after - r.bs) / BS_SCALE_MAX * 100));
     const rankName = r.rankIdx != null && RANK_NAMES[r.rankIdx] ? RANK_NAMES[r.rankIdx] : null;
+    /* 前回の更新(players-data.js)と比べたヒーロー順位の変動(文字なし・記号と数字だけ) */
+    let deltaHtml = '<span class="hb-delta none" title="前回のランキングから順位の変動なし"></span>';
+    if (r.isNew) deltaHtml = '<span class="hb-delta new" title="前回のランキングに無かったヒーロー">★</span>';
+    else if (r.delta) {
+      deltaHtml = r.delta > 0
+        ? `<span class="hb-delta up" title="前回のランキングより${r.delta}位上がりました">▲${r.delta}</span>`
+        : `<span class="hb-delta dn" title="前回のランキングより${-r.delta}位下がりました">▼${-r.delta}</span>`;
+    }
+    const deltaTxt = r.isNew ? ' ・ 前回のランキングに無いヒーロー(NEW)'
+      : (r.delta ? ` ・ 前回のランキング比 ${r.delta > 0 ? '+' : '−'}${Math.abs(r.delta)}位` : '');
     const tip = (r.bs == null
       ? `${r.h.n} ・ バトルスコアなし(データ無し)`
       : `${r.h.n} ・ バトルスコア(素点) ${fmt1(r.bs)} / 80 ・ ランク係数 ×${r.coef.toFixed(3)}${rankName ? `(${rankName})` : ''} → ランク適用後 ${fmt1(r.after)}`
         + (r.matchCoef != null ? ` ・ 試合数係数 ×${r.matchCoef.toFixed(3)}` : '')
         + ` ・ 最終Power Rating ${r.pr == null ? '—' : fmt1(r.pr)} ・ ${r.h.g}試合 ・ WR ${fmt1(r.h.wr)}% ・ KDA ${fmt2(r.h.kda)}`
-        + (EASY_SLUGS.has(r.h.slug) ? ' ・ 簡単キャラ(×1.25)' : ''));
+        + (EASY_SLUGS.has(r.h.slug) ? ' ・ 簡単キャラ(×1.25)' : '')) + deltaTxt;
     return `<div class="hb-row" title="${esc(tip)}">
-      <div class="hb-hero">${heroThumb(r.h.n, 26, r.h.role, r.h.slug)}<span class="hb-name">${esc(r.h.n)}</span><span class="role-chip ${roleCls(r.h.role)}">${roleIcon(r.h.role)}</span><span class="hb-coef" title="ランク係数 ×${r.coef.toFixed(3)}${rankName ? `(${rankName})` : ''}">×${r.coef.toFixed(2)}</span></div>
+      <div class="hb-hero">${deltaHtml}${heroThumb(r.h.n, 26, r.h.role, r.h.slug)}<span class="hb-name">${esc(r.h.n)}</span><span class="role-chip ${roleCls(r.h.role)}">${roleIcon(r.h.role)}</span><span class="hb-coef" title="ランク係数 ×${r.coef.toFixed(3)}${rankName ? `(${rankName})` : ''}">×${r.coef.toFixed(2)}</span></div>
       <div class="hb-stats">
         <span><b>${r.h.g}</b>試合</span>
         <span class="${r.h.wr == null ? '' : wrCls(r.h.wr)}">WR ${fmt1(r.h.wr)}%</span>
@@ -1764,7 +1783,7 @@ function heroBreakdownHtml(p) {
   const axis = `<div class="hb-axis"><span class="hb-ax-pad"></span><span class="hb-ax-pad"></span><span class="hb-ax-scale">${[0, 40, 80, 120, 160].map(v => `<span>${v}</span>`).join('')}</span><span class="hb-ax-pad"></span></div>`;
   return `<h4>Hero Breakdown(ヒーロー別・Power順)${roleLabel}</h4>
     ${top}${axis}<div class="hb-rows">${body}</div>
-    <div class="hb-foot">※ バー左の濃い部分=<b>バトルスコア(素点・0〜80点)</b>(調整勝率30% + KDA20% + ロール別20% + 命中率10% + インパクト10%)、右の「＞」が流れる部分=<b>ランク係数ぶんの増分(淡いロール色)</b>。素点×ランク係数=「ランク適用後」(目盛りは0〜160、80の線が素点満点)。このプレイヤーのランク係数: ${coefTxt || '—'}。Power = ランク適用後に試合数係数・簡単キャラ補正(×1.25)を掛けた最終値。各バーの中の<b>黒い縦マーカー=自分の平均(素点)</b>、青い破線マーカー=<b>身内全員の平均(素点)</b>(ロール絞り込み中はそのロールだけ)。<b>自分の平均を上回ったヒーロー</b>は<b>バーは通常表示のまま</b>で、上部のチップで平均との差を確認できます(超過分の特別な塗り分けはしていません)。</div>`;
+    <div class="hb-foot">※ バー左の濃い部分=<b>バトルスコア(素点・0〜80点)</b>(調整勝率30% + KDA20% + ロール別20% + 命中率10% + インパクト10%)、右の「＞」が流れる部分=<b>ランク係数ぶんの増分(淡いロール色)</b>。素点×ランク係数=「ランク適用後」(目盛りは0〜160、80の線が素点満点)。このプレイヤーのランク係数: ${coefTxt || '—'}。Power = ランク適用後に試合数係数・簡単キャラ補正(×1.25)を掛けた最終値。各バーの中の<b>黒い縦マーカー=自分の平均(素点)</b>、青い破線マーカー=<b>身内全員の平均(素点)</b>(ロール絞り込み中はそのロールだけ)。<b>自分の平均を上回ったヒーロー</b>は<b>バーは通常表示のまま</b>で、上部のチップで平均との差を確認できます(超過分の特別な塗り分けはしていません)。各行の左端の<b>「▲1 / ▼2」= 前回のデータ更新(GitHub Actions)と比べたこのプレイヤー内でのヒーロー順位の変動</b>(▲=順位アップ / ▼=順位ダウン、数字は変動した順位数。<b>★</b>=前回のランキングに無かったヒーロー、表示なし=変動なし)。</div>`;
 }
 /* ---- チームビルダー操作 ---- */
 $('#teamCtl').addEventListener('click',e=>{
