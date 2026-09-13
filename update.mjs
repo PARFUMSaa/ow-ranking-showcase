@@ -623,6 +623,53 @@ function applyHeroRankDelta(recs, prevList, poolOf) {
   }
 }
 
+/* ---------------- 最近練習しているキャラ(前回スナップショットとの差分) ---------------- */
+/* OverFast に「最近の試合」情報が無いため、毎回の更新でヒーロー別の試合数増加分を記録し、
+   直近 RECENT_MAX 回分(≒1週間)を履歴として持ち回る。サイト側で合計して「練習中ヒーロー」を出す。 */
+const RECENT_MAX = 7;
+function jstDate(d = new Date()) {
+  return d.toLocaleDateString('sv-SE', { timeZone: 'Asia/Tokyo' });   // YYYY-MM-DD
+}
+/* 1回の更新で試合数が増減しすぎ = 別アカウントに切り替わった疑い(その差分は「練習」ではない) */
+function suspiciousJump(prevRec, rec) {
+  const a = prevRec && prevRec.overall && prevRec.overall.matches;
+  const b = rec && rec.overall && rec.overall.matches;
+  if (typeof a !== 'number' || typeof b !== 'number' || a <= 0) return false;
+  return Math.abs(b - a) > Math.max(50, a * 0.25);
+}
+function applyRecentHeroes(recs, prevList, poolOf) {
+  const prevById = new Map();
+  for (const p of (prevList || [])) if (p && p.id) prevById.set(p.id, p);
+  const today = jstDate();
+  for (const rec of recs) {
+    if (!rec || !rec.id) continue;
+    const pool = poolOf(rec);
+    if (!pool) continue;
+    const prevRec = prevById.get(rec.id);
+    if (!prevRec) continue;                        // 前回データが無い(新規プレイヤー)は今回から記録開始
+    // 別アカウントに切り替わった場合は比較しない(試合数が飛んで偽の「練習」になるため)
+    if ((prevRec.pid && rec.pid && prevRec.pid !== rec.pid) || suspiciousJump(prevRec, rec)) {
+      rec.recent = Array.isArray(prevRec.recent) ? prevRec.recent : [];
+      continue;
+    }
+    const prevPool = poolOf(prevRec) || {};
+    const gains = {};
+    for (const slug of Object.keys(pool)) {
+      const cur = pool[slug] && pool[slug].gamesPlayed;
+      const old = prevPool[slug] && prevPool[slug].gamesPlayed;
+      if (typeof cur !== 'number') continue;
+      const diff = typeof old === 'number' ? cur - old : cur;
+      if (diff > 0) gains[slug] = diff;            // 増えたヒーローだけ記録(ファイルを軽く保つ)
+    }
+    const hist = (Array.isArray(rec.recent) ? rec.recent : []).filter((e) => e && e.d).slice();
+    if (!Object.keys(gains).length) { rec.recent = hist.slice(-RECENT_MAX); continue; }
+    const entry = { d: today, g: gains };
+    const i = hist.findIndex((e) => e.d === today);
+    if (i >= 0) hist[i] = entry; else hist.push(entry);   // 同じ日に複数回走ったら上書き
+    rec.recent = hist.slice(-RECENT_MAX);
+  }
+}
+
 /* ---------------- serialize ---------------- */
 function serialize(compList, allList) {
   const now = new Date().toISOString();
@@ -677,6 +724,8 @@ if (!DRY) {
   // 前回のランキング(生成前の players-data.js)と比べたヒーロー順位の変動を埋め込む
   applyHeroRankDelta(RECS.map((r) => r.all).filter(Boolean), PREV.all, (p) => p.bscoreAll || p.bscore);
   applyHeroRankDelta(RECS.map((r) => r.comp).filter(Boolean), PREV.comp, (p) => p.bscore);
+  // 最近練習しているキャラ(前回スナップショットとの試合数差分の履歴)
+  applyRecentHeroes(RECS.map((r) => r.all).filter(Boolean), PREV.all, (p) => p.bscoreAll || p.bscore);
 }
 const COMP_OUT = RECS.map((r) => r.comp);
 const ALL_OUT = RECS.map((r) => r.all);

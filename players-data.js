@@ -5913,7 +5913,48 @@ const PLAYERS_ALL = [
           "ca": 14
         }
       }
-    }
+    },
+    "recent": [
+      {
+        "d": "2026-09-10",
+        "g": {
+          "ashe": 1,
+          "cassidy": 2,
+          "pharah": 1,
+          "shion": 2,
+          "sojourn": 1,
+          "soldier-76": 1,
+          "genji": 2,
+          "hanzo": 1,
+          "illari": 1,
+          "mei": 3,
+          "sierra": 2,
+          "widowmaker": 1
+        }
+      },
+      {
+        "d": "2026-09-11",
+        "g": {
+          "anran": 1,
+          "genji": 2,
+          "sigma": 1,
+          "torbjorn": 2
+        }
+      },
+      {
+        "d": "2026-09-12",
+        "g": {
+          "lucio": 2
+        }
+      },
+      {
+        "d": "2026-09-13",
+        "g": {
+          "anran": 1,
+          "junker-queen": 1
+        }
+      }
+    ]
   },
   {
     "id": "voidglove",
@@ -8478,7 +8519,60 @@ const PLAYERS_ALL = [
         },
         "rankDelta": -1
       }
-    }
+    },
+    "recent": [
+      {
+        "d": "2026-09-10",
+        "g": {
+          "ana": 4,
+          "cassidy": 1,
+          "kiriko": 5,
+          "mizuki": 1,
+          "moira": 1,
+          "reaper": 1,
+          "wuyang": 1,
+          "baptiste": 2,
+          "bastion": 1,
+          "torbjorn": 2,
+          "widowmaker": 1
+        }
+      },
+      {
+        "d": "2026-09-11",
+        "g": {
+          "ana": 5,
+          "illari": 1,
+          "kiriko": 1,
+          "mizuki": 3,
+          "wuyang": 1,
+          "lucio": 2
+        }
+      },
+      {
+        "d": "2026-09-12",
+        "g": {
+          "ana": 2,
+          "ashe": 1,
+          "cassidy": 1,
+          "dmon": 1,
+          "doomfist": 1,
+          "genji": 4,
+          "kiriko": 1,
+          "lifeweaver": 1,
+          "mauga": 1,
+          "shion": 1,
+          "sojourn": 2,
+          "tracer": 1,
+          "wuyang": 1
+        }
+      },
+      {
+        "d": "2026-09-13",
+        "g": {
+          "ana": 1
+        }
+      }
+    ]
   },
   {
     "id": "maru",
@@ -12964,7 +13058,20 @@ const PLAYERS_ALL = [
           "ca": 10
         }
       }
-    }
+    },
+    "recent": [
+      {
+        "d": "2026-09-10",
+        "g": {
+          "ana": 4,
+          "cassidy": 3,
+          "genji": 1,
+          "sojourn": 2,
+          "tracer": 1,
+          "sombra": 1
+        }
+      }
+    ]
   },
   {
     "id": "p5",
@@ -15593,7 +15700,22 @@ const PLAYERS_ALL = [
           "ca": 13
         }
       }
-    }
+    },
+    "recent": [
+      {
+        "d": "2026-09-11",
+        "g": {
+          "cassidy": 1,
+          "soldier-76": 1
+        }
+      },
+      {
+        "d": "2026-09-13",
+        "g": {
+          "reaper": 1
+        }
+      }
+    ]
   },
   {
     "id": "p6",
@@ -18037,7 +18159,29 @@ const PLAYERS_ALL = [
           "ca": 11
         }
       }
-    }
+    },
+    "recent": [
+      {
+        "d": "2026-09-10",
+        "g": {
+          "soldier-76": 1
+        }
+      },
+      {
+        "d": "2026-09-11",
+        "g": {
+          "echo": 1,
+          "genji": 1
+        }
+      },
+      {
+        "d": "2026-09-12",
+        "g": {
+          "ana": 1,
+          "soldier-76": 1
+        }
+      }
+    ]
   },
   {
     "id": "p7",
@@ -20523,7 +20667,15 @@ const PLAYERS_ALL = [
           "ca": 11
         }
       }
-    }
+    },
+    "recent": [
+      {
+        "d": "2026-09-12",
+        "g": {
+          "emre": 2
+        }
+      }
+    ]
   },
   {
     "id": "p9",
