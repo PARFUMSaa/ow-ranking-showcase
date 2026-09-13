@@ -84,6 +84,47 @@ function loadSlugMeta() {
 }
 const META = loadSlugMeta();
 
+/* ---------------- 新ヒーローの自動追随 ---------------- */
+/* OverFast の /heroes に、heroes-meta.js に無いヒーローがあれば追記する(新キャラ対策) */
+const UNKNOWN_HEROES = new Set();
+function metaLine(mapName, key, val) {
+  const v = String(val == null ? '' : val).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+  return `  '${key}':'${v}',`;
+}
+function insertMetaEntry(src, mapName, key, val) {
+  const lines = src.split('\n');
+  const start = lines.findIndex((l) => l.startsWith(`const ${mapName}=`));
+  if (start < 0) return src;
+  let end = -1;
+  for (let i = start + 1; i < lines.length; i++) if (lines[i].trim() === '};') { end = i; break; }
+  if (end < 0) return src;
+  let at = end;
+  for (let i = start + 1; i < end; i++) {
+    const m = lines[i].match(/^\s*'([^']+)':/);
+    if (m && m[1] > key) { at = i; break; }   // アルファベット順の位置へ
+  }
+  lines.splice(at, 0, metaLine(mapName, key, val));
+  return lines.join('\n');
+}
+async function syncHeroMeta() {
+  const list = await apiGet(`${API}/heroes`);
+  if (!Array.isArray(list) || !list.length) return;
+  const missing = list.filter((h) => h && h.key && !META.role[h.key]);
+  if (!missing.length) return;
+  const file = resolve(ROOT, 'heroes-meta.js');
+  let src = readFileSync(file, 'utf8');
+  for (const h of missing) {
+    const name = h.name || h.key;
+    src = insertMetaEntry(src, 'SLUG_ROLE', h.key, h.role || '');
+    src = insertMetaEntry(src, 'SLUG_NAME', h.key, name);
+    src = insertMetaEntry(src, 'SLUG_URL', h.key, h.portrait || '');
+    META.role[h.key] = h.role || '';
+    META.name[h.key] = name;
+    console.log(`  ＋ 新ヒーローを heroes-meta.js に追記: ${h.key}(${name} / ${h.role || 'ロール不明'})`);
+  }
+  if (!DRY) writeFileSync(file, src, 'utf8');
+}
+
 function loadPrevious() {
   const file = resolve(ROOT, 'players-data.js');
   if (!existsSync(file)) return { comp: [], all: [] };
@@ -212,6 +253,7 @@ function toPlayerStats(merged) {
   for (const slug of Object.keys(merged.heroes)) {
     const f = toFields(merged.heroes[slug]);
     if (f.g <= 0) continue;
+    if (!META.role[slug]) UNKNOWN_HEROES.add(slug);   // heroes-meta.js に無いヒーロー(=要メタ追加)
     heroes.push({ slug, n: META.name[slug] || slug, role: META.role[slug] || '', g: f.g, wr: f.wr, kda: f.kda });
   }
   heroes.sort((a, b) => b.g - a.g);
@@ -597,6 +639,7 @@ const PLAYERS_ALL = ${JSON.stringify(allList, null, 2)};
 
 /* ---------------- main ---------------- */
 console.log('== OW 身内ランキング: データ更新(Power Rating 5要素 / ブロンズ基準ランク係数) ==');
+await syncHeroMeta();   // 新ヒーローが追加されていれば heroes-meta.js に追記
 const RECS = [];
 for (const item of cfg.players) {
   const prevC = PREV.comp.find((p) => p.id === item.id);
@@ -640,3 +683,7 @@ const ALL_OUT = RECS.map((r) => r.all);
 if (DRY) { console.log('(--dry: 書き込みなし)'); process.exit(0); }
 writeFileSync(resolve(ROOT, 'players-data.js'), serialize(COMP_OUT, ALL_OUT), 'utf8');
 console.log(`\n✓ players-data.js 更新完了 (${COMP_OUT.length}人 × 2モード / Power Rating 5要素・ブロンズ基準)`);
+if (UNKNOWN_HEROES.size) {
+  console.log(`⚠ heroes-meta.js に無いヒーロー: ${[...UNKNOWN_HEROES].join(', ')}`);
+  console.log('  (OverFast の /heroes にまだ無い新キャラの可能性。表示は名前=slug・ロール未設定になります)');
+}
