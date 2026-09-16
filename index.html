@@ -190,16 +190,18 @@ table.mini td:first-child{text-align:left;white-space:nowrap}
 .pc-role .rr{margin-top:0}
 .pc-role em{font-style:normal;font-size:9.5px;font-weight:800;color:#0f766e;background:#ccfbf1;border-radius:999px;padding:0 6px}
 .pc-role.main{border-color:rgba(37,99,235,.5);background:#f4f8ff;box-shadow:0 0 0 1px rgba(37,99,235,.12) inset}
-/* 最近練習しているキャラ */
+/* 直近のピック率 */
 .pr-practice{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin-top:10px;padding:8px 10px;border:1px dashed #e6d3a8;border-radius:10px;background:#fffdf6}
 .pr-practice.sm{padding:6px 9px;margin-top:8px}
 .pr-title{font-size:11px;font-weight:800;color:#b45309;white-space:nowrap;letter-spacing:.02em}
 .pr-list{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.pr-item{display:inline-flex;align-items:center;gap:4px;background:#fff;border:1px solid #e8eef7;border-radius:99px;padding:1px 8px 1px 3px;font-size:11.5px;color:#0f172a;white-space:nowrap}
-.pr-item b{font-weight:800}
-.pr-item i{font-style:normal;font-weight:900;color:#16a34a;font-size:10.5px;font-variant-numeric:tabular-nums}
 .pr-note{font-size:10.5px;color:#a8b3c2;margin-left:auto}
 .pr-none{font-size:11px;color:#9ca3af}
+/* 凡例(ピック率の棒) */
+.pr-item{display:inline-flex;align-items:center;gap:4px;border:1px solid #e8eef7;border-radius:99px;padding:1px 8px 1px 3px;font-size:11.5px;color:#0f172a;white-space:nowrap;
+  background:linear-gradient(90deg,#fff3cf var(--p,0%),#fff var(--p,0%))}
+.pr-item i.v{font-style:normal;font-weight:800;color:#b45309;font-size:10px;font-variant-numeric:tabular-nums}
+.pr-item b{font-weight:800}
 .upd{color:#6b7280;font-size:11px}
 /* ページ最上部の更新日バー */
 .upd-top{display:flex;align-items:center;gap:9px;flex-wrap:wrap;background:#f8fafc;border:1px solid var(--border);border-radius:10px;padding:7px 12px;margin:0 0 12px;font-size:12px;color:#64748b}
@@ -1001,39 +1003,47 @@ function faceMarkup(p){
     ? `<i>${init}</i><img class="face" src="${p.avatar}" alt="" loading="lazy" decoding="async" onerror="this.remove()">`
     : init;
 }
-/* 最近練習しているキャラ(update.mjs が記録した日次スナップショットの差分から集計) */
-const PRACTICE_TOP = 4;
-function practiceOf(p) {
-  const hist = (Array.isArray(p.recent) ? p.recent : []).filter(e => e && e.g);
+/* 直近1か月のキャラ使用状況(update.mjs が記録した日次スナップショットの差分から集計) */
+const USAGE_DAYS = 30;       // 直近1か月ぶん
+const USAGE_TOP = 5;         // 表示するヒーロー数
+function usageOf(p) {
+  const hist = (Array.isArray(p.recent) ? p.recent : []).filter(e => e && e.g && e.d).slice(-USAGE_DAYS);
+  if (!hist.length) return null;
+  const to = hist[hist.length - 1].d;
+  const limit = new Date(new Date(`${to}T00:00:00Z`).getTime() - (USAGE_DAYS - 1) * 86400000).toISOString().slice(0, 10);
+  const picked = hist.filter(e => e.d >= limit);     // 直近1か月に含まれる更新だけ
   const tot = {};
-  for (const e of hist) for (const s of Object.keys(e.g)) tot[s] = (tot[s] || 0) + (Number(e.g[s]) || 0);
+  let total = 0;
+  for (const e of picked) for (const s of Object.keys(e.g)) { const v = Number(e.g[s]) || 0; tot[s] = (tot[s] || 0) + v; total += v; }
+  if (!total) return null;
   const keys = Object.keys(tot).filter(s => tot[s] > 0).sort((a, b) => tot[b] - tot[a]);
   const hmap = {};
   for (const h of (p.heroes || [])) hmap[h.slug] = h;
+  const list = keys.map(s => ({ slug: s, n: tot[s], pct: tot[s] / total * 100, h: hmap[s] || null }));
+  const from = picked[0].d;
+  const span = Math.round((new Date(`${to}T00:00:00Z`) - new Date(`${from}T00:00:00Z`)) / 86400000) + 1;
   return {
-    has: hist.length > 0,
-    days: hist.length,
-    from: hist.length ? hist[0].d : '',
-    to: hist.length ? hist[hist.length - 1].d : '',
-    top: keys.slice(0, PRACTICE_TOP).map(s => ({ slug: s, n: tot[s], h: hmap[s] || null })),
-    others: Math.max(0, keys.length - PRACTICE_TOP)
+    total, days: picked.length, from, to, span,
+    full: hist.length >= USAGE_DAYS,
+    heroCount: list.length,
+    list, top: list.slice(0, USAGE_TOP), others: Math.max(0, list.length - USAGE_TOP)
   };
 }
-function practiceHtml(p, small) {
+function usageHtml(p, small) {
   const cls = `pr-practice${small ? ' sm' : ''}`;
-  const pr = practiceOf(p);
-  if (!pr.has) return `<div class="${cls}"><span class="pr-title">🔥 最近練習しているキャラ</span><span class="pr-none">— まだ履歴がありません(次回の更新から記録されます)</span></div>`;
-  if (!pr.top.length) return `<div class="${cls}"><span class="pr-title">🔥 最近練習しているキャラ</span><span class="pr-none">— 直近の更新で試合数が増えたヒーローはいません</span></div>`;
-  const items = pr.top.map(t => {
-    const n = t.h ? t.h.n : (SLUG_NAME[t.slug] || t.slug);
+  const u = usageOf(p);
+  if (!u) return `<div class="${cls}"><span class="pr-title">📊 直近1か月のキャラ使用状況</span><span class="pr-none">— まだ履歴がありません(次回の更新から記録されます)</span></div>`;
+  const nameOf = t => (t.h ? t.h.n : (SLUG_NAME[t.slug] || t.slug));
+  const maxN = u.top.length ? u.top[0].n : 0;
+  const items = u.top.map(t => {
+    const n = nameOf(t);
     const role = t.h ? t.h.role : (SLUG_ROLE[t.slug] || '');
-    return `<span class="pr-item" title="${esc(n)} ・ 直近の更新で +${t.n}試合">${heroThumb(n, small ? 20 : 26, role, t.slug)}<b>${esc(n)}</b><i>+${t.n}</i></span>`;
+    const bar = maxN ? Math.max(8, Math.round(t.n / maxN * 100)) : 0;   // 1位を100%とした相対バー
+    return `<span class="pr-item" style="--p:${bar}%" title="${esc(n)} ・ 直近1か月で ${t.n}試合">${heroThumb(n, small ? 20 : 26, role, t.slug)}<b>${esc(n)}</b><i class="v">${t.n}試合</i></span>`;
   }).join('');
-  const range = pr.from === pr.to ? pr.from : `${pr.from}〜${pr.to}`;
   return `<div class="${cls}">
-    <span class="pr-title">🔥 最近練習しているキャラ</span>
+    <span class="pr-title">📊 直近1か月のキャラ使用状況</span>
     <span class="pr-list">${items}</span>
-    <span class="pr-note">${range} の更新${pr.days}回分で試合数の増加が大きい順${pr.others ? ` ・ 他${pr.others}キャラ` : ''}</span>
   </div>`;
 }
 
@@ -1078,7 +1088,7 @@ function renderProfile(p){
       </div>
       ${roleRow}
       ${ph?`<div class="pf-heroes">${ph}</div>`:''}
-      ${practiceHtml(p,true)}
+      ${usageHtml(p,true)}
     </div>
     <div class="pf-stats">
       <div class="stat-box"><div class="k">Matches</div><div class="v">${fmtN(s.matches)}</div><div class="s">${f==='All'?'通算':`${f}のみ`}</div></div>
@@ -1133,7 +1143,7 @@ function playerCard(p){
       </div>
     </div>
     ${tiles?`<div class="pc-heroes">${tiles}</div>`:''}
-    ${practiceHtml(p,false)}
+    ${usageHtml(p,false)}
   </div>`;
 }
 function playerCell(p,i){

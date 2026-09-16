@@ -80,28 +80,33 @@ function loadSlugMeta() {
     for (const m of body[1].matchAll(/'([^']+)'\s*:\s*'([^']*)'/g)) out[m[1]] = m[2];
     return out;
   };
-  return { role: grab('SLUG_ROLE'), name: grab('SLUG_NAME') };
+  return { role: grab('SLUG_ROLE'), name: grab('SLUG_NAME'), url: grab('SLUG_URL') };
 }
 const META = loadSlugMeta();
 
 /* ---------------- 新ヒーローの自動追随 ---------------- */
-/* OverFast の /heroes に、heroes-meta.js に無いヒーローがあれば追記する(新キャラ対策) */
+/* OverFast の /heroes に無い/情報が欠けているヒーローを heroes-meta.js に追記・補完する(新キャラ対策) */
 const UNKNOWN_HEROES = new Set();
 function metaLine(mapName, key, val) {
   const v = String(val == null ? '' : val).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
   return `  '${key}':'${v}',`;
 }
-function insertMetaEntry(src, mapName, key, val) {
+/* 同じキーがあれば置換、無ければアルファベット順の位置に挿入 */
+function upsertMetaEntry(src, mapName, key, val) {
   const lines = src.split('\n');
   const start = lines.findIndex((l) => l.startsWith(`const ${mapName}=`));
   if (start < 0) return src;
   let end = -1;
   for (let i = start + 1; i < lines.length; i++) if (lines[i].trim() === '};') { end = i; break; }
   if (end < 0) return src;
+  for (let i = start + 1; i < end; i++) {                       // 既存なら置換
+    const m = lines[i].match(/^\s*'([^']+)':/);
+    if (m && m[1] === key) { lines[i] = metaLine(mapName, key, val); return lines.join('\n'); }
+  }
   let at = end;
   for (let i = start + 1; i < end; i++) {
     const m = lines[i].match(/^\s*'([^']+)':/);
-    if (m && m[1] > key) { at = i; break; }   // アルファベット順の位置へ
+    if (m && m[1] > key) { at = i; break; }                     // アルファベット順の位置へ
   }
   lines.splice(at, 0, metaLine(mapName, key, val));
   return lines.join('\n');
@@ -109,18 +114,22 @@ function insertMetaEntry(src, mapName, key, val) {
 async function syncHeroMeta() {
   const list = await apiGet(`${API}/heroes`);
   if (!Array.isArray(list) || !list.length) return;
-  const missing = list.filter((h) => h && h.key && !META.role[h.key]);
-  if (!missing.length) return;
+  // 未登録 or 情報が欠けている(ロール・アイコン未設定)ヒーローを対象に
+  const targets = list.filter((h) => h && h.key && (!META.role[h.key] || !META.url[h.key]));
+  if (!targets.length) return;
   const file = resolve(ROOT, 'heroes-meta.js');
   let src = readFileSync(file, 'utf8');
-  for (const h of missing) {
-    const name = h.name || h.key;
-    src = insertMetaEntry(src, 'SLUG_ROLE', h.key, h.role || '');
-    src = insertMetaEntry(src, 'SLUG_NAME', h.key, name);
-    src = insertMetaEntry(src, 'SLUG_URL', h.key, h.portrait || '');
-    META.role[h.key] = h.role || '';
+  for (const h of targets) {
+    const name = h.name || META.name[h.key] || h.key;
+    const role = h.role || META.role[h.key] || '';
+    const before = !META.role[h.key] ? '新規' : '情報補完';
+    if (!META.role[h.key]) src = upsertMetaEntry(src, 'SLUG_ROLE', h.key, role);
+    if (!META.name[h.key]) src = upsertMetaEntry(src, 'SLUG_NAME', h.key, name);
+    if (!META.url[h.key] && h.portrait) src = upsertMetaEntry(src, 'SLUG_URL', h.key, h.portrait);
+    META.role[h.key] = role;
     META.name[h.key] = name;
-    console.log(`  ＋ 新ヒーローを heroes-meta.js に追記: ${h.key}(${name} / ${h.role || 'ロール不明'})`);
+    if (h.portrait) META.url[h.key] = h.portrait;
+    console.log(`  ＋ ヒーロー情報を heroes-meta.js に${before}: ${h.key}(${name} / ${role || 'ロール不明'})`);
   }
   if (!DRY) writeFileSync(file, src, 'utf8');
 }
@@ -623,10 +632,11 @@ function applyHeroRankDelta(recs, prevList, poolOf) {
   }
 }
 
-/* ---------------- 最近練習しているキャラ(前回スナップショットとの差分) ---------------- */
+/* ---------------- 直近のピック率(前回スナップショットとの差分) ---------------- */
 /* OverFast に「最近の試合」情報が無いため、毎回の更新でヒーロー別の試合数増加分を記録し、
-   直近 RECENT_MAX 回分(≒1週間)を履歴として持ち回る。サイト側で合計して「練習中ヒーロー」を出す。 */
-const RECENT_MAX = 7;
+   直近 RECENT_MAX 回分(≒1か月)を履歴として持ち回る。
+   サイト側はここから遡って「直近50試合のピック率」を再構成する。 */
+const RECENT_MAX = 30;
 function jstDate(d = new Date()) {
   return d.toLocaleDateString('sv-SE', { timeZone: 'Asia/Tokyo' });   // YYYY-MM-DD
 }
@@ -647,6 +657,8 @@ function applyRecentHeroes(recs, prevList, poolOf) {
     if (!pool) continue;
     const prevRec = prevById.get(rec.id);
     if (!prevRec) continue;                        // 前回データが無い(新規プレイヤー)は今回から記録開始
+    // 新しく取得したレコードには履歴が無いので、前回の履歴を引き継ぐ(毎回リセットされないように)
+    if (!Array.isArray(rec.recent) && Array.isArray(prevRec.recent)) rec.recent = prevRec.recent.slice();
     // 別アカウントに切り替わった場合は比較しない(試合数が飛んで偽の「練習」になるため)
     if ((prevRec.pid && rec.pid && prevRec.pid !== rec.pid) || suspiciousJump(prevRec, rec)) {
       rec.recent = Array.isArray(prevRec.recent) ? prevRec.recent : [];
