@@ -599,35 +599,45 @@ function buildPlayer(cfgItem, summary, compRaw, qpRaw, compDetail, qpDetail, pid
 }
 
 /* ---------------- 前回ランキングとの順位変動(ヒーロー単位) ---------------- */
-/* そのプレイヤーのヒーローを Power Rating(finalScore) 降順に並べた順位を作る */
-function heroRanks(pool) {
+/* そのプレイヤーのヒーローの順位を2通り作る(サイトの Hero Breakdown の切替に対応)
+   score = バーの長さ(素点×ランク係数) / power = 最終 Power Rating(finalScore) */
+function heroRanks(pool, mode) {
   const list = Object.keys(pool || {})
     .filter((s) => pool[s] && typeof pool[s].finalScore === 'number')
-    .map((s) => ({ slug: s, v: pool[s].finalScore }))
+    .map((s) => {
+      const b = pool[s];
+      const v = mode === 'power'
+        ? b.finalScore
+        : ((typeof b.battleScore === 'number' && typeof b.coeff === 'number') ? b.battleScore * b.coeff : b.finalScore);
+      return { slug: s, v };
+    })
     .sort((a, b) => b.v - a.v);
   const m = new Map();
   list.forEach((x, i) => m.set(x.slug, i + 1));
   return m;
 }
-/* 前回ファイルのプールと比較して rankDelta(正=順位アップ) / rankNew を各ヒーローへ埋め込む */
+/* 前回ファイルのプールと比較して rankDelta(スコア順) / rankDeltaPower(Power順) / rankNew を埋め込む */
 function applyHeroRankDelta(recs, prevList, poolOf) {
   const prevById = new Map();
-  for (const p of (prevList || [])) if (p && p.id) prevById.set(p.id, heroRanks(poolOf(p)));
+  for (const p of (prevList || [])) if (p && p.id) prevById.set(p.id, { score: heroRanks(poolOf(p), 'score'), power: heroRanks(poolOf(p), 'power') });
   for (const rec of recs) {
     if (!rec || !rec.id) continue;
     const pool = poolOf(rec);
     if (!pool) continue;
     const prev = prevById.get(rec.id);
-    const cur = heroRanks(pool);
-    for (const [slug, rank] of cur) {
+    const curScore = heroRanks(pool, 'score');
+    const curPower = heroRanks(pool, 'power');
+    for (const [slug, rank] of curScore) {
       const b = pool[slug];
       if (!b) continue;
       delete b.rankDelta;
+      delete b.rankDeltaPower;
       delete b.rankNew;
-      if (!prev) continue;                                  // 前回データ無し=比較不能(バッジを出さない)
-      const pr = prev.get(slug);
-      if (pr == null) b.rankNew = true;                      // 前回のランキングに無いヒーロー
-      else if (pr !== rank) b.rankDelta = pr - rank;          // 正=順位アップ / 負=順位ダウン
+      if (!prev) continue;                                   // 前回データ無し=比較不能(バッジを出さない)
+      if (prev.score.get(slug) == null) b.rankNew = true;     // 前回のランキングに無いヒーロー
+      if (prev.score.get(slug) != null && prev.score.get(slug) !== rank) b.rankDelta = prev.score.get(slug) - rank;
+      const pr = prev.power.get(slug), cr = curPower.get(slug);
+      if (pr != null && cr != null && pr !== cr) b.rankDeltaPower = pr - cr;
     }
   }
 }

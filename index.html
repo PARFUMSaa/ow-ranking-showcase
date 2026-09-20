@@ -190,7 +190,14 @@ table.mini td:first-child{text-align:left;white-space:nowrap}
 .pc-role .rr{margin-top:0}
 .pc-role em{font-style:normal;font-size:9.5px;font-weight:800;color:#0f766e;background:#ccfbf1;border-radius:999px;padding:0 6px}
 .pc-role.main{border-color:rgba(37,99,235,.5);background:#f4f8ff;box-shadow:0 0 0 1px rgba(37,99,235,.12) inset}
-/* 直近のピック率 */
+/* Hero Breakdown の並び順切替(スコア順 / Power Rating順) */
+/* Hero Breakdown の見出し+並び順切替(ボタンは右寄せ) */
+.hb-head{display:flex;align-items:center;gap:6px 12px;flex-wrap:wrap;margin:0 0 8px}
+.hb-head h4{margin:0}
+.hb-sortbar{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-left:auto}
+.hb-sortbar .lbl{font-size:10.5px;font-weight:800;color:#94a3b8;letter-spacing:.02em}
+.hb-sortbar .filter-btn{font-size:11px;padding:2px 10px}
+/* 直近1か月のキャラ使用状況 */
 .pr-practice{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin-top:10px;padding:8px 10px;border:1px dashed #e6d3a8;border-radius:10px;background:#fffdf6}
 .pr-practice.sm{padding:6px 9px;margin-top:8px}
 .pr-title{font-size:11px;font-weight:800;color:#b45309;white-space:nowrap;letter-spacing:.02em}
@@ -291,6 +298,8 @@ details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px
 .hb-coef{font-size:9.5px;font-weight:800;color:#1d4ed8;background:#eff6ff;border:1px solid #dbeafe;border-radius:5px;padding:0 4px;white-space:nowrap;font-variant-numeric:tabular-nums}
 .hb-stats{display:flex;flex-wrap:wrap;gap:1px 9px;align-items:baseline;font-size:11px;color:#64748b;font-variant-numeric:tabular-nums}
 .hb-stats>span{white-space:nowrap}
+.hb-stats i{font-style:normal;font-size:10px;color:#cbd5e1;margin:0 2px}
+.hb-stats b.after{color:#1d4ed8}
 .hb-stats b{color:#0f172a;font-size:11.5px}
 .hb-track{position:relative;height:16px;border-radius:5px;overflow:hidden;border:1px solid #eef1f6;
   background:linear-gradient(90deg,#eef1f6 1px,transparent 1px) 25% 0/25% 100%,#f8fafc}
@@ -324,6 +333,7 @@ details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px
 .hb-bs{display:flex;align-items:baseline;gap:3px;justify-content:flex-end;font-variant-numeric:tabular-nums}
 .hb-bs b{font-size:12.5px;color:#0f172a}
 .hb-bs b.after{color:#1d4ed8}
+.hb-bs b.pw{color:#1d4ed8;font-size:13px}
 .hb-bs i{font-style:normal;font-size:10px;color:#cbd5e1}
 .hb-bs span{font-size:9.5px;color:#cbd5e1}
 .hb-ar{font-style:normal;font-size:10px;color:#cbd5e1;margin:0 4px}
@@ -906,7 +916,7 @@ function kdaCls(v){const n=num(v);return n>3.0?'kda-good':n<1.5?'kda-bad':''}
 function wrCell(v,label){const n=v===null||v===undefined?null:num(v);return `<td class="num cell ${n===null?'':wrCls(n)}" ${label?`data-label="${label}"`:''}>${n===null?'—':fmt1(n)+'%'}</td>`}
 function kdaCell(v,label){const n=v===null||v===undefined?null:num(v);return `<td class="num cell ${n===null?'':kdaCls(n)}" ${label?`data-label="${label}"`:''}>${n===null?'—':fmt2(n)}</td>`}
 
-const state={filter:'All',sortKey:'rank',sortAsc:false,open:new Set(),focus:'hiyori',powerKey:'rate',powerAsc:false,powerOpen:new Set(),mode:'all',exMakky:false};
+const state={filter:'All',sortKey:'rank',sortAsc:false,open:new Set(),focus:'hiyori',powerKey:'rate',powerAsc:false,powerOpen:new Set(),mode:'all',exMakky:false,hbSort:'power'};
 
 /* ランク順ソート用(division階層 + tierは小さいほど上位) */
 const DIV_ORDER=['bronze','silver','gold','platinum','emerald','diamond','master','grandmaster'];
@@ -1631,6 +1641,11 @@ window.addEventListener('resize', tbPinGauge, { passive: true });
 
 /* イベント */
 $('#rankBody').addEventListener('click',e=>{
+  const sb=e.target.closest('[data-hbsort]');
+  if(sb){                                  // Hero Breakdown の並び順(スコア順 / Power Rating順)
+    if(state.hbSort!==sb.dataset.hbsort){ state.hbSort=sb.dataset.hbsort; renderTable(); }
+    return;
+  }
   const tr=e.target.closest('tr.row');
   if(!tr)return;
   const id=tr.dataset.id;
@@ -1726,8 +1741,26 @@ const BS_MAX = 80;                                   // バトルスコア(素�
 const BS_SCALE_MAX = 160;                            // チャート目盛り(80 × ランク係数最大1.949 ≒ 156 を収める)
 const BS_COLOR = { Tank: '#dc2626', Damage: '#f59e0b', Support: '#059669' };
 const RANK_NAMES = ['Bronze', 'Silver', 'Gold', 'Platinum', 'Emerald', 'Diamond', 'Master', 'Grandmaster'];
-/* 身内全員(ロール絞り込みがあればそのロール)のバトルスコア平均 */
-const gavgCache = { key: '', val: 0 };
+/* 身内全員(ロール絞り込みがあればそのロール)の平均値キャッシュ */
+const gavgCache = { key: '', val: 0, pk: '', pv: 0 };
+/* Power Rating の平均(現在の並び順がPower Rating順のときに使う) */
+function groupAvgPower(role) {
+  const key = 'p|' + role + '|' + (state.exMakky ? 'ex' : 'in');
+  if (gavgCache.pk === key) return gavgCache.pv;
+  let sum = 0, n = 0;
+  for (const p of PLAYERS) {
+    if (state.exMakky && p.id === 'makky') continue;
+    for (const h of (p.heroes || [])) {
+      if (role !== 'All' && h.role !== role) continue;
+      const b = scoreOf(p, h.slug);
+      if (b && typeof b.finalScore === 'number') { sum += b.finalScore; n++; }
+    }
+  }
+  gavgCache.pk = key;
+  gavgCache.pv = n ? sum / n : 0;
+  return gavgCache.pv;
+}
+/* バトルスコア(素点)の平均(現在の並び順がスコア順のときに使う) */
 function groupAvgBattle(role) {
   const key = role + '|' + (state.exMakky ? 'ex' : 'in');
   if (gavgCache.key === key) return gavgCache.val;
@@ -1746,15 +1779,9 @@ function groupAvgBattle(role) {
 }
 function heroBreakdownHtml(p) {
   const roleLabel = state.filter === 'All' ? '' : `(${state.filter})`;
-  // Power Rating 降順(Power Ratingが無いヒーローは末尾)
-  const hs = heroesOfRole(p, state.filter).slice().sort((a, b) => {
-    const pa = scoreOf(p, a.slug), pb = scoreOf(p, b.slug);
-    const va = pa && typeof pa.finalScore === 'number' ? pa.finalScore : -1;
-    const vb = pb && typeof pb.finalScore === 'number' ? pb.finalScore : -1;
-    return vb - va;
-  });
-  if (!hs.length) return `<h4>Hero Breakdown(ヒーロー別・Power順)${roleLabel}</h4><div class="hb-empty">該当ロールのヒーロー記録はありません</div>`;
-  const rows = hs.map(h => {
+  const byPower = state.hbSort === 'power';
+  const HEAD = `Hero Breakdown(ヒーロー別・${byPower ? 'Power Rating順' : 'スコア順'})`;
+  const rows = heroesOfRole(p, state.filter).map(h => {
     const b = scoreOf(p, h.slug);
     const bs = b && typeof b.battleScore === 'number' ? b.battleScore : null;
     const coef = b && typeof b.coeff === 'number' ? b.coeff : 1;
@@ -1767,15 +1794,32 @@ function heroBreakdownHtml(p) {
       rankIdx: b && typeof b.rankIndex === 'number' ? b.rankIndex : null,
       matchCoef: b && typeof b.matchCoef === 'number' ? b.matchCoef : null,
       delta: b && typeof b.rankDelta === 'number' ? b.rankDelta : null,
+      deltaPower: b && typeof b.rankDeltaPower === 'number' ? b.rankDeltaPower : null,
       isNew: !!(b && b.rankNew)
     };
-  });
+  }).sort(byPower
+    ? (a, b) => ((b.pr != null ? b.pr : -1) - (a.pr != null ? a.pr : -1))
+    : (a, b) => (((b.after != null ? b.after : (b.pr != null ? b.pr : -1))) - ((a.after != null ? a.after : (a.pr != null ? a.pr : -1)))));
+  const sortBar = `<div class="hb-sortbar"><span class="lbl">並び順</span>
+      <button class="filter-btn ${byPower ? 'active' : ''}" data-hbsort="power" title="最終Power Rating の大きい順(既定)">Power Rating順</button>
+      <button class="filter-btn ${byPower ? '' : 'active'}" data-hbsort="score" title="バーの長さ(素点×ランク係数)の大きい順">スコア順</button>
+    </div>`;
+  const headRow = `<div class="hb-head"><h4>${HEAD}${roleLabel}</h4>${sortBar}</div>`;
+  if (!rows.length) return `${headRow}<div class="hb-empty">該当ロールのヒーロー記録はありません</div>`;
   const withBs = rows.filter(r => r.bs != null);
   const avg = withBs.length ? withBs.reduce((s, r) => s + r.bs, 0) / withBs.length : 0;
   const avgAfter = withBs.length ? withBs.reduce((s, r) => s + r.after, 0) / withBs.length : 0;
-  const avgPct = Math.max(0, Math.min(100, avg / BS_SCALE_MAX * 100));
-  const gavg = groupAvgBattle(state.filter);
-  const gavgPct = Math.max(0, Math.min(100, gavg / BS_SCALE_MAX * 100));
+  const gavg = groupAvgBattle(state.filter);                                   // 全員平均(素点)
+  const withPr = rows.filter(r => r.pr != null);
+  const avgPr = withPr.length ? withPr.reduce((s, r) => s + r.pr, 0) / withPr.length : 0;   // 自分の平均Power Rating
+  const gavgPr = groupAvgPower(state.filter);                                  // 全員の平均Power Rating
+  let bestPr = null;
+  for (const r of withPr) if (!bestPr || r.pr > bestPr.pr) bestPr = r;
+  /* グラフに立てる平均マーカーは、現在の並び順に合わせる(Power順=Power Ratingの平均) */
+  const barAvg = byPower ? avgPr : avg;
+  const barGavg = byPower ? gavgPr : gavg;
+  const avgPct = Math.max(0, Math.min(100, barAvg / BS_SCALE_MAX * 100));
+  const gavgPct = Math.max(0, Math.min(100, barGavg / BS_SCALE_MAX * 100));
   let best = null;
   for (const r of withBs) if (!best || r.bs > best.bs) best = r;
   /* ロールごとのランク係数(このプレイヤー) */
@@ -1789,16 +1833,19 @@ function heroBreakdownHtml(p) {
     const wBase = r.bs == null ? 0 : Math.max(1.5, basePct);
     const wExt = r.bs == null ? 0 : Math.max(0, Math.min(100, (r.after - r.bs) / BS_SCALE_MAX * 100));
     const rankName = r.rankIdx != null && RANK_NAMES[r.rankIdx] ? RANK_NAMES[r.rankIdx] : null;
-    /* 前回の更新(players-data.js)と比べたヒーロー順位の変動(文字なし・記号と数字だけ) */
-    let deltaHtml = '<span class="hb-delta none" title="前回のランキングから順位の変動なし"></span>';
+    /* 前回の更新(players-data.js)と比べたヒーロー順位の変動(文字なし・記号と数字だけ)
+       現在の並び順(スコア順 / Power Rating順)に対応する基準で表示する */
+    const dv = byPower ? r.deltaPower : r.delta;
+    const dvLabel = byPower ? 'Power Rating順' : 'スコア順';
+    let deltaHtml = `<span class="hb-delta none" title="前回のランキング(${dvLabel})から順位の変動なし"></span>`;
     if (r.isNew) deltaHtml = '<span class="hb-delta new" title="前回のランキングに無かったヒーロー">★</span>';
-    else if (r.delta) {
-      deltaHtml = r.delta > 0
-        ? `<span class="hb-delta up" title="前回のランキングより${r.delta}位上がりました">▲${r.delta}</span>`
-        : `<span class="hb-delta dn" title="前回のランキングより${-r.delta}位下がりました">▼${-r.delta}</span>`;
+    else if (dv) {
+      deltaHtml = dv > 0
+        ? `<span class="hb-delta up" title="前回のランキング(${dvLabel})より${dv}位上がりました">▲${dv}</span>`
+        : `<span class="hb-delta dn" title="前回のランキング(${dvLabel})より${-dv}位下がりました">▼${-dv}</span>`;
     }
     const deltaTxt = r.isNew ? ' ・ 前回のランキングに無いヒーロー(NEW)'
-      : (r.delta ? ` ・ 前回のランキング比 ${r.delta > 0 ? '+' : '−'}${Math.abs(r.delta)}位` : '');
+      : (dv ? ` ・ 前回のランキング(${dvLabel})比 ${dv > 0 ? '+' : '−'}${Math.abs(dv)}位` : '');
     const tip = (r.bs == null
       ? `${r.h.n} ・ バトルスコアなし(データ無し)`
       : `${r.h.n} ・ バトルスコア(素点) ${fmt1(r.bs)} / 80 ・ ランク係数 ×${r.coef.toFixed(3)}${rankName ? `(${rankName})` : ''} → ランク適用後 ${fmt1(r.after)}`
@@ -1811,37 +1858,50 @@ function heroBreakdownHtml(p) {
         <span><b>${r.h.g}</b>試合</span>
         <span class="${r.h.wr == null ? '' : wrCls(r.h.wr)}">WR ${fmt1(r.h.wr)}%</span>
         <span class="${r.h.kda == null ? '' : kdaCls(r.h.kda)}">KDA ${fmt2(r.h.kda)}</span>
-        <span>Power <b>${r.pr == null ? '—' : Math.round(r.pr * 100) / 100}</b></span>
+        ${byPower
+          ? (r.bs == null ? '' : `<span title="バトルスコア(素点) ${fmt1(r.bs)} × ランク係数 ${r.coef.toFixed(2)} = ${fmt1(r.after)}">素点 <b class="after">${fmt1(r.after)}</b></span>`)
+          : `<span>Power <b>${r.pr == null ? '—' : Math.round(r.pr * 100) / 100}</b></span>`}
       </div>
-      <div class="hb-track">${r.bs == null ? '' :
-        `<i class="base ${wExt > 0.05 ? '' : 'solo'}" style="width:${wBase.toFixed(2)}%;background:linear-gradient(90deg,${col}b3,${col})"></i>` +
-        (wExt > 0.05 ? `<i class="ext ${roleCls(r.h.role)}" style="left:${wBase.toFixed(2)}%;width:${wExt.toFixed(2)}%"><em>${'<b>＞</b>'.repeat(8)}</em></i>` : '')}
-        <u style="left:${avgPct.toFixed(2)}%" title="自分の平均(素点) ${fmt1(avg)}"></u><u class="grp" style="left:${gavgPct.toFixed(2)}%" title="全員平均(素点) ${fmt1(gavg)}"></u></div>
-      <div class="hb-bs">${r.bs == null ? '<b>—</b>' :
-        `<b>${fmt1(r.bs)}</b><i>→</i><b class="after">${fmt1(r.after)}</b>`}</div>
+      <div class="hb-track">${byPower
+        ? (r.pr == null ? '' : `<i class="base solo" style="width:${Math.max(1.5, Math.min(100, r.pr / BS_SCALE_MAX * 100)).toFixed(2)}%;background:linear-gradient(90deg,${col}b3,${col})"></i>`)
+        : (r.bs == null ? '' :
+          `<i class="base ${wExt > 0.05 ? '' : 'solo'}" style="width:${wBase.toFixed(2)}%;background:linear-gradient(90deg,${col}b3,${col})"></i>` +
+          (wExt > 0.05 ? `<i class="ext ${roleCls(r.h.role)}" style="left:${wBase.toFixed(2)}%;width:${wExt.toFixed(2)}%"><em>${'<b>＞</b>'.repeat(8)}</em></i>` : ''))}
+        <u style="left:${avgPct.toFixed(2)}%" title="自分の平均 ${byPower ? 'Power Rating ' + fmt1(barAvg) : '(素点) ' + fmt1(barAvg)}"></u><u class="grp" style="left:${gavgPct.toFixed(2)}%" title="全員平均 ${byPower ? 'Power Rating ' + fmt1(barGavg) : '(素点) ' + fmt1(barGavg)}"></u></div>
+      <div class="hb-bs">${byPower
+        ? `<b class="pw" title="最終Power Rating">${r.pr == null ? '—' : Math.round(r.pr * 100) / 100}</b>`
+        : (r.bs == null ? '<b>—</b>' : `<b>${fmt1(r.bs)}</b><i>→</i><b class="after">${fmt1(r.after)}</b>`)}</div>
     </div>`;
   }).join('');
-  const diff = avg - gavg;
+  const diff = barAvg - barGavg;
   const top = `<div class="hb-top">
-      <span>平均 <b>${fmt1(avg)}</b><span class="hb-unit">/80</span><i class="hb-ar">→</i><b style="color:#1d4ed8">${fmt1(avgAfter)}</b><span class="hb-unit">(ランク適用後)</span></span>
-      ${best ? `<span>最高 <b>${fmt1(best.bs)}</b>(${esc(best.h.n)})</span>` : ''}
-      <span class="hb-unit">${rows.length}体</span>
+      ${byPower
+        ? `<span>平均Power <b>${fmt1(avgPr)}</b></span>
+           ${bestPr ? `<span>最高 <b>${Math.round(bestPr.pr * 100) / 100}</b>(${esc(bestPr.h.n)})</span>` : ''}
+           <span class="hb-unit">${rows.length}体</span>`
+        : `<span>平均 <b>${fmt1(avg)}</b><span class="hb-unit">/80</span><i class="hb-ar">→</i><b style="color:#1d4ed8">${fmt1(avgAfter)}</b><span class="hb-unit">(ランク適用後)</span></span>
+           ${best ? `<span>最高 <b>${fmt1(best.bs)}</b>(${esc(best.h.n)})</span>` : ''}
+           <span class="hb-unit">${rows.length}体</span>`}
       <div class="hb-legend">
         <span><i style="background:#dc2626"></i>Tank</span>
         <span><i style="background:#f59e0b"></i>Damage</span>
         <span><i style="background:#059669"></i>Support</span>
-        <span><i class="chevsw"></i>ランク係数ぶん(淡い色+＞が流れる)</span>
+        ${byPower ? '<span><i class="ln own"></i>自分平均 / <i class="ln grp"></i>全員平均(Power Rating)</span>'
+                  : '<span><i class="chevsw"></i>ランク係数ぶん(淡い色+＞が流れる)</span>'}
       </div>
     </div>
     <div class="hb-avgbar">
-      <span class="hb-avg"><i class="sw"></i>自分平均 <b>${fmt1(avg)}</b></span>
-      <span class="hb-avg"><i class="sw grp"></i>全員平均${state.exMakky ? '(Makky抜き)' : ''} <b>${fmt1(gavg)}</b></span>
+      <span class="hb-avg"><i class="sw"></i>自分平均${byPower ? '(Power)' : '(素点)'} <b>${fmt1(barAvg)}</b></span>
+      <span class="hb-avg"><i class="sw grp"></i>全員平均${byPower ? '(Power)' : '(素点)'}${state.exMakky ? '(Makky抜き)' : ''} <b>${fmt1(barGavg)}</b></span>
       <span class="hb-avg ${diff >= 0 ? 'diff-up' : 'diff-dn'}">差 ${diff >= 0 ? '+' : '−'}${fmt1(Math.abs(diff))}(${diff >= 0 ? '全員より上' : '全員より下'})</span>
     </div>`;
   const axis = `<div class="hb-axis"><span class="hb-ax-pad"></span><span class="hb-ax-pad"></span><span class="hb-ax-scale">${[0, 40, 80, 120, 160].map(v => `<span>${v}</span>`).join('')}</span><span class="hb-ax-pad"></span></div>`;
-  return `<h4>Hero Breakdown(ヒーロー別・Power順)${roleLabel}</h4>
+  const graphNote = byPower
+    ? `※ この並び順(<b>Power Rating順</b>)のグラフは<b>バー=最終Power Rating</b>(目盛り0〜160、濃いほど上位)です。各行の左端に素点(ランク係数を掛けた値)、右端に最終Power Ratingを表示しています。`
+    : `※ この並び順(<b>スコア順</b>)のグラフは<b>バー=バトルスコア(素点)+ランク係数ぶん</b>です。左の濃い部分=<b>バトルスコア(素点・0〜80点)</b>(調整勝率30% + KDA20% + ロール別20% + 命中率10% + インパクト10%)、右の「＞」が流れる部分=<b>ランク係数ぶんの増分(淡いロール色)</b>。右端は「素点→ランク適用後」、行内にPower Ratingを表示しています。`;
+  return `${headRow}
     ${top}${axis}<div class="hb-rows">${body}</div>
-    <div class="hb-foot">※ バー左の濃い部分=<b>バトルスコア(素点・0〜80点)</b>(調整勝率30% + KDA20% + ロール別20% + 命中率10% + インパクト10%)、右の「＞」が流れる部分=<b>ランク係数ぶんの増分(淡いロール色)</b>。素点×ランク係数=「ランク適用後」(目盛りは0〜160、80の線が素点満点)。このプレイヤーのランク係数: ${coefTxt || '—'}。Power = ランク適用後に試合数係数・簡単キャラ補正(×1.25)を掛けた最終値。各バーの中の<b>黒い縦マーカー=自分の平均(素点)</b>、青い破線マーカー=<b>身内全員の平均(素点)</b>(ロール絞り込み中はそのロールだけ)。<b>自分の平均を上回ったヒーロー</b>は<b>バーは通常表示のまま</b>で、上部のチップで平均との差を確認できます(超過分の特別な塗り分けはしていません)。各行の左端の<b>「▲1 / ▼2」= 前回のデータ更新(GitHub Actions)と比べたこのプレイヤー内でのヒーロー順位の変動</b>(▲=順位アップ / ▼=順位ダウン、数字は変動した順位数。<b>★</b>=前回のランキングに無かったヒーロー、表示なし=変動なし)。</div>`;
+    <div class="hb-foot">${graphNote}並び順は右上の<b>「Power Rating順 / スコア順」</b>で切り替えできます(既定=Power Rating順)。目盛りは0〜160(スコア順では80の線が素点満点)。このプレイヤーのランク係数: ${coefTxt || '—'}。Power = 素点×ランク係数のあとに試合数係数・簡単キャラ補正(×1.25)を掛けた最終値。各バーの中の<b>黒い実線マーカー=自分の平均</b>、青い破線マーカー=<b>身内全員の平均</b>(現在の並び順と同じ指標・ロール絞り込み中はそのロールだけ)。各行の左端の<b>「▲1 / ▼2」= 前回のデータ更新(GitHub Actions)と比べたこのプレイヤー内でのヒーロー順位の変動</b>(現在の並び順と同じ基準で算出。▲=順位アップ / ▼=順位ダウン、数字は変動した順位数。<b>★</b>=前回のランキングに無かったヒーロー、表示なし=変動なし)。</div>`;
 }
 /* ---- チームビルダー操作 ---- */
 $('#teamCtl').addEventListener('click',e=>{
