@@ -445,6 +445,105 @@ details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px
 #powerControls .filter-btn[data-ex="makky"]:hover{filter:brightness(1.07)}
 #powerControls .filter-btn[data-ex="makky"].active{box-shadow:0 0 14px rgba(139,92,246,.5)}
 
+/* ============ チームアナリスト ============ */
+.az-teams{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.az-team{border:1px solid var(--border);border-radius:11px;padding:9px 11px;background:#fbfcfe}
+.az-team.enemy{background:#fff7f7;border-color:#fbd5d5}
+.az-team.ally{background:#f7fbff;border-color:#d5e5fb}
+.az-thead{font-size:12px;font-weight:800;color:#334155;margin-bottom:6px;display:flex;justify-content:space-between}
+.az-thead span{color:#94a3b8;font-weight:700}
+.az-slot{display:flex;align-items:center;gap:6px;padding:2px 0;flex-wrap:wrap}
+.az-role{flex:0 0 62px;font-size:10.5px;font-weight:800;border-radius:6px;padding:1px 0;text-align:center}
+.az-role.tank{background:#fee2e2;color:#b91c1c}
+.az-role.damage{background:#fef3c7;color:#b45309}
+.az-role.support{background:#d1fae5;color:#047857}
+.az-slotbtn{flex:1 1 96px;min-width:0;display:flex;align-items:center;gap:7px;border:1px solid #dbe3ee;background:#fff;border-radius:9px;padding:4px 8px;font:inherit;font-size:12px;font-weight:700;cursor:pointer;color:#0f172a;text-align:left}
+.az-slotbtn:hover{border-color:#60a5fa;background:#f5f9ff}
+.az-slotbtn.editing{border-color:#2563eb;box-shadow:0 0 0 2px #2563eb22}
+.az-slotbtn .az-ph{color:#94a3b8;font-weight:700}
+.az-slotbtn b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.az-plybtn{flex:0 1 auto;min-width:92px;max-width:150px;display:flex;align-items:center;gap:5px;border:1px dashed #cbd5e1;background:#fff;border-radius:9px;padding:3px 7px;font:inherit;font-size:11.5px;font-weight:700;cursor:pointer;color:#0f172a}
+.az-plybtn.has{border-style:solid;border-color:#a7f3d0;background:#f2fdf8}
+.az-plybtn.editing{border-color:#059669;box-shadow:0 0 0 2px #05966922}
+.az-plybtn:hover{border-color:#34d399;background:#f0fdf4}
+.az-plybtn .az-ph{color:#94a3b8;font-weight:700}
+.az-plybtn b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.az-plybtn .pl-av{width:18px;height:18px;font-size:9px}
+.az-markbtn{flex:0 0 auto;border:1px dashed #fcd34d;background:#fffbeb;color:#b45309;border-radius:9px;width:26px;height:26px;line-height:1;cursor:pointer;font-size:13px;padding:0}
+.az-markbtn:hover{border-color:#f59e0b;background:#fef3c7}
+.az-markbtn.on{border-style:solid;border-color:#f59e0b;background:#fde68a;box-shadow:0 0 0 2px #f59e0b33}
+.az-slotbtn.marked{border-color:#f59e0b;box-shadow:0 0 0 2px #f59e0b33;background:#fffdf5}
+.az-markcard{border-color:#fcd34d;background:#fffdf7}
+.az-markrole{display:flex;gap:8px;align-items:flex-start;margin-top:7px}
+.az-markrole>.az-role{flex:0 0 62px;margin-top:2px}
+.az-marklist{flex:1 1 auto;min-width:0}
+.az-markrow{display:flex;align-items:center;gap:6px;font-size:12px;padding:2px 0;flex-wrap:wrap}
+.az-markrow .az-bar{flex:0 0 70px;min-width:50px}
+.az-markrow .az-r{flex:1 1 140px;min-width:0}
+.az-plypicker{border-color:#a7f3d0;background:#f6fffb}
+.az-plyhead{font-size:11px;font-weight:800;color:#047857;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:99px;padding:0 7px}
+.az-explain{margin:2px 0 9px 24px;font-size:11px;color:#334155}
+.az-explain summary{cursor:pointer;font-weight:800;color:#1d4ed8;font-size:11px;list-style:none;outline:none}
+.az-explain summary::-webkit-details-marker{display:none}
+.az-explain summary::before{content:'▸ ';color:#94a3b8}
+.az-explain[open] summary::before{content:'▾ '}
+.az-explain summary:hover{text-decoration:underline}
+.az-ex-row{margin:3px 0 0;line-height:1.6;padding-left:10px;border-left:2px solid #e2e8f0}
+.az-ex-row b{color:#0f172a}
+.az-legend{font-size:10.5px;color:#94a3b8;margin:0 0 4px}
+.az-legend.mark{color:#b45309;background:#fffbeb;border:1px solid #fde68a;border-radius:7px;padding:2px 6px;margin-bottom:5px}
+.az-delta{font-size:11.5px;color:#b45309;background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:4px 7px;margin:0 0 6px;line-height:1.5}
+.az-delta.same{color:#047857;background:#ecfdf5;border-color:#a7f3d0}
+.az-arrow{font-size:11px;color:#94a3b8;flex:0 0 auto}
+.az-pct.pers.up{color:#047857}
+.az-pct.pers.down{color:#b91c1c}
+.az-prof{font-size:10.5px;font-weight:800;color:#047857;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:6px;padding:0 6px}
+.az-prof.unused{color:#64748b;background:#f1f5f9;border-color:#e2e8f0}
+.az-x{flex:0 0 auto;border:1px solid #e2e8f0;background:#fff;color:#94a3b8;border-radius:7px;width:22px;height:22px;line-height:1;cursor:pointer;font-weight:800}
+.az-x:hover{border-color:#fca5a5;color:#dc2626}
+.az-tent{font-size:9px;font-weight:800;color:#b45309;background:#fffbeb;border:1px solid #fde68a;border-radius:99px;padding:0 5px;font-style:normal}
+.az-curmark{font-size:9px;font-weight:800;color:#1d4ed8;background:#eff6ff;border:1px solid #bfdbfe;border-radius:99px;padding:0 5px;font-style:normal}
+.az-picker{margin-top:8px;border:1px solid #bfdbfe;background:#f8fbff;border-radius:11px;padding:8px 10px}
+.az-pickhead{font-size:12px;color:#334155;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center}
+.az-close{color:#2563eb;font-weight:800;cursor:pointer}
+.az-picklist{max-height:230px;overflow-y:auto}
+.az-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:10px;margin-top:12px}
+.az-card{border:1px solid var(--border);border-radius:11px;padding:9px 11px;background:#fff}
+.az-card h4{margin:0 0 7px;font-size:12.5px;color:#0f172a}
+.az-card h4 .az-cur{font-weight:700;color:#64748b;font-size:11px;margin-left:4px}
+.az-reads{margin:0;padding-left:18px;font-size:12px;color:#334155}
+.az-reads li{margin-bottom:4px}
+.az-reads li.bad{color:#b45309}
+.az-ok{color:#047857;font-weight:800;font-size:11px}
+.az-ng{color:#b45309;font-weight:800;font-size:11px}
+.az-rec{display:flex;align-items:center;gap:6px;padding:3px 0;font-size:12px}
+.az-rec.cur{background:#eff6ff;border-radius:7px}
+.az-rank{flex:0 0 18px;font-weight:900;color:#2563eb}
+.az-recname{flex:0 0 108px;font-weight:800;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:flex;align-items:center;gap:4px}
+.az-bar{position:relative;flex:1 1 auto;height:12px;background:#f1f5f9;border-radius:4px;overflow:hidden;min-width:50px}
+.az-bar>i{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,#93c5fd,#2563eb)}
+.az-bar.bad>i{background:linear-gradient(90deg,#fecaca,#dc2626)}
+.az-pct{flex:0 0 38px;text-align:right;font-variant-numeric:tabular-nums;font-weight:800}
+.az-total{flex:0 0 40px;text-align:right;font-size:11px;color:#64748b;font-variant-numeric:tabular-nums}
+.az-whys{display:flex;flex-wrap:wrap;gap:3px 8px;margin:0 0 6px 24px}
+.az-r{font-size:11px;color:#475569}
+.az-r.plus{color:#1d4ed8}
+.az-r.minus{color:#b91c1c}
+.az-apt{font-size:10.5px;color:#047857;font-weight:700;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:6px;padding:0 6px}
+.az-split{font-size:10.5px;color:#64748b;background:#f1f5f9;border-radius:6px;padding:0 6px;font-variant-numeric:tabular-nums}
+.az-avoidhead{font-size:11px;font-weight:800;color:#b91c1c;margin:6px 0 2px}
+.az-rec.avoid .az-rank{color:#dc2626}
+.az-empty{font-size:12px;color:#94a3b8;padding:6px 0}
+.az-note{font-size:11px;color:#94a3b8;margin-top:6px}
+.az-note code{background:#eef2f7;border-radius:4px;padding:1px 5px;font-size:10.5px}
+
+@media(max-width:640px){
+  .az-teams{grid-template-columns:1fr}
+  .az-cards{grid-template-columns:1fr}
+  .az-recname{flex:0 0 84px}
+  .az-plybtn{max-width:none;flex:1 1 120px}
+  .az-bar{min-width:36px}
+}
 /* ============ モバイル最適化 ============ */
 @media(max-width:860px){
   .content{padding:14px 10px 64px}
@@ -830,6 +929,27 @@ details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px
       </div>
       <div id="teamBody"></div>
     </div>
+    <!-- チームアナリスト(構成分析) -->
+    <div class="power-sec" style="margin-top:24px">
+      <div class="power-head">
+        <div>
+          <h2>🧠 チームアナリスト(構成分析)</h2>
+          <div class="sub">両チームのヒーローを選ぶと、<b>相手構成の強み/弱点</b>と、各枠に<b>刺さるピック / 避けたいピック</b>を理由付きで表示します(ルールベースの目安 ・ 相性データは <code>analyst-data.js</code> で編集できます)</div>
+        </div>
+        <div class="power-controls" id="azCtl">
+          <span style="font-size:11.5px;font-weight:700;color:#475569">自分の役割</span>
+          <button class="filter-btn active" data-azrole="All">全ロール</button>
+          <button class="filter-btn" data-azrole="Tank">Tank</button>
+          <button class="filter-btn" data-azrole="Damage">Damage</button>
+          <button class="filter-btn" data-azrole="Support">Support</button>
+          <span class="tools-div"></span>
+          <button class="filter-btn" data-azsample="1">例を入れる</button>
+          <button class="filter-btn" data-azreset="1">リセット</button>
+        </div>
+      </div>
+      <div id="azBody"></div>
+    </div>
+
     <div class="foot">
       ※ 緑=勝率55%超 / 赤=勝率40%未満 / 青=KDA3.0超 / 橙=KDA1.5未満<br />
       データ: OverFast API(全モード = ライバル・プレイ + クイック・プレイ合算)<br />
@@ -837,6 +957,7 @@ details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px
     </div>
   </div>
 </main>
+<script src="analyst-data.js"></script>
 <script src="heroes-meta.js"></script>
 <script src="players-data.js"></script>
 <script>
@@ -1639,6 +1760,523 @@ function tbPinGaugeNow() {
 window.addEventListener('scroll', tbPinGauge, { passive: true });
 window.addEventListener('resize', tbPinGauge, { passive: true });
 
+/* =====================================================================
+ * チームアナリスト(2チームの構成から「刺さるピック」を分析)
+ *   相性は analyst-data.js のタグ/ペアのルールで判定する(勝率データではない“目安”)。
+ *   スコア = 相手5人との相性 + 味方4人との相性 + 役割として欲しい要素
+ *   表示% = 50 + スコア×6 (50%が互角の目安)
+ * =================================================================== */
+const AZ_SLOT_ROLES = ['Tank', 'Damage', 'Damage', 'Support', 'Support'];
+const AZ_ROLE_JA = { Tank: 'タンク', Damage: 'ダメージ', Support: 'サポート' };
+const AZ_RANK_MARK = ['①', '②', '③', '④'];
+const az = { enemy: [null, null, null, null, null], ally: [null, null, null, null, null], ply: [null, null, null, null, null], role: 'All', pick: null, ppick: null, mark: null };
+
+function azTagsOf(slug) { return (typeof AZ_HERO_TAGS !== 'undefined' && AZ_HERO_TAGS[slug]) || []; }
+function azTagLabel(t) { return (typeof AZ_TAG_LABEL !== 'undefined' && AZ_TAG_LABEL[t]) || t; }
+function azNm(slug) { return (slug && (SLUG_NAME[slug] || slug)) || ''; }
+function azRoleOf(slug) { return SLUG_ROLE[slug] || ''; }
+function azTentative(slug) { return typeof AZ_TENTATIVE !== 'undefined' && AZ_TENTATIVE.indexOf(slug) >= 0; }
+function azSlugsOfRole(role) {
+  return Object.keys(SLUG_ROLE)
+    .filter((s) => role === 'All' || !role || SLUG_ROLE[s] === role)
+    .sort((a, b) => azNm(a).localeCompare(azNm(b), 'en'));
+}
+/* ---- プレイヤー(自分たちの枠に誰が入るか) ---- */
+function azPlayers() { return (typeof PLAYERS_ALL !== 'undefined') ? PLAYERS_ALL : PLAYERS; }
+function azPlyOf(i) { const id = az.ply[i]; return id ? (azPlayers().find((p) => p.id === id) || null) : null; }
+/* そのプレイヤーのヒーロー適性(Power Rating)。未使用キャラはその人の最低レートで代用(チームビルダーと同じ) */
+function azProf(p, slug) {
+  if (!p) return null;
+  const b = tbScore(p, slug);
+  const h = (p.heroes || []).find((x) => x.slug === slug);
+  if (b && typeof b.finalScore === 'number') return { v: b.finalScore, used: true, g: h ? (h.g || 0) : 0, wr: h ? h.wr : null };
+  const mn = tbMinRate(p);
+  return mn === null ? null : { v: mn, used: false, g: 0, wr: null };
+}
+/* 候補の中での「この人の得意度」を偏差値で見て加点(±2.4点ぶん = 表示%で±22%)
+   母集団が2人分に満たない場合は加点しない(誤差が大きすぎるため) */
+function azProfBonus(cands, p) {
+  const map = new Map();
+  if (!p) return map;
+  const vals = [];
+  for (const s of cands) { const pr = azProf(p, s); map.set(s, pr); if (pr) vals.push(pr.v); }
+  if (vals.length < 3) return map;
+  const mean = vals.reduce((a, b) => a + b, 0) / vals.length;
+  const sd = Math.sqrt(vals.reduce((a, b) => a + (b - mean) * (b - mean), 0) / vals.length);
+  for (const [s, pr] of [...map.entries()]) {
+    map.set(s, pr ? Object.assign({}, pr, { bonus: sd > 1e-4 ? Math.max(-2.4, Math.min(2.4, ((pr.v - mean) / sd) * 1.5)) : 0 }) : null);
+  }
+  return map;
+}
+/* そのプレイヤーがそのロールで一番得意なヒーロー */
+function azRoleBest(p, role) {
+  let best = null;
+  for (const h of (p.heroes || [])) {
+    const r = h.role || SLUG_ROLE[h.slug] || '';
+    if (r !== role) continue;
+    const b = tbScore(p, h.slug);
+    if (!b || typeof b.finalScore !== 'number') continue;
+    if (!best || b.finalScore > best.v) best = { slug: h.slug, v: b.finalScore, g: h.g || 0 };
+  }
+  return best;
+}
+/* 候補1人 vs 相手1人 の相性(ヒーロー単位のルールが優先。無ければタグルール)
+   同じヒーロー同士(ミラーマッチ)は有利不利なしとして扱う
+   返す要素: { v:点数, why:理由文, foe:相手slug, tag?:効いているタグ, pair?:個別ルール } */
+function azMatch(cand, foe) {
+  const out = [];
+  if (!cand || !foe || cand === foe) return out;
+  const pairs = (typeof AZ_COUNTER_PAIR !== 'undefined' ? AZ_COUNTER_PAIR : []).filter((r) => (r.a === cand && r.b === foe) || (r.b === cand && r.a === foe));
+  if (pairs.length) {
+    for (const r of pairs) {
+      const dir = r.a === cand ? 1 : -1;
+      out.push({ v: r.v * dir, why: r.why + (dir < 0 ? '(逆に不利)' : ''), foe, pair: true });
+    }
+    return out;
+  }
+  const ct = azTagsOf(cand), ft = azTagsOf(foe);
+  for (const r of (typeof AZ_COUNTER_TAG !== 'undefined' ? AZ_COUNTER_TAG : [])) {
+    if (ct.indexOf(r.a) < 0 || ft.indexOf(r.b) < 0) continue;
+    /* tag = 効いている「自分側」のタグ(立ち回りの説明に使う) / foeTag = 相手側のタグ(表示用) */
+    out.push({ v: r.v, why: r.why, foe, tag: r.a, foeTag: r.b });
+  }
+  return out;
+}
+/* 候補1人 と 味方1人 の相性(返す要素: { v, why, mate } ) */
+function azSyn(cand, mate) {
+  if (!mate || mate === cand) return [];
+  const pairs = (typeof AZ_SYNERGY_PAIR !== 'undefined' ? AZ_SYNERGY_PAIR : []).filter((r) => (r.a === cand && r.b === mate) || (r.b === cand && r.a === mate));
+  if (pairs.length) return pairs.map((r) => ({ v: r.v, why: r.why, mate }));
+  const ct = azTagsOf(cand), mt = azTagsOf(mate), out = [], seen = new Set();
+  for (const r of (typeof AZ_SYNERGY_TAG !== 'undefined' ? AZ_SYNERGY_TAG : [])) {
+    if (r.a === r.b) { if (ct.indexOf(r.a) < 0 || mt.indexOf(r.a) < 0) continue; }
+    else if (!((ct.indexOf(r.a) >= 0 && mt.indexOf(r.b) >= 0) || (ct.indexOf(r.b) >= 0 && mt.indexOf(r.a) >= 0))) continue;
+    const key = [r.a, r.b].sort().join('|');
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push({ v: r.v, why: r.why, mate, tag: r.a === r.b ? r.a : r.b });
+  }
+  return out;
+}
+/* ある枠(slotIdx)に置く候補の評価。
+   相手5人ぶんの合計をそのまま足すと枚数で飽和するので「1人あたりの平均」に正規化する。
+   🎯マークした相手がいる場合は、その相手の相性を3倍の重みで平均 + マーク相手への相性を加点する。
+   total = 相手1人あたりの相性(重み付き) + マーク加点 + 味方1人あたりの相性×0.45 + 役割として欲しい要素 */
+function azEval(cand, slotIdx) {
+  const foes = az.enemy.filter(Boolean);
+  const mates = az.ally.filter((m, i) => m && i !== slotIdx);
+  const marked = (az.mark !== null && az.enemy[az.mark]) ? az.enemy[az.mark] : null;
+  const items = [];
+  let markedScore = 0;
+  for (const e of foes) {
+    const hits = azMatch(cand, e).sort((a, b) => Math.abs(b.v) - Math.abs(a.v)).slice(0, 2);   // 1相手につき強い理由2つまで
+    for (const h of hits) items.push(h);
+    if (e === marked) markedScore += hits.reduce((s, x) => s + x.v, 0);
+  }
+  for (const m of mates) {
+    const hits = azSyn(cand, m).sort((a, b) => Math.abs(b.v) - Math.abs(a.v)).slice(0, 2);     // 1味方につき2つまで
+    for (const h of hits) items.push(h);
+  }
+  const foeSum = items.filter((x) => x.foe).reduce((s, x) => s + x.v, 0);
+  const wSum = foes.reduce((s, e) => s + (e === marked ? 3 : 1), 0);
+  const foeAvg = wSum ? foeSum / wSum : 0;
+  const mateAvg = mates.length ? (items.reduce((s, x) => s + x.v, 0) - foeSum) / mates.length : 0;
+  /* 🎯マークした相手への相性を追加で加点(±2.5点まで) */
+  const markBonus = marked ? Math.max(-2.5, Math.min(2.5, markedScore * 0.45)) : 0;
+  /* 役割として欲しい要素 */
+  const role = azRoleOf(cand);
+  const want = (typeof AZ_ROLE_WANT !== 'undefined' && AZ_ROLE_WANT[role]) || {};
+  const ct = azTagsOf(cand);
+  const hit = Object.keys(want).filter((t) => ct.indexOf(t) >= 0);
+  const roleBonus = hit.length ? Math.min(0.5, hit.reduce((s, t) => s + want[t], 0)) : 0;
+  if (hit.length) items.push({ v: roleBonus, why: `${AZ_ROLE_JA[role] || role}として欲しい要素(${hit.map(azTagLabel).join('・')})`, role: true });
+  const total = foeAvg + markBonus + mateAvg * 0.45 + roleBonus;
+  return { total, foeAvg, mateAvg, roleBonus, markBonus, markedScore, items: items.sort((a, b) => Math.abs(b.v) - Math.abs(a.v)) };
+}
+function azPct(total) { return Math.max(3, Math.min(97, Math.round(50 + total * 9))); }
+/* 身内の適性(そのヒーローの Power Rating 上位) */
+function azApt(slug) {
+  const pool = (typeof PLAYERS_ALL !== 'undefined') ? PLAYERS_ALL : PLAYERS;
+  const rows = [];
+  for (const p of pool) {
+    const b = tbScore(p, slug);
+    if (!b || typeof b.finalScore !== 'number') continue;
+    const h = (p.heroes || []).find((x) => x.slug === slug);
+    rows.push({ p, score: b.finalScore, g: h ? (h.g || 0) : 0, used: !!h });
+  }
+  rows.sort((a, b) => b.score - a.score);
+  return rows;
+}
+/* 相手構成の読み(タグの枚数) */
+function azCompRead() {
+  const cnt = {};
+  for (const e of az.enemy) if (e) for (const t of azTagsOf(e)) cnt[t] = (cnt[t] || 0) + 1;
+  const byTag = new Map();
+  for (const r of (typeof AZ_COMP_RULES !== 'undefined' ? AZ_COMP_RULES : [])) {
+    const n = cnt[r.tag] || 0;
+    if (n < r.min) continue;
+    const prev = byTag.get(r.tag);
+    if (prev && prev.n >= n) continue;
+    byTag.set(r.tag, { tag: r.tag, n, text: r.text.replace('{n}', n), need: r.need || [] });
+  }
+  return [...byTag.values()].sort((a, b) => b.n - a.n);
+}
+/* 味方構成のタグ */
+function azAllyTagCount() {
+  const cnt = {};
+  for (const a of az.ally) if (a) for (const t of azTagsOf(a)) cnt[t] = (cnt[t] || 0) + 1;
+  return cnt;
+}
+/* 🎯マークした相手への「効くタグ」と、役割ごとの対策ピック */
+function azMarkSlug() { return (az.mark !== null) ? (az.enemy[az.mark] || null) : null; }
+function azMarkCard() {
+  const slug = azMarkSlug();
+  if (!slug) return '';
+  const nm = azNm(slug), role = azRoleOf(slug);
+  const tags = azTagsOf(slug);
+  /* この相手のタグに対して有利が取れる「自分のタグ」 */
+  const good = new Map();
+  for (const t of tags) {
+    for (const r of (typeof AZ_COUNTER_TAG !== 'undefined' ? AZ_COUNTER_TAG : [])) {
+      if (r.b !== t || r.v <= 0) continue;
+      if (!good.has(r.a)) good.set(r.a, { v: r.v, why: r.why });
+    }
+  }
+  const goodTags = [...good.entries()].sort((a, b) => b[1].v - a[1].v).slice(0, 4);
+  /* 全ヒーローから、この相手に強い順(1相手なので理由2つまで=通常の評価と同じ) */
+  const myTeam = new Set(az.ally.filter(Boolean));
+  const scored = [];
+  for (const s of Object.keys(SLUG_ROLE)) {
+    if (s === slug) continue;                       // ミラーは有利不利なし
+    if (myTeam.has(s)) continue;                    // すでに自分たちが使っているヒーローは出さない
+    const hits = azMatch(s, slug).sort((a, b) => Math.abs(b.v) - Math.abs(a.v)).slice(0, 2);
+    const v = hits.reduce((a, b) => a + b.v, 0);
+    if (v <= 0) continue;
+    scored.push({ slug: s, role: SLUG_ROLE[s], v, hits: hits.filter((h) => h.v > 0) });
+  }
+  scored.sort((a, b) => b.v - a.v);
+  const maxV = scored.length ? scored[0].v : 1;
+  const byRole = ['Tank', 'Damage', 'Support'].map((r) => {
+    const list = scored.filter((x) => x.role === r).slice(0, 3);
+    if (!list.length) return '';
+    return `<div class="az-markrole"><span class="az-role ${roleCls(r)}">${AZ_ROLE_JA[r]}</span><div class="az-marklist">${list.map((x, i) => {
+      const apt = azApt(x.slug).filter((a) => a.used).slice(0, 1)[0];
+      const reason = x.hits[0] ? x.hits[0].why : '';
+      return `<div class="az-markrow">
+          <span class="az-rank">${AZ_RANK_MARK[i] || i + 1}</span>
+          ${heroThumb(azNm(x.slug), 22, r, x.slug)}
+          <span class="az-recname">${esc(azNm(x.slug))}${azTentative(x.slug) ? '<i class="az-tent" title="相性タグは暫定">暫定</i>' : ''}</span>
+          <span class="az-bar"><i style="width:${Math.round(50 + Math.max(0, x.v) / maxV * 45)}%"></i></span>
+          <b class="az-pct">${Math.round(x.v * 10) / 10}</b>
+          <span class="az-r plus">${esc(reason)}</span>
+          ${apt ? `<span class="az-apt">うちなら ${esc(apt.p.name)} ${Math.round(apt.score * 10) / 10}</span>` : ''}
+        </div>`;
+    }).join('')}</div></div>`;
+  }).filter(Boolean).join('');
+  const goodTxt = goodTags.length
+    ? goodTags.map(([t, o]) => `<b>${esc(azTagLabel(t))}</b>(${esc(o.why)})`).join(' / ')
+    : '目立った有効タグなし(無難に当てられる相手)';
+  return `<div class="az-card az-markcard"><h4>🎯 マーク対策: ${esc(nm)} <span class="az-cur">相手の${AZ_ROLE_JA[role] || role}</span></h4>
+    <div class="az-ex-row" style="border-left-color:#f59e0b"><b>この相手の性質</b>: ${esc(tags.map(azTagLabel).join('・'))}</div>
+    <div class="az-ex-row" style="border-left-color:#f59e0b"><b>効く要素</b>: ${goodTxt}</div>
+    ${byRole || '<div class="az-empty">この相手に有利が取れるヒーローが見つかりませんでした</div>'}
+    <div class="az-note">※ マークした相手への相性を<b>3倍の重み</b>で全体のスコアに反映しています(スロット別の分析も自動でマーク優先になります)</div>
+  </div>`;
+}
+function azReasonList(items, max) {
+  return items.slice(0, max || 3).map((it) => {
+    const who = it.foe ? `vs ${azNm(it.foe)}${it.foeTag ? `(${azTagLabel(it.foeTag)})` : ''}` : (it.mate ? `${azNm(it.mate)}と` : '');
+    return `<span class="az-r ${it.v > 0 ? 'plus' : 'minus'}">${it.v > 0 ? '+' : ''}${Math.round(it.v * 10) / 10} ${who ? esc(who) + ': ' : ''}${esc(it.why)}</span>`;
+  }).join('');
+}
+/* ピックの説明文(なにがどう刺さるか)。
+   刺さる相手 / 注意 / 立ち回り / 味方との合わせ を、ルールの寄与から文章にして出す */
+function azExplainHtml(r) {
+  const g = { plus: new Map(), minus: new Map(), syn: new Map() };
+  const put = (m, key, v, why) => {
+    const o = m.get(key) || { name: azNm(key), v: 0, whys: [] };
+    o.v += v;
+    if (why && o.whys.indexOf(why) < 0) o.whys.push(why);
+    m.set(key, o);
+  };
+  const tagScore = new Map();
+  for (const it of r.items) {
+    if (it.foe) put(it.v > 0 ? g.plus : g.minus, it.foe, it.v, it.why);
+    else if (it.mate && it.v > 0) put(g.syn, it.mate, it.v, it.why);
+    /* 立ち回りに使うのは「自分側で効いているタグ」だけ */
+    if (it.foe && it.tag && it.v > 0) tagScore.set(it.tag, (tagScore.get(it.tag) || 0) + it.v);
+    if (it.role) {
+      const want = (typeof AZ_ROLE_WANT !== 'undefined' && AZ_ROLE_WANT[azRoleOf(r.slug)]) || {};
+      for (const t of azTagsOf(r.slug)) if (want[t]) tagScore.set(t, (tagScore.get(t) || 0) + 0.3);
+    }
+  }
+  const sortBy = (m) => [...m.values()].sort((a, b) => Math.abs(b.v) - Math.abs(a.v));
+  const names = (a, n) => a.slice(0, n).map((o) => o.name).join('・') + (a.length > n ? ' ほか' : '');
+  const whys = (a, n) => {
+    const s = [];
+    for (const o of a.slice(0, n)) if (o.whys[0] && s.indexOf(o.whys[0]) < 0) s.push(o.whys[0]);
+    return s.slice(0, 2).join(' / ');
+  };
+  const P = sortBy(g.plus), M = sortBy(g.minus), S = sortBy(g.syn);
+  const rows = [];
+  rows.push(P.length
+    ? `<b>刺さる相手</b>: ${esc(names(P, 3))} — ${esc(whys(P, 2))}`
+    : `<b>刺さる相手</b>: 目立った有利はなし(無難なピック)`);
+  if (M.length) rows.push(`<b>注意</b>: ${esc(names(M, 2))} — ${esc(whys(M, 2))}`);
+  /* 立ち回り: 実際に効いているタグの使い方をつなぐ */
+  const useTexts = [...tagScore.entries()].sort((a, b) => b[1] - a[1])
+    .map(([t]) => (typeof AZ_TAG_USE !== 'undefined' ? AZ_TAG_USE[t] : ''))
+    .filter(Boolean).slice(0, 2);
+  if (!useTexts.length) {
+    useTexts.push(...azTagsOf(r.slug).map((t) => (typeof AZ_TAG_USE !== 'undefined' ? AZ_TAG_USE[t] : '')).filter(Boolean).slice(0, 2));
+  }
+  if (useTexts.length) rows.push(`<b>立ち回り</b>: ${esc(useTexts.join('。'))}`);
+  if (S.length) rows.push(`<b>味方との合わせ</b>: ${esc(names(S, 2))} — ${esc(whys(S, 2))}`);
+  return `<details class="az-explain"${r.open ? ' open' : ''}><summary>📝 このピックの狙い(なにが刺さるか)</summary>${rows.map((x) => `<div class="az-ex-row">${x}</div>`).join('')}</details>`;
+}
+function azAptLine(slug) {
+  const rows = azApt(slug).filter((r) => r.used);
+  if (!rows.length) return '';
+  const top = rows.slice(0, 2);
+  const txt = top.map((r) => `${esc(r.p.name)} <b>${Math.round(r.score * 10) / 10}</b>${r.g ? `<span class="sc-hero">(${r.g}試合)</span>` : ''}`).join(' / ');
+  return `<span class="az-apt" title="身内のこのヒーローの Power Rating(高い順)">うちなら: ${txt}</span>`;
+}
+function azSlotButton(side, i) {
+  const slug = (side === 'enemy' ? az.enemy : az.ally)[i];
+  const role = AZ_SLOT_ROLES[i];
+  const editing = az.pick && az.pick.side === side && az.pick.idx === i;
+  const marked = side === 'enemy' && az.mark === i;
+  const inner = slug
+    ? `${heroThumb(azNm(slug), 22, role, slug)}<b>${esc(azNm(slug))}</b>${azTentative(slug) ? '<i class="az-tent" title="相性タグは暫定です(analyst-data.js で調整できます)">暫定</i>' : ''}`
+    : `<span class="az-ph">＋ ${AZ_ROLE_JA[role]}を選ぶ</span>`;
+  /* プレイヤー欄は「自分たちのチーム」だけ(相手は誰か分からないため) */
+  let plyBtn = '', markBtn = '';
+  if (side === 'ally') {
+    const p = azPlyOf(i);
+    const editingP = az.ppick === i;
+    const inner2 = p
+      ? `<span class="pl-av ${roleCls(p.role)}">${faceMarkup(p)}</span><b>${esc(p.name)}</b>`
+      : '<span class="az-ph">＋ プレイヤー</span>';
+    plyBtn = `<button class="az-plybtn ${p ? 'has' : ''} ${editingP ? 'editing' : ''}" data-azply="${i}" title="この枠に入るプレイヤー(選ぶと「その人向けの最適ピック」が出ます)">${inner2}</button>`;
+  } else if (slug) {
+    markBtn = `<button class="az-markbtn ${marked ? 'on' : ''}" data-azmark="${i}" title="${marked ? 'マークを外す' : 'この相手をマークして重点対策する(暴れている1人を指定)'}">🎯</button>`;
+  }
+  return `<div class="az-slot">
+    <span class="az-role ${roleCls(role)}">${AZ_ROLE_JA[role]}</span>
+    <button class="az-slotbtn ${slug ? 'has' : ''} ${editing ? 'editing' : ''} ${marked ? 'marked' : ''}" data-azslot="${side}|${i}">${inner}</button>
+    ${plyBtn}${markBtn}
+    ${slug ? `<button class="az-x" data-azclear="${side}|${i}" title="この枠をクリア">×</button>` : ''}
+  </div>`;
+}
+/* プレイヤー選択パネル(ヒーローは出さずプレイヤーだけを並べる) */
+function azPlayerPickerHtml() {
+  if (az.ppick === null) return '';
+  const i = az.ppick, role = AZ_SLOT_ROLES[i], cur = az.ply[i];
+  const list = azPlayers().map((p) => {
+    const best = azRoleBest(p, role);
+    const mismatch = '';
+    const tip = `${p.name}${best ? ` ・ ${AZ_ROLE_JA[role]}の得意: ${azNm(best.slug)} ${Math.round(best.v * 10) / 10}(${best.g}試合)` : ' ・ このロールのデータなし'}`;
+    return `<button class="tb-hero ${p.id === cur ? 'sel' : ''}" data-azppick="${p.id}" title="${esc(tip)}">
+      <span class="pl-av ${roleCls(p.role)}">${faceMarkup(p)}</span><span>${esc(p.name)}</span></button>`;
+  }).join('');
+  return `<div class="az-picker az-plypicker">
+    <div class="az-pickhead"><b>枠${i + 1}(${AZ_ROLE_JA[role]})</b>に入るプレイヤーを選択
+      ${cur ? '<span class="az-x" data-azpplyclear="1" title="プレイヤーを外す">クリア</span>' : ''}
+      <span class="az-close" data-azclose="1">閉じる ✕</span></div>
+    <div class="tb-herolist az-picklist">${list}</div>
+    <div class="az-note">選ぶと「<b>そのプレイヤー向けの最適ピック</b>」も出します(相性 + その人の Power Rating)・ 未使用キャラはその人の最低 Power Rating で計算(チームビルダーと同じ)</div>
+  </div>`;
+}
+function azPickerHtml() {
+  if (!az.pick) return '';
+  const { side, idx } = az.pick;
+  const role = AZ_SLOT_ROLES[idx];
+  const mySide = side === 'enemy' ? az.enemy : az.ally;
+  const cur = mySide[idx];
+  /* 重複禁止は「同じチーム内」だけ。相手と同じヒーロー(ミラーマッチ)は選べる */
+  const taken = new Set(mySide.filter(Boolean));
+  const list = azSlugsOfRole(role).map((s) => {
+    const dup = taken.has(s) && s !== cur;
+    return `<button class="tb-hero ${s === cur ? 'sel' : ''} ${dup ? 'off' : ''}" data-azpick="${s}" ${dup ? 'disabled' : ''} title="${esc(azNm(s))}${dup ? ' ・ 同じチームで選択済み' : ''}${azTentative(s) ? ' ・ 相性タグは暫定' : ''}">${heroThumb(azNm(s), 22, role, s)}<span>${esc(azNm(s))}</span>${azTentative(s) ? '<i class="ezm" title="相性タグは暫定">?</i>' : ''}</button>`;
+  }).join('');
+  return `<div class="az-picker">
+    <div class="az-pickhead"><b>${side === 'enemy' ? '相手チーム' : '自分たち'}の${AZ_ROLE_JA[role]}</b>を選択
+      <span class="az-close" data-azclose="1">閉じる ✕</span></div>
+    <div class="tb-herolist az-picklist">${list}</div>
+  </div>`;
+}
+function azRender() {
+  const body = $('#azBody');
+  if (!body) return;
+  $('#azCtl').querySelectorAll('[data-azrole]').forEach((b) => b.classList.toggle('active', b.dataset.azrole === az.role));
+  const enemyN = az.enemy.filter(Boolean).length, allyN = az.ally.filter(Boolean).length;
+  /* チーム選択 */
+  const teams = `<div class="az-teams">
+      <div class="az-team enemy"><div class="az-thead">相手チーム <span>${enemyN}/5</span></div>${[0, 1, 2, 3, 4].map((i) => azSlotButton('enemy', i)).join('')}</div>
+      <div class="az-team ally"><div class="az-thead">自分たちのチーム <span>${allyN}/5</span></div>${[0, 1, 2, 3, 4].map((i) => azSlotButton('ally', i)).join('')}</div>
+    </div>${azPickerHtml()}${azPlayerPickerHtml()}`;
+  /* 相手構成の読み */
+  const read = azCompRead();
+  const allyTags = azAllyTagCount();
+  const readRows = read.map((r) => {
+    const ok = !r.need.length || r.need.some((t) => allyTags[t]);
+    const hint = r.need.length
+      ? (allyTags[r.need[0]] || r.need.some((t) => allyTags[t])
+        ? `<span class="az-ok">✓ 対策あり(${r.need.filter((t) => allyTags[t]).map(azTagLabel).join('・')})</span>`
+        : `<span class="az-ng">⚠ うちに対策が薄い → ${r.need.map(azTagLabel).join(' / ')} が欲しい</span>`)
+      : '';
+    return `<li class="az-read ${ok ? '' : 'bad'}">${esc(r.text)} ${hint}</li>`;
+  }).join('');
+  const readHtml = enemyN
+    ? `<div class="az-card"><h4>🔍 相手構成の読み</h4>
+        ${read.length ? `<ul class="az-reads">${readRows}</ul>` : '<div class="az-empty">目立った偏りはありません(バランス型)</div>'}
+        <div class="az-note">※ タグ(性質)の枚数から機械的に出した目安です。実際の当たり方は相手の上手さ・マップ・ウルトの噛み合いで変わります</div></div>`
+    : `<div class="az-card"><h4>🔍 相手構成の読み</h4><div class="az-empty">相手チームのヒーローを選ぶと、構成の強み/弱点が出ます</div></div>`;
+  /* 枠ごとの分析 */
+  const slots = [0, 1, 2, 3, 4].filter((i) => az.role === 'All' || AZ_SLOT_ROLES[i] === az.role);
+  const blocks = slots.map((i) => {
+    const role = AZ_SLOT_ROLES[i];
+    const cur = az.ally[i];
+    const ply = azPlyOf(i);
+    const mates = new Set(az.ally.filter((s, k) => s && k !== i));
+    const cands = azSlugsOfRole(role).filter((s) => !mates.has(s));
+    const prof = azProfBonus(cands, ply);
+    const scored = cands.map((s) => {
+      const e = azEval(s, i);
+      const pr = ply ? prof.get(s) : null;
+      const bonus = pr && typeof pr.bonus === 'number' ? pr.bonus : 0;
+      return Object.assign({ slug: s, prof: pr || null, profBonus: bonus, pers: e.total + bonus }, e);
+    });
+    if (!enemyN && allyN < 2) {
+      return `<div class="az-card"><h4>枠${i + 1} ・ ${AZ_ROLE_JA[role]}</h4><div class="az-empty">相手チームを選ぶと、この枠に刺さるピックを出します</div></div>`;
+    }
+    const gOrder = scored.slice().sort((a, b) => b.total - a.total);
+    const pOrder = ply ? scored.slice().sort((a, b) => b.pers - a.pers) : gOrder;
+    const rankOf = ply ? pOrder : gOrder;
+    /* 一般論の上位3 + 個人向け上位3 をまとめて出す(両方見えるように) */
+    const show = new Set([...gOrder.slice(0, 3).map((r) => r.slug), ...pOrder.slice(0, 3).map((r) => r.slug)]);
+    const rows = rankOf.filter((r) => show.has(r.slug)).slice(0, 5);
+    const curRow = cur ? scored.find((r) => r.slug === cur) : null;
+    const worstOrder = (ply ? pOrder.slice().reverse() : gOrder.slice().reverse());
+    const avoid = worstOrder.slice(0, 2).filter((w) => (ply ? w.pers : w.total) < 0);
+    /* 一般論と個人向けで1位が変わるか */
+    let delta = '';
+    if (ply) {
+      const g1 = gOrder[0], p1 = pOrder[0];
+      delta = g1.slug === p1.slug
+        ? `<div class="az-delta same">一般論・${esc(ply.name)}向けとも1位は <b>${esc(azNm(p1.slug))}</b>(一般論 ${azPct(g1.total)}% → ${esc(ply.name)}向け ${azPct(p1.pers)}%)</div>`
+        : `<div class="az-delta">💡 一般論の1位は <b>${esc(azNm(g1.slug))}</b>(${azPct(g1.total)}%)ですが、<b>${esc(ply.name)}</b>向けなら <b>${esc(azNm(p1.slug))}</b>(${azPct(p1.pers)}% / 一般論 ${azPct(p1.total)}%) が最適です</div>`;
+    }
+    const rowsHtml = rows.map((r, k) => {
+      const g = azPct(r.total), pp = ply ? azPct(r.pers) : null;
+      const prChunk = ply && r.prof
+        ? `<span class="az-prof ${r.prof.used ? '' : 'unused'}" title="${r.prof.used ? `${esc(ply.name)} の ${esc(azNm(r.slug))} Power Rating` : '未使用キャラ: この人の最低Power Ratingで代用'}">${r.prof.used ? '得意' : '未使用'} ${Math.round(r.prof.v * 10) / 10}${r.prof.g ? `(${r.prof.g}試合)` : ''}</span>`
+        : '';
+      return `
+      <div class="az-rec ${cur === r.slug ? 'cur' : ''}">
+        <span class="az-rank">${AZ_RANK_MARK[k] || k + 1}</span>
+        ${heroThumb(azNm(r.slug), 26, role, r.slug)}
+        <span class="az-recname">${esc(azNm(r.slug))}${azTentative(r.slug) ? '<i class="az-tent" title="相性タグは暫定">暫定</i>' : ''}${cur === r.slug ? '<i class="az-curmark">現在</i>' : ''}</span>
+        <span class="az-bar"><i style="width:${g}%"></i></span>
+        <b class="az-pct">${g}%</b>
+        ${ply ? `<span class="az-arrow">→</span><b class="az-pct pers ${r.pers > r.total ? 'up' : (r.pers < r.total ? 'down' : '')}">${pp}%</b>` : ''}
+        <span class="az-total">${r.total > 0 ? '+' : ''}${Math.round(r.total * 10) / 10}</span>
+      </div>
+      <div class="az-whys">${azReasonList(r.items, 4)}<span class="az-split">相手平均 ${r.foeAvg > 0 ? '+' : ''}${Math.round(r.foeAvg * 10) / 10} ・ 味方平均 ${r.mateAvg > 0 ? '+' : ''}${Math.round(r.mateAvg * 10) / 10}</span>${prChunk}${!ply ? azAptLine(r.slug) : ''}${r.items.length === 0 ? '<span class="az-r">目立った有利・不利なし(無難)</span>' : ''}</div>
+      ${azExplainHtml(Object.assign({ open: k < 1 }, r))}`;
+    }).join('');
+    const avoidHtml = avoid.map((w) => {
+      const val = ply ? w.pers : w.total;
+      return `
+      <div class="az-rec avoid">
+        <span class="az-rank">✕</span>
+        ${heroThumb(azNm(w.slug), 22, role, w.slug)}
+        <span class="az-recname">${esc(azNm(w.slug))}</span>
+        <span class="az-bar bad"><i style="width:${azPct(val)}%"></i></span>
+        <b class="az-pct">${azPct(val)}%</b>
+        ${ply ? `<span class="az-arrow">←</span><b class="az-pct">${azPct(w.total)}%</b>` : ''}
+        <span class="az-total">${Math.round(val * 10) / 10}</span>
+      </div>
+      <div class="az-whys">${azReasonList(w.items, 2)}</div>`;
+    }).join('');
+    const head = `枠${i + 1} ・ ${AZ_ROLE_JA[role]}`
+      + (ply ? ` <span class="az-plyhead">👤 ${esc(ply.name)}</span>` : '')
+      + (cur ? ` <span class="az-cur">現在: ${esc(azNm(cur))}${curRow ? ` (一般論 ${azPct(curRow.total)}%${ply ? ` / ${esc(ply.name)}向け ${azPct(curRow.pers)}%` : ''})` : ''}</span>` : '');
+    const legend = (ply
+      ? `<div class="az-legend">並び順: <b>${esc(ply.name)}向け</b> ・ 数字は <b>一般論%</b> → <b>${esc(ply.name)}向け%</b>(緑=上がる / 赤=下がる)</div>`
+      : '<div class="az-legend">並び順: <b>一般論</b>(相性のみ) ・ プレイヤーを選ぶと「その人向け」も表示します</div>')
+      + (azMarkSlug() ? `<div class="az-legend mark">🎯 <b>${esc(azNm(azMarkSlug()))}</b> を重点対策中(この相手との相性を3倍の重みで計算)</div>` : '');
+    return `<div class="az-card"><h4>${head}</h4>
+      ${legend}${delta}
+      <div class="az-recs">${rowsHtml}</div>
+      ${avoidHtml ? `<div class="az-avoidhead">避けたいピック${ply ? `(${esc(ply.name)}向け)` : ''}</div><div class="az-recs">${avoidHtml}</div>` : ''}
+      </div>`;
+  }).join('');
+  const tent = (typeof AZ_TENTATIVE !== 'undefined' ? AZ_TENTATIVE : []).map(azNm).join(' / ');
+  body.innerHTML = teams + azMarkCard() + readHtml +
+    `<div class="az-cards">${blocks}</div>
+     <div class="az-note" style="margin-top:10px">
+       相性は<b>ルールベースの目安</b>です(勝率データではありません)。数値・理由・タグは <code>analyst-data.js</code> で自由に編集できます。<br />
+       スコア = 相手5人との相性 + 味方4人との相性 + 役割として欲しい要素 ・ 表示% = 50 + スコア×6(50%が互角の目安) ・ 同ヒーローは味方の重複を除外<br />
+       ${tent ? `※ 次のヒーローはキット情報が新しく<b>相性タグが暫定</b>です: ${esc(tent)}(タグを直すと分析に反映されます)` : ''}
+     </div>`;
+}
+$('#azBody').addEventListener('click', (e) => {
+  const mk = e.target.closest('[data-azmark]');
+  if (mk) {
+    const i = Number(mk.dataset.azmark);
+    az.mark = az.mark === i ? null : i;      // もう一度押すと解除
+    azRender(); return;
+  }
+  const slot = e.target.closest('[data-azslot]');
+  if (slot) {
+    const [side, idx] = slot.dataset.azslot.split('|');
+    az.pick = (az.pick && az.pick.side === side && az.pick.idx === Number(idx)) ? null : { side, idx: Number(idx) };
+    az.ppick = null;
+    azRender(); return;
+  }
+  const ply = e.target.closest('[data-azply]');
+  if (ply) {
+    const i = Number(ply.dataset.azply);
+    az.ppick = az.ppick === i ? null : i;
+    az.pick = null;
+    azRender(); return;
+  }
+  const pp = e.target.closest('[data-azppick]');
+  if (pp && az.ppick !== null) { az.ply[az.ppick] = pp.dataset.azppick; az.ppick = null; azRender(); return; }
+  if (e.target.closest('[data-azpplyclear]')) { if (az.ppick !== null) az.ply[az.ppick] = null; az.ppick = null; azRender(); return; }
+  const cl = e.target.closest('[data-azclear]');
+  if (cl) { const [side, idx] = cl.dataset.azclear.split('|'); (side === 'enemy' ? az.enemy : az.ally)[Number(idx)] = null; az.pick = null; azRender(); return; }
+  const pk = e.target.closest('[data-azpick]');
+  if (pk && az.pick) { (az.pick.side === 'enemy' ? az.enemy : az.ally)[az.pick.idx] = pk.dataset.azpick; az.pick = null; azRender(); return; }
+  if (e.target.closest('[data-azclose]')) { az.pick = null; az.ppick = null; azRender(); }
+});
+$('#azCtl').addEventListener('click', (e) => {
+  const rb = e.target.closest('[data-azrole]');
+  if (rb) { az.role = rb.dataset.azrole; azRender(); return; }
+  if (e.target.closest('[data-azsample]')) {
+    az.enemy = ['dva', 'tracer', 'genji', 'ana', 'kiriko'];
+    az.ally = ['reinhardt', null, 'cassidy', 'lucio', 'baptiste'];
+    /* 各枠に、その役割が本職のプレイヤーを1人ずつ割り当てる(いなければ先頭から) */
+    const pool = azPlayers();
+    const used = new Set();
+    const pickFor = (role) => {
+      const cand = pool.filter((p) => p.role === role && !used.has(p.id));
+      const list = cand.length ? cand : pool.filter((p) => !used.has(p.id));
+      const p = list[0] || null;
+      if (p) used.add(p.id);
+      return p ? p.id : null;
+    };
+    az.ply = [pickFor('Tank'), null, pickFor('Damage'), pickFor('Support'), pickFor('Support')];
+    az.pick = null; az.ppick = null; az.mark = 1; azRender(); return;
+  }
+  if (e.target.closest('[data-azreset]')) {
+    az.enemy = [null, null, null, null, null]; az.ally = [null, null, null, null, null];
+    az.ply = [null, null, null, null, null];
+    az.pick = null; az.ppick = null; az.mark = null; azRender();
+  }
+});
+
 /* イベント */
 $('#rankBody').addEventListener('click',e=>{
   const sb=e.target.closest('[data-hbsort]');
@@ -1957,6 +2595,7 @@ renderTable();
 updateArrows();
 setMode();      // 常に全モード(コンペ表示は廃止)
 renderTeam();   // チームビルダー初期描画
+azRender();     // チームアナリスト初期描画
 
 /* 最終更新日(players-data.js の LAST_UPDATED_ISO)を表示 */
 (function(){
