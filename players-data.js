@@ -1,7 +1,7 @@
 'use strict';
 
 /* 生成データ: update.mjs が自動生成(手編集は上書き) ・ 元データ: OverFast API */
-const LAST_UPDATED_ISO = "2026-10-02T08:28:20.216Z";
+const LAST_UPDATED_ISO = "2026-10-03T08:06:25.277Z";
 /* ライバル・プレイ(コンペティティブ)のみ */
 const PLAYERS_COMP = [
   {
@@ -154,8 +154,8 @@ const PLAYERS_COMP = [
     ],
     "bscore": {
       "ashe": {
-        "finalScore": 39.66,
-        "battleScore": 35.06,
+        "finalScore": 39.48,
+        "battleScore": 34.9,
         "coeff": 1.33,
         "matchCoef": 0.85,
         "gamesPlayed": 2,
@@ -174,7 +174,7 @@ const PLAYERS_COMP = [
         }
       },
       "bastion": {
-        "finalScore": 59.46,
+        "finalScore": 59.47,
         "battleScore": 41.83,
         "coeff": 1.33,
         "matchCoef": 0.92,
@@ -194,8 +194,8 @@ const PLAYERS_COMP = [
         }
       },
       "cassidy": {
-        "finalScore": 49.07,
-        "battleScore": 42.83,
+        "finalScore": 49.23,
+        "battleScore": 42.97,
         "coeff": 1.33,
         "matchCoef": 0.86,
         "gamesPlayed": 5,
@@ -211,7 +211,8 @@ const PLAYERS_COMP = [
           "as10": 2,
           "wa": 44,
           "ca": 11
-        }
+        },
+        "rankDeltaPower": 1
       },
       "emre": {
         "finalScore": 39.43,
@@ -294,8 +295,8 @@ const PLAYERS_COMP = [
         }
       },
       "shion": {
-        "finalScore": 49.32,
-        "battleScore": 42.28,
+        "finalScore": 49.2,
+        "battleScore": 42.17,
         "coeff": 1.33,
         "matchCoef": 0.88,
         "gamesPlayed": 6,
@@ -312,11 +313,11 @@ const PLAYERS_COMP = [
           "wa": 33,
           "ca": 17
         },
-        "rankDelta": -1
+        "rankDeltaPower": -1
       },
       "sojourn": {
-        "finalScore": 55.88,
-        "battleScore": 49.39,
+        "finalScore": 55.97,
+        "battleScore": 49.47,
         "coeff": 1.33,
         "matchCoef": 0.85,
         "gamesPlayed": 1,
@@ -352,8 +353,7 @@ const PLAYERS_COMP = [
           "as10": 0.92,
           "wa": 38,
           "ca": 13
-        },
-        "rankDelta": 1
+        }
       },
       "tracer": {
         "finalScore": 41.3,
@@ -382,7 +382,7 @@ const PLAYERS_COMP = [
     "pid": "71bf70095295184c2073960007b31fdafdddb9a6a594a1|0a08671b7adbc97eb1182bc68bdf60f7",
     "name": "ぼいどぐらぶ",
     "tag": "",
-    "endorse": 3,
+    "endorse": 2,
     "title": "<3",
     "avatar": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/1fa2392c8d0c6047457f038a881d59d3cade9a1ef6cfa8bb8e396100a3b97a8b.png",
     "namecard": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/4f57d4bae6d479b52d262975c730e1f763123975a3dc08395709d963ea7dd6b9.png",
@@ -406,41 +406,41 @@ const PLAYERS_COMP = [
     },
     "rankTier": "Platinum 4",
     "overall": {
-      "matches": 166,
+      "matches": 170,
       "wins": 86,
-      "losses": 80,
-      "wr": 51.81,
-      "kda": 2.56,
-      "elim": 13.28,
-      "deaths": 6.1,
-      "dmg": 7618.01,
-      "heal": 4252.23,
-      "time": 103192
+      "losses": 84,
+      "wr": 50.59,
+      "kda": 2.57,
+      "elim": 13.35,
+      "deaths": 6.09,
+      "dmg": 7815.33,
+      "heal": 4177.07,
+      "time": 105588
     },
     "roles": {
       "Tank": {
-        "g": 27,
-        "w": 15,
-        "l": 12,
-        "time": 15825,
-        "wr": 55.56,
-        "kda": 4.65,
-        "elim": 21.31,
-        "deaths": 5.04,
-        "dmg": 12347.18,
-        "heal": 1319.51
+        "g": 29,
+        "w": 14,
+        "l": 15,
+        "time": 17370,
+        "wr": 48.28,
+        "kda": 4.57,
+        "elim": 20.76,
+        "deaths": 5.01,
+        "dmg": 12988.57,
+        "heal": 1322.49
       },
       "Damage": {
-        "g": 57,
-        "w": 27,
-        "l": 30,
-        "time": 36020,
-        "wr": 47.37,
-        "kda": 1.88,
-        "elim": 13.79,
-        "deaths": 7.38,
-        "dmg": 9159.96,
-        "heal": 207.12
+        "g": 59,
+        "w": 28,
+        "l": 31,
+        "time": 36871,
+        "wr": 47.46,
+        "kda": 1.89,
+        "elim": 13.91,
+        "deaths": 7.39,
+        "dmg": 9189.11,
+        "heal": 206.72
       },
       "Support": {
         "g": 82,
@@ -525,8 +525,24 @@ const PLAYERS_COMP = [
         "n": "Orisa",
         "role": "Tank",
         "g": 5,
-        "wr": 20,
-        "kda": 3.56
+        "wr": 0,
+        "kda": 3.54
+      },
+      {
+        "slug": "shion",
+        "n": "Shion",
+        "role": "Damage",
+        "g": 5,
+        "wr": 40,
+        "kda": 2.32
+      },
+      {
+        "slug": "anran",
+        "n": "Anran",
+        "role": "Damage",
+        "g": 4,
+        "wr": 50,
+        "kda": 2.17
       },
       {
         "slug": "freja",
@@ -551,22 +567,6 @@ const PLAYERS_COMP = [
         "g": 4,
         "wr": 50,
         "kda": 4.1
-      },
-      {
-        "slug": "shion",
-        "n": "Shion",
-        "role": "Damage",
-        "g": 4,
-        "wr": 25,
-        "kda": 1.95
-      },
-      {
-        "slug": "anran",
-        "n": "Anran",
-        "role": "Damage",
-        "g": 3,
-        "wr": 66.67,
-        "kda": 2.35
       },
       {
         "slug": "dmon",
@@ -622,7 +622,15 @@ const PLAYERS_COMP = [
         "role": "Tank",
         "g": 2,
         "wr": 50,
-        "kda": 3.33
+        "kda": 4.33
+      },
+      {
+        "slug": "sigma",
+        "n": "Sigma",
+        "role": "Tank",
+        "g": 2,
+        "wr": 50,
+        "kda": 4.14
       },
       {
         "slug": "sierra",
@@ -694,7 +702,7 @@ const PLAYERS_COMP = [
         "role": "Tank",
         "g": 1,
         "wr": 0,
-        "kda": 1.8
+        "kda": 2
       },
       {
         "slug": "reaper",
@@ -711,14 +719,6 @@ const PLAYERS_COMP = [
         "g": 1,
         "wr": 100,
         "kda": 3
-      },
-      {
-        "slug": "sigma",
-        "n": "Sigma",
-        "role": "Tank",
-        "g": 1,
-        "wr": 100,
-        "kda": 4.88
       },
       {
         "slug": "soldier-76",
@@ -745,6 +745,14 @@ const PLAYERS_COMP = [
         "kda": 1.45
       },
       {
+        "slug": "winston",
+        "n": "Winston",
+        "role": "Tank",
+        "g": 1,
+        "wr": 0,
+        "kda": 0.67
+      },
+      {
         "slug": "zenyatta",
         "n": "Zenyatta",
         "role": "Support",
@@ -755,8 +763,8 @@ const PLAYERS_COMP = [
     ],
     "bscore": {
       "ana": {
-        "finalScore": 57.08,
-        "battleScore": 41.48,
+        "finalScore": 57.06,
+        "battleScore": 41.47,
         "coeff": 1.33,
         "matchCoef": 1.03,
         "gamesPlayed": 37,
@@ -772,31 +780,33 @@ const PLAYERS_COMP = [
           "as10": 11.85,
           "wa": 52,
           "ca": 0
-        }
+        },
+        "rankDelta": 1
       },
       "anran": {
-        "finalScore": 62.07,
-        "battleScore": 39.91,
+        "finalScore": 62.05,
+        "battleScore": 40.06,
         "coeff": 1.33,
         "matchCoef": 0.92,
-        "gamesPlayed": 3,
+        "gamesPlayed": 4,
         "rankIndex": 3,
         "det": {
-          "g": 3,
-          "time": 1592,
-          "wr": 63,
-          "el10": 17.72,
-          "de10": 7.54,
-          "dm10": 7344,
-          "he10": 843,
-          "as10": 0.38,
+          "g": 4,
+          "time": 1806,
+          "wr": 55,
+          "el10": 17.28,
+          "de10": 7.97,
+          "dm10": 7396,
+          "he10": 794,
+          "as10": 0.66,
           "wa": 23,
           "ca": 13
-        }
+        },
+        "rankDelta": 1
       },
       "ashe": {
-        "finalScore": 49.46,
-        "battleScore": 43.72,
+        "finalScore": 50.89,
+        "battleScore": 44.98,
         "coeff": 1.33,
         "matchCoef": 0.85,
         "gamesPlayed": 2,
@@ -813,7 +823,8 @@ const PLAYERS_COMP = [
           "wa": 37,
           "ca": 19
         },
-        "rankDeltaPower": -1
+        "rankDelta": 2,
+        "rankDeltaPower": 3
       },
       "baptiste": {
         "finalScore": 45.1,
@@ -834,7 +845,7 @@ const PLAYERS_COMP = [
           "wa": 30,
           "ca": 22
         },
-        "rankNew": true
+        "rankDelta": 1
       },
       "bastion": {
         "finalScore": 53.64,
@@ -855,7 +866,8 @@ const PLAYERS_COMP = [
           "wa": 26,
           "ca": 4
         },
-        "rankDelta": -1
+        "rankDelta": -2,
+        "rankDeltaPower": -1
       },
       "brigitte": {
         "finalScore": 42.19,
@@ -876,29 +888,30 @@ const PLAYERS_COMP = [
           "wa": 0,
           "ca": 0
         },
-        "rankDelta": -2
+        "rankDelta": -2,
+        "rankDeltaPower": -2
       },
       "cassidy": {
-        "finalScore": 49.49,
-        "battleScore": 39.15,
+        "finalScore": 49.09,
+        "battleScore": 38.83,
         "coeff": 1.33,
         "matchCoef": 0.95,
         "gamesPlayed": 14,
         "rankIndex": 3,
         "det": {
           "g": 14,
-          "time": 8954,
-          "wr": 58,
-          "el10": 15.08,
-          "de10": 7.71,
-          "dm10": 7976,
-          "he10": 13.53,
-          "as10": 1.47,
+          "time": 9190,
+          "wr": 56,
+          "el10": 15.21,
+          "de10": 7.77,
+          "dm10": 7985,
+          "he10": 13.18,
+          "as10": 1.44,
           "wa": 41,
           "ca": 11
         },
         "rankDelta": -1,
-        "rankDeltaPower": 1
+        "rankDeltaPower": -1
       },
       "dmon": {
         "finalScore": 49.16,
@@ -918,24 +931,25 @@ const PLAYERS_COMP = [
           "as10": 3.29,
           "wa": 34,
           "ca": 0
-        }
+        },
+        "rankDeltaPower": 2
       },
       "doomfist": {
-        "finalScore": 51.87,
-        "battleScore": 47.56,
+        "finalScore": 51.86,
+        "battleScore": 47.55,
         "coeff": 1.21,
         "matchCoef": 0.9,
         "gamesPlayed": 8,
         "rankIndex": 2,
         "det": {
           "g": 8,
-          "time": 4590,
+          "time": 4601,
           "wr": 67,
-          "el10": 23.66,
-          "de10": 4.44,
-          "dm10": 8269,
-          "he10": 1793,
-          "as10": 5.62,
+          "el10": 23.6,
+          "de10": 4.43,
+          "dm10": 8249,
+          "he10": 1788,
+          "as10": 5.61,
           "wa": 27,
           "ca": 10
         }
@@ -959,8 +973,8 @@ const PLAYERS_COMP = [
           "wa": 23,
           "ca": 10
         },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        "rankDelta": -2,
+        "rankDeltaPower": -2
       },
       "echo": {
         "finalScore": 39.21,
@@ -980,9 +994,7 @@ const PLAYERS_COMP = [
           "as10": 0,
           "wa": 23,
           "ca": 12
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "freja": {
         "finalScore": 45.6,
@@ -1002,7 +1014,8 @@ const PLAYERS_COMP = [
           "as10": 0.59,
           "wa": 22,
           "ca": 17
-        }
+        },
+        "rankDelta": 1
       },
       "genji": {
         "finalScore": 46.3,
@@ -1023,7 +1036,7 @@ const PLAYERS_COMP = [
           "wa": 26,
           "ca": 13
         },
-        "rankDelta": -3
+        "rankDelta": -1
       },
       "hazard": {
         "finalScore": 39.94,
@@ -1044,8 +1057,7 @@ const PLAYERS_COMP = [
           "wa": 31,
           "ca": 8
         },
-        "rankDelta": -2,
-        "rankDeltaPower": -2
+        "rankDelta": -1
       },
       "illari": {
         "finalScore": 41.28,
@@ -1066,7 +1078,8 @@ const PLAYERS_COMP = [
           "wa": 39,
           "ca": 17
         },
-        "rankDeltaPower": -1
+        "rankDelta": -2,
+        "rankDeltaPower": -2
       },
       "jetpack-cat": {
         "finalScore": 41.67,
@@ -1087,11 +1100,12 @@ const PLAYERS_COMP = [
           "wa": 32,
           "ca": 7
         },
-        "rankDeltaPower": -1
+        "rankDelta": -2,
+        "rankDeltaPower": -2
       },
       "kiriko": {
-        "finalScore": 51.97,
-        "battleScore": 39.49,
+        "finalScore": 52.14,
+        "battleScore": 39.61,
         "coeff": 1.33,
         "matchCoef": 0.99,
         "gamesPlayed": 22,
@@ -1108,8 +1122,8 @@ const PLAYERS_COMP = [
           "wa": 28,
           "ca": 12
         },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        "rankDelta": 1,
+        "rankDeltaPower": 1
       },
       "lifeweaver": {
         "finalScore": 43.92,
@@ -1153,8 +1167,8 @@ const PLAYERS_COMP = [
         }
       },
       "mizuki": {
-        "finalScore": 46.02,
-        "battleScore": 40.68,
+        "finalScore": 46.14,
+        "battleScore": 40.78,
         "coeff": 1.33,
         "matchCoef": 0.85,
         "gamesPlayed": 3,
@@ -1173,7 +1187,7 @@ const PLAYERS_COMP = [
         }
       },
       "moira": {
-        "finalScore": 61.93,
+        "finalScore": 61.95,
         "battleScore": 44.68,
         "coeff": 1.33,
         "matchCoef": 0.92,
@@ -1190,29 +1204,29 @@ const PLAYERS_COMP = [
           "as10": 15.33,
           "wa": 0,
           "ca": 0
-        }
+        },
+        "rankDelta": -1
       },
       "orisa": {
-        "finalScore": 40.13,
-        "battleScore": 38.54,
+        "finalScore": 40.48,
+        "battleScore": 38.87,
         "coeff": 1.21,
         "matchCoef": 0.86,
         "gamesPlayed": 5,
         "rankIndex": 2,
         "det": {
           "g": 5,
-          "time": 2408,
+          "time": 2481,
           "wr": 0,
-          "el10": 17.69,
-          "de10": 6.23,
-          "dm10": 10977,
-          "he10": 133,
-          "as10": 4.49,
+          "el10": 17.9,
+          "de10": 6.29,
+          "dm10": 11002,
+          "he10": 129,
+          "as10": 4.35,
           "wa": 34,
           "ca": 15
         },
-        "rankDelta": -1,
-        "rankDeltaPower": -2
+        "rankDelta": 2
       },
       "pharah": {
         "finalScore": 49.91,
@@ -1232,28 +1246,30 @@ const PLAYERS_COMP = [
           "as10": 5.1,
           "wa": 36,
           "ca": 0
-        }
+        },
+        "rankDelta": -1
       },
       "ramattra": {
-        "finalScore": 53.38,
-        "battleScore": 38.36,
+        "finalScore": 53.84,
+        "battleScore": 38.69,
         "coeff": 1.21,
         "matchCoef": 0.92,
         "gamesPlayed": 1,
         "rankIndex": 2,
         "det": {
           "g": 1,
-          "time": 528,
+          "time": 625,
           "wr": 0,
-          "el10": 7.95,
-          "de10": 5.68,
-          "dm10": 11417,
-          "he10": 1000,
-          "as10": 2.27,
+          "el10": 8.64,
+          "de10": 5.76,
+          "dm10": 10741,
+          "he10": 845,
+          "as10": 2.88,
           "wa": 28,
           "ca": 14
         },
-        "rankDelta": -1
+        "rankDelta": 1,
+        "rankDeltaPower": 2
       },
       "reaper": {
         "finalScore": 54.83,
@@ -1274,7 +1290,7 @@ const PLAYERS_COMP = [
           "wa": 24,
           "ca": 12
         },
-        "rankDelta": 2
+        "rankDelta": -2
       },
       "reinhardt": {
         "finalScore": 42.11,
@@ -1295,75 +1311,77 @@ const PLAYERS_COMP = [
           "wa": 0,
           "ca": 0
         },
-        "rankDelta": -2
+        "rankDelta": -2,
+        "rankDeltaPower": -2
       },
       "roadhog": {
-        "finalScore": 40.92,
-        "battleScore": 39.78,
+        "finalScore": 43.52,
+        "battleScore": 42.32,
         "coeff": 1.21,
         "matchCoef": 0.85,
         "gamesPlayed": 2,
         "rankIndex": 2,
         "det": {
           "g": 2,
-          "time": 1192,
-          "wr": 29,
-          "el10": 17.61,
-          "de10": 6.04,
-          "dm10": 7951,
-          "he10": 5202,
-          "as10": 2.52,
-          "wa": 26,
-          "ca": 14
+          "time": 1456,
+          "wr": 43,
+          "el10": 18.95,
+          "de10": 4.94,
+          "dm10": 8280,
+          "he10": 5523,
+          "as10": 2.88,
+          "wa": 24,
+          "ca": 16
         },
-        "rankDelta": -1,
-        "rankDeltaPower": -2
+        "rankDelta": 6,
+        "rankDeltaPower": 6
       },
       "shion": {
-        "finalScore": 41.17,
-        "battleScore": 36.39,
+        "finalScore": 44.45,
+        "battleScore": 38.8,
         "coeff": 1.33,
-        "matchCoef": 0.85,
-        "gamesPlayed": 4,
+        "matchCoef": 0.86,
+        "gamesPlayed": 5,
         "rankIndex": 3,
         "det": {
-          "g": 4,
-          "time": 1942,
-          "wr": 16,
-          "el10": 11.43,
-          "de10": 5.87,
-          "dm10": 6909,
-          "he10": 127,
-          "as10": 0.31,
+          "g": 5,
+          "time": 2336,
+          "wr": 34,
+          "el10": 13.1,
+          "de10": 5.65,
+          "dm10": 7208,
+          "he10": 135,
+          "as10": 0.51,
           "wa": 32,
           "ca": 13
         },
-        "rankDelta": 2,
-        "rankDeltaPower": 2
+        "rankDelta": 7,
+        "rankDeltaPower": 8
       },
       "sigma": {
-        "finalScore": 60.03,
-        "battleScore": 44.64,
+        "finalScore": 59.29,
+        "battleScore": 43.16,
         "coeff": 1.21,
         "matchCoef": 0.92,
-        "gamesPlayed": 1,
+        "gamesPlayed": 2,
         "rankIndex": 2,
         "det": {
-          "g": 1,
-          "time": 970,
-          "wr": 84,
-          "el10": 20.41,
-          "de10": 4.95,
-          "dm10": 13344,
+          "g": 2,
+          "time": 1586,
+          "wr": 72,
+          "el10": 18.92,
+          "de10": 5.3,
+          "dm10": 12506,
           "he10": 0,
-          "as10": 3.71,
-          "wa": 45,
+          "as10": 3.03,
+          "wa": 48,
           "ca": 0
-        }
+        },
+        "rankDelta": -4
       },
       "sierra": {
-        "finalScore": 38.62,
-        "battleScore": 34.13,
+        "finalScore": 38.63,
+        "battleScore": 34.14,
         "coeff": 1.33,
         "matchCoef": 0.85,
         "gamesPlayed": 2,
@@ -1379,13 +1397,11 @@ const PLAYERS_COMP = [
           "as10": 1.27,
           "wa": 23,
           "ca": 11
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "sojourn": {
-        "finalScore": 37.89,
-        "battleScore": 32.48,
+        "finalScore": 37.96,
+        "battleScore": 32.54,
         "coeff": 1.33,
         "matchCoef": 0.88,
         "gamesPlayed": 6,
@@ -1401,9 +1417,7 @@ const PLAYERS_COMP = [
           "as10": 0,
           "wa": 25,
           "ca": 12
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "soldier-76": {
         "finalScore": 53.68,
@@ -1423,7 +1437,8 @@ const PLAYERS_COMP = [
           "as10": 0.68,
           "wa": 36,
           "ca": 12
-        }
+        },
+        "rankDeltaPower": -1
       },
       "symmetra": {
         "finalScore": 52.08,
@@ -1444,7 +1459,7 @@ const PLAYERS_COMP = [
           "wa": 28,
           "ca": 0
         },
-        "rankDeltaPower": 1
+        "rankDeltaPower": -1
       },
       "tracer": {
         "finalScore": 42.03,
@@ -1455,18 +1470,17 @@ const PLAYERS_COMP = [
         "rankIndex": 3,
         "det": {
           "g": 6,
-          "time": 2976,
+          "time": 2983,
           "wr": 37,
-          "el10": 10.89,
-          "de10": 8.87,
-          "dm10": 4438,
-          "he10": 56.9,
+          "el10": 10.86,
+          "de10": 8.85,
+          "dm10": 4428,
+          "he10": 56.78,
           "as10": 0,
           "wa": 32,
           "ca": 10
         },
-        "rankDelta": -6,
-        "rankDeltaPower": -3
+        "rankDeltaPower": -2
       },
       "vendetta": {
         "finalScore": 43.97,
@@ -1487,11 +1501,33 @@ const PLAYERS_COMP = [
           "wa": 0,
           "ca": 0
         },
+        "rankDelta": 1,
         "rankDeltaPower": -1
       },
+      "winston": {
+        "finalScore": 33.27,
+        "battleScore": 32.35,
+        "coeff": 1.21,
+        "matchCoef": 0.85,
+        "gamesPlayed": 1,
+        "rankIndex": 2,
+        "det": {
+          "g": 1,
+          "time": 272,
+          "wr": 0,
+          "el10": 4.42,
+          "de10": 6.63,
+          "dm10": 9143,
+          "he10": 1106,
+          "as10": 0,
+          "wa": 69,
+          "ca": 0
+        },
+        "rankNew": true
+      },
       "wuyang": {
-        "finalScore": 50.5,
-        "battleScore": 42.64,
+        "finalScore": 48.55,
+        "battleScore": 41,
         "coeff": 1.33,
         "matchCoef": 0.89,
         "gamesPlayed": 7,
@@ -1507,7 +1543,9 @@ const PLAYERS_COMP = [
           "as10": 15.06,
           "wa": 32,
           "ca": 0
-        }
+        },
+        "rankDelta": -1,
+        "rankDeltaPower": -4
       },
       "zenyatta": {
         "finalScore": 35.23,
@@ -1527,9 +1565,7 @@ const PLAYERS_COMP = [
           "as10": 9.36,
           "wa": 22,
           "ca": 17
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       }
     }
   },
@@ -1815,8 +1851,8 @@ const PLAYERS_COMP = [
     ],
     "bscore": {
       "ana": {
-        "finalScore": 45.86,
-        "battleScore": 36.85,
+        "finalScore": 45.91,
+        "battleScore": 36.89,
         "coeff": 1.46,
         "matchCoef": 0.85,
         "gamesPlayed": 3,
@@ -1832,11 +1868,13 @@ const PLAYERS_COMP = [
           "as10": 8.16,
           "wa": 56,
           "ca": 0
-        }
+        },
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "anran": {
-        "finalScore": 68.6,
-        "battleScore": 48.45,
+        "finalScore": 68.43,
+        "battleScore": 48.4,
         "coeff": 1.33,
         "matchCoef": 0.99,
         "gamesPlayed": 18,
@@ -1855,8 +1893,8 @@ const PLAYERS_COMP = [
         }
       },
       "ashe": {
-        "finalScore": 38.93,
-        "battleScore": 34.41,
+        "finalScore": 39.34,
+        "battleScore": 34.77,
         "coeff": 1.33,
         "matchCoef": 0.85,
         "gamesPlayed": 4,
@@ -1872,10 +1910,12 @@ const PLAYERS_COMP = [
           "as10": 0.6,
           "wa": 40,
           "ca": 16
-        }
+        },
+        "rankDelta": 2,
+        "rankDeltaPower": 1
       },
       "bastion": {
-        "finalScore": 56.87,
+        "finalScore": 56.88,
         "battleScore": 38.1,
         "coeff": 1.33,
         "matchCoef": 0.94,
@@ -1895,8 +1935,8 @@ const PLAYERS_COMP = [
         }
       },
       "cassidy": {
-        "finalScore": 39.21,
-        "battleScore": 34.65,
+        "finalScore": 39.22,
+        "battleScore": 34.67,
         "coeff": 1.33,
         "matchCoef": 0.85,
         "gamesPlayed": 4,
@@ -1913,7 +1953,8 @@ const PLAYERS_COMP = [
           "wa": 46,
           "ca": 8
         },
-        "rankDelta": 1
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "dva": {
         "finalScore": 44.94,
@@ -1996,8 +2037,8 @@ const PLAYERS_COMP = [
         }
       },
       "kiriko": {
-        "finalScore": 42.88,
-        "battleScore": 31.53,
+        "finalScore": 42.76,
+        "battleScore": 31.44,
         "coeff": 1.46,
         "matchCoef": 0.93,
         "gamesPlayed": 11,
@@ -2014,8 +2055,7 @@ const PLAYERS_COMP = [
           "wa": 28,
           "ca": 5
         },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        "rankDelta": -1
       },
       "mauga": {
         "finalScore": 64.67,
@@ -2035,11 +2075,12 @@ const PLAYERS_COMP = [
           "as10": 7.83,
           "wa": 32,
           "ca": 10
-        }
+        },
+        "rankDelta": -1
       },
       "mizuki": {
-        "finalScore": 52.2,
-        "battleScore": 39.11,
+        "finalScore": 52.15,
+        "battleScore": 39.07,
         "coeff": 1.46,
         "matchCoef": 0.91,
         "gamesPlayed": 9,
@@ -2058,7 +2099,7 @@ const PLAYERS_COMP = [
         }
       },
       "moira": {
-        "finalScore": 65.82,
+        "finalScore": 65.83,
         "battleScore": 45.2,
         "coeff": 1.46,
         "matchCoef": 1.02,
@@ -2078,8 +2119,8 @@ const PLAYERS_COMP = [
         }
       },
       "orisa": {
-        "finalScore": 45.64,
-        "battleScore": 40.34,
+        "finalScore": 45.98,
+        "battleScore": 40.65,
         "coeff": 1.33,
         "matchCoef": 0.85,
         "gamesPlayed": 3,
@@ -2095,7 +2136,9 @@ const PLAYERS_COMP = [
           "as10": 4.06,
           "wa": 36,
           "ca": 12
-        }
+        },
+        "rankDelta": 1,
+        "rankDeltaPower": 1
       },
       "pharah": {
         "finalScore": 53.7,
@@ -2118,8 +2161,8 @@ const PLAYERS_COMP = [
         }
       },
       "ramattra": {
-        "finalScore": 64.28,
-        "battleScore": 39.9,
+        "finalScore": 64.35,
+        "battleScore": 39.94,
         "coeff": 1.33,
         "matchCoef": 0.97,
         "gamesPlayed": 12,
@@ -2175,12 +2218,11 @@ const PLAYERS_COMP = [
           "as10": 0.5,
           "wa": 23,
           "ca": 10
-        },
-        "rankDeltaPower": 1
+        }
       },
       "shion": {
-        "finalScore": 59.01,
-        "battleScore": 52.15,
+        "finalScore": 58.85,
+        "battleScore": 52.02,
         "coeff": 1.33,
         "matchCoef": 0.85,
         "gamesPlayed": 2,
@@ -2199,8 +2241,8 @@ const PLAYERS_COMP = [
         }
       },
       "sigma": {
-        "finalScore": 64.84,
-        "battleScore": 47.61,
+        "finalScore": 64.85,
+        "battleScore": 47.75,
         "coeff": 1.33,
         "matchCoef": 0.95,
         "gamesPlayed": 8,
@@ -2216,7 +2258,8 @@ const PLAYERS_COMP = [
           "as10": 3.17,
           "wa": 49,
           "ca": 0
-        }
+        },
+        "rankDelta": 1
       },
       "sierra": {
         "finalScore": 54.3,
@@ -2259,8 +2302,8 @@ const PLAYERS_COMP = [
         }
       },
       "torbjorn": {
-        "finalScore": 41.26,
-        "battleScore": 36.47,
+        "finalScore": 41.21,
+        "battleScore": 36.43,
         "coeff": 1.33,
         "matchCoef": 0.85,
         "gamesPlayed": 1,
@@ -2279,8 +2322,8 @@ const PLAYERS_COMP = [
         }
       },
       "winston": {
-        "finalScore": 36.29,
-        "battleScore": 32.08,
+        "finalScore": 37.42,
+        "battleScore": 33.08,
         "coeff": 1.33,
         "matchCoef": 0.85,
         "gamesPlayed": 1,
@@ -2566,8 +2609,8 @@ const PLAYERS_COMP = [
     ],
     "bscore": {
       "ana": {
-        "finalScore": 78.93,
-        "battleScore": 46.61,
+        "finalScore": 78.79,
+        "battleScore": 46.53,
         "coeff": 1.77,
         "matchCoef": 0.96,
         "gamesPlayed": 15,
@@ -2583,11 +2626,12 @@ const PLAYERS_COMP = [
           "as10": 12.97,
           "wa": 61,
           "ca": 0
-        }
+        },
+        "rankDelta": -1
       },
       "ashe": {
-        "finalScore": 58.44,
-        "battleScore": 42.69,
+        "finalScore": 57.72,
+        "battleScore": 42.16,
         "coeff": 1.61,
         "matchCoef": 0.85,
         "gamesPlayed": 1,
@@ -2623,11 +2667,12 @@ const PLAYERS_COMP = [
           "as10": 12.59,
           "wa": 0,
           "ca": 0
-        }
+        },
+        "rankDelta": -1
       },
       "cassidy": {
-        "finalScore": 67.65,
-        "battleScore": 46.08,
+        "finalScore": 67.75,
+        "battleScore": 46.15,
         "coeff": 1.61,
         "matchCoef": 0.91,
         "gamesPlayed": 9,
@@ -2643,11 +2688,13 @@ const PLAYERS_COMP = [
           "as10": 1.46,
           "wa": 52,
           "ca": 8
-        }
+        },
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "doomfist": {
-        "finalScore": 55.36,
-        "battleScore": 40.44,
+        "finalScore": 55.37,
+        "battleScore": 40.45,
         "coeff": 1.61,
         "matchCoef": 0.85,
         "gamesPlayed": 1,
@@ -2683,7 +2730,9 @@ const PLAYERS_COMP = [
           "as10": 0.74,
           "wa": 28,
           "ca": 6
-        }
+        },
+        "rankDelta": 1,
+        "rankDeltaPower": 1
       },
       "freja": {
         "finalScore": 57.49,
@@ -2723,7 +2772,8 @@ const PLAYERS_COMP = [
           "as10": 0,
           "wa": 31,
           "ca": 9
-        }
+        },
+        "rankDeltaPower": -1
       },
       "illari": {
         "finalScore": 61.96,
@@ -2766,8 +2816,8 @@ const PLAYERS_COMP = [
         }
       },
       "kiriko": {
-        "finalScore": 61.07,
-        "battleScore": 40.56,
+        "finalScore": 60.73,
+        "battleScore": 40.33,
         "coeff": 1.77,
         "matchCoef": 0.85,
         "gamesPlayed": 3,
@@ -2783,11 +2833,13 @@ const PLAYERS_COMP = [
           "as10": 20.62,
           "wa": 33,
           "ca": 12
-        }
+        },
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "moira": {
-        "finalScore": 85.53,
-        "battleScore": 41.98,
+        "finalScore": 85.54,
+        "battleScore": 41.99,
         "coeff": 1.77,
         "matchCoef": 0.92,
         "gamesPlayed": 3,
@@ -2803,7 +2855,8 @@ const PLAYERS_COMP = [
           "as10": 14.67,
           "wa": 0,
           "ca": 0
-        }
+        },
+        "rankDelta": -1
       },
       "pharah": {
         "finalScore": 52.8,
@@ -2826,8 +2879,8 @@ const PLAYERS_COMP = [
         }
       },
       "ramattra": {
-        "finalScore": 67.3,
-        "battleScore": 36.34,
+        "finalScore": 66.99,
+        "battleScore": 36.17,
         "coeff": 1.61,
         "matchCoef": 0.92,
         "gamesPlayed": 2,
@@ -2843,7 +2896,8 @@ const PLAYERS_COMP = [
           "as10": 1.3,
           "wa": 26,
           "ca": 10
-        }
+        },
+        "rankDeltaPower": -1
       },
       "reaper": {
         "finalScore": 80.87,
@@ -2866,8 +2920,8 @@ const PLAYERS_COMP = [
         }
       },
       "sigma": {
-        "finalScore": 87.51,
-        "battleScore": 47.25,
+        "finalScore": 87.99,
+        "battleScore": 47.51,
         "coeff": 1.61,
         "matchCoef": 0.92,
         "gamesPlayed": 1,
@@ -2883,11 +2937,12 @@ const PLAYERS_COMP = [
           "as10": 2.24,
           "wa": 56,
           "ca": 0
-        }
+        },
+        "rankDelta": -1
       },
       "sojourn": {
-        "finalScore": 64.82,
-        "battleScore": 42.98,
+        "finalScore": 64.92,
+        "battleScore": 43.04,
         "coeff": 1.61,
         "matchCoef": 0.94,
         "gamesPlayed": 12,
@@ -2903,7 +2958,8 @@ const PLAYERS_COMP = [
           "as10": 0.08,
           "wa": 30,
           "ca": 9
-        }
+        },
+        "rankDeltaPower": -1
       },
       "sombra": {
         "finalScore": 58.57,
@@ -2943,11 +2999,12 @@ const PLAYERS_COMP = [
           "as10": 0.07,
           "wa": 34,
           "ca": 9
-        }
+        },
+        "rankDeltaPower": -1
       },
       "winston": {
-        "finalScore": 57.52,
-        "battleScore": 42.02,
+        "finalScore": 57.64,
+        "battleScore": 42.11,
         "coeff": 1.61,
         "matchCoef": 0.85,
         "gamesPlayed": 2,
@@ -2963,11 +3020,12 @@ const PLAYERS_COMP = [
           "as10": 3.42,
           "wa": 72,
           "ca": 0
-        }
+        },
+        "rankDelta": 1
       },
       "wuyang": {
-        "finalScore": 63.05,
-        "battleScore": 41.87,
+        "finalScore": 70.81,
+        "battleScore": 47.03,
         "coeff": 1.77,
         "matchCoef": 0.85,
         "gamesPlayed": 3,
@@ -2983,7 +3041,9 @@ const PLAYERS_COMP = [
           "as10": 18.19,
           "wa": 38,
           "ca": 0
-        }
+        },
+        "rankDelta": 4,
+        "rankDeltaPower": 5
       }
     }
   },
@@ -3117,8 +3177,8 @@ const PLAYERS_COMP = [
     ],
     "bscore": {
       "ana": {
-        "finalScore": 29.01,
-        "battleScore": 34.13,
+        "finalScore": 29.06,
+        "battleScore": 34.19,
         "coeff": 1,
         "matchCoef": 0.85,
         "gamesPlayed": 2,
@@ -3217,8 +3277,8 @@ const PLAYERS_COMP = [
         }
       },
       "sigma": {
-        "finalScore": 53.75,
-        "battleScore": 35.46,
+        "finalScore": 53.83,
+        "battleScore": 35.5,
         "coeff": 1.1,
         "matchCoef": 0.92,
         "gamesPlayed": 3,
@@ -3237,8 +3297,8 @@ const PLAYERS_COMP = [
         }
       },
       "winston": {
-        "finalScore": 38.17,
-        "battleScore": 40.82,
+        "finalScore": 38.91,
+        "battleScore": 41.61,
         "coeff": 1.1,
         "matchCoef": 0.85,
         "gamesPlayed": 3,
@@ -3375,8 +3435,8 @@ const PLAYERS_COMP = [
     ],
     "bscore": {
       "ana": {
-        "finalScore": 48.36,
-        "battleScore": 42.75,
+        "finalScore": 48.3,
+        "battleScore": 42.69,
         "coeff": 1.33,
         "matchCoef": 0.85,
         "gamesPlayed": 4,
@@ -3415,8 +3475,8 @@ const PLAYERS_COMP = [
         }
       },
       "sigma": {
-        "finalScore": 64.65,
-        "battleScore": 48.88,
+        "finalScore": 64.74,
+        "battleScore": 49.13,
         "coeff": 1.33,
         "matchCoef": 0.92,
         "gamesPlayed": 1,
@@ -3577,7 +3637,7 @@ const PLAYERS_COMP = [
       "Tank": null,
       "Damage": {
         "division": "silver",
-        "tier": 4,
+        "tier": 5,
         "icon": "https://static.playoverwatch.com/images/pages/career/icons/rank/Rank_SilverTier.305e60dca5e95356ced59825426844cc7cdb4948.png"
       },
       "Support": {
@@ -3588,53 +3648,53 @@ const PLAYERS_COMP = [
     },
     "rankTier": "Silver 2",
     "overall": {
-      "matches": 66,
-      "wins": 32,
-      "losses": 34,
-      "wr": 48.48,
-      "kda": 1.65,
-      "elim": 12.08,
-      "deaths": 7.7,
-      "dmg": 5913.01,
-      "heal": 5789.92,
-      "time": 42618
+      "matches": 71,
+      "wins": 35,
+      "losses": 36,
+      "wr": 49.3,
+      "kda": 1.61,
+      "elim": 11.86,
+      "deaths": 7.74,
+      "dmg": 5935.09,
+      "heal": 5651.41,
+      "time": 46018
     },
     "roles": {
       "Tank": {
-        "g": 1,
+        "g": 2,
         "w": 0,
-        "l": 1,
-        "time": 765,
+        "l": 2,
+        "time": 1453,
         "wr": 0,
-        "kda": 1.64,
-        "elim": 11.76,
-        "deaths": 8.63,
-        "dmg": 9393.73,
-        "heal": 678.43
+        "kda": 1.09,
+        "elim": 8.67,
+        "deaths": 9.5,
+        "dmg": 9761.05,
+        "heal": 357.19
       },
       "Damage": {
-        "g": 19,
+        "g": 20,
         "w": 8,
-        "l": 11,
-        "time": 13104,
-        "wr": 42.11,
-        "kda": 1.53,
-        "elim": 14.65,
-        "deaths": 9.57,
-        "dmg": 8850.5,
-        "heal": 472.62
+        "l": 12,
+        "time": 13459,
+        "wr": 40,
+        "kda": 1.48,
+        "elim": 14.35,
+        "deaths": 9.67,
+        "dmg": 8826.81,
+        "heal": 460.15
       },
       "Support": {
-        "g": 46,
-        "w": 24,
+        "g": 49,
+        "w": 27,
         "l": 22,
-        "time": 28749,
-        "wr": 52.17,
+        "time": 31106,
+        "wr": 55.1,
         "kda": 1.72,
-        "elim": 10.92,
-        "deaths": 6.82,
-        "dmg": 4481.46,
-        "heal": 8349.6
+        "elim": 10.94,
+        "deaths": 6.83,
+        "dmg": 4505.19,
+        "heal": 8144.87
       }
     },
     "heroes": [
@@ -3644,15 +3704,15 @@ const PLAYERS_COMP = [
         "role": "Support",
         "g": 30,
         "wr": 60,
-        "kda": 2.17
+        "kda": 2.21
       },
       {
         "slug": "kiriko",
         "n": "Kiriko",
         "role": "Support",
-        "g": 8,
-        "wr": 25,
-        "kda": 1.3
+        "g": 9,
+        "wr": 33.33,
+        "kda": 1.35
       },
       {
         "slug": "anran",
@@ -3684,7 +3744,7 @@ const PLAYERS_COMP = [
         "role": "Support",
         "g": 3,
         "wr": 33.33,
-        "kda": 0.73
+        "kda": 0.65
       },
       {
         "slug": "lucio",
@@ -3700,7 +3760,23 @@ const PLAYERS_COMP = [
         "role": "Damage",
         "g": 2,
         "wr": 0,
-        "kda": 0.85
+        "kda": 0.81
+      },
+      {
+        "slug": "torbjorn",
+        "n": "Torbjörn",
+        "role": "Damage",
+        "g": 2,
+        "wr": 50,
+        "kda": 2.1
+      },
+      {
+        "slug": "wuyang",
+        "n": "Wuyang",
+        "role": "Support",
+        "g": 2,
+        "wr": 100,
+        "kda": 1.53
       },
       {
         "slug": "zenyatta",
@@ -3735,6 +3811,14 @@ const PLAYERS_COMP = [
         "kda": 1.33
       },
       {
+        "slug": "orisa",
+        "n": "Orisa",
+        "role": "Tank",
+        "g": 1,
+        "wr": 0,
+        "kda": 1.23
+      },
+      {
         "slug": "pharah",
         "n": "Pharah",
         "role": "Damage",
@@ -3748,21 +3832,13 @@ const PLAYERS_COMP = [
         "role": "Damage",
         "g": 1,
         "wr": 0,
-        "kda": 0.33
-      },
-      {
-        "slug": "torbjorn",
-        "n": "Torbjörn",
-        "role": "Damage",
-        "g": 1,
-        "wr": 100,
-        "kda": 2.71
+        "kda": 0.25
       }
     ],
     "bscore": {
       "anran": {
-        "finalScore": 56.61,
-        "battleScore": 35.46,
+        "finalScore": 56.43,
+        "battleScore": 35.24,
         "coeff": 1.1,
         "matchCoef": 0.94,
         "gamesPlayed": 6,
@@ -3778,7 +3854,8 @@ const PLAYERS_COMP = [
           "as10": 0.76,
           "wa": 25,
           "ca": 6
-        }
+        },
+        "rankDelta": -1
       },
       "baptiste": {
         "finalScore": 36.24,
@@ -3809,12 +3886,12 @@ const PLAYERS_COMP = [
         "rankIndex": 1,
         "det": {
           "g": 3,
-          "time": 1776,
+          "time": 1783,
           "wr": 33,
-          "el10": 14.87,
-          "de10": 8.11,
-          "dm10": 8630,
-          "he10": 8.87,
+          "el10": 14.81,
+          "de10": 8.08,
+          "dm10": 8597,
+          "he10": 8.84,
           "as10": 1.35,
           "wa": 30,
           "ca": 3
@@ -3841,24 +3918,26 @@ const PLAYERS_COMP = [
         }
       },
       "kiriko": {
-        "finalScore": 33.31,
-        "battleScore": 33.59,
+        "finalScore": 32.92,
+        "battleScore": 32.83,
         "coeff": 1.1,
-        "matchCoef": 0.9,
-        "gamesPlayed": 8,
+        "matchCoef": 0.91,
+        "gamesPlayed": 9,
         "rankIndex": 1,
         "det": {
-          "g": 8,
-          "time": 5641,
-          "wr": 26,
-          "el10": 6.17,
-          "de10": 6.81,
-          "dm10": 2225,
-          "he10": 9675,
-          "as10": 16.7,
+          "g": 9,
+          "time": 6336,
+          "wr": 28,
+          "el10": 6.53,
+          "de10": 6.72,
+          "dm10": 2325,
+          "he10": 9423,
+          "as10": 16.95,
           "wa": 29,
-          "ca": 8
-        }
+          "ca": 9
+        },
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "lucio": {
         "finalScore": 32.84,
@@ -3878,7 +3957,9 @@ const PLAYERS_COMP = [
           "as10": 2.78,
           "wa": 20,
           "ca": 6
-        }
+        },
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "mauga": {
         "finalScore": 52.67,
@@ -3898,47 +3979,72 @@ const PLAYERS_COMP = [
           "as10": 2.69,
           "wa": 32,
           "ca": 7
-        }
+        },
+        "rankDelta": -2
       },
       "mizuki": {
-        "finalScore": 27.51,
-        "battleScore": 29.42,
+        "finalScore": 27.34,
+        "battleScore": 29.24,
         "coeff": 1.1,
         "matchCoef": 0.85,
         "gamesPlayed": 3,
         "rankIndex": 1,
         "det": {
           "g": 3,
-          "time": 1615,
+          "time": 1774,
           "wr": 31,
-          "el10": 5.94,
-          "de10": 8.17,
-          "dm10": 2561,
-          "he10": 7521,
-          "as10": 5.57,
+          "el10": 5.75,
+          "de10": 8.79,
+          "dm10": 2531,
+          "he10": 7127,
+          "as10": 5.07,
           "wa": 22,
-          "ca": 3
-        }
+          "ca": 6
+        },
+        "rankDelta": -2,
+        "rankDeltaPower": -2
       },
       "moira": {
-        "finalScore": 59.08,
-        "battleScore": 41,
+        "finalScore": 59.1,
+        "battleScore": 41.03,
         "coeff": 1.1,
         "matchCoef": 1.01,
         "gamesPlayed": 30,
         "rankIndex": 1,
         "det": {
           "g": 30,
-          "time": 18407,
+          "time": 18711,
           "wr": 61,
-          "el10": 13.82,
-          "de10": 6.36,
-          "dm10": 4499,
-          "he10": 8417,
-          "as10": 14.15,
+          "el10": 13.89,
+          "de10": 6.29,
+          "dm10": 4539,
+          "he10": 8364,
+          "as10": 14.21,
           "wa": 0,
           "ca": 0
-        }
+        },
+        "rankDelta": 1
+      },
+      "orisa": {
+        "finalScore": 28.21,
+        "battleScore": 33.19,
+        "coeff": 1,
+        "matchCoef": 0.85,
+        "gamesPlayed": 1,
+        "rankIndex": 0,
+        "det": {
+          "g": 1,
+          "time": 791,
+          "wr": 0,
+          "el10": 9.86,
+          "de10": 9.86,
+          "dm10": 7354,
+          "he10": 0,
+          "as10": 2.28,
+          "wa": 37,
+          "ca": 7
+        },
+        "rankNew": true
       },
       "pharah": {
         "finalScore": 31.98,
@@ -3958,47 +4064,53 @@ const PLAYERS_COMP = [
           "as10": 1.36,
           "wa": 36,
           "ca": 0
-        }
+        },
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "shion": {
-        "finalScore": 27.58,
-        "battleScore": 29.5,
+        "finalScore": 27.59,
+        "battleScore": 29.51,
         "coeff": 1.1,
         "matchCoef": 0.85,
         "gamesPlayed": 1,
         "rankIndex": 1,
         "det": {
           "g": 1,
-          "time": 265,
+          "time": 336,
           "wr": 0,
-          "el10": 4.52,
-          "de10": 13.56,
-          "dm10": 3796,
+          "el10": 3.57,
+          "de10": 14.29,
+          "dm10": 4457,
           "he10": 0,
           "as10": 0,
-          "wa": 28,
-          "ca": 21
-        }
+          "wa": 29,
+          "ca": 24
+        },
+        "rankDelta": -2,
+        "rankDeltaPower": -2
       },
       "sierra": {
-        "finalScore": 30.78,
-        "battleScore": 32.92,
+        "finalScore": 30.7,
+        "battleScore": 32.83,
         "coeff": 1.1,
         "matchCoef": 0.85,
         "gamesPlayed": 2,
         "rankIndex": 1,
         "det": {
           "g": 2,
-          "time": 979,
+          "time": 1009,
           "wr": 16,
-          "el10": 10.41,
-          "de10": 12.25,
-          "dm10": 5218,
+          "el10": 10.11,
+          "de10": 12.49,
+          "dm10": 5140,
           "he10": 0,
           "as10": 0,
           "wa": 25,
-          "ca": 8
-        }
+          "ca": 9
+        },
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "soldier-76": {
         "finalScore": 41.21,
@@ -4021,24 +4133,46 @@ const PLAYERS_COMP = [
         }
       },
       "torbjorn": {
-        "finalScore": 38.91,
-        "battleScore": 41.61,
+        "finalScore": 37.35,
+        "battleScore": 39.94,
         "coeff": 1.1,
         "matchCoef": 0.85,
-        "gamesPlayed": 1,
+        "gamesPlayed": 2,
         "rankIndex": 1,
         "det": {
-          "g": 1,
-          "time": 762,
-          "wr": 73,
-          "el10": 14.95,
-          "de10": 5.51,
-          "dm10": 6976,
+          "g": 2,
+          "time": 929,
+          "wr": 54,
+          "el10": 13.57,
+          "de10": 6.46,
+          "dm10": 6823,
           "he10": 0,
           "as10": 0,
-          "wa": 28,
-          "ca": 4
-        }
+          "wa": 27,
+          "ca": 7
+        },
+        "rankDelta": -1
+      },
+      "wuyang": {
+        "finalScore": 33.53,
+        "battleScore": 35.86,
+        "coeff": 1.1,
+        "matchCoef": 0.85,
+        "gamesPlayed": 2,
+        "rankIndex": 1,
+        "det": {
+          "g": 2,
+          "time": 1199,
+          "wr": 76,
+          "el10": 11.51,
+          "de10": 7.51,
+          "dm10": 4049,
+          "he10": 5110,
+          "as10": 14.51,
+          "wa": 27,
+          "ca": 0
+        },
+        "rankNew": true
       },
       "zenyatta": {
         "finalScore": 32.16,
@@ -4058,7 +4192,9 @@ const PLAYERS_COMP = [
           "as10": 14.4,
           "wa": 26,
           "ca": 9
-        }
+        },
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       }
     }
   },
@@ -4067,7 +4203,7 @@ const PLAYERS_COMP = [
     "pid": "dc50bb8ba174d6fcbea623|78615f6a87b43682d09d448bafb3b022",
     "name": "Nnware",
     "tag": "",
-    "endorse": 3,
+    "endorse": 2,
     "title": "Talon Imperial",
     "avatar": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/a28b07c1bc0019598da03e63c66837e29357caa2b7bc8bf38dbeba0b3bcba4b4.png",
     "namecard": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/aface728ddc9d3c100f0d771e5bc706f22f37e78282bed1426869e295e142aee.png",
@@ -4087,16 +4223,16 @@ const PLAYERS_COMP = [
     },
     "rankTier": "Gold 3",
     "overall": {
-      "matches": 57,
-      "wins": 30,
-      "losses": 27,
-      "wr": 52.63,
-      "kda": 2.16,
-      "elim": 14.06,
-      "deaths": 7.44,
-      "dmg": 6532.98,
-      "heal": 3764.83,
-      "time": 37647
+      "matches": 63,
+      "wins": 34,
+      "losses": 29,
+      "wr": 53.97,
+      "kda": 2.17,
+      "elim": 13.86,
+      "deaths": 7.37,
+      "dmg": 6429.57,
+      "heal": 3973.8,
+      "time": 40043
     },
     "roles": {
       "Tank": {
@@ -4112,28 +4248,28 @@ const PLAYERS_COMP = [
         "heal": 364.55
       },
       "Damage": {
-        "g": 33,
-        "w": 18,
+        "g": 36,
+        "w": 21,
         "l": 15,
-        "time": 20886,
-        "wr": 54.55,
-        "kda": 2.16,
+        "time": 21617,
+        "wr": 58.33,
+        "kda": 2.17,
         "elim": 16.46,
-        "deaths": 8.1,
-        "dmg": 7952.51,
-        "heal": 94.97
+        "deaths": 8.05,
+        "dmg": 7988.21,
+        "heal": 91.76
       },
       "Support": {
-        "g": 24,
-        "w": 12,
-        "l": 12,
-        "time": 15943,
-        "wr": 50,
-        "kda": 2.09,
-        "elim": 10.91,
-        "deaths": 6.74,
-        "dmg": 4630.61,
-        "heal": 8746.95
+        "g": 27,
+        "w": 13,
+        "l": 14,
+        "time": 17608,
+        "wr": 48.15,
+        "kda": 2.12,
+        "elim": 10.67,
+        "deaths": 6.68,
+        "dmg": 4472.57,
+        "heal": 8907.38
       }
     },
     "heroes": [
@@ -4141,9 +4277,9 @@ const PLAYERS_COMP = [
         "slug": "kiriko",
         "n": "Kiriko",
         "role": "Support",
-        "g": 13,
-        "wr": 46.15,
-        "kda": 1.84
+        "g": 14,
+        "wr": 50,
+        "kda": 1.93
       },
       {
         "slug": "junkrat",
@@ -4154,6 +4290,22 @@ const PLAYERS_COMP = [
         "kda": 2.65
       },
       {
+        "slug": "sojourn",
+        "n": "Sojourn",
+        "role": "Damage",
+        "g": 5,
+        "wr": 60,
+        "kda": 2.42
+      },
+      {
+        "slug": "ana",
+        "n": "Ana",
+        "role": "Support",
+        "g": 4,
+        "wr": 25,
+        "kda": 1.59
+      },
+      {
         "slug": "anran",
         "n": "Anran",
         "role": "Damage",
@@ -4162,20 +4314,12 @@ const PLAYERS_COMP = [
         "kda": 1.96
       },
       {
-        "slug": "sojourn",
-        "n": "Sojourn",
-        "role": "Damage",
-        "g": 4,
-        "wr": 50,
-        "kda": 2.7
-      },
-      {
         "slug": "cassidy",
         "n": "Cassidy",
         "role": "Damage",
-        "g": 3,
-        "wr": 33.33,
-        "kda": 1.38
+        "g": 4,
+        "wr": 50,
+        "kda": 1.4
       },
       {
         "slug": "moira",
@@ -4192,14 +4336,6 @@ const PLAYERS_COMP = [
         "g": 3,
         "wr": 33.33,
         "kda": 1.86
-      },
-      {
-        "slug": "ana",
-        "n": "Ana",
-        "role": "Support",
-        "g": 2,
-        "wr": 50,
-        "kda": 1.43
       },
       {
         "slug": "freja",
@@ -4232,6 +4368,14 @@ const PLAYERS_COMP = [
         "g": 2,
         "wr": 100,
         "kda": 2.85
+      },
+      {
+        "slug": "ashe",
+        "n": "Ashe",
+        "role": "Damage",
+        "g": 1,
+        "wr": 100,
+        "kda": 8.5
       },
       {
         "slug": "bastion",
@@ -4324,29 +4468,30 @@ const PLAYERS_COMP = [
     ],
     "bscore": {
       "ana": {
-        "finalScore": 35.81,
-        "battleScore": 34.82,
+        "finalScore": 34.41,
+        "battleScore": 33.46,
         "coeff": 1.21,
         "matchCoef": 0.85,
-        "gamesPlayed": 2,
+        "gamesPlayed": 4,
         "rankIndex": 2,
         "det": {
-          "g": 2,
-          "time": 1453,
-          "wr": 44,
-          "el10": 7.43,
-          "de10": 8.67,
-          "dm10": 2730,
-          "he10": 5669,
-          "as10": 10.32,
-          "wa": 53,
+          "g": 4,
+          "time": 2459,
+          "wr": 23,
+          "el10": 7.81,
+          "de10": 8.3,
+          "dm10": 2572,
+          "he10": 6170,
+          "as10": 11.47,
+          "wa": 51,
           "ca": 0
         },
-        "rankDeltaPower": -1
+        "rankDelta": -6,
+        "rankDeltaPower": -4
       },
       "anran": {
-        "finalScore": 59.16,
-        "battleScore": 38.01,
+        "finalScore": 58.71,
+        "battleScore": 37.3,
         "coeff": 1.21,
         "matchCoef": 0.92,
         "gamesPlayed": 4,
@@ -4363,7 +4508,28 @@ const PLAYERS_COMP = [
           "wa": 31,
           "ca": 8
         },
-        "rankDelta": 1
+        "rankDelta": -3
+      },
+      "ashe": {
+        "finalScore": 46.72,
+        "battleScore": 45.43,
+        "coeff": 1.21,
+        "matchCoef": 0.85,
+        "gamesPlayed": 1,
+        "rankIndex": 2,
+        "det": {
+          "g": 1,
+          "time": 394,
+          "wr": 100,
+          "el10": 25.91,
+          "de10": 3.05,
+          "dm10": 9394,
+          "he10": 0,
+          "as10": 0,
+          "wa": 46,
+          "ca": 3
+        },
+        "rankNew": true
       },
       "bastion": {
         "finalScore": 53.04,
@@ -4404,27 +4570,31 @@ const PLAYERS_COMP = [
           "as10": 14.22,
           "wa": 0,
           "ca": 0
-        }
+        },
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "cassidy": {
-        "finalScore": 39.28,
-        "battleScore": 38.19,
+        "finalScore": 38.45,
+        "battleScore": 37.39,
         "coeff": 1.21,
         "matchCoef": 0.85,
-        "gamesPlayed": 3,
+        "gamesPlayed": 4,
         "rankIndex": 2,
         "det": {
-          "g": 3,
-          "time": 2281,
-          "wr": 42,
-          "el10": 14.2,
-          "de10": 10.26,
-          "dm10": 6417,
-          "he10": 60.36,
-          "as10": 2.1,
-          "wa": 41,
-          "ca": 10
-        }
+          "g": 4,
+          "time": 2378,
+          "wr": 38,
+          "el10": 14.13,
+          "de10": 10.09,
+          "dm10": 6330,
+          "he10": 57.91,
+          "as10": 2.02,
+          "wa": 40,
+          "ca": 11
+        },
+        "rankDelta": -3,
+        "rankDeltaPower": -2
       },
       "freja": {
         "finalScore": 35.78,
@@ -4445,8 +4615,7 @@ const PLAYERS_COMP = [
           "wa": 26,
           "ca": 14
         },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        "rankDelta": -1
       },
       "genji": {
         "finalScore": 32.34,
@@ -4466,7 +4635,9 @@ const PLAYERS_COMP = [
           "as10": 0,
           "wa": 20,
           "ca": 10
-        }
+        },
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "jetpack-cat": {
         "finalScore": 35.01,
@@ -4506,28 +4677,31 @@ const PLAYERS_COMP = [
           "as10": 2.37,
           "wa": 26,
           "ca": 0
-        }
+        },
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "kiriko": {
-        "finalScore": 39.45,
-        "battleScore": 34.56,
+        "finalScore": 42.22,
+        "battleScore": 36.74,
         "coeff": 1.21,
-        "matchCoef": 0.94,
-        "gamesPlayed": 13,
+        "matchCoef": 0.95,
+        "gamesPlayed": 14,
         "rankIndex": 2,
         "det": {
-          "g": 13,
-          "time": 8893,
-          "wr": 46,
-          "el10": 8.57,
-          "de10": 6.34,
-          "dm10": 2671,
-          "he10": 9150,
-          "as10": 15.65,
+          "g": 14,
+          "time": 9552,
+          "wr": 50,
+          "el10": 8.54,
+          "de10": 6.16,
+          "dm10": 2589,
+          "he10": 9613,
+          "as10": 16.08,
           "wa": 29,
           "ca": 12
         },
-        "rankDelta": -1
+        "rankDelta": 4,
+        "rankDeltaPower": 2
       },
       "lifeweaver": {
         "finalScore": 35.62,
@@ -4548,12 +4722,11 @@ const PLAYERS_COMP = [
           "wa": 27,
           "ca": 8
         },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        "rankDelta": -1
       },
       "mizuki": {
-        "finalScore": 45,
-        "battleScore": 43.76,
+        "finalScore": 44.97,
+        "battleScore": 43.73,
         "coeff": 1.21,
         "matchCoef": 0.85,
         "gamesPlayed": 1,
@@ -4569,10 +4742,12 @@ const PLAYERS_COMP = [
           "as10": 13.1,
           "wa": 38,
           "ca": 16
-        }
+        },
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "moira": {
-        "finalScore": 60.04,
+        "finalScore": 60.05,
         "battleScore": 43.64,
         "coeff": 1.21,
         "matchCoef": 0.92,
@@ -4589,7 +4764,8 @@ const PLAYERS_COMP = [
           "as10": 14.64,
           "wa": 0,
           "ca": 0
-        }
+        },
+        "rankDelta": -1
       },
       "pharah": {
         "finalScore": 41.87,
@@ -4609,11 +4785,12 @@ const PLAYERS_COMP = [
           "as10": 4.08,
           "wa": 36,
           "ca": 0
-        }
+        },
+        "rankDeltaPower": -1
       },
       "shion": {
-        "finalScore": 38.82,
-        "battleScore": 37.75,
+        "finalScore": 38.52,
+        "battleScore": 37.45,
         "coeff": 1.21,
         "matchCoef": 0.85,
         "gamesPlayed": 2,
@@ -4630,27 +4807,29 @@ const PLAYERS_COMP = [
           "wa": 28,
           "ca": 12
         },
-        "rankDelta": -2
+        "rankDelta": 1
       },
       "sojourn": {
-        "finalScore": 41.92,
-        "battleScore": 40.76,
+        "finalScore": 40.76,
+        "battleScore": 39.14,
         "coeff": 1.21,
-        "matchCoef": 0.85,
-        "gamesPlayed": 4,
+        "matchCoef": 0.86,
+        "gamesPlayed": 5,
         "rankIndex": 2,
         "det": {
-          "g": 4,
-          "time": 3140,
-          "wr": 60,
-          "el10": 20.64,
-          "de10": 7.64,
-          "dm10": 7312,
+          "g": 5,
+          "time": 3380,
+          "wr": 50,
+          "el10": 19.35,
+          "de10": 7.99,
+          "dm10": 7156,
           "he10": 0,
           "as10": 0,
           "wa": 27,
           "ca": 10
-        }
+        },
+        "rankDelta": -3,
+        "rankDeltaPower": -3
       },
       "soldier-76": {
         "finalScore": 34.36,
@@ -4670,7 +4849,9 @@ const PLAYERS_COMP = [
           "as10": 0,
           "wa": 31,
           "ca": 11
-        }
+        },
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "sombra": {
         "finalScore": 48.7,
@@ -4710,11 +4891,13 @@ const PLAYERS_COMP = [
           "as10": 8.59,
           "wa": 23,
           "ca": 0
-        }
+        },
+        "rankDelta": -2,
+        "rankDeltaPower": -1
       },
       "torbjorn": {
-        "finalScore": 47.63,
-        "battleScore": 46.31,
+        "finalScore": 47.69,
+        "battleScore": 46.36,
         "coeff": 1.21,
         "matchCoef": 0.85,
         "gamesPlayed": 1,
@@ -4730,7 +4913,9 @@ const PLAYERS_COMP = [
           "as10": 1.79,
           "wa": 20,
           "ca": 10
-        }
+        },
+        "rankDelta": 1,
+        "rankDeltaPower": 1
       },
       "tracer": {
         "finalScore": 35.82,
@@ -4751,8 +4936,8 @@ const PLAYERS_COMP = [
           "wa": 31,
           "ca": 10
         },
-        "rankDelta": 3,
-        "rankDeltaPower": 3
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "vendetta": {
         "finalScore": 40.34,
@@ -4772,7 +4957,8 @@ const PLAYERS_COMP = [
           "as10": 2.6,
           "wa": 0,
           "ca": 0
-        }
+        },
+        "rankDeltaPower": -2
       },
       "zenyatta": {
         "finalScore": 47.66,
@@ -4792,7 +4978,9 @@ const PLAYERS_COMP = [
           "as10": 24.68,
           "wa": 31,
           "ca": 11
-        }
+        },
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       }
     }
   },
@@ -4801,7 +4989,7 @@ const PLAYERS_COMP = [
     "pid": "c2779cbf815ed6febaa823|5c92c86a83e8c0634c7f082bbed0d680",
     "name": "PIPURO",
     "tag": "",
-    "endorse": 4,
+    "endorse": 3,
     "title": null,
     "avatar": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/4a8e450033113f4314216a457fc7961a3740b41249692c6232b5589e74c5f534.png",
     "namecard": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/d7fe48012a3cf539649c1ec884399874eef1c3a761db698a09dc695a57f0f914.png",
@@ -4825,16 +5013,16 @@ const PLAYERS_COMP = [
     },
     "rankTier": "Silver 5",
     "overall": {
-      "matches": 178,
-      "wins": 86,
-      "losses": 92,
-      "wr": 48.31,
+      "matches": 180,
+      "wins": 87,
+      "losses": 93,
+      "wr": 48.33,
       "kda": 2.75,
-      "elim": 13.32,
-      "deaths": 5.53,
-      "dmg": 7106.64,
-      "heal": 5292.3,
-      "time": 115239
+      "elim": 13.27,
+      "deaths": 5.54,
+      "dmg": 7074.58,
+      "heal": 5304.15,
+      "time": 116089
     },
     "roles": {
       "Tank": {
@@ -4862,16 +5050,16 @@ const PLAYERS_COMP = [
         "heal": 603.76
       },
       "Support": {
-        "g": 92,
-        "w": 47,
-        "l": 45,
-        "time": 60458,
-        "wr": 51.09,
-        "kda": 2.21,
-        "elim": 9.04,
+        "g": 94,
+        "w": 48,
+        "l": 46,
+        "time": 61308,
+        "wr": 51.06,
+        "kda": 2.2,
+        "elim": 9.01,
         "deaths": 5.54,
-        "dmg": 4010.8,
-        "heal": 9037.86
+        "dmg": 3993.02,
+        "heal": 9008.37
       }
     },
     "heroes": [
@@ -4879,8 +5067,8 @@ const PLAYERS_COMP = [
         "slug": "kiriko",
         "n": "Kiriko",
         "role": "Support",
-        "g": 79,
-        "wr": 55.7,
+        "g": 81,
+        "wr": 55.56,
         "kda": 2.34
       },
       {
@@ -4913,7 +5101,7 @@ const PLAYERS_COMP = [
         "role": "Support",
         "g": 5,
         "wr": 20,
-        "kda": 1.24
+        "kda": 1.17
       },
       {
         "slug": "juno",
@@ -4982,22 +5170,22 @@ const PLAYERS_COMP = [
     ],
     "bscore": {
       "ana": {
-        "finalScore": 28.31,
-        "battleScore": 29.9,
+        "finalScore": 28.28,
+        "battleScore": 29.87,
         "coeff": 1.1,
         "matchCoef": 0.86,
         "gamesPlayed": 5,
         "rankIndex": 1,
         "det": {
           "g": 5,
-          "time": 2630,
-          "wr": 20,
-          "el10": 6.62,
-          "de10": 7.53,
-          "dm10": 2822,
-          "he10": 4905,
-          "as10": 7.3,
-          "wa": 53,
+          "time": 2758,
+          "wr": 25,
+          "el10": 6.31,
+          "de10": 7.61,
+          "dm10": 2741,
+          "he10": 4876,
+          "as10": 6.96,
+          "wa": 52,
           "ca": 0
         }
       },
@@ -5020,11 +5208,10 @@ const PLAYERS_COMP = [
           "wa": 25,
           "ca": 4
         },
-        "rankDelta": -2,
         "rankDeltaPower": -1
       },
       "bastion": {
-        "finalScore": 47.46,
+        "finalScore": 47.47,
         "battleScore": 37.3,
         "coeff": 1,
         "matchCoef": 0.92,
@@ -5041,12 +5228,11 @@ const PLAYERS_COMP = [
           "as10": 0,
           "wa": 27,
           "ca": 2
-        },
-        "rankDelta": 1
+        }
       },
       "cassidy": {
-        "finalScore": 31.44,
-        "battleScore": 36.99,
+        "finalScore": 31.53,
+        "battleScore": 37.1,
         "coeff": 1,
         "matchCoef": 0.85,
         "gamesPlayed": 3,
@@ -5062,9 +5248,7 @@ const PLAYERS_COMP = [
           "as10": 1.44,
           "wa": 38,
           "ca": 9
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        }
       },
       "emre": {
         "finalScore": 35.39,
@@ -5107,29 +5291,28 @@ const PLAYERS_COMP = [
         }
       },
       "kiriko": {
-        "finalScore": 48.08,
-        "battleScore": 39.75,
+        "finalScore": 47.86,
+        "battleScore": 39.49,
         "coeff": 1.1,
         "matchCoef": 1.1,
-        "gamesPlayed": 79,
+        "gamesPlayed": 81,
         "rankIndex": 1,
         "det": {
-          "g": 79,
-          "time": 53434,
+          "g": 81,
+          "time": 54156,
           "wr": 56,
-          "el10": 8.92,
-          "de10": 5.29,
-          "dm10": 3046,
-          "he10": 9431,
-          "as10": 16.15,
+          "el10": 8.91,
+          "de10": 5.28,
+          "dm10": 3031,
+          "he10": 9403,
+          "as10": 16.2,
           "wa": 28,
           "ca": 12
-        },
-        "rankDelta": -1
+        }
       },
       "moira": {
-        "finalScore": 53.82,
-        "battleScore": 27.99,
+        "finalScore": 53.83,
+        "battleScore": 28.01,
         "coeff": 1.1,
         "matchCoef": 0.92,
         "gamesPlayed": 3,
@@ -5148,8 +5331,8 @@ const PLAYERS_COMP = [
         }
       },
       "orisa": {
-        "finalScore": 29.91,
-        "battleScore": 33.61,
+        "finalScore": 31.53,
+        "battleScore": 35.44,
         "coeff": 1,
         "matchCoef": 0.89,
         "gamesPlayed": 7,
@@ -5165,7 +5348,9 @@ const PLAYERS_COMP = [
           "as10": 3.3,
           "wa": 30,
           "ca": 11
-        }
+        },
+        "rankDelta": 1,
+        "rankDeltaPower": 1
       },
       "reaper": {
         "finalScore": 46.81,
@@ -5188,8 +5373,8 @@ const PLAYERS_COMP = [
         }
       },
       "sigma": {
-        "finalScore": 52.84,
-        "battleScore": 34.65,
+        "finalScore": 52.86,
+        "battleScore": 34.52,
         "coeff": 1,
         "matchCoef": 0.98,
         "gamesPlayed": 15,
@@ -5205,7 +5390,8 @@ const PLAYERS_COMP = [
           "as10": 1.57,
           "wa": 46,
           "ca": 0
-        }
+        },
+        "rankDelta": -1
       },
       "tracer": {
         "finalScore": 37.41,
@@ -5225,12 +5411,11 @@ const PLAYERS_COMP = [
           "as10": 0,
           "wa": 33,
           "ca": 8
-        },
-        "rankDelta": 1
+        }
       },
       "winston": {
-        "finalScore": 45.26,
-        "battleScore": 42.43,
+        "finalScore": 46.05,
+        "battleScore": 43.17,
         "coeff": 1,
         "matchCoef": 1.07,
         "gamesPlayed": 54,
@@ -5743,8 +5928,8 @@ const PLAYERS_ALL = [
     ],
     "bscore": {
       "ashe": {
-        "finalScore": 55.11,
-        "battleScore": 39.4,
+        "finalScore": 54.98,
+        "battleScore": 39.31,
         "coeff": 1.33,
         "matchCoef": 1.05,
         "gamesPlayed": 45,
@@ -5760,8 +5945,7 @@ const PLAYERS_ALL = [
           "as10": 1.3124444444444445,
           "wa": 41.68888888888889,
           "ca": 18.355555555555554
-        },
-        "rankDelta": -1
+        }
       },
       "bastion": {
         "finalScore": 62.4,
@@ -5781,12 +5965,11 @@ const PLAYERS_ALL = [
           "as10": 1.9672727272727273,
           "wa": 25.90909090909091,
           "ca": 3
-        },
-        "rankDelta": -1
+        }
       },
       "cassidy": {
-        "finalScore": 52.54,
-        "battleScore": 38.09,
+        "finalScore": 52.52,
+        "battleScore": 38.08,
         "coeff": 1.33,
         "matchCoef": 1.04,
         "gamesPlayed": 38,
@@ -5822,9 +6005,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 32.95652173913044,
           "ca": 17
-        },
-        "rankDelta": 2,
-        "rankDeltaPower": 2
+        }
       },
       "freja": {
         "finalScore": 45.67,
@@ -5847,8 +6028,8 @@ const PLAYERS_ALL = [
         }
       },
       "juno": {
-        "finalScore": 40.56,
-        "battleScore": 40.29,
+        "finalScore": 40.66,
+        "battleScore": 40.39,
         "coeff": 1,
         "matchCoef": 1.01,
         "gamesPlayed": 27,
@@ -5864,11 +6045,12 @@ const PLAYERS_ALL = [
           "as10": 12.625925925925925,
           "wa": 34.074074074074076,
           "ca": 8.11111111111111
-        }
+        },
+        "rankDelta": 1
       },
       "pharah": {
-        "finalScore": 56.51,
-        "battleScore": 40.4,
+        "finalScore": 56.56,
+        "battleScore": 40.44,
         "coeff": 1.33,
         "matchCoef": 1.05,
         "gamesPlayed": 45,
@@ -5884,12 +6066,11 @@ const PLAYERS_ALL = [
           "as10": 3.8351111111111114,
           "wa": 43.13333333333333,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "shion": {
-        "finalScore": 60.98,
-        "battleScore": 45.24,
+        "finalScore": 60.94,
+        "battleScore": 45.21,
         "coeff": 1.33,
         "matchCoef": 1.01,
         "gamesPlayed": 29,
@@ -5909,7 +6090,7 @@ const PLAYERS_ALL = [
       },
       "sojourn": {
         "finalScore": 61.18,
-        "battleScore": 43.36,
+        "battleScore": 43.37,
         "coeff": 1.33,
         "matchCoef": 1.06,
         "gamesPlayed": 50,
@@ -5985,12 +6166,11 @@ const PLAYERS_ALL = [
           "as10": 12,
           "wa": 36,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "anran": {
-        "finalScore": 62.77,
-        "battleScore": 40.65,
+        "finalScore": 62.76,
+        "battleScore": 40.63,
         "coeff": 1.33,
         "matchCoef": 0.96,
         "gamesPlayed": 10,
@@ -6006,11 +6186,10 @@ const PLAYERS_ALL = [
           "as10": 0.87,
           "wa": 23,
           "ca": 9
-        },
-        "rankDelta": -1
+        }
       },
       "baptiste": {
-        "finalScore": 41.4,
+        "finalScore": 41.39,
         "battleScore": 41.54,
         "coeff": 1,
         "matchCoef": 1,
@@ -6030,8 +6209,8 @@ const PLAYERS_ALL = [
         }
       },
       "brigitte": {
-        "finalScore": 38.02,
-        "battleScore": 38.77,
+        "finalScore": 38.04,
+        "battleScore": 38.79,
         "coeff": 1,
         "matchCoef": 0.98,
         "gamesPlayed": 20,
@@ -6048,7 +6227,7 @@ const PLAYERS_ALL = [
           "wa": 0,
           "ca": 0
         },
-        "rankDeltaPower": -1
+        "rankDeltaPower": 1
       },
       "dmon": {
         "finalScore": 32.55,
@@ -6071,8 +6250,8 @@ const PLAYERS_ALL = [
         }
       },
       "doctrine": {
-        "finalScore": 29.52,
-        "battleScore": 34.73,
+        "finalScore": 29.73,
+        "battleScore": 34.97,
         "coeff": 1,
         "matchCoef": 0.85,
         "gamesPlayed": 1,
@@ -6089,8 +6268,7 @@ const PLAYERS_ALL = [
           "wa": 57,
           "ca": 0
         },
-        "rankDelta": -2,
-        "rankDeltaPower": -1
+        "rankDelta": 1
       },
       "domina": {
         "finalScore": 49.12,
@@ -6110,8 +6288,7 @@ const PLAYERS_ALL = [
           "as10": 3.28,
           "wa": 45,
           "ca": 8
-        },
-        "rankDeltaPower": -1
+        }
       },
       "doomfist": {
         "finalScore": 34.57,
@@ -6131,8 +6308,7 @@ const PLAYERS_ALL = [
           "as10": 3.58,
           "wa": 25,
           "ca": 9
-        },
-        "rankDelta": -1
+        }
       },
       "dva": {
         "finalScore": 45.79,
@@ -6152,8 +6328,7 @@ const PLAYERS_ALL = [
           "as10": 6.52,
           "wa": 29,
           "ca": 10
-        },
-        "rankDelta": 1
+        }
       },
       "echo": {
         "finalScore": 57.4,
@@ -6193,9 +6368,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 22,
           "ca": 11
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "hazard": {
         "finalScore": 31.82,
@@ -6215,9 +6388,7 @@ const PLAYERS_ALL = [
           "as10": 4.6,
           "wa": 27,
           "ca": 7
-        },
-        "rankDelta": 4,
-        "rankDeltaPower": 2
+        }
       },
       "hanzo": {
         "finalScore": 50.56,
@@ -6237,9 +6408,7 @@ const PLAYERS_ALL = [
           "as10": 4.53,
           "wa": 25,
           "ca": 13
-        },
-        "rankDelta": 3,
-        "rankDeltaPower": 4
+        }
       },
       "illari": {
         "finalScore": 38.11,
@@ -6299,12 +6468,11 @@ const PLAYERS_ALL = [
           "as10": 3.66,
           "wa": 27,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "kiriko": {
-        "finalScore": 36.51,
-        "battleScore": 34.87,
+        "finalScore": 36.48,
+        "battleScore": 34.84,
         "coeff": 1,
         "matchCoef": 1.05,
         "gamesPlayed": 43,
@@ -6320,11 +6488,13 @@ const PLAYERS_ALL = [
           "as10": 13.51,
           "wa": 26,
           "ca": 13
-        }
+        },
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "lifeweaver": {
-        "finalScore": 35.59,
-        "battleScore": 36.13,
+        "finalScore": 35.62,
+        "battleScore": 36.16,
         "coeff": 1,
         "matchCoef": 0.98,
         "gamesPlayed": 21,
@@ -6360,7 +6530,8 @@ const PLAYERS_ALL = [
           "as10": 10.64,
           "wa": 24,
           "ca": 8
-        }
+        },
+        "rankDelta": -1
       },
       "mauga": {
         "finalScore": 58.97,
@@ -6400,8 +6571,7 @@ const PLAYERS_ALL = [
           "as10": 5.75,
           "wa": 47,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "mercy": {
         "finalScore": 31.64,
@@ -6422,7 +6592,7 @@ const PLAYERS_ALL = [
           "wa": 22,
           "ca": 8
         },
-        "rankDeltaPower": -1
+        "rankDelta": -1
       },
       "mizuki": {
         "finalScore": 35.53,
@@ -6465,8 +6635,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 40.64,
-        "battleScore": 41.63,
+        "finalScore": 40.81,
+        "battleScore": 41.8,
         "coeff": 1,
         "matchCoef": 0.98,
         "gamesPlayed": 19,
@@ -6485,8 +6655,8 @@ const PLAYERS_ALL = [
         }
       },
       "ramattra": {
-        "finalScore": 53.82,
-        "battleScore": 42.5,
+        "finalScore": 53.84,
+        "battleScore": 42.49,
         "coeff": 1,
         "matchCoef": 1.01,
         "gamesPlayed": 31,
@@ -6542,12 +6712,11 @@ const PLAYERS_ALL = [
           "as10": 1.39,
           "wa": 0,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "roadhog": {
         "finalScore": 36.51,
-        "battleScore": 39.31,
+        "battleScore": 39.3,
         "coeff": 1,
         "matchCoef": 0.93,
         "gamesPlayed": 11,
@@ -6563,7 +6732,8 @@ const PLAYERS_ALL = [
           "as10": 2.9,
           "wa": 21,
           "ca": 11
-        }
+        },
+        "rankDeltaPower": 1
       },
       "sigma": {
         "finalScore": 57.18,
@@ -6586,7 +6756,7 @@ const PLAYERS_ALL = [
         }
       },
       "sierra": {
-        "finalScore": 56.5,
+        "finalScore": 56.49,
         "battleScore": 44.69,
         "coeff": 1.33,
         "matchCoef": 0.95,
@@ -6643,12 +6813,11 @@ const PLAYERS_ALL = [
           "as10": 4.85,
           "wa": 37,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "torbjorn": {
-        "finalScore": 39.42,
-        "battleScore": 32.49,
+        "finalScore": 39.43,
+        "battleScore": 32.5,
         "coeff": 1.33,
         "matchCoef": 0.91,
         "gamesPlayed": 9,
@@ -6667,7 +6836,7 @@ const PLAYERS_ALL = [
         }
       },
       "vendetta": {
-        "finalScore": 39.06,
+        "finalScore": 39.07,
         "battleScore": 34.53,
         "coeff": 1.33,
         "matchCoef": 0.85,
@@ -6704,9 +6873,7 @@ const PLAYERS_ALL = [
           "as10": 0.45,
           "wa": 47,
           "ca": 0
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": 1
+        }
       },
       "widowmaker": {
         "finalScore": 49.72,
@@ -6726,12 +6893,11 @@ const PLAYERS_ALL = [
           "as10": 2.35,
           "wa": 36,
           "ca": 12
-        },
-        "rankDeltaPower": -1
+        }
       },
       "winston": {
-        "finalScore": 36.71,
-        "battleScore": 37.13,
+        "finalScore": 36.81,
+        "battleScore": 37.23,
         "coeff": 1,
         "matchCoef": 0.99,
         "gamesPlayed": 22,
@@ -6747,7 +6913,8 @@ const PLAYERS_ALL = [
           "as10": 3.08,
           "wa": 50,
           "ca": 0
-        }
+        },
+        "rankDelta": 1
       },
       "wrecking-ball": {
         "finalScore": 39.94,
@@ -6787,8 +6954,7 @@ const PLAYERS_ALL = [
           "as10": 3.96,
           "wa": 48,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "zenyatta": {
         "finalScore": 38.04,
@@ -6809,14 +6975,13 @@ const PLAYERS_ALL = [
           "wa": 24,
           "ca": 13
         },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        "rankDeltaPower": -1
       }
     },
     "bscoreAll": {
       "ashe": {
-        "finalScore": 55.11,
-        "battleScore": 39.4,
+        "finalScore": 54.98,
+        "battleScore": 39.31,
         "coeff": 1.33,
         "matchCoef": 1.05,
         "gamesPlayed": 45,
@@ -6832,8 +6997,7 @@ const PLAYERS_ALL = [
           "as10": 1.3124444444444445,
           "wa": 41.68888888888889,
           "ca": 18.355555555555554
-        },
-        "rankDelta": -1
+        }
       },
       "bastion": {
         "finalScore": 62.4,
@@ -6853,12 +7017,11 @@ const PLAYERS_ALL = [
           "as10": 1.9672727272727273,
           "wa": 25.90909090909091,
           "ca": 3
-        },
-        "rankDelta": -1
+        }
       },
       "cassidy": {
-        "finalScore": 52.54,
-        "battleScore": 38.09,
+        "finalScore": 52.52,
+        "battleScore": 38.08,
         "coeff": 1.33,
         "matchCoef": 1.04,
         "gamesPlayed": 38,
@@ -6894,9 +7057,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 32.95652173913044,
           "ca": 17
-        },
-        "rankDelta": 2,
-        "rankDeltaPower": 2
+        }
       },
       "freja": {
         "finalScore": 45.67,
@@ -6919,8 +7080,8 @@ const PLAYERS_ALL = [
         }
       },
       "juno": {
-        "finalScore": 40.56,
-        "battleScore": 40.29,
+        "finalScore": 40.66,
+        "battleScore": 40.39,
         "coeff": 1,
         "matchCoef": 1.01,
         "gamesPlayed": 27,
@@ -6936,11 +7097,12 @@ const PLAYERS_ALL = [
           "as10": 12.625925925925925,
           "wa": 34.074074074074076,
           "ca": 8.11111111111111
-        }
+        },
+        "rankDelta": 1
       },
       "pharah": {
-        "finalScore": 56.51,
-        "battleScore": 40.4,
+        "finalScore": 56.56,
+        "battleScore": 40.44,
         "coeff": 1.33,
         "matchCoef": 1.05,
         "gamesPlayed": 45,
@@ -6956,12 +7118,11 @@ const PLAYERS_ALL = [
           "as10": 3.8351111111111114,
           "wa": 43.13333333333333,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "shion": {
-        "finalScore": 60.98,
-        "battleScore": 45.24,
+        "finalScore": 60.94,
+        "battleScore": 45.21,
         "coeff": 1.33,
         "matchCoef": 1.01,
         "gamesPlayed": 29,
@@ -6981,7 +7142,7 @@ const PLAYERS_ALL = [
       },
       "sojourn": {
         "finalScore": 61.18,
-        "battleScore": 43.36,
+        "battleScore": 43.37,
         "coeff": 1.33,
         "matchCoef": 1.06,
         "gamesPlayed": 50,
@@ -7057,12 +7218,11 @@ const PLAYERS_ALL = [
           "as10": 12,
           "wa": 36,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "anran": {
-        "finalScore": 62.77,
-        "battleScore": 40.65,
+        "finalScore": 62.76,
+        "battleScore": 40.63,
         "coeff": 1.33,
         "matchCoef": 0.96,
         "gamesPlayed": 10,
@@ -7078,11 +7238,10 @@ const PLAYERS_ALL = [
           "as10": 0.87,
           "wa": 23,
           "ca": 9
-        },
-        "rankDelta": -1
+        }
       },
       "baptiste": {
-        "finalScore": 41.4,
+        "finalScore": 41.39,
         "battleScore": 41.54,
         "coeff": 1,
         "matchCoef": 1,
@@ -7102,8 +7261,8 @@ const PLAYERS_ALL = [
         }
       },
       "brigitte": {
-        "finalScore": 38.02,
-        "battleScore": 38.77,
+        "finalScore": 38.04,
+        "battleScore": 38.79,
         "coeff": 1,
         "matchCoef": 0.98,
         "gamesPlayed": 20,
@@ -7120,7 +7279,7 @@ const PLAYERS_ALL = [
           "wa": 0,
           "ca": 0
         },
-        "rankDeltaPower": -1
+        "rankDeltaPower": 1
       },
       "dmon": {
         "finalScore": 32.55,
@@ -7143,8 +7302,8 @@ const PLAYERS_ALL = [
         }
       },
       "doctrine": {
-        "finalScore": 29.52,
-        "battleScore": 34.73,
+        "finalScore": 29.73,
+        "battleScore": 34.97,
         "coeff": 1,
         "matchCoef": 0.85,
         "gamesPlayed": 1,
@@ -7161,8 +7320,7 @@ const PLAYERS_ALL = [
           "wa": 57,
           "ca": 0
         },
-        "rankDelta": -2,
-        "rankDeltaPower": -1
+        "rankDelta": 1
       },
       "domina": {
         "finalScore": 49.12,
@@ -7182,8 +7340,7 @@ const PLAYERS_ALL = [
           "as10": 3.28,
           "wa": 45,
           "ca": 8
-        },
-        "rankDeltaPower": -1
+        }
       },
       "doomfist": {
         "finalScore": 34.57,
@@ -7203,8 +7360,7 @@ const PLAYERS_ALL = [
           "as10": 3.58,
           "wa": 25,
           "ca": 9
-        },
-        "rankDelta": -1
+        }
       },
       "dva": {
         "finalScore": 45.79,
@@ -7224,8 +7380,7 @@ const PLAYERS_ALL = [
           "as10": 6.52,
           "wa": 29,
           "ca": 10
-        },
-        "rankDelta": 1
+        }
       },
       "echo": {
         "finalScore": 57.4,
@@ -7265,9 +7420,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 22,
           "ca": 11
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "hazard": {
         "finalScore": 31.82,
@@ -7287,9 +7440,7 @@ const PLAYERS_ALL = [
           "as10": 4.6,
           "wa": 27,
           "ca": 7
-        },
-        "rankDelta": 4,
-        "rankDeltaPower": 2
+        }
       },
       "hanzo": {
         "finalScore": 50.56,
@@ -7309,9 +7460,7 @@ const PLAYERS_ALL = [
           "as10": 4.53,
           "wa": 25,
           "ca": 13
-        },
-        "rankDelta": 3,
-        "rankDeltaPower": 4
+        }
       },
       "illari": {
         "finalScore": 38.11,
@@ -7371,12 +7520,11 @@ const PLAYERS_ALL = [
           "as10": 3.66,
           "wa": 27,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "kiriko": {
-        "finalScore": 36.51,
-        "battleScore": 34.87,
+        "finalScore": 36.48,
+        "battleScore": 34.84,
         "coeff": 1,
         "matchCoef": 1.05,
         "gamesPlayed": 43,
@@ -7392,11 +7540,13 @@ const PLAYERS_ALL = [
           "as10": 13.51,
           "wa": 26,
           "ca": 13
-        }
+        },
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "lifeweaver": {
-        "finalScore": 35.59,
-        "battleScore": 36.13,
+        "finalScore": 35.62,
+        "battleScore": 36.16,
         "coeff": 1,
         "matchCoef": 0.98,
         "gamesPlayed": 21,
@@ -7432,7 +7582,8 @@ const PLAYERS_ALL = [
           "as10": 10.64,
           "wa": 24,
           "ca": 8
-        }
+        },
+        "rankDelta": -1
       },
       "mauga": {
         "finalScore": 58.97,
@@ -7472,8 +7623,7 @@ const PLAYERS_ALL = [
           "as10": 5.75,
           "wa": 47,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "mercy": {
         "finalScore": 31.64,
@@ -7494,7 +7644,7 @@ const PLAYERS_ALL = [
           "wa": 22,
           "ca": 8
         },
-        "rankDeltaPower": -1
+        "rankDelta": -1
       },
       "mizuki": {
         "finalScore": 35.53,
@@ -7537,8 +7687,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 40.64,
-        "battleScore": 41.63,
+        "finalScore": 40.81,
+        "battleScore": 41.8,
         "coeff": 1,
         "matchCoef": 0.98,
         "gamesPlayed": 19,
@@ -7557,8 +7707,8 @@ const PLAYERS_ALL = [
         }
       },
       "ramattra": {
-        "finalScore": 53.82,
-        "battleScore": 42.5,
+        "finalScore": 53.84,
+        "battleScore": 42.49,
         "coeff": 1,
         "matchCoef": 1.01,
         "gamesPlayed": 31,
@@ -7614,12 +7764,11 @@ const PLAYERS_ALL = [
           "as10": 1.39,
           "wa": 0,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "roadhog": {
         "finalScore": 36.51,
-        "battleScore": 39.31,
+        "battleScore": 39.3,
         "coeff": 1,
         "matchCoef": 0.93,
         "gamesPlayed": 11,
@@ -7635,7 +7784,8 @@ const PLAYERS_ALL = [
           "as10": 2.9,
           "wa": 21,
           "ca": 11
-        }
+        },
+        "rankDeltaPower": 1
       },
       "sigma": {
         "finalScore": 57.18,
@@ -7658,7 +7808,7 @@ const PLAYERS_ALL = [
         }
       },
       "sierra": {
-        "finalScore": 56.5,
+        "finalScore": 56.49,
         "battleScore": 44.69,
         "coeff": 1.33,
         "matchCoef": 0.95,
@@ -7715,12 +7865,11 @@ const PLAYERS_ALL = [
           "as10": 4.85,
           "wa": 37,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "torbjorn": {
-        "finalScore": 39.42,
-        "battleScore": 32.49,
+        "finalScore": 39.43,
+        "battleScore": 32.5,
         "coeff": 1.33,
         "matchCoef": 0.91,
         "gamesPlayed": 9,
@@ -7739,7 +7888,7 @@ const PLAYERS_ALL = [
         }
       },
       "vendetta": {
-        "finalScore": 39.06,
+        "finalScore": 39.07,
         "battleScore": 34.53,
         "coeff": 1.33,
         "matchCoef": 0.85,
@@ -7776,9 +7925,7 @@ const PLAYERS_ALL = [
           "as10": 0.45,
           "wa": 47,
           "ca": 0
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": 1
+        }
       },
       "widowmaker": {
         "finalScore": 49.72,
@@ -7798,12 +7945,11 @@ const PLAYERS_ALL = [
           "as10": 2.35,
           "wa": 36,
           "ca": 12
-        },
-        "rankDeltaPower": -1
+        }
       },
       "winston": {
-        "finalScore": 36.71,
-        "battleScore": 37.13,
+        "finalScore": 36.81,
+        "battleScore": 37.23,
         "coeff": 1,
         "matchCoef": 0.99,
         "gamesPlayed": 22,
@@ -7819,7 +7965,8 @@ const PLAYERS_ALL = [
           "as10": 3.08,
           "wa": 50,
           "ca": 0
-        }
+        },
+        "rankDelta": 1
       },
       "wrecking-ball": {
         "finalScore": 39.94,
@@ -7859,8 +8006,7 @@ const PLAYERS_ALL = [
           "as10": 3.96,
           "wa": 48,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "zenyatta": {
         "finalScore": 38.04,
@@ -7881,8 +8027,7 @@ const PLAYERS_ALL = [
           "wa": 24,
           "ca": 13
         },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        "rankDeltaPower": -1
       }
     },
     "recent": [
@@ -8085,7 +8230,7 @@ const PLAYERS_ALL = [
     "pid": "71bf70095295184c2073960007b31fdafdddb9a6a594a1|0a08671b7adbc97eb1182bc68bdf60f7",
     "name": "ぼいどぐらぶ",
     "tag": "",
-    "endorse": 3,
+    "endorse": 2,
     "title": "<3",
     "avatar": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/1fa2392c8d0c6047457f038a881d59d3cade9a1ef6cfa8bb8e396100a3b97a8b.png",
     "namecard": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/4f57d4bae6d479b52d262975c730e1f763123975a3dc08395709d963ea7dd6b9.png",
@@ -8109,53 +8254,53 @@ const PLAYERS_ALL = [
     },
     "rankTier": "Platinum 4",
     "overall": {
-      "matches": 1112,
-      "wins": 583,
-      "losses": 529,
-      "wr": 52.43,
-      "kda": 2.79,
-      "elim": 15.47,
-      "deaths": 6.16,
-      "dmg": 8237.56,
-      "heal": 3075.38,
-      "time": 586600
+      "matches": 1124,
+      "wins": 588,
+      "losses": 536,
+      "wr": 52.31,
+      "kda": 2.8,
+      "elim": 15.48,
+      "deaths": 6.15,
+      "dmg": 8267.24,
+      "heal": 3067.44,
+      "time": 593165
     },
     "roles": {
       "Tank": {
-        "g": 163,
-        "w": 85,
-        "l": 78,
-        "time": 86927,
-        "wr": 52.15,
+        "g": 165,
+        "w": 84,
+        "l": 81,
+        "time": 88472,
+        "wr": 50.91,
         "kda": 4.11,
-        "elim": 20.3,
-        "deaths": 5.32,
-        "dmg": 12065.03,
-        "heal": 1564.45
+        "elim": 20.21,
+        "deaths": 5.31,
+        "dmg": 12195.88,
+        "heal": 1560.76
       },
       "Damage": {
-        "g": 522,
-        "w": 279,
-        "l": 243,
-        "time": 270238,
-        "wr": 53.45,
-        "kda": 2.51,
-        "elim": 16.82,
-        "deaths": 6.8,
-        "dmg": 9406.38,
-        "heal": 213.85
+        "g": 528,
+        "w": 283,
+        "l": 245,
+        "time": 273401,
+        "wr": 53.6,
+        "kda": 2.52,
+        "elim": 16.87,
+        "deaths": 6.79,
+        "dmg": 9421.71,
+        "heal": 212.83
       },
       "Support": {
-        "g": 427,
-        "w": 219,
-        "l": 208,
-        "time": 229435,
-        "wr": 51.29,
+        "g": 431,
+        "w": 221,
+        "l": 210,
+        "time": 231292,
+        "wr": 51.28,
         "kda": 2.73,
-        "elim": 12.04,
-        "deaths": 5.72,
-        "dmg": 5410.75,
-        "heal": 7018.27
+        "elim": 12.03,
+        "deaths": 5.71,
+        "dmg": 5399.83,
+        "heal": 7018.09
       }
     },
     "heroes": [
@@ -8165,23 +8310,23 @@ const PLAYERS_ALL = [
         "role": "Support",
         "g": 184,
         "wr": 46.2,
-        "kda": 3.04
+        "kda": 3.03
       },
       {
         "slug": "cassidy",
         "n": "Cassidy",
         "role": "Damage",
-        "g": 85,
-        "wr": 56.47,
+        "g": 86,
+        "wr": 55.81,
         "kda": 2.4
       },
       {
         "slug": "genji",
         "n": "Genji",
         "role": "Damage",
-        "g": 75,
-        "wr": 50.67,
-        "kda": 2.22
+        "g": 76,
+        "wr": 51.32,
+        "kda": 2.25
       },
       {
         "slug": "kiriko",
@@ -8235,16 +8380,16 @@ const PLAYERS_ALL = [
         "slug": "shion",
         "n": "Shion",
         "role": "Damage",
-        "g": 29,
-        "wr": 55.17,
-        "kda": 3.28
+        "g": 30,
+        "wr": 56.67,
+        "kda": 3.31
       },
       {
         "slug": "sierra",
         "n": "Sierra",
         "role": "Damage",
-        "g": 25,
-        "wr": 40,
+        "g": 26,
+        "wr": 42.31,
         "kda": 2.31
       },
       {
@@ -8253,7 +8398,15 @@ const PLAYERS_ALL = [
         "role": "Damage",
         "g": 25,
         "wr": 60,
-        "kda": 2.34
+        "kda": 2.31
+      },
+      {
+        "slug": "anran",
+        "n": "Anran",
+        "role": "Damage",
+        "g": 19,
+        "wr": 42.11,
+        "kda": 2.23
       },
       {
         "slug": "roadhog",
@@ -8261,15 +8414,7 @@ const PLAYERS_ALL = [
         "role": "Tank",
         "g": 19,
         "wr": 57.89,
-        "kda": 5.1
-      },
-      {
-        "slug": "anran",
-        "n": "Anran",
-        "role": "Damage",
-        "g": 18,
-        "wr": 44.44,
-        "kda": 2.26
+        "kda": 5.26
       },
       {
         "slug": "freja",
@@ -8292,8 +8437,16 @@ const PLAYERS_ALL = [
         "n": "Orisa",
         "role": "Tank",
         "g": 17,
-        "wr": 29.41,
-        "kda": 4.54
+        "wr": 23.53,
+        "kda": 4.52
+      },
+      {
+        "slug": "ashe",
+        "n": "Ashe",
+        "role": "Damage",
+        "g": 16,
+        "wr": 75,
+        "kda": 2.48
       },
       {
         "slug": "mizuki",
@@ -8318,14 +8471,6 @@ const PLAYERS_ALL = [
         "g": 16,
         "wr": 56.25,
         "kda": 1.94
-      },
-      {
-        "slug": "ashe",
-        "n": "Ashe",
-        "role": "Damage",
-        "g": 15,
-        "wr": 73.33,
-        "kda": 2.27
       },
       {
         "slug": "reaper",
@@ -8360,6 +8505,14 @@ const PLAYERS_ALL = [
         "kda": 5.35
       },
       {
+        "slug": "brigitte",
+        "n": "Brigitte",
+        "role": "Support",
+        "g": 11,
+        "wr": 72.73,
+        "kda": 2.77
+      },
+      {
         "slug": "dva",
         "n": "D.Va",
         "role": "Tank",
@@ -8389,15 +8542,7 @@ const PLAYERS_ALL = [
         "role": "Damage",
         "g": 11,
         "wr": 72.73,
-        "kda": 3.21
-      },
-      {
-        "slug": "brigitte",
-        "n": "Brigitte",
-        "role": "Support",
-        "g": 10,
-        "wr": 70,
-        "kda": 2.76
+        "kda": 3.16
       },
       {
         "slug": "emre",
@@ -8406,6 +8551,14 @@ const PLAYERS_ALL = [
         "g": 10,
         "wr": 40,
         "kda": 2.55
+      },
+      {
+        "slug": "sigma",
+        "n": "Sigma",
+        "role": "Tank",
+        "g": 10,
+        "wr": 50,
+        "kda": 3.56
       },
       {
         "slug": "bastion",
@@ -8424,14 +8577,6 @@ const PLAYERS_ALL = [
         "kda": 4
       },
       {
-        "slug": "sigma",
-        "n": "Sigma",
-        "role": "Tank",
-        "g": 9,
-        "wr": 55.56,
-        "kda": 3.6
-      },
-      {
         "slug": "hanzo",
         "n": "Hanzo",
         "role": "Damage",
@@ -8446,6 +8591,14 @@ const PLAYERS_ALL = [
         "g": 8,
         "wr": 62.5,
         "kda": 4.27
+      },
+      {
+        "slug": "winston",
+        "n": "Winston",
+        "role": "Tank",
+        "g": 8,
+        "wr": 50,
+        "kda": 3.66
       },
       {
         "slug": "zenyatta",
@@ -8472,6 +8625,14 @@ const PLAYERS_ALL = [
         "kda": 2.67
       },
       {
+        "slug": "lifeweaver",
+        "n": "Lifeweaver",
+        "role": "Support",
+        "g": 7,
+        "wr": 42.86,
+        "kda": 1.58
+      },
+      {
         "slug": "reinhardt",
         "n": "Reinhardt",
         "role": "Tank",
@@ -8488,28 +8649,20 @@ const PLAYERS_ALL = [
         "kda": 3.09
       },
       {
-        "slug": "winston",
-        "n": "Winston",
-        "role": "Tank",
-        "g": 7,
-        "wr": 57.14,
-        "kda": 3.93
-      },
-      {
         "slug": "zarya",
         "n": "Zarya",
         "role": "Tank",
         "g": 7,
         "wr": 42.86,
-        "kda": 3.64
+        "kda": 3.63
       },
       {
-        "slug": "lifeweaver",
-        "n": "Lifeweaver",
+        "slug": "juno",
+        "n": "Juno",
         "role": "Support",
         "g": 6,
-        "wr": 50,
-        "kda": 1.43
+        "wr": 66.67,
+        "kda": 2.69
       },
       {
         "slug": "sombra",
@@ -8536,14 +8689,6 @@ const PLAYERS_ALL = [
         "kda": 2.72
       },
       {
-        "slug": "juno",
-        "n": "Juno",
-        "role": "Support",
-        "g": 4,
-        "wr": 75,
-        "kda": 2.48
-      },
-      {
         "slug": "domina",
         "n": "Domina",
         "role": "Tank",
@@ -8557,7 +8702,7 @@ const PLAYERS_ALL = [
         "role": "Tank",
         "g": 3,
         "wr": 33.33,
-        "kda": 3.6
+        "kda": 3.56
       },
       {
         "slug": "junker-queen",
@@ -8594,71 +8739,72 @@ const PLAYERS_ALL = [
     ],
     "bscore": {
       "ana": {
-        "finalScore": 61.28,
-        "battleScore": 40.04,
+        "finalScore": 61.61,
+        "battleScore": 40.25,
         "coeff": 1.33,
         "matchCoef": 1.15,
         "gamesPlayed": 184,
         "rankIndex": 3,
         "det": {
           "g": 184,
-          "time": 98577,
-          "wr": 45.81521739130435,
-          "el10": 10.74516304347826,
+          "time": 98813,
+          "wr": 46.61413043478261,
+          "el10": 10.721195652173913,
           "de10": 5.505434782608695,
-          "dm10": 4261.961956521739,
-          "he10": 6100.16847826087,
-          "as10": 11.003152173913042,
+          "dm10": 4255.570652173913,
+          "he10": 6097.771739130435,
+          "as10": 10.987173913043478,
           "wa": 51.20108695652174,
           "ca": 0
         },
         "rankDelta": 1
       },
       "anran": {
-        "finalScore": 63.11,
-        "battleScore": 40.36,
+        "finalScore": 63.05,
+        "battleScore": 40.13,
         "coeff": 1.33,
         "matchCoef": 0.99,
-        "gamesPlayed": 18,
+        "gamesPlayed": 19,
         "rankIndex": 3,
         "det": {
-          "g": 18,
-          "time": 9901,
-          "wr": 43.833333333333336,
-          "el10": 17.82,
-          "de10": 7.873333333333333,
-          "dm10": 7094,
-          "he10": 660.5,
-          "as10": 0.3633333333333333,
-          "wa": 29.666666666666668,
-          "ca": 10.5
+          "g": 19,
+          "time": 10115,
+          "wr": 43.1578947368421,
+          "el10": 17.722105263157896,
+          "de10": 7.946315789473685,
+          "dm10": 7118.105263157895,
+          "he10": 659.7894736842105,
+          "as10": 0.42315789473684207,
+          "wa": 29.31578947368421,
+          "ca": 10.631578947368421
         },
-        "rankDelta": 2
+        "rankDelta": -3
       },
       "ashe": {
-        "finalScore": 54.22,
-        "battleScore": 42.62,
+        "finalScore": 56.52,
+        "battleScore": 44.17,
         "coeff": 1.33,
         "matchCoef": 0.96,
-        "gamesPlayed": 15,
+        "gamesPlayed": 16,
         "rankIndex": 3,
         "det": {
-          "g": 15,
-          "time": 7709,
-          "wr": 69.8,
-          "el10": 13.588666666666667,
-          "de10": 6.029333333333333,
-          "dm10": 7346.8,
+          "g": 16,
+          "time": 8009,
+          "wr": 71.375,
+          "el10": 14.282499999999999,
+          "de10": 5.8062499999999995,
+          "dm10": 7615.875,
           "he10": 0,
-          "as10": 1.3373333333333335,
-          "wa": 37,
+          "as10": 1.52,
+          "wa": 38.75,
           "ca": 19
         },
-        "rankDelta": 1
+        "rankDelta": 8,
+        "rankDeltaPower": 6
       },
       "baptiste": {
-        "finalScore": 47.03,
-        "battleScore": 39.71,
+        "finalScore": 47.02,
+        "battleScore": 39.7,
         "coeff": 1.33,
         "matchCoef": 0.89,
         "gamesPlayed": 7,
@@ -8675,8 +8821,7 @@ const PLAYERS_ALL = [
           "wa": 32.57142857142857,
           "ca": 15.142857142857142
         },
-        "rankDelta": 4,
-        "rankDeltaPower": 2
+        "rankDelta": -1
       },
       "bastion": {
         "finalScore": 62.4,
@@ -8697,48 +8842,48 @@ const PLAYERS_ALL = [
           "wa": 26,
           "ca": 3.111111111111111
         },
-        "rankDelta": 1
+        "rankDelta": -2
       },
       "brigitte": {
-        "finalScore": 54.43,
-        "battleScore": 44.42,
+        "finalScore": 55.3,
+        "battleScore": 44.73,
         "coeff": 1.33,
-        "matchCoef": 0.92,
-        "gamesPlayed": 10,
+        "matchCoef": 0.93,
+        "gamesPlayed": 11,
         "rankIndex": 3,
         "det": {
-          "g": 10,
-          "time": 5637,
-          "wr": 76,
-          "el10": 15.148000000000001,
-          "de10": 7.676,
-          "dm10": 4741.4,
-          "he10": 6868.8,
-          "as10": 15.876000000000001,
+          "g": 11,
+          "time": 5816,
+          "wr": 76.9090909090909,
+          "el10": 15.281818181818183,
+          "de10": 7.645454545454545,
+          "dm10": 4771.636363636364,
+          "he10": 6838.727272727273,
+          "as10": 15.830909090909092,
           "wa": 0,
           "ca": 0
         }
       },
       "cassidy": {
-        "finalScore": 64.83,
-        "battleScore": 44.04,
+        "finalScore": 64.86,
+        "battleScore": 44.02,
         "coeff": 1.33,
         "matchCoef": 1.11,
-        "gamesPlayed": 85,
+        "gamesPlayed": 86,
         "rankIndex": 3,
         "det": {
-          "g": 85,
-          "time": 44408,
-          "wr": 56.32941176470588,
-          "el10": 17.36870588235294,
-          "de10": 7.175411764705883,
-          "dm10": 8614.164705882353,
-          "he10": 43.12447058823529,
-          "as10": 1.6704705882352942,
-          "wa": 41.83529411764706,
-          "ca": 11.83529411764706
+          "g": 86,
+          "time": 44963,
+          "wr": 56,
+          "el10": 17.47046511627907,
+          "de10": 7.192325581395348,
+          "dm10": 8617.093023255815,
+          "he10": 42.766976744186046,
+          "as10": 1.6911627906976745,
+          "wa": 41.83720930232558,
+          "ca": 11.837209302325581
         },
-        "rankDelta": -1
+        "rankDelta": -4
       },
       "dmon": {
         "finalScore": 59.86,
@@ -8758,10 +8903,11 @@ const PLAYERS_ALL = [
           "as10": 3.5524999999999998,
           "wa": 32.5,
           "ca": 0
-        }
+        },
+        "rankDeltaPower": -1
       },
       "doomfist": {
-        "finalScore": 59.64,
+        "finalScore": 59.63,
         "battleScore": 47.26,
         "coeff": 1.21,
         "matchCoef": 1.04,
@@ -8769,17 +8915,18 @@ const PLAYERS_ALL = [
         "rankIndex": 2,
         "det": {
           "g": 41,
-          "time": 22206,
+          "time": 22217,
           "wr": 50.09756097560975,
-          "el10": 20.76243902439024,
-          "de10": 6.106097560975609,
-          "dm10": 8128.1463414634145,
-          "he10": 1734.2439024390244,
-          "as10": 5.29,
+          "el10": 20.750731707317073,
+          "de10": 6.104146341463414,
+          "dm10": 8124.243902439024,
+          "he10": 1733.2682926829268,
+          "as10": 5.288048780487805,
           "wa": 28.609756097560975,
           "ca": 11.609756097560975
         },
-        "rankDelta": 1
+        "rankDelta": -2,
+        "rankDeltaPower": -1
       },
       "dva": {
         "finalScore": 52.67,
@@ -8800,8 +8947,8 @@ const PLAYERS_ALL = [
           "wa": 25.727272727272727,
           "ca": 9.090909090909092
         },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        "rankDelta": -2,
+        "rankDeltaPower": -1
       },
       "echo": {
         "finalScore": 54.06,
@@ -8822,7 +8969,7 @@ const PLAYERS_ALL = [
           "wa": 22.076923076923077,
           "ca": 9.23076923076923
         },
-        "rankDelta": 1
+        "rankDelta": -2
       },
       "freja": {
         "finalScore": 56.38,
@@ -8843,28 +8990,30 @@ const PLAYERS_ALL = [
           "wa": 25.11111111111111,
           "ca": 14.666666666666666
         },
-        "rankDelta": 1
+        "rankDelta": -2,
+        "rankDeltaPower": -1
       },
       "genji": {
-        "finalScore": 59.05,
-        "battleScore": 40.51,
+        "finalScore": 59.93,
+        "battleScore": 41.07,
         "coeff": 1.33,
         "matchCoef": 1.1,
-        "gamesPlayed": 75,
+        "gamesPlayed": 76,
         "rankIndex": 3,
         "det": {
-          "g": 75,
-          "time": 39262,
-          "wr": 50.50666666666667,
-          "el10": 14.855866666666667,
-          "de10": 6.647733333333333,
-          "dm10": 5828.026666666667,
-          "he10": 213.65333333333334,
+          "g": 76,
+          "time": 40125,
+          "wr": 52.31578947368421,
+          "el10": 15.036315789473685,
+          "de10": 6.619473684210526,
+          "dm10": 5880.684210526316,
+          "he10": 212.47368421052633,
           "as10": 0,
-          "wa": 24.213333333333335,
-          "ca": 11.213333333333333
+          "wa": 24.210526315789473,
+          "ca": 11.210526315789474
         },
-        "rankDelta": 1
+        "rankDelta": 1,
+        "rankDeltaPower": 3
       },
       "hazard": {
         "finalScore": 50.61,
@@ -8885,7 +9034,8 @@ const PLAYERS_ALL = [
           "wa": 31.923076923076923,
           "ca": 9.846153846153847
         },
-        "rankDelta": -1
+        "rankDelta": 1,
+        "rankDeltaPower": -2
       },
       "illari": {
         "finalScore": 54.69,
@@ -8906,11 +9056,12 @@ const PLAYERS_ALL = [
           "wa": 39.72727272727273,
           "ca": 14.090909090909092
         },
-        "rankDelta": 1
+        "rankDelta": -1,
+        "rankDeltaPower": -2
       },
       "jetpack-cat": {
-        "finalScore": 58.95,
-        "battleScore": 45.58,
+        "finalScore": 58.97,
+        "battleScore": 45.6,
         "coeff": 1.33,
         "matchCoef": 0.97,
         "gamesPlayed": 18,
@@ -8926,13 +9077,11 @@ const PLAYERS_ALL = [
           "as10": 10.978333333333332,
           "wa": 27.27777777777778,
           "ca": 7.944444444444445
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        }
       },
       "kiriko": {
-        "finalScore": 59.24,
-        "battleScore": 40.96,
+        "finalScore": 59.23,
+        "battleScore": 40.95,
         "coeff": 1.33,
         "matchCoef": 1.09,
         "gamesPlayed": 68,
@@ -8949,29 +9098,30 @@ const PLAYERS_ALL = [
           "wa": 27.323529411764707,
           "ca": 12
         },
-        "rankDelta": 1
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "lifeweaver": {
-        "finalScore": 43.11,
-        "battleScore": 36.95,
+        "finalScore": 43.2,
+        "battleScore": 36.47,
         "coeff": 1.33,
-        "matchCoef": 0.88,
-        "gamesPlayed": 6,
+        "matchCoef": 0.89,
+        "gamesPlayed": 7,
         "rankIndex": 3,
         "det": {
-          "g": 6,
-          "time": 3106,
-          "wr": 42.166666666666664,
-          "el10": 7.515,
-          "de10": 5.745,
-          "dm10": 2029.1666666666667,
-          "he10": 8461.666666666666,
-          "as10": 11.908333333333333,
-          "wa": 26.833333333333332,
-          "ca": 11
+          "g": 7,
+          "time": 3674,
+          "wr": 36.285714285714285,
+          "el10": 7.8100000000000005,
+          "de10": 5.355714285714286,
+          "dm10": 2151.714285714286,
+          "he10": 8222.57142857143,
+          "as10": 11.857142857142858,
+          "wa": 27.714285714285715,
+          "ca": 11.857142857142858
         },
-        "rankDelta": 2,
-        "rankDeltaPower": 1
+        "rankDelta": -4,
+        "rankDeltaPower": -1
       },
       "mauga": {
         "finalScore": 62.37,
@@ -8992,11 +9142,11 @@ const PLAYERS_ALL = [
           "wa": 31.727272727272727,
           "ca": 11
         },
-        "rankDelta": 1
+        "rankDelta": -1
       },
       "mizuki": {
-        "finalScore": 52.73,
-        "battleScore": 41.21,
+        "finalScore": 52.76,
+        "battleScore": 41.24,
         "coeff": 1.33,
         "matchCoef": 0.96,
         "gamesPlayed": 16,
@@ -9013,8 +9163,8 @@ const PLAYERS_ALL = [
           "wa": 32,
           "ca": 13
         },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "moira": {
         "finalScore": 70.04,
@@ -9034,70 +9184,74 @@ const PLAYERS_ALL = [
           "as10": 14.438823529411765,
           "wa": 0,
           "ca": 0
-        }
+        },
+        "rankDelta": -2
       },
       "orisa": {
-        "finalScore": 48.95,
-        "battleScore": 41.85,
+        "finalScore": 49.25,
+        "battleScore": 42.11,
         "coeff": 1.21,
         "matchCoef": 0.97,
         "gamesPlayed": 17,
         "rankIndex": 2,
         "det": {
           "g": 17,
-          "time": 9295,
+          "time": 9368,
           "wr": 21.176470588235293,
-          "el10": 20.704117647058823,
-          "de10": 5.397058823529412,
-          "dm10": 11526.176470588236,
-          "he10": 156.2941176470588,
-          "as10": 3.537058823529412,
+          "el10": 20.765882352941176,
+          "de10": 5.414705882352941,
+          "dm10": 11533.529411764706,
+          "he10": 155.11764705882354,
+          "as10": 3.4958823529411767,
           "wa": 34,
           "ca": 12.176470588235293
         },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "pharah": {
-        "finalScore": 58.95,
-        "battleScore": 47.68,
+        "finalScore": 58.55,
+        "battleScore": 47.35,
         "coeff": 1.33,
         "matchCoef": 0.93,
         "gamesPlayed": 11,
         "rankIndex": 3,
         "det": {
           "g": 11,
-          "time": 6527,
+          "time": 6558,
           "wr": 71.54545454545455,
-          "el10": 20.99818181818182,
-          "de10": 6.523636363636364,
-          "dm10": 8862.272727272728,
+          "el10": 20.900000000000002,
+          "de10": 6.580909090909091,
+          "dm10": 8836.09090909091,
           "he10": 0,
-          "as10": 4.879090909090909,
-          "wa": 41.72727272727273,
+          "as10": 4.862727272727272,
+          "wa": 40.90909090909091,
           "ca": 0
         },
-        "rankDeltaPower": 1
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "ramattra": {
-        "finalScore": 55.96,
-        "battleScore": 43.61,
+        "finalScore": 56.04,
+        "battleScore": 43.74,
         "coeff": 1.21,
         "matchCoef": 0.92,
         "gamesPlayed": 3,
         "rankIndex": 2,
         "det": {
           "g": 3,
-          "time": 1780,
+          "time": 1877,
           "wr": 40.666666666666664,
-          "el10": 15.756666666666668,
-          "de10": 5.086666666666667,
-          "dm10": 10769.666666666666,
-          "he10": 636,
-          "as10": 2.0366666666666666,
+          "el10": 15.986666666666666,
+          "de10": 5.113333333333333,
+          "dm10": 10544.333333333334,
+          "he10": 584.3333333333334,
+          "as10": 2.2399999999999998,
           "wa": 26,
           "ca": 12
-        }
+        },
+        "rankDelta": 1,
+        "rankDeltaPower": -1
       },
       "reaper": {
         "finalScore": 63.76,
@@ -9117,7 +9271,8 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 27.714285714285715,
           "ca": 12.928571428571429
-        }
+        },
+        "rankDelta": 1
       },
       "reinhardt": {
         "finalScore": 49.84,
@@ -9138,92 +9293,93 @@ const PLAYERS_ALL = [
           "wa": 0,
           "ca": 0
         },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        "rankDelta": -1,
+        "rankDeltaPower": -3
       },
       "roadhog": {
-        "finalScore": 56.94,
-        "battleScore": 48.2,
+        "finalScore": 57.5,
+        "battleScore": 48.68,
         "coeff": 1.21,
         "matchCoef": 0.98,
         "gamesPlayed": 19,
         "rankIndex": 2,
         "det": {
           "g": 19,
-          "time": 9829,
-          "wr": 54.94736842105263,
-          "el10": 19.819999999999997,
-          "de10": 4.68,
-          "dm10": 8355.421052631578,
-          "he10": 5731.684210526316,
-          "as10": 5.1147368421052635,
-          "wa": 25.105263157894736,
-          "ca": 15.789473684210526
+          "time": 10093,
+          "wr": 56.421052631578945,
+          "el10": 19.961052631578944,
+          "de10": 4.564210526315788,
+          "dm10": 8390.052631578947,
+          "he10": 5765.473684210527,
+          "as10": 5.152631578947369,
+          "wa": 24.894736842105264,
+          "ca": 16
         },
-        "rankDelta": 1
+        "rankDelta": 4,
+        "rankDeltaPower": 1
       },
       "shion": {
-        "finalScore": 60.26,
-        "battleScore": 44.7,
+        "finalScore": 60.97,
+        "battleScore": 45.09,
         "coeff": 1.33,
-        "matchCoef": 1.01,
-        "gamesPlayed": 29,
+        "matchCoef": 1.02,
+        "gamesPlayed": 30,
         "rankIndex": 3,
         "det": {
-          "g": 29,
-          "time": 13887,
-          "wr": 54.793103448275865,
-          "el10": 17.73172413793103,
-          "de10": 5.395862068965517,
-          "dm10": 7681.413793103448,
-          "he10": 127.86206896551724,
-          "as10": 1.4306896551724138,
+          "g": 30,
+          "time": 14497,
+          "wr": 55.666666666666664,
+          "el10": 17.766666666666666,
+          "de10": 5.383333333333334,
+          "dm10": 7758.833333333333,
+          "he10": 129.16666666666666,
+          "as10": 1.5266666666666666,
           "wa": 32,
-          "ca": 11.275862068965518
-        },
-        "rankDelta": -2
-      },
-      "sigma": {
-        "finalScore": 58.08,
-        "battleScore": 42.43,
-        "coeff": 1.21,
-        "matchCoef": 0.96,
-        "gamesPlayed": 9,
-        "rankIndex": 2,
-        "det": {
-          "g": 9,
-          "time": 5386,
-          "wr": 51.111111111111114,
-          "el10": 16.756666666666668,
-          "de10": 5.376666666666667,
-          "dm10": 11280,
-          "he10": 0,
-          "as10": 2.101111111111111,
-          "wa": 45.888888888888886,
-          "ca": 0
+          "ca": 12.166666666666666
         }
       },
+      "sigma": {
+        "finalScore": 58.29,
+        "battleScore": 42.61,
+        "coeff": 1.21,
+        "matchCoef": 0.96,
+        "gamesPlayed": 10,
+        "rankIndex": 2,
+        "det": {
+          "g": 10,
+          "time": 6002,
+          "wr": 52,
+          "el10": 16.824,
+          "de10": 5.404,
+          "dm10": 11318.8,
+          "he10": 0,
+          "as10": 2.126,
+          "wa": 46.4,
+          "ca": 0
+        },
+        "rankDeltaPower": 1
+      },
       "sierra": {
-        "finalScore": 48.88,
-        "battleScore": 36.72,
+        "finalScore": 50.08,
+        "battleScore": 37.5,
         "coeff": 1.33,
         "matchCoef": 1,
-        "gamesPlayed": 25,
+        "gamesPlayed": 26,
         "rankIndex": 3,
         "det": {
-          "g": 25,
-          "time": 12065,
-          "wr": 41.8,
-          "el10": 17.136799999999997,
-          "de10": 7.278800000000001,
-          "dm10": 8287.32,
-          "he10": 32.5496,
-          "as10": 0.3592,
-          "wa": 24.84,
-          "ca": 8.24
+          "g": 26,
+          "time": 12570,
+          "wr": 44.69230769230769,
+          "el10": 17.113846153846154,
+          "de10": 7.276153846153846,
+          "dm10": 8328.692307692309,
+          "he10": 34.652307692307694,
+          "as10": 0.49461538461538457,
+          "wa": 24.846153846153847,
+          "ca": 8.23076923076923
         },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        "rankDelta": 3,
+        "rankDeltaPower": 2
       },
       "sojourn": {
         "finalScore": 57.18,
@@ -9244,7 +9400,7 @@ const PLAYERS_ALL = [
           "wa": 26.76923076923077,
           "ca": 11.115384615384615
         },
-        "rankDelta": 2
+        "rankDeltaPower": -1
       },
       "soldier-76": {
         "finalScore": 53.65,
@@ -9265,7 +9421,7 @@ const PLAYERS_ALL = [
           "wa": 32.25,
           "ca": 12
         },
-        "rankDelta": 2
+        "rankDelta": -1
       },
       "symmetra": {
         "finalScore": 49.16,
@@ -9286,8 +9442,8 @@ const PLAYERS_ALL = [
           "wa": 33.833333333333336,
           "ca": 0
         },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        "rankDelta": -1,
+        "rankDeltaPower": -3
       },
       "tracer": {
         "finalScore": 58.71,
@@ -9298,42 +9454,66 @@ const PLAYERS_ALL = [
         "rankIndex": 3,
         "det": {
           "g": 48,
-          "time": 24423,
+          "time": 24446,
           "wr": 46.625,
-          "el10": 15.947500000000003,
-          "de10": 6.839999999999999,
-          "dm10": 5906.25,
-          "he10": 63.7425,
+          "el10": 15.935,
+          "de10": 6.828749999999999,
+          "dm10": 5900.625,
+          "he10": 63.683749999999996,
           "as10": 0,
           "wa": 32.875,
           "ca": 10
         },
-        "rankDeltaPower": -2
+        "rankDelta": -1,
+        "rankDeltaPower": 1
       },
       "vendetta": {
-        "finalScore": 58.2,
-        "battleScore": 43.72,
+        "finalScore": 58.07,
+        "battleScore": 43.63,
         "coeff": 1.33,
         "matchCoef": 1,
         "gamesPlayed": 25,
         "rankIndex": 3,
         "det": {
           "g": 25,
-          "time": 13085,
+          "time": 13147,
           "wr": 59.08,
-          "el10": 18.2372,
-          "de10": 7.7672,
-          "dm10": 6887.48,
-          "he10": 252.52,
-          "as10": 1.5912,
+          "el10": 18.1892,
+          "de10": 7.8248,
+          "dm10": 6874.04,
+          "he10": 250.6,
+          "as10": 1.5816,
           "wa": 0,
           "ca": 0
         },
-        "rankDelta": 1
+        "rankDelta": -2,
+        "rankDeltaPower": -1
+      },
+      "winston": {
+        "finalScore": 46.86,
+        "battleScore": 42.97,
+        "coeff": 1.21,
+        "matchCoef": 0.9,
+        "gamesPlayed": 8,
+        "rankIndex": 2,
+        "det": {
+          "g": 8,
+          "time": 3259,
+          "wr": 49.875,
+          "el10": 18.83125,
+          "de10": 5.39625,
+          "dm10": 8228.625,
+          "he10": 1399.125,
+          "as10": 2.45875,
+          "wa": 60.25,
+          "ca": 0
+        },
+        "rankDelta": -13,
+        "rankDeltaPower": -4
       },
       "wuyang": {
-        "finalScore": 56.43,
-        "battleScore": 40.27,
+        "finalScore": 56.5,
+        "battleScore": 40.32,
         "coeff": 1.33,
         "matchCoef": 1.05,
         "gamesPlayed": 46,
@@ -9350,7 +9530,8 @@ const PLAYERS_ALL = [
           "wa": 29.456521739130434,
           "ca": 0
         },
-        "rankDelta": 1
+        "rankDelta": 1,
+        "rankDeltaPower": -1
       },
       "zenyatta": {
         "finalScore": 40.89,
@@ -9371,12 +9552,12 @@ const PLAYERS_ALL = [
           "wa": 22.875,
           "ca": 15.25
         },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "doctrine": {
-        "finalScore": 39.94,
-        "battleScore": 32.92,
+        "finalScore": 53.39,
+        "battleScore": 44,
         "coeff": 1.33,
         "matchCoef": 0.91,
         "gamesPlayed": 9,
@@ -9384,17 +9565,17 @@ const PLAYERS_ALL = [
         "det": {
           "g": 9,
           "time": 4520,
-          "wr": 0,
+          "wr": 67,
           "el10": 0,
           "de10": 0,
           "dm10": 0,
           "he10": 0,
           "as10": 0,
-          "wa": 0,
+          "wa": 48,
           "ca": 0
         },
-        "rankDelta": -40,
-        "rankDeltaPower": -22
+        "rankDelta": 37,
+        "rankDeltaPower": 22
       },
       "domina": {
         "finalScore": 51.61,
@@ -9415,7 +9596,7 @@ const PLAYERS_ALL = [
           "wa": 55,
           "ca": 8
         },
-        "rankDeltaPower": 1
+        "rankDeltaPower": -1
       },
       "emre": {
         "finalScore": 48.42,
@@ -9435,8 +9616,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 33,
           "ca": 10
-        },
-        "rankDeltaPower": 1
+        }
       },
       "hanzo": {
         "finalScore": 44.14,
@@ -9458,7 +9638,7 @@ const PLAYERS_ALL = [
           "ca": 12
         },
         "rankDelta": -1,
-        "rankDeltaPower": 1
+        "rankDeltaPower": -1
       },
       "junker-queen": {
         "finalScore": 39.88,
@@ -9479,11 +9659,11 @@ const PLAYERS_ALL = [
           "wa": 41,
           "ca": 12
         },
-        "rankDelta": 1
+        "rankDelta": -1
       },
       "junkrat": {
         "finalScore": 43.66,
-        "battleScore": 36.87,
+        "battleScore": 36.86,
         "coeff": 1.33,
         "matchCoef": 0.89,
         "gamesPlayed": 7,
@@ -9500,30 +9680,30 @@ const PLAYERS_ALL = [
           "wa": 16,
           "ca": 0
         },
-        "rankDelta": 2,
-        "rankDeltaPower": 1
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "juno": {
-        "finalScore": 49.49,
-        "battleScore": 43.74,
+        "finalScore": 51.6,
+        "battleScore": 44.23,
         "coeff": 1.33,
-        "matchCoef": 0.85,
-        "gamesPlayed": 4,
+        "matchCoef": 0.88,
+        "gamesPlayed": 6,
         "rankIndex": 3,
         "det": {
-          "g": 4,
-          "time": 2318,
-          "wr": 75,
-          "el10": 13.2,
-          "de10": 4.92,
-          "dm10": 3916,
-          "he10": 5741,
-          "as10": 15.01,
+          "g": 6,
+          "time": 3192,
+          "wr": 67,
+          "el10": 12.97,
+          "de10": 4.51,
+          "dm10": 3687,
+          "he10": 6310,
+          "as10": 13.35,
           "wa": 37,
-          "ca": 8
+          "ca": 9
         },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        "rankDelta": 2,
+        "rankDeltaPower": 2
       },
       "lucio": {
         "finalScore": 47.28,
@@ -9544,8 +9724,7 @@ const PLAYERS_ALL = [
           "wa": 26,
           "ca": 9
         },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        "rankDelta": -1
       },
       "mei": {
         "finalScore": 54.33,
@@ -9566,7 +9745,7 @@ const PLAYERS_ALL = [
           "wa": 46,
           "ca": 0
         },
-        "rankDelta": 1
+        "rankDeltaPower": -1
       },
       "mercy": {
         "finalScore": 31.88,
@@ -9607,11 +9786,11 @@ const PLAYERS_ALL = [
           "wa": 37,
           "ca": 10
         },
-        "rankDelta": 1
+        "rankDeltaPower": -1
       },
       "torbjorn": {
-        "finalScore": 52.45,
-        "battleScore": 44.29,
+        "finalScore": 52.4,
+        "battleScore": 44.24,
         "coeff": 1.33,
         "matchCoef": 0.89,
         "gamesPlayed": 7,
@@ -9628,7 +9807,8 @@ const PLAYERS_ALL = [
           "wa": 21,
           "ca": 12
         },
-        "rankDeltaPower": 1
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "venture": {
         "finalScore": 39.63,
@@ -9649,7 +9829,7 @@ const PLAYERS_ALL = [
           "wa": 46,
           "ca": 0
         },
-        "rankDelta": 1
+        "rankDelta": -1
       },
       "widowmaker": {
         "finalScore": 50.66,
@@ -9670,29 +9850,7 @@ const PLAYERS_ALL = [
           "wa": 33,
           "ca": 17
         },
-        "rankDeltaPower": 2
-      },
-      "winston": {
-        "finalScore": 48.66,
-        "battleScore": 45.19,
-        "coeff": 1.21,
-        "matchCoef": 0.89,
-        "gamesPlayed": 7,
-        "rankIndex": 2,
-        "det": {
-          "g": 7,
-          "time": 2987,
-          "wr": 57,
-          "el10": 20.89,
-          "de10": 5.22,
-          "dm10": 8098,
-          "he10": 1441,
-          "as10": 2.81,
-          "wa": 59,
-          "ca": 0
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        "rankDeltaPower": -2
       },
       "wrecking-ball": {
         "finalScore": 42.04,
@@ -9713,8 +9871,8 @@ const PLAYERS_ALL = [
           "wa": 40,
           "ca": 15
         },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        "rankDelta": -2,
+        "rankDeltaPower": -1
       },
       "zarya": {
         "finalScore": 53.37,
@@ -9735,77 +9893,78 @@ const PLAYERS_ALL = [
           "wa": 37,
           "ca": 0
         },
-        "rankDelta": 2,
-        "rankDeltaPower": 1
+        "rankDelta": -2,
+        "rankDeltaPower": -1
       }
     },
     "bscoreAll": {
       "ana": {
-        "finalScore": 61.28,
-        "battleScore": 40.04,
+        "finalScore": 61.61,
+        "battleScore": 40.25,
         "coeff": 1.33,
         "matchCoef": 1.15,
         "gamesPlayed": 184,
         "rankIndex": 3,
         "det": {
           "g": 184,
-          "time": 98577,
-          "wr": 45.81521739130435,
-          "el10": 10.74516304347826,
+          "time": 98813,
+          "wr": 46.61413043478261,
+          "el10": 10.721195652173913,
           "de10": 5.505434782608695,
-          "dm10": 4261.961956521739,
-          "he10": 6100.16847826087,
-          "as10": 11.003152173913042,
+          "dm10": 4255.570652173913,
+          "he10": 6097.771739130435,
+          "as10": 10.987173913043478,
           "wa": 51.20108695652174,
           "ca": 0
         },
         "rankDelta": 1
       },
       "anran": {
-        "finalScore": 63.11,
-        "battleScore": 40.36,
+        "finalScore": 63.05,
+        "battleScore": 40.13,
         "coeff": 1.33,
         "matchCoef": 0.99,
-        "gamesPlayed": 18,
+        "gamesPlayed": 19,
         "rankIndex": 3,
         "det": {
-          "g": 18,
-          "time": 9901,
-          "wr": 43.833333333333336,
-          "el10": 17.82,
-          "de10": 7.873333333333333,
-          "dm10": 7094,
-          "he10": 660.5,
-          "as10": 0.3633333333333333,
-          "wa": 29.666666666666668,
-          "ca": 10.5
+          "g": 19,
+          "time": 10115,
+          "wr": 43.1578947368421,
+          "el10": 17.722105263157896,
+          "de10": 7.946315789473685,
+          "dm10": 7118.105263157895,
+          "he10": 659.7894736842105,
+          "as10": 0.42315789473684207,
+          "wa": 29.31578947368421,
+          "ca": 10.631578947368421
         },
-        "rankDelta": 2
+        "rankDelta": -3
       },
       "ashe": {
-        "finalScore": 54.22,
-        "battleScore": 42.62,
+        "finalScore": 56.52,
+        "battleScore": 44.17,
         "coeff": 1.33,
         "matchCoef": 0.96,
-        "gamesPlayed": 15,
+        "gamesPlayed": 16,
         "rankIndex": 3,
         "det": {
-          "g": 15,
-          "time": 7709,
-          "wr": 69.8,
-          "el10": 13.588666666666667,
-          "de10": 6.029333333333333,
-          "dm10": 7346.8,
+          "g": 16,
+          "time": 8009,
+          "wr": 71.375,
+          "el10": 14.282499999999999,
+          "de10": 5.8062499999999995,
+          "dm10": 7615.875,
           "he10": 0,
-          "as10": 1.3373333333333335,
-          "wa": 37,
+          "as10": 1.52,
+          "wa": 38.75,
           "ca": 19
         },
-        "rankDelta": 1
+        "rankDelta": 8,
+        "rankDeltaPower": 6
       },
       "baptiste": {
-        "finalScore": 47.03,
-        "battleScore": 39.71,
+        "finalScore": 47.02,
+        "battleScore": 39.7,
         "coeff": 1.33,
         "matchCoef": 0.89,
         "gamesPlayed": 7,
@@ -9822,8 +9981,7 @@ const PLAYERS_ALL = [
           "wa": 32.57142857142857,
           "ca": 15.142857142857142
         },
-        "rankDelta": 4,
-        "rankDeltaPower": 2
+        "rankDelta": -1
       },
       "bastion": {
         "finalScore": 62.4,
@@ -9844,48 +10002,48 @@ const PLAYERS_ALL = [
           "wa": 26,
           "ca": 3.111111111111111
         },
-        "rankDelta": 1
+        "rankDelta": -2
       },
       "brigitte": {
-        "finalScore": 54.43,
-        "battleScore": 44.42,
+        "finalScore": 55.3,
+        "battleScore": 44.73,
         "coeff": 1.33,
-        "matchCoef": 0.92,
-        "gamesPlayed": 10,
+        "matchCoef": 0.93,
+        "gamesPlayed": 11,
         "rankIndex": 3,
         "det": {
-          "g": 10,
-          "time": 5637,
-          "wr": 76,
-          "el10": 15.148000000000001,
-          "de10": 7.676,
-          "dm10": 4741.4,
-          "he10": 6868.8,
-          "as10": 15.876000000000001,
+          "g": 11,
+          "time": 5816,
+          "wr": 76.9090909090909,
+          "el10": 15.281818181818183,
+          "de10": 7.645454545454545,
+          "dm10": 4771.636363636364,
+          "he10": 6838.727272727273,
+          "as10": 15.830909090909092,
           "wa": 0,
           "ca": 0
         }
       },
       "cassidy": {
-        "finalScore": 64.83,
-        "battleScore": 44.04,
+        "finalScore": 64.86,
+        "battleScore": 44.02,
         "coeff": 1.33,
         "matchCoef": 1.11,
-        "gamesPlayed": 85,
+        "gamesPlayed": 86,
         "rankIndex": 3,
         "det": {
-          "g": 85,
-          "time": 44408,
-          "wr": 56.32941176470588,
-          "el10": 17.36870588235294,
-          "de10": 7.175411764705883,
-          "dm10": 8614.164705882353,
-          "he10": 43.12447058823529,
-          "as10": 1.6704705882352942,
-          "wa": 41.83529411764706,
-          "ca": 11.83529411764706
+          "g": 86,
+          "time": 44963,
+          "wr": 56,
+          "el10": 17.47046511627907,
+          "de10": 7.192325581395348,
+          "dm10": 8617.093023255815,
+          "he10": 42.766976744186046,
+          "as10": 1.6911627906976745,
+          "wa": 41.83720930232558,
+          "ca": 11.837209302325581
         },
-        "rankDelta": -1
+        "rankDelta": -4
       },
       "dmon": {
         "finalScore": 59.86,
@@ -9905,10 +10063,11 @@ const PLAYERS_ALL = [
           "as10": 3.5524999999999998,
           "wa": 32.5,
           "ca": 0
-        }
+        },
+        "rankDeltaPower": -1
       },
       "doomfist": {
-        "finalScore": 59.64,
+        "finalScore": 59.63,
         "battleScore": 47.26,
         "coeff": 1.21,
         "matchCoef": 1.04,
@@ -9916,17 +10075,18 @@ const PLAYERS_ALL = [
         "rankIndex": 2,
         "det": {
           "g": 41,
-          "time": 22206,
+          "time": 22217,
           "wr": 50.09756097560975,
-          "el10": 20.76243902439024,
-          "de10": 6.106097560975609,
-          "dm10": 8128.1463414634145,
-          "he10": 1734.2439024390244,
-          "as10": 5.29,
+          "el10": 20.750731707317073,
+          "de10": 6.104146341463414,
+          "dm10": 8124.243902439024,
+          "he10": 1733.2682926829268,
+          "as10": 5.288048780487805,
           "wa": 28.609756097560975,
           "ca": 11.609756097560975
         },
-        "rankDelta": 1
+        "rankDelta": -2,
+        "rankDeltaPower": -1
       },
       "dva": {
         "finalScore": 52.67,
@@ -9947,8 +10107,8 @@ const PLAYERS_ALL = [
           "wa": 25.727272727272727,
           "ca": 9.090909090909092
         },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        "rankDelta": -2,
+        "rankDeltaPower": -1
       },
       "echo": {
         "finalScore": 54.06,
@@ -9969,7 +10129,7 @@ const PLAYERS_ALL = [
           "wa": 22.076923076923077,
           "ca": 9.23076923076923
         },
-        "rankDelta": 1
+        "rankDelta": -2
       },
       "freja": {
         "finalScore": 56.38,
@@ -9990,28 +10150,30 @@ const PLAYERS_ALL = [
           "wa": 25.11111111111111,
           "ca": 14.666666666666666
         },
-        "rankDelta": 1
+        "rankDelta": -2,
+        "rankDeltaPower": -1
       },
       "genji": {
-        "finalScore": 59.05,
-        "battleScore": 40.51,
+        "finalScore": 59.93,
+        "battleScore": 41.07,
         "coeff": 1.33,
         "matchCoef": 1.1,
-        "gamesPlayed": 75,
+        "gamesPlayed": 76,
         "rankIndex": 3,
         "det": {
-          "g": 75,
-          "time": 39262,
-          "wr": 50.50666666666667,
-          "el10": 14.855866666666667,
-          "de10": 6.647733333333333,
-          "dm10": 5828.026666666667,
-          "he10": 213.65333333333334,
+          "g": 76,
+          "time": 40125,
+          "wr": 52.31578947368421,
+          "el10": 15.036315789473685,
+          "de10": 6.619473684210526,
+          "dm10": 5880.684210526316,
+          "he10": 212.47368421052633,
           "as10": 0,
-          "wa": 24.213333333333335,
-          "ca": 11.213333333333333
+          "wa": 24.210526315789473,
+          "ca": 11.210526315789474
         },
-        "rankDelta": 1
+        "rankDelta": 1,
+        "rankDeltaPower": 3
       },
       "hazard": {
         "finalScore": 50.61,
@@ -10032,7 +10194,8 @@ const PLAYERS_ALL = [
           "wa": 31.923076923076923,
           "ca": 9.846153846153847
         },
-        "rankDelta": -1
+        "rankDelta": 1,
+        "rankDeltaPower": -2
       },
       "illari": {
         "finalScore": 54.69,
@@ -10053,11 +10216,12 @@ const PLAYERS_ALL = [
           "wa": 39.72727272727273,
           "ca": 14.090909090909092
         },
-        "rankDelta": 1
+        "rankDelta": -1,
+        "rankDeltaPower": -2
       },
       "jetpack-cat": {
-        "finalScore": 58.95,
-        "battleScore": 45.58,
+        "finalScore": 58.97,
+        "battleScore": 45.6,
         "coeff": 1.33,
         "matchCoef": 0.97,
         "gamesPlayed": 18,
@@ -10073,13 +10237,11 @@ const PLAYERS_ALL = [
           "as10": 10.978333333333332,
           "wa": 27.27777777777778,
           "ca": 7.944444444444445
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        }
       },
       "kiriko": {
-        "finalScore": 59.24,
-        "battleScore": 40.96,
+        "finalScore": 59.23,
+        "battleScore": 40.95,
         "coeff": 1.33,
         "matchCoef": 1.09,
         "gamesPlayed": 68,
@@ -10096,29 +10258,30 @@ const PLAYERS_ALL = [
           "wa": 27.323529411764707,
           "ca": 12
         },
-        "rankDelta": 1
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "lifeweaver": {
-        "finalScore": 43.11,
-        "battleScore": 36.95,
+        "finalScore": 43.2,
+        "battleScore": 36.47,
         "coeff": 1.33,
-        "matchCoef": 0.88,
-        "gamesPlayed": 6,
+        "matchCoef": 0.89,
+        "gamesPlayed": 7,
         "rankIndex": 3,
         "det": {
-          "g": 6,
-          "time": 3106,
-          "wr": 42.166666666666664,
-          "el10": 7.515,
-          "de10": 5.745,
-          "dm10": 2029.1666666666667,
-          "he10": 8461.666666666666,
-          "as10": 11.908333333333333,
-          "wa": 26.833333333333332,
-          "ca": 11
+          "g": 7,
+          "time": 3674,
+          "wr": 36.285714285714285,
+          "el10": 7.8100000000000005,
+          "de10": 5.355714285714286,
+          "dm10": 2151.714285714286,
+          "he10": 8222.57142857143,
+          "as10": 11.857142857142858,
+          "wa": 27.714285714285715,
+          "ca": 11.857142857142858
         },
-        "rankDelta": 2,
-        "rankDeltaPower": 1
+        "rankDelta": -4,
+        "rankDeltaPower": -1
       },
       "mauga": {
         "finalScore": 62.37,
@@ -10139,11 +10302,11 @@ const PLAYERS_ALL = [
           "wa": 31.727272727272727,
           "ca": 11
         },
-        "rankDelta": 1
+        "rankDelta": -1
       },
       "mizuki": {
-        "finalScore": 52.73,
-        "battleScore": 41.21,
+        "finalScore": 52.76,
+        "battleScore": 41.24,
         "coeff": 1.33,
         "matchCoef": 0.96,
         "gamesPlayed": 16,
@@ -10160,8 +10323,8 @@ const PLAYERS_ALL = [
           "wa": 32,
           "ca": 13
         },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "moira": {
         "finalScore": 70.04,
@@ -10181,70 +10344,74 @@ const PLAYERS_ALL = [
           "as10": 14.438823529411765,
           "wa": 0,
           "ca": 0
-        }
+        },
+        "rankDelta": -2
       },
       "orisa": {
-        "finalScore": 48.95,
-        "battleScore": 41.85,
+        "finalScore": 49.25,
+        "battleScore": 42.11,
         "coeff": 1.21,
         "matchCoef": 0.97,
         "gamesPlayed": 17,
         "rankIndex": 2,
         "det": {
           "g": 17,
-          "time": 9295,
+          "time": 9368,
           "wr": 21.176470588235293,
-          "el10": 20.704117647058823,
-          "de10": 5.397058823529412,
-          "dm10": 11526.176470588236,
-          "he10": 156.2941176470588,
-          "as10": 3.537058823529412,
+          "el10": 20.765882352941176,
+          "de10": 5.414705882352941,
+          "dm10": 11533.529411764706,
+          "he10": 155.11764705882354,
+          "as10": 3.4958823529411767,
           "wa": 34,
           "ca": 12.176470588235293
         },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "pharah": {
-        "finalScore": 58.95,
-        "battleScore": 47.68,
+        "finalScore": 58.55,
+        "battleScore": 47.35,
         "coeff": 1.33,
         "matchCoef": 0.93,
         "gamesPlayed": 11,
         "rankIndex": 3,
         "det": {
           "g": 11,
-          "time": 6527,
+          "time": 6558,
           "wr": 71.54545454545455,
-          "el10": 20.99818181818182,
-          "de10": 6.523636363636364,
-          "dm10": 8862.272727272728,
+          "el10": 20.900000000000002,
+          "de10": 6.580909090909091,
+          "dm10": 8836.09090909091,
           "he10": 0,
-          "as10": 4.879090909090909,
-          "wa": 41.72727272727273,
+          "as10": 4.862727272727272,
+          "wa": 40.90909090909091,
           "ca": 0
         },
-        "rankDeltaPower": 1
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "ramattra": {
-        "finalScore": 55.96,
-        "battleScore": 43.61,
+        "finalScore": 56.04,
+        "battleScore": 43.74,
         "coeff": 1.21,
         "matchCoef": 0.92,
         "gamesPlayed": 3,
         "rankIndex": 2,
         "det": {
           "g": 3,
-          "time": 1780,
+          "time": 1877,
           "wr": 40.666666666666664,
-          "el10": 15.756666666666668,
-          "de10": 5.086666666666667,
-          "dm10": 10769.666666666666,
-          "he10": 636,
-          "as10": 2.0366666666666666,
+          "el10": 15.986666666666666,
+          "de10": 5.113333333333333,
+          "dm10": 10544.333333333334,
+          "he10": 584.3333333333334,
+          "as10": 2.2399999999999998,
           "wa": 26,
           "ca": 12
-        }
+        },
+        "rankDelta": 1,
+        "rankDeltaPower": -1
       },
       "reaper": {
         "finalScore": 63.76,
@@ -10264,7 +10431,8 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 27.714285714285715,
           "ca": 12.928571428571429
-        }
+        },
+        "rankDelta": 1
       },
       "reinhardt": {
         "finalScore": 49.84,
@@ -10285,92 +10453,93 @@ const PLAYERS_ALL = [
           "wa": 0,
           "ca": 0
         },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        "rankDelta": -1,
+        "rankDeltaPower": -3
       },
       "roadhog": {
-        "finalScore": 56.94,
-        "battleScore": 48.2,
+        "finalScore": 57.5,
+        "battleScore": 48.68,
         "coeff": 1.21,
         "matchCoef": 0.98,
         "gamesPlayed": 19,
         "rankIndex": 2,
         "det": {
           "g": 19,
-          "time": 9829,
-          "wr": 54.94736842105263,
-          "el10": 19.819999999999997,
-          "de10": 4.68,
-          "dm10": 8355.421052631578,
-          "he10": 5731.684210526316,
-          "as10": 5.1147368421052635,
-          "wa": 25.105263157894736,
-          "ca": 15.789473684210526
+          "time": 10093,
+          "wr": 56.421052631578945,
+          "el10": 19.961052631578944,
+          "de10": 4.564210526315788,
+          "dm10": 8390.052631578947,
+          "he10": 5765.473684210527,
+          "as10": 5.152631578947369,
+          "wa": 24.894736842105264,
+          "ca": 16
         },
-        "rankDelta": 1
+        "rankDelta": 4,
+        "rankDeltaPower": 1
       },
       "shion": {
-        "finalScore": 60.26,
-        "battleScore": 44.7,
+        "finalScore": 60.97,
+        "battleScore": 45.09,
         "coeff": 1.33,
-        "matchCoef": 1.01,
-        "gamesPlayed": 29,
+        "matchCoef": 1.02,
+        "gamesPlayed": 30,
         "rankIndex": 3,
         "det": {
-          "g": 29,
-          "time": 13887,
-          "wr": 54.793103448275865,
-          "el10": 17.73172413793103,
-          "de10": 5.395862068965517,
-          "dm10": 7681.413793103448,
-          "he10": 127.86206896551724,
-          "as10": 1.4306896551724138,
+          "g": 30,
+          "time": 14497,
+          "wr": 55.666666666666664,
+          "el10": 17.766666666666666,
+          "de10": 5.383333333333334,
+          "dm10": 7758.833333333333,
+          "he10": 129.16666666666666,
+          "as10": 1.5266666666666666,
           "wa": 32,
-          "ca": 11.275862068965518
-        },
-        "rankDelta": -2
-      },
-      "sigma": {
-        "finalScore": 58.08,
-        "battleScore": 42.43,
-        "coeff": 1.21,
-        "matchCoef": 0.96,
-        "gamesPlayed": 9,
-        "rankIndex": 2,
-        "det": {
-          "g": 9,
-          "time": 5386,
-          "wr": 51.111111111111114,
-          "el10": 16.756666666666668,
-          "de10": 5.376666666666667,
-          "dm10": 11280,
-          "he10": 0,
-          "as10": 2.101111111111111,
-          "wa": 45.888888888888886,
-          "ca": 0
+          "ca": 12.166666666666666
         }
       },
+      "sigma": {
+        "finalScore": 58.29,
+        "battleScore": 42.61,
+        "coeff": 1.21,
+        "matchCoef": 0.96,
+        "gamesPlayed": 10,
+        "rankIndex": 2,
+        "det": {
+          "g": 10,
+          "time": 6002,
+          "wr": 52,
+          "el10": 16.824,
+          "de10": 5.404,
+          "dm10": 11318.8,
+          "he10": 0,
+          "as10": 2.126,
+          "wa": 46.4,
+          "ca": 0
+        },
+        "rankDeltaPower": 1
+      },
       "sierra": {
-        "finalScore": 48.88,
-        "battleScore": 36.72,
+        "finalScore": 50.08,
+        "battleScore": 37.5,
         "coeff": 1.33,
         "matchCoef": 1,
-        "gamesPlayed": 25,
+        "gamesPlayed": 26,
         "rankIndex": 3,
         "det": {
-          "g": 25,
-          "time": 12065,
-          "wr": 41.8,
-          "el10": 17.136799999999997,
-          "de10": 7.278800000000001,
-          "dm10": 8287.32,
-          "he10": 32.5496,
-          "as10": 0.3592,
-          "wa": 24.84,
-          "ca": 8.24
+          "g": 26,
+          "time": 12570,
+          "wr": 44.69230769230769,
+          "el10": 17.113846153846154,
+          "de10": 7.276153846153846,
+          "dm10": 8328.692307692309,
+          "he10": 34.652307692307694,
+          "as10": 0.49461538461538457,
+          "wa": 24.846153846153847,
+          "ca": 8.23076923076923
         },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        "rankDelta": 3,
+        "rankDeltaPower": 2
       },
       "sojourn": {
         "finalScore": 57.18,
@@ -10391,7 +10560,7 @@ const PLAYERS_ALL = [
           "wa": 26.76923076923077,
           "ca": 11.115384615384615
         },
-        "rankDelta": 2
+        "rankDeltaPower": -1
       },
       "soldier-76": {
         "finalScore": 53.65,
@@ -10412,7 +10581,7 @@ const PLAYERS_ALL = [
           "wa": 32.25,
           "ca": 12
         },
-        "rankDelta": 2
+        "rankDelta": -1
       },
       "symmetra": {
         "finalScore": 49.16,
@@ -10433,8 +10602,8 @@ const PLAYERS_ALL = [
           "wa": 33.833333333333336,
           "ca": 0
         },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        "rankDelta": -1,
+        "rankDeltaPower": -3
       },
       "tracer": {
         "finalScore": 58.71,
@@ -10445,42 +10614,66 @@ const PLAYERS_ALL = [
         "rankIndex": 3,
         "det": {
           "g": 48,
-          "time": 24423,
+          "time": 24446,
           "wr": 46.625,
-          "el10": 15.947500000000003,
-          "de10": 6.839999999999999,
-          "dm10": 5906.25,
-          "he10": 63.7425,
+          "el10": 15.935,
+          "de10": 6.828749999999999,
+          "dm10": 5900.625,
+          "he10": 63.683749999999996,
           "as10": 0,
           "wa": 32.875,
           "ca": 10
         },
-        "rankDeltaPower": -2
+        "rankDelta": -1,
+        "rankDeltaPower": 1
       },
       "vendetta": {
-        "finalScore": 58.2,
-        "battleScore": 43.72,
+        "finalScore": 58.07,
+        "battleScore": 43.63,
         "coeff": 1.33,
         "matchCoef": 1,
         "gamesPlayed": 25,
         "rankIndex": 3,
         "det": {
           "g": 25,
-          "time": 13085,
+          "time": 13147,
           "wr": 59.08,
-          "el10": 18.2372,
-          "de10": 7.7672,
-          "dm10": 6887.48,
-          "he10": 252.52,
-          "as10": 1.5912,
+          "el10": 18.1892,
+          "de10": 7.8248,
+          "dm10": 6874.04,
+          "he10": 250.6,
+          "as10": 1.5816,
           "wa": 0,
           "ca": 0
         },
-        "rankDelta": 1
+        "rankDelta": -2,
+        "rankDeltaPower": -1
+      },
+      "winston": {
+        "finalScore": 46.86,
+        "battleScore": 42.97,
+        "coeff": 1.21,
+        "matchCoef": 0.9,
+        "gamesPlayed": 8,
+        "rankIndex": 2,
+        "det": {
+          "g": 8,
+          "time": 3259,
+          "wr": 49.875,
+          "el10": 18.83125,
+          "de10": 5.39625,
+          "dm10": 8228.625,
+          "he10": 1399.125,
+          "as10": 2.45875,
+          "wa": 60.25,
+          "ca": 0
+        },
+        "rankDelta": -13,
+        "rankDeltaPower": -4
       },
       "wuyang": {
-        "finalScore": 56.43,
-        "battleScore": 40.27,
+        "finalScore": 56.5,
+        "battleScore": 40.32,
         "coeff": 1.33,
         "matchCoef": 1.05,
         "gamesPlayed": 46,
@@ -10497,7 +10690,8 @@ const PLAYERS_ALL = [
           "wa": 29.456521739130434,
           "ca": 0
         },
-        "rankDelta": 1
+        "rankDelta": 1,
+        "rankDeltaPower": -1
       },
       "zenyatta": {
         "finalScore": 40.89,
@@ -10518,12 +10712,12 @@ const PLAYERS_ALL = [
           "wa": 22.875,
           "ca": 15.25
         },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "doctrine": {
-        "finalScore": 39.94,
-        "battleScore": 32.92,
+        "finalScore": 53.39,
+        "battleScore": 44,
         "coeff": 1.33,
         "matchCoef": 0.91,
         "gamesPlayed": 9,
@@ -10531,17 +10725,17 @@ const PLAYERS_ALL = [
         "det": {
           "g": 9,
           "time": 4520,
-          "wr": 0,
+          "wr": 67,
           "el10": 0,
           "de10": 0,
           "dm10": 0,
           "he10": 0,
           "as10": 0,
-          "wa": 0,
+          "wa": 48,
           "ca": 0
         },
-        "rankDelta": -40,
-        "rankDeltaPower": -22
+        "rankDelta": 37,
+        "rankDeltaPower": 22
       },
       "domina": {
         "finalScore": 51.61,
@@ -10562,7 +10756,7 @@ const PLAYERS_ALL = [
           "wa": 55,
           "ca": 8
         },
-        "rankDeltaPower": 1
+        "rankDeltaPower": -1
       },
       "emre": {
         "finalScore": 48.42,
@@ -10582,8 +10776,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 33,
           "ca": 10
-        },
-        "rankDeltaPower": 1
+        }
       },
       "hanzo": {
         "finalScore": 44.14,
@@ -10605,7 +10798,7 @@ const PLAYERS_ALL = [
           "ca": 12
         },
         "rankDelta": -1,
-        "rankDeltaPower": 1
+        "rankDeltaPower": -1
       },
       "junker-queen": {
         "finalScore": 39.88,
@@ -10626,11 +10819,11 @@ const PLAYERS_ALL = [
           "wa": 41,
           "ca": 12
         },
-        "rankDelta": 1
+        "rankDelta": -1
       },
       "junkrat": {
         "finalScore": 43.66,
-        "battleScore": 36.87,
+        "battleScore": 36.86,
         "coeff": 1.33,
         "matchCoef": 0.89,
         "gamesPlayed": 7,
@@ -10647,30 +10840,30 @@ const PLAYERS_ALL = [
           "wa": 16,
           "ca": 0
         },
-        "rankDelta": 2,
-        "rankDeltaPower": 1
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "juno": {
-        "finalScore": 49.49,
-        "battleScore": 43.74,
+        "finalScore": 51.6,
+        "battleScore": 44.23,
         "coeff": 1.33,
-        "matchCoef": 0.85,
-        "gamesPlayed": 4,
+        "matchCoef": 0.88,
+        "gamesPlayed": 6,
         "rankIndex": 3,
         "det": {
-          "g": 4,
-          "time": 2318,
-          "wr": 75,
-          "el10": 13.2,
-          "de10": 4.92,
-          "dm10": 3916,
-          "he10": 5741,
-          "as10": 15.01,
+          "g": 6,
+          "time": 3192,
+          "wr": 67,
+          "el10": 12.97,
+          "de10": 4.51,
+          "dm10": 3687,
+          "he10": 6310,
+          "as10": 13.35,
           "wa": 37,
-          "ca": 8
+          "ca": 9
         },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        "rankDelta": 2,
+        "rankDeltaPower": 2
       },
       "lucio": {
         "finalScore": 47.28,
@@ -10691,8 +10884,7 @@ const PLAYERS_ALL = [
           "wa": 26,
           "ca": 9
         },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        "rankDelta": -1
       },
       "mei": {
         "finalScore": 54.33,
@@ -10713,7 +10905,7 @@ const PLAYERS_ALL = [
           "wa": 46,
           "ca": 0
         },
-        "rankDelta": 1
+        "rankDeltaPower": -1
       },
       "mercy": {
         "finalScore": 31.88,
@@ -10754,11 +10946,11 @@ const PLAYERS_ALL = [
           "wa": 37,
           "ca": 10
         },
-        "rankDelta": 1
+        "rankDeltaPower": -1
       },
       "torbjorn": {
-        "finalScore": 52.45,
-        "battleScore": 44.29,
+        "finalScore": 52.4,
+        "battleScore": 44.24,
         "coeff": 1.33,
         "matchCoef": 0.89,
         "gamesPlayed": 7,
@@ -10775,7 +10967,8 @@ const PLAYERS_ALL = [
           "wa": 21,
           "ca": 12
         },
-        "rankDeltaPower": 1
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "venture": {
         "finalScore": 39.63,
@@ -10796,7 +10989,7 @@ const PLAYERS_ALL = [
           "wa": 46,
           "ca": 0
         },
-        "rankDelta": 1
+        "rankDelta": -1
       },
       "widowmaker": {
         "finalScore": 50.66,
@@ -10817,29 +11010,7 @@ const PLAYERS_ALL = [
           "wa": 33,
           "ca": 17
         },
-        "rankDeltaPower": 2
-      },
-      "winston": {
-        "finalScore": 48.66,
-        "battleScore": 45.19,
-        "coeff": 1.21,
-        "matchCoef": 0.89,
-        "gamesPlayed": 7,
-        "rankIndex": 2,
-        "det": {
-          "g": 7,
-          "time": 2987,
-          "wr": 57,
-          "el10": 20.89,
-          "de10": 5.22,
-          "dm10": 8098,
-          "he10": 1441,
-          "as10": 2.81,
-          "wa": 59,
-          "ca": 0
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        "rankDeltaPower": -2
       },
       "wrecking-ball": {
         "finalScore": 42.04,
@@ -10860,8 +11031,8 @@ const PLAYERS_ALL = [
           "wa": 40,
           "ca": 15
         },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        "rankDelta": -2,
+        "rankDeltaPower": -1
       },
       "zarya": {
         "finalScore": 53.37,
@@ -10882,8 +11053,8 @@ const PLAYERS_ALL = [
           "wa": 37,
           "ca": 0
         },
-        "rankDelta": 2,
-        "rankDeltaPower": 1
+        "rankDelta": -2,
+        "rankDeltaPower": -1
       }
     },
     "recent": [
@@ -11198,6 +11369,22 @@ const PLAYERS_ALL = [
           "kiriko": 1,
           "shion": 2,
           "tracer": 1
+        }
+      },
+      {
+        "d": "2026-10-03",
+        "g": {
+          "anran": 1,
+          "ashe": 1,
+          "brigitte": 1,
+          "cassidy": 1,
+          "genji": 1,
+          "lifeweaver": 1,
+          "shion": 1,
+          "sigma": 1,
+          "sierra": 1,
+          "winston": 1,
+          "juno": 2
         }
       }
     ]
@@ -11636,8 +11823,8 @@ const PLAYERS_ALL = [
     ],
     "bscore": {
       "ana": {
-        "finalScore": 52.61,
-        "battleScore": 35.28,
+        "finalScore": 52.63,
+        "battleScore": 35.29,
         "coeff": 1.46,
         "matchCoef": 1.02,
         "gamesPlayed": 31,
@@ -11653,11 +11840,12 @@ const PLAYERS_ALL = [
           "as10": 10.51741935483871,
           "wa": 53.29032258064516,
           "ca": 0
-        }
+        },
+        "rankDelta": 1
       },
       "anran": {
         "finalScore": 67.99,
-        "battleScore": 49.29,
+        "battleScore": 49.31,
         "coeff": 1.33,
         "matchCoef": 1.03,
         "gamesPlayed": 51,
@@ -11676,8 +11864,8 @@ const PLAYERS_ALL = [
         }
       },
       "ashe": {
-        "finalScore": 47.22,
-        "battleScore": 37.35,
+        "finalScore": 47.1,
+        "battleScore": 37.26,
         "coeff": 1.33,
         "matchCoef": 0.95,
         "gamesPlayed": 14,
@@ -11716,7 +11904,7 @@ const PLAYERS_ALL = [
         }
       },
       "cassidy": {
-        "finalScore": 49.75,
+        "finalScore": 49.74,
         "battleScore": 37.51,
         "coeff": 1.33,
         "matchCoef": 1,
@@ -11733,8 +11921,7 @@ const PLAYERS_ALL = [
           "as10": 1.4833333333333334,
           "wa": 41,
           "ca": 9.666666666666666
-        },
-        "rankDeltaPower": -1
+        }
       },
       "dva": {
         "finalScore": 50.33,
@@ -11798,7 +11985,7 @@ const PLAYERS_ALL = [
       },
       "junkrat": {
         "finalScore": 47.97,
-        "battleScore": 39.99,
+        "battleScore": 39.98,
         "coeff": 1.33,
         "matchCoef": 0.9,
         "gamesPlayed": 8,
@@ -11818,7 +12005,7 @@ const PLAYERS_ALL = [
       },
       "kiriko": {
         "finalScore": 58.1,
-        "battleScore": 36.28,
+        "battleScore": 36.27,
         "coeff": 1.46,
         "matchCoef": 1.09,
         "gamesPlayed": 74,
@@ -11858,7 +12045,7 @@ const PLAYERS_ALL = [
       },
       "mizuki": {
         "finalScore": 66.58,
-        "battleScore": 43.28,
+        "battleScore": 43.27,
         "coeff": 1.46,
         "matchCoef": 1.05,
         "gamesPlayed": 45,
@@ -11878,7 +12065,7 @@ const PLAYERS_ALL = [
       },
       "moira": {
         "finalScore": 74.66,
-        "battleScore": 47.74,
+        "battleScore": 47.75,
         "coeff": 1.46,
         "matchCoef": 1.06,
         "gamesPlayed": 106,
@@ -11897,8 +12084,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 53.09,
-        "battleScore": 40.33,
+        "finalScore": 53.19,
+        "battleScore": 40.41,
         "coeff": 1.33,
         "matchCoef": 0.99,
         "gamesPlayed": 22,
@@ -11917,8 +12104,8 @@ const PLAYERS_ALL = [
         }
       },
       "pharah": {
-        "finalScore": 46.41,
-        "battleScore": 39.18,
+        "finalScore": 46.45,
+        "battleScore": 39.22,
         "coeff": 1.33,
         "matchCoef": 0.89,
         "gamesPlayed": 7,
@@ -11937,8 +12124,8 @@ const PLAYERS_ALL = [
         }
       },
       "ramattra": {
-        "finalScore": 59.91,
-        "battleScore": 44.53,
+        "finalScore": 59.95,
+        "battleScore": 44.58,
         "coeff": 1.33,
         "matchCoef": 0.99,
         "gamesPlayed": 22,
@@ -11954,7 +12141,8 @@ const PLAYERS_ALL = [
           "as10": 2.190909090909091,
           "wa": 25.90909090909091,
           "ca": 10.545454545454545
-        }
+        },
+        "rankDelta": 1
       },
       "reinhardt": {
         "finalScore": 60.91,
@@ -11978,7 +12166,7 @@ const PLAYERS_ALL = [
       },
       "roadhog": {
         "finalScore": 58.65,
-        "battleScore": 44.55,
+        "battleScore": 44.56,
         "coeff": 1.33,
         "matchCoef": 0.99,
         "gamesPlayed": 22,
@@ -11994,11 +12182,12 @@ const PLAYERS_ALL = [
           "as10": 3.5727272727272723,
           "wa": 26.636363636363637,
           "ca": 15.454545454545455
-        }
+        },
+        "rankDelta": -1
       },
       "shion": {
-        "finalScore": 52.9,
-        "battleScore": 40.9,
+        "finalScore": 52.85,
+        "battleScore": 40.87,
         "coeff": 1.33,
         "matchCoef": 0.97,
         "gamesPlayed": 18,
@@ -12017,8 +12206,8 @@ const PLAYERS_ALL = [
         }
       },
       "sigma": {
-        "finalScore": 61.64,
-        "battleScore": 42.35,
+        "finalScore": 61.62,
+        "battleScore": 42.32,
         "coeff": 1.33,
         "matchCoef": 1,
         "gamesPlayed": 25,
@@ -12037,8 +12226,8 @@ const PLAYERS_ALL = [
         }
       },
       "sierra": {
-        "finalScore": 54.01,
-        "battleScore": 38.76,
+        "finalScore": 53.96,
+        "battleScore": 38.72,
         "coeff": 1.33,
         "matchCoef": 1.05,
         "gamesPlayed": 43,
@@ -12054,7 +12243,8 @@ const PLAYERS_ALL = [
           "as10": 0.8574418604651164,
           "wa": 25.325581395348838,
           "ca": 9
-        }
+        },
+        "rankDelta": -1
       },
       "soldier-76": {
         "finalScore": 55.86,
@@ -12077,8 +12267,8 @@ const PLAYERS_ALL = [
         }
       },
       "torbjorn": {
-        "finalScore": 39.6,
-        "battleScore": 35.01,
+        "finalScore": 39.64,
+        "battleScore": 35.04,
         "coeff": 1.33,
         "matchCoef": 0.85,
         "gamesPlayed": 4,
@@ -12097,8 +12287,8 @@ const PLAYERS_ALL = [
         }
       },
       "winston": {
-        "finalScore": 42.31,
-        "battleScore": 34.87,
+        "finalScore": 42.47,
+        "battleScore": 35,
         "coeff": 1.33,
         "matchCoef": 0.91,
         "gamesPlayed": 9,
@@ -12137,7 +12327,7 @@ const PLAYERS_ALL = [
         }
       },
       "baptiste": {
-        "finalScore": 50.81,
+        "finalScore": 50.8,
         "battleScore": 40.82,
         "coeff": 1.46,
         "matchCoef": 0.85,
@@ -12177,8 +12367,8 @@ const PLAYERS_ALL = [
         }
       },
       "doctrine": {
-        "finalScore": 50.02,
-        "battleScore": 40.19,
+        "finalScore": 49.75,
+        "battleScore": 39.97,
         "coeff": 1.46,
         "matchCoef": 0.85,
         "gamesPlayed": 2,
@@ -12194,8 +12384,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 53,
           "ca": 0
-        },
-        "rankDeltaPower": 1
+        }
       },
       "emre": {
         "finalScore": 40.46,
@@ -12278,7 +12467,7 @@ const PLAYERS_ALL = [
         }
       },
       "jetpack-cat": {
-        "finalScore": 53.74,
+        "finalScore": 53.75,
         "battleScore": 43.19,
         "coeff": 1.46,
         "matchCoef": 0.85,
@@ -12298,8 +12487,8 @@ const PLAYERS_ALL = [
         }
       },
       "juno": {
-        "finalScore": 41.85,
-        "battleScore": 33.63,
+        "finalScore": 41.84,
+        "battleScore": 33.62,
         "coeff": 1.46,
         "matchCoef": 0.85,
         "gamesPlayed": 4,
@@ -12318,8 +12507,8 @@ const PLAYERS_ALL = [
         }
       },
       "lifeweaver": {
-        "finalScore": 58.91,
-        "battleScore": 41.21,
+        "finalScore": 58.95,
+        "battleScore": 41.24,
         "coeff": 1.46,
         "matchCoef": 0.98,
         "gamesPlayed": 19,
@@ -12378,8 +12567,8 @@ const PLAYERS_ALL = [
         }
       },
       "sojourn": {
-        "finalScore": 44.52,
-        "battleScore": 37.59,
+        "finalScore": 44.53,
+        "battleScore": 37.6,
         "coeff": 1.33,
         "matchCoef": 0.89,
         "gamesPlayed": 7,
@@ -12438,7 +12627,7 @@ const PLAYERS_ALL = [
         }
       },
       "tracer": {
-        "finalScore": 37.31,
+        "finalScore": 37.3,
         "battleScore": 32.97,
         "coeff": 1.33,
         "matchCoef": 0.85,
@@ -12478,8 +12667,8 @@ const PLAYERS_ALL = [
         }
       },
       "wuyang": {
-        "finalScore": 48.98,
-        "battleScore": 39.36,
+        "finalScore": 48.8,
+        "battleScore": 39.21,
         "coeff": 1.46,
         "matchCoef": 0.85,
         "gamesPlayed": 3,
@@ -12520,8 +12709,8 @@ const PLAYERS_ALL = [
     },
     "bscoreAll": {
       "ana": {
-        "finalScore": 52.61,
-        "battleScore": 35.28,
+        "finalScore": 52.63,
+        "battleScore": 35.29,
         "coeff": 1.46,
         "matchCoef": 1.02,
         "gamesPlayed": 31,
@@ -12537,11 +12726,12 @@ const PLAYERS_ALL = [
           "as10": 10.51741935483871,
           "wa": 53.29032258064516,
           "ca": 0
-        }
+        },
+        "rankDelta": 1
       },
       "anran": {
         "finalScore": 67.99,
-        "battleScore": 49.29,
+        "battleScore": 49.31,
         "coeff": 1.33,
         "matchCoef": 1.03,
         "gamesPlayed": 51,
@@ -12560,8 +12750,8 @@ const PLAYERS_ALL = [
         }
       },
       "ashe": {
-        "finalScore": 47.22,
-        "battleScore": 37.35,
+        "finalScore": 47.1,
+        "battleScore": 37.26,
         "coeff": 1.33,
         "matchCoef": 0.95,
         "gamesPlayed": 14,
@@ -12600,7 +12790,7 @@ const PLAYERS_ALL = [
         }
       },
       "cassidy": {
-        "finalScore": 49.75,
+        "finalScore": 49.74,
         "battleScore": 37.51,
         "coeff": 1.33,
         "matchCoef": 1,
@@ -12617,8 +12807,7 @@ const PLAYERS_ALL = [
           "as10": 1.4833333333333334,
           "wa": 41,
           "ca": 9.666666666666666
-        },
-        "rankDeltaPower": -1
+        }
       },
       "dva": {
         "finalScore": 50.33,
@@ -12682,7 +12871,7 @@ const PLAYERS_ALL = [
       },
       "junkrat": {
         "finalScore": 47.97,
-        "battleScore": 39.99,
+        "battleScore": 39.98,
         "coeff": 1.33,
         "matchCoef": 0.9,
         "gamesPlayed": 8,
@@ -12702,7 +12891,7 @@ const PLAYERS_ALL = [
       },
       "kiriko": {
         "finalScore": 58.1,
-        "battleScore": 36.28,
+        "battleScore": 36.27,
         "coeff": 1.46,
         "matchCoef": 1.09,
         "gamesPlayed": 74,
@@ -12742,7 +12931,7 @@ const PLAYERS_ALL = [
       },
       "mizuki": {
         "finalScore": 66.58,
-        "battleScore": 43.28,
+        "battleScore": 43.27,
         "coeff": 1.46,
         "matchCoef": 1.05,
         "gamesPlayed": 45,
@@ -12762,7 +12951,7 @@ const PLAYERS_ALL = [
       },
       "moira": {
         "finalScore": 74.66,
-        "battleScore": 47.74,
+        "battleScore": 47.75,
         "coeff": 1.46,
         "matchCoef": 1.06,
         "gamesPlayed": 106,
@@ -12781,8 +12970,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 53.09,
-        "battleScore": 40.33,
+        "finalScore": 53.19,
+        "battleScore": 40.41,
         "coeff": 1.33,
         "matchCoef": 0.99,
         "gamesPlayed": 22,
@@ -12801,8 +12990,8 @@ const PLAYERS_ALL = [
         }
       },
       "pharah": {
-        "finalScore": 46.41,
-        "battleScore": 39.18,
+        "finalScore": 46.45,
+        "battleScore": 39.22,
         "coeff": 1.33,
         "matchCoef": 0.89,
         "gamesPlayed": 7,
@@ -12821,8 +13010,8 @@ const PLAYERS_ALL = [
         }
       },
       "ramattra": {
-        "finalScore": 59.91,
-        "battleScore": 44.53,
+        "finalScore": 59.95,
+        "battleScore": 44.58,
         "coeff": 1.33,
         "matchCoef": 0.99,
         "gamesPlayed": 22,
@@ -12838,7 +13027,8 @@ const PLAYERS_ALL = [
           "as10": 2.190909090909091,
           "wa": 25.90909090909091,
           "ca": 10.545454545454545
-        }
+        },
+        "rankDelta": 1
       },
       "reinhardt": {
         "finalScore": 60.91,
@@ -12862,7 +13052,7 @@ const PLAYERS_ALL = [
       },
       "roadhog": {
         "finalScore": 58.65,
-        "battleScore": 44.55,
+        "battleScore": 44.56,
         "coeff": 1.33,
         "matchCoef": 0.99,
         "gamesPlayed": 22,
@@ -12878,11 +13068,12 @@ const PLAYERS_ALL = [
           "as10": 3.5727272727272723,
           "wa": 26.636363636363637,
           "ca": 15.454545454545455
-        }
+        },
+        "rankDelta": -1
       },
       "shion": {
-        "finalScore": 52.9,
-        "battleScore": 40.9,
+        "finalScore": 52.85,
+        "battleScore": 40.87,
         "coeff": 1.33,
         "matchCoef": 0.97,
         "gamesPlayed": 18,
@@ -12901,8 +13092,8 @@ const PLAYERS_ALL = [
         }
       },
       "sigma": {
-        "finalScore": 61.64,
-        "battleScore": 42.35,
+        "finalScore": 61.62,
+        "battleScore": 42.32,
         "coeff": 1.33,
         "matchCoef": 1,
         "gamesPlayed": 25,
@@ -12921,8 +13112,8 @@ const PLAYERS_ALL = [
         }
       },
       "sierra": {
-        "finalScore": 54.01,
-        "battleScore": 38.76,
+        "finalScore": 53.96,
+        "battleScore": 38.72,
         "coeff": 1.33,
         "matchCoef": 1.05,
         "gamesPlayed": 43,
@@ -12938,7 +13129,8 @@ const PLAYERS_ALL = [
           "as10": 0.8574418604651164,
           "wa": 25.325581395348838,
           "ca": 9
-        }
+        },
+        "rankDelta": -1
       },
       "soldier-76": {
         "finalScore": 55.86,
@@ -12961,8 +13153,8 @@ const PLAYERS_ALL = [
         }
       },
       "torbjorn": {
-        "finalScore": 39.6,
-        "battleScore": 35.01,
+        "finalScore": 39.64,
+        "battleScore": 35.04,
         "coeff": 1.33,
         "matchCoef": 0.85,
         "gamesPlayed": 4,
@@ -12981,8 +13173,8 @@ const PLAYERS_ALL = [
         }
       },
       "winston": {
-        "finalScore": 42.31,
-        "battleScore": 34.87,
+        "finalScore": 42.47,
+        "battleScore": 35,
         "coeff": 1.33,
         "matchCoef": 0.91,
         "gamesPlayed": 9,
@@ -13021,7 +13213,7 @@ const PLAYERS_ALL = [
         }
       },
       "baptiste": {
-        "finalScore": 50.81,
+        "finalScore": 50.8,
         "battleScore": 40.82,
         "coeff": 1.46,
         "matchCoef": 0.85,
@@ -13061,8 +13253,8 @@ const PLAYERS_ALL = [
         }
       },
       "doctrine": {
-        "finalScore": 50.02,
-        "battleScore": 40.19,
+        "finalScore": 49.75,
+        "battleScore": 39.97,
         "coeff": 1.46,
         "matchCoef": 0.85,
         "gamesPlayed": 2,
@@ -13078,8 +13270,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 53,
           "ca": 0
-        },
-        "rankDeltaPower": 1
+        }
       },
       "emre": {
         "finalScore": 40.46,
@@ -13162,7 +13353,7 @@ const PLAYERS_ALL = [
         }
       },
       "jetpack-cat": {
-        "finalScore": 53.74,
+        "finalScore": 53.75,
         "battleScore": 43.19,
         "coeff": 1.46,
         "matchCoef": 0.85,
@@ -13182,8 +13373,8 @@ const PLAYERS_ALL = [
         }
       },
       "juno": {
-        "finalScore": 41.85,
-        "battleScore": 33.63,
+        "finalScore": 41.84,
+        "battleScore": 33.62,
         "coeff": 1.46,
         "matchCoef": 0.85,
         "gamesPlayed": 4,
@@ -13202,8 +13393,8 @@ const PLAYERS_ALL = [
         }
       },
       "lifeweaver": {
-        "finalScore": 58.91,
-        "battleScore": 41.21,
+        "finalScore": 58.95,
+        "battleScore": 41.24,
         "coeff": 1.46,
         "matchCoef": 0.98,
         "gamesPlayed": 19,
@@ -13262,8 +13453,8 @@ const PLAYERS_ALL = [
         }
       },
       "sojourn": {
-        "finalScore": 44.52,
-        "battleScore": 37.59,
+        "finalScore": 44.53,
+        "battleScore": 37.6,
         "coeff": 1.33,
         "matchCoef": 0.89,
         "gamesPlayed": 7,
@@ -13322,7 +13513,7 @@ const PLAYERS_ALL = [
         }
       },
       "tracer": {
-        "finalScore": 37.31,
+        "finalScore": 37.3,
         "battleScore": 32.97,
         "coeff": 1.33,
         "matchCoef": 0.85,
@@ -13362,8 +13553,8 @@ const PLAYERS_ALL = [
         }
       },
       "wuyang": {
-        "finalScore": 48.98,
-        "battleScore": 39.36,
+        "finalScore": 48.8,
+        "battleScore": 39.21,
         "coeff": 1.46,
         "matchCoef": 0.85,
         "gamesPlayed": 3,
@@ -14094,8 +14285,8 @@ const PLAYERS_ALL = [
     ],
     "bscore": {
       "ana": {
-        "finalScore": 151.25,
-        "battleScore": 42.65,
+        "finalScore": 151.22,
+        "battleScore": 42.66,
         "coeff": 1.77,
         "matchCoef": 2,
         "gamesPlayed": 2440,
@@ -14114,8 +14305,8 @@ const PLAYERS_ALL = [
         }
       },
       "ashe": {
-        "finalScore": 138.59,
-        "battleScore": 45.26,
+        "finalScore": 138.49,
+        "battleScore": 45.2,
         "coeff": 1.61,
         "matchCoef": 1.68,
         "gamesPlayed": 305,
@@ -14131,11 +14322,12 @@ const PLAYERS_ALL = [
           "as10": 2.634,
           "wa": 45.03606557377049,
           "ca": 10.99672131147541
-        }
+        },
+        "rankDelta": -1
       },
       "brigitte": {
-        "finalScore": 140.74,
-        "battleScore": 42.22,
+        "finalScore": 140.76,
+        "battleScore": 42.25,
         "coeff": 1.77,
         "matchCoef": 1.7,
         "gamesPlayed": 324,
@@ -14154,8 +14346,8 @@ const PLAYERS_ALL = [
         }
       },
       "cassidy": {
-        "finalScore": 134.92,
-        "battleScore": 42.36,
+        "finalScore": 134.89,
+        "battleScore": 42.35,
         "coeff": 1.61,
         "matchCoef": 1.68,
         "gamesPlayed": 300,
@@ -14174,7 +14366,7 @@ const PLAYERS_ALL = [
         }
       },
       "doomfist": {
-        "finalScore": 131.15,
+        "finalScore": 131.13,
         "battleScore": 40.04,
         "coeff": 1.61,
         "matchCoef": 1.64,
@@ -14194,7 +14386,7 @@ const PLAYERS_ALL = [
         }
       },
       "echo": {
-        "finalScore": 125.19,
+        "finalScore": 125.17,
         "battleScore": 43.68,
         "coeff": 1.61,
         "matchCoef": 1.31,
@@ -14214,7 +14406,7 @@ const PLAYERS_ALL = [
         }
       },
       "freja": {
-        "finalScore": 123.71,
+        "finalScore": 123.69,
         "battleScore": 43.12,
         "coeff": 1.61,
         "matchCoef": 1.28,
@@ -14232,10 +14424,10 @@ const PLAYERS_ALL = [
           "wa": 24.88118811881188,
           "ca": 10.297029702970297
         },
-        "rankDelta": 1
+        "rankDelta": -1
       },
       "genji": {
-        "finalScore": 149.97,
+        "finalScore": 149.93,
         "battleScore": 46.02,
         "coeff": 1.61,
         "matchCoef": 2,
@@ -14255,7 +14447,7 @@ const PLAYERS_ALL = [
         }
       },
       "illari": {
-        "finalScore": 129.98,
+        "finalScore": 129.96,
         "battleScore": 45.03,
         "coeff": 1.77,
         "matchCoef": 1.29,
@@ -14275,7 +14467,7 @@ const PLAYERS_ALL = [
         }
       },
       "junker-queen": {
-        "finalScore": 126.9,
+        "finalScore": 126.88,
         "battleScore": 51.06,
         "coeff": 1.61,
         "matchCoef": 1.17,
@@ -14295,8 +14487,8 @@ const PLAYERS_ALL = [
         }
       },
       "kiriko": {
-        "finalScore": 151.35,
-        "battleScore": 42.72,
+        "finalScore": 151.29,
+        "battleScore": 42.7,
         "coeff": 1.77,
         "matchCoef": 2,
         "gamesPlayed": 770,
@@ -14315,8 +14507,8 @@ const PLAYERS_ALL = [
         }
       },
       "moira": {
-        "finalScore": 150.13,
-        "battleScore": 44.96,
+        "finalScore": 150.1,
+        "battleScore": 44.97,
         "coeff": 1.77,
         "matchCoef": 1.49,
         "gamesPlayed": 180,
@@ -14335,8 +14527,8 @@ const PLAYERS_ALL = [
         }
       },
       "pharah": {
-        "finalScore": 129.72,
-        "battleScore": 44.62,
+        "finalScore": 129.73,
+        "battleScore": 44.65,
         "coeff": 1.61,
         "matchCoef": 1.43,
         "gamesPlayed": 151,
@@ -14355,8 +14547,8 @@ const PLAYERS_ALL = [
         }
       },
       "ramattra": {
-        "finalScore": 139.57,
-        "battleScore": 46.71,
+        "finalScore": 139.52,
+        "battleScore": 46.69,
         "coeff": 1.61,
         "matchCoef": 1.33,
         "gamesPlayed": 114,
@@ -14375,7 +14567,7 @@ const PLAYERS_ALL = [
         }
       },
       "reaper": {
-        "finalScore": 126.9,
+        "finalScore": 126.88,
         "battleScore": 42.97,
         "coeff": 1.61,
         "matchCoef": 1.11,
@@ -14393,11 +14585,11 @@ const PLAYERS_ALL = [
           "wa": 29.142857142857142,
           "ca": 10.047619047619047
         },
-        "rankDelta": 1
+        "rankDelta": -1
       },
       "sigma": {
-        "finalScore": 148.89,
-        "battleScore": 48.34,
+        "finalScore": 148.87,
+        "battleScore": 48.35,
         "coeff": 1.61,
         "matchCoef": 1.5,
         "gamesPlayed": 183,
@@ -14416,7 +14608,7 @@ const PLAYERS_ALL = [
         }
       },
       "sojourn": {
-        "finalScore": 136.71,
+        "finalScore": 136.69,
         "battleScore": 42.42,
         "coeff": 1.61,
         "matchCoef": 1.73,
@@ -14436,7 +14628,7 @@ const PLAYERS_ALL = [
         }
       },
       "sombra": {
-        "finalScore": 116.61,
+        "finalScore": 116.59,
         "battleScore": 41.24,
         "coeff": 1.61,
         "matchCoef": 1.1,
@@ -14453,11 +14645,10 @@ const PLAYERS_ALL = [
           "as10": 5.701803278688525,
           "wa": 33.032786885245905,
           "ca": 7
-        },
-        "rankDelta": -1
+        }
       },
       "tracer": {
-        "finalScore": 142.51,
+        "finalScore": 142.48,
         "battleScore": 43.58,
         "coeff": 1.61,
         "matchCoef": 1.87,
@@ -14474,12 +14665,11 @@ const PLAYERS_ALL = [
           "as10": 0.06999999999999999,
           "wa": 34,
           "ca": 8.029013539651837
-        },
-        "rankDelta": -1
+        }
       },
       "winston": {
-        "finalScore": 127.36,
-        "battleScore": 42.68,
+        "finalScore": 127.38,
+        "battleScore": 42.71,
         "coeff": 1.61,
         "matchCoef": 1.42,
         "gamesPlayed": 146,
@@ -14498,8 +14688,8 @@ const PLAYERS_ALL = [
         }
       },
       "wuyang": {
-        "finalScore": 119.73,
-        "battleScore": 37.89,
+        "finalScore": 119.7,
+        "battleScore": 37.86,
         "coeff": 1.77,
         "matchCoef": 1.2,
         "gamesPlayed": 79,
@@ -14519,7 +14709,7 @@ const PLAYERS_ALL = [
       },
       "anran": {
         "finalScore": 92.43,
-        "battleScore": 37.38,
+        "battleScore": 37.37,
         "coeff": 1.61,
         "matchCoef": 0.25,
         "gamesPlayed": 4,
@@ -14538,7 +14728,7 @@ const PLAYERS_ALL = [
         }
       },
       "baptiste": {
-        "finalScore": 134.32,
+        "finalScore": 134.29,
         "battleScore": 44.72,
         "coeff": 1.77,
         "matchCoef": 1.43,
@@ -14558,7 +14748,7 @@ const PLAYERS_ALL = [
         }
       },
       "bastion": {
-        "finalScore": 112.9,
+        "finalScore": 112.88,
         "battleScore": 36.58,
         "coeff": 1.61,
         "matchCoef": 0.88,
@@ -14578,8 +14768,8 @@ const PLAYERS_ALL = [
         }
       },
       "doctrine": {
-        "finalScore": 91.72,
-        "battleScore": 38.86,
+        "finalScore": 91.86,
+        "battleScore": 39.57,
         "coeff": 1.77,
         "matchCoef": 0.25,
         "gamesPlayed": 3,
@@ -14596,7 +14786,7 @@ const PLAYERS_ALL = [
           "wa": 61,
           "ca": 0
         },
-        "rankDelta": -4
+        "rankDelta": 4
       },
       "domina": {
         "finalScore": 90,
@@ -14619,7 +14809,7 @@ const PLAYERS_ALL = [
         }
       },
       "dva": {
-        "finalScore": 123.91,
+        "finalScore": 123.89,
         "battleScore": 45.87,
         "coeff": 1.61,
         "matchCoef": 1.21,
@@ -14639,7 +14829,7 @@ const PLAYERS_ALL = [
         }
       },
       "emre": {
-        "finalScore": 108.25,
+        "finalScore": 108.24,
         "battleScore": 47.07,
         "coeff": 1.61,
         "matchCoef": 0.72,
@@ -14659,7 +14849,7 @@ const PLAYERS_ALL = [
         }
       },
       "hazard": {
-        "finalScore": 109.19,
+        "finalScore": 109.18,
         "battleScore": 42.73,
         "coeff": 1.61,
         "matchCoef": 0.82,
@@ -14677,10 +14867,10 @@ const PLAYERS_ALL = [
           "wa": 32,
           "ca": 2
         },
-        "rankDelta": 1
+        "rankDelta": -1
       },
       "hanzo": {
-        "finalScore": 123.32,
+        "finalScore": 123.3,
         "battleScore": 41.91,
         "coeff": 1.61,
         "matchCoef": 1.31,
@@ -14701,7 +14891,7 @@ const PLAYERS_ALL = [
       },
       "jetpack-cat": {
         "finalScore": 92.01,
-        "battleScore": 40.35,
+        "battleScore": 40.36,
         "coeff": 1.77,
         "matchCoef": 0.25,
         "gamesPlayed": 4,
@@ -14720,7 +14910,7 @@ const PLAYERS_ALL = [
         }
       },
       "junkrat": {
-        "finalScore": 115.1,
+        "finalScore": 115.08,
         "battleScore": 38.34,
         "coeff": 1.61,
         "matchCoef": 1.13,
@@ -14740,8 +14930,8 @@ const PLAYERS_ALL = [
         }
       },
       "juno": {
-        "finalScore": 130.34,
-        "battleScore": 44.57,
+        "finalScore": 130.3,
+        "battleScore": 44.56,
         "coeff": 1.77,
         "matchCoef": 1.32,
         "gamesPlayed": 111,
@@ -14760,8 +14950,8 @@ const PLAYERS_ALL = [
         }
       },
       "lifeweaver": {
-        "finalScore": 98.14,
-        "battleScore": 39.7,
+        "finalScore": 98.12,
+        "battleScore": 39.66,
         "coeff": 1.77,
         "matchCoef": 0.45,
         "gamesPlayed": 10,
@@ -14777,11 +14967,10 @@ const PLAYERS_ALL = [
           "as10": 12.56,
           "wa": 29,
           "ca": 11
-        },
-        "rankDelta": 1
+        }
       },
       "lucio": {
-        "finalScore": 139.3,
+        "finalScore": 139.27,
         "battleScore": 42.46,
         "coeff": 1.77,
         "matchCoef": 1.65,
@@ -14801,7 +14990,7 @@ const PLAYERS_ALL = [
         }
       },
       "mauga": {
-        "finalScore": 129.26,
+        "finalScore": 129.24,
         "battleScore": 52.66,
         "coeff": 1.61,
         "matchCoef": 0.96,
@@ -14821,7 +15010,7 @@ const PLAYERS_ALL = [
         }
       },
       "mei": {
-        "finalScore": 104.64,
+        "finalScore": 104.63,
         "battleScore": 41.05,
         "coeff": 1.61,
         "matchCoef": 0.7,
@@ -14838,10 +15027,11 @@ const PLAYERS_ALL = [
           "as10": 4.59,
           "wa": 48,
           "ca": 0
-        }
+        },
+        "rankDelta": 1
       },
       "mercy": {
-        "finalScore": 116.24,
+        "finalScore": 116.23,
         "battleScore": 35.96,
         "coeff": 1.77,
         "matchCoef": 1.14,
@@ -14861,7 +15051,7 @@ const PLAYERS_ALL = [
         }
       },
       "mizuki": {
-        "finalScore": 103.63,
+        "finalScore": 103.62,
         "battleScore": 37.52,
         "coeff": 1.77,
         "matchCoef": 0.66,
@@ -14878,12 +15068,11 @@ const PLAYERS_ALL = [
           "as10": 10.59,
           "wa": 37,
           "ca": 8
-        },
-        "rankDelta": 1
+        }
       },
       "orisa": {
-        "finalScore": 127.88,
-        "battleScore": 45.26,
+        "finalScore": 127.95,
+        "battleScore": 45.35,
         "coeff": 1.61,
         "matchCoef": 1.35,
         "gamesPlayed": 122,
@@ -14899,10 +15088,11 @@ const PLAYERS_ALL = [
           "as10": 3.95,
           "wa": 34,
           "ca": 7
-        }
+        },
+        "rankDelta": 1
       },
       "reinhardt": {
-        "finalScore": 129.09,
+        "finalScore": 129.06,
         "battleScore": 43.43,
         "coeff": 1.61,
         "matchCoef": 1.45,
@@ -14920,10 +15110,10 @@ const PLAYERS_ALL = [
           "wa": 0,
           "ca": 0
         },
-        "rankDelta": 1
+        "rankDelta": -1
       },
       "roadhog": {
-        "finalScore": 115.55,
+        "finalScore": 115.53,
         "battleScore": 43.95,
         "coeff": 1.61,
         "matchCoef": 1,
@@ -14944,7 +15134,7 @@ const PLAYERS_ALL = [
       },
       "shion": {
         "finalScore": 91.88,
-        "battleScore": 41.08,
+        "battleScore": 41.05,
         "coeff": 1.61,
         "matchCoef": 0.27,
         "gamesPlayed": 6,
@@ -14960,7 +15150,8 @@ const PLAYERS_ALL = [
           "as10": 1.19,
           "wa": 37,
           "ca": 11
-        }
+        },
+        "rankDelta": -1
       },
       "soldier-76": {
         "finalScore": 99.73,
@@ -14983,7 +15174,7 @@ const PLAYERS_ALL = [
         }
       },
       "symmetra": {
-        "finalScore": 118.23,
+        "finalScore": 118.22,
         "battleScore": 41.44,
         "coeff": 1.61,
         "matchCoef": 1.15,
@@ -15003,7 +15194,7 @@ const PLAYERS_ALL = [
         }
       },
       "torbjorn": {
-        "finalScore": 107.94,
+        "finalScore": 107.92,
         "battleScore": 45.4,
         "coeff": 1.61,
         "matchCoef": 0.73,
@@ -15024,7 +15215,7 @@ const PLAYERS_ALL = [
       },
       "vendetta": {
         "finalScore": 91.27,
-        "battleScore": 40.24,
+        "battleScore": 40.26,
         "coeff": 1.61,
         "matchCoef": 0.25,
         "gamesPlayed": 5,
@@ -15043,7 +15234,7 @@ const PLAYERS_ALL = [
         }
       },
       "venture": {
-        "finalScore": 110.81,
+        "finalScore": 110.8,
         "battleScore": 47.02,
         "coeff": 1.61,
         "matchCoef": 0.79,
@@ -15063,7 +15254,7 @@ const PLAYERS_ALL = [
         }
       },
       "widowmaker": {
-        "finalScore": 122.88,
+        "finalScore": 122.86,
         "battleScore": 37.74,
         "coeff": 1.61,
         "matchCoef": 1.44,
@@ -15083,7 +15274,7 @@ const PLAYERS_ALL = [
         }
       },
       "wrecking-ball": {
-        "finalScore": 119.47,
+        "finalScore": 119.45,
         "battleScore": 40.47,
         "coeff": 1.61,
         "matchCoef": 1.22,
@@ -15103,7 +15294,7 @@ const PLAYERS_ALL = [
         }
       },
       "zarya": {
-        "finalScore": 134.71,
+        "finalScore": 134.68,
         "battleScore": 45.84,
         "coeff": 1.61,
         "matchCoef": 1.23,
@@ -15123,7 +15314,7 @@ const PLAYERS_ALL = [
         }
       },
       "zenyatta": {
-        "finalScore": 129.02,
+        "finalScore": 129,
         "battleScore": 41.26,
         "coeff": 1.77,
         "matchCoef": 1.38,
@@ -15145,8 +15336,8 @@ const PLAYERS_ALL = [
     },
     "bscoreAll": {
       "ana": {
-        "finalScore": 151.25,
-        "battleScore": 42.65,
+        "finalScore": 151.22,
+        "battleScore": 42.66,
         "coeff": 1.77,
         "matchCoef": 2,
         "gamesPlayed": 2440,
@@ -15165,8 +15356,8 @@ const PLAYERS_ALL = [
         }
       },
       "ashe": {
-        "finalScore": 138.59,
-        "battleScore": 45.26,
+        "finalScore": 138.49,
+        "battleScore": 45.2,
         "coeff": 1.61,
         "matchCoef": 1.68,
         "gamesPlayed": 305,
@@ -15182,11 +15373,12 @@ const PLAYERS_ALL = [
           "as10": 2.634,
           "wa": 45.03606557377049,
           "ca": 10.99672131147541
-        }
+        },
+        "rankDelta": -1
       },
       "brigitte": {
-        "finalScore": 140.74,
-        "battleScore": 42.22,
+        "finalScore": 140.76,
+        "battleScore": 42.25,
         "coeff": 1.77,
         "matchCoef": 1.7,
         "gamesPlayed": 324,
@@ -15205,8 +15397,8 @@ const PLAYERS_ALL = [
         }
       },
       "cassidy": {
-        "finalScore": 134.92,
-        "battleScore": 42.36,
+        "finalScore": 134.89,
+        "battleScore": 42.35,
         "coeff": 1.61,
         "matchCoef": 1.68,
         "gamesPlayed": 300,
@@ -15225,7 +15417,7 @@ const PLAYERS_ALL = [
         }
       },
       "doomfist": {
-        "finalScore": 131.15,
+        "finalScore": 131.13,
         "battleScore": 40.04,
         "coeff": 1.61,
         "matchCoef": 1.64,
@@ -15245,7 +15437,7 @@ const PLAYERS_ALL = [
         }
       },
       "echo": {
-        "finalScore": 125.19,
+        "finalScore": 125.17,
         "battleScore": 43.68,
         "coeff": 1.61,
         "matchCoef": 1.31,
@@ -15265,7 +15457,7 @@ const PLAYERS_ALL = [
         }
       },
       "freja": {
-        "finalScore": 123.71,
+        "finalScore": 123.69,
         "battleScore": 43.12,
         "coeff": 1.61,
         "matchCoef": 1.28,
@@ -15283,10 +15475,10 @@ const PLAYERS_ALL = [
           "wa": 24.88118811881188,
           "ca": 10.297029702970297
         },
-        "rankDelta": 1
+        "rankDelta": -1
       },
       "genji": {
-        "finalScore": 149.97,
+        "finalScore": 149.93,
         "battleScore": 46.02,
         "coeff": 1.61,
         "matchCoef": 2,
@@ -15306,7 +15498,7 @@ const PLAYERS_ALL = [
         }
       },
       "illari": {
-        "finalScore": 129.98,
+        "finalScore": 129.96,
         "battleScore": 45.03,
         "coeff": 1.77,
         "matchCoef": 1.29,
@@ -15326,7 +15518,7 @@ const PLAYERS_ALL = [
         }
       },
       "junker-queen": {
-        "finalScore": 126.9,
+        "finalScore": 126.88,
         "battleScore": 51.06,
         "coeff": 1.61,
         "matchCoef": 1.17,
@@ -15346,8 +15538,8 @@ const PLAYERS_ALL = [
         }
       },
       "kiriko": {
-        "finalScore": 151.35,
-        "battleScore": 42.72,
+        "finalScore": 151.29,
+        "battleScore": 42.7,
         "coeff": 1.77,
         "matchCoef": 2,
         "gamesPlayed": 770,
@@ -15366,8 +15558,8 @@ const PLAYERS_ALL = [
         }
       },
       "moira": {
-        "finalScore": 150.13,
-        "battleScore": 44.96,
+        "finalScore": 150.1,
+        "battleScore": 44.97,
         "coeff": 1.77,
         "matchCoef": 1.49,
         "gamesPlayed": 180,
@@ -15386,8 +15578,8 @@ const PLAYERS_ALL = [
         }
       },
       "pharah": {
-        "finalScore": 129.72,
-        "battleScore": 44.62,
+        "finalScore": 129.73,
+        "battleScore": 44.65,
         "coeff": 1.61,
         "matchCoef": 1.43,
         "gamesPlayed": 151,
@@ -15406,8 +15598,8 @@ const PLAYERS_ALL = [
         }
       },
       "ramattra": {
-        "finalScore": 139.57,
-        "battleScore": 46.71,
+        "finalScore": 139.52,
+        "battleScore": 46.69,
         "coeff": 1.61,
         "matchCoef": 1.33,
         "gamesPlayed": 114,
@@ -15426,7 +15618,7 @@ const PLAYERS_ALL = [
         }
       },
       "reaper": {
-        "finalScore": 126.9,
+        "finalScore": 126.88,
         "battleScore": 42.97,
         "coeff": 1.61,
         "matchCoef": 1.11,
@@ -15444,11 +15636,11 @@ const PLAYERS_ALL = [
           "wa": 29.142857142857142,
           "ca": 10.047619047619047
         },
-        "rankDelta": 1
+        "rankDelta": -1
       },
       "sigma": {
-        "finalScore": 148.89,
-        "battleScore": 48.34,
+        "finalScore": 148.87,
+        "battleScore": 48.35,
         "coeff": 1.61,
         "matchCoef": 1.5,
         "gamesPlayed": 183,
@@ -15467,7 +15659,7 @@ const PLAYERS_ALL = [
         }
       },
       "sojourn": {
-        "finalScore": 136.71,
+        "finalScore": 136.69,
         "battleScore": 42.42,
         "coeff": 1.61,
         "matchCoef": 1.73,
@@ -15487,7 +15679,7 @@ const PLAYERS_ALL = [
         }
       },
       "sombra": {
-        "finalScore": 116.61,
+        "finalScore": 116.59,
         "battleScore": 41.24,
         "coeff": 1.61,
         "matchCoef": 1.1,
@@ -15504,11 +15696,10 @@ const PLAYERS_ALL = [
           "as10": 5.701803278688525,
           "wa": 33.032786885245905,
           "ca": 7
-        },
-        "rankDelta": -1
+        }
       },
       "tracer": {
-        "finalScore": 142.51,
+        "finalScore": 142.48,
         "battleScore": 43.58,
         "coeff": 1.61,
         "matchCoef": 1.87,
@@ -15525,12 +15716,11 @@ const PLAYERS_ALL = [
           "as10": 0.06999999999999999,
           "wa": 34,
           "ca": 8.029013539651837
-        },
-        "rankDelta": -1
+        }
       },
       "winston": {
-        "finalScore": 127.36,
-        "battleScore": 42.68,
+        "finalScore": 127.38,
+        "battleScore": 42.71,
         "coeff": 1.61,
         "matchCoef": 1.42,
         "gamesPlayed": 146,
@@ -15549,8 +15739,8 @@ const PLAYERS_ALL = [
         }
       },
       "wuyang": {
-        "finalScore": 119.73,
-        "battleScore": 37.89,
+        "finalScore": 119.7,
+        "battleScore": 37.86,
         "coeff": 1.77,
         "matchCoef": 1.2,
         "gamesPlayed": 79,
@@ -15570,7 +15760,7 @@ const PLAYERS_ALL = [
       },
       "anran": {
         "finalScore": 92.43,
-        "battleScore": 37.38,
+        "battleScore": 37.37,
         "coeff": 1.61,
         "matchCoef": 0.25,
         "gamesPlayed": 4,
@@ -15589,7 +15779,7 @@ const PLAYERS_ALL = [
         }
       },
       "baptiste": {
-        "finalScore": 134.32,
+        "finalScore": 134.29,
         "battleScore": 44.72,
         "coeff": 1.77,
         "matchCoef": 1.43,
@@ -15609,7 +15799,7 @@ const PLAYERS_ALL = [
         }
       },
       "bastion": {
-        "finalScore": 112.9,
+        "finalScore": 112.88,
         "battleScore": 36.58,
         "coeff": 1.61,
         "matchCoef": 0.88,
@@ -15629,8 +15819,8 @@ const PLAYERS_ALL = [
         }
       },
       "doctrine": {
-        "finalScore": 91.72,
-        "battleScore": 38.86,
+        "finalScore": 91.86,
+        "battleScore": 39.57,
         "coeff": 1.77,
         "matchCoef": 0.25,
         "gamesPlayed": 3,
@@ -15647,7 +15837,7 @@ const PLAYERS_ALL = [
           "wa": 61,
           "ca": 0
         },
-        "rankDelta": -4
+        "rankDelta": 4
       },
       "domina": {
         "finalScore": 90,
@@ -15670,7 +15860,7 @@ const PLAYERS_ALL = [
         }
       },
       "dva": {
-        "finalScore": 123.91,
+        "finalScore": 123.89,
         "battleScore": 45.87,
         "coeff": 1.61,
         "matchCoef": 1.21,
@@ -15690,7 +15880,7 @@ const PLAYERS_ALL = [
         }
       },
       "emre": {
-        "finalScore": 108.25,
+        "finalScore": 108.24,
         "battleScore": 47.07,
         "coeff": 1.61,
         "matchCoef": 0.72,
@@ -15710,7 +15900,7 @@ const PLAYERS_ALL = [
         }
       },
       "hazard": {
-        "finalScore": 109.19,
+        "finalScore": 109.18,
         "battleScore": 42.73,
         "coeff": 1.61,
         "matchCoef": 0.82,
@@ -15728,10 +15918,10 @@ const PLAYERS_ALL = [
           "wa": 32,
           "ca": 2
         },
-        "rankDelta": 1
+        "rankDelta": -1
       },
       "hanzo": {
-        "finalScore": 123.32,
+        "finalScore": 123.3,
         "battleScore": 41.91,
         "coeff": 1.61,
         "matchCoef": 1.31,
@@ -15752,7 +15942,7 @@ const PLAYERS_ALL = [
       },
       "jetpack-cat": {
         "finalScore": 92.01,
-        "battleScore": 40.35,
+        "battleScore": 40.36,
         "coeff": 1.77,
         "matchCoef": 0.25,
         "gamesPlayed": 4,
@@ -15771,7 +15961,7 @@ const PLAYERS_ALL = [
         }
       },
       "junkrat": {
-        "finalScore": 115.1,
+        "finalScore": 115.08,
         "battleScore": 38.34,
         "coeff": 1.61,
         "matchCoef": 1.13,
@@ -15791,8 +15981,8 @@ const PLAYERS_ALL = [
         }
       },
       "juno": {
-        "finalScore": 130.34,
-        "battleScore": 44.57,
+        "finalScore": 130.3,
+        "battleScore": 44.56,
         "coeff": 1.77,
         "matchCoef": 1.32,
         "gamesPlayed": 111,
@@ -15811,8 +16001,8 @@ const PLAYERS_ALL = [
         }
       },
       "lifeweaver": {
-        "finalScore": 98.14,
-        "battleScore": 39.7,
+        "finalScore": 98.12,
+        "battleScore": 39.66,
         "coeff": 1.77,
         "matchCoef": 0.45,
         "gamesPlayed": 10,
@@ -15828,11 +16018,10 @@ const PLAYERS_ALL = [
           "as10": 12.56,
           "wa": 29,
           "ca": 11
-        },
-        "rankDelta": 1
+        }
       },
       "lucio": {
-        "finalScore": 139.3,
+        "finalScore": 139.27,
         "battleScore": 42.46,
         "coeff": 1.77,
         "matchCoef": 1.65,
@@ -15852,7 +16041,7 @@ const PLAYERS_ALL = [
         }
       },
       "mauga": {
-        "finalScore": 129.26,
+        "finalScore": 129.24,
         "battleScore": 52.66,
         "coeff": 1.61,
         "matchCoef": 0.96,
@@ -15872,7 +16061,7 @@ const PLAYERS_ALL = [
         }
       },
       "mei": {
-        "finalScore": 104.64,
+        "finalScore": 104.63,
         "battleScore": 41.05,
         "coeff": 1.61,
         "matchCoef": 0.7,
@@ -15889,10 +16078,11 @@ const PLAYERS_ALL = [
           "as10": 4.59,
           "wa": 48,
           "ca": 0
-        }
+        },
+        "rankDelta": 1
       },
       "mercy": {
-        "finalScore": 116.24,
+        "finalScore": 116.23,
         "battleScore": 35.96,
         "coeff": 1.77,
         "matchCoef": 1.14,
@@ -15912,7 +16102,7 @@ const PLAYERS_ALL = [
         }
       },
       "mizuki": {
-        "finalScore": 103.63,
+        "finalScore": 103.62,
         "battleScore": 37.52,
         "coeff": 1.77,
         "matchCoef": 0.66,
@@ -15929,12 +16119,11 @@ const PLAYERS_ALL = [
           "as10": 10.59,
           "wa": 37,
           "ca": 8
-        },
-        "rankDelta": 1
+        }
       },
       "orisa": {
-        "finalScore": 127.88,
-        "battleScore": 45.26,
+        "finalScore": 127.95,
+        "battleScore": 45.35,
         "coeff": 1.61,
         "matchCoef": 1.35,
         "gamesPlayed": 122,
@@ -15950,10 +16139,11 @@ const PLAYERS_ALL = [
           "as10": 3.95,
           "wa": 34,
           "ca": 7
-        }
+        },
+        "rankDelta": 1
       },
       "reinhardt": {
-        "finalScore": 129.09,
+        "finalScore": 129.06,
         "battleScore": 43.43,
         "coeff": 1.61,
         "matchCoef": 1.45,
@@ -15971,10 +16161,10 @@ const PLAYERS_ALL = [
           "wa": 0,
           "ca": 0
         },
-        "rankDelta": 1
+        "rankDelta": -1
       },
       "roadhog": {
-        "finalScore": 115.55,
+        "finalScore": 115.53,
         "battleScore": 43.95,
         "coeff": 1.61,
         "matchCoef": 1,
@@ -15995,7 +16185,7 @@ const PLAYERS_ALL = [
       },
       "shion": {
         "finalScore": 91.88,
-        "battleScore": 41.08,
+        "battleScore": 41.05,
         "coeff": 1.61,
         "matchCoef": 0.27,
         "gamesPlayed": 6,
@@ -16011,7 +16201,8 @@ const PLAYERS_ALL = [
           "as10": 1.19,
           "wa": 37,
           "ca": 11
-        }
+        },
+        "rankDelta": -1
       },
       "soldier-76": {
         "finalScore": 99.73,
@@ -16034,7 +16225,7 @@ const PLAYERS_ALL = [
         }
       },
       "symmetra": {
-        "finalScore": 118.23,
+        "finalScore": 118.22,
         "battleScore": 41.44,
         "coeff": 1.61,
         "matchCoef": 1.15,
@@ -16054,7 +16245,7 @@ const PLAYERS_ALL = [
         }
       },
       "torbjorn": {
-        "finalScore": 107.94,
+        "finalScore": 107.92,
         "battleScore": 45.4,
         "coeff": 1.61,
         "matchCoef": 0.73,
@@ -16075,7 +16266,7 @@ const PLAYERS_ALL = [
       },
       "vendetta": {
         "finalScore": 91.27,
-        "battleScore": 40.24,
+        "battleScore": 40.26,
         "coeff": 1.61,
         "matchCoef": 0.25,
         "gamesPlayed": 5,
@@ -16094,7 +16285,7 @@ const PLAYERS_ALL = [
         }
       },
       "venture": {
-        "finalScore": 110.81,
+        "finalScore": 110.8,
         "battleScore": 47.02,
         "coeff": 1.61,
         "matchCoef": 0.79,
@@ -16114,7 +16305,7 @@ const PLAYERS_ALL = [
         }
       },
       "widowmaker": {
-        "finalScore": 122.88,
+        "finalScore": 122.86,
         "battleScore": 37.74,
         "coeff": 1.61,
         "matchCoef": 1.44,
@@ -16134,7 +16325,7 @@ const PLAYERS_ALL = [
         }
       },
       "wrecking-ball": {
-        "finalScore": 119.47,
+        "finalScore": 119.45,
         "battleScore": 40.47,
         "coeff": 1.61,
         "matchCoef": 1.22,
@@ -16154,7 +16345,7 @@ const PLAYERS_ALL = [
         }
       },
       "zarya": {
-        "finalScore": 134.71,
+        "finalScore": 134.68,
         "battleScore": 45.84,
         "coeff": 1.61,
         "matchCoef": 1.23,
@@ -16174,7 +16365,7 @@ const PLAYERS_ALL = [
         }
       },
       "zenyatta": {
-        "finalScore": 129.02,
+        "finalScore": 129,
         "battleScore": 41.26,
         "coeff": 1.77,
         "matchCoef": 1.38,
@@ -16901,8 +17092,8 @@ const PLAYERS_ALL = [
         }
       },
       "sigma": {
-        "finalScore": 58.33,
-        "battleScore": 45,
+        "finalScore": 58.31,
+        "battleScore": 44.99,
         "coeff": 1.1,
         "matchCoef": 1,
         "gamesPlayed": 26,
@@ -16921,8 +17112,8 @@ const PLAYERS_ALL = [
         }
       },
       "winston": {
-        "finalScore": 41.61,
-        "battleScore": 37.35,
+        "finalScore": 41.74,
+        "battleScore": 37.47,
         "coeff": 1.1,
         "matchCoef": 1.01,
         "gamesPlayed": 29,
@@ -16938,11 +17129,12 @@ const PLAYERS_ALL = [
           "as10": 3.397241379310345,
           "wa": 41,
           "ca": 0
-        }
+        },
+        "rankDeltaPower": 1
       },
       "anran": {
-        "finalScore": 58.4,
-        "battleScore": 39.09,
+        "finalScore": 58.41,
+        "battleScore": 39.11,
         "coeff": 1,
         "matchCoef": 0.99,
         "gamesPlayed": 21,
@@ -16961,8 +17153,8 @@ const PLAYERS_ALL = [
         }
       },
       "ashe": {
-        "finalScore": 38.4,
-        "battleScore": 39.34,
+        "finalScore": 38.25,
+        "battleScore": 39.18,
         "coeff": 1,
         "matchCoef": 0.98,
         "gamesPlayed": 19,
@@ -16978,7 +17170,8 @@ const PLAYERS_ALL = [
           "as10": 3.38,
           "wa": 35,
           "ca": 11
-        }
+        },
+        "rankDelta": -1
       },
       "baptiste": {
         "finalScore": 33.5,
@@ -17002,7 +17195,7 @@ const PLAYERS_ALL = [
       },
       "bastion": {
         "finalScore": 55.4,
-        "battleScore": 43.65,
+        "battleScore": 43.66,
         "coeff": 1,
         "matchCoef": 1,
         "gamesPlayed": 24,
@@ -17021,8 +17214,8 @@ const PLAYERS_ALL = [
         }
       },
       "brigitte": {
-        "finalScore": 37.34,
-        "battleScore": 37.34,
+        "finalScore": 37.37,
+        "battleScore": 37.37,
         "coeff": 1,
         "matchCoef": 1,
         "gamesPlayed": 25,
@@ -17038,11 +17231,12 @@ const PLAYERS_ALL = [
           "as10": 15.35,
           "wa": 0,
           "ca": 0
-        }
+        },
+        "rankDeltaPower": 1
       },
       "cassidy": {
-        "finalScore": 39.55,
-        "battleScore": 38.43,
+        "finalScore": 39.53,
+        "battleScore": 38.41,
         "coeff": 1,
         "matchCoef": 1.03,
         "gamesPlayed": 35,
@@ -17058,7 +17252,8 @@ const PLAYERS_ALL = [
           "as10": 2.05,
           "wa": 38,
           "ca": 7
-        }
+        },
+        "rankDelta": -1
       },
       "dmon": {
         "finalScore": 37.46,
@@ -17081,8 +17276,8 @@ const PLAYERS_ALL = [
         }
       },
       "doctrine": {
-        "finalScore": 31.16,
-        "battleScore": 36.66,
+        "finalScore": 30.19,
+        "battleScore": 35.51,
         "coeff": 1,
         "matchCoef": 0.85,
         "gamesPlayed": 1,
@@ -17099,8 +17294,8 @@ const PLAYERS_ALL = [
           "wa": 45,
           "ca": 0
         },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "domina": {
         "finalScore": 42.35,
@@ -17140,7 +17335,8 @@ const PLAYERS_ALL = [
           "as10": 6.53,
           "wa": 23,
           "ca": 8
-        }
+        },
+        "rankDeltaPower": -1
       },
       "echo": {
         "finalScore": 34.82,
@@ -17260,7 +17456,8 @@ const PLAYERS_ALL = [
           "as10": 3.9,
           "wa": 21,
           "ca": 7
-        }
+        },
+        "rankDeltaPower": -1
       },
       "illari": {
         "finalScore": 38.68,
@@ -17280,12 +17477,11 @@ const PLAYERS_ALL = [
           "as10": 9.24,
           "wa": 38,
           "ca": 12
-        },
-        "rankDeltaPower": -1
+        }
       },
       "jetpack-cat": {
-        "finalScore": 35.45,
-        "battleScore": 39.33,
+        "finalScore": 35.46,
+        "battleScore": 39.34,
         "coeff": 1,
         "matchCoef": 0.9,
         "gamesPlayed": 8,
@@ -17301,7 +17497,9 @@ const PLAYERS_ALL = [
           "as10": 8.12,
           "wa": 31,
           "ca": 7
-        }
+        },
+        "rankDelta": 1,
+        "rankDeltaPower": 1
       },
       "junker-queen": {
         "finalScore": 36.81,
@@ -17324,8 +17522,8 @@ const PLAYERS_ALL = [
         }
       },
       "junkrat": {
-        "finalScore": 45.44,
-        "battleScore": 46.77,
+        "finalScore": 45.43,
+        "battleScore": 46.76,
         "coeff": 1,
         "matchCoef": 0.97,
         "gamesPlayed": 18,
@@ -17344,8 +17542,8 @@ const PLAYERS_ALL = [
         }
       },
       "juno": {
-        "finalScore": 37.18,
-        "battleScore": 40.38,
+        "finalScore": 37.19,
+        "battleScore": 40.4,
         "coeff": 1,
         "matchCoef": 0.92,
         "gamesPlayed": 10,
@@ -17361,11 +17559,12 @@ const PLAYERS_ALL = [
           "as10": 9.74,
           "wa": 33,
           "ca": 4
-        }
+        },
+        "rankDelta": 1
       },
       "kiriko": {
-        "finalScore": 33.96,
-        "battleScore": 33.85,
+        "finalScore": 33.94,
+        "battleScore": 33.83,
         "coeff": 1,
         "matchCoef": 1,
         "gamesPlayed": 26,
@@ -17384,8 +17583,8 @@ const PLAYERS_ALL = [
         }
       },
       "lifeweaver": {
-        "finalScore": 42.39,
-        "battleScore": 38.79,
+        "finalScore": 42.37,
+        "battleScore": 38.77,
         "coeff": 1,
         "matchCoef": 1.09,
         "gamesPlayed": 73,
@@ -17462,10 +17661,10 @@ const PLAYERS_ALL = [
           "wa": 18,
           "ca": 4
         },
-        "rankDeltaPower": -1
+        "rankDeltaPower": 1
       },
       "mizuki": {
-        "finalScore": 35.11,
+        "finalScore": 35.1,
         "battleScore": 40.05,
         "coeff": 1,
         "matchCoef": 0.88,
@@ -17505,8 +17704,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 39.52,
-        "battleScore": 36.63,
+        "finalScore": 39.51,
+        "battleScore": 36.62,
         "coeff": 1.1,
         "matchCoef": 0.98,
         "gamesPlayed": 20,
@@ -17525,8 +17724,8 @@ const PLAYERS_ALL = [
         }
       },
       "pharah": {
-        "finalScore": 32.73,
-        "battleScore": 35.9,
+        "finalScore": 32.76,
+        "battleScore": 35.94,
         "coeff": 1,
         "matchCoef": 0.91,
         "gamesPlayed": 9,
@@ -17543,11 +17742,11 @@ const PLAYERS_ALL = [
           "wa": 42,
           "ca": 0
         },
-        "rankDelta": -1
+        "rankDelta": 1
       },
       "ramattra": {
-        "finalScore": 51.76,
-        "battleScore": 34.93,
+        "finalScore": 51.78,
+        "battleScore": 34.92,
         "coeff": 1.1,
         "matchCoef": 0.97,
         "gamesPlayed": 14,
@@ -17563,11 +17762,12 @@ const PLAYERS_ALL = [
           "as10": 2.04,
           "wa": 25,
           "ca": 12
-        }
+        },
+        "rankDelta": 1
       },
       "roadhog": {
-        "finalScore": 47.7,
-        "battleScore": 43.52,
+        "finalScore": 47.69,
+        "battleScore": 43.51,
         "coeff": 1.1,
         "matchCoef": 1,
         "gamesPlayed": 24,
@@ -17586,8 +17786,8 @@ const PLAYERS_ALL = [
         }
       },
       "shion": {
-        "finalScore": 37.13,
-        "battleScore": 39.65,
+        "finalScore": 37.11,
+        "battleScore": 39.63,
         "coeff": 1,
         "matchCoef": 0.94,
         "gamesPlayed": 12,
@@ -17606,8 +17806,8 @@ const PLAYERS_ALL = [
         }
       },
       "sierra": {
-        "finalScore": 33.96,
-        "battleScore": 38.17,
+        "finalScore": 33.91,
+        "battleScore": 38.11,
         "coeff": 1,
         "matchCoef": 0.89,
         "gamesPlayed": 7,
@@ -17703,12 +17903,11 @@ const PLAYERS_ALL = [
           "as10": 5.81,
           "wa": 36,
           "ca": 0
-        },
-        "rankDeltaPower": 1
+        }
       },
       "torbjorn": {
-        "finalScore": 41.51,
-        "battleScore": 44.33,
+        "finalScore": 41.5,
+        "battleScore": 44.32,
         "coeff": 1,
         "matchCoef": 0.94,
         "gamesPlayed": 12,
@@ -17747,8 +17946,8 @@ const PLAYERS_ALL = [
         }
       },
       "vendetta": {
-        "finalScore": 36.71,
-        "battleScore": 40.27,
+        "finalScore": 36.72,
+        "battleScore": 40.28,
         "coeff": 1,
         "matchCoef": 0.91,
         "gamesPlayed": 9,
@@ -17827,8 +18026,8 @@ const PLAYERS_ALL = [
         }
       },
       "wuyang": {
-        "finalScore": 35.52,
-        "battleScore": 40.53,
+        "finalScore": 35.38,
+        "battleScore": 40.37,
         "coeff": 1,
         "matchCoef": 0.88,
         "gamesPlayed": 6,
@@ -17844,7 +18043,9 @@ const PLAYERS_ALL = [
           "as10": 10.11,
           "wa": 27,
           "ca": 0
-        }
+        },
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "zarya": {
         "finalScore": 47.76,
@@ -17989,8 +18190,8 @@ const PLAYERS_ALL = [
         }
       },
       "sigma": {
-        "finalScore": 58.33,
-        "battleScore": 45,
+        "finalScore": 58.31,
+        "battleScore": 44.99,
         "coeff": 1.1,
         "matchCoef": 1,
         "gamesPlayed": 26,
@@ -18009,8 +18210,8 @@ const PLAYERS_ALL = [
         }
       },
       "winston": {
-        "finalScore": 41.61,
-        "battleScore": 37.35,
+        "finalScore": 41.74,
+        "battleScore": 37.47,
         "coeff": 1.1,
         "matchCoef": 1.01,
         "gamesPlayed": 29,
@@ -18026,11 +18227,12 @@ const PLAYERS_ALL = [
           "as10": 3.397241379310345,
           "wa": 41,
           "ca": 0
-        }
+        },
+        "rankDeltaPower": 1
       },
       "anran": {
-        "finalScore": 58.4,
-        "battleScore": 39.09,
+        "finalScore": 58.41,
+        "battleScore": 39.11,
         "coeff": 1,
         "matchCoef": 0.99,
         "gamesPlayed": 21,
@@ -18049,8 +18251,8 @@ const PLAYERS_ALL = [
         }
       },
       "ashe": {
-        "finalScore": 38.4,
-        "battleScore": 39.34,
+        "finalScore": 38.25,
+        "battleScore": 39.18,
         "coeff": 1,
         "matchCoef": 0.98,
         "gamesPlayed": 19,
@@ -18066,7 +18268,8 @@ const PLAYERS_ALL = [
           "as10": 3.38,
           "wa": 35,
           "ca": 11
-        }
+        },
+        "rankDelta": -1
       },
       "baptiste": {
         "finalScore": 33.5,
@@ -18090,7 +18293,7 @@ const PLAYERS_ALL = [
       },
       "bastion": {
         "finalScore": 55.4,
-        "battleScore": 43.65,
+        "battleScore": 43.66,
         "coeff": 1,
         "matchCoef": 1,
         "gamesPlayed": 24,
@@ -18109,8 +18312,8 @@ const PLAYERS_ALL = [
         }
       },
       "brigitte": {
-        "finalScore": 37.34,
-        "battleScore": 37.34,
+        "finalScore": 37.37,
+        "battleScore": 37.37,
         "coeff": 1,
         "matchCoef": 1,
         "gamesPlayed": 25,
@@ -18126,11 +18329,12 @@ const PLAYERS_ALL = [
           "as10": 15.35,
           "wa": 0,
           "ca": 0
-        }
+        },
+        "rankDeltaPower": 1
       },
       "cassidy": {
-        "finalScore": 39.55,
-        "battleScore": 38.43,
+        "finalScore": 39.53,
+        "battleScore": 38.41,
         "coeff": 1,
         "matchCoef": 1.03,
         "gamesPlayed": 35,
@@ -18146,7 +18350,8 @@ const PLAYERS_ALL = [
           "as10": 2.05,
           "wa": 38,
           "ca": 7
-        }
+        },
+        "rankDelta": -1
       },
       "dmon": {
         "finalScore": 37.46,
@@ -18169,8 +18374,8 @@ const PLAYERS_ALL = [
         }
       },
       "doctrine": {
-        "finalScore": 31.16,
-        "battleScore": 36.66,
+        "finalScore": 30.19,
+        "battleScore": 35.51,
         "coeff": 1,
         "matchCoef": 0.85,
         "gamesPlayed": 1,
@@ -18187,8 +18392,8 @@ const PLAYERS_ALL = [
           "wa": 45,
           "ca": 0
         },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "domina": {
         "finalScore": 42.35,
@@ -18228,7 +18433,8 @@ const PLAYERS_ALL = [
           "as10": 6.53,
           "wa": 23,
           "ca": 8
-        }
+        },
+        "rankDeltaPower": -1
       },
       "echo": {
         "finalScore": 34.82,
@@ -18348,7 +18554,8 @@ const PLAYERS_ALL = [
           "as10": 3.9,
           "wa": 21,
           "ca": 7
-        }
+        },
+        "rankDeltaPower": -1
       },
       "illari": {
         "finalScore": 38.68,
@@ -18368,12 +18575,11 @@ const PLAYERS_ALL = [
           "as10": 9.24,
           "wa": 38,
           "ca": 12
-        },
-        "rankDeltaPower": -1
+        }
       },
       "jetpack-cat": {
-        "finalScore": 35.45,
-        "battleScore": 39.33,
+        "finalScore": 35.46,
+        "battleScore": 39.34,
         "coeff": 1,
         "matchCoef": 0.9,
         "gamesPlayed": 8,
@@ -18389,7 +18595,9 @@ const PLAYERS_ALL = [
           "as10": 8.12,
           "wa": 31,
           "ca": 7
-        }
+        },
+        "rankDelta": 1,
+        "rankDeltaPower": 1
       },
       "junker-queen": {
         "finalScore": 36.81,
@@ -18412,8 +18620,8 @@ const PLAYERS_ALL = [
         }
       },
       "junkrat": {
-        "finalScore": 45.44,
-        "battleScore": 46.77,
+        "finalScore": 45.43,
+        "battleScore": 46.76,
         "coeff": 1,
         "matchCoef": 0.97,
         "gamesPlayed": 18,
@@ -18432,8 +18640,8 @@ const PLAYERS_ALL = [
         }
       },
       "juno": {
-        "finalScore": 37.18,
-        "battleScore": 40.38,
+        "finalScore": 37.19,
+        "battleScore": 40.4,
         "coeff": 1,
         "matchCoef": 0.92,
         "gamesPlayed": 10,
@@ -18449,11 +18657,12 @@ const PLAYERS_ALL = [
           "as10": 9.74,
           "wa": 33,
           "ca": 4
-        }
+        },
+        "rankDelta": 1
       },
       "kiriko": {
-        "finalScore": 33.96,
-        "battleScore": 33.85,
+        "finalScore": 33.94,
+        "battleScore": 33.83,
         "coeff": 1,
         "matchCoef": 1,
         "gamesPlayed": 26,
@@ -18472,8 +18681,8 @@ const PLAYERS_ALL = [
         }
       },
       "lifeweaver": {
-        "finalScore": 42.39,
-        "battleScore": 38.79,
+        "finalScore": 42.37,
+        "battleScore": 38.77,
         "coeff": 1,
         "matchCoef": 1.09,
         "gamesPlayed": 73,
@@ -18550,10 +18759,10 @@ const PLAYERS_ALL = [
           "wa": 18,
           "ca": 4
         },
-        "rankDeltaPower": -1
+        "rankDeltaPower": 1
       },
       "mizuki": {
-        "finalScore": 35.11,
+        "finalScore": 35.1,
         "battleScore": 40.05,
         "coeff": 1,
         "matchCoef": 0.88,
@@ -18593,8 +18802,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 39.52,
-        "battleScore": 36.63,
+        "finalScore": 39.51,
+        "battleScore": 36.62,
         "coeff": 1.1,
         "matchCoef": 0.98,
         "gamesPlayed": 20,
@@ -18613,8 +18822,8 @@ const PLAYERS_ALL = [
         }
       },
       "pharah": {
-        "finalScore": 32.73,
-        "battleScore": 35.9,
+        "finalScore": 32.76,
+        "battleScore": 35.94,
         "coeff": 1,
         "matchCoef": 0.91,
         "gamesPlayed": 9,
@@ -18631,11 +18840,11 @@ const PLAYERS_ALL = [
           "wa": 42,
           "ca": 0
         },
-        "rankDelta": -1
+        "rankDelta": 1
       },
       "ramattra": {
-        "finalScore": 51.76,
-        "battleScore": 34.93,
+        "finalScore": 51.78,
+        "battleScore": 34.92,
         "coeff": 1.1,
         "matchCoef": 0.97,
         "gamesPlayed": 14,
@@ -18651,11 +18860,12 @@ const PLAYERS_ALL = [
           "as10": 2.04,
           "wa": 25,
           "ca": 12
-        }
+        },
+        "rankDelta": 1
       },
       "roadhog": {
-        "finalScore": 47.7,
-        "battleScore": 43.52,
+        "finalScore": 47.69,
+        "battleScore": 43.51,
         "coeff": 1.1,
         "matchCoef": 1,
         "gamesPlayed": 24,
@@ -18674,8 +18884,8 @@ const PLAYERS_ALL = [
         }
       },
       "shion": {
-        "finalScore": 37.13,
-        "battleScore": 39.65,
+        "finalScore": 37.11,
+        "battleScore": 39.63,
         "coeff": 1,
         "matchCoef": 0.94,
         "gamesPlayed": 12,
@@ -18694,8 +18904,8 @@ const PLAYERS_ALL = [
         }
       },
       "sierra": {
-        "finalScore": 33.96,
-        "battleScore": 38.17,
+        "finalScore": 33.91,
+        "battleScore": 38.11,
         "coeff": 1,
         "matchCoef": 0.89,
         "gamesPlayed": 7,
@@ -18791,12 +19001,11 @@ const PLAYERS_ALL = [
           "as10": 5.81,
           "wa": 36,
           "ca": 0
-        },
-        "rankDeltaPower": 1
+        }
       },
       "torbjorn": {
-        "finalScore": 41.51,
-        "battleScore": 44.33,
+        "finalScore": 41.5,
+        "battleScore": 44.32,
         "coeff": 1,
         "matchCoef": 0.94,
         "gamesPlayed": 12,
@@ -18835,8 +19044,8 @@ const PLAYERS_ALL = [
         }
       },
       "vendetta": {
-        "finalScore": 36.71,
-        "battleScore": 40.27,
+        "finalScore": 36.72,
+        "battleScore": 40.28,
         "coeff": 1,
         "matchCoef": 0.91,
         "gamesPlayed": 9,
@@ -18915,8 +19124,8 @@ const PLAYERS_ALL = [
         }
       },
       "wuyang": {
-        "finalScore": 35.52,
-        "battleScore": 40.53,
+        "finalScore": 35.38,
+        "battleScore": 40.37,
         "coeff": 1,
         "matchCoef": 0.88,
         "gamesPlayed": 6,
@@ -18932,7 +19141,9 @@ const PLAYERS_ALL = [
           "as10": 10.11,
           "wa": 27,
           "ca": 0
-        }
+        },
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "zarya": {
         "finalScore": 47.76,
@@ -19491,7 +19702,7 @@ const PLAYERS_ALL = [
     "bscore": {
       "ana": {
         "finalScore": 59.66,
-        "battleScore": 40.64,
+        "battleScore": 40.65,
         "coeff": 1.33,
         "matchCoef": 1.1,
         "gamesPlayed": 82,
@@ -19530,7 +19741,7 @@ const PLAYERS_ALL = [
         }
       },
       "sigma": {
-        "finalScore": 61.98,
+        "finalScore": 61.97,
         "battleScore": 41.77,
         "coeff": 1.33,
         "matchCoef": 1.03,
@@ -19590,8 +19801,8 @@ const PLAYERS_ALL = [
         }
       },
       "ashe": {
-        "finalScore": 49.81,
-        "battleScore": 37.56,
+        "finalScore": 49.69,
+        "battleScore": 37.46,
         "coeff": 1.33,
         "matchCoef": 1,
         "gamesPlayed": 24,
@@ -19607,10 +19818,11 @@ const PLAYERS_ALL = [
           "as10": 1.72,
           "wa": 41,
           "ca": 11
-        }
+        },
+        "rankDelta": -1
       },
       "baptiste": {
-        "finalScore": 50.25,
+        "finalScore": 50.24,
         "battleScore": 40.31,
         "coeff": 1.33,
         "matchCoef": 0.94,
@@ -19651,7 +19863,7 @@ const PLAYERS_ALL = [
       },
       "brigitte": {
         "finalScore": 36.55,
-        "battleScore": 31.9,
+        "battleScore": 31.91,
         "coeff": 1.33,
         "matchCoef": 0.86,
         "gamesPlayed": 5,
@@ -19670,7 +19882,7 @@ const PLAYERS_ALL = [
         }
       },
       "cassidy": {
-        "finalScore": 32.9,
+        "finalScore": 32.91,
         "battleScore": 28.72,
         "coeff": 1.33,
         "matchCoef": 0.86,
@@ -19790,8 +20002,8 @@ const PLAYERS_ALL = [
         }
       },
       "genji": {
-        "finalScore": 59.68,
-        "battleScore": 41.91,
+        "finalScore": 59.67,
+        "battleScore": 41.9,
         "coeff": 1.33,
         "matchCoef": 1.07,
         "gamesPlayed": 56,
@@ -19870,7 +20082,7 @@ const PLAYERS_ALL = [
         }
       },
       "jetpack-cat": {
-        "finalScore": 52.16,
+        "finalScore": 52.17,
         "battleScore": 46.11,
         "coeff": 1.33,
         "matchCoef": 0.85,
@@ -19927,11 +20139,12 @@ const PLAYERS_ALL = [
           "as10": 2.41,
           "wa": 25,
           "ca": 0
-        }
+        },
+        "rankDelta": 1
       },
       "juno": {
-        "finalScore": 42.84,
-        "battleScore": 37.87,
+        "finalScore": 42.67,
+        "battleScore": 37.71,
         "coeff": 1.33,
         "matchCoef": 0.85,
         "gamesPlayed": 1,
@@ -19948,7 +20161,6 @@ const PLAYERS_ALL = [
           "wa": 36,
           "ca": 5
         },
-        "rankDelta": -1,
         "rankDeltaPower": -1
       },
       "kiriko": {
@@ -20052,8 +20264,8 @@ const PLAYERS_ALL = [
         }
       },
       "mizuki": {
-        "finalScore": 43.48,
-        "battleScore": 38.43,
+        "finalScore": 43.5,
+        "battleScore": 38.45,
         "coeff": 1.33,
         "matchCoef": 0.85,
         "gamesPlayed": 3,
@@ -20072,8 +20284,8 @@ const PLAYERS_ALL = [
         }
       },
       "moira": {
-        "finalScore": 68.5,
-        "battleScore": 38.84,
+        "finalScore": 68.51,
+        "battleScore": 38.85,
         "coeff": 1.33,
         "matchCoef": 1.05,
         "gamesPlayed": 85,
@@ -20092,8 +20304,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 46.88,
-        "battleScore": 34.58,
+        "finalScore": 46.76,
+        "battleScore": 34.49,
         "coeff": 1.33,
         "matchCoef": 1.02,
         "gamesPlayed": 31,
@@ -20112,8 +20324,8 @@ const PLAYERS_ALL = [
         }
       },
       "pharah": {
-        "finalScore": 50.56,
-        "battleScore": 38.12,
+        "finalScore": 50.58,
+        "battleScore": 38.14,
         "coeff": 1.33,
         "matchCoef": 1,
         "gamesPlayed": 24,
@@ -20132,8 +20344,8 @@ const PLAYERS_ALL = [
         }
       },
       "ramattra": {
-        "finalScore": 55.85,
-        "battleScore": 35.42,
+        "finalScore": 55.87,
+        "battleScore": 35.4,
         "coeff": 1.33,
         "matchCoef": 1.02,
         "gamesPlayed": 43,
@@ -20192,7 +20404,7 @@ const PLAYERS_ALL = [
         }
       },
       "roadhog": {
-        "finalScore": 34.85,
+        "finalScore": 34.86,
         "battleScore": 30.81,
         "coeff": 1.33,
         "matchCoef": 0.85,
@@ -20212,8 +20424,8 @@ const PLAYERS_ALL = [
         }
       },
       "shion": {
-        "finalScore": 48.19,
-        "battleScore": 42.59,
+        "finalScore": 48.16,
+        "battleScore": 42.57,
         "coeff": 1.33,
         "matchCoef": 0.85,
         "gamesPlayed": 3,
@@ -20232,8 +20444,8 @@ const PLAYERS_ALL = [
         }
       },
       "sierra": {
-        "finalScore": 41.36,
-        "battleScore": 36.56,
+        "finalScore": 41.39,
+        "battleScore": 36.58,
         "coeff": 1.33,
         "matchCoef": 0.85,
         "gamesPlayed": 2,
@@ -20252,8 +20464,8 @@ const PLAYERS_ALL = [
         }
       },
       "sojourn": {
-        "finalScore": 45.35,
-        "battleScore": 38.29,
+        "finalScore": 45.36,
+        "battleScore": 38.3,
         "coeff": 1.33,
         "matchCoef": 0.89,
         "gamesPlayed": 7,
@@ -20290,7 +20502,7 @@ const PLAYERS_ALL = [
           "wa": 28,
           "ca": 8
         },
-        "rankDelta": 1
+        "rankDeltaPower": 1
       },
       "symmetra": {
         "finalScore": 41.89,
@@ -20313,8 +20525,8 @@ const PLAYERS_ALL = [
         }
       },
       "torbjorn": {
-        "finalScore": 42.85,
-        "battleScore": 37.88,
+        "finalScore": 42.86,
+        "battleScore": 37.89,
         "coeff": 1.33,
         "matchCoef": 0.85,
         "gamesPlayed": 4,
@@ -20330,9 +20542,7 @@ const PLAYERS_ALL = [
           "as10": 0.26,
           "wa": 24,
           "ca": 10
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        }
       },
       "tracer": {
         "finalScore": 47.52,
@@ -20352,12 +20562,11 @@ const PLAYERS_ALL = [
           "as10": 0.06,
           "wa": 32,
           "ca": 8
-        },
-        "rankDelta": -1
+        }
       },
       "vendetta": {
-        "finalScore": 56.28,
-        "battleScore": 41.87,
+        "finalScore": 56.3,
+        "battleScore": 41.89,
         "coeff": 1.33,
         "matchCoef": 1.01,
         "gamesPlayed": 28,
@@ -20376,8 +20585,8 @@ const PLAYERS_ALL = [
         }
       },
       "winston": {
-        "finalScore": 43.95,
-        "battleScore": 35.55,
+        "finalScore": 44.05,
+        "battleScore": 35.63,
         "coeff": 1.33,
         "matchCoef": 0.93,
         "gamesPlayed": 11,
@@ -20416,8 +20625,8 @@ const PLAYERS_ALL = [
         }
       },
       "wuyang": {
-        "finalScore": 48.8,
-        "battleScore": 43.14,
+        "finalScore": 48.77,
+        "battleScore": 43.11,
         "coeff": 1.33,
         "matchCoef": 0.85,
         "gamesPlayed": 2,
@@ -20479,7 +20688,7 @@ const PLAYERS_ALL = [
     "bscoreAll": {
       "ana": {
         "finalScore": 59.66,
-        "battleScore": 40.64,
+        "battleScore": 40.65,
         "coeff": 1.33,
         "matchCoef": 1.1,
         "gamesPlayed": 82,
@@ -20518,7 +20727,7 @@ const PLAYERS_ALL = [
         }
       },
       "sigma": {
-        "finalScore": 61.98,
+        "finalScore": 61.97,
         "battleScore": 41.77,
         "coeff": 1.33,
         "matchCoef": 1.03,
@@ -20578,8 +20787,8 @@ const PLAYERS_ALL = [
         }
       },
       "ashe": {
-        "finalScore": 49.81,
-        "battleScore": 37.56,
+        "finalScore": 49.69,
+        "battleScore": 37.46,
         "coeff": 1.33,
         "matchCoef": 1,
         "gamesPlayed": 24,
@@ -20595,10 +20804,11 @@ const PLAYERS_ALL = [
           "as10": 1.72,
           "wa": 41,
           "ca": 11
-        }
+        },
+        "rankDelta": -1
       },
       "baptiste": {
-        "finalScore": 50.25,
+        "finalScore": 50.24,
         "battleScore": 40.31,
         "coeff": 1.33,
         "matchCoef": 0.94,
@@ -20639,7 +20849,7 @@ const PLAYERS_ALL = [
       },
       "brigitte": {
         "finalScore": 36.55,
-        "battleScore": 31.9,
+        "battleScore": 31.91,
         "coeff": 1.33,
         "matchCoef": 0.86,
         "gamesPlayed": 5,
@@ -20658,7 +20868,7 @@ const PLAYERS_ALL = [
         }
       },
       "cassidy": {
-        "finalScore": 32.9,
+        "finalScore": 32.91,
         "battleScore": 28.72,
         "coeff": 1.33,
         "matchCoef": 0.86,
@@ -20778,8 +20988,8 @@ const PLAYERS_ALL = [
         }
       },
       "genji": {
-        "finalScore": 59.68,
-        "battleScore": 41.91,
+        "finalScore": 59.67,
+        "battleScore": 41.9,
         "coeff": 1.33,
         "matchCoef": 1.07,
         "gamesPlayed": 56,
@@ -20858,7 +21068,7 @@ const PLAYERS_ALL = [
         }
       },
       "jetpack-cat": {
-        "finalScore": 52.16,
+        "finalScore": 52.17,
         "battleScore": 46.11,
         "coeff": 1.33,
         "matchCoef": 0.85,
@@ -20915,11 +21125,12 @@ const PLAYERS_ALL = [
           "as10": 2.41,
           "wa": 25,
           "ca": 0
-        }
+        },
+        "rankDelta": 1
       },
       "juno": {
-        "finalScore": 42.84,
-        "battleScore": 37.87,
+        "finalScore": 42.67,
+        "battleScore": 37.71,
         "coeff": 1.33,
         "matchCoef": 0.85,
         "gamesPlayed": 1,
@@ -20936,7 +21147,6 @@ const PLAYERS_ALL = [
           "wa": 36,
           "ca": 5
         },
-        "rankDelta": -1,
         "rankDeltaPower": -1
       },
       "kiriko": {
@@ -21040,8 +21250,8 @@ const PLAYERS_ALL = [
         }
       },
       "mizuki": {
-        "finalScore": 43.48,
-        "battleScore": 38.43,
+        "finalScore": 43.5,
+        "battleScore": 38.45,
         "coeff": 1.33,
         "matchCoef": 0.85,
         "gamesPlayed": 3,
@@ -21060,8 +21270,8 @@ const PLAYERS_ALL = [
         }
       },
       "moira": {
-        "finalScore": 68.5,
-        "battleScore": 38.84,
+        "finalScore": 68.51,
+        "battleScore": 38.85,
         "coeff": 1.33,
         "matchCoef": 1.05,
         "gamesPlayed": 85,
@@ -21080,8 +21290,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 46.88,
-        "battleScore": 34.58,
+        "finalScore": 46.76,
+        "battleScore": 34.49,
         "coeff": 1.33,
         "matchCoef": 1.02,
         "gamesPlayed": 31,
@@ -21100,8 +21310,8 @@ const PLAYERS_ALL = [
         }
       },
       "pharah": {
-        "finalScore": 50.56,
-        "battleScore": 38.12,
+        "finalScore": 50.58,
+        "battleScore": 38.14,
         "coeff": 1.33,
         "matchCoef": 1,
         "gamesPlayed": 24,
@@ -21120,8 +21330,8 @@ const PLAYERS_ALL = [
         }
       },
       "ramattra": {
-        "finalScore": 55.85,
-        "battleScore": 35.42,
+        "finalScore": 55.87,
+        "battleScore": 35.4,
         "coeff": 1.33,
         "matchCoef": 1.02,
         "gamesPlayed": 43,
@@ -21180,7 +21390,7 @@ const PLAYERS_ALL = [
         }
       },
       "roadhog": {
-        "finalScore": 34.85,
+        "finalScore": 34.86,
         "battleScore": 30.81,
         "coeff": 1.33,
         "matchCoef": 0.85,
@@ -21200,8 +21410,8 @@ const PLAYERS_ALL = [
         }
       },
       "shion": {
-        "finalScore": 48.19,
-        "battleScore": 42.59,
+        "finalScore": 48.16,
+        "battleScore": 42.57,
         "coeff": 1.33,
         "matchCoef": 0.85,
         "gamesPlayed": 3,
@@ -21220,8 +21430,8 @@ const PLAYERS_ALL = [
         }
       },
       "sierra": {
-        "finalScore": 41.36,
-        "battleScore": 36.56,
+        "finalScore": 41.39,
+        "battleScore": 36.58,
         "coeff": 1.33,
         "matchCoef": 0.85,
         "gamesPlayed": 2,
@@ -21240,8 +21450,8 @@ const PLAYERS_ALL = [
         }
       },
       "sojourn": {
-        "finalScore": 45.35,
-        "battleScore": 38.29,
+        "finalScore": 45.36,
+        "battleScore": 38.3,
         "coeff": 1.33,
         "matchCoef": 0.89,
         "gamesPlayed": 7,
@@ -21278,7 +21488,7 @@ const PLAYERS_ALL = [
           "wa": 28,
           "ca": 8
         },
-        "rankDelta": 1
+        "rankDeltaPower": 1
       },
       "symmetra": {
         "finalScore": 41.89,
@@ -21301,8 +21511,8 @@ const PLAYERS_ALL = [
         }
       },
       "torbjorn": {
-        "finalScore": 42.85,
-        "battleScore": 37.88,
+        "finalScore": 42.86,
+        "battleScore": 37.89,
         "coeff": 1.33,
         "matchCoef": 0.85,
         "gamesPlayed": 4,
@@ -21318,9 +21528,7 @@ const PLAYERS_ALL = [
           "as10": 0.26,
           "wa": 24,
           "ca": 10
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        }
       },
       "tracer": {
         "finalScore": 47.52,
@@ -21340,12 +21548,11 @@ const PLAYERS_ALL = [
           "as10": 0.06,
           "wa": 32,
           "ca": 8
-        },
-        "rankDelta": -1
+        }
       },
       "vendetta": {
-        "finalScore": 56.28,
-        "battleScore": 41.87,
+        "finalScore": 56.3,
+        "battleScore": 41.89,
         "coeff": 1.33,
         "matchCoef": 1.01,
         "gamesPlayed": 28,
@@ -21364,8 +21571,8 @@ const PLAYERS_ALL = [
         }
       },
       "winston": {
-        "finalScore": 43.95,
-        "battleScore": 35.55,
+        "finalScore": 44.05,
+        "battleScore": 35.63,
         "coeff": 1.33,
         "matchCoef": 0.93,
         "gamesPlayed": 11,
@@ -21404,8 +21611,8 @@ const PLAYERS_ALL = [
         }
       },
       "wuyang": {
-        "finalScore": 48.8,
-        "battleScore": 43.14,
+        "finalScore": 48.77,
+        "battleScore": 43.11,
         "coeff": 1.33,
         "matchCoef": 0.85,
         "gamesPlayed": 2,
@@ -21925,7 +22132,7 @@ const PLAYERS_ALL = [
       },
       "anran": {
         "finalScore": 55.99,
-        "battleScore": 34.26,
+        "battleScore": 34.24,
         "coeff": 1,
         "matchCoef": 0.92,
         "gamesPlayed": 4,
@@ -21944,8 +22151,8 @@ const PLAYERS_ALL = [
         }
       },
       "ashe": {
-        "finalScore": 30.47,
-        "battleScore": 35.85,
+        "finalScore": 30.36,
+        "battleScore": 35.72,
         "coeff": 1,
         "matchCoef": 0.85,
         "gamesPlayed": 3,
@@ -21961,7 +22168,9 @@ const PLAYERS_ALL = [
           "as10": 0.39,
           "wa": 37,
           "ca": 15
-        }
+        },
+        "rankDelta": -3,
+        "rankDeltaPower": -1
       },
       "baptiste": {
         "finalScore": 27.29,
@@ -22024,8 +22233,8 @@ const PLAYERS_ALL = [
         }
       },
       "cassidy": {
-        "finalScore": 36.31,
-        "battleScore": 36.44,
+        "finalScore": 36.3,
+        "battleScore": 36.43,
         "coeff": 1,
         "matchCoef": 1,
         "gamesPlayed": 24,
@@ -22044,8 +22253,8 @@ const PLAYERS_ALL = [
         }
       },
       "doctrine": {
-        "finalScore": 42.25,
-        "battleScore": 48.21,
+        "finalScore": 41.25,
+        "battleScore": 47.06,
         "coeff": 1,
         "matchCoef": 0.88,
         "gamesPlayed": 6,
@@ -22062,7 +22271,7 @@ const PLAYERS_ALL = [
           "wa": 45,
           "ca": 0
         },
-        "rankDeltaPower": 1
+        "rankDeltaPower": -1
       },
       "domina": {
         "finalScore": 31.83,
@@ -22102,7 +22311,8 @@ const PLAYERS_ALL = [
           "as10": 5.37,
           "wa": 20,
           "ca": 9
-        }
+        },
+        "rankDelta": 1
       },
       "emre": {
         "finalScore": 30.39,
@@ -22122,7 +22332,9 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 33,
           "ca": 11
-        }
+        },
+        "rankDelta": 1,
+        "rankDeltaPower": 1
       },
       "freja": {
         "finalScore": 32.88,
@@ -22166,7 +22378,7 @@ const PLAYERS_ALL = [
       },
       "jetpack-cat": {
         "finalScore": 25.92,
-        "battleScore": 30.49,
+        "battleScore": 30.5,
         "coeff": 1,
         "matchCoef": 0.85,
         "gamesPlayed": 2,
@@ -22225,8 +22437,8 @@ const PLAYERS_ALL = [
         }
       },
       "juno": {
-        "finalScore": 31.25,
-        "battleScore": 36.76,
+        "finalScore": 31.31,
+        "battleScore": 36.84,
         "coeff": 1,
         "matchCoef": 0.85,
         "gamesPlayed": 3,
@@ -22242,11 +22454,12 @@ const PLAYERS_ALL = [
           "as10": 13.65,
           "wa": 30,
           "ca": 4
-        }
+        },
+        "rankDeltaPower": 1
       },
       "kiriko": {
         "finalScore": 34.93,
-        "battleScore": 35.47,
+        "battleScore": 35.46,
         "coeff": 1,
         "matchCoef": 0.98,
         "gamesPlayed": 21,
@@ -22265,8 +22478,8 @@ const PLAYERS_ALL = [
         }
       },
       "lifeweaver": {
-        "finalScore": 28.6,
-        "battleScore": 30.11,
+        "finalScore": 28.62,
+        "battleScore": 30.13,
         "coeff": 1,
         "matchCoef": 0.95,
         "gamesPlayed": 14,
@@ -22282,8 +22495,7 @@ const PLAYERS_ALL = [
           "as10": 12.77,
           "wa": 21,
           "ca": 10
-        },
-        "rankDelta": 1
+        }
       },
       "mauga": {
         "finalScore": 56.32,
@@ -22346,8 +22558,8 @@ const PLAYERS_ALL = [
         }
       },
       "mizuki": {
-        "finalScore": 28.75,
-        "battleScore": 33.4,
+        "finalScore": 28.76,
+        "battleScore": 33.42,
         "coeff": 1,
         "matchCoef": 0.86,
         "gamesPlayed": 5,
@@ -22386,8 +22598,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 28.28,
-        "battleScore": 32.86,
+        "finalScore": 28.25,
+        "battleScore": 32.83,
         "coeff": 1,
         "matchCoef": 0.86,
         "gamesPlayed": 5,
@@ -22406,8 +22618,8 @@ const PLAYERS_ALL = [
         }
       },
       "ramattra": {
-        "finalScore": 47.91,
-        "battleScore": 28.44,
+        "finalScore": 47.95,
+        "battleScore": 28.43,
         "coeff": 1,
         "matchCoef": 0.96,
         "gamesPlayed": 10,
@@ -22466,8 +22678,8 @@ const PLAYERS_ALL = [
         }
       },
       "roadhog": {
-        "finalScore": 23.97,
-        "battleScore": 28.2,
+        "finalScore": 23.98,
+        "battleScore": 28.21,
         "coeff": 1,
         "matchCoef": 0.85,
         "gamesPlayed": 1,
@@ -22486,8 +22698,8 @@ const PLAYERS_ALL = [
         }
       },
       "shion": {
-        "finalScore": 33.02,
-        "battleScore": 38.36,
+        "finalScore": 32.98,
+        "battleScore": 38.32,
         "coeff": 1,
         "matchCoef": 0.86,
         "gamesPlayed": 5,
@@ -22506,8 +22718,8 @@ const PLAYERS_ALL = [
         }
       },
       "sigma": {
-        "finalScore": 49.98,
-        "battleScore": 35.33,
+        "finalScore": 49.97,
+        "battleScore": 35.32,
         "coeff": 1,
         "matchCoef": 0.92,
         "gamesPlayed": 3,
@@ -22543,7 +22755,8 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 25,
           "ca": 9
-        }
+        },
+        "rankDelta": 1
       },
       "soldier-76": {
         "finalScore": 41.72,
@@ -22564,7 +22777,7 @@ const PLAYERS_ALL = [
           "wa": 29,
           "ca": 10
         },
-        "rankDeltaPower": -1
+        "rankDeltaPower": 1
       },
       "symmetra": {
         "finalScore": 27.65,
@@ -22604,11 +22817,12 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 24,
           "ca": 7
-        }
+        },
+        "rankDeltaPower": -1
       },
       "vendetta": {
-        "finalScore": 29.1,
-        "battleScore": 33.81,
+        "finalScore": 29.11,
+        "battleScore": 33.82,
         "coeff": 1,
         "matchCoef": 0.86,
         "gamesPlayed": 5,
@@ -22667,8 +22881,8 @@ const PLAYERS_ALL = [
         }
       },
       "winston": {
-        "finalScore": 30.59,
-        "battleScore": 35.54,
+        "finalScore": 30.61,
+        "battleScore": 35.56,
         "coeff": 1,
         "matchCoef": 0.86,
         "gamesPlayed": 5,
@@ -22724,8 +22938,7 @@ const PLAYERS_ALL = [
           "as10": 16.47,
           "wa": 12,
           "ca": 6
-        },
-        "rankDelta": -1
+        }
       }
     },
     "bscoreAll": {
@@ -22751,7 +22964,7 @@ const PLAYERS_ALL = [
       },
       "anran": {
         "finalScore": 55.99,
-        "battleScore": 34.26,
+        "battleScore": 34.24,
         "coeff": 1,
         "matchCoef": 0.92,
         "gamesPlayed": 4,
@@ -22770,8 +22983,8 @@ const PLAYERS_ALL = [
         }
       },
       "ashe": {
-        "finalScore": 30.47,
-        "battleScore": 35.85,
+        "finalScore": 30.36,
+        "battleScore": 35.72,
         "coeff": 1,
         "matchCoef": 0.85,
         "gamesPlayed": 3,
@@ -22787,7 +23000,9 @@ const PLAYERS_ALL = [
           "as10": 0.39,
           "wa": 37,
           "ca": 15
-        }
+        },
+        "rankDelta": -3,
+        "rankDeltaPower": -1
       },
       "baptiste": {
         "finalScore": 27.29,
@@ -22850,8 +23065,8 @@ const PLAYERS_ALL = [
         }
       },
       "cassidy": {
-        "finalScore": 36.31,
-        "battleScore": 36.44,
+        "finalScore": 36.3,
+        "battleScore": 36.43,
         "coeff": 1,
         "matchCoef": 1,
         "gamesPlayed": 24,
@@ -22870,8 +23085,8 @@ const PLAYERS_ALL = [
         }
       },
       "doctrine": {
-        "finalScore": 42.25,
-        "battleScore": 48.21,
+        "finalScore": 41.25,
+        "battleScore": 47.06,
         "coeff": 1,
         "matchCoef": 0.88,
         "gamesPlayed": 6,
@@ -22888,7 +23103,7 @@ const PLAYERS_ALL = [
           "wa": 45,
           "ca": 0
         },
-        "rankDeltaPower": 1
+        "rankDeltaPower": -1
       },
       "domina": {
         "finalScore": 31.83,
@@ -22928,7 +23143,8 @@ const PLAYERS_ALL = [
           "as10": 5.37,
           "wa": 20,
           "ca": 9
-        }
+        },
+        "rankDelta": 1
       },
       "emre": {
         "finalScore": 30.39,
@@ -22948,7 +23164,9 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 33,
           "ca": 11
-        }
+        },
+        "rankDelta": 1,
+        "rankDeltaPower": 1
       },
       "freja": {
         "finalScore": 32.88,
@@ -22992,7 +23210,7 @@ const PLAYERS_ALL = [
       },
       "jetpack-cat": {
         "finalScore": 25.92,
-        "battleScore": 30.49,
+        "battleScore": 30.5,
         "coeff": 1,
         "matchCoef": 0.85,
         "gamesPlayed": 2,
@@ -23051,8 +23269,8 @@ const PLAYERS_ALL = [
         }
       },
       "juno": {
-        "finalScore": 31.25,
-        "battleScore": 36.76,
+        "finalScore": 31.31,
+        "battleScore": 36.84,
         "coeff": 1,
         "matchCoef": 0.85,
         "gamesPlayed": 3,
@@ -23068,11 +23286,12 @@ const PLAYERS_ALL = [
           "as10": 13.65,
           "wa": 30,
           "ca": 4
-        }
+        },
+        "rankDeltaPower": 1
       },
       "kiriko": {
         "finalScore": 34.93,
-        "battleScore": 35.47,
+        "battleScore": 35.46,
         "coeff": 1,
         "matchCoef": 0.98,
         "gamesPlayed": 21,
@@ -23091,8 +23310,8 @@ const PLAYERS_ALL = [
         }
       },
       "lifeweaver": {
-        "finalScore": 28.6,
-        "battleScore": 30.11,
+        "finalScore": 28.62,
+        "battleScore": 30.13,
         "coeff": 1,
         "matchCoef": 0.95,
         "gamesPlayed": 14,
@@ -23108,8 +23327,7 @@ const PLAYERS_ALL = [
           "as10": 12.77,
           "wa": 21,
           "ca": 10
-        },
-        "rankDelta": 1
+        }
       },
       "mauga": {
         "finalScore": 56.32,
@@ -23172,8 +23390,8 @@ const PLAYERS_ALL = [
         }
       },
       "mizuki": {
-        "finalScore": 28.75,
-        "battleScore": 33.4,
+        "finalScore": 28.76,
+        "battleScore": 33.42,
         "coeff": 1,
         "matchCoef": 0.86,
         "gamesPlayed": 5,
@@ -23212,8 +23430,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 28.28,
-        "battleScore": 32.86,
+        "finalScore": 28.25,
+        "battleScore": 32.83,
         "coeff": 1,
         "matchCoef": 0.86,
         "gamesPlayed": 5,
@@ -23232,8 +23450,8 @@ const PLAYERS_ALL = [
         }
       },
       "ramattra": {
-        "finalScore": 47.91,
-        "battleScore": 28.44,
+        "finalScore": 47.95,
+        "battleScore": 28.43,
         "coeff": 1,
         "matchCoef": 0.96,
         "gamesPlayed": 10,
@@ -23292,8 +23510,8 @@ const PLAYERS_ALL = [
         }
       },
       "roadhog": {
-        "finalScore": 23.97,
-        "battleScore": 28.2,
+        "finalScore": 23.98,
+        "battleScore": 28.21,
         "coeff": 1,
         "matchCoef": 0.85,
         "gamesPlayed": 1,
@@ -23312,8 +23530,8 @@ const PLAYERS_ALL = [
         }
       },
       "shion": {
-        "finalScore": 33.02,
-        "battleScore": 38.36,
+        "finalScore": 32.98,
+        "battleScore": 38.32,
         "coeff": 1,
         "matchCoef": 0.86,
         "gamesPlayed": 5,
@@ -23332,8 +23550,8 @@ const PLAYERS_ALL = [
         }
       },
       "sigma": {
-        "finalScore": 49.98,
-        "battleScore": 35.33,
+        "finalScore": 49.97,
+        "battleScore": 35.32,
         "coeff": 1,
         "matchCoef": 0.92,
         "gamesPlayed": 3,
@@ -23369,7 +23587,8 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 25,
           "ca": 9
-        }
+        },
+        "rankDelta": 1
       },
       "soldier-76": {
         "finalScore": 41.72,
@@ -23390,7 +23609,7 @@ const PLAYERS_ALL = [
           "wa": 29,
           "ca": 10
         },
-        "rankDeltaPower": -1
+        "rankDeltaPower": 1
       },
       "symmetra": {
         "finalScore": 27.65,
@@ -23430,11 +23649,12 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 24,
           "ca": 7
-        }
+        },
+        "rankDeltaPower": -1
       },
       "vendetta": {
-        "finalScore": 29.1,
-        "battleScore": 33.81,
+        "finalScore": 29.11,
+        "battleScore": 33.82,
         "coeff": 1,
         "matchCoef": 0.86,
         "gamesPlayed": 5,
@@ -23493,8 +23713,8 @@ const PLAYERS_ALL = [
         }
       },
       "winston": {
-        "finalScore": 30.59,
-        "battleScore": 35.54,
+        "finalScore": 30.61,
+        "battleScore": 35.56,
         "coeff": 1,
         "matchCoef": 0.86,
         "gamesPlayed": 5,
@@ -23550,8 +23770,7 @@ const PLAYERS_ALL = [
           "as10": 16.47,
           "wa": 12,
           "ca": 6
-        },
-        "rankDelta": -1
+        }
       }
     },
     "recent": [
@@ -23756,8 +23975,8 @@ const PLAYERS_ALL = [
         }
       },
       "kiriko": {
-        "finalScore": 32.99,
-        "battleScore": 30,
+        "finalScore": 32.95,
+        "battleScore": 29.97,
         "coeff": 1,
         "matchCoef": 1.1,
         "gamesPlayed": 79,
@@ -23816,8 +24035,8 @@ const PLAYERS_ALL = [
         }
       },
       "sojourn": {
-        "finalScore": 32.8,
-        "battleScore": 38.59,
+        "finalScore": 32.81,
+        "battleScore": 38.6,
         "coeff": 1,
         "matchCoef": 0.85,
         "gamesPlayed": 3,
@@ -23938,8 +24157,8 @@ const PLAYERS_ALL = [
         }
       },
       "kiriko": {
-        "finalScore": 32.99,
-        "battleScore": 30,
+        "finalScore": 32.95,
+        "battleScore": 29.97,
         "coeff": 1,
         "matchCoef": 1.1,
         "gamesPlayed": 79,
@@ -23998,8 +24217,8 @@ const PLAYERS_ALL = [
         }
       },
       "sojourn": {
-        "finalScore": 32.8,
-        "battleScore": 38.59,
+        "finalScore": 32.81,
+        "battleScore": 38.6,
         "coeff": 1,
         "matchCoef": 0.85,
         "gamesPlayed": 3,
@@ -24081,7 +24300,7 @@ const PLAYERS_ALL = [
       "Tank": null,
       "Damage": {
         "division": "silver",
-        "tier": 4,
+        "tier": 5,
         "icon": "https://static.playoverwatch.com/images/pages/career/icons/rank/Rank_SilverTier.305e60dca5e95356ced59825426844cc7cdb4948.png"
       },
       "Support": {
@@ -24092,53 +24311,53 @@ const PLAYERS_ALL = [
     },
     "rankTier": "Silver 2",
     "overall": {
-      "matches": 256,
-      "wins": 110,
-      "losses": 146,
-      "wr": 42.97,
-      "kda": 1.49,
-      "elim": 10.5,
-      "deaths": 7.6,
-      "dmg": 5735.22,
-      "heal": 4571.57,
-      "time": 135234
+      "matches": 261,
+      "wins": 113,
+      "losses": 148,
+      "wr": 43.3,
+      "kda": 1.48,
+      "elim": 10.46,
+      "deaths": 7.62,
+      "dmg": 5746.91,
+      "heal": 4555.47,
+      "time": 138634
     },
     "roles": {
       "Tank": {
-        "g": 10,
+        "g": 11,
         "w": 6,
-        "l": 4,
-        "time": 4729,
-        "wr": 60,
-        "kda": 3.43,
-        "elim": 17.64,
-        "deaths": 5.84,
-        "dmg": 11030.15,
-        "heal": 408.54
+        "l": 5,
+        "time": 5417,
+        "wr": 54.55,
+        "kda": 2.84,
+        "elim": 16.06,
+        "deaths": 6.42,
+        "dmg": 10920.84,
+        "heal": 356.65
       },
       "Damage": {
-        "g": 102,
+        "g": 103,
         "w": 41,
-        "l": 61,
-        "time": 55080,
-        "wr": 40.2,
-        "kda": 1.34,
-        "elim": 12.04,
-        "deaths": 9.01,
-        "dmg": 7781.01,
-        "heal": 393.33
+        "l": 62,
+        "time": 55435,
+        "wr": 39.81,
+        "kda": 1.33,
+        "elim": 11.98,
+        "deaths": 9.04,
+        "dmg": 7782.11,
+        "heal": 390.81
       },
       "Support": {
-        "g": 144,
-        "w": 63,
+        "g": 147,
+        "w": 66,
         "l": 81,
-        "time": 75425,
-        "wr": 43.75,
-        "kda": 1.53,
-        "elim": 8.93,
-        "deaths": 6.69,
-        "dmg": 3909.27,
-        "heal": 7883.79
+        "time": 77782,
+        "wr": 44.9,
+        "kda": 1.54,
+        "elim": 8.99,
+        "deaths": 6.7,
+        "dmg": 3936.1,
+        "heal": 7816.03
       }
     },
     "heroes": [
@@ -24148,15 +24367,15 @@ const PLAYERS_ALL = [
         "role": "Support",
         "g": 61,
         "wr": 49.18,
-        "kda": 2.14
+        "kda": 2.16
       },
       {
         "slug": "kiriko",
         "n": "Kiriko",
         "role": "Support",
-        "g": 48,
-        "wr": 41.67,
-        "kda": 1.11
+        "g": 49,
+        "wr": 42.86,
+        "kda": 1.13
       },
       {
         "slug": "anran",
@@ -24188,7 +24407,7 @@ const PLAYERS_ALL = [
         "role": "Support",
         "g": 13,
         "wr": 23.08,
-        "kda": 0.77
+        "kda": 0.75
       },
       {
         "slug": "soldier-76",
@@ -24236,7 +24455,7 @@ const PLAYERS_ALL = [
         "role": "Damage",
         "g": 5,
         "wr": 40,
-        "kda": 1.72
+        "kda": 1.62
       },
       {
         "slug": "ana",
@@ -24252,7 +24471,31 @@ const PLAYERS_ALL = [
         "role": "Damage",
         "g": 4,
         "wr": 50,
-        "kda": 0.92
+        "kda": 0.9
+      },
+      {
+        "slug": "torbjorn",
+        "n": "Torbjörn",
+        "role": "Damage",
+        "g": 4,
+        "wr": 50,
+        "kda": 1.54
+      },
+      {
+        "slug": "wuyang",
+        "n": "Wuyang",
+        "role": "Support",
+        "g": 4,
+        "wr": 75,
+        "kda": 1.32
+      },
+      {
+        "slug": "orisa",
+        "n": "Orisa",
+        "role": "Tank",
+        "g": 3,
+        "wr": 33.33,
+        "kda": 2.23
       },
       {
         "slug": "shion",
@@ -24260,15 +24503,7 @@ const PLAYERS_ALL = [
         "role": "Damage",
         "g": 3,
         "wr": 33.33,
-        "kda": 1.53
-      },
-      {
-        "slug": "torbjorn",
-        "n": "Torbjörn",
-        "role": "Damage",
-        "g": 3,
-        "wr": 66.67,
-        "kda": 1.65
+        "kda": 1.38
       },
       {
         "slug": "junkrat",
@@ -24285,22 +24520,6 @@ const PLAYERS_ALL = [
         "g": 2,
         "wr": 50,
         "kda": 0.38
-      },
-      {
-        "slug": "orisa",
-        "n": "Orisa",
-        "role": "Tank",
-        "g": 2,
-        "wr": 50,
-        "kda": 3.07
-      },
-      {
-        "slug": "wuyang",
-        "n": "Wuyang",
-        "role": "Support",
-        "g": 2,
-        "wr": 50,
-        "kda": 1.08
       },
       {
         "slug": "brigitte",
@@ -24394,7 +24613,7 @@ const PLAYERS_ALL = [
     "bscore": {
       "anran": {
         "finalScore": 58.44,
-        "battleScore": 35.59,
+        "battleScore": 35.58,
         "coeff": 1.1,
         "matchCoef": 0.99,
         "gamesPlayed": 22,
@@ -24431,24 +24650,24 @@ const PLAYERS_ALL = [
           "wa": 31,
           "ca": 9
         },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        "rankDelta": 1,
+        "rankDeltaPower": 1
       },
       "bastion": {
         "finalScore": 51.41,
-        "battleScore": 35.61,
+        "battleScore": 35.6,
         "coeff": 1.1,
         "matchCoef": 0.96,
         "gamesPlayed": 9,
         "rankIndex": 1,
         "det": {
           "g": 9,
-          "time": 4386,
+          "time": 4393,
           "wr": 23.666666666666668,
-          "el10": 12.770000000000001,
-          "de10": 8.37,
-          "dm10": 8528.666666666666,
-          "he10": 96.95666666666666,
+          "el10": 12.75,
+          "de10": 8.360000000000001,
+          "dm10": 8517.666666666666,
+          "he10": 96.94666666666666,
           "as10": 1.0633333333333335,
           "wa": 30.666666666666668,
           "ca": 3
@@ -24473,26 +24692,26 @@ const PLAYERS_ALL = [
           "wa": 31.1875,
           "ca": 11.0625
         },
-        "rankDelta": 1
+        "rankDeltaPower": 1
       },
       "kiriko": {
-        "finalScore": 37.44,
-        "battleScore": 32.22,
+        "finalScore": 37.63,
+        "battleScore": 32.32,
         "coeff": 1.1,
         "matchCoef": 1.06,
-        "gamesPlayed": 48,
+        "gamesPlayed": 49,
         "rankIndex": 1,
         "det": {
-          "g": 48,
-          "time": 24324,
-          "wr": 41,
-          "el10": 4.878333333333334,
-          "de10": 6.41,
-          "dm10": 2127.5,
-          "he10": 8131.666666666667,
-          "as10": 13.591666666666669,
-          "wa": 27.333333333333332,
-          "ca": 9.666666666666666
+          "g": 49,
+          "time": 25019,
+          "wr": 41.06122448979592,
+          "el10": 4.9708163265306125,
+          "de10": 6.401632653061225,
+          "dm10": 2147.8571428571427,
+          "he10": 8116.877551020408,
+          "as10": 13.701020408163266,
+          "wa": 27.367346938775512,
+          "ca": 9.816326530612244
         }
       },
       "lucio": {
@@ -24513,8 +24732,7 @@ const PLAYERS_ALL = [
           "as10": 2.78,
           "wa": 20,
           "ca": 6
-        },
-        "rankDeltaPower": 1
+        }
       },
       "mauga": {
         "finalScore": 54.46,
@@ -24537,48 +24755,70 @@ const PLAYERS_ALL = [
         }
       },
       "mizuki": {
-        "finalScore": 27.52,
-        "battleScore": 26.52,
+        "finalScore": 27.39,
+        "battleScore": 26.4,
         "coeff": 1.1,
         "matchCoef": 0.94,
         "gamesPlayed": 13,
         "rankIndex": 1,
         "det": {
           "g": 13,
-          "time": 6449,
+          "time": 6608,
           "wr": 22.53846153846154,
-          "el10": 6.624615384615385,
-          "de10": 8.57,
-          "dm10": 2850.230769230769,
-          "he10": 6937.923076923077,
-          "as10": 6.823846153846154,
+          "el10": 6.5807692307692305,
+          "de10": 8.713076923076922,
+          "dm10": 2843.3076923076924,
+          "he10": 6847,
+          "as10": 6.708461538461539,
           "wa": 23.53846153846154,
-          "ca": 6.846153846153846
+          "ca": 7.538461538461538
         }
       },
       "moira": {
-        "finalScore": 65.49,
-        "battleScore": 39.15,
+        "finalScore": 65.5,
+        "battleScore": 39.17,
         "coeff": 1.1,
         "matchCoef": 1.04,
         "gamesPlayed": 61,
         "rankIndex": 1,
         "det": {
           "g": 61,
-          "time": 33789,
+          "time": 34093,
           "wr": 49.31147540983606,
-          "el10": 12.742622950819671,
-          "de10": 5.983934426229508,
-          "dm10": 4092.9508196721313,
-          "he10": 8703.11475409836,
-          "as10": 12.864262295081968,
+          "el10": 12.77704918032787,
+          "de10": 5.949508196721311,
+          "dm10": 4112.622950819672,
+          "he10": 8677.04918032787,
+          "as10": 12.893770491803279,
           "wa": 0,
           "ca": 0
         }
       },
+      "orisa": {
+        "finalScore": 32.64,
+        "battleScore": 38.4,
+        "coeff": 1,
+        "matchCoef": 0.85,
+        "gamesPlayed": 3,
+        "rankIndex": 0,
+        "det": {
+          "g": 3,
+          "time": 1907,
+          "wr": 48.666666666666664,
+          "el10": 13.32,
+          "de10": 6.513333333333333,
+          "dm10": 7429.333333333333,
+          "he10": 122.66666666666667,
+          "as10": 2.5533333333333332,
+          "wa": 31,
+          "ca": 7
+        },
+        "rankDelta": -7,
+        "rankDeltaPower": -5
+      },
       "pharah": {
-        "finalScore": 35.59,
-        "battleScore": 33.3,
+        "finalScore": 35.65,
+        "battleScore": 33.35,
         "coeff": 1.1,
         "matchCoef": 0.97,
         "gamesPlayed": 18,
@@ -24594,46 +24834,47 @@ const PLAYERS_ALL = [
           "as10": 3.0127777777777776,
           "wa": 36,
           "ca": 0
-        }
+        },
+        "rankDelta": 1
       },
       "shion": {
-        "finalScore": 32.26,
-        "battleScore": 34.51,
+        "finalScore": 32.28,
+        "battleScore": 34.52,
         "coeff": 1.1,
         "matchCoef": 0.85,
         "gamesPlayed": 3,
         "rankIndex": 1,
         "det": {
           "g": 3,
-          "time": 1387,
+          "time": 1458,
           "wr": 33.333333333333336,
-          "el10": 11.133333333333333,
-          "de10": 9.153333333333334,
-          "dm10": 4381.333333333333,
+          "el10": 10.816666666666665,
+          "de10": 9.396666666666667,
+          "dm10": 4601.666666666667,
           "he10": 32.67333333333333,
           "as10": 1.78,
-          "wa": 28.666666666666668,
-          "ca": 15.666666666666666
+          "wa": 29,
+          "ca": 16.666666666666668
         }
       },
       "sierra": {
-        "finalScore": 33.52,
-        "battleScore": 35.85,
+        "finalScore": 33.39,
+        "battleScore": 35.72,
         "coeff": 1.1,
         "matchCoef": 0.85,
         "gamesPlayed": 4,
         "rankIndex": 1,
         "det": {
           "g": 4,
-          "time": 2841,
+          "time": 2871,
           "wr": 50,
-          "el10": 9.715,
-          "de10": 10.795,
-          "dm10": 5974.5,
+          "el10": 9.565,
+          "de10": 10.915,
+          "dm10": 5935.5,
           "he10": 62,
           "as10": 0.16,
           "wa": 30,
-          "ca": 7.5
+          "ca": 8
         }
       },
       "soldier-76": {
@@ -24657,24 +24898,46 @@ const PLAYERS_ALL = [
         }
       },
       "torbjorn": {
-        "finalScore": 36.16,
-        "battleScore": 38.67,
+        "finalScore": 35.73,
+        "battleScore": 38.21,
         "coeff": 1.1,
         "matchCoef": 0.85,
-        "gamesPlayed": 3,
+        "gamesPlayed": 4,
         "rankIndex": 1,
         "det": {
-          "g": 3,
-          "time": 2068,
-          "wr": 59.666666666666664,
-          "el10": 10.803333333333333,
-          "de10": 6.736666666666667,
-          "dm10": 5736,
+          "g": 4,
+          "time": 2235,
+          "wr": 53.5,
+          "el10": 11.15,
+          "de10": 6.904999999999999,
+          "dm10": 5969.5,
           "he10": 0,
-          "as10": 0.3066666666666667,
-          "wa": 28,
-          "ca": 4.666666666666667
+          "as10": 0.23,
+          "wa": 27.5,
+          "ca": 6
         }
+      },
+      "wuyang": {
+        "finalScore": 34.82,
+        "battleScore": 37.24,
+        "coeff": 1.1,
+        "matchCoef": 0.85,
+        "gamesPlayed": 4,
+        "rankIndex": 1,
+        "det": {
+          "g": 4,
+          "time": 2252,
+          "wr": 65,
+          "el10": 9.745000000000001,
+          "de10": 7.46,
+          "dm10": 3589,
+          "he10": 5534.5,
+          "as10": 15.8,
+          "wa": 23.5,
+          "ca": 0
+        },
+        "rankDelta": 5,
+        "rankDeltaPower": 3
       },
       "zenyatta": {
         "finalScore": 42.44,
@@ -24697,7 +24960,7 @@ const PLAYERS_ALL = [
         }
       },
       "ana": {
-        "finalScore": 25.53,
+        "finalScore": 25.54,
         "battleScore": 27.31,
         "coeff": 1.1,
         "matchCoef": 0.85,
@@ -24738,7 +25001,7 @@ const PLAYERS_ALL = [
       },
       "cassidy": {
         "finalScore": 33.56,
-        "battleScore": 35.44,
+        "battleScore": 35.45,
         "coeff": 1.1,
         "matchCoef": 0.86,
         "gamesPlayed": 5,
@@ -24754,7 +25017,8 @@ const PLAYERS_ALL = [
           "as10": 1.13,
           "wa": 42,
           "ca": 8
-        }
+        },
+        "rankDelta": 1
       },
       "dva": {
         "finalScore": 42.63,
@@ -24818,8 +25082,8 @@ const PLAYERS_ALL = [
         "rankDelta": -1
       },
       "jetpack-cat": {
-        "finalScore": 26.15,
-        "battleScore": 27.97,
+        "finalScore": 26.16,
+        "battleScore": 27.98,
         "coeff": 1.1,
         "matchCoef": 0.85,
         "gamesPlayed": 1,
@@ -24858,8 +25122,8 @@ const PLAYERS_ALL = [
         }
       },
       "juno": {
-        "finalScore": 28.93,
-        "battleScore": 30.94,
+        "finalScore": 28.68,
+        "battleScore": 30.67,
         "coeff": 1.1,
         "matchCoef": 0.85,
         "gamesPlayed": 1,
@@ -24878,8 +25142,8 @@ const PLAYERS_ALL = [
         }
       },
       "lifeweaver": {
-        "finalScore": 27.07,
-        "battleScore": 28.95,
+        "finalScore": 27.03,
+        "battleScore": 28.91,
         "coeff": 1.1,
         "matchCoef": 0.85,
         "gamesPlayed": 1,
@@ -24895,26 +25159,6 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 29,
           "ca": 13
-        }
-      },
-      "orisa": {
-        "finalScore": 35.35,
-        "battleScore": 41.59,
-        "coeff": 1,
-        "matchCoef": 0.85,
-        "gamesPlayed": 2,
-        "rankIndex": 0,
-        "det": {
-          "g": 2,
-          "time": 1116,
-          "wr": 73,
-          "el10": 15.05,
-          "de10": 4.84,
-          "dm10": 7467,
-          "he10": 184,
-          "as10": 2.69,
-          "wa": 28,
-          "ca": 7
         }
       },
       "reaper": {
@@ -24975,8 +25219,7 @@ const PLAYERS_ALL = [
           "as10": 3.6,
           "wa": 16,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "tracer": {
         "finalScore": 32.47,
@@ -24997,34 +25240,12 @@ const PLAYERS_ALL = [
           "wa": 38,
           "ca": 4
         }
-      },
-      "wuyang": {
-        "finalScore": 33.25,
-        "battleScore": 35.56,
-        "coeff": 1.1,
-        "matchCoef": 0.85,
-        "gamesPlayed": 2,
-        "rankIndex": 1,
-        "det": {
-          "g": 2,
-          "time": 1053,
-          "wr": 54,
-          "el10": 7.98,
-          "de10": 7.41,
-          "dm10": 3129,
-          "he10": 5959,
-          "as10": 17.09,
-          "wa": 20,
-          "ca": 0
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
       }
     },
     "bscoreAll": {
       "anran": {
         "finalScore": 58.44,
-        "battleScore": 35.59,
+        "battleScore": 35.58,
         "coeff": 1.1,
         "matchCoef": 0.99,
         "gamesPlayed": 22,
@@ -25061,24 +25282,24 @@ const PLAYERS_ALL = [
           "wa": 31,
           "ca": 9
         },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        "rankDelta": 1,
+        "rankDeltaPower": 1
       },
       "bastion": {
         "finalScore": 51.41,
-        "battleScore": 35.61,
+        "battleScore": 35.6,
         "coeff": 1.1,
         "matchCoef": 0.96,
         "gamesPlayed": 9,
         "rankIndex": 1,
         "det": {
           "g": 9,
-          "time": 4386,
+          "time": 4393,
           "wr": 23.666666666666668,
-          "el10": 12.770000000000001,
-          "de10": 8.37,
-          "dm10": 8528.666666666666,
-          "he10": 96.95666666666666,
+          "el10": 12.75,
+          "de10": 8.360000000000001,
+          "dm10": 8517.666666666666,
+          "he10": 96.94666666666666,
           "as10": 1.0633333333333335,
           "wa": 30.666666666666668,
           "ca": 3
@@ -25103,26 +25324,26 @@ const PLAYERS_ALL = [
           "wa": 31.1875,
           "ca": 11.0625
         },
-        "rankDelta": 1
+        "rankDeltaPower": 1
       },
       "kiriko": {
-        "finalScore": 37.44,
-        "battleScore": 32.22,
+        "finalScore": 37.63,
+        "battleScore": 32.32,
         "coeff": 1.1,
         "matchCoef": 1.06,
-        "gamesPlayed": 48,
+        "gamesPlayed": 49,
         "rankIndex": 1,
         "det": {
-          "g": 48,
-          "time": 24324,
-          "wr": 41,
-          "el10": 4.878333333333334,
-          "de10": 6.41,
-          "dm10": 2127.5,
-          "he10": 8131.666666666667,
-          "as10": 13.591666666666669,
-          "wa": 27.333333333333332,
-          "ca": 9.666666666666666
+          "g": 49,
+          "time": 25019,
+          "wr": 41.06122448979592,
+          "el10": 4.9708163265306125,
+          "de10": 6.401632653061225,
+          "dm10": 2147.8571428571427,
+          "he10": 8116.877551020408,
+          "as10": 13.701020408163266,
+          "wa": 27.367346938775512,
+          "ca": 9.816326530612244
         }
       },
       "lucio": {
@@ -25143,8 +25364,7 @@ const PLAYERS_ALL = [
           "as10": 2.78,
           "wa": 20,
           "ca": 6
-        },
-        "rankDeltaPower": 1
+        }
       },
       "mauga": {
         "finalScore": 54.46,
@@ -25167,48 +25387,70 @@ const PLAYERS_ALL = [
         }
       },
       "mizuki": {
-        "finalScore": 27.52,
-        "battleScore": 26.52,
+        "finalScore": 27.39,
+        "battleScore": 26.4,
         "coeff": 1.1,
         "matchCoef": 0.94,
         "gamesPlayed": 13,
         "rankIndex": 1,
         "det": {
           "g": 13,
-          "time": 6449,
+          "time": 6608,
           "wr": 22.53846153846154,
-          "el10": 6.624615384615385,
-          "de10": 8.57,
-          "dm10": 2850.230769230769,
-          "he10": 6937.923076923077,
-          "as10": 6.823846153846154,
+          "el10": 6.5807692307692305,
+          "de10": 8.713076923076922,
+          "dm10": 2843.3076923076924,
+          "he10": 6847,
+          "as10": 6.708461538461539,
           "wa": 23.53846153846154,
-          "ca": 6.846153846153846
+          "ca": 7.538461538461538
         }
       },
       "moira": {
-        "finalScore": 65.49,
-        "battleScore": 39.15,
+        "finalScore": 65.5,
+        "battleScore": 39.17,
         "coeff": 1.1,
         "matchCoef": 1.04,
         "gamesPlayed": 61,
         "rankIndex": 1,
         "det": {
           "g": 61,
-          "time": 33789,
+          "time": 34093,
           "wr": 49.31147540983606,
-          "el10": 12.742622950819671,
-          "de10": 5.983934426229508,
-          "dm10": 4092.9508196721313,
-          "he10": 8703.11475409836,
-          "as10": 12.864262295081968,
+          "el10": 12.77704918032787,
+          "de10": 5.949508196721311,
+          "dm10": 4112.622950819672,
+          "he10": 8677.04918032787,
+          "as10": 12.893770491803279,
           "wa": 0,
           "ca": 0
         }
       },
+      "orisa": {
+        "finalScore": 32.64,
+        "battleScore": 38.4,
+        "coeff": 1,
+        "matchCoef": 0.85,
+        "gamesPlayed": 3,
+        "rankIndex": 0,
+        "det": {
+          "g": 3,
+          "time": 1907,
+          "wr": 48.666666666666664,
+          "el10": 13.32,
+          "de10": 6.513333333333333,
+          "dm10": 7429.333333333333,
+          "he10": 122.66666666666667,
+          "as10": 2.5533333333333332,
+          "wa": 31,
+          "ca": 7
+        },
+        "rankDelta": -7,
+        "rankDeltaPower": -5
+      },
       "pharah": {
-        "finalScore": 35.59,
-        "battleScore": 33.3,
+        "finalScore": 35.65,
+        "battleScore": 33.35,
         "coeff": 1.1,
         "matchCoef": 0.97,
         "gamesPlayed": 18,
@@ -25224,46 +25466,47 @@ const PLAYERS_ALL = [
           "as10": 3.0127777777777776,
           "wa": 36,
           "ca": 0
-        }
+        },
+        "rankDelta": 1
       },
       "shion": {
-        "finalScore": 32.26,
-        "battleScore": 34.51,
+        "finalScore": 32.28,
+        "battleScore": 34.52,
         "coeff": 1.1,
         "matchCoef": 0.85,
         "gamesPlayed": 3,
         "rankIndex": 1,
         "det": {
           "g": 3,
-          "time": 1387,
+          "time": 1458,
           "wr": 33.333333333333336,
-          "el10": 11.133333333333333,
-          "de10": 9.153333333333334,
-          "dm10": 4381.333333333333,
+          "el10": 10.816666666666665,
+          "de10": 9.396666666666667,
+          "dm10": 4601.666666666667,
           "he10": 32.67333333333333,
           "as10": 1.78,
-          "wa": 28.666666666666668,
-          "ca": 15.666666666666666
+          "wa": 29,
+          "ca": 16.666666666666668
         }
       },
       "sierra": {
-        "finalScore": 33.52,
-        "battleScore": 35.85,
+        "finalScore": 33.39,
+        "battleScore": 35.72,
         "coeff": 1.1,
         "matchCoef": 0.85,
         "gamesPlayed": 4,
         "rankIndex": 1,
         "det": {
           "g": 4,
-          "time": 2841,
+          "time": 2871,
           "wr": 50,
-          "el10": 9.715,
-          "de10": 10.795,
-          "dm10": 5974.5,
+          "el10": 9.565,
+          "de10": 10.915,
+          "dm10": 5935.5,
           "he10": 62,
           "as10": 0.16,
           "wa": 30,
-          "ca": 7.5
+          "ca": 8
         }
       },
       "soldier-76": {
@@ -25287,24 +25530,46 @@ const PLAYERS_ALL = [
         }
       },
       "torbjorn": {
-        "finalScore": 36.16,
-        "battleScore": 38.67,
+        "finalScore": 35.73,
+        "battleScore": 38.21,
         "coeff": 1.1,
         "matchCoef": 0.85,
-        "gamesPlayed": 3,
+        "gamesPlayed": 4,
         "rankIndex": 1,
         "det": {
-          "g": 3,
-          "time": 2068,
-          "wr": 59.666666666666664,
-          "el10": 10.803333333333333,
-          "de10": 6.736666666666667,
-          "dm10": 5736,
+          "g": 4,
+          "time": 2235,
+          "wr": 53.5,
+          "el10": 11.15,
+          "de10": 6.904999999999999,
+          "dm10": 5969.5,
           "he10": 0,
-          "as10": 0.3066666666666667,
-          "wa": 28,
-          "ca": 4.666666666666667
+          "as10": 0.23,
+          "wa": 27.5,
+          "ca": 6
         }
+      },
+      "wuyang": {
+        "finalScore": 34.82,
+        "battleScore": 37.24,
+        "coeff": 1.1,
+        "matchCoef": 0.85,
+        "gamesPlayed": 4,
+        "rankIndex": 1,
+        "det": {
+          "g": 4,
+          "time": 2252,
+          "wr": 65,
+          "el10": 9.745000000000001,
+          "de10": 7.46,
+          "dm10": 3589,
+          "he10": 5534.5,
+          "as10": 15.8,
+          "wa": 23.5,
+          "ca": 0
+        },
+        "rankDelta": 5,
+        "rankDeltaPower": 3
       },
       "zenyatta": {
         "finalScore": 42.44,
@@ -25327,7 +25592,7 @@ const PLAYERS_ALL = [
         }
       },
       "ana": {
-        "finalScore": 25.53,
+        "finalScore": 25.54,
         "battleScore": 27.31,
         "coeff": 1.1,
         "matchCoef": 0.85,
@@ -25368,7 +25633,7 @@ const PLAYERS_ALL = [
       },
       "cassidy": {
         "finalScore": 33.56,
-        "battleScore": 35.44,
+        "battleScore": 35.45,
         "coeff": 1.1,
         "matchCoef": 0.86,
         "gamesPlayed": 5,
@@ -25384,7 +25649,8 @@ const PLAYERS_ALL = [
           "as10": 1.13,
           "wa": 42,
           "ca": 8
-        }
+        },
+        "rankDelta": 1
       },
       "dva": {
         "finalScore": 42.63,
@@ -25448,8 +25714,8 @@ const PLAYERS_ALL = [
         "rankDelta": -1
       },
       "jetpack-cat": {
-        "finalScore": 26.15,
-        "battleScore": 27.97,
+        "finalScore": 26.16,
+        "battleScore": 27.98,
         "coeff": 1.1,
         "matchCoef": 0.85,
         "gamesPlayed": 1,
@@ -25488,8 +25754,8 @@ const PLAYERS_ALL = [
         }
       },
       "juno": {
-        "finalScore": 28.93,
-        "battleScore": 30.94,
+        "finalScore": 28.68,
+        "battleScore": 30.67,
         "coeff": 1.1,
         "matchCoef": 0.85,
         "gamesPlayed": 1,
@@ -25508,8 +25774,8 @@ const PLAYERS_ALL = [
         }
       },
       "lifeweaver": {
-        "finalScore": 27.07,
-        "battleScore": 28.95,
+        "finalScore": 27.03,
+        "battleScore": 28.91,
         "coeff": 1.1,
         "matchCoef": 0.85,
         "gamesPlayed": 1,
@@ -25525,26 +25791,6 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 29,
           "ca": 13
-        }
-      },
-      "orisa": {
-        "finalScore": 35.35,
-        "battleScore": 41.59,
-        "coeff": 1,
-        "matchCoef": 0.85,
-        "gamesPlayed": 2,
-        "rankIndex": 0,
-        "det": {
-          "g": 2,
-          "time": 1116,
-          "wr": 73,
-          "el10": 15.05,
-          "de10": 4.84,
-          "dm10": 7467,
-          "he10": 184,
-          "as10": 2.69,
-          "wa": 28,
-          "ca": 7
         }
       },
       "reaper": {
@@ -25605,8 +25851,7 @@ const PLAYERS_ALL = [
           "as10": 3.6,
           "wa": 16,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "tracer": {
         "finalScore": 32.47,
@@ -25627,28 +25872,6 @@ const PLAYERS_ALL = [
           "wa": 38,
           "ca": 4
         }
-      },
-      "wuyang": {
-        "finalScore": 33.25,
-        "battleScore": 35.56,
-        "coeff": 1.1,
-        "matchCoef": 0.85,
-        "gamesPlayed": 2,
-        "rankIndex": 1,
-        "det": {
-          "g": 2,
-          "time": 1053,
-          "wr": 54,
-          "el10": 7.98,
-          "de10": 7.41,
-          "dm10": 3129,
-          "he10": 5959,
-          "as10": 17.09,
-          "wa": 20,
-          "ca": 0
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
       }
     },
     "recent": [
@@ -25739,6 +25962,15 @@ const PLAYERS_ALL = [
           "reaper": 2,
           "wuyang": 1
         }
+      },
+      {
+        "d": "2026-10-03",
+        "g": {
+          "kiriko": 1,
+          "orisa": 1,
+          "torbjorn": 1,
+          "wuyang": 2
+        }
       }
     ]
   },
@@ -25747,7 +25979,7 @@ const PLAYERS_ALL = [
     "pid": "dc50bb8ba174d6fcbea623|78615f6a87b43682d09d448bafb3b022",
     "name": "Nnware",
     "tag": "",
-    "endorse": 3,
+    "endorse": 2,
     "title": "Talon Imperial",
     "avatar": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/a28b07c1bc0019598da03e63c66837e29357caa2b7bc8bf38dbeba0b3bcba4b4.png",
     "namecard": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/aface728ddc9d3c100f0d771e5bc706f22f37e78282bed1426869e295e142aee.png",
@@ -25767,16 +25999,16 @@ const PLAYERS_ALL = [
     },
     "rankTier": "Gold 3",
     "overall": {
-      "matches": 1870,
-      "wins": 904,
-      "losses": 966,
-      "wr": 48.34,
+      "matches": 1886,
+      "wins": 915,
+      "losses": 971,
+      "wr": 48.52,
       "kda": 2.01,
-      "elim": 12.37,
-      "deaths": 7.1,
-      "dmg": 6704.47,
-      "heal": 4071.21,
-      "time": 941148
+      "elim": 12.38,
+      "deaths": 7.09,
+      "dmg": 6706.08,
+      "heal": 4069.27,
+      "time": 947714
     },
     "roles": {
       "Tank": {
@@ -25792,28 +26024,28 @@ const PLAYERS_ALL = [
         "heal": 1070.78
       },
       "Damage": {
-        "g": 797,
-        "w": 383,
-        "l": 414,
-        "time": 395999,
-        "wr": 48.06,
-        "kda": 1.87,
-        "elim": 14.32,
-        "deaths": 8.1,
-        "dmg": 8894.57,
-        "heal": 163.37
+        "g": 806,
+        "w": 391,
+        "l": 415,
+        "time": 399502,
+        "wr": 48.51,
+        "kda": 1.88,
+        "elim": 14.34,
+        "deaths": 8.08,
+        "dmg": 8903.02,
+        "heal": 161.94
       },
       "Support": {
-        "g": 909,
-        "w": 445,
-        "l": 464,
-        "time": 461247,
-        "wr": 48.95,
+        "g": 916,
+        "w": 448,
+        "l": 468,
+        "time": 464310,
+        "wr": 48.91,
         "kda": 2,
-        "elim": 10.07,
+        "elim": 10.06,
         "deaths": 6.44,
-        "dmg": 4056.03,
-        "heal": 7972.02
+        "dmg": 4053.01,
+        "heal": 7973.05
       }
     },
     "heroes": [
@@ -25821,24 +26053,24 @@ const PLAYERS_ALL = [
         "slug": "kiriko",
         "n": "Kiriko",
         "role": "Support",
-        "g": 262,
-        "wr": 45.8,
+        "g": 263,
+        "wr": 46.01,
         "kda": 1.84
       },
       {
         "slug": "junkrat",
         "n": "Junkrat",
         "role": "Damage",
-        "g": 187,
-        "wr": 50.27,
-        "kda": 2.12
+        "g": 193,
+        "wr": 51.3,
+        "kda": 2.14
       },
       {
         "slug": "ana",
         "n": "Ana",
         "role": "Support",
-        "g": 174,
-        "wr": 51.15,
+        "g": 176,
+        "wr": 50.57,
         "kda": 2.41
       },
       {
@@ -25885,16 +26117,16 @@ const PLAYERS_ALL = [
         "slug": "baptiste",
         "n": "Baptiste",
         "role": "Support",
-        "g": 56,
-        "wr": 50,
-        "kda": 1.33
+        "g": 57,
+        "wr": 50.88,
+        "kda": 1.34
       },
       {
         "slug": "cassidy",
         "n": "Cassidy",
         "role": "Damage",
-        "g": 51,
-        "wr": 41.18,
+        "g": 52,
+        "wr": 42.31,
         "kda": 1.56
       },
       {
@@ -25941,17 +26173,17 @@ const PLAYERS_ALL = [
         "slug": "wuyang",
         "n": "Wuyang",
         "role": "Support",
-        "g": 35,
-        "wr": 37.14,
-        "kda": 1.67
+        "g": 36,
+        "wr": 38.89,
+        "kda": 1.65
       },
       {
         "slug": "ashe",
         "n": "Ashe",
         "role": "Damage",
-        "g": 31,
-        "wr": 45.16,
-        "kda": 1.78
+        "g": 32,
+        "wr": 46.88,
+        "kda": 1.86
       },
       {
         "slug": "illari",
@@ -26002,6 +26234,14 @@ const PLAYERS_ALL = [
         "kda": 1.73
       },
       {
+        "slug": "brigitte",
+        "n": "Brigitte",
+        "role": "Support",
+        "g": 22,
+        "wr": 31.82,
+        "kda": 1.51
+      },
+      {
         "slug": "sigma",
         "n": "Sigma",
         "role": "Tank",
@@ -26010,12 +26250,12 @@ const PLAYERS_ALL = [
         "kda": 3.42
       },
       {
-        "slug": "brigitte",
-        "n": "Brigitte",
-        "role": "Support",
-        "g": 21,
-        "wr": 33.33,
-        "kda": 1.56
+        "slug": "sojourn",
+        "n": "Sojourn",
+        "role": "Damage",
+        "g": 22,
+        "wr": 50,
+        "kda": 1.85
       },
       {
         "slug": "reinhardt",
@@ -26026,12 +26266,12 @@ const PLAYERS_ALL = [
         "kda": 3.31
       },
       {
-        "slug": "sojourn",
-        "n": "Sojourn",
-        "role": "Damage",
-        "g": 21,
-        "wr": 47.62,
-        "kda": 1.9
+        "slug": "jetpack-cat",
+        "n": "Jetpack Cat",
+        "role": "Support",
+        "g": 20,
+        "wr": 50,
+        "kda": 2.36
       },
       {
         "slug": "junker-queen",
@@ -26048,14 +26288,6 @@ const PLAYERS_ALL = [
         "g": 19,
         "wr": 57.89,
         "kda": 2.35
-      },
-      {
-        "slug": "jetpack-cat",
-        "n": "Jetpack Cat",
-        "role": "Support",
-        "g": 19,
-        "wr": 52.63,
-        "kda": 2.3
       },
       {
         "slug": "pharah",
@@ -26244,28 +26476,28 @@ const PLAYERS_ALL = [
     ],
     "bscore": {
       "ana": {
-        "finalScore": 54.82,
-        "battleScore": 39.39,
+        "finalScore": 54.59,
+        "battleScore": 39.23,
         "coeff": 1.21,
         "matchCoef": 1.15,
-        "gamesPlayed": 174,
+        "gamesPlayed": 176,
         "rankIndex": 2,
         "det": {
-          "g": 174,
-          "time": 86671,
-          "wr": 50.91954022988506,
-          "el10": 8.962183908045978,
-          "de10": 6.050459770114941,
-          "dm10": 3147.1494252873563,
-          "he10": 5857.80459770115,
-          "as10": 10.843908045977013,
-          "wa": 52.01149425287356,
+          "g": 176,
+          "time": 87677,
+          "wr": 50.36363636363637,
+          "el10": 8.953409090909092,
+          "de10": 6.071818181818181,
+          "dm10": 3138.818181818182,
+          "he10": 5867.045454545455,
+          "as10": 10.86409090909091,
+          "wa": 51.97727272727273,
           "ca": 0
         }
       },
       "anran": {
-        "finalScore": 61.24,
-        "battleScore": 40.15,
+        "finalScore": 61.25,
+        "battleScore": 40.17,
         "coeff": 1.21,
         "matchCoef": 0.97,
         "gamesPlayed": 14,
@@ -26281,7 +26513,30 @@ const PLAYERS_ALL = [
           "as10": 0.18857142857142856,
           "wa": 31,
           "ca": 8
-        }
+        },
+        "rankDelta": -1
+      },
+      "ashe": {
+        "finalScore": 45.1,
+        "battleScore": 36.5,
+        "coeff": 1.21,
+        "matchCoef": 1.02,
+        "gamesPlayed": 32,
+        "rankIndex": 2,
+        "det": {
+          "g": 32,
+          "time": 13768,
+          "wr": 45.75,
+          "el10": 12.54125,
+          "de10": 6.702187500000001,
+          "dm10": 6724.125,
+          "he10": 0,
+          "as10": 0.9106249999999999,
+          "wa": 38.25,
+          "ca": 15.59375
+        },
+        "rankDelta": 4,
+        "rankDeltaPower": 2
       },
       "bastion": {
         "finalScore": 55.82,
@@ -26301,47 +26556,51 @@ const PLAYERS_ALL = [
           "as10": 1.876923076923077,
           "wa": 25.076923076923077,
           "ca": 2.076923076923077
-        }
+        },
+        "rankDeltaPower": -1
       },
       "brigitte": {
-        "finalScore": 39.66,
-        "battleScore": 33.28,
+        "finalScore": 39.16,
+        "battleScore": 32.73,
         "coeff": 1.21,
-        "matchCoef": 0.98,
-        "gamesPlayed": 21,
+        "matchCoef": 0.99,
+        "gamesPlayed": 22,
         "rankIndex": 2,
         "det": {
-          "g": 21,
-          "time": 10884,
-          "wr": 34.523809523809526,
-          "el10": 9.17047619047619,
-          "de10": 8.393809523809525,
-          "dm10": 2924.1428571428573,
-          "he10": 5570.190476190476,
-          "as10": 12.524761904761904,
+          "g": 22,
+          "time": 11329,
+          "wr": 32.5,
+          "el10": 8.974545454545455,
+          "de10": 8.441363636363636,
+          "dm10": 2925.1363636363635,
+          "he10": 5593.409090909091,
+          "as10": 12.463636363636367,
           "wa": 0,
           "ca": 0
-        }
+        },
+        "rankDelta": -2,
+        "rankDeltaPower": -1
       },
       "cassidy": {
-        "finalScore": 46.14,
-        "battleScore": 35.91,
+        "finalScore": 46.09,
+        "battleScore": 35.82,
         "coeff": 1.21,
         "matchCoef": 1.06,
-        "gamesPlayed": 51,
+        "gamesPlayed": 52,
         "rankIndex": 2,
         "det": {
-          "g": 51,
-          "time": 24947,
-          "wr": 41.05882352941177,
-          "el10": 13.070588235294117,
-          "de10": 8.349411764705883,
-          "dm10": 6886.64705882353,
-          "he10": 25.461176470588235,
-          "as10": 1.5729411764705883,
-          "wa": 41,
-          "ca": 10
-        }
+          "g": 52,
+          "time": 25044,
+          "wr": 40.76923076923077,
+          "el10": 13.086923076923076,
+          "de10": 8.373076923076924,
+          "dm10": 6870.923076923077,
+          "he10": 25.943846153846152,
+          "as10": 1.5769230769230769,
+          "wa": 40.92307692307692,
+          "ca": 10.076923076923077
+        },
+        "rankDelta": -1
       },
       "freja": {
         "finalScore": 49.28,
@@ -26365,7 +26624,7 @@ const PLAYERS_ALL = [
       },
       "genji": {
         "finalScore": 45.5,
-        "battleScore": 37.87,
+        "battleScore": 37.88,
         "coeff": 1.21,
         "matchCoef": 0.99,
         "gamesPlayed": 23,
@@ -26384,68 +26643,70 @@ const PLAYERS_ALL = [
         }
       },
       "jetpack-cat": {
-        "finalScore": 48.1,
-        "battleScore": 40.72,
+        "finalScore": 47.99,
+        "battleScore": 40.44,
         "coeff": 1.21,
         "matchCoef": 0.98,
-        "gamesPlayed": 19,
+        "gamesPlayed": 20,
         "rankIndex": 2,
         "det": {
-          "g": 19,
-          "time": 9837,
-          "wr": 51.1578947368421,
-          "el10": 13.86421052631579,
-          "de10": 7.1536842105263165,
-          "dm10": 3445.9473684210525,
-          "he10": 6190.368421052632,
-          "as10": 7.0873684210526315,
-          "wa": 31.894736842105264,
-          "ca": 5.7894736842105265
+          "g": 20,
+          "time": 10405,
+          "wr": 49.4,
+          "el10": 14.1345,
+          "de10": 7.05,
+          "dm10": 3505.15,
+          "he10": 6108.8,
+          "as10": 7.164,
+          "wa": 31.9,
+          "ca": 5.8
         }
       },
       "junkrat": {
-        "finalScore": 55.82,
-        "battleScore": 40.12,
+        "finalScore": 56.27,
+        "battleScore": 40.44,
         "coeff": 1.21,
         "matchCoef": 1.15,
-        "gamesPlayed": 187,
+        "gamesPlayed": 193,
         "rankIndex": 2,
         "det": {
-          "g": 187,
-          "time": 96095,
-          "wr": 50.6096256684492,
-          "el10": 14.562620320855615,
-          "de10": 7.872941176470588,
-          "dm10": 7804.604278074867,
+          "g": 193,
+          "time": 98867,
+          "wr": 51.55958549222798,
+          "el10": 14.636632124352332,
+          "de10": 7.824715025906736,
+          "dm10": 7806.865284974093,
           "he10": 0,
-          "as10": 2.079625668449198,
-          "wa": 25.032085561497325,
+          "as10": 2.0696373056994823,
+          "wa": 25.031088082901555,
           "ca": 0
-        }
+        },
+        "rankDelta": 3,
+        "rankDeltaPower": 3
       },
       "kiriko": {
-        "finalScore": 52.81,
-        "battleScore": 37.95,
+        "finalScore": 52.94,
+        "battleScore": 38.05,
         "coeff": 1.21,
         "matchCoef": 1.15,
-        "gamesPlayed": 262,
+        "gamesPlayed": 263,
         "rankIndex": 2,
         "det": {
-          "g": 262,
-          "time": 133186,
-          "wr": 46,
-          "el10": 8.265877862595419,
-          "de10": 6.31148854961832,
-          "dm10": 2649.141221374046,
-          "he10": 9007.442748091604,
-          "as10": 14.633091603053435,
-          "wa": 28.049618320610687,
-          "ca": 12.950381679389313
+          "g": 263,
+          "time": 133845,
+          "wr": 46.21292775665399,
+          "el10": 8.265437262357414,
+          "de10": 6.302015209125475,
+          "dm10": 2644.8593155893536,
+          "he10": 9032.631178707225,
+          "as10": 14.659847908745247,
+          "wa": 28.0532319391635,
+          "ca": 12.946768060836503
         }
       },
       "lifeweaver": {
-        "finalScore": 50.28,
-        "battleScore": 38.68,
+        "finalScore": 50.27,
+        "battleScore": 38.67,
         "coeff": 1.21,
         "matchCoef": 1.07,
         "gamesPlayed": 59,
@@ -26465,7 +26726,7 @@ const PLAYERS_ALL = [
       },
       "mizuki": {
         "finalScore": 57.1,
-        "battleScore": 43.81,
+        "battleScore": 43.8,
         "coeff": 1.21,
         "matchCoef": 1.08,
         "gamesPlayed": 61,
@@ -26504,8 +26765,8 @@ const PLAYERS_ALL = [
         }
       },
       "pharah": {
-        "finalScore": 43.45,
-        "battleScore": 36.96,
+        "finalScore": 43.49,
+        "battleScore": 36.99,
         "coeff": 1.21,
         "matchCoef": 0.97,
         "gamesPlayed": 18,
@@ -26524,8 +26785,8 @@ const PLAYERS_ALL = [
         }
       },
       "shion": {
-        "finalScore": 37.57,
-        "battleScore": 36.53,
+        "finalScore": 37.53,
+        "battleScore": 36.49,
         "coeff": 1.21,
         "matchCoef": 0.85,
         "gamesPlayed": 4,
@@ -26541,27 +26802,30 @@ const PLAYERS_ALL = [
           "as10": 1.3900000000000001,
           "wa": 29,
           "ca": 12
-        }
+        },
+        "rankDelta": -2
       },
       "sojourn": {
-        "finalScore": 44.86,
-        "battleScore": 37.65,
+        "finalScore": 44.5,
+        "battleScore": 37.19,
         "coeff": 1.21,
-        "matchCoef": 0.98,
-        "gamesPlayed": 21,
+        "matchCoef": 0.99,
+        "gamesPlayed": 22,
         "rankIndex": 2,
         "det": {
-          "g": 21,
-          "time": 11283,
-          "wr": 49.476190476190474,
-          "el10": 14.730476190476192,
-          "de10": 8.133809523809523,
-          "dm10": 6741.285714285715,
+          "g": 22,
+          "time": 11523,
+          "wr": 47.68181818181818,
+          "el10": 14.70590909090909,
+          "de10": 8.19090909090909,
+          "dm10": 6731.772727272727,
           "he10": 0,
-          "as10": 0.42095238095238097,
+          "as10": 0.4018181818181818,
           "wa": 27,
-          "ca": 9.19047619047619
-        }
+          "ca": 9.227272727272727
+        },
+        "rankDelta": -2,
+        "rankDeltaPower": -2
       },
       "soldier-76": {
         "finalScore": 48.77,
@@ -26601,8 +26865,7 @@ const PLAYERS_ALL = [
           "as10": 7.0996296296296295,
           "wa": 33.851851851851855,
           "ca": 8.148148148148149
-        },
-        "rankDelta": 1
+        }
       },
       "symmetra": {
         "finalScore": 43.75,
@@ -26625,8 +26888,8 @@ const PLAYERS_ALL = [
         }
       },
       "torbjorn": {
-        "finalScore": 44.56,
-        "battleScore": 38.77,
+        "finalScore": 44.57,
+        "battleScore": 38.78,
         "coeff": 1.21,
         "matchCoef": 0.95,
         "gamesPlayed": 14,
@@ -26662,11 +26925,10 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 31,
           "ca": 10
-        },
-        "rankDelta": -2
+        }
       },
       "vendetta": {
-        "finalScore": 46.17,
+        "finalScore": 46.16,
         "battleScore": 41.07,
         "coeff": 1.21,
         "matchCoef": 0.93,
@@ -26705,42 +26967,22 @@ const PLAYERS_ALL = [
           "ca": 11.925925925925926
         }
       },
-      "ashe": {
-        "finalScore": 44.04,
-        "battleScore": 35.73,
-        "coeff": 1.21,
-        "matchCoef": 1.02,
-        "gamesPlayed": 31,
-        "rankIndex": 2,
-        "det": {
-          "g": 31,
-          "time": 13374,
-          "wr": 44,
-          "el10": 12.11,
-          "de10": 6.82,
-          "dm10": 6638,
-          "he10": 0,
-          "as10": 0.94,
-          "wa": 38,
-          "ca": 16
-        }
-      },
       "baptiste": {
-        "finalScore": 51.4,
-        "battleScore": 39.71,
+        "finalScore": 51.53,
+        "battleScore": 39.75,
         "coeff": 1.21,
         "matchCoef": 1.07,
-        "gamesPlayed": 56,
+        "gamesPlayed": 57,
         "rankIndex": 2,
         "det": {
-          "g": 56,
-          "time": 28399,
+          "g": 57,
+          "time": 28507,
           "wr": 51,
-          "el10": 7.67,
-          "de10": 6.3,
-          "dm10": 2382,
-          "he10": 9028,
-          "as10": 11.03,
+          "el10": 7.7,
+          "de10": 6.27,
+          "dm10": 2396,
+          "he10": 9021,
+          "as10": 11.09,
           "wa": 30,
           "ca": 11
         }
@@ -26787,7 +27029,7 @@ const PLAYERS_ALL = [
       },
       "doomfist": {
         "finalScore": 30.76,
-        "battleScore": 34.12,
+        "battleScore": 34.13,
         "coeff": 1,
         "matchCoef": 0.9,
         "gamesPlayed": 8,
@@ -26843,7 +27085,8 @@ const PLAYERS_ALL = [
           "as10": 0.13,
           "wa": 26,
           "ca": 9
-        }
+        },
+        "rankDelta": 1
       },
       "emre": {
         "finalScore": 52.35,
@@ -26946,8 +27189,8 @@ const PLAYERS_ALL = [
         }
       },
       "juno": {
-        "finalScore": 47.49,
-        "battleScore": 37.56,
+        "finalScore": 47.43,
+        "battleScore": 37.51,
         "coeff": 1.21,
         "matchCoef": 1.04,
         "gamesPlayed": 42,
@@ -26963,7 +27206,8 @@ const PLAYERS_ALL = [
           "as10": 8.23,
           "wa": 38,
           "ca": 3
-        }
+        },
+        "rankDelta": 1
       },
       "lucio": {
         "finalScore": 52.22,
@@ -26983,7 +27227,8 @@ const PLAYERS_ALL = [
           "as10": 9.67,
           "wa": 25,
           "ca": 8
-        }
+        },
+        "rankDelta": -1
       },
       "mauga": {
         "finalScore": 56.12,
@@ -27003,7 +27248,8 @@ const PLAYERS_ALL = [
           "as10": 8.03,
           "wa": 27,
           "ca": 11
-        }
+        },
+        "rankDeltaPower": -1
       },
       "mei": {
         "finalScore": 42.69,
@@ -27046,8 +27292,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 30.99,
-        "battleScore": 34.38,
+        "finalScore": 31.09,
+        "battleScore": 34.49,
         "coeff": 1,
         "matchCoef": 0.9,
         "gamesPlayed": 8,
@@ -27066,8 +27312,8 @@ const PLAYERS_ALL = [
         }
       },
       "ramattra": {
-        "finalScore": 50.32,
-        "battleScore": 36.2,
+        "finalScore": 50.35,
+        "battleScore": 36.17,
         "coeff": 1,
         "matchCoef": 0.93,
         "gamesPlayed": 5,
@@ -27103,7 +27349,8 @@ const PLAYERS_ALL = [
           "as10": 0.1,
           "wa": 30,
           "ca": 11
-        }
+        },
+        "rankDelta": -1
       },
       "reinhardt": {
         "finalScore": 41.9,
@@ -27123,11 +27370,12 @@ const PLAYERS_ALL = [
           "as10": 1.86,
           "wa": 0,
           "ca": 0
-        }
+        },
+        "rankDelta": 1
       },
       "roadhog": {
         "finalScore": 37.37,
-        "battleScore": 39.34,
+        "battleScore": 39.35,
         "coeff": 1,
         "matchCoef": 0.95,
         "gamesPlayed": 14,
@@ -27146,8 +27394,8 @@ const PLAYERS_ALL = [
         }
       },
       "sigma": {
-        "finalScore": 56.02,
-        "battleScore": 45.11,
+        "finalScore": 56.01,
+        "battleScore": 45.1,
         "coeff": 1,
         "matchCoef": 0.99,
         "gamesPlayed": 22,
@@ -27163,11 +27411,13 @@ const PLAYERS_ALL = [
           "as10": 2.36,
           "wa": 48,
           "ca": 0
-        }
+        },
+        "rankDelta": 1,
+        "rankDeltaPower": -1
       },
       "sierra": {
-        "finalScore": 40.24,
-        "battleScore": 36.9,
+        "finalScore": 40.23,
+        "battleScore": 36.89,
         "coeff": 1.21,
         "matchCoef": 0.9,
         "gamesPlayed": 8,
@@ -27203,8 +27453,7 @@ const PLAYERS_ALL = [
           "as10": 1.16,
           "wa": 45,
           "ca": 0
-        },
-        "rankDelta": 1
+        }
       },
       "widowmaker": {
         "finalScore": 42.52,
@@ -27224,11 +27473,12 @@ const PLAYERS_ALL = [
           "as10": 2.76,
           "wa": 38,
           "ca": 14
-        }
+        },
+        "rankDelta": -1
       },
       "winston": {
-        "finalScore": 39.43,
-        "battleScore": 44.31,
+        "finalScore": 39.41,
+        "battleScore": 44.29,
         "coeff": 1,
         "matchCoef": 0.89,
         "gamesPlayed": 7,
@@ -27244,7 +27494,8 @@ const PLAYERS_ALL = [
           "as10": 4.92,
           "wa": 43,
           "ca": 0
-        }
+        },
+        "rankDeltaPower": 1
       },
       "wrecking-ball": {
         "finalScore": 26.91,
@@ -27267,24 +27518,25 @@ const PLAYERS_ALL = [
         }
       },
       "wuyang": {
-        "finalScore": 43.82,
-        "battleScore": 35.19,
+        "finalScore": 43.86,
+        "battleScore": 35.14,
         "coeff": 1.21,
         "matchCoef": 1.03,
-        "gamesPlayed": 35,
+        "gamesPlayed": 36,
         "rankIndex": 2,
         "det": {
-          "g": 35,
-          "time": 16857,
-          "wr": 38,
-          "el10": 10.25,
-          "de10": 6.12,
-          "dm10": 3565,
-          "he10": 7230,
-          "as10": 13.67,
+          "g": 36,
+          "time": 17134,
+          "wr": 39,
+          "el10": 10.12,
+          "de10": 6.13,
+          "dm10": 3550,
+          "he10": 7193,
+          "as10": 13.66,
           "wa": 22,
           "ca": 0
-        }
+        },
+        "rankDelta": -1
       },
       "zarya": {
         "finalScore": 48.96,
@@ -27304,33 +27556,34 @@ const PLAYERS_ALL = [
           "as10": 4.87,
           "wa": 39,
           "ca": 0
-        }
+        },
+        "rankDelta": 1
       }
     },
     "bscoreAll": {
       "ana": {
-        "finalScore": 54.82,
-        "battleScore": 39.39,
+        "finalScore": 54.59,
+        "battleScore": 39.23,
         "coeff": 1.21,
         "matchCoef": 1.15,
-        "gamesPlayed": 174,
+        "gamesPlayed": 176,
         "rankIndex": 2,
         "det": {
-          "g": 174,
-          "time": 86671,
-          "wr": 50.91954022988506,
-          "el10": 8.962183908045978,
-          "de10": 6.050459770114941,
-          "dm10": 3147.1494252873563,
-          "he10": 5857.80459770115,
-          "as10": 10.843908045977013,
-          "wa": 52.01149425287356,
+          "g": 176,
+          "time": 87677,
+          "wr": 50.36363636363637,
+          "el10": 8.953409090909092,
+          "de10": 6.071818181818181,
+          "dm10": 3138.818181818182,
+          "he10": 5867.045454545455,
+          "as10": 10.86409090909091,
+          "wa": 51.97727272727273,
           "ca": 0
         }
       },
       "anran": {
-        "finalScore": 61.24,
-        "battleScore": 40.15,
+        "finalScore": 61.25,
+        "battleScore": 40.17,
         "coeff": 1.21,
         "matchCoef": 0.97,
         "gamesPlayed": 14,
@@ -27346,7 +27599,30 @@ const PLAYERS_ALL = [
           "as10": 0.18857142857142856,
           "wa": 31,
           "ca": 8
-        }
+        },
+        "rankDelta": -1
+      },
+      "ashe": {
+        "finalScore": 45.1,
+        "battleScore": 36.5,
+        "coeff": 1.21,
+        "matchCoef": 1.02,
+        "gamesPlayed": 32,
+        "rankIndex": 2,
+        "det": {
+          "g": 32,
+          "time": 13768,
+          "wr": 45.75,
+          "el10": 12.54125,
+          "de10": 6.702187500000001,
+          "dm10": 6724.125,
+          "he10": 0,
+          "as10": 0.9106249999999999,
+          "wa": 38.25,
+          "ca": 15.59375
+        },
+        "rankDelta": 4,
+        "rankDeltaPower": 2
       },
       "bastion": {
         "finalScore": 55.82,
@@ -27366,47 +27642,51 @@ const PLAYERS_ALL = [
           "as10": 1.876923076923077,
           "wa": 25.076923076923077,
           "ca": 2.076923076923077
-        }
+        },
+        "rankDeltaPower": -1
       },
       "brigitte": {
-        "finalScore": 39.66,
-        "battleScore": 33.28,
+        "finalScore": 39.16,
+        "battleScore": 32.73,
         "coeff": 1.21,
-        "matchCoef": 0.98,
-        "gamesPlayed": 21,
+        "matchCoef": 0.99,
+        "gamesPlayed": 22,
         "rankIndex": 2,
         "det": {
-          "g": 21,
-          "time": 10884,
-          "wr": 34.523809523809526,
-          "el10": 9.17047619047619,
-          "de10": 8.393809523809525,
-          "dm10": 2924.1428571428573,
-          "he10": 5570.190476190476,
-          "as10": 12.524761904761904,
+          "g": 22,
+          "time": 11329,
+          "wr": 32.5,
+          "el10": 8.974545454545455,
+          "de10": 8.441363636363636,
+          "dm10": 2925.1363636363635,
+          "he10": 5593.409090909091,
+          "as10": 12.463636363636367,
           "wa": 0,
           "ca": 0
-        }
+        },
+        "rankDelta": -2,
+        "rankDeltaPower": -1
       },
       "cassidy": {
-        "finalScore": 46.14,
-        "battleScore": 35.91,
+        "finalScore": 46.09,
+        "battleScore": 35.82,
         "coeff": 1.21,
         "matchCoef": 1.06,
-        "gamesPlayed": 51,
+        "gamesPlayed": 52,
         "rankIndex": 2,
         "det": {
-          "g": 51,
-          "time": 24947,
-          "wr": 41.05882352941177,
-          "el10": 13.070588235294117,
-          "de10": 8.349411764705883,
-          "dm10": 6886.64705882353,
-          "he10": 25.461176470588235,
-          "as10": 1.5729411764705883,
-          "wa": 41,
-          "ca": 10
-        }
+          "g": 52,
+          "time": 25044,
+          "wr": 40.76923076923077,
+          "el10": 13.086923076923076,
+          "de10": 8.373076923076924,
+          "dm10": 6870.923076923077,
+          "he10": 25.943846153846152,
+          "as10": 1.5769230769230769,
+          "wa": 40.92307692307692,
+          "ca": 10.076923076923077
+        },
+        "rankDelta": -1
       },
       "freja": {
         "finalScore": 49.28,
@@ -27430,7 +27710,7 @@ const PLAYERS_ALL = [
       },
       "genji": {
         "finalScore": 45.5,
-        "battleScore": 37.87,
+        "battleScore": 37.88,
         "coeff": 1.21,
         "matchCoef": 0.99,
         "gamesPlayed": 23,
@@ -27449,68 +27729,70 @@ const PLAYERS_ALL = [
         }
       },
       "jetpack-cat": {
-        "finalScore": 48.1,
-        "battleScore": 40.72,
+        "finalScore": 47.99,
+        "battleScore": 40.44,
         "coeff": 1.21,
         "matchCoef": 0.98,
-        "gamesPlayed": 19,
+        "gamesPlayed": 20,
         "rankIndex": 2,
         "det": {
-          "g": 19,
-          "time": 9837,
-          "wr": 51.1578947368421,
-          "el10": 13.86421052631579,
-          "de10": 7.1536842105263165,
-          "dm10": 3445.9473684210525,
-          "he10": 6190.368421052632,
-          "as10": 7.0873684210526315,
-          "wa": 31.894736842105264,
-          "ca": 5.7894736842105265
+          "g": 20,
+          "time": 10405,
+          "wr": 49.4,
+          "el10": 14.1345,
+          "de10": 7.05,
+          "dm10": 3505.15,
+          "he10": 6108.8,
+          "as10": 7.164,
+          "wa": 31.9,
+          "ca": 5.8
         }
       },
       "junkrat": {
-        "finalScore": 55.82,
-        "battleScore": 40.12,
+        "finalScore": 56.27,
+        "battleScore": 40.44,
         "coeff": 1.21,
         "matchCoef": 1.15,
-        "gamesPlayed": 187,
+        "gamesPlayed": 193,
         "rankIndex": 2,
         "det": {
-          "g": 187,
-          "time": 96095,
-          "wr": 50.6096256684492,
-          "el10": 14.562620320855615,
-          "de10": 7.872941176470588,
-          "dm10": 7804.604278074867,
+          "g": 193,
+          "time": 98867,
+          "wr": 51.55958549222798,
+          "el10": 14.636632124352332,
+          "de10": 7.824715025906736,
+          "dm10": 7806.865284974093,
           "he10": 0,
-          "as10": 2.079625668449198,
-          "wa": 25.032085561497325,
+          "as10": 2.0696373056994823,
+          "wa": 25.031088082901555,
           "ca": 0
-        }
+        },
+        "rankDelta": 3,
+        "rankDeltaPower": 3
       },
       "kiriko": {
-        "finalScore": 52.81,
-        "battleScore": 37.95,
+        "finalScore": 52.94,
+        "battleScore": 38.05,
         "coeff": 1.21,
         "matchCoef": 1.15,
-        "gamesPlayed": 262,
+        "gamesPlayed": 263,
         "rankIndex": 2,
         "det": {
-          "g": 262,
-          "time": 133186,
-          "wr": 46,
-          "el10": 8.265877862595419,
-          "de10": 6.31148854961832,
-          "dm10": 2649.141221374046,
-          "he10": 9007.442748091604,
-          "as10": 14.633091603053435,
-          "wa": 28.049618320610687,
-          "ca": 12.950381679389313
+          "g": 263,
+          "time": 133845,
+          "wr": 46.21292775665399,
+          "el10": 8.265437262357414,
+          "de10": 6.302015209125475,
+          "dm10": 2644.8593155893536,
+          "he10": 9032.631178707225,
+          "as10": 14.659847908745247,
+          "wa": 28.0532319391635,
+          "ca": 12.946768060836503
         }
       },
       "lifeweaver": {
-        "finalScore": 50.28,
-        "battleScore": 38.68,
+        "finalScore": 50.27,
+        "battleScore": 38.67,
         "coeff": 1.21,
         "matchCoef": 1.07,
         "gamesPlayed": 59,
@@ -27530,7 +27812,7 @@ const PLAYERS_ALL = [
       },
       "mizuki": {
         "finalScore": 57.1,
-        "battleScore": 43.81,
+        "battleScore": 43.8,
         "coeff": 1.21,
         "matchCoef": 1.08,
         "gamesPlayed": 61,
@@ -27569,8 +27851,8 @@ const PLAYERS_ALL = [
         }
       },
       "pharah": {
-        "finalScore": 43.45,
-        "battleScore": 36.96,
+        "finalScore": 43.49,
+        "battleScore": 36.99,
         "coeff": 1.21,
         "matchCoef": 0.97,
         "gamesPlayed": 18,
@@ -27589,8 +27871,8 @@ const PLAYERS_ALL = [
         }
       },
       "shion": {
-        "finalScore": 37.57,
-        "battleScore": 36.53,
+        "finalScore": 37.53,
+        "battleScore": 36.49,
         "coeff": 1.21,
         "matchCoef": 0.85,
         "gamesPlayed": 4,
@@ -27606,27 +27888,30 @@ const PLAYERS_ALL = [
           "as10": 1.3900000000000001,
           "wa": 29,
           "ca": 12
-        }
+        },
+        "rankDelta": -2
       },
       "sojourn": {
-        "finalScore": 44.86,
-        "battleScore": 37.65,
+        "finalScore": 44.5,
+        "battleScore": 37.19,
         "coeff": 1.21,
-        "matchCoef": 0.98,
-        "gamesPlayed": 21,
+        "matchCoef": 0.99,
+        "gamesPlayed": 22,
         "rankIndex": 2,
         "det": {
-          "g": 21,
-          "time": 11283,
-          "wr": 49.476190476190474,
-          "el10": 14.730476190476192,
-          "de10": 8.133809523809523,
-          "dm10": 6741.285714285715,
+          "g": 22,
+          "time": 11523,
+          "wr": 47.68181818181818,
+          "el10": 14.70590909090909,
+          "de10": 8.19090909090909,
+          "dm10": 6731.772727272727,
           "he10": 0,
-          "as10": 0.42095238095238097,
+          "as10": 0.4018181818181818,
           "wa": 27,
-          "ca": 9.19047619047619
-        }
+          "ca": 9.227272727272727
+        },
+        "rankDelta": -2,
+        "rankDeltaPower": -2
       },
       "soldier-76": {
         "finalScore": 48.77,
@@ -27666,8 +27951,7 @@ const PLAYERS_ALL = [
           "as10": 7.0996296296296295,
           "wa": 33.851851851851855,
           "ca": 8.148148148148149
-        },
-        "rankDelta": 1
+        }
       },
       "symmetra": {
         "finalScore": 43.75,
@@ -27690,8 +27974,8 @@ const PLAYERS_ALL = [
         }
       },
       "torbjorn": {
-        "finalScore": 44.56,
-        "battleScore": 38.77,
+        "finalScore": 44.57,
+        "battleScore": 38.78,
         "coeff": 1.21,
         "matchCoef": 0.95,
         "gamesPlayed": 14,
@@ -27727,11 +28011,10 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 31,
           "ca": 10
-        },
-        "rankDelta": -2
+        }
       },
       "vendetta": {
-        "finalScore": 46.17,
+        "finalScore": 46.16,
         "battleScore": 41.07,
         "coeff": 1.21,
         "matchCoef": 0.93,
@@ -27770,42 +28053,22 @@ const PLAYERS_ALL = [
           "ca": 11.925925925925926
         }
       },
-      "ashe": {
-        "finalScore": 44.04,
-        "battleScore": 35.73,
-        "coeff": 1.21,
-        "matchCoef": 1.02,
-        "gamesPlayed": 31,
-        "rankIndex": 2,
-        "det": {
-          "g": 31,
-          "time": 13374,
-          "wr": 44,
-          "el10": 12.11,
-          "de10": 6.82,
-          "dm10": 6638,
-          "he10": 0,
-          "as10": 0.94,
-          "wa": 38,
-          "ca": 16
-        }
-      },
       "baptiste": {
-        "finalScore": 51.4,
-        "battleScore": 39.71,
+        "finalScore": 51.53,
+        "battleScore": 39.75,
         "coeff": 1.21,
         "matchCoef": 1.07,
-        "gamesPlayed": 56,
+        "gamesPlayed": 57,
         "rankIndex": 2,
         "det": {
-          "g": 56,
-          "time": 28399,
+          "g": 57,
+          "time": 28507,
           "wr": 51,
-          "el10": 7.67,
-          "de10": 6.3,
-          "dm10": 2382,
-          "he10": 9028,
-          "as10": 11.03,
+          "el10": 7.7,
+          "de10": 6.27,
+          "dm10": 2396,
+          "he10": 9021,
+          "as10": 11.09,
           "wa": 30,
           "ca": 11
         }
@@ -27852,7 +28115,7 @@ const PLAYERS_ALL = [
       },
       "doomfist": {
         "finalScore": 30.76,
-        "battleScore": 34.12,
+        "battleScore": 34.13,
         "coeff": 1,
         "matchCoef": 0.9,
         "gamesPlayed": 8,
@@ -27908,7 +28171,8 @@ const PLAYERS_ALL = [
           "as10": 0.13,
           "wa": 26,
           "ca": 9
-        }
+        },
+        "rankDelta": 1
       },
       "emre": {
         "finalScore": 52.35,
@@ -28011,8 +28275,8 @@ const PLAYERS_ALL = [
         }
       },
       "juno": {
-        "finalScore": 47.49,
-        "battleScore": 37.56,
+        "finalScore": 47.43,
+        "battleScore": 37.51,
         "coeff": 1.21,
         "matchCoef": 1.04,
         "gamesPlayed": 42,
@@ -28028,7 +28292,8 @@ const PLAYERS_ALL = [
           "as10": 8.23,
           "wa": 38,
           "ca": 3
-        }
+        },
+        "rankDelta": 1
       },
       "lucio": {
         "finalScore": 52.22,
@@ -28048,7 +28313,8 @@ const PLAYERS_ALL = [
           "as10": 9.67,
           "wa": 25,
           "ca": 8
-        }
+        },
+        "rankDelta": -1
       },
       "mauga": {
         "finalScore": 56.12,
@@ -28068,7 +28334,8 @@ const PLAYERS_ALL = [
           "as10": 8.03,
           "wa": 27,
           "ca": 11
-        }
+        },
+        "rankDeltaPower": -1
       },
       "mei": {
         "finalScore": 42.69,
@@ -28111,8 +28378,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 30.99,
-        "battleScore": 34.38,
+        "finalScore": 31.09,
+        "battleScore": 34.49,
         "coeff": 1,
         "matchCoef": 0.9,
         "gamesPlayed": 8,
@@ -28131,8 +28398,8 @@ const PLAYERS_ALL = [
         }
       },
       "ramattra": {
-        "finalScore": 50.32,
-        "battleScore": 36.2,
+        "finalScore": 50.35,
+        "battleScore": 36.17,
         "coeff": 1,
         "matchCoef": 0.93,
         "gamesPlayed": 5,
@@ -28168,7 +28435,8 @@ const PLAYERS_ALL = [
           "as10": 0.1,
           "wa": 30,
           "ca": 11
-        }
+        },
+        "rankDelta": -1
       },
       "reinhardt": {
         "finalScore": 41.9,
@@ -28188,11 +28456,12 @@ const PLAYERS_ALL = [
           "as10": 1.86,
           "wa": 0,
           "ca": 0
-        }
+        },
+        "rankDelta": 1
       },
       "roadhog": {
         "finalScore": 37.37,
-        "battleScore": 39.34,
+        "battleScore": 39.35,
         "coeff": 1,
         "matchCoef": 0.95,
         "gamesPlayed": 14,
@@ -28211,8 +28480,8 @@ const PLAYERS_ALL = [
         }
       },
       "sigma": {
-        "finalScore": 56.02,
-        "battleScore": 45.11,
+        "finalScore": 56.01,
+        "battleScore": 45.1,
         "coeff": 1,
         "matchCoef": 0.99,
         "gamesPlayed": 22,
@@ -28228,11 +28497,13 @@ const PLAYERS_ALL = [
           "as10": 2.36,
           "wa": 48,
           "ca": 0
-        }
+        },
+        "rankDelta": 1,
+        "rankDeltaPower": -1
       },
       "sierra": {
-        "finalScore": 40.24,
-        "battleScore": 36.9,
+        "finalScore": 40.23,
+        "battleScore": 36.89,
         "coeff": 1.21,
         "matchCoef": 0.9,
         "gamesPlayed": 8,
@@ -28268,8 +28539,7 @@ const PLAYERS_ALL = [
           "as10": 1.16,
           "wa": 45,
           "ca": 0
-        },
-        "rankDelta": 1
+        }
       },
       "widowmaker": {
         "finalScore": 42.52,
@@ -28289,11 +28559,12 @@ const PLAYERS_ALL = [
           "as10": 2.76,
           "wa": 38,
           "ca": 14
-        }
+        },
+        "rankDelta": -1
       },
       "winston": {
-        "finalScore": 39.43,
-        "battleScore": 44.31,
+        "finalScore": 39.41,
+        "battleScore": 44.29,
         "coeff": 1,
         "matchCoef": 0.89,
         "gamesPlayed": 7,
@@ -28309,7 +28580,8 @@ const PLAYERS_ALL = [
           "as10": 4.92,
           "wa": 43,
           "ca": 0
-        }
+        },
+        "rankDeltaPower": 1
       },
       "wrecking-ball": {
         "finalScore": 26.91,
@@ -28332,24 +28604,25 @@ const PLAYERS_ALL = [
         }
       },
       "wuyang": {
-        "finalScore": 43.82,
-        "battleScore": 35.19,
+        "finalScore": 43.86,
+        "battleScore": 35.14,
         "coeff": 1.21,
         "matchCoef": 1.03,
-        "gamesPlayed": 35,
+        "gamesPlayed": 36,
         "rankIndex": 2,
         "det": {
-          "g": 35,
-          "time": 16857,
-          "wr": 38,
-          "el10": 10.25,
-          "de10": 6.12,
-          "dm10": 3565,
-          "he10": 7230,
-          "as10": 13.67,
+          "g": 36,
+          "time": 17134,
+          "wr": 39,
+          "el10": 10.12,
+          "de10": 6.13,
+          "dm10": 3550,
+          "he10": 7193,
+          "as10": 13.66,
           "wa": 22,
           "ca": 0
-        }
+        },
+        "rankDelta": -1
       },
       "zarya": {
         "finalScore": 48.96,
@@ -28369,7 +28642,8 @@ const PLAYERS_ALL = [
           "as10": 4.87,
           "wa": 39,
           "ca": 0
-        }
+        },
+        "rankDelta": 1
       }
     },
     "recent": [
@@ -28522,6 +28796,21 @@ const PLAYERS_ALL = [
           "illari": 1,
           "wuyang": 1
         }
+      },
+      {
+        "d": "2026-10-03",
+        "g": {
+          "ana": 2,
+          "ashe": 1,
+          "brigitte": 1,
+          "cassidy": 1,
+          "jetpack-cat": 1,
+          "junkrat": 6,
+          "kiriko": 1,
+          "sojourn": 1,
+          "baptiste": 1,
+          "wuyang": 1
+        }
       }
     ]
   },
@@ -28530,7 +28819,7 @@ const PLAYERS_ALL = [
     "pid": "c2779cbf815ed6febaa823|5c92c86a83e8c0634c7f082bbed0d680",
     "name": "PIPURO",
     "tag": "",
-    "endorse": 4,
+    "endorse": 3,
     "title": null,
     "avatar": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/4a8e450033113f4314216a457fc7961a3740b41249692c6232b5589e74c5f534.png",
     "namecard": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/d7fe48012a3cf539649c1ec884399874eef1c3a761db698a09dc695a57f0f914.png",
@@ -28554,29 +28843,29 @@ const PLAYERS_ALL = [
     },
     "rankTier": "Silver 5",
     "overall": {
-      "matches": 1108,
-      "wins": 561,
-      "losses": 547,
-      "wr": 50.63,
-      "kda": 2.47,
-      "elim": 12.94,
-      "deaths": 5.76,
-      "dmg": 6987.36,
-      "heal": 4190.29,
-      "time": 576068
+      "matches": 1119,
+      "wins": 567,
+      "losses": 552,
+      "wr": 50.67,
+      "kda": 2.48,
+      "elim": 12.97,
+      "deaths": 5.74,
+      "dmg": 6998.79,
+      "heal": 4178.47,
+      "time": 581089
     },
     "roles": {
       "Tank": {
-        "g": 325,
-        "w": 163,
-        "l": 162,
-        "time": 173505,
+        "g": 333,
+        "w": 167,
+        "l": 166,
+        "time": 177376,
         "wr": 50.15,
-        "kda": 3.44,
-        "elim": 17.37,
-        "deaths": 5.3,
-        "dmg": 10881.17,
-        "heal": 1149.27
+        "kda": 3.47,
+        "elim": 17.41,
+        "deaths": 5.28,
+        "dmg": 10851.23,
+        "heal": 1161.09
       },
       "Damage": {
         "g": 259,
@@ -28591,16 +28880,16 @@ const PLAYERS_ALL = [
         "heal": 574.86
       },
       "Support": {
-        "g": 524,
-        "w": 272,
-        "l": 252,
-        "time": 275333,
-        "wr": 51.91,
+        "g": 527,
+        "w": 274,
+        "l": 253,
+        "time": 276483,
+        "wr": 51.99,
         "kda": 2.02,
-        "elim": 9.45,
-        "deaths": 5.7,
-        "dmg": 4005.16,
-        "heal": 7777.3
+        "elim": 9.44,
+        "deaths": 5.69,
+        "dmg": 4006.29,
+        "heal": 7772.54
       }
     },
     "heroes": [
@@ -28608,17 +28897,17 @@ const PLAYERS_ALL = [
         "slug": "kiriko",
         "n": "Kiriko",
         "role": "Support",
-        "g": 249,
+        "g": 251,
         "wr": 50.2,
-        "kda": 1.98
+        "kda": 1.99
       },
       {
         "slug": "winston",
         "n": "Winston",
         "role": "Tank",
-        "g": 178,
-        "wr": 52.81,
-        "kda": 3.65
+        "g": 185,
+        "wr": 52.97,
+        "kda": 3.69
       },
       {
         "slug": "juno",
@@ -28656,9 +28945,9 @@ const PLAYERS_ALL = [
         "slug": "orisa",
         "n": "Orisa",
         "role": "Tank",
-        "g": 47,
-        "wr": 46.81,
-        "kda": 3.65
+        "g": 48,
+        "wr": 45.83,
+        "kda": 3.62
       },
       {
         "slug": "ana",
@@ -28666,7 +28955,7 @@ const PLAYERS_ALL = [
         "role": "Support",
         "g": 46,
         "wr": 60.87,
-        "kda": 2.21
+        "kda": 2.19
       },
       {
         "slug": "cassidy",
@@ -28821,6 +29110,14 @@ const PLAYERS_ALL = [
         "kda": 2.79
       },
       {
+        "slug": "wuyang",
+        "n": "Wuyang",
+        "role": "Support",
+        "g": 3,
+        "wr": 100,
+        "kda": 1.6
+      },
+      {
         "slug": "genji",
         "n": "Genji",
         "role": "Damage",
@@ -28859,14 +29156,6 @@ const PLAYERS_ALL = [
         "g": 2,
         "wr": 50,
         "kda": 0.92
-      },
-      {
-        "slug": "wuyang",
-        "n": "Wuyang",
-        "role": "Support",
-        "g": 2,
-        "wr": 100,
-        "kda": 1.25
       },
       {
         "slug": "zarya",
@@ -28935,26 +29224,24 @@ const PLAYERS_ALL = [
     ],
     "bscore": {
       "ana": {
-        "finalScore": 46.88,
-        "battleScore": 40.48,
+        "finalScore": 46.99,
+        "battleScore": 40.58,
         "coeff": 1.1,
         "matchCoef": 1.05,
         "gamesPlayed": 46,
         "rankIndex": 1,
         "det": {
           "g": 46,
-          "time": 22471,
-          "wr": 60.108695652173914,
-          "el10": 7.805434782608696,
-          "de10": 5.667173913043478,
-          "dm10": 2822.891304347826,
-          "he10": 5235.673913043478,
-          "as10": 10.606739130434782,
-          "wa": 54.78260869565217,
+          "time": 22599,
+          "wr": 60.65217391304348,
+          "el10": 7.771739130434782,
+          "de10": 5.675869565217392,
+          "dm10": 2814.086956521739,
+          "he10": 5232.521739130435,
+          "as10": 10.569782608695652,
+          "wa": 54.67391304347826,
           "ca": 0
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        }
       },
       "baptiste": {
         "finalScore": 34.48,
@@ -28974,8 +29261,7 @@ const PLAYERS_ALL = [
           "as10": 6.489230769230769,
           "wa": 26.846153846153847,
           "ca": 8.615384615384615
-        },
-        "rankDelta": 1
+        }
       },
       "bastion": {
         "finalScore": 50.4,
@@ -29015,7 +29301,8 @@ const PLAYERS_ALL = [
           "as10": 0.8735714285714286,
           "wa": 38.92857142857143,
           "ca": 10.857142857142858
-        }
+        },
+        "rankDeltaPower": -1
       },
       "emre": {
         "finalScore": 38.38,
@@ -29035,12 +29322,11 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 28.80952380952381,
           "ca": 10.761904761904763
-        },
-        "rankDelta": 1
+        }
       },
       "juno": {
-        "finalScore": 48.27,
-        "battleScore": 38.27,
+        "finalScore": 48.21,
+        "battleScore": 38.23,
         "coeff": 1.1,
         "matchCoef": 1.15,
         "gamesPlayed": 136,
@@ -29056,28 +29342,29 @@ const PLAYERS_ALL = [
           "as10": 8.871764705882352,
           "wa": 37.029411764705884,
           "ca": 7.029411764705882
-        }
+        },
+        "rankDelta": -1
       },
       "kiriko": {
-        "finalScore": 48.83,
-        "battleScore": 38.6,
+        "finalScore": 48.87,
+        "battleScore": 38.63,
         "coeff": 1.1,
         "matchCoef": 1.15,
-        "gamesPlayed": 249,
+        "gamesPlayed": 251,
         "rankIndex": 1,
         "det": {
-          "g": 249,
-          "time": 136965,
-          "wr": 49.855421686746986,
-          "el10": 7.971004016064258,
-          "de10": 5.5904016064257025,
-          "dm10": 2822.0642570281125,
-          "he10": 8634.253012048193,
-          "as10": 14.791365461847388,
-          "wa": 26.634538152610443,
-          "ca": 14.048192771084338
+          "g": 251,
+          "time": 137687,
+          "wr": 49.90438247011952,
+          "el10": 7.9753386454183275,
+          "de10": 5.584780876494023,
+          "dm10": 2819.00796812749,
+          "he10": 8631.565737051793,
+          "as10": 14.81832669322709,
+          "wa": 26.64541832669323,
+          "ca": 14.03187250996016
         },
-        "rankDelta": -2
+        "rankDelta": -1
       },
       "moira": {
         "finalScore": 65.14,
@@ -29097,29 +29384,27 @@ const PLAYERS_ALL = [
           "as10": 10.662413793103447,
           "wa": 0,
           "ca": 0
-        },
-        "rankDelta": 3
+        }
       },
       "orisa": {
-        "finalScore": 40.85,
-        "battleScore": 38.74,
+        "finalScore": 40.63,
+        "battleScore": 38.46,
         "coeff": 1,
-        "matchCoef": 1.05,
-        "gamesPlayed": 47,
+        "matchCoef": 1.06,
+        "gamesPlayed": 48,
         "rankIndex": 0,
         "det": {
-          "g": 47,
-          "time": 23964,
-          "wr": 45.87234042553192,
-          "el10": 17.693191489361702,
-          "de10": 5.69340425531915,
-          "dm10": 10088.978723404256,
-          "he10": 5.268085106382979,
-          "as10": 3.197872340425532,
-          "wa": 31.70212765957447,
-          "ca": 10.148936170212766
-        },
-        "rankDelta": -1
+          "g": 48,
+          "time": 24318,
+          "wr": 45.083333333333336,
+          "el10": 17.658125000000002,
+          "de10": 5.734375,
+          "dm10": 10039.6875,
+          "he10": 5.193333333333333,
+          "as10": 3.231666666666667,
+          "wa": 31.708333333333332,
+          "ca": 10.145833333333334
+        }
       },
       "reaper": {
         "finalScore": 57.11,
@@ -29139,11 +29424,12 @@ const PLAYERS_ALL = [
           "as10": 0.03774647887323944,
           "wa": 28.281690140845072,
           "ca": 11
-        }
+        },
+        "rankDelta": -1
       },
       "sigma": {
-        "finalScore": 53.66,
-        "battleScore": 38.22,
+        "finalScore": 53.65,
+        "battleScore": 38.21,
         "coeff": 1,
         "matchCoef": 1.05,
         "gamesPlayed": 75,
@@ -29162,7 +29448,7 @@ const PLAYERS_ALL = [
         }
       },
       "tracer": {
-        "finalScore": 34.85,
+        "finalScore": 34.86,
         "battleScore": 40.5,
         "coeff": 1,
         "matchCoef": 0.86,
@@ -29180,32 +29466,33 @@ const PLAYERS_ALL = [
           "wa": 29.8,
           "ca": 9.6
         },
-        "rankDelta": 3,
-        "rankDeltaPower": 3
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "winston": {
-        "finalScore": 51.9,
-        "battleScore": 45.13,
+        "finalScore": 52.29,
+        "battleScore": 45.47,
         "coeff": 1,
         "matchCoef": 1.15,
-        "gamesPlayed": 178,
+        "gamesPlayed": 185,
         "rankIndex": 0,
         "det": {
-          "g": 178,
-          "time": 98378,
-          "wr": 52.69662921348315,
-          "el10": 18.72943820224719,
-          "de10": 5.134044943820225,
-          "dm10": 7924.528089887641,
-          "he10": 1894.2134831460673,
-          "as10": 3.6080898876404497,
-          "wa": 48.30337078651685,
+          "g": 185,
+          "time": 101895,
+          "wr": 53.41621621621621,
+          "el10": 18.760216216216218,
+          "de10": 5.080918918918918,
+          "dm10": 7916.616216216216,
+          "he10": 1893.3783783783783,
+          "as10": 3.653675675675676,
+          "wa": 47.58378378378379,
           "ca": 0
-        }
+        },
+        "rankDelta": 1
       },
       "ashe": {
-        "finalScore": 23.36,
-        "battleScore": 27.48,
+        "finalScore": 23.25,
+        "battleScore": 27.35,
         "coeff": 1,
         "matchCoef": 0.85,
         "gamesPlayed": 4,
@@ -29281,8 +29568,7 @@ const PLAYERS_ALL = [
           "as10": 1.78,
           "wa": 31,
           "ca": 5
-        },
-        "rankDelta": -1
+        }
       },
       "dva": {
         "finalScore": 30.64,
@@ -29362,9 +29648,7 @@ const PLAYERS_ALL = [
           "as10": 2.44,
           "wa": 18,
           "ca": 6
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "illari": {
         "finalScore": 30.41,
@@ -29407,7 +29691,7 @@ const PLAYERS_ALL = [
         }
       },
       "junkrat": {
-        "finalScore": 26.39,
+        "finalScore": 26.4,
         "battleScore": 31.05,
         "coeff": 1,
         "matchCoef": 0.85,
@@ -29427,8 +29711,8 @@ const PLAYERS_ALL = [
         }
       },
       "lifeweaver": {
-        "finalScore": 43.86,
-        "battleScore": 41.04,
+        "finalScore": 43.84,
+        "battleScore": 41.02,
         "coeff": 1.1,
         "matchCoef": 0.97,
         "gamesPlayed": 18,
@@ -29528,8 +29812,8 @@ const PLAYERS_ALL = [
         }
       },
       "mizuki": {
-        "finalScore": 38.2,
-        "battleScore": 36.81,
+        "finalScore": 38.24,
+        "battleScore": 36.85,
         "coeff": 1.1,
         "matchCoef": 0.94,
         "gamesPlayed": 13,
@@ -29546,11 +29830,11 @@ const PLAYERS_ALL = [
           "wa": 28,
           "ca": 11
         },
-        "rankDeltaPower": 2
+        "rankDelta": 1
       },
       "ramattra": {
-        "finalScore": 48.81,
-        "battleScore": 32.27,
+        "finalScore": 48.84,
+        "battleScore": 32.26,
         "coeff": 1,
         "matchCoef": 0.92,
         "gamesPlayed": 1,
@@ -29606,12 +29890,11 @@ const PLAYERS_ALL = [
           "as10": 3.66,
           "wa": 22,
           "ca": 13
-        },
-        "rankDelta": 1
+        }
       },
       "shion": {
-        "finalScore": 25.47,
-        "battleScore": 29.59,
+        "finalScore": 25.44,
+        "battleScore": 29.56,
         "coeff": 1,
         "matchCoef": 0.86,
         "gamesPlayed": 5,
@@ -29647,9 +29930,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 29,
           "ca": 11
-        },
-        "rankDelta": -2,
-        "rankDeltaPower": -2
+        }
       },
       "soldier-76": {
         "finalScore": 38.4,
@@ -29690,11 +29971,10 @@ const PLAYERS_ALL = [
           "wa": 31,
           "ca": 0
         },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        "rankDelta": -1
       },
       "torbjorn": {
-        "finalScore": 35.08,
+        "finalScore": 35.07,
         "battleScore": 39.42,
         "coeff": 1,
         "matchCoef": 0.89,
@@ -29712,28 +29992,29 @@ const PLAYERS_ALL = [
           "wa": 18,
           "ca": 7
         },
-        "rankDelta": -1
+        "rankDeltaPower": -1
       },
       "wuyang": {
-        "finalScore": 34.52,
-        "battleScore": 36.93,
+        "finalScore": 36.66,
+        "battleScore": 39.21,
         "coeff": 1.1,
         "matchCoef": 0.85,
-        "gamesPlayed": 2,
+        "gamesPlayed": 3,
         "rankIndex": 1,
         "det": {
-          "g": 2,
-          "time": 827,
-          "wr": 73,
-          "el10": 7.25,
-          "de10": 5.8,
-          "dm10": 3751,
-          "he10": 5763,
-          "as10": 17.4,
-          "wa": 24,
+          "g": 3,
+          "time": 1127,
+          "wr": 84,
+          "el10": 8.52,
+          "de10": 5.32,
+          "dm10": 4220,
+          "he10": 5784,
+          "as10": 17.56,
+          "wa": 26,
           "ca": 0
         },
-        "rankDeltaPower": -1
+        "rankDelta": 4,
+        "rankDeltaPower": 3
       },
       "zarya": {
         "finalScore": 46.21,
@@ -29753,8 +30034,7 @@ const PLAYERS_ALL = [
           "as10": 1.14,
           "wa": 27,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "zenyatta": {
         "finalScore": 43.44,
@@ -29779,26 +30059,24 @@ const PLAYERS_ALL = [
     },
     "bscoreAll": {
       "ana": {
-        "finalScore": 46.88,
-        "battleScore": 40.48,
+        "finalScore": 46.99,
+        "battleScore": 40.58,
         "coeff": 1.1,
         "matchCoef": 1.05,
         "gamesPlayed": 46,
         "rankIndex": 1,
         "det": {
           "g": 46,
-          "time": 22471,
-          "wr": 60.108695652173914,
-          "el10": 7.805434782608696,
-          "de10": 5.667173913043478,
-          "dm10": 2822.891304347826,
-          "he10": 5235.673913043478,
-          "as10": 10.606739130434782,
-          "wa": 54.78260869565217,
+          "time": 22599,
+          "wr": 60.65217391304348,
+          "el10": 7.771739130434782,
+          "de10": 5.675869565217392,
+          "dm10": 2814.086956521739,
+          "he10": 5232.521739130435,
+          "as10": 10.569782608695652,
+          "wa": 54.67391304347826,
           "ca": 0
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        }
       },
       "baptiste": {
         "finalScore": 34.48,
@@ -29818,8 +30096,7 @@ const PLAYERS_ALL = [
           "as10": 6.489230769230769,
           "wa": 26.846153846153847,
           "ca": 8.615384615384615
-        },
-        "rankDelta": 1
+        }
       },
       "bastion": {
         "finalScore": 50.4,
@@ -29859,7 +30136,8 @@ const PLAYERS_ALL = [
           "as10": 0.8735714285714286,
           "wa": 38.92857142857143,
           "ca": 10.857142857142858
-        }
+        },
+        "rankDeltaPower": -1
       },
       "emre": {
         "finalScore": 38.38,
@@ -29879,12 +30157,11 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 28.80952380952381,
           "ca": 10.761904761904763
-        },
-        "rankDelta": 1
+        }
       },
       "juno": {
-        "finalScore": 48.27,
-        "battleScore": 38.27,
+        "finalScore": 48.21,
+        "battleScore": 38.23,
         "coeff": 1.1,
         "matchCoef": 1.15,
         "gamesPlayed": 136,
@@ -29900,28 +30177,29 @@ const PLAYERS_ALL = [
           "as10": 8.871764705882352,
           "wa": 37.029411764705884,
           "ca": 7.029411764705882
-        }
+        },
+        "rankDelta": -1
       },
       "kiriko": {
-        "finalScore": 48.83,
-        "battleScore": 38.6,
+        "finalScore": 48.87,
+        "battleScore": 38.63,
         "coeff": 1.1,
         "matchCoef": 1.15,
-        "gamesPlayed": 249,
+        "gamesPlayed": 251,
         "rankIndex": 1,
         "det": {
-          "g": 249,
-          "time": 136965,
-          "wr": 49.855421686746986,
-          "el10": 7.971004016064258,
-          "de10": 5.5904016064257025,
-          "dm10": 2822.0642570281125,
-          "he10": 8634.253012048193,
-          "as10": 14.791365461847388,
-          "wa": 26.634538152610443,
-          "ca": 14.048192771084338
+          "g": 251,
+          "time": 137687,
+          "wr": 49.90438247011952,
+          "el10": 7.9753386454183275,
+          "de10": 5.584780876494023,
+          "dm10": 2819.00796812749,
+          "he10": 8631.565737051793,
+          "as10": 14.81832669322709,
+          "wa": 26.64541832669323,
+          "ca": 14.03187250996016
         },
-        "rankDelta": -2
+        "rankDelta": -1
       },
       "moira": {
         "finalScore": 65.14,
@@ -29941,29 +30219,27 @@ const PLAYERS_ALL = [
           "as10": 10.662413793103447,
           "wa": 0,
           "ca": 0
-        },
-        "rankDelta": 3
+        }
       },
       "orisa": {
-        "finalScore": 40.85,
-        "battleScore": 38.74,
+        "finalScore": 40.63,
+        "battleScore": 38.46,
         "coeff": 1,
-        "matchCoef": 1.05,
-        "gamesPlayed": 47,
+        "matchCoef": 1.06,
+        "gamesPlayed": 48,
         "rankIndex": 0,
         "det": {
-          "g": 47,
-          "time": 23964,
-          "wr": 45.87234042553192,
-          "el10": 17.693191489361702,
-          "de10": 5.69340425531915,
-          "dm10": 10088.978723404256,
-          "he10": 5.268085106382979,
-          "as10": 3.197872340425532,
-          "wa": 31.70212765957447,
-          "ca": 10.148936170212766
-        },
-        "rankDelta": -1
+          "g": 48,
+          "time": 24318,
+          "wr": 45.083333333333336,
+          "el10": 17.658125000000002,
+          "de10": 5.734375,
+          "dm10": 10039.6875,
+          "he10": 5.193333333333333,
+          "as10": 3.231666666666667,
+          "wa": 31.708333333333332,
+          "ca": 10.145833333333334
+        }
       },
       "reaper": {
         "finalScore": 57.11,
@@ -29983,11 +30259,12 @@ const PLAYERS_ALL = [
           "as10": 0.03774647887323944,
           "wa": 28.281690140845072,
           "ca": 11
-        }
+        },
+        "rankDelta": -1
       },
       "sigma": {
-        "finalScore": 53.66,
-        "battleScore": 38.22,
+        "finalScore": 53.65,
+        "battleScore": 38.21,
         "coeff": 1,
         "matchCoef": 1.05,
         "gamesPlayed": 75,
@@ -30006,7 +30283,7 @@ const PLAYERS_ALL = [
         }
       },
       "tracer": {
-        "finalScore": 34.85,
+        "finalScore": 34.86,
         "battleScore": 40.5,
         "coeff": 1,
         "matchCoef": 0.86,
@@ -30024,32 +30301,33 @@ const PLAYERS_ALL = [
           "wa": 29.8,
           "ca": 9.6
         },
-        "rankDelta": 3,
-        "rankDeltaPower": 3
+        "rankDelta": -1,
+        "rankDeltaPower": -1
       },
       "winston": {
-        "finalScore": 51.9,
-        "battleScore": 45.13,
+        "finalScore": 52.29,
+        "battleScore": 45.47,
         "coeff": 1,
         "matchCoef": 1.15,
-        "gamesPlayed": 178,
+        "gamesPlayed": 185,
         "rankIndex": 0,
         "det": {
-          "g": 178,
-          "time": 98378,
-          "wr": 52.69662921348315,
-          "el10": 18.72943820224719,
-          "de10": 5.134044943820225,
-          "dm10": 7924.528089887641,
-          "he10": 1894.2134831460673,
-          "as10": 3.6080898876404497,
-          "wa": 48.30337078651685,
+          "g": 185,
+          "time": 101895,
+          "wr": 53.41621621621621,
+          "el10": 18.760216216216218,
+          "de10": 5.080918918918918,
+          "dm10": 7916.616216216216,
+          "he10": 1893.3783783783783,
+          "as10": 3.653675675675676,
+          "wa": 47.58378378378379,
           "ca": 0
-        }
+        },
+        "rankDelta": 1
       },
       "ashe": {
-        "finalScore": 23.36,
-        "battleScore": 27.48,
+        "finalScore": 23.25,
+        "battleScore": 27.35,
         "coeff": 1,
         "matchCoef": 0.85,
         "gamesPlayed": 4,
@@ -30125,8 +30403,7 @@ const PLAYERS_ALL = [
           "as10": 1.78,
           "wa": 31,
           "ca": 5
-        },
-        "rankDelta": -1
+        }
       },
       "dva": {
         "finalScore": 30.64,
@@ -30206,9 +30483,7 @@ const PLAYERS_ALL = [
           "as10": 2.44,
           "wa": 18,
           "ca": 6
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "illari": {
         "finalScore": 30.41,
@@ -30251,7 +30526,7 @@ const PLAYERS_ALL = [
         }
       },
       "junkrat": {
-        "finalScore": 26.39,
+        "finalScore": 26.4,
         "battleScore": 31.05,
         "coeff": 1,
         "matchCoef": 0.85,
@@ -30271,8 +30546,8 @@ const PLAYERS_ALL = [
         }
       },
       "lifeweaver": {
-        "finalScore": 43.86,
-        "battleScore": 41.04,
+        "finalScore": 43.84,
+        "battleScore": 41.02,
         "coeff": 1.1,
         "matchCoef": 0.97,
         "gamesPlayed": 18,
@@ -30372,8 +30647,8 @@ const PLAYERS_ALL = [
         }
       },
       "mizuki": {
-        "finalScore": 38.2,
-        "battleScore": 36.81,
+        "finalScore": 38.24,
+        "battleScore": 36.85,
         "coeff": 1.1,
         "matchCoef": 0.94,
         "gamesPlayed": 13,
@@ -30390,11 +30665,11 @@ const PLAYERS_ALL = [
           "wa": 28,
           "ca": 11
         },
-        "rankDeltaPower": 2
+        "rankDelta": 1
       },
       "ramattra": {
-        "finalScore": 48.81,
-        "battleScore": 32.27,
+        "finalScore": 48.84,
+        "battleScore": 32.26,
         "coeff": 1,
         "matchCoef": 0.92,
         "gamesPlayed": 1,
@@ -30450,12 +30725,11 @@ const PLAYERS_ALL = [
           "as10": 3.66,
           "wa": 22,
           "ca": 13
-        },
-        "rankDelta": 1
+        }
       },
       "shion": {
-        "finalScore": 25.47,
-        "battleScore": 29.59,
+        "finalScore": 25.44,
+        "battleScore": 29.56,
         "coeff": 1,
         "matchCoef": 0.86,
         "gamesPlayed": 5,
@@ -30491,9 +30765,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 29,
           "ca": 11
-        },
-        "rankDelta": -2,
-        "rankDeltaPower": -2
+        }
       },
       "soldier-76": {
         "finalScore": 38.4,
@@ -30534,11 +30806,10 @@ const PLAYERS_ALL = [
           "wa": 31,
           "ca": 0
         },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        "rankDelta": -1
       },
       "torbjorn": {
-        "finalScore": 35.08,
+        "finalScore": 35.07,
         "battleScore": 39.42,
         "coeff": 1,
         "matchCoef": 0.89,
@@ -30556,28 +30827,29 @@ const PLAYERS_ALL = [
           "wa": 18,
           "ca": 7
         },
-        "rankDelta": -1
+        "rankDeltaPower": -1
       },
       "wuyang": {
-        "finalScore": 34.52,
-        "battleScore": 36.93,
+        "finalScore": 36.66,
+        "battleScore": 39.21,
         "coeff": 1.1,
         "matchCoef": 0.85,
-        "gamesPlayed": 2,
+        "gamesPlayed": 3,
         "rankIndex": 1,
         "det": {
-          "g": 2,
-          "time": 827,
-          "wr": 73,
-          "el10": 7.25,
-          "de10": 5.8,
-          "dm10": 3751,
-          "he10": 5763,
-          "as10": 17.4,
-          "wa": 24,
+          "g": 3,
+          "time": 1127,
+          "wr": 84,
+          "el10": 8.52,
+          "de10": 5.32,
+          "dm10": 4220,
+          "he10": 5784,
+          "as10": 17.56,
+          "wa": 26,
           "ca": 0
         },
-        "rankDeltaPower": -1
+        "rankDelta": 4,
+        "rankDeltaPower": 3
       },
       "zarya": {
         "finalScore": 46.21,
@@ -30597,8 +30869,7 @@ const PLAYERS_ALL = [
           "as10": 1.14,
           "wa": 27,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "zenyatta": {
         "finalScore": 43.44,
@@ -30771,6 +31042,15 @@ const PLAYERS_ALL = [
           "lifeweaver": 2,
           "mizuki": 2,
           "zenyatta": 1
+        }
+      },
+      {
+        "d": "2026-10-03",
+        "g": {
+          "kiriko": 2,
+          "orisa": 1,
+          "winston": 7,
+          "wuyang": 1
         }
       }
     ]
