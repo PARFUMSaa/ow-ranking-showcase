@@ -48,6 +48,11 @@ body{font-family:"Inter","Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Yu 
 .stat-box .k{font-size:10.5px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.07em;display:flex;align-items:center;gap:5px}
 .stat-box .v{font-size:17px;font-weight:800;margin-top:1px}
 .stat-box .s{font-size:10.5px;color:#9ca3af}
+/* 外部リンクのアイコン(ランクのとなり・クリックで開く) */
+.pf-ext{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border:1px solid var(--border);border-radius:8px;background:#fff;text-decoration:none;flex:0 0 auto;transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease}
+.pf-ext img{width:16px;height:16px;display:block;border-radius:4px}
+.pf-ext:hover{border-color:#1d4ed8;box-shadow:0 2px 6px rgba(29,78,216,.25);transform:translateY(-1px)}
+.pf-ext:focus-visible{outline:3px solid #1d4ed8;outline-offset:2px}
 
 /* テーブル周辺 */
 .table-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:26px 0 4px}
@@ -209,6 +214,101 @@ table.mini td:first-child{text-align:left;white-space:nowrap}
   background:linear-gradient(90deg,#fff3cf var(--p,0%),#fff var(--p,0%))}
 .pr-item i.v{font-style:normal;font-weight:800;color:#b45309;font-size:10px;font-variant-numeric:tabular-nums}
 .pr-item b{font-weight:800}
+/* 直近の戦績(日次スナップショットの差分) — プレイヤー要約カードの外に独立カードとして表示 */
+.rs{margin-top:12px;padding:12px 14px;border:1px solid var(--border);border-radius:12px;background:#fff;box-shadow:0 1px 3px rgba(16,24,40,.04)}
+.rs-head{font-size:13px;font-weight:800;color:#1d4ed8;letter-spacing:.02em;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
+.rs-head .rs-who{font-size:14px;font-weight:900;color:#0f172a}
+.rs-head .rs-note{font-size:10.5px;font-weight:400;color:#94a3b8}
+.rs-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin-top:8px;align-items:start}
+@media(max-width:780px){.rs-cards{grid-template-columns:1fr}}
+.rs-card{border:1px solid #e5edf8;border-radius:10px;background:#f8fbff;padding:8px 10px}
+.rs-card.comp{border-color:#f2dfae;background:#fffdf6}
+.rs-card.qp{border-color:#cfe6d8;background:#f7fdfa}
+.rs-rkchip{display:inline-flex;align-items:center;gap:3px;border:1px solid #e8eef7;border-radius:99px;padding:0 7px;font-size:11px;font-weight:700;background:#fff;white-space:nowrap}
+.rs-assumed{font-style:normal;font-size:9px;font-weight:800;color:#b45309;background:#fffbeb;border:1px solid #fde68a;border-radius:99px;padding:0 4px;margin-left:2px}
+.rs-note2{font-size:10px;color:#94a3b8;margin-top:3px}
+.rs-t{font-size:11px;font-weight:800;color:#475569;display:flex;gap:6px;align-items:baseline}
+.rs-t .rs-sub{font-size:10px;font-weight:400;color:#a8b3c2}
+.rs-big{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-top:2px}
+.rs-big b{font-size:20px;font-weight:900;color:#0f172a;font-variant-numeric:tabular-nums;line-height:1.15}
+.rs-big>span{font-size:11px;color:#64748b}
+.rs-big .rs-wl{font-weight:700;color:#334155}
+.rs-big .rs-wr{font-weight:800;color:#475569;margin-left:auto}
+.rs-big .rs-wr.wr-good{color:#047857}
+.rs-big .rs-wr.wr-bad{color:#b91c1c}
+.rs-row{display:flex;gap:6px;align-items:flex-start;margin-top:3px;font-size:11px}
+.rs-k{flex:0 0 52px;color:#94a3b8;font-weight:700}
+.rs-v{flex:1 1 auto;min-width:0;color:#0f172a;display:flex;flex-wrap:wrap;gap:3px 7px;align-items:center}
+.rs-k2{color:#94a3b8;margin-left:6px}
+.rs-h{display:inline-flex;align-items:center;gap:3px;border:1px solid #e8eef7;border-radius:99px;padding:0 6px 0 2px;font-size:11px}
+.rs-h b{font-weight:700}
+.rs-h i{font-style:normal;font-weight:800;color:#1d4ed8;font-size:10px;font-variant-numeric:tabular-nums}
+.rs-rk{font-weight:700}
+.rs-rk.up{color:#047857}
+.rs-rk.down{color:#b91c1c}
+.rs-approx{color:#94a3b8;font-size:10px;cursor:help}
+.rs-none{font-size:11px;color:#9ca3af;margin-top:3px}
+.rs-reset{font-size:10px;color:#b45309;margin-top:3px;cursor:help}
+/* プレイ頻度(コントリビューショングラフ)— 日別の試合数のグラフはここに統合 */
+.fq{margin-top:12px;padding:12px 14px;border:1px solid var(--border);border-radius:12px;background:#fff;box-shadow:0 1px 3px rgba(16,24,40,.04)}
+.fq-head{font-size:13px;font-weight:800;color:#1d4ed8;letter-spacing:.02em;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
+.fq-head .fq-note{font-size:10.5px;font-weight:400;color:#94a3b8}
+.fq-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:9px;padding-bottom:2px}
+.fq-grid{--fqn:136px;display:grid;gap:2px 3px;align-items:center;min-width:max-content}
+.fq-grid .fq-ml{font-size:9.5px;color:#a8b3c2;line-height:1;font-variant-numeric:tabular-nums}
+.fq-grid .fq-dow{font-size:9px;color:#b6c0cd;text-align:center;line-height:1}
+.fq-grid .fq-dow.we{color:#8fa3bb;font-weight:800}
+.fq-nm{display:flex;align-items:center;gap:5px;min-width:0;font-size:11.5px;font-weight:700;color:#0f172a;padding-right:6px}
+.fq-nm .pl-av.fq-face{width:17px;height:17px;border-radius:5px;font-size:9px}
+.fq-nm .fq-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fq-nm .fq-tot{margin-left:auto;font-size:10px;font-weight:800;color:#64748b;font-variant-numeric:tabular-nums;white-space:nowrap}
+.fq-nm .fq-tot u{text-decoration:none;font-size:9px;font-weight:600;color:#a8b3c2}
+.fq-nm.on{color:#1d4ed8}
+.fq-c{width:14px;height:14px;border-radius:3px;background:#eef2f7;display:block}
+.fq-c.l1{background:#dbeafe}
+.fq-c.l2{background:#93c5fd}
+.fq-c.l3{background:#3b82f6}
+.fq-c.l4{background:#1d4ed8}
+.fq-c.na{background:repeating-linear-gradient(45deg,#eef2f7,#eef2f7 3px,#f8fafc 3px,#f8fafc 6px)}
+.fq-c.on{box-shadow:0 0 0 1.5px #1d4ed8}
+.fq-c.fq-cx{cursor:help}
+/* 1人ぶんの GitHub 風カレンダー(縦=曜日 / 横=週) */
+.fq-who{font-size:14px;font-weight:900;color:#0f172a}
+.fq-calwrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin-top:9px}
+.fq-calbox{flex:0 0 auto;max-width:100%;min-width:0}
+.fq-calscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+.fq-cal{display:grid;gap:4px;align-items:center;min-width:max-content}
+.fq-cal .fq-mh{font-size:9.5px;font-weight:700;color:#94a3b8;line-height:1;padding-bottom:2px}
+.fq-cal .fq-dw{font-size:9.5px;color:#a8b3c2;text-align:right;line-height:1;padding-right:5px;white-space:nowrap}
+.fq-cal .fq-dw.we{color:#8fa3bb;font-weight:800}
+.fq-c.big{width:26px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:9.5px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1}
+.fq-c.big.l1,.fq-c.big.l2{color:#1e3a8a}
+.fq-c.big.l3,.fq-c.big.l4{color:#fff}
+.fq-c.out{background:#fbfcfe;box-shadow:inset 0 0 0 1px #f1f4f9;cursor:default}
+.fq-side{flex:1 1 340px;min-width:250px;display:flex;flex-direction:column;gap:11px}
+.fq-stats{display:grid;grid-template-columns:1fr;gap:4px}
+.fq-stat{display:flex;gap:8px;align-items:baseline;font-size:11.5px;color:#334155;flex-wrap:wrap;min-width:0}
+.fq-sk{flex:0 0 62px;color:#94a3b8;font-weight:700;font-size:10.5px}
+.fq-sv b{font-weight:900;color:#0f172a;font-variant-numeric:tabular-nums}
+.fq-sv .fq-sub2{color:#94a3b8;font-size:10px}
+.fq-charts{display:flex;gap:22px;flex-wrap:wrap;align-items:flex-end}
+.fq-chart{flex:1 1 230px;min-width:186px;max-width:560px}
+.fq-ch-t{font-size:10px;font-weight:800;color:#94a3b8;margin-bottom:4px}
+.fq-bars{display:flex;gap:7px;align-items:flex-end;justify-content:space-between}
+.fq-db{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:2px;height:74px;flex:1 1 0;max-width:44px;cursor:help}
+.fq-db i{display:block;width:16px;max-width:100%;background:linear-gradient(180deg,#93c5fd,#2563eb);border-radius:3px 3px 0 0;min-height:2px}
+.fq-db i.zero{background:#eef2f7}
+.fq-db u{text-decoration:none;font-size:9px;color:#a8b3c2;line-height:1;white-space:nowrap;font-variant-numeric:tabular-nums}
+.fq-team{margin-top:10px;border-top:1px solid #eef1f6;padding-top:8px}
+.fq-team summary{cursor:pointer;font-size:11.5px;font-weight:800;color:#475569;user-select:none}
+.fq-team[open] summary{color:#1d4ed8;margin-bottom:7px}
+.fq-legend{display:flex;align-items:center;gap:4px;flex-wrap:wrap;font-size:10.5px;color:#94a3b8;margin-top:8px}
+.fq-legend .fq-c{width:12px;height:12px}
+.fq-legend .fq-sep{display:inline-block;width:1px;height:12px;background:#e5eaf2;margin:0 4px}
+.fq-legend .fq-lk{padding-right:2px}
+.fq-legend .fq-vs{font-variant-numeric:tabular-nums}
+.fq-note2{font-size:10px;color:#a8b3c2;margin-top:5px;line-height:1.5}
+@media(max-width:640px){.fq-grid{--fqn:104px}}
 .upd{color:#6b7280;font-size:11px}
 /* ページ最上部の更新日バー */
 .upd-top{display:flex;align-items:center;gap:9px;flex-wrap:wrap;background:#f8fafc;border:1px solid var(--border);border-radius:10px;padding:7px 12px;margin:0 0 12px;font-size:12px;color:#64748b}
@@ -683,6 +783,10 @@ details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px
     <!-- プレイヤー選択 & 要約 -->
     <div class="pf-sel" id="pfSel"></div>
     <div class="profile" id="profileBox"></div>
+    <!-- 直近の戦績(バナー付きカードの外に置く) -->
+    <div id="recentBox"></div>
+    <!-- プレイ頻度(コントリビューショングラフ) -->
+    <div id="freqBox"></div>
 
     <!-- テーブル -->
     <div class="table-head">
@@ -1178,7 +1282,519 @@ function usageHtml(p, small) {
   </div>`;
 }
 
+/* =====================================================================
+ * 直近の戦績(日次スナップショットの差分から算出)
+ *   OverFast には試合単位の履歴が無いため、毎日の更新時に記録した累計値
+ *   (試合/勝敗/時間/キル/アシスト/デス)の差分で「直近◯日」を出す。
+ *   recent の各要素 = { d, g:{hero:試合増}, m,w,l,t,k, tot:{e,a,dd,dm,he}, r:{ロール:ランク} }
+ * =================================================================== */
+const RS_WINDOWS = [30];      // 直近30日のみ(7日は省略して3枚のカードに整理)
+/* シーズン切替日: ランク戦(コンペ)の累計試合数が「減った」最初の記録の前日を
+   シーズン開始とみなす(Overwatch のカウンタはシーズン切替でリセットされるため)。
+   リセットは全員同じ時期なので、いちばん早く検出できた日を全プレイヤー共通で使う。 */
+function rsSeasonStart() {
+  if (typeof rsSeasonStart.cache !== 'undefined') return rsSeasonStart.cache;
+  let best = null;
+  const list = (typeof PLAYERS_COMP !== 'undefined' && Array.isArray(PLAYERS_COMP)) ? PLAYERS_COMP : [];
+  for (const c of list) {
+    const hist = (Array.isArray(c.recent) ? c.recent : []).filter((e) => e && e.d && typeof e.m === 'number').slice().sort((a, b) => (a.d < b.d ? -1 : 1));
+    for (let i = 1; i < hist.length; i++) {
+      if (hist[i].m < hist[i - 1].m) { const d = hist[i - 1].d; if (!best || d < best) best = d; break; }
+    }
+  }
+  rsSeasonStart.cache = best;                 // 例: '2026-10-07'(切替を含む最終スナップショットの日)
+  return best;
+}
+/* シーズン切替から何日たったか(表示用) */
+function rsSeasonDays() {
+  const s = rsSeasonStart(), today = rsToday();
+  if (!s || !today) return null;
+  return Math.round((new Date(`${today}T00:00:00Z`) - new Date(`${s}T00:00:00Z`)) / 86400000);
+}
+function rsShiftDays(iso, delta) {
+  const d = new Date(`${iso}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + delta);
+  return d.toISOString().slice(0, 10);
+}
+function rsToday() {
+  try { return new Date(LAST_UPDATED_ISO).toLocaleDateString('sv-SE', { timeZone: 'Asia/Tokyo' }); }
+  catch (e) { return ''; }
+}
+/* ランクの比較用スコア(大きいほど上) */
+function rsRankScore(s) {
+  if (!s) return null;
+  const [div, tier] = String(s).split('-');
+  const i = DIV_ORDER.indexOf(String(div).toLowerCase());
+  if (i < 0) return null;
+  return i * 10 + (6 - (Number(tier) || 1));
+}
+function rsRankLabel(s) {
+  if (!s) return '';
+  const [div, tier] = String(s).split('-');
+  const d = String(div || '');
+  return (d.charAt(0).toUpperCase() + d.slice(1)) + (tier ? ' ' + tier : '');
+}
+function rsRankSnap(p) {
+  const out = {};
+  for (const r of ['Tank', 'Damage', 'Support']) {
+    const rk = p.ranks && p.ranks[r];
+    out[r] = rk && rk.division ? `${rk.division}-${rk.tier ?? ''}` : null;
+  }
+  return out;
+}
+function rsFmtDur(sec) {
+  const s = Math.max(0, Math.round(num(sec)));
+  const h = Math.floor(s / 3600), m = Math.round((s % 3600) / 60);
+  return h ? `${h}時間${m ? m + '分' : ''}` : `${m}分`;
+}
+function rsStatsOf(p, opts) {
+  opts = opts || {};
+  const hist = (Array.isArray(p.recent) ? p.recent : []).filter((e) => e && e.d).slice().sort((a, b) => (a.d < b.d ? -1 : 1));
+  if (!hist.length) return null;
+  const withM = hist.filter((e) => typeof e.m === 'number');
+  if (!withM.length) return null;
+  const ov = p.overall || {};
+  const today = rsToday() || hist[hist.length - 1].d;
+  /* 日次の増分(累計の差分)。シーズン切替などで累計が減った日は0扱いにして、
+     期間の数字は「増加分の合計」で出す(累計がリセットされても正しく数えられる) */
+  const drops = [];        // 試合数の累計が減った日(= シーズン切替などのリセット)
+  const days = [];
+  for (let i = 0; i < hist.length; i++) {
+    const e = hist[i], pv = i ? hist[i - 1] : null;
+    if (typeof e.m !== 'number') continue;
+    const d = (k, prev, isMatch) => {
+      const a = Number(e[k]), b = prev === undefined ? NaN : Number(prev);
+      if (!Number.isFinite(a)) return 0;
+      if (!Number.isFinite(b)) return 0;
+      const v = a - b;
+      if (v < 0) { if (isMatch) drops.push(e.d); return 0; }   // リセット判定は試合数の減少だけ
+      return v;
+    };
+    days.push({
+      d: e.d,
+      m: pv ? d('m', pv.m, true) : 0, w: pv ? d('w', pv.w) : 0, l: pv ? d('l', pv.l) : 0, t: pv ? d('t', pv.t) : 0,
+      k: typeof e.k === 'number' ? e.k : null, r: e.r || null, g: e.g || {}
+    });
+  }
+  /* 最新スナップショット → 現在値(通常は同日なので0。同日に複数回更新された場合の保険) */
+  const lastE = hist[hist.length - 1];
+  if (lastE && typeof lastE.m === 'number' && num(ov.matches) > num(lastE.m)) {
+    days.push({ d: today, m: num(ov.matches) - num(lastE.m), w: Math.max(0, num(ov.wins) - num(lastE.w)), l: Math.max(0, num(ov.losses) - num(lastE.l)), t: Math.max(0, num(ov.time) - num(lastE.t)), k: null, r: rsRankSnap(p), g: {} });
+  }
+  const curRanks = rsRankSnap(p);
+  const first = days[0];
+  /* ランク戦はシーズン切替でカウンタがリセットされるので、集計の起点を切替日に置き換える */
+  const seasonBase = opts.season ? rsSeasonStart() : null;
+  const seasonDays = opts.season ? rsSeasonDays() : null;
+  const windows = RS_WINDOWS.map((winDays) => {
+    const cut = rsShiftDays(today, -(winDays - 1));
+    /* 期間の基準日: cut以前で最後の記録日(無ければ最初の記録日) */
+    let baseD = first.d;
+    for (const x of days) if (x.d <= cut) baseD = x.d;
+    if (seasonBase) {
+      const b = days.filter((x) => x.d <= seasonBase).slice(-1)[0];
+      if (b) baseD = b.d;                    // シーズン切替を含むスナップショットの日から数える
+    }
+    const inWin = days.filter((x) => x.d > baseD);
+    let games = inWin.reduce((s, x) => s + x.m, 0);
+    let wins = Math.min(games, inWin.reduce((s, x) => s + x.w, 0));
+    let losses = Math.min(games - wins, inWin.reduce((s, x) => s + x.l, 0));
+    let secs = inWin.reduce((s, x) => s + x.t, 0);
+    /* コンペの累計(overall)はシーズン切替でリセットされる = 今シーズンの累計そのもの。
+       ただしリセット(カウンタの減少)を確認できた人だけ。切替後にランク戦をしていない人は
+       プロフィールが前シーズンの値のまま止まっているため、切替後の増加分(= 通常0)を使う */
+    let seasonTotal = false;
+    if (opts.season && drops.filter((d) => d > baseD).length) {
+      games = num(ov.matches);
+      wins = Math.min(games, num(ov.wins));
+      losses = Math.min(games - wins, num(ov.losses));
+      secs = num(ov.time);
+      seasonTotal = true;
+    }
+    /* 期間KDA: 累計キル/デスが期間の両端にあれば正確。無ければ日次KDAを試合数で重み付け(≈) */
+    let kda = null, approx = false;
+    const baseEntry = hist.filter((e) => e.d <= baseD).slice(-1)[0] || null;
+    /* シーズン切替をまたぐと累計キル/デスの差が使えないので、日次KDAの重み付けにする */
+    if (!opts.season && ov.tot && baseEntry && baseEntry.tot) {
+      const de = num(ov.tot.e) - num(baseEntry.tot.e), da = num(ov.tot.a) - num(baseEntry.tot.a), dd = num(ov.tot.dd) - num(baseEntry.tot.dd);
+      if (dd > 0 && de + da >= 0) kda = (de + da) / dd;
+    }
+    if (kda === null) {
+      let sw = 0, sk = 0;
+      for (const x of inWin) if (x.m > 0 && x.k !== null) { sw += x.m; sk += x.m * x.k; }
+      if (sw > 0) { kda = sk / sw; approx = true; }
+    }
+    /* 期間内に使ったヒーロー(増えた分だけを合計) */
+    const use = {};
+    for (const x of inWin) for (const s of Object.keys(x.g)) { const v = Number(x.g[s]) || 0; if (v > 0) use[s] = (use[s] || 0) + v; }
+    const top = Object.entries(use).sort((a, x) => x[1] - a[1]).slice(0, 3);
+    /* ランク変動(期間の基準日 → 現在) */
+    const rankChg = [];
+    if (baseEntry && baseEntry.r) {
+      for (const role of ['Tank', 'Damage', 'Support']) {
+        const from = baseEntry.r[role], to = curRanks[role];
+        const sf = rsRankScore(from), st = rsRankScore(to);
+        if (!from || !to || from === to || sf === null || st === null) continue;
+        rankChg.push({ role, from: rsRankLabel(from), to: rsRankLabel(to), up: st > sf });
+      }
+    }
+    return { days: winDays, games, wins, losses, wr: games ? wins / games * 100 : 0, secs, kda, approx, top, rankChg, baseD, period: winDays, season: !!opts.season, seasonDays, seasonTotal, reset: drops.filter((d) => d > baseD).length > 0, resetAt: drops.filter((d) => d > baseD).slice(-1)[0] || null };
+  });
+  return { windows, today, histFrom: first.d, exactKda: !!(ov.tot) };
+}
+function rsHeroChip(slug, n, extra) {
+  const nm = SLUG_NAME[slug] || slug, role = SLUG_ROLE[slug] || '';
+  const tip = `${nm} ${n}試合${extra ? ' ・ ' + extra : ''}`;
+  return `<span class="rs-h" title="${esc(tip)}">${heroThumb(nm, 20, role, slug)}<b>${esc(nm)}</b><i>${n}</i></span>`;
+}
+/* ランク(コンペ)のレコード(PLAYERS_COMP) */
+function compRecOf(p) {
+  return (typeof PLAYERS_COMP !== 'undefined' && Array.isArray(PLAYERS_COMP))
+    ? (PLAYERS_COMP.find((x) => x.id === p.id) || null) : null;
+}
+/* クイックプレイ = 全モード − ランク(コンペ) */
+function qpOf(p) {
+  const c = compRecOf(p);
+  if (!c || !c.overall || !p.overall) return null;
+  const sub = (a, b) => Math.max(0, num(a) - num(b));
+  const ov = p.overall, co = c.overall;
+  const matches = sub(ov.matches, co.matches);
+  const wins = Math.min(matches, sub(ov.wins, co.wins));
+  const losses = Math.min(matches - wins, sub(ov.losses, co.losses));
+  const time = sub(ov.time, co.time);
+  let kda = null;
+  if (ov.tot && co.tot) {
+    const e = sub(ov.tot.e, co.tot.e) + sub(ov.tot.a, co.tot.a), dd = sub(ov.tot.dd, co.tot.dd);
+    if (dd > 0) kda = e / dd;
+  }
+  /* ヒーロー別: 全モード − コンペ */
+  const cmap = {};
+  for (const h of (c.heroes || [])) cmap[h.slug] = num(h.g);
+  const heroes = (p.heroes || [])
+    .map((h) => ({ slug: h.slug, n: h.n, role: h.role, g: Math.max(0, num(h.g) - (cmap[h.slug] || 0)) }))
+    .filter((h) => h.g > 0)
+    .sort((a, b) => b.g - a.g);
+  return { matches, wins, losses, wr: matches ? wins / matches * 100 : 0, time, kda, heroes };
+}
+/* 直近N日のクイックプレイで使ったヒーロー(全モードの増分 − コンペの増分) */
+function qpRecentHeroes(p, days) {
+  const c = compRecOf(p);
+  const today = rsToday();
+  const cut = rsShiftDays(today, -(days - 1));
+  const sum = (rec) => {
+    const m = {};
+    for (const e of (Array.isArray(rec && rec.recent) ? rec.recent : [])) {
+      if (e.d <= cut || !e.g) continue;
+      for (const s of Object.keys(e.g)) m[s] = (m[s] || 0) + (Number(e.g[s]) || 0);
+    }
+    return m;
+  };
+  const a = sum(p), cg = sum(c);
+  const out = {};
+  for (const s of Object.keys(a)) { const v = a[s] - (cg[s] || 0); if (v > 0) out[s] = v; }
+  return Object.entries(out).sort((x, y) => y[1] - x[1]);
+}
+function rsPct1(v) { return (Math.round(num(v) * 10) / 10).toFixed(1); }
+function rsHtml(p) {
+  const st = rsStatsOf(p);
+  const box = $('#recentBox');
+  if (!box) return '';
+  if (!st) {
+    box.innerHTML = `<div class="rs"><div class="rs-head">📈 直近の戦績 <span class="rs-who">${esc(p.name)}</span></div>
+      <div class="rs-none">— まだ履歴がありません(次回の更新から記録されます)</div></div>`;
+    return '';
+  }
+  const cards = st.windows.map((w) => {
+    if (!w.games) {
+      return `<div class="rs-card"><div class="rs-t">📈 全モード(ライバル+QP)<span class="rs-sub">直近${w.days}日</span></div>
+        <div class="rs-none">この期間のプレイ記録はありません</div></div>`;
+    }
+    const wrCls = w.wr > 55 ? 'wr-good' : (w.wr < 40 ? 'wr-bad' : '');
+    const heroes = w.top.length
+      ? `<div class="rs-row"><span class="rs-k">よく使った</span><span class="rs-v">${w.top.map(([s, n]) => rsHeroChip(s, n)).join('')}</span></div>`
+      : '';
+    const ranks = w.rankChg.length
+      ? `<div class="rs-row"><span class="rs-k">ランク</span><span class="rs-v">${w.rankChg.map((c) => `<span class="rs-rk ${c.up ? 'up' : 'down'}">${roleIcon(c.role)} ${esc(c.from)} → <b>${esc(c.to)}</b> ${c.up ? '▲' : '▼'}</span>`).join('')}</span></div>`
+      : '';
+    return `<div class="rs-card">
+      <div class="rs-t">📈 全モード(ライバル+QP)<span class="rs-sub">直近${w.days}日</span></div>
+      <div class="rs-big"><b>${w.games}</b><span>試合</span><span class="rs-wl">${w.wins}勝 ${w.losses}敗</span><span class="rs-wr ${wrCls}">勝率 ${fmt1(w.wr)}%</span></div>
+      <div class="rs-row"><span class="rs-k">KDA</span><span class="rs-v"><b>${w.kda === null ? '—' : fmt2(w.kda)}</b>${w.approx ? '<span class="rs-approx" title="累計キル/デスの記録がまだ無いため、日次のKDAを試合数で重み付けした概算です">≈</span>' : ''}<span class="rs-k2">プレイ ${rsFmtDur(w.secs)}</span></span></div>
+      ${heroes}${ranks}
+      ${w.reset ? '<div class="rs-reset" title="シーズン切替などで累計値がリセットされた日があります。期間の数字は日ごとの増加分を合計しています">※ 期間内に累計のリセットあり(増加分の合計で表示)</div>' : ''}
+    </div>`;
+  }).join('');
+  /* --- ランク(コンペ)の戦績 --- */
+  const c = compRecOf(p);
+  const cst = c ? rsStatsOf(c, { season: true }) : null;
+  let compCard = '';
+  if (c && cst) {
+    const w30 = cst.windows[0];
+    const sd = w30.seasonDays;
+    const played = w30.games > 0;               // 今シーズンのランク戦があるか
+    const seasonSub = `今シーズン${sd === null ? '(シーズン切替から)' : `(シーズン切替から${sd}日)`}`;
+    const kdaTxt = w30.kda === null ? '—' : `${fmt2(w30.kda)}${w30.approx ? '<span class="rs-approx" title="シーズン切替でキル/デスの累計もリセットされるため、日次のKDAを試合数で重み付けした概算です">≈</span>' : ''}`;
+    const ranks = ['Tank', 'Damage', 'Support'].map((r) => {
+      const rk = c.ranks && c.ranks[r];
+      if (!rk || !rk.division) return '';
+      return `<span class="rs-rkchip">${roleIcon(r)} ${esc(rsRankLabel(`${rk.division}-${rk.tier ?? ''}`))}${rk.assumed ? '<i class="rs-assumed" title="推定ランク">推定</i>' : ''}</span>`;
+    }).filter(Boolean).join('');
+    const ctop = (w30.top || []).slice(0, 4);
+    /* コンペ側のヒーロー別データ(PLAYERS_COMP の heroes = シーズンの試合数が多い順) */
+    const cHeroes = (c.heroes || []).filter((h) => num(h.g) > 0);
+    const cUse = cHeroes.slice(0, 6);
+    const pre = played ? '' : '<span class="rs-k2" title="シーズン切替後にランク戦をしていないため、カウンタは切替前(前シーズン)の値のままです">切替前</span>';
+    const useRow = (cUse.length || ctop.length)
+      ? `<div class="rs-row"><span class="rs-k">使用キャラ</span><span class="rs-v">${(cUse.length ? cUse.map((h) => rsHeroChip(h.slug, h.g, h.wr != null ? `WR ${rsPct1(h.wr)}%${h.kda != null ? ` / KDA ${fmt2(h.kda)}` : ''}` : '')).join('') + (cHeroes.length > cUse.length ? `<span class="rs-k2">ほか${cHeroes.length - cUse.length}体</span>` : '') : ctop.map(([s, n]) => rsHeroChip(s, n, '今シーズンのランク戦')).join(''))}${pre}</span></div>`
+      : '<div class="rs-row"><span class="rs-k">使用キャラ</span><span class="rs-v"><span class="rs-k2">ランク戦のヒーローデータがありません</span></span></div>';
+    compCard = `<div class="rs-card comp">
+      <div class="rs-t">🏅 ランク(コンペ)<span class="rs-sub" title="ランク戦のカウンタはシーズン切替でリセットされるため、切替後の戦績を表示しています">${seasonSub}</span></div>
+      ${played
+        ? `<div class="rs-big"><b>${w30.games}</b><span>試合</span><span class="rs-wl">${w30.wins}勝 ${w30.losses}敗</span><span class="rs-wr ${w30.wr > 55 ? 'wr-good' : (w30.wr < 40 ? 'wr-bad' : '')}">勝率 ${rsPct1(w30.wr)}%</span></div>
+           <div class="rs-row"><span class="rs-k">KDA</span><span class="rs-v"><b>${kdaTxt}</b><span class="rs-k2">プレイ ${rsFmtDur(w30.secs)}</span></span></div>`
+        : `<div class="rs-big"><b>—</b><span>今シーズンのランク戦はまだありません</span></div>`}
+      ${ranks ? `<div class="rs-row"><span class="rs-k">現在</span><span class="rs-v">${ranks}</span></div>` : ''}
+      ${played && w30.rankChg.length ? `<div class="rs-row"><span class="rs-k">変動</span><span class="rs-v">${w30.rankChg.map((x) => `<span class="rs-rk ${x.up ? 'up' : 'down'}" title="シーズン切替前(前シーズン終了時)のランクとの比較">${roleIcon(x.role)} ${esc(x.from)} → <b>${esc(x.to)}</b> ${x.up ? '▲' : '▼'}</span>`).join('')}</span></div>` : ''}
+      ${useRow}
+      ${played
+        ? `<div class="rs-note2">今シーズンのランク戦 ${num(c.overall.matches)}試合(${num(c.overall.wins)}勝${num(c.overall.losses)}敗) ・ シーズン切替でカウンタはリセットされます ・ 使用キャラはランク戦のカウンタ基準</div>`
+        : `<div class="rs-note2">シーズン切替後のランク戦は記録がありません ・ ランク戦をするとカウンタが今シーズンの値に切り替わります(切替前のカウンタは ${num(c.overall.matches)}試合 ${num(c.overall.wins)}勝${num(c.overall.losses)}敗)</div>`}
+    </div>`;
+  }
+  /* --- クイックプレイで使ってるキャラ --- */
+  const q = qpOf(p);
+  let qpCard = '';
+  if (q) {
+    const recent = qpRecentHeroes(p, 30).slice(0, 4);
+    const top = q.heroes.slice(0, 6);
+    qpCard = `<div class="rs-card qp">
+      <div class="rs-t">🎮 クイックプレイで使ってるキャラ<span class="rs-sub">${q.matches}試合 ${q.wins}勝${q.losses}敗${q.matches ? ` (${rsPct1(q.wr)}%)` : ''}${q.kda !== null ? ` ・ KDA ${fmt2(q.kda)}` : ''}</span></div>
+      ${recent.length ? `<div class="rs-row"><span class="rs-k">直近30日</span><span class="rs-v">${recent.map(([s, n]) => rsHeroChip(s, n)).join('')}</span></div>` : '<div class="rs-row"><span class="rs-k">直近30日</span><span class="rs-v"><span class="rs-k2">記録なし</span></span></div>'}
+      <div class="rs-row"><span class="rs-k">通算</span><span class="rs-v">${top.map((h) => rsHeroChip(h.slug, h.g)).join('')}${q.heroes.length > top.length ? `<span class="rs-k2">ほか${q.heroes.length - top.length}体</span>` : ''}</span></div>
+      <div class="rs-note2">クイックプレイ = 全モード − ランク(コンペ)${q.matches ? `(${q.matches}試合ぶん)` : ''}</div>
+    </div>`;
+  }
+  box.innerHTML = `<div class="rs">
+    <div class="rs-head">📈 直近の戦績 <span class="rs-who">${esc(p.name)}</span><span class="rs-note" title="記録開始: ${esc(st.histFrom)}">毎日のスナップショットの差分から算出(OverFast に試合履歴が無いため)</span></div>
+    <div class="rs-cards">${cards}${compCard}${qpCard}</div>
+  </div>`;
+  return '';
+}
+
+/* =====================================================================
+ * プレイ頻度(コントリビューショングラフ)
+ *   直近30日の1日ごとの試合数を、全プレイヤー × 日 のマス目で表示する。
+ *   1マス = 1日 / 色が濃いほどその日に多くプレイ。数値は recent(日次スナップ
+ *   ショット)の累計試合数の差分なので「増加が確認できた日」の記録。
+ * =================================================================== */
+const FQ_DAYS = 30;
+const FQ_DOW = ['日', '月', '火', '水', '木', '金', '土'];
+/* 色の濃さ(1日の試合数)。実データは1日あたり中央値14・最大36程度なので 4/9/19 で区切る */
+function fqLevel(n) { return n >= 20 ? 4 : n >= 10 ? 3 : n >= 5 ? 2 : n >= 1 ? 1 : 0; }
+/* 日次の増分(前回スナップショットとの差)。同日に複数回更新されていれば合算 */
+function fqIncMap(p) {
+  const hist = (Array.isArray(p.recent) ? p.recent : []).filter((e) => e && e.d).slice().sort((a, b) => (a.d < b.d ? -1 : 1));
+  const inc = {};
+  let prev = null;
+  for (const e of hist) {
+    if (prev && typeof e.m === 'number') {
+      const v = e.m - prev.m;
+      if (v > 0) inc[e.d] = (inc[e.d] || 0) + v;
+    }
+    if (typeof e.m === 'number') prev = e;
+  }
+  if (prev) {                            // 記録後の再更新ぶんの保険
+    const today = rsToday();
+    const add = num(p.overall && p.overall.matches) - prev.m;
+    if (add > 0 && today) inc[today] = (inc[today] || 0) + add;
+  }
+  return { inc, firstD: hist.length ? hist[0].d : '', count: hist.length };
+}
+function playFreq(days) {
+  const n = days || FQ_DAYS;
+  const today = rsToday();
+  const list = [];
+  for (let i = n - 1; i >= 0; i--) {
+    const iso = rsShiftDays(today, -i);
+    const dt = new Date(`${iso}T00:00:00Z`);
+    const wd = dt.getUTCDay();
+    list.push({ d: iso, md: `${dt.getUTCMonth() + 1}/${dt.getUTCDate()}`, dow: FQ_DOW[wd], we: wd === 0 || wd === 6 });
+  }
+  const pool = (typeof PLAYERS_ALL !== 'undefined' && PLAYERS_ALL.length) ? PLAYERS_ALL : PLAYERS;
+  const focusId = (typeof state !== 'undefined' && state && state.focus) || '';
+  let covered = 0;                       // recent を持つプレイヤー数(データの有無の注記用)
+  const rows = (pool || []).map((p) => {
+    const { inc, firstD, count } = fqIncMap(p);
+    if (count) covered++;
+    /* 最初の記録日は前日との比較ができない = 試合数が不明な日。
+       記録が始まる前の日も、そのプレイヤーが集計対象に入っていないため不明として扱う */
+    const cells = list.map((x) => {
+      const na = !firstD || x.d <= firstD;
+      const v = inc[x.d] || 0;
+      return { d: x.d, md: x.md, n: na ? 0 : v, l: fqLevel(v), na };
+    });
+    return {
+      p, cells, on: p.id === focusId, firstD,
+      total: cells.reduce((s, c) => s + c.n, 0),
+      plays: cells.filter((c) => c.n > 0).length,
+      na: cells.filter((c) => c.na).length
+    };
+  }).sort((a, b) => b.total - a.total);
+  return { n, list, rows, today, covered, group: Math.ceil(n / 6) };
+}
+/* --- 1人ぶんの GitHub 風カレンダー(縦 = 曜日 / 横 = 週) --- */
+function fqCalOf(p, days) {
+  const n = days || FQ_DAYS;
+  const today = rsToday();
+  if (!today) return null;
+  const from = rsShiftDays(today, -(n - 1));
+  const { inc, firstD } = fqIncMap(p);
+  const md = (d) => `${Number(d.slice(5, 7))}/${Number(d.slice(8, 10))}`;
+  /* 週の区切りに合わせて、開始日を含む週の日曜〜今日を含む週の土曜までを格子にする */
+  const gridFrom = rsShiftDays(from, -new Date(`${from}T00:00:00Z`).getUTCDay());
+  const gridTo = rsShiftDays(today, 6 - new Date(`${today}T00:00:00Z`).getUTCDay());
+  const weeks = [], known = [];
+  for (let w = gridFrom; w <= gridTo; w = rsShiftDays(w, 7)) {
+    const col = [];
+    for (let i = 0; i < 7; i++) {
+      const d = rsShiftDays(w, i);
+      const range = d >= from && d <= today;          // 集計期間(直近n日)の中か
+      const na = !firstD || d <= firstD;              // 比較できる前日データが無い日
+      const v = range ? (inc[d] || 0) : 0;
+      const c = { d, md: md(d), n: v, l: fqLevel(v), na, range };
+      col.push(c);
+      if (range && !na) known.push(c);
+    }
+    weeks.push(col);
+  }
+  /* 月ラベル(最初の週と、月が変わる週に表示) */
+  const labels = []; let lastM = 0;
+  for (const col of weeks) {
+    const m0 = Number(col[0].d.slice(5, 7));
+    const first = col.filter((c) => c.d.slice(8, 10) === '01')[0];
+    let lab = '';
+    if (!lastM) { lab = `${m0}月`; lastM = m0; }
+    else if (first && Number(first.d.slice(5, 7)) !== lastM) { lab = `${Number(first.d.slice(5, 7))}月`; lastM = Number(first.d.slice(5, 7)); }
+    labels.push(lab);
+  }
+  const total = known.reduce((s, c) => s + c.n, 0);
+  const plays = known.filter((c) => c.n > 0).length;
+  const best = known.slice().sort((a, b) => b.n - a.n || (a.d < b.d ? -1 : 1))[0] || null;
+  let run = 0, longest = 0, cur = 0;
+  for (const c of known) { if (c.n > 0) { run++; if (run > longest) longest = run; } else run = 0; }
+  /* 現在の連続日数: 今日まだプレイしていない場合は昨日から数える(連続が生きている扱い) */
+  let ci = known.length - 1;
+  if (ci >= 0 && known[ci].n === 0) ci--;
+  for (; ci >= 0; ci--) { if (known[ci].n > 0) cur++; else break; }
+  const dow = FQ_DOW.map((dw, i) => {
+    const cs = known.filter((c) => new Date(`${c.d}T00:00:00Z`).getUTCDay() === i);
+    return { dw, total: cs.reduce((s, c) => s + c.n, 0), days: cs.filter((c) => c.n > 0).length };
+  });
+  const wk = weeks.map((col) => {
+    const cs = col.filter((c) => c.range && !c.na);
+    return { from: col[0].d, md: md(col[0].d), to: md(col[6].d), total: cs.reduce((s, c) => s + c.n, 0), days: cs.filter((c) => c.n > 0).length };
+  });
+  return { p, n, today, from, firstD, weeks, labels, known, total, plays, best, longest, cur, dow, wk, naDays: weeks.reduce((s, col) => s + col.filter((c) => c.range && c.na).length, 0) };
+}
+function fqCalHtml(c) {
+  const p = c.p;
+  const cols = `26px repeat(${c.weeks.length},26px)`;
+  let g = '<span></span>' + c.labels.map((l) => `<span class="fq-mh">${l}</span>`).join('');
+  for (let i = 0; i < 7; i++) {
+    const we = i === 0 || i === 6;
+    g += `<span class="fq-dw${we ? ' we' : ''}">${FQ_DOW[i]}</span>`;
+    for (const col of c.weeks) {
+      const x = col[i];
+      if (!x.range) { g += '<i class="fq-c big out"></i>'; continue; }
+      if (x.na) { g += `<i class="fq-c big na fq-cx" title="${esc(p.name)} ${x.md}: 記録なし(集計対象外)"></i>`; continue; }
+      g += `<i class="fq-c big fq-cx ${x.l ? 'l' + x.l : ''}" title="${esc(p.name)} ${x.md}(${FQ_DOW[i]}): ${x.n}試合">${x.n > 0 ? x.n : ''}</i>`;
+    }
+  }
+  const avg = c.plays ? c.total / c.plays : 0;
+  const dowMax = Math.max(1, ...c.dow.map((x) => x.total));
+  const dowBars = c.dow.map((x) => {
+    const h = Math.round(x.total / dowMax * 72);
+    return `<span class="fq-db" title="${x.dw}曜日: ${x.total}試合 ・ プレイ${x.days}日"><i class="${x.total ? '' : 'zero'}" style="height:${x.total ? Math.max(7, h) : 2}%"></i><u>${x.dw}</u></span>`;
+  }).join('');
+  const wkMax = Math.max(1, ...c.wk.map((x) => x.total));
+  const wkBars = c.wk.map((x) => {
+    const h = Math.round(x.total / wkMax * 72);
+    return `<span class="fq-db" title="${x.md}〜${x.to}: ${x.total}試合 ・ プレイ${x.days}日"><i class="${x.total ? '' : 'zero'}" style="height:${x.total ? Math.max(7, h) : 2}%"></i><u>${x.md}</u></span>`;
+  }).join('');
+  const stats = c.total
+    ? `<div class="fq-stat"><span class="fq-sk">直近${c.n}日</span><span class="fq-sv"><b>${c.total}</b>試合 ・ プレイ <b>${c.plays}</b>日<span class="fq-sub2">/ 記録がある${c.known.length}日</span></span></div>
+       <div class="fq-stat"><span class="fq-sk">1日あたり</span><span class="fq-sv">平均 <b>${fmt1(avg)}</b>試合 ・ 最多 <b>${c.best.n}</b>試合<span class="fq-sub2">(${c.best.md})</span></span></div>
+       <div class="fq-stat"><span class="fq-sk">連続プレイ</span><span class="fq-sv">最長 <b>${c.longest}</b>日 ・ いま <b>${c.cur}</b>日</span></div>`
+    : `<div class="fq-stat"><span class="fq-sk">直近${c.n}日</span><span class="fq-sv">この期間のプレイ記録はありません</span></div>`;
+  return `<div class="fq-head">🗓 プレイ頻度 <span class="fq-who">${esc(p.name)}</span><span class="fq-note">全モード(ライバル+クイックプレイ) ・ 直近${c.n}日${c.total ? ` ・ ${c.total}試合` : ''} ・ 1マス = 1日(数字は試合数) ・ 濃いほど多くプレイ</span></div>
+  <div class="fq-calwrap">
+    <div class="fq-calbox"><div class="fq-calscroll"><div class="fq-cal" style="grid-template-columns:${cols}">${g}</div></div></div>
+    <div class="fq-side">
+      <div class="fq-stats">${stats}</div>
+      <div class="fq-charts">
+        <div class="fq-chart"><div class="fq-ch-t">曜日別の合計(日〜土)</div><div class="fq-bars">${dowBars}</div></div>
+        <div class="fq-chart"><div class="fq-ch-t">週ごとの合計(週の開始日)</div><div class="fq-bars">${wkBars}</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="fq-legend"><span class="fq-lk">少ない</span><i class="fq-c"></i><i class="fq-c l1"></i><i class="fq-c l2"></i><i class="fq-c l3"></i><i class="fq-c l4"></i><span class="fq-lk">多い</span>
+    <span class="fq-sep"></span><span class="fq-vs">0 / 1〜4 / 5〜9 / 10〜19 / 20試合以上</span>
+    <span class="fq-sep"></span><i class="fq-c na"></i><span>記録なし</span>
+    <span class="fq-sep"></span><i class="fq-c out"></i><span>集計期間外</span></div>
+  <div class="fq-note2">毎日のスナップショットで記録した累計試合数の増加分を1日ごとに並べています(OverFast に試合履歴が無いため)。マスにカーソルを合わせると日付と試合数が出ます。0の日は「その日の増加が確認できなかった日」で、未プレイのほかに更新が無かった日も含みます。斜線のマスは比較できる前日データが無い日(記録開始前なので試合数が不明)、うすいマスは集計期間外の日です。連続日数と曜日別・週ごとの集計は「記録がある日」だけで計算しています(記録開始 ${esc(c.firstD || '—')}${c.naDays ? ` ・ 記録なし${c.naDays}日` : ''})</div>`;
+}
+function fqTeamHtml(d) {
+  if (!d || !d.rows.length || !d.today) return '';
+  const g = d.group;
+  let ml = '<span></span>', dow = '<span></span>';
+  for (let i = 0; i < d.n; i += g) {
+    const span = Math.min(g, d.n - i);
+    ml += `<span class="fq-ml" style="grid-column:span ${span}">${d.list[i].md}</span>`;
+  }
+  for (const x of d.list) dow += `<span class="fq-dow${x.we ? ' we' : ''}" title="${x.md}(${x.dow})">${x.dow}</span>`;
+  const rows = d.rows.map((r) => {
+    const cells = r.cells.map((c) => c.na
+      ? `<i class="fq-c fq-cx na${r.on ? ' on' : ''}" title="${esc(r.p.name)} ${c.md}: 記録なし(集計対象外)"></i>`
+      : `<i class="fq-c fq-cx ${c.l ? 'l' + c.l : ''}${r.on ? ' on' : ''}" title="${esc(r.p.name)} ${c.md}: ${c.n}試合"></i>`).join('');
+    const tot = `<span class="fq-tot" title="直近${d.n}日の合計試合数 / プレイした日数${r.na ? ` / 記録なし${r.na}日` : ''}">${r.total}<u>試合</u><u>/${r.plays}日</u></span>`;
+    return `<div class="fq-nm${r.on ? ' on' : ''}"><span class="pl-av fq-face">${faceMarkup(r.p)}</span><span class="fq-name">${esc(r.p.name)}</span>${tot}</div>${cells}`;
+  }).join('');
+  const active = d.rows.filter((r) => r.total > 0).length;
+  const minFirst = d.rows.reduce((m, r) => (!m || (r.firstD && r.firstD < m)) ? r.firstD : m, '');
+  const late = d.rows.filter((r) => r.firstD && r.firstD > minFirst);
+  return `<details class="fq-team"><summary>👥 みんなのプレイ頻度(全員を並べて比較)</summary>
+    <div class="fq-scroll"><div class="fq-grid" style="grid-template-columns:var(--fqn,136px) repeat(${d.n},14px)">
+      ${ml}${dow}${rows}
+    </div></div>
+    <div class="fq-legend"><span class="fq-lk">少ない</span><i class="fq-c"></i><i class="fq-c l1"></i><i class="fq-c l2"></i><i class="fq-c l3"></i><i class="fq-c l4"></i><span class="fq-lk">多い</span>
+      <span class="fq-sep"></span><span class="fq-vs">0 / 1〜4 / 5〜9 / 10〜19 / 20試合以上</span>
+      <span class="fq-sep"></span><i class="fq-c na"></i><span>記録なし</span>
+      <span class="fq-sep"></span><span>並び順: 直近${d.n}日の試合数が多い順</span></div>
+    <div class="fq-note2">1マス = 1日。斜線のマスは比較できる前日データが無い日です${late.length ? ` ・ 途中から記録が始まった人: ${late.map((r) => `${esc(r.p.name)}(${esc(r.firstD)}〜)`).join('、')}` : ''} ・ プレイした日がある人 ${active}名/${d.rows.length}名</div>
+  </details>`;
+}
+function renderFreq() {
+  const box = $('#freqBox');
+  if (!box) return;
+  const p = (typeof focusPlayer === 'function') ? focusPlayer() : null;
+  const cal = p ? fqCalOf(p, FQ_DAYS) : null;
+  const team = playFreq(FQ_DAYS);
+  if (!cal && !team.rows.length) { box.innerHTML = ''; return; }
+  box.innerHTML = `<div class="fq">${cal ? fqCalHtml(cal) : ''}${fqTeamHtml(team)}</div>`;
+}
+
 function renderProfile(p){
+  /* プレイヤーごとの外部リンクアイコン(ランクのとなり・クリックで開く)。
+     players-data.js は update.mjs が自動生成するので、ここ(手書き側)に持つ */
+  const PLAYER_LINKS = {
+    hiyori: { icon: 'icons/settey.svg', url: 'https://settey.com/r3n4kyun', label: 'settey.com/r3n4kyun' }
+  };
+  const ext = PLAYER_LINKS[p.id];
+  const extHtml = ext
+    ? `<a class="pf-ext" href="${esc(ext.url)}" target="_blank" rel="noopener noreferrer" title="${esc(ext.label)} を開く" aria-label="${esc(ext.label)} を開く">
+         <img src="${esc(ext.icon)}" alt="" width="16" height="16" loading="lazy" decoding="async">
+       </a>`
+    : '';
   const ph=pfHeroes(p);
   const tier=tierPill(p);
   const title=p.title?`<div class="pf-title">🏷 「${esc(p.title)}」</div>`:'';
@@ -1214,7 +1830,7 @@ function renderProfile(p){
       ${title}
       <div class="pf-rank">
         <span class="rank-pill rank-role ${roleCls(p.role)}">${roleIcon(p.role)} ${p.role}</span>
-        ${tier}
+        ${tier}${extHtml}
         <span class="pf-note">${note}</span>
       </div>
       ${roleRow}
@@ -1229,6 +1845,8 @@ function renderProfile(p){
       <div class="stat-box"><div class="k">Time</div><div class="v">${fmtTime(s.time)}</div><div class="s">プレイ時間</div></div>
       ${roleBoxes}
     </div>`;
+  rsHtml(p);   // 直近の戦績(要約カードの外・独立カードに描画)
+  renderFreq(); // プレイ頻度(コントリビューショングラフ: 全プレイヤー) 
 }
 
 /* セル生成 */

@@ -1,7 +1,7 @@
 'use strict';
 
 /* 生成データ: update.mjs が自動生成(手編集は上書き) ・ 元データ: OverFast API */
-const LAST_UPDATED_ISO = "2026-10-12T11:19:03.711Z";
+const LAST_UPDATED_ISO = "2026-10-12T13:01:22.602Z";
 /* ライバル・プレイ(コンペティティブ)のみ */
 const PLAYERS_COMP = [
   {
@@ -34,7 +34,14 @@ const PLAYERS_COMP = [
       "deaths": 8.13,
       "dmg": 11585.37,
       "heal": 493.97,
-      "time": 7011
+      "time": 7011,
+      "tot": {
+        "e": 190,
+        "a": 0,
+        "dd": 95,
+        "dm": 135375,
+        "he": 5772
+      }
     },
     "roles": {
       "Damage": {
@@ -221,7 +228,465 @@ const PLAYERS_COMP = [
           "ca": 10
         }
       }
-    }
+    },
+    "recent": [
+      {
+        "d": "2026-09-13",
+        "g": {},
+        "m": 51,
+        "w": 29,
+        "l": 22,
+        "t": 34838,
+        "k": 2.29,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-14",
+        "g": {},
+        "m": 51,
+        "w": 29,
+        "l": 22,
+        "t": 34838,
+        "k": 2.29,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-15",
+        "g": {},
+        "m": 51,
+        "w": 29,
+        "l": 22,
+        "t": 34838,
+        "k": 2.29,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-16",
+        "g": {},
+        "m": 51,
+        "w": 29,
+        "l": 22,
+        "t": 34838,
+        "k": 2.29,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-17",
+        "g": {},
+        "m": 51,
+        "w": 29,
+        "l": 22,
+        "t": 34838,
+        "k": 2.29,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-18",
+        "g": {},
+        "m": 51,
+        "w": 29,
+        "l": 22,
+        "t": 34838,
+        "k": 2.29,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-19",
+        "g": {},
+        "m": 51,
+        "w": 29,
+        "l": 22,
+        "t": 34838,
+        "k": 2.29,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-20",
+        "g": {},
+        "m": 51,
+        "w": 29,
+        "l": 22,
+        "t": 34838,
+        "k": 2.29,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-21",
+        "g": {},
+        "m": 51,
+        "w": 29,
+        "l": 22,
+        "t": 34838,
+        "k": 2.29,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-22",
+        "g": {},
+        "m": 51,
+        "w": 29,
+        "l": 22,
+        "t": 34838,
+        "k": 2.29,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-23",
+        "g": {},
+        "m": 51,
+        "w": 29,
+        "l": 22,
+        "t": 34838,
+        "k": 2.29,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-24",
+        "g": {},
+        "m": 51,
+        "w": 29,
+        "l": 22,
+        "t": 34838,
+        "k": 2.29,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-25",
+        "g": {},
+        "m": 51,
+        "w": 29,
+        "l": 22,
+        "t": 34838,
+        "k": 2.29,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-26",
+        "g": {},
+        "m": 51,
+        "w": 29,
+        "l": 22,
+        "t": 34838,
+        "k": 2.29,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-27",
+        "g": {},
+        "m": 51,
+        "w": 29,
+        "l": 22,
+        "t": 34838,
+        "k": 2.29,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-28",
+        "g": {},
+        "m": 51,
+        "w": 29,
+        "l": 22,
+        "t": 34838,
+        "k": 2.29,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-29",
+        "g": {},
+        "m": 51,
+        "w": 29,
+        "l": 22,
+        "t": 34838,
+        "k": 2.29,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-30",
+        "g": {},
+        "m": 51,
+        "w": 29,
+        "l": 22,
+        "t": 34838,
+        "k": 2.29,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-01",
+        "g": {},
+        "m": 51,
+        "w": 29,
+        "l": 22,
+        "t": 34838,
+        "k": 2.29,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-02",
+        "g": {},
+        "m": 51,
+        "w": 29,
+        "l": 22,
+        "t": 34838,
+        "k": 2.29,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-03",
+        "g": {},
+        "m": 51,
+        "w": 29,
+        "l": 22,
+        "t": 34838,
+        "k": 2.29,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-04",
+        "g": {},
+        "m": 51,
+        "w": 29,
+        "l": 22,
+        "t": 34838,
+        "k": 2.29,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-05",
+        "g": {},
+        "m": 57,
+        "w": 32,
+        "l": 25,
+        "t": 38693,
+        "k": 2.27,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-06",
+        "g": {},
+        "m": 68,
+        "w": 37,
+        "l": 31,
+        "t": 45905,
+        "k": 2.15,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-07",
+        "g": {},
+        "m": 80,
+        "w": 43,
+        "l": 37,
+        "t": 51447,
+        "k": 2.15,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-4",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-08",
+        "g": {},
+        "m": 8,
+        "w": 4,
+        "l": 4,
+        "t": 4017,
+        "k": 2.46,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-4",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-09",
+        "g": {},
+        "m": 12,
+        "w": 3,
+        "l": 9,
+        "t": 7011,
+        "k": 2,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-5",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-10",
+        "g": {},
+        "m": 12,
+        "w": 3,
+        "l": 9,
+        "t": 7011,
+        "k": 2,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-5",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-11",
+        "g": {},
+        "m": 12,
+        "w": 3,
+        "l": 9,
+        "t": 7011,
+        "k": 2,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-5",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-12",
+        "g": {},
+        "m": 12,
+        "w": 3,
+        "l": 9,
+        "t": 7011,
+        "k": 2,
+        "tot": {
+          "e": 190,
+          "a": 0,
+          "dd": 95,
+          "dm": 135375,
+          "he": 5772
+        },
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-5",
+          "Support": null
+        }
+      }
+    ]
   },
   {
     "id": "voidglove",
@@ -261,7 +726,14 @@ const PLAYERS_COMP = [
       "deaths": 6.14,
       "dmg": 7842.73,
       "heal": 4071.95,
-      "time": 114739
+      "time": 114739,
+      "tot": {
+        "e": 2580,
+        "a": 414,
+        "dd": 1174,
+        "dm": 1499778,
+        "he": 778685
+      }
     },
     "roles": {
       "Tank": {
@@ -1396,7 +1868,465 @@ const PLAYERS_COMP = [
           "ca": 17
         }
       }
-    }
+    },
+    "recent": [
+      {
+        "d": "2026-09-13",
+        "g": {},
+        "m": 131,
+        "w": 71,
+        "l": 60,
+        "t": 84803,
+        "k": 2.6,
+        "tot": null,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-4",
+          "Support": "platinum-3"
+        }
+      },
+      {
+        "d": "2026-09-14",
+        "g": {},
+        "m": 131,
+        "w": 71,
+        "l": 60,
+        "t": 84803,
+        "k": 2.6,
+        "tot": null,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-4",
+          "Support": "platinum-3"
+        }
+      },
+      {
+        "d": "2026-09-15",
+        "g": {},
+        "m": 131,
+        "w": 71,
+        "l": 60,
+        "t": 84803,
+        "k": 2.6,
+        "tot": null,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-4",
+          "Support": "platinum-3"
+        }
+      },
+      {
+        "d": "2026-09-16",
+        "g": {},
+        "m": 131,
+        "w": 71,
+        "l": 60,
+        "t": 84803,
+        "k": 2.6,
+        "tot": null,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-4",
+          "Support": "platinum-3"
+        }
+      },
+      {
+        "d": "2026-09-17",
+        "g": {},
+        "m": 135,
+        "w": 72,
+        "l": 63,
+        "t": 87785,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-5",
+          "Support": "platinum-3"
+        }
+      },
+      {
+        "d": "2026-09-18",
+        "g": {},
+        "m": 135,
+        "w": 72,
+        "l": 63,
+        "t": 87785,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-5",
+          "Support": "platinum-3"
+        }
+      },
+      {
+        "d": "2026-09-19",
+        "g": {},
+        "m": 135,
+        "w": 72,
+        "l": 63,
+        "t": 87785,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-5",
+          "Support": "platinum-3"
+        }
+      },
+      {
+        "d": "2026-09-20",
+        "g": {},
+        "m": 137,
+        "w": 73,
+        "l": 64,
+        "t": 89331,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "platinum-5",
+          "Support": "platinum-3"
+        }
+      },
+      {
+        "d": "2026-09-21",
+        "g": {},
+        "m": 142,
+        "w": 76,
+        "l": 66,
+        "t": 90715,
+        "k": 2.54,
+        "tot": null,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "platinum-5",
+          "Support": "platinum-3"
+        }
+      },
+      {
+        "d": "2026-09-22",
+        "g": {},
+        "m": 142,
+        "w": 76,
+        "l": 66,
+        "t": 90715,
+        "k": 2.54,
+        "tot": null,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "platinum-5",
+          "Support": "platinum-3"
+        }
+      },
+      {
+        "d": "2026-09-23",
+        "g": {},
+        "m": 142,
+        "w": 76,
+        "l": 66,
+        "t": 90715,
+        "k": 2.54,
+        "tot": null,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "platinum-5",
+          "Support": "platinum-3"
+        }
+      },
+      {
+        "d": "2026-09-24",
+        "g": {},
+        "m": 142,
+        "w": 76,
+        "l": 66,
+        "t": 90715,
+        "k": 2.54,
+        "tot": null,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "platinum-5",
+          "Support": "platinum-3"
+        }
+      },
+      {
+        "d": "2026-09-25",
+        "g": {},
+        "m": 144,
+        "w": 76,
+        "l": 68,
+        "t": 92589,
+        "k": 2.53,
+        "tot": null,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "platinum-5",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-09-26",
+        "g": {},
+        "m": 147,
+        "w": 77,
+        "l": 70,
+        "t": 93592,
+        "k": 2.53,
+        "tot": null,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-5",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-09-27",
+        "g": {},
+        "m": 149,
+        "w": 79,
+        "l": 70,
+        "t": 94851,
+        "k": 2.54,
+        "tot": null,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-5",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-09-28",
+        "g": {},
+        "m": 149,
+        "w": 79,
+        "l": 70,
+        "t": 94851,
+        "k": 2.54,
+        "tot": null,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-5",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-09-29",
+        "g": {},
+        "m": 149,
+        "w": 79,
+        "l": 70,
+        "t": 94851,
+        "k": 2.54,
+        "tot": null,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-5",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-09-30",
+        "g": {},
+        "m": 159,
+        "w": 86,
+        "l": 73,
+        "t": 99993,
+        "k": 2.58,
+        "tot": null,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-4",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-10-01",
+        "g": {},
+        "m": 159,
+        "w": 86,
+        "l": 73,
+        "t": 99993,
+        "k": 2.58,
+        "tot": null,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-4",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-10-02",
+        "g": {},
+        "m": 166,
+        "w": 86,
+        "l": 80,
+        "t": 103192,
+        "k": 2.56,
+        "tot": null,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-5",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-10-03",
+        "g": {},
+        "m": 170,
+        "w": 86,
+        "l": 84,
+        "t": 105588,
+        "k": 2.57,
+        "tot": null,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-5",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-10-04",
+        "g": {},
+        "m": 172,
+        "w": 85,
+        "l": 87,
+        "t": 106596,
+        "k": 2.56,
+        "tot": null,
+        "r": {
+          "Tank": "gold-3",
+          "Damage": "platinum-5",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-10-05",
+        "g": {},
+        "m": 174,
+        "w": 87,
+        "l": 87,
+        "t": 107580,
+        "k": 2.58,
+        "tot": null,
+        "r": {
+          "Tank": "gold-3",
+          "Damage": "platinum-5",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-10-06",
+        "g": {},
+        "m": 184,
+        "w": 93,
+        "l": 91,
+        "t": 112281,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": "gold-3",
+          "Damage": "gold-1",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-10-07",
+        "g": {},
+        "m": 186,
+        "w": 94,
+        "l": 92,
+        "t": 114739,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": "gold-3",
+          "Damage": "gold-1",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-10-08",
+        "g": {},
+        "m": 186,
+        "w": 94,
+        "l": 92,
+        "t": 114739,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": "gold-3",
+          "Damage": "gold-1",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-10-09",
+        "g": {},
+        "m": 186,
+        "w": 94,
+        "l": 92,
+        "t": 114739,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": "gold-3",
+          "Damage": "gold-1",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-10-10",
+        "g": {},
+        "m": 186,
+        "w": 94,
+        "l": 92,
+        "t": 114739,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": "gold-3",
+          "Damage": "gold-1",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-10-11",
+        "g": {},
+        "m": 186,
+        "w": 94,
+        "l": 92,
+        "t": 114739,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": "gold-3",
+          "Damage": "gold-1",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-10-12",
+        "g": {},
+        "m": 186,
+        "w": 94,
+        "l": 92,
+        "t": 114739,
+        "k": 2.55,
+        "tot": {
+          "e": 2580,
+          "a": 414,
+          "dd": 1174,
+          "dm": 1499778,
+          "he": 778685
+        },
+        "r": {
+          "Tank": "gold-3",
+          "Damage": "gold-1",
+          "Support": "platinum-4"
+        }
+      }
+    ]
   },
   {
     "id": "maru",
@@ -1436,7 +2366,14 @@ const PLAYERS_COMP = [
       "deaths": 6.73,
       "dmg": 9461.35,
       "heal": 5227.54,
-      "time": 7045
+      "time": 7045,
+      "tot": {
+        "e": 155,
+        "a": 9,
+        "dd": 79,
+        "dm": 111092,
+        "he": 61380
+      }
     },
     "roles": {
       "Tank": {
@@ -1731,7 +2668,465 @@ const PLAYERS_COMP = [
           "ca": 0
         }
       }
-    }
+    },
+    "recent": [
+      {
+        "d": "2026-09-13",
+        "g": {},
+        "m": 168,
+        "w": 96,
+        "l": 72,
+        "t": 109652,
+        "k": 2.84,
+        "tot": null,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-2",
+          "Support": "emerald-4"
+        }
+      },
+      {
+        "d": "2026-09-14",
+        "g": {},
+        "m": 175,
+        "w": 102,
+        "l": 73,
+        "t": 115318,
+        "k": 2.8,
+        "tot": null,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-2",
+          "Support": "emerald-4"
+        }
+      },
+      {
+        "d": "2026-09-15",
+        "g": {},
+        "m": 179,
+        "w": 100,
+        "l": 79,
+        "t": 118213,
+        "k": 2.77,
+        "tot": null,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-2",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-09-16",
+        "g": {},
+        "m": 181,
+        "w": 102,
+        "l": 79,
+        "t": 119091,
+        "k": 2.78,
+        "tot": null,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-2",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-09-17",
+        "g": {},
+        "m": 183,
+        "w": 101,
+        "l": 82,
+        "t": 122075,
+        "k": 2.74,
+        "tot": null,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-2",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-09-18",
+        "g": {},
+        "m": 184,
+        "w": 102,
+        "l": 82,
+        "t": 122795,
+        "k": 2.73,
+        "tot": null,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-2",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-09-19",
+        "g": {},
+        "m": 184,
+        "w": 102,
+        "l": 82,
+        "t": 122795,
+        "k": 2.73,
+        "tot": null,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-2",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-09-20",
+        "g": {},
+        "m": 184,
+        "w": 102,
+        "l": 82,
+        "t": 122795,
+        "k": 2.73,
+        "tot": null,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-2",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-09-21",
+        "g": {},
+        "m": 184,
+        "w": 102,
+        "l": 82,
+        "t": 122795,
+        "k": 2.73,
+        "tot": null,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-2",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-09-22",
+        "g": {},
+        "m": 184,
+        "w": 102,
+        "l": 82,
+        "t": 122795,
+        "k": 2.73,
+        "tot": null,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-2",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-09-23",
+        "g": {},
+        "m": 184,
+        "w": 102,
+        "l": 82,
+        "t": 122795,
+        "k": 2.73,
+        "tot": null,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-2",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-09-24",
+        "g": {},
+        "m": 184,
+        "w": 102,
+        "l": 82,
+        "t": 122795,
+        "k": 2.73,
+        "tot": null,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-2",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-09-25",
+        "g": {},
+        "m": 187,
+        "w": 105,
+        "l": 82,
+        "t": 125162,
+        "k": 2.73,
+        "tot": null,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-1",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-09-26",
+        "g": {},
+        "m": 187,
+        "w": 105,
+        "l": 82,
+        "t": 125162,
+        "k": 2.73,
+        "tot": null,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-1",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-09-27",
+        "g": {},
+        "m": 192,
+        "w": 110,
+        "l": 82,
+        "t": 127889,
+        "k": 2.77,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "gold-1",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-09-28",
+        "g": {},
+        "m": 192,
+        "w": 110,
+        "l": 82,
+        "t": 127889,
+        "k": 2.77,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "gold-1",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-09-29",
+        "g": {},
+        "m": 192,
+        "w": 110,
+        "l": 82,
+        "t": 127889,
+        "k": 2.77,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "gold-1",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-09-30",
+        "g": {},
+        "m": 198,
+        "w": 112,
+        "l": 86,
+        "t": 131988,
+        "k": 2.76,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-10-01",
+        "g": {},
+        "m": 198,
+        "w": 112,
+        "l": 86,
+        "t": 131988,
+        "k": 2.76,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-10-02",
+        "g": {},
+        "m": 198,
+        "w": 112,
+        "l": 86,
+        "t": 131988,
+        "k": 2.76,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-10-03",
+        "g": {},
+        "m": 198,
+        "w": 112,
+        "l": 86,
+        "t": 131988,
+        "k": 2.76,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-10-04",
+        "g": {},
+        "m": 198,
+        "w": 112,
+        "l": 86,
+        "t": 131988,
+        "k": 2.76,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-10-05",
+        "g": {},
+        "m": 198,
+        "w": 112,
+        "l": 86,
+        "t": 131988,
+        "k": 2.76,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-10-06",
+        "g": {},
+        "m": 207,
+        "w": 114,
+        "l": 93,
+        "t": 136688,
+        "k": 2.76,
+        "tot": null,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "platinum-5",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-10-07",
+        "g": {},
+        "m": 218,
+        "w": 118,
+        "l": 100,
+        "t": 143486,
+        "k": 2.74,
+        "tot": null,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "gold-1",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-10-08",
+        "g": {},
+        "m": 218,
+        "w": 118,
+        "l": 100,
+        "t": 143486,
+        "k": 2.74,
+        "tot": null,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "gold-1",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-10-09",
+        "g": {},
+        "m": 5,
+        "w": 0,
+        "l": 5,
+        "t": 2994,
+        "k": 1.71,
+        "tot": null,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "gold-1",
+          "Support": "platinum-1"
+        }
+      },
+      {
+        "d": "2026-10-10",
+        "g": {},
+        "m": 5,
+        "w": 0,
+        "l": 5,
+        "t": 2994,
+        "k": 1.71,
+        "tot": null,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "gold-1",
+          "Support": "platinum-1"
+        }
+      },
+      {
+        "d": "2026-10-11",
+        "g": {},
+        "m": 9,
+        "w": 2,
+        "l": 7,
+        "t": 4842,
+        "k": 2.31,
+        "tot": null,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "gold-1",
+          "Support": "platinum-1"
+        }
+      },
+      {
+        "d": "2026-10-12",
+        "g": {},
+        "m": 12,
+        "w": 2,
+        "l": 10,
+        "t": 7045,
+        "k": 2.08,
+        "tot": {
+          "e": 155,
+          "a": 9,
+          "dd": 79,
+          "dm": 111092,
+          "he": 61380
+        },
+        "r": {
+          "Tank": "gold-3",
+          "Damage": "gold-1",
+          "Support": "platinum-1"
+        }
+      }
+    ]
   },
   {
     "id": "makky",
@@ -1767,7 +3162,14 @@ const PLAYERS_COMP = [
       "deaths": 6.41,
       "dmg": 8727.36,
       "heal": 2564.17,
-      "time": 62200
+      "time": 62200,
+      "tot": {
+        "e": 1691,
+        "a": 146,
+        "dd": 664,
+        "dm": 904736,
+        "he": 265819
+      }
     },
     "roles": {
       "Tank": {
@@ -2426,7 +3828,465 @@ const PLAYERS_COMP = [
           "ca": 0
         }
       }
-    }
+    },
+    "recent": [
+      {
+        "d": "2026-09-13",
+        "g": {},
+        "m": 60,
+        "w": 33,
+        "l": 27,
+        "t": 37096,
+        "k": 2.79,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
+        }
+      },
+      {
+        "d": "2026-09-14",
+        "g": {},
+        "m": 60,
+        "w": 33,
+        "l": 27,
+        "t": 37096,
+        "k": 2.79,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
+        }
+      },
+      {
+        "d": "2026-09-15",
+        "g": {},
+        "m": 60,
+        "w": 33,
+        "l": 27,
+        "t": 37096,
+        "k": 2.79,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
+        }
+      },
+      {
+        "d": "2026-09-16",
+        "g": {},
+        "m": 60,
+        "w": 33,
+        "l": 27,
+        "t": 37096,
+        "k": 2.79,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
+        }
+      },
+      {
+        "d": "2026-09-17",
+        "g": {},
+        "m": 70,
+        "w": 35,
+        "l": 35,
+        "t": 45114,
+        "k": 2.73,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
+        }
+      },
+      {
+        "d": "2026-09-18",
+        "g": {},
+        "m": 70,
+        "w": 35,
+        "l": 35,
+        "t": 45114,
+        "k": 2.73,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
+        }
+      },
+      {
+        "d": "2026-09-19",
+        "g": {},
+        "m": 70,
+        "w": 35,
+        "l": 35,
+        "t": 45114,
+        "k": 2.73,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
+        }
+      },
+      {
+        "d": "2026-09-20",
+        "g": {},
+        "m": 70,
+        "w": 35,
+        "l": 35,
+        "t": 45114,
+        "k": 2.73,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
+        }
+      },
+      {
+        "d": "2026-09-21",
+        "g": {},
+        "m": 70,
+        "w": 35,
+        "l": 35,
+        "t": 45114,
+        "k": 2.73,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
+        }
+      },
+      {
+        "d": "2026-09-22",
+        "g": {},
+        "m": 70,
+        "w": 35,
+        "l": 35,
+        "t": 45114,
+        "k": 2.73,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
+        }
+      },
+      {
+        "d": "2026-09-23",
+        "g": {},
+        "m": 70,
+        "w": 35,
+        "l": 35,
+        "t": 45114,
+        "k": 2.73,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
+        }
+      },
+      {
+        "d": "2026-09-24",
+        "g": {},
+        "m": 70,
+        "w": 35,
+        "l": 35,
+        "t": 45705,
+        "k": 2.7,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
+        }
+      },
+      {
+        "d": "2026-09-25",
+        "g": {},
+        "m": 70,
+        "w": 35,
+        "l": 35,
+        "t": 45705,
+        "k": 2.7,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
+        }
+      },
+      {
+        "d": "2026-09-26",
+        "g": {},
+        "m": 70,
+        "w": 35,
+        "l": 35,
+        "t": 45705,
+        "k": 2.7,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
+        }
+      },
+      {
+        "d": "2026-09-27",
+        "g": {},
+        "m": 96,
+        "w": 53,
+        "l": 43,
+        "t": 60832,
+        "k": 2.73,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-09-28",
+        "g": {},
+        "m": 96,
+        "w": 53,
+        "l": 43,
+        "t": 60832,
+        "k": 2.73,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-09-29",
+        "g": {},
+        "m": 96,
+        "w": 53,
+        "l": 43,
+        "t": 60832,
+        "k": 2.73,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-09-30",
+        "g": {},
+        "m": 96,
+        "w": 53,
+        "l": 43,
+        "t": 60832,
+        "k": 2.73,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-10-01",
+        "g": {},
+        "m": 96,
+        "w": 53,
+        "l": 43,
+        "t": 60832,
+        "k": 2.73,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-10-02",
+        "g": {},
+        "m": 96,
+        "w": 53,
+        "l": 43,
+        "t": 60832,
+        "k": 2.73,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-10-03",
+        "g": {},
+        "m": 96,
+        "w": 53,
+        "l": 43,
+        "t": 60832,
+        "k": 2.73,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-10-04",
+        "g": {},
+        "m": 96,
+        "w": 53,
+        "l": 43,
+        "t": 60832,
+        "k": 2.73,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-10-05",
+        "g": {},
+        "m": 96,
+        "w": 53,
+        "l": 43,
+        "t": 60832,
+        "k": 2.73,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-10-06",
+        "g": {},
+        "m": 96,
+        "w": 53,
+        "l": 43,
+        "t": 60832,
+        "k": 2.73,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-10-07",
+        "g": {},
+        "m": 99,
+        "w": 54,
+        "l": 45,
+        "t": 62200,
+        "k": 2.77,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-10-08",
+        "g": {},
+        "m": 99,
+        "w": 54,
+        "l": 45,
+        "t": 62200,
+        "k": 2.77,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-10-09",
+        "g": {},
+        "m": 99,
+        "w": 54,
+        "l": 45,
+        "t": 62200,
+        "k": 2.77,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-10-10",
+        "g": {},
+        "m": 99,
+        "w": 54,
+        "l": 45,
+        "t": 62200,
+        "k": 2.77,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-10-11",
+        "g": {},
+        "m": 99,
+        "w": 54,
+        "l": 45,
+        "t": 62200,
+        "k": 2.77,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-10-12",
+        "g": {},
+        "m": 99,
+        "w": 54,
+        "l": 45,
+        "t": 62200,
+        "k": 2.77,
+        "tot": {
+          "e": 1691,
+          "a": 146,
+          "dd": 664,
+          "dm": 904736,
+          "he": 265819
+        },
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      }
+    ]
   },
   {
     "id": "p5",
@@ -2458,7 +4318,14 @@ const PLAYERS_COMP = [
       "deaths": 5.37,
       "dmg": 9475.72,
       "heal": 1941.16,
-      "time": 11621
+      "time": 11621,
+      "tot": {
+        "e": 358,
+        "a": 37,
+        "dd": 104,
+        "dm": 183529,
+        "he": 37597
+      }
     },
     "roles": {
       "Tank": {
@@ -2697,7 +4564,465 @@ const PLAYERS_COMP = [
           "ca": 0
         }
       }
-    }
+    },
+    "recent": [
+      {
+        "d": "2026-09-13",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-14",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-15",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-16",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-17",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-18",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-19",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-20",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-21",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-22",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-23",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-24",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-25",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-26",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-27",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-28",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-29",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-30",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-01",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-02",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-03",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-04",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-05",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-06",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-07",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-08",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-09",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-10",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-11",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": null,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-12",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": {
+          "e": 358,
+          "a": 37,
+          "dd": 104,
+          "dm": 183529,
+          "he": 37597
+        },
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      }
+    ]
   },
   {
     "id": "p6",
@@ -2740,7 +5065,14 @@ const PLAYERS_COMP = [
       "deaths": 6.55,
       "dmg": 9377.67,
       "heal": 2876.36,
-      "time": 6323
+      "time": 6323,
+      "tot": {
+        "e": 183,
+        "a": 46,
+        "dd": 69,
+        "dm": 98825,
+        "he": 30312
+      }
     },
     "roles": {
       "Tank": {
@@ -2895,7 +5227,465 @@ const PLAYERS_COMP = [
           "ca": 9
         }
       }
-    }
+    },
+    "recent": [
+      {
+        "d": "2026-09-13",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-14",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-15",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-16",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-17",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-18",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-19",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-20",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-21",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-22",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-23",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-24",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-25",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-26",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-27",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-28",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-29",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-30",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-10-01",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-10-02",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-10-03",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-10-04",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-10-05",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-10-06",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-10-07",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-10-08",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-10-09",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-10-10",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-10-11",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": null,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-10-12",
+        "g": {},
+        "m": 7,
+        "w": 4,
+        "l": 3,
+        "t": 6323,
+        "k": 3.32,
+        "tot": {
+          "e": 183,
+          "a": 46,
+          "dd": 69,
+          "dm": 98825,
+          "he": 30312
+        },
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      }
+    ]
   },
   {
     "id": "p7",
@@ -2923,11 +5713,476 @@ const PLAYERS_COMP = [
       "deaths": 0,
       "dmg": 0,
       "heal": 0,
-      "time": 0
+      "time": 0,
+      "tot": {
+        "e": 0,
+        "a": 0,
+        "dd": 0,
+        "dm": 0,
+        "he": 0
+      }
     },
     "roles": {},
     "heroes": [],
-    "bscore": {}
+    "bscore": {},
+    "recent": [
+      {
+        "d": "2026-09-13",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-14",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-15",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-16",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-17",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-18",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-19",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-20",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-21",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-22",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-23",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-24",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-25",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-26",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-27",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-28",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-29",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-30",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-01",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-02",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-03",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-04",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-05",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-06",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-07",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-08",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-09",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-10",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-11",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-12",
+        "g": {},
+        "m": 0,
+        "w": 0,
+        "l": 0,
+        "t": 0,
+        "k": 0,
+        "tot": {
+          "e": 0,
+          "a": 0,
+          "dd": 0,
+          "dm": 0,
+          "he": 0
+        },
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      }
+    ]
   },
   {
     "id": "p8",
@@ -2955,7 +6210,14 @@ const PLAYERS_COMP = [
       "deaths": 6.77,
       "dmg": 9361.08,
       "heal": 643.32,
-      "time": 1773
+      "time": 1773,
+      "tot": {
+        "e": 51,
+        "a": 0,
+        "dd": 20,
+        "dm": 27662,
+        "he": 1901
+      }
     },
     "roles": {
       "Damage": {
@@ -3002,7 +6264,465 @@ const PLAYERS_COMP = [
           "ca": 13
         }
       }
-    }
+    },
+    "recent": [
+      {
+        "d": "2026-09-13",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-14",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-15",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-16",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-17",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-18",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-19",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-20",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-21",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-22",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-23",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-24",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-25",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-26",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-27",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-28",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-29",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-30",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-01",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-02",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-03",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-04",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-05",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-06",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-07",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-08",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-09",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-10",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-11",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-12",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": {
+          "e": 51,
+          "a": 0,
+          "dd": 20,
+          "dm": 27662,
+          "he": 1901
+        },
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      }
+    ]
   },
   {
     "id": "p9",
@@ -3038,7 +6758,14 @@ const PLAYERS_COMP = [
       "deaths": 7.74,
       "dmg": 5935.09,
       "heal": 5651.41,
-      "time": 46018
+      "time": 46018,
+      "tot": {
+        "e": 910,
+        "a": 46,
+        "dd": 594,
+        "dm": 455202,
+        "he": 433444
+      }
     },
     "roles": {
       "Tank": {
@@ -3557,7 +7284,465 @@ const PLAYERS_COMP = [
           "ca": 9
         }
       }
-    }
+    },
+    "recent": [
+      {
+        "d": "2026-09-13",
+        "g": {},
+        "m": 39,
+        "w": 18,
+        "l": 21,
+        "t": 25939,
+        "k": 1.6,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-3"
+        }
+      },
+      {
+        "d": "2026-09-14",
+        "g": {},
+        "m": 39,
+        "w": 18,
+        "l": 21,
+        "t": 25939,
+        "k": 1.6,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-3"
+        }
+      },
+      {
+        "d": "2026-09-15",
+        "g": {},
+        "m": 39,
+        "w": 18,
+        "l": 21,
+        "t": 25939,
+        "k": 1.6,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-3"
+        }
+      },
+      {
+        "d": "2026-09-16",
+        "g": {},
+        "m": 39,
+        "w": 18,
+        "l": 21,
+        "t": 25939,
+        "k": 1.6,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-3"
+        }
+      },
+      {
+        "d": "2026-09-17",
+        "g": {},
+        "m": 39,
+        "w": 18,
+        "l": 21,
+        "t": 25939,
+        "k": 1.6,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-3"
+        }
+      },
+      {
+        "d": "2026-09-18",
+        "g": {},
+        "m": 39,
+        "w": 18,
+        "l": 21,
+        "t": 25939,
+        "k": 1.6,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-3"
+        }
+      },
+      {
+        "d": "2026-09-19",
+        "g": {},
+        "m": 39,
+        "w": 18,
+        "l": 21,
+        "t": 25939,
+        "k": 1.6,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-3"
+        }
+      },
+      {
+        "d": "2026-09-20",
+        "g": {},
+        "m": 39,
+        "w": 18,
+        "l": 21,
+        "t": 25939,
+        "k": 1.6,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-3"
+        }
+      },
+      {
+        "d": "2026-09-21",
+        "g": {},
+        "m": 39,
+        "w": 18,
+        "l": 21,
+        "t": 25939,
+        "k": 1.6,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-3"
+        }
+      },
+      {
+        "d": "2026-09-22",
+        "g": {},
+        "m": 39,
+        "w": 18,
+        "l": 21,
+        "t": 25939,
+        "k": 1.6,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-3"
+        }
+      },
+      {
+        "d": "2026-09-23",
+        "g": {},
+        "m": 39,
+        "w": 18,
+        "l": 21,
+        "t": 25939,
+        "k": 1.6,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-3"
+        }
+      },
+      {
+        "d": "2026-09-24",
+        "g": {},
+        "m": 39,
+        "w": 18,
+        "l": 21,
+        "t": 25939,
+        "k": 1.6,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-3"
+        }
+      },
+      {
+        "d": "2026-09-25",
+        "g": {},
+        "m": 46,
+        "w": 22,
+        "l": 24,
+        "t": 31423,
+        "k": 1.69,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-3"
+        }
+      },
+      {
+        "d": "2026-09-26",
+        "g": {},
+        "m": 49,
+        "w": 25,
+        "l": 24,
+        "t": 32363,
+        "k": 1.7,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-2"
+        }
+      },
+      {
+        "d": "2026-09-27",
+        "g": {},
+        "m": 53,
+        "w": 29,
+        "l": 24,
+        "t": 35090,
+        "k": 1.73,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-1"
+        }
+      },
+      {
+        "d": "2026-09-28",
+        "g": {},
+        "m": 53,
+        "w": 29,
+        "l": 24,
+        "t": 35090,
+        "k": 1.73,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-1"
+        }
+      },
+      {
+        "d": "2026-09-29",
+        "g": {},
+        "m": 61,
+        "w": 30,
+        "l": 31,
+        "t": 39970,
+        "k": 1.65,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-4",
+          "Support": "silver-1"
+        }
+      },
+      {
+        "d": "2026-09-30",
+        "g": {},
+        "m": 66,
+        "w": 32,
+        "l": 34,
+        "t": 42618,
+        "k": 1.65,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-4",
+          "Support": "silver-2"
+        }
+      },
+      {
+        "d": "2026-10-01",
+        "g": {},
+        "m": 66,
+        "w": 32,
+        "l": 34,
+        "t": 42618,
+        "k": 1.65,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-4",
+          "Support": "silver-2"
+        }
+      },
+      {
+        "d": "2026-10-02",
+        "g": {},
+        "m": 66,
+        "w": 32,
+        "l": 34,
+        "t": 42618,
+        "k": 1.65,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-4",
+          "Support": "silver-2"
+        }
+      },
+      {
+        "d": "2026-10-03",
+        "g": {},
+        "m": 71,
+        "w": 35,
+        "l": 36,
+        "t": 46018,
+        "k": 1.61,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-2"
+        }
+      },
+      {
+        "d": "2026-10-04",
+        "g": {},
+        "m": 71,
+        "w": 35,
+        "l": 36,
+        "t": 46018,
+        "k": 1.61,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-2"
+        }
+      },
+      {
+        "d": "2026-10-05",
+        "g": {},
+        "m": 71,
+        "w": 35,
+        "l": 36,
+        "t": 46018,
+        "k": 1.61,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-2"
+        }
+      },
+      {
+        "d": "2026-10-06",
+        "g": {},
+        "m": 71,
+        "w": 35,
+        "l": 36,
+        "t": 46018,
+        "k": 1.61,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-2"
+        }
+      },
+      {
+        "d": "2026-10-07",
+        "g": {},
+        "m": 71,
+        "w": 35,
+        "l": 36,
+        "t": 46018,
+        "k": 1.61,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-2"
+        }
+      },
+      {
+        "d": "2026-10-08",
+        "g": {},
+        "m": 71,
+        "w": 35,
+        "l": 36,
+        "t": 46018,
+        "k": 1.61,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-2"
+        }
+      },
+      {
+        "d": "2026-10-09",
+        "g": {},
+        "m": 71,
+        "w": 35,
+        "l": 36,
+        "t": 46018,
+        "k": 1.61,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-2"
+        }
+      },
+      {
+        "d": "2026-10-10",
+        "g": {},
+        "m": 71,
+        "w": 35,
+        "l": 36,
+        "t": 46018,
+        "k": 1.61,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-2"
+        }
+      },
+      {
+        "d": "2026-10-11",
+        "g": {},
+        "m": 71,
+        "w": 35,
+        "l": 36,
+        "t": 46018,
+        "k": 1.61,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-2"
+        }
+      },
+      {
+        "d": "2026-10-12",
+        "g": {},
+        "m": 71,
+        "w": 35,
+        "l": 36,
+        "t": 46018,
+        "k": 1.61,
+        "tot": {
+          "e": 910,
+          "a": 46,
+          "dd": 594,
+          "dm": 455202,
+          "he": 433444
+        },
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-2"
+        }
+      }
+    ]
   },
   {
     "id": "p10",
@@ -3593,7 +7778,14 @@ const PLAYERS_COMP = [
       "deaths": 7.34,
       "dmg": 6271.98,
       "heal": 4380.34,
-      "time": 45758
+      "time": 45758,
+      "tot": {
+        "e": 1031,
+        "a": 162,
+        "dd": 560,
+        "dm": 478322,
+        "he": 334059
+      }
     },
     "roles": {
       "Tank": {
@@ -4336,7 +8528,360 @@ const PLAYERS_COMP = [
           "ca": 11
         }
       }
-    }
+    },
+    "recent": [
+      {
+        "d": "2026-09-20",
+        "g": {},
+        "m": 56,
+        "w": 29,
+        "l": 27,
+        "t": 36389,
+        "k": 2.17,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
+        "d": "2026-09-21",
+        "g": {},
+        "m": 56,
+        "w": 29,
+        "l": 27,
+        "t": 36389,
+        "k": 2.17,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
+        "d": "2026-09-22",
+        "g": {},
+        "m": 56,
+        "w": 29,
+        "l": 27,
+        "t": 36389,
+        "k": 2.17,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
+        "d": "2026-09-23",
+        "g": {},
+        "m": 56,
+        "w": 29,
+        "l": 27,
+        "t": 36389,
+        "k": 2.17,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
+        "d": "2026-09-24",
+        "g": {},
+        "m": 56,
+        "w": 29,
+        "l": 27,
+        "t": 36389,
+        "k": 2.17,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
+        "d": "2026-09-25",
+        "g": {},
+        "m": 56,
+        "w": 29,
+        "l": 27,
+        "t": 36389,
+        "k": 2.17,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
+        "d": "2026-09-26",
+        "g": {},
+        "m": 56,
+        "w": 29,
+        "l": 27,
+        "t": 36389,
+        "k": 2.17,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
+        "d": "2026-09-27",
+        "g": {},
+        "m": 57,
+        "w": 30,
+        "l": 27,
+        "t": 37647,
+        "k": 2.16,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
+        "d": "2026-09-28",
+        "g": {},
+        "m": 57,
+        "w": 30,
+        "l": 27,
+        "t": 37647,
+        "k": 2.16,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
+        "d": "2026-09-29",
+        "g": {},
+        "m": 57,
+        "w": 30,
+        "l": 27,
+        "t": 37647,
+        "k": 2.16,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
+        "d": "2026-09-30",
+        "g": {},
+        "m": 57,
+        "w": 30,
+        "l": 27,
+        "t": 37647,
+        "k": 2.16,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
+        "d": "2026-10-01",
+        "g": {},
+        "m": 57,
+        "w": 30,
+        "l": 27,
+        "t": 37647,
+        "k": 2.16,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
+        "d": "2026-10-02",
+        "g": {},
+        "m": 57,
+        "w": 30,
+        "l": 27,
+        "t": 37647,
+        "k": 2.16,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
+        "d": "2026-10-03",
+        "g": {},
+        "m": 63,
+        "w": 34,
+        "l": 29,
+        "t": 40043,
+        "k": 2.17,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
+        "d": "2026-10-04",
+        "g": {},
+        "m": 63,
+        "w": 34,
+        "l": 29,
+        "t": 40043,
+        "k": 2.17,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
+        "d": "2026-10-05",
+        "g": {},
+        "m": 63,
+        "w": 34,
+        "l": 29,
+        "t": 40043,
+        "k": 2.17,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
+        "d": "2026-10-06",
+        "g": {},
+        "m": 63,
+        "w": 34,
+        "l": 29,
+        "t": 40043,
+        "k": 2.17,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
+        "d": "2026-10-07",
+        "g": {},
+        "m": 71,
+        "w": 37,
+        "l": 34,
+        "t": 45758,
+        "k": 2.13,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-4"
+        }
+      },
+      {
+        "d": "2026-10-08",
+        "g": {},
+        "m": 71,
+        "w": 37,
+        "l": 34,
+        "t": 45758,
+        "k": 2.13,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-4"
+        }
+      },
+      {
+        "d": "2026-10-09",
+        "g": {},
+        "m": 71,
+        "w": 37,
+        "l": 34,
+        "t": 45758,
+        "k": 2.13,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-4"
+        }
+      },
+      {
+        "d": "2026-10-10",
+        "g": {},
+        "m": 71,
+        "w": 37,
+        "l": 34,
+        "t": 45758,
+        "k": 2.13,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-4"
+        }
+      },
+      {
+        "d": "2026-10-11",
+        "g": {},
+        "m": 71,
+        "w": 37,
+        "l": 34,
+        "t": 45758,
+        "k": 2.13,
+        "tot": null,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-4"
+        }
+      },
+      {
+        "d": "2026-10-12",
+        "g": {},
+        "m": 71,
+        "w": 37,
+        "l": 34,
+        "t": 45758,
+        "k": 2.13,
+        "tot": {
+          "e": 1031,
+          "a": 162,
+          "dd": 560,
+          "dm": 478322,
+          "he": 334059
+        },
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-4"
+        }
+      }
+    ]
   },
   {
     "id": "p11",
@@ -4376,7 +8921,14 @@ const PLAYERS_COMP = [
       "deaths": 5.61,
       "dmg": 7004.76,
       "heal": 4474.35,
-      "time": 4702
+      "time": 4702,
+      "tot": {
+        "e": 114,
+        "a": 12,
+        "dd": 44,
+        "dm": 54894,
+        "he": 35064
+      }
     },
     "roles": {
       "Tank": {
@@ -4615,7 +9167,360 @@ const PLAYERS_COMP = [
           "ca": 0
         }
       }
-    }
+    },
+    "recent": [
+      {
+        "d": "2026-09-20",
+        "g": {},
+        "m": 112,
+        "w": 58,
+        "l": 54,
+        "t": 73709,
+        "k": 2.65,
+        "tot": null,
+        "r": {
+          "Tank": "silver-5",
+          "Damage": null,
+          "Support": "silver-5"
+        }
+      },
+      {
+        "d": "2026-09-21",
+        "g": {},
+        "m": 120,
+        "w": 59,
+        "l": 61,
+        "t": 78791,
+        "k": 2.67,
+        "tot": null,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": null,
+          "Support": "silver-5"
+        }
+      },
+      {
+        "d": "2026-09-22",
+        "g": {},
+        "m": 120,
+        "w": 59,
+        "l": 61,
+        "t": 78791,
+        "k": 2.67,
+        "tot": null,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": null,
+          "Support": "silver-5"
+        }
+      },
+      {
+        "d": "2026-09-23",
+        "g": {},
+        "m": 125,
+        "w": 60,
+        "l": 65,
+        "t": 81820,
+        "k": 2.65,
+        "tot": null,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": null,
+          "Support": "bronze-1"
+        }
+      },
+      {
+        "d": "2026-09-24",
+        "g": {},
+        "m": 133,
+        "w": 66,
+        "l": 67,
+        "t": 86018,
+        "k": 2.72,
+        "tot": null,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": null,
+          "Support": "bronze-1"
+        }
+      },
+      {
+        "d": "2026-09-25",
+        "g": {},
+        "m": 133,
+        "w": 66,
+        "l": 67,
+        "t": 86018,
+        "k": 2.72,
+        "tot": null,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": null,
+          "Support": "bronze-1"
+        }
+      },
+      {
+        "d": "2026-09-26",
+        "g": {},
+        "m": 139,
+        "w": 69,
+        "l": 70,
+        "t": 89909,
+        "k": 2.77,
+        "tot": null,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": null,
+          "Support": "silver-5"
+        }
+      },
+      {
+        "d": "2026-09-27",
+        "g": {},
+        "m": 143,
+        "w": 73,
+        "l": 70,
+        "t": 92991,
+        "k": 2.81,
+        "tot": null,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": null,
+          "Support": "silver-5"
+        }
+      },
+      {
+        "d": "2026-09-28",
+        "g": {},
+        "m": 154,
+        "w": 81,
+        "l": 73,
+        "t": 100158,
+        "k": 2.83,
+        "tot": null,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": null,
+          "Support": "silver-4"
+        }
+      },
+      {
+        "d": "2026-09-29",
+        "g": {},
+        "m": 159,
+        "w": 82,
+        "l": 77,
+        "t": 103529,
+        "k": 2.76,
+        "tot": null,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": null,
+          "Support": "silver-4"
+        }
+      },
+      {
+        "d": "2026-09-30",
+        "g": {},
+        "m": 165,
+        "w": 82,
+        "l": 83,
+        "t": 107764,
+        "k": 2.75,
+        "tot": null,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": "bronze-1",
+          "Support": "silver-4"
+        }
+      },
+      {
+        "d": "2026-10-01",
+        "g": {},
+        "m": 170,
+        "w": 83,
+        "l": 87,
+        "t": 110587,
+        "k": 2.7,
+        "tot": null,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": "bronze-1",
+          "Support": "silver-5"
+        }
+      },
+      {
+        "d": "2026-10-02",
+        "g": {},
+        "m": 178,
+        "w": 86,
+        "l": 92,
+        "t": 115239,
+        "k": 2.75,
+        "tot": null,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": "bronze-1",
+          "Support": "silver-5"
+        }
+      },
+      {
+        "d": "2026-10-03",
+        "g": {},
+        "m": 180,
+        "w": 87,
+        "l": 93,
+        "t": 116089,
+        "k": 2.75,
+        "tot": null,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": "bronze-1",
+          "Support": "silver-5"
+        }
+      },
+      {
+        "d": "2026-10-04",
+        "g": {},
+        "m": 184,
+        "w": 91,
+        "l": 93,
+        "t": 119389,
+        "k": 2.76,
+        "tot": null,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": "bronze-1",
+          "Support": "silver-5"
+        }
+      },
+      {
+        "d": "2026-10-05",
+        "g": {},
+        "m": 184,
+        "w": 91,
+        "l": 93,
+        "t": 119389,
+        "k": 2.76,
+        "tot": null,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": "bronze-1",
+          "Support": "silver-5"
+        }
+      },
+      {
+        "d": "2026-10-06",
+        "g": {},
+        "m": 184,
+        "w": 91,
+        "l": 93,
+        "t": 119389,
+        "k": 2.76,
+        "tot": null,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": "bronze-1",
+          "Support": "silver-5"
+        }
+      },
+      {
+        "d": "2026-10-07",
+        "g": {},
+        "m": 184,
+        "w": 91,
+        "l": 93,
+        "t": 119389,
+        "k": 2.76,
+        "tot": null,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": "bronze-1",
+          "Support": "silver-5"
+        }
+      },
+      {
+        "d": "2026-10-08",
+        "g": {},
+        "m": 184,
+        "w": 91,
+        "l": 93,
+        "t": 119389,
+        "k": 2.76,
+        "tot": null,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": "bronze-1",
+          "Support": "silver-5"
+        }
+      },
+      {
+        "d": "2026-10-09",
+        "g": {},
+        "m": 184,
+        "w": 91,
+        "l": 93,
+        "t": 119389,
+        "k": 2.76,
+        "tot": null,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": "bronze-1",
+          "Support": "silver-5"
+        }
+      },
+      {
+        "d": "2026-10-10",
+        "g": {},
+        "m": 9,
+        "w": 7,
+        "l": 2,
+        "t": 4702,
+        "k": 2.86,
+        "tot": null,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": "bronze-1",
+          "Support": "silver-5"
+        }
+      },
+      {
+        "d": "2026-10-11",
+        "g": {},
+        "m": 9,
+        "w": 7,
+        "l": 2,
+        "t": 4702,
+        "k": 2.86,
+        "tot": null,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": "bronze-1",
+          "Support": "silver-5"
+        }
+      },
+      {
+        "d": "2026-10-12",
+        "g": {},
+        "m": 9,
+        "w": 7,
+        "l": 2,
+        "t": 4702,
+        "k": 2.86,
+        "tot": {
+          "e": 114,
+          "a": 12,
+          "dd": 44,
+          "dm": 54894,
+          "he": 35064
+        },
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": "bronze-1",
+          "Support": "silver-5"
+        }
+      }
+    ]
   }
 ];
 /* 全モード(クイック・プレイ + ライバル・プレイの合算) */
@@ -4650,7 +9555,14 @@ const PLAYERS_ALL = [
       "deaths": 7.68,
       "dmg": 9798.45,
       "heal": 2153.64,
-      "time": 603911
+      "time": 603911,
+      "tot": {
+        "e": 16684,
+        "a": 1453,
+        "dd": 7730,
+        "dm": 9862323,
+        "he": 2167683
+      }
     },
     "roles": {
       "Tank": {
@@ -7194,48 +12106,34 @@ const PLAYERS_ALL = [
     },
     "recent": [
       {
-        "d": "2026-09-10",
-        "g": {
-          "ashe": 1,
-          "cassidy": 2,
-          "pharah": 1,
-          "shion": 2,
-          "sojourn": 1,
-          "soldier-76": 1,
-          "genji": 2,
-          "hanzo": 1,
-          "illari": 1,
-          "mei": 3,
-          "sierra": 2,
-          "widowmaker": 1
-        }
-      },
-      {
-        "d": "2026-09-11",
-        "g": {
-          "anran": 1,
-          "genji": 2,
-          "sigma": 1,
-          "torbjorn": 2
-        }
-      },
-      {
-        "d": "2026-09-12",
-        "g": {
-          "ashe": 1,
-          "cassidy": 1,
-          "emre": 1,
-          "soldier-76": 1,
-          "anran": 2,
-          "sierra": 2,
-          "lucio": 2
-        }
-      },
-      {
         "d": "2026-09-13",
         "g": {
           "anran": 1,
           "junker-queen": 1
+        },
+        "m": 1059,
+        "w": 517,
+        "l": 542,
+        "t": 541271,
+        "k": 2.36,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-14",
+        "g": {},
+        "m": 1060,
+        "w": 517,
+        "l": 543,
+        "t": 541937,
+        "k": 2.36,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
         }
       },
       {
@@ -7253,6 +12151,72 @@ const PLAYERS_ALL = [
           "lucio": 2,
           "sierra": 1,
           "vendetta": 1
+        },
+        "m": 1079,
+        "w": 529,
+        "l": 550,
+        "t": 552173,
+        "k": 2.36,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-16",
+        "g": {},
+        "m": 1091,
+        "w": 537,
+        "l": 554,
+        "t": 558045,
+        "k": 2.37,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-17",
+        "g": {},
+        "m": 1091,
+        "w": 538,
+        "l": 553,
+        "t": 558045,
+        "k": 2.37,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-18",
+        "g": {},
+        "m": 1091,
+        "w": 538,
+        "l": 553,
+        "t": 558045,
+        "k": 2.37,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-19",
+        "g": {},
+        "m": 1106,
+        "w": 548,
+        "l": 558,
+        "t": 565939,
+        "k": 2.37,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
         }
       },
       {
@@ -7279,6 +12243,16 @@ const PLAYERS_ALL = [
           "symmetra": 2,
           "winston": 2,
           "zenyatta": 2
+        },
+        "m": 1120,
+        "w": 560,
+        "l": 560,
+        "t": 572545,
+        "k": 2.37,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
         }
       },
       {
@@ -7292,6 +12266,30 @@ const PLAYERS_ALL = [
           "mizuki": 1,
           "orisa": 1,
           "zenyatta": 2
+        },
+        "m": 1129,
+        "w": 565,
+        "l": 564,
+        "t": 577005,
+        "k": 2.36,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-22",
+        "g": {},
+        "m": 1129,
+        "w": 565,
+        "l": 564,
+        "t": 577005,
+        "k": 2.36,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
         }
       },
       {
@@ -7308,6 +12306,16 @@ const PLAYERS_ALL = [
           "mizuki": 2,
           "sierra": 1,
           "venture": 1
+        },
+        "m": 1142,
+        "w": 571,
+        "l": 571,
+        "t": 582807,
+        "k": 2.36,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
         }
       },
       {
@@ -7318,6 +12326,16 @@ const PLAYERS_ALL = [
           "lifeweaver": 2,
           "mizuki": 1,
           "sombra": 1
+        },
+        "m": 1157,
+        "w": 581,
+        "l": 576,
+        "t": 590704,
+        "k": 2.36,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
         }
       },
       {
@@ -7329,6 +12347,16 @@ const PLAYERS_ALL = [
           "sigma": 1,
           "winston": 1,
           "zarya": 1
+        },
+        "m": 1163,
+        "w": 582,
+        "l": 581,
+        "t": 593807,
+        "k": 2.35,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
         }
       },
       {
@@ -7340,6 +12368,16 @@ const PLAYERS_ALL = [
           "lifeweaver": 4,
           "moira": 1,
           "sigma": 1
+        },
+        "m": 1173,
+        "w": 589,
+        "l": 584,
+        "t": 599906,
+        "k": 2.36,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
         }
       },
       {
@@ -7356,6 +12394,16 @@ const PLAYERS_ALL = [
           "moira": 1,
           "sombra": 1,
           "zenyatta": 1
+        },
+        "m": 1187,
+        "w": 593,
+        "l": 594,
+        "t": 607465,
+        "k": 2.35,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
         }
       },
       {
@@ -7366,23 +12414,219 @@ const PLAYERS_ALL = [
           "pharah": 1,
           "sojourn": 1,
           "anran": 1
+        },
+        "m": 1193,
+        "w": 596,
+        "l": 597,
+        "t": 611078,
+        "k": 2.35,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-29",
+        "g": {},
+        "m": 1197,
+        "w": 598,
+        "l": 599,
+        "t": 613169,
+        "k": 2.35,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-30",
+        "g": {},
+        "m": 1197,
+        "w": 598,
+        "l": 599,
+        "t": 613169,
+        "k": 2.35,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-01",
+        "g": {},
+        "m": 1197,
+        "w": 598,
+        "l": 599,
+        "t": 613169,
+        "k": 2.35,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-02",
+        "g": {},
+        "m": 1204,
+        "w": 604,
+        "l": 600,
+        "t": 616821,
+        "k": 2.35,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-03",
+        "g": {},
+        "m": 1204,
+        "w": 604,
+        "l": 600,
+        "t": 616821,
+        "k": 2.35,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-04",
+        "g": {},
+        "m": 1204,
+        "w": 604,
+        "l": 600,
+        "t": 616821,
+        "k": 2.35,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-05",
+        "g": {},
+        "m": 1211,
+        "w": 608,
+        "l": 603,
+        "t": 621276,
+        "k": 2.35,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-06",
+        "g": {},
+        "m": 1223,
+        "w": 614,
+        "l": 609,
+        "t": 628982,
+        "k": 2.34,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-3",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-07",
+        "g": {},
+        "m": 1246,
+        "w": 621,
+        "l": 625,
+        "t": 640578,
+        "k": 2.33,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-4",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-08",
+        "g": {},
+        "m": 1181,
+        "w": 586,
+        "l": 595,
+        "t": 596505,
+        "k": 2.35,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-4",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-09",
+        "g": {},
+        "m": 1195,
+        "w": 589,
+        "l": 606,
+        "t": 603911,
+        "k": 2.35,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-5",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-10",
+        "g": {},
+        "m": 1195,
+        "w": 589,
+        "l": 606,
+        "t": 603911,
+        "k": 2.35,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-5",
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-11",
+        "g": {},
+        "m": 1195,
+        "w": 589,
+        "l": 606,
+        "t": 603911,
+        "k": 2.35,
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-5",
+          "Support": null
         }
       },
       {
         "d": "2026-10-12",
-        "g": {
-          "cassidy": 10,
-          "reaper": 2,
-          "sierra": 4,
-          "anran": 1,
-          "doctrine": 1,
-          "emre": 4,
-          "genji": 2,
-          "hazard": 2,
-          "hanzo": 1,
-          "tracer": 1,
-          "vendetta": 1,
-          "zenyatta": 2
+        "g": {},
+        "m": 1195,
+        "w": 589,
+        "l": 606,
+        "t": 603911,
+        "k": 2.35,
+        "tot": {
+          "e": 16684,
+          "a": 1453,
+          "dd": 7730,
+          "dm": 9862323,
+          "he": 2167683
+        },
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-5",
+          "Support": null
         }
       }
     ]
@@ -7425,7 +12669,14 @@ const PLAYERS_ALL = [
       "deaths": 6.11,
       "dmg": 8276.6,
       "heal": 3104.45,
-      "time": 640310
+      "time": 640310,
+      "tot": {
+        "e": 16622,
+        "a": 1832,
+        "dd": 6522,
+        "dm": 8832649,
+        "he": 3313016
+      }
     },
     "roles": {
       "Tank": {
@@ -10065,55 +15316,33 @@ const PLAYERS_ALL = [
     },
     "recent": [
       {
-        "d": "2026-09-10",
-        "g": {
-          "ana": 4,
-          "cassidy": 1,
-          "kiriko": 5,
-          "mizuki": 1,
-          "moira": 1,
-          "reaper": 1,
-          "wuyang": 1,
-          "baptiste": 2,
-          "bastion": 1,
-          "torbjorn": 2,
-          "widowmaker": 1
-        }
-      },
-      {
-        "d": "2026-09-11",
-        "g": {
-          "ana": 5,
-          "illari": 1,
-          "kiriko": 1,
-          "mizuki": 3,
-          "wuyang": 1,
-          "lucio": 2
-        }
-      },
-      {
-        "d": "2026-09-12",
-        "g": {
-          "lucio": 2,
-          "ana": 2,
-          "ashe": 1,
-          "cassidy": 1,
-          "dmon": 1,
-          "doomfist": 1,
-          "genji": 4,
-          "kiriko": 1,
-          "lifeweaver": 1,
-          "mauga": 1,
-          "shion": 1,
-          "sojourn": 2,
-          "tracer": 1,
-          "wuyang": 1
-        }
-      },
-      {
         "d": "2026-09-13",
         "g": {
           "ana": 1
+        },
+        "m": 763,
+        "w": 396,
+        "l": 367,
+        "t": 406487,
+        "k": 2.76,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-4",
+          "Support": "platinum-3"
+        }
+      },
+      {
+        "d": "2026-09-14",
+        "g": {},
+        "m": 772,
+        "w": 402,
+        "l": 370,
+        "t": 410792,
+        "k": 2.76,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-4",
+          "Support": "platinum-3"
         }
       },
       {
@@ -10133,6 +15362,72 @@ const PLAYERS_ALL = [
           "torbjorn": 2,
           "vendetta": 5,
           "widowmaker": 1
+        },
+        "m": 792,
+        "w": 416,
+        "l": 376,
+        "t": 420752,
+        "k": 2.77,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-4",
+          "Support": "platinum-3"
+        }
+      },
+      {
+        "d": "2026-09-16",
+        "g": {},
+        "m": 812,
+        "w": 428,
+        "l": 384,
+        "t": 431347,
+        "k": 2.77,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-4",
+          "Support": "platinum-3"
+        }
+      },
+      {
+        "d": "2026-09-17",
+        "g": {},
+        "m": 831,
+        "w": 443,
+        "l": 388,
+        "t": 441476,
+        "k": 2.75,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-5",
+          "Support": "platinum-3"
+        }
+      },
+      {
+        "d": "2026-09-18",
+        "g": {},
+        "m": 837,
+        "w": 446,
+        "l": 391,
+        "t": 444605,
+        "k": 2.75,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-5",
+          "Support": "platinum-3"
+        }
+      },
+      {
+        "d": "2026-09-19",
+        "g": {},
+        "m": 852,
+        "w": 458,
+        "l": 394,
+        "t": 450681,
+        "k": 2.77,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-5",
+          "Support": "platinum-3"
         }
       },
       {
@@ -10168,6 +15463,16 @@ const PLAYERS_ALL = [
           "sigma": 1,
           "torbjorn": 2,
           "widowmaker": 4
+        },
+        "m": 871,
+        "w": 471,
+        "l": 400,
+        "t": 460846,
+        "k": 2.77,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "platinum-5",
+          "Support": "platinum-3"
         }
       },
       {
@@ -10186,6 +15491,16 @@ const PLAYERS_ALL = [
           "tracer": 1,
           "wuyang": 2,
           "winston": 1
+        },
+        "m": 897,
+        "w": 483,
+        "l": 414,
+        "t": 473171,
+        "k": 2.77,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "platinum-5",
+          "Support": "platinum-3"
         }
       },
       {
@@ -10202,6 +15517,16 @@ const PLAYERS_ALL = [
           "baptiste": 1,
           "roadhog": 2,
           "widowmaker": 1
+        },
+        "m": 915,
+        "w": 490,
+        "l": 425,
+        "t": 481875,
+        "k": 2.78,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "platinum-5",
+          "Support": "platinum-3"
         }
       },
       {
@@ -10214,6 +15539,16 @@ const PLAYERS_ALL = [
           "soldier-76": 1,
           "roadhog": 1,
           "winston": 1
+        },
+        "m": 923,
+        "w": 493,
+        "l": 430,
+        "t": 485386,
+        "k": 2.78,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "platinum-5",
+          "Support": "platinum-3"
         }
       },
       {
@@ -10234,6 +15569,16 @@ const PLAYERS_ALL = [
           "wuyang": 1,
           "junkrat": 1,
           "roadhog": 2
+        },
+        "m": 946,
+        "w": 501,
+        "l": 445,
+        "t": 500630,
+        "k": 2.78,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "platinum-5",
+          "Support": "platinum-3"
         }
       },
       {
@@ -10252,6 +15597,16 @@ const PLAYERS_ALL = [
           "wuyang": 2,
           "baptiste": 1,
           "sombra": 1
+        },
+        "m": 974,
+        "w": 519,
+        "l": 455,
+        "t": 517007,
+        "k": 2.78,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "platinum-5",
+          "Support": "platinum-4"
         }
       },
       {
@@ -10275,6 +15630,16 @@ const PLAYERS_ALL = [
           "mei": 1,
           "winston": 2,
           "wrecking-ball": 1
+        },
+        "m": 998,
+        "w": 533,
+        "l": 465,
+        "t": 529185,
+        "k": 2.8,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-5",
+          "Support": "platinum-4"
         }
       },
       {
@@ -10293,6 +15658,16 @@ const PLAYERS_ALL = [
           "hazard": 4,
           "hanzo": 1,
           "zarya": 1
+        },
+        "m": 1021,
+        "w": 543,
+        "l": 478,
+        "t": 540036,
+        "k": 2.8,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-5",
+          "Support": "platinum-4"
         }
       },
       {
@@ -10308,51 +15683,219 @@ const PLAYERS_ALL = [
           "soldier-76": 1,
           "tracer": 1,
           "wuyang": 6
+        },
+        "m": 1041,
+        "w": 553,
+        "l": 488,
+        "t": 551103,
+        "k": 2.8,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-5",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-09-29",
+        "g": {},
+        "m": 1073,
+        "w": 568,
+        "l": 505,
+        "t": 567393,
+        "k": 2.8,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-5",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-09-30",
+        "g": {},
+        "m": 1097,
+        "w": 579,
+        "l": 518,
+        "t": 580022,
+        "k": 2.8,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-4",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-10-01",
+        "g": {},
+        "m": 1105,
+        "w": 583,
+        "l": 522,
+        "t": 583401,
+        "k": 2.8,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-4",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-10-02",
+        "g": {},
+        "m": 1112,
+        "w": 583,
+        "l": 529,
+        "t": 586600,
+        "k": 2.79,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-5",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-10-03",
+        "g": {},
+        "m": 1124,
+        "w": 588,
+        "l": 536,
+        "t": 593165,
+        "k": 2.8,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-5",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-10-04",
+        "g": {},
+        "m": 1126,
+        "w": 587,
+        "l": 539,
+        "t": 594173,
+        "k": 2.8,
+        "r": {
+          "Tank": "gold-3",
+          "Damage": "platinum-5",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-10-05",
+        "g": {},
+        "m": 1128,
+        "w": 589,
+        "l": 539,
+        "t": 595157,
+        "k": 2.8,
+        "r": {
+          "Tank": "gold-3",
+          "Damage": "platinum-5",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-10-06",
+        "g": {},
+        "m": 1150,
+        "w": 602,
+        "l": 548,
+        "t": 605610,
+        "k": 2.79,
+        "r": {
+          "Tank": "gold-3",
+          "Damage": "gold-1",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-10-07",
+        "g": {},
+        "m": 1152,
+        "w": 603,
+        "l": 549,
+        "t": 608068,
+        "k": 2.79,
+        "r": {
+          "Tank": "gold-3",
+          "Damage": "gold-1",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-10-08",
+        "g": {},
+        "m": 1168,
+        "w": 611,
+        "l": 557,
+        "t": 616913,
+        "k": 2.81,
+        "r": {
+          "Tank": "gold-3",
+          "Damage": "gold-1",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-10-09",
+        "g": {},
+        "m": 1168,
+        "w": 611,
+        "l": 557,
+        "t": 616913,
+        "k": 2.81,
+        "r": {
+          "Tank": "gold-3",
+          "Damage": "gold-1",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-10-10",
+        "g": {},
+        "m": 1179,
+        "w": 616,
+        "l": 563,
+        "t": 624220,
+        "k": 2.81,
+        "r": {
+          "Tank": "gold-3",
+          "Damage": "gold-1",
+          "Support": "platinum-4"
+        }
+      },
+      {
+        "d": "2026-10-11",
+        "g": {},
+        "m": 1194,
+        "w": 626,
+        "l": 568,
+        "t": 631157,
+        "k": 2.82,
+        "r": {
+          "Tank": "gold-3",
+          "Damage": "gold-1",
+          "Support": "platinum-4"
         }
       },
       {
         "d": "2026-10-12",
-        "g": {
-          "ana": 10,
-          "anran": 1,
-          "ashe": 6,
-          "baptiste": 1,
-          "brigitte": 1,
-          "cassidy": 12,
-          "dmon": 2,
-          "doomfist": 2,
-          "dva": 4,
-          "freja": 1,
-          "genji": 23,
-          "hazard": 3,
-          "jetpack-cat": 3,
-          "juno": 6,
-          "kiriko": 3,
-          "lifeweaver": 5,
-          "moira": 1,
-          "orisa": 1,
-          "pharah": 2,
-          "reaper": 2,
-          "reinhardt": 3,
-          "roadhog": 5,
-          "shion": 5,
-          "sigma": 3,
-          "sierra": 2,
-          "sojourn": 5,
-          "symmetra": 1,
-          "tracer": 12,
-          "vendetta": 6,
-          "winston": 2,
-          "wuyang": 6,
-          "zenyatta": 2,
-          "doctrine": 8,
-          "emre": 2,
-          "hanzo": 2,
-          "junker-queen": 1,
-          "junkrat": 4,
-          "sombra": 8,
-          "venture": 1,
-          "wrecking-ball": 4
+        "g": {},
+        "m": 1212,
+        "w": 634,
+        "l": 578,
+        "t": 640310,
+        "k": 2.83,
+        "tot": {
+          "e": 16622,
+          "a": 1832,
+          "dd": 6522,
+          "dm": 8832649,
+          "he": 3313016
+        },
+        "r": {
+          "Tank": "gold-3",
+          "Damage": "gold-1",
+          "Support": "platinum-4"
         }
       }
     ]
@@ -10395,7 +15938,14 @@ const PLAYERS_ALL = [
       "deaths": 6.48,
       "dmg": 8952.36,
       "heal": 3839.02,
-      "time": 363325
+      "time": 363325,
+      "tot": {
+        "e": 8968,
+        "a": 872,
+        "dd": 3926,
+        "dm": 5421026,
+        "he": 2324688
+      }
     },
     "roles": {
       "Tank": {
@@ -12603,19 +18153,31 @@ const PLAYERS_ALL = [
     },
     "recent": [
       {
-        "d": "2026-09-10",
-        "g": {
-          "ana": 1,
-          "kiriko": 1,
-          "mauga": 1,
-          "mizuki": 4,
-          "moira": 2,
-          "ramattra": 1,
-          "sierra": 1,
-          "baptiste": 1,
-          "dva": 1,
-          "lifeweaver": 3,
-          "zenyatta": 1
+        "d": "2026-09-13",
+        "g": {},
+        "m": 574,
+        "w": 295,
+        "l": 279,
+        "t": 309660,
+        "k": 2.58,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-2",
+          "Support": "emerald-4"
+        }
+      },
+      {
+        "d": "2026-09-14",
+        "g": {},
+        "m": 592,
+        "w": 306,
+        "l": 286,
+        "t": 321149,
+        "k": 2.58,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-2",
+          "Support": "emerald-4"
         }
       },
       {
@@ -12639,6 +18201,72 @@ const PLAYERS_ALL = [
           "lifeweaver": 1,
           "widowmaker": 1,
           "winston": 1
+        },
+        "m": 623,
+        "w": 319,
+        "l": 304,
+        "t": 335782,
+        "k": 2.58,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-2",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-09-16",
+        "g": {},
+        "m": 628,
+        "w": 322,
+        "l": 306,
+        "t": 338545,
+        "k": 2.58,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-2",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-09-17",
+        "g": {},
+        "m": 645,
+        "w": 331,
+        "l": 314,
+        "t": 350283,
+        "k": 2.57,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-2",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-09-18",
+        "g": {},
+        "m": 655,
+        "w": 338,
+        "l": 317,
+        "t": 354883,
+        "k": 2.57,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-2",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-09-19",
+        "g": {},
+        "m": 659,
+        "w": 342,
+        "l": 317,
+        "t": 357297,
+        "k": 2.57,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-2",
+          "Support": "emerald-5"
         }
       },
       {
@@ -12662,6 +18290,16 @@ const PLAYERS_ALL = [
           "jetpack-cat": 1,
           "lifeweaver": 1,
           "widowmaker": 2
+        },
+        "m": 676,
+        "w": 356,
+        "l": 320,
+        "t": 365230,
+        "k": 2.57,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-2",
+          "Support": "emerald-5"
         }
       },
       {
@@ -12680,6 +18318,30 @@ const PLAYERS_ALL = [
           "dva": 1,
           "illari": 1,
           "lifeweaver": 1
+        },
+        "m": 696,
+        "w": 364,
+        "l": 332,
+        "t": 375452,
+        "k": 2.57,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-2",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-09-22",
+        "g": {},
+        "m": 696,
+        "w": 364,
+        "l": 332,
+        "t": 375452,
+        "k": 2.57,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-2",
+          "Support": "emerald-5"
         }
       },
       {
@@ -12691,6 +18353,16 @@ const PLAYERS_ALL = [
           "moira": 2,
           "reinhardt": 1,
           "lifeweaver": 1
+        },
+        "m": 704,
+        "w": 367,
+        "l": 337,
+        "t": 379859,
+        "k": 2.57,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-2",
+          "Support": "emerald-5"
         }
       },
       {
@@ -12701,6 +18373,16 @@ const PLAYERS_ALL = [
           "mauga": 1,
           "orisa": 1,
           "reinhardt": 1
+        },
+        "m": 733,
+        "w": 382,
+        "l": 351,
+        "t": 395857,
+        "k": 2.56,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-2",
+          "Support": "emerald-5"
         }
       },
       {
@@ -12715,6 +18397,16 @@ const PLAYERS_ALL = [
           "reinhardt": 3,
           "soldier-76": 1,
           "lifeweaver": 2
+        },
+        "m": 747,
+        "w": 390,
+        "l": 357,
+        "t": 404799,
+        "k": 2.56,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-1",
+          "Support": "emerald-5"
         }
       },
       {
@@ -12725,6 +18417,16 @@ const PLAYERS_ALL = [
           "mauga": 1,
           "moira": 3,
           "reinhardt": 5
+        },
+        "m": 760,
+        "w": 397,
+        "l": 363,
+        "t": 413023,
+        "k": 2.57,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "gold-1",
+          "Support": "emerald-5"
         }
       },
       {
@@ -12739,6 +18441,16 @@ const PLAYERS_ALL = [
           "sigma": 2,
           "winston": 2,
           "lifeweaver": 1
+        },
+        "m": 777,
+        "w": 408,
+        "l": 369,
+        "t": 420671,
+        "k": 2.59,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "gold-1",
+          "Support": "emerald-5"
         }
       },
       {
@@ -12753,25 +18465,219 @@ const PLAYERS_ALL = [
           "roadhog": 2,
           "winston": 1,
           "hazard": 1
+        },
+        "m": 788,
+        "w": 412,
+        "l": 376,
+        "t": 425734,
+        "k": 2.59,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "gold-1",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-09-29",
+        "g": {},
+        "m": 815,
+        "w": 426,
+        "l": 389,
+        "t": 440327,
+        "k": 2.6,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "gold-1",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-09-30",
+        "g": {},
+        "m": 838,
+        "w": 436,
+        "l": 402,
+        "t": 451913,
+        "k": 2.6,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-10-01",
+        "g": {},
+        "m": 838,
+        "w": 436,
+        "l": 402,
+        "t": 451913,
+        "k": 2.6,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-10-02",
+        "g": {},
+        "m": 838,
+        "w": 436,
+        "l": 402,
+        "t": 451913,
+        "k": 2.6,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-10-03",
+        "g": {},
+        "m": 838,
+        "w": 436,
+        "l": 402,
+        "t": 451913,
+        "k": 2.6,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-10-04",
+        "g": {},
+        "m": 838,
+        "w": 436,
+        "l": 402,
+        "t": 451913,
+        "k": 2.6,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-10-05",
+        "g": {},
+        "m": 838,
+        "w": 436,
+        "l": 402,
+        "t": 451913,
+        "k": 2.6,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-10-06",
+        "g": {},
+        "m": 853,
+        "w": 441,
+        "l": 412,
+        "t": 460050,
+        "k": 2.6,
+        "r": {
+          "Tank": "gold-1",
+          "Damage": "platinum-5",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-10-07",
+        "g": {},
+        "m": 868,
+        "w": 448,
+        "l": 420,
+        "t": 468654,
+        "k": 2.6,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "gold-1",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-10-08",
+        "g": {},
+        "m": 883,
+        "w": 456,
+        "l": 427,
+        "t": 476124,
+        "k": 2.6,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "gold-1",
+          "Support": "emerald-5"
+        }
+      },
+      {
+        "d": "2026-10-09",
+        "g": {},
+        "m": 675,
+        "w": 337,
+        "l": 338,
+        "t": 337914,
+        "k": 2.53,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "gold-1",
+          "Support": "platinum-1"
+        }
+      },
+      {
+        "d": "2026-10-10",
+        "g": {},
+        "m": 687,
+        "w": 344,
+        "l": 343,
+        "t": 345221,
+        "k": 2.52,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "gold-1",
+          "Support": "platinum-1"
+        }
+      },
+      {
+        "d": "2026-10-11",
+        "g": {},
+        "m": 702,
+        "w": 354,
+        "l": 348,
+        "t": 353453,
+        "k": 2.52,
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "gold-1",
+          "Support": "platinum-1"
         }
       },
       {
         "d": "2026-10-12",
-        "g": {
-          "doctrine": 7,
-          "junkrat": 5,
-          "orisa": 3,
-          "reinhardt": 3,
-          "ana": 5,
-          "dva": 1,
-          "hazard": 4,
-          "lifeweaver": 12,
-          "symmetra": 1,
-          "torbjorn": 1,
-          "vendetta": 17,
-          "widowmaker": 2,
-          "winston": 1,
-          "wuyang": 3
+        "g": {},
+        "m": 721,
+        "w": 364,
+        "l": 357,
+        "t": 363325,
+        "k": 2.51,
+        "tot": {
+          "e": 8968,
+          "a": 872,
+          "dd": 3926,
+          "dm": 5421026,
+          "he": 2324688
+        },
+        "r": {
+          "Tank": "gold-3",
+          "Damage": "gold-1",
+          "Support": "platinum-1"
         }
       }
     ]
@@ -12810,7 +18716,14 @@ const PLAYERS_ALL = [
       "deaths": 5.54,
       "dmg": 7801.72,
       "heal": 4213.31,
-      "time": 5359036
+      "time": 5359036,
+      "tot": {
+        "e": 134685,
+        "a": 24126,
+        "dd": 49468,
+        "dm": 69682805,
+        "he": 37632102
+      }
     },
     "roles": {
       "Tank": {
@@ -15402,17 +21315,101 @@ const PLAYERS_ALL = [
     },
     "recent": [
       {
-        "d": "2026-09-10",
-        "g": {
-          "ana": 6,
-          "cassidy": 4,
-          "genji": 3,
-          "illari": 1,
-          "sojourn": 3,
-          "baptiste": 1,
-          "wuyang": 1,
-          "tracer": 1,
-          "sombra": 1
+        "d": "2026-09-13",
+        "g": {},
+        "m": 10007,
+        "w": 5212,
+        "l": 4795,
+        "t": 5236270,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
+        }
+      },
+      {
+        "d": "2026-09-14",
+        "g": {},
+        "m": 10007,
+        "w": 5212,
+        "l": 4795,
+        "t": 5236270,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
+        }
+      },
+      {
+        "d": "2026-09-15",
+        "g": {},
+        "m": 10007,
+        "w": 5212,
+        "l": 4795,
+        "t": 5236270,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
+        }
+      },
+      {
+        "d": "2026-09-16",
+        "g": {},
+        "m": 10027,
+        "w": 5227,
+        "l": 4800,
+        "t": 5246354,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
+        }
+      },
+      {
+        "d": "2026-09-17",
+        "g": {},
+        "m": 10048,
+        "w": 5237,
+        "l": 4811,
+        "t": 5260133,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
+        }
+      },
+      {
+        "d": "2026-09-18",
+        "g": {},
+        "m": 10067,
+        "w": 5246,
+        "l": 4821,
+        "t": 5269671,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
+        }
+      },
+      {
+        "d": "2026-09-19",
+        "g": {},
+        "m": 10067,
+        "w": 5246,
+        "l": 4821,
+        "t": 5269671,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
         }
       },
       {
@@ -15438,6 +21435,58 @@ const PLAYERS_ALL = [
           "mizuki": 1,
           "shion": 2,
           "wuyang": 4
+        },
+        "m": 10067,
+        "w": 5246,
+        "l": 4821,
+        "t": 5269671,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
+        }
+      },
+      {
+        "d": "2026-09-21",
+        "g": {},
+        "m": 10067,
+        "w": 5246,
+        "l": 4821,
+        "t": 5269671,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
+        }
+      },
+      {
+        "d": "2026-09-22",
+        "g": {},
+        "m": 10067,
+        "w": 5246,
+        "l": 4821,
+        "t": 5269671,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
+        }
+      },
+      {
+        "d": "2026-09-23",
+        "g": {},
+        "m": 10067,
+        "w": 5246,
+        "l": 4821,
+        "t": 5269671,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
         }
       },
       {
@@ -15450,6 +21499,16 @@ const PLAYERS_ALL = [
           "lucio": 1,
           "shion": 3,
           "wuyang": 1
+        },
+        "m": 10096,
+        "w": 5259,
+        "l": 4837,
+        "t": 5287892,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
         }
       },
       {
@@ -15464,6 +21523,16 @@ const PLAYERS_ALL = [
           "dva": 1,
           "shion": 1,
           "wuyang": 4
+        },
+        "m": 10110,
+        "w": 5268,
+        "l": 4842,
+        "t": 5294066,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
         }
       },
       {
@@ -15471,6 +21540,16 @@ const PLAYERS_ALL = [
         "g": {
           "cassidy": 1,
           "vendetta": 1
+        },
+        "m": 10112,
+        "w": 5270,
+        "l": 4842,
+        "t": 5295500,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "diamond-4"
         }
       },
       {
@@ -15485,6 +21564,16 @@ const PLAYERS_ALL = [
           "tracer": 3,
           "wuyang": 3,
           "vendetta": 1
+        },
+        "m": 10140,
+        "w": 5290,
+        "l": 4850,
+        "t": 5311641,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
         }
       },
       {
@@ -15497,29 +21586,219 @@ const PLAYERS_ALL = [
           "wuyang": 1,
           "jetpack-cat": 2,
           "vendetta": 2
+        },
+        "m": 10155,
+        "w": 5300,
+        "l": 4855,
+        "t": 5319168,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-09-29",
+        "g": {},
+        "m": 10155,
+        "w": 5300,
+        "l": 4855,
+        "t": 5319168,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-09-30",
+        "g": {},
+        "m": 10155,
+        "w": 5300,
+        "l": 4855,
+        "t": 5319168,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-10-01",
+        "g": {},
+        "m": 10155,
+        "w": 5300,
+        "l": 4855,
+        "t": 5319168,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-10-02",
+        "g": {},
+        "m": 10155,
+        "w": 5300,
+        "l": 4855,
+        "t": 5319168,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-10-03",
+        "g": {},
+        "m": 10155,
+        "w": 5300,
+        "l": 4855,
+        "t": 5319168,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-10-04",
+        "g": {},
+        "m": 10155,
+        "w": 5300,
+        "l": 4855,
+        "t": 5319168,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-10-05",
+        "g": {},
+        "m": 10155,
+        "w": 5300,
+        "l": 4855,
+        "t": 5319168,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-10-06",
+        "g": {},
+        "m": 10177,
+        "w": 5317,
+        "l": 4860,
+        "t": 5330058,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-10-07",
+        "g": {},
+        "m": 10191,
+        "w": 5322,
+        "l": 4869,
+        "t": 5337252,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-10-08",
+        "g": {},
+        "m": 10200,
+        "w": 5322,
+        "l": 4878,
+        "t": 5342063,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-10-09",
+        "g": {},
+        "m": 10200,
+        "w": 5322,
+        "l": 4878,
+        "t": 5342063,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-10-10",
+        "g": {},
+        "m": 10218,
+        "w": 5329,
+        "l": 4889,
+        "t": 5352286,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
+        }
+      },
+      {
+        "d": "2026-10-11",
+        "g": {},
+        "m": 10229,
+        "w": 5337,
+        "l": 4892,
+        "t": 5359036,
+        "k": 3.21,
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
         }
       },
       {
         "d": "2026-10-12",
-        "g": {
-          "ana": 17,
-          "brigitte": 1,
-          "cassidy": 8,
-          "genji": 10,
-          "illari": 1,
-          "kiriko": 3,
-          "moira": 2,
-          "pharah": 2,
-          "shion": 4,
-          "sombra": 3,
-          "tracer": 10,
-          "winston": 5,
-          "wuyang": 3,
-          "anran": 1,
-          "dmon": 1,
-          "jetpack-cat": 1,
-          "widowmaker": 1,
-          "zenyatta": 1
+        "g": {},
+        "m": 10229,
+        "w": 5337,
+        "l": 4892,
+        "t": 5359036,
+        "k": 3.21,
+        "tot": {
+          "e": 134685,
+          "a": 24126,
+          "dd": 49468,
+          "dm": 69682805,
+          "he": 37632102
+        },
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-5",
+          "Support": "master-5"
         }
       }
     ]
@@ -15554,7 +21833,14 @@ const PLAYERS_ALL = [
       "deaths": 6.87,
       "dmg": 8093.67,
       "heal": 3154.7,
-      "time": 491738
+      "time": 491738,
+      "tot": {
+        "e": 11455,
+        "a": 1597,
+        "dd": 5627,
+        "dm": 6633276,
+        "he": 2585479
+      }
     },
     "roles": {
       "Tank": {
@@ -18194,30 +24480,147 @@ const PLAYERS_ALL = [
     },
     "recent": [
       {
-        "d": "2026-09-10",
-        "g": {
-          "doomfist": 3,
-          "winston": 1,
-          "orisa": 2
-        }
-      },
-      {
-        "d": "2026-09-11",
-        "g": {
-          "cassidy": 1,
-          "soldier-76": 1
-        }
-      },
-      {
         "d": "2026-09-13",
         "g": {
           "reaper": 1
+        },
+        "m": 977,
+        "w": 503,
+        "l": 474,
+        "t": 479812,
+        "k": 2.3,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-14",
+        "g": {},
+        "m": 977,
+        "w": 503,
+        "l": 474,
+        "t": 479812,
+        "k": 2.3,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
         }
       },
       {
         "d": "2026-09-15",
         "g": {
           "doctrine": 1
+        },
+        "m": 978,
+        "w": 503,
+        "l": 475,
+        "t": 480312,
+        "k": 2.3,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-16",
+        "g": {},
+        "m": 978,
+        "w": 503,
+        "l": 475,
+        "t": 480312,
+        "k": 2.3,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-17",
+        "g": {},
+        "m": 978,
+        "w": 503,
+        "l": 475,
+        "t": 480312,
+        "k": 2.3,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-18",
+        "g": {},
+        "m": 978,
+        "w": 503,
+        "l": 475,
+        "t": 480312,
+        "k": 2.3,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-19",
+        "g": {},
+        "m": 978,
+        "w": 503,
+        "l": 475,
+        "t": 480312,
+        "k": 2.3,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-20",
+        "g": {},
+        "m": 978,
+        "w": 503,
+        "l": 475,
+        "t": 480312,
+        "k": 2.3,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-21",
+        "g": {},
+        "m": 978,
+        "w": 503,
+        "l": 475,
+        "t": 480312,
+        "k": 2.3,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-22",
+        "g": {},
+        "m": 978,
+        "w": 503,
+        "l": 475,
+        "t": 480312,
+        "k": 2.3,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
         }
       },
       {
@@ -18226,17 +24629,289 @@ const PLAYERS_ALL = [
           "reaper": 3,
           "bastion": 1,
           "orisa": 1
+        },
+        "m": 983,
+        "w": 504,
+        "l": 479,
+        "t": 482849,
+        "k": 2.29,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-24",
+        "g": {},
+        "m": 983,
+        "w": 504,
+        "l": 479,
+        "t": 482849,
+        "k": 2.29,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-25",
+        "g": {},
+        "m": 983,
+        "w": 504,
+        "l": 479,
+        "t": 482849,
+        "k": 2.29,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-26",
+        "g": {},
+        "m": 983,
+        "w": 504,
+        "l": 479,
+        "t": 482849,
+        "k": 2.29,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-27",
+        "g": {},
+        "m": 983,
+        "w": 504,
+        "l": 479,
+        "t": 482849,
+        "k": 2.29,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-28",
+        "g": {},
+        "m": 983,
+        "w": 504,
+        "l": 479,
+        "t": 482849,
+        "k": 2.29,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-29",
+        "g": {},
+        "m": 983,
+        "w": 504,
+        "l": 479,
+        "t": 482849,
+        "k": 2.29,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-30",
+        "g": {},
+        "m": 983,
+        "w": 504,
+        "l": 479,
+        "t": 482849,
+        "k": 2.29,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-01",
+        "g": {},
+        "m": 983,
+        "w": 504,
+        "l": 479,
+        "t": 482849,
+        "k": 2.29,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-02",
+        "g": {},
+        "m": 983,
+        "w": 504,
+        "l": 479,
+        "t": 482849,
+        "k": 2.29,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-03",
+        "g": {},
+        "m": 983,
+        "w": 504,
+        "l": 479,
+        "t": 482849,
+        "k": 2.29,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-04",
+        "g": {},
+        "m": 983,
+        "w": 504,
+        "l": 479,
+        "t": 482849,
+        "k": 2.29,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-05",
+        "g": {},
+        "m": 983,
+        "w": 504,
+        "l": 479,
+        "t": 482849,
+        "k": 2.29,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-06",
+        "g": {},
+        "m": 987,
+        "w": 507,
+        "l": 480,
+        "t": 485166,
+        "k": 2.3,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-07",
+        "g": {},
+        "m": 988,
+        "w": 508,
+        "l": 480,
+        "t": 485622,
+        "k": 2.3,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-08",
+        "g": {},
+        "m": 994,
+        "w": 513,
+        "l": 481,
+        "t": 489078,
+        "k": 2.32,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-09",
+        "g": {},
+        "m": 999,
+        "w": 513,
+        "l": 486,
+        "t": 491738,
+        "k": 2.32,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-10",
+        "g": {},
+        "m": 999,
+        "w": 513,
+        "l": 486,
+        "t": 491738,
+        "k": 2.32,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-11",
+        "g": {},
+        "m": 999,
+        "w": 513,
+        "l": 486,
+        "t": 491738,
+        "k": 2.32,
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
         }
       },
       {
         "d": "2026-10-12",
-        "g": {
-          "doctrine": 1,
-          "echo": 1,
-          "hanzo": 1,
-          "sierra": 2,
-          "soldier-76": 1,
-          "sombra": 10
+        "g": {},
+        "m": 999,
+        "w": 513,
+        "l": 486,
+        "t": 491738,
+        "k": 2.32,
+        "tot": {
+          "e": 11455,
+          "a": 1597,
+          "dd": 5627,
+          "dm": 6633276,
+          "he": 2585479
+        },
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
         }
       }
     ]
@@ -18282,7 +24957,14 @@ const PLAYERS_ALL = [
       "deaths": 7.86,
       "dmg": 9013.85,
       "heal": 2760.03,
-      "time": 412202
+      "time": 412202,
+      "tot": {
+        "e": 9897,
+        "a": 1229,
+        "dd": 5401,
+        "dm": 6192544,
+        "he": 1896150
+      }
     },
     "roles": {
       "Tank": {
@@ -20682,33 +27364,173 @@ const PLAYERS_ALL = [
     },
     "recent": [
       {
-        "d": "2026-09-10",
-        "g": {
-          "ana": 2,
-          "baptiste": 2,
-          "pharah": 1,
-          "reaper": 1,
-          "soldier-76": 1
+        "d": "2026-09-13",
+        "g": {},
+        "m": 799,
+        "w": 379,
+        "l": 420,
+        "t": 409418,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
         }
       },
       {
-        "d": "2026-09-11",
-        "g": {
-          "echo": 1,
-          "genji": 1
+        "d": "2026-09-14",
+        "g": {},
+        "m": 799,
+        "w": 379,
+        "l": 420,
+        "t": 409418,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
         }
       },
       {
-        "d": "2026-09-12",
-        "g": {
-          "ana": 1,
-          "soldier-76": 1
+        "d": "2026-09-15",
+        "g": {},
+        "m": 799,
+        "w": 379,
+        "l": 420,
+        "t": 409418,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-16",
+        "g": {},
+        "m": 799,
+        "w": 379,
+        "l": 420,
+        "t": 409418,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-17",
+        "g": {},
+        "m": 799,
+        "w": 379,
+        "l": 420,
+        "t": 409418,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-18",
+        "g": {},
+        "m": 799,
+        "w": 379,
+        "l": 420,
+        "t": 409418,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-19",
+        "g": {},
+        "m": 800,
+        "w": 379,
+        "l": 421,
+        "t": 410033,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
         }
       },
       {
         "d": "2026-09-20",
         "g": {
           "ashe": 1
+        },
+        "m": 800,
+        "w": 379,
+        "l": 421,
+        "t": 410033,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-21",
+        "g": {},
+        "m": 800,
+        "w": 379,
+        "l": 421,
+        "t": 410033,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-22",
+        "g": {},
+        "m": 800,
+        "w": 379,
+        "l": 421,
+        "t": 410033,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-23",
+        "g": {},
+        "m": 800,
+        "w": 379,
+        "l": 421,
+        "t": 410033,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-24",
+        "g": {},
+        "m": 800,
+        "w": 379,
+        "l": 421,
+        "t": 410033,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
         }
       },
       {
@@ -20718,6 +27540,261 @@ const PLAYERS_ALL = [
           "freja": 1,
           "pharah": 1,
           "sojourn": 1
+        },
+        "m": 804,
+        "w": 381,
+        "l": 423,
+        "t": 412202,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-26",
+        "g": {},
+        "m": 804,
+        "w": 381,
+        "l": 423,
+        "t": 412202,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-27",
+        "g": {},
+        "m": 804,
+        "w": 381,
+        "l": 423,
+        "t": 412202,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-28",
+        "g": {},
+        "m": 804,
+        "w": 381,
+        "l": 423,
+        "t": 412202,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-29",
+        "g": {},
+        "m": 804,
+        "w": 381,
+        "l": 423,
+        "t": 412202,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-09-30",
+        "g": {},
+        "m": 804,
+        "w": 381,
+        "l": 423,
+        "t": 412202,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-10-01",
+        "g": {},
+        "m": 804,
+        "w": 381,
+        "l": 423,
+        "t": 412202,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-10-02",
+        "g": {},
+        "m": 804,
+        "w": 381,
+        "l": 423,
+        "t": 412202,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-10-03",
+        "g": {},
+        "m": 804,
+        "w": 381,
+        "l": 423,
+        "t": 412202,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-10-04",
+        "g": {},
+        "m": 804,
+        "w": 381,
+        "l": 423,
+        "t": 412202,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-10-05",
+        "g": {},
+        "m": 804,
+        "w": 381,
+        "l": 423,
+        "t": 412202,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-10-06",
+        "g": {},
+        "m": 804,
+        "w": 381,
+        "l": 423,
+        "t": 412202,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-10-07",
+        "g": {},
+        "m": 804,
+        "w": 381,
+        "l": 423,
+        "t": 412202,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-10-08",
+        "g": {},
+        "m": 804,
+        "w": 381,
+        "l": 423,
+        "t": 412202,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-10-09",
+        "g": {},
+        "m": 804,
+        "w": 381,
+        "l": 423,
+        "t": 412202,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-10-10",
+        "g": {},
+        "m": 804,
+        "w": 381,
+        "l": 423,
+        "t": 412202,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-10-11",
+        "g": {},
+        "m": 804,
+        "w": 381,
+        "l": 423,
+        "t": 412202,
+        "k": 2.06,
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        }
+      },
+      {
+        "d": "2026-10-12",
+        "g": {},
+        "m": 804,
+        "w": 381,
+        "l": 423,
+        "t": 412202,
+        "k": 2.06,
+        "tot": {
+          "e": 9897,
+          "a": 1229,
+          "dd": 5401,
+          "dm": 6192544,
+          "he": 1896150
+        },
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
         }
       }
     ]
@@ -20748,7 +27825,14 @@ const PLAYERS_ALL = [
       "deaths": 7.43,
       "dmg": 6990.53,
       "heal": 2575.46,
-      "time": 177853
+      "time": 177853,
+      "tot": {
+        "e": 3630,
+        "a": 488,
+        "dd": 2203,
+        "dm": 2072145,
+        "he": 763421
+      }
     },
     "roles": {
       "Tank": {
@@ -22764,20 +29848,435 @@ const PLAYERS_ALL = [
     },
     "recent": [
       {
+        "d": "2026-09-13",
+        "g": {},
+        "m": 336,
+        "w": 148,
+        "l": 188,
+        "t": 166142,
+        "k": 1.85,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-14",
+        "g": {},
+        "m": 336,
+        "w": 148,
+        "l": 188,
+        "t": 166142,
+        "k": 1.85,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-15",
+        "g": {},
+        "m": 336,
+        "w": 148,
+        "l": 188,
+        "t": 166142,
+        "k": 1.85,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-16",
+        "g": {},
+        "m": 350,
+        "w": 158,
+        "l": 192,
+        "t": 172961,
+        "k": 1.87,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-17",
+        "g": {},
+        "m": 350,
+        "w": 158,
+        "l": 192,
+        "t": 172961,
+        "k": 1.87,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-18",
+        "g": {},
+        "m": 350,
+        "w": 158,
+        "l": 192,
+        "t": 172961,
+        "k": 1.87,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-19",
+        "g": {},
+        "m": 350,
+        "w": 158,
+        "l": 192,
+        "t": 172961,
+        "k": 1.87,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
         "d": "2026-09-20",
         "g": {
           "ana": 4,
           "doctrine": 6,
           "lifeweaver": 1,
           "moira": 3
+        },
+        "m": 350,
+        "w": 158,
+        "l": 192,
+        "t": 172961,
+        "k": 1.87,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-21",
+        "g": {},
+        "m": 350,
+        "w": 158,
+        "l": 192,
+        "t": 172961,
+        "k": 1.87,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-22",
+        "g": {},
+        "m": 350,
+        "w": 158,
+        "l": 192,
+        "t": 172961,
+        "k": 1.87,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-23",
+        "g": {},
+        "m": 350,
+        "w": 158,
+        "l": 192,
+        "t": 172961,
+        "k": 1.87,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-24",
+        "g": {},
+        "m": 350,
+        "w": 158,
+        "l": 192,
+        "t": 172961,
+        "k": 1.87,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-25",
+        "g": {},
+        "m": 350,
+        "w": 158,
+        "l": 192,
+        "t": 172961,
+        "k": 1.87,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-26",
+        "g": {},
+        "m": 350,
+        "w": 158,
+        "l": 192,
+        "t": 172961,
+        "k": 1.87,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-27",
+        "g": {},
+        "m": 350,
+        "w": 158,
+        "l": 192,
+        "t": 172961,
+        "k": 1.87,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-28",
+        "g": {},
+        "m": 350,
+        "w": 158,
+        "l": 192,
+        "t": 172961,
+        "k": 1.87,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-29",
+        "g": {},
+        "m": 350,
+        "w": 158,
+        "l": 192,
+        "t": 172961,
+        "k": 1.87,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-30",
+        "g": {},
+        "m": 350,
+        "w": 158,
+        "l": 192,
+        "t": 172961,
+        "k": 1.87,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-01",
+        "g": {},
+        "m": 350,
+        "w": 158,
+        "l": 192,
+        "t": 172961,
+        "k": 1.87,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-02",
+        "g": {},
+        "m": 350,
+        "w": 158,
+        "l": 192,
+        "t": 172961,
+        "k": 1.87,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-03",
+        "g": {},
+        "m": 350,
+        "w": 158,
+        "l": 192,
+        "t": 172961,
+        "k": 1.87,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-04",
+        "g": {},
+        "m": 350,
+        "w": 158,
+        "l": 192,
+        "t": 172961,
+        "k": 1.87,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-05",
+        "g": {},
+        "m": 350,
+        "w": 158,
+        "l": 192,
+        "t": 172961,
+        "k": 1.87,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-06",
+        "g": {},
+        "m": 350,
+        "w": 158,
+        "l": 192,
+        "t": 172961,
+        "k": 1.87,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-07",
+        "g": {},
+        "m": 350,
+        "w": 159,
+        "l": 191,
+        "t": 172961,
+        "k": 1.87,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-08",
+        "g": {},
+        "m": 360,
+        "w": 162,
+        "l": 198,
+        "t": 177853,
+        "k": 1.87,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-09",
+        "g": {},
+        "m": 360,
+        "w": 162,
+        "l": 198,
+        "t": 177853,
+        "k": 1.87,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-10",
+        "g": {},
+        "m": 360,
+        "w": 162,
+        "l": 198,
+        "t": 177853,
+        "k": 1.87,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-11",
+        "g": {},
+        "m": 360,
+        "w": 162,
+        "l": 198,
+        "t": 177853,
+        "k": 1.87,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
         }
       },
       {
         "d": "2026-10-12",
-        "g": {
-          "ana": 8,
-          "brigitte": 1,
-          "lifeweaver": 1
+        "g": {},
+        "m": 360,
+        "w": 162,
+        "l": 198,
+        "t": 177853,
+        "k": 1.87,
+        "tot": {
+          "e": 3630,
+          "a": 488,
+          "dd": 2203,
+          "dm": 2072145,
+          "he": 763421
+        },
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
         }
       }
     ]
@@ -22808,7 +30307,14 @@ const PLAYERS_ALL = [
       "deaths": 7.35,
       "dmg": 4894.19,
       "heal": 4192.04,
-      "time": 82059
+      "time": 82059,
+      "tot": {
+        "e": 1267,
+        "a": 140,
+        "dd": 1005,
+        "dm": 669354,
+        "he": 573324
+      }
     },
     "roles": {
       "Damage": {
@@ -23276,9 +30782,430 @@ const PLAYERS_ALL = [
     },
     "recent": [
       {
-        "d": "2026-09-12",
-        "g": {
-          "emre": 2
+        "d": "2026-09-13",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-14",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-15",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-16",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-17",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-18",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-19",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-20",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-21",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-22",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-23",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-24",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-25",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-26",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-27",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-28",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-29",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-09-30",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-01",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-02",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-03",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-04",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-05",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-06",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-07",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-08",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-09",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-10",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-11",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        }
+      },
+      {
+        "d": "2026-10-12",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "tot": {
+          "e": 1267,
+          "a": 140,
+          "dd": 1005,
+          "dm": 669354,
+          "he": 573324
+        },
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
         }
       }
     ]
@@ -23317,7 +31244,14 @@ const PLAYERS_ALL = [
       "deaths": 7.52,
       "dmg": 5899.95,
       "heal": 4531.27,
-      "time": 158539
+      "time": 158539,
+      "tot": {
+        "e": 2798,
+        "a": 236,
+        "dd": 1987,
+        "dm": 1558954,
+        "he": 1197305
+      }
     },
     "roles": {
       "Tank": {
@@ -24901,6 +32835,160 @@ const PLAYERS_ALL = [
     },
     "recent": [
       {
+        "d": "2026-09-13",
+        "g": {},
+        "m": 162,
+        "w": 71,
+        "l": 91,
+        "t": 84225,
+        "k": 1.53,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-3"
+        }
+      },
+      {
+        "d": "2026-09-14",
+        "g": {},
+        "m": 162,
+        "w": 71,
+        "l": 91,
+        "t": 84225,
+        "k": 1.53,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-3"
+        }
+      },
+      {
+        "d": "2026-09-15",
+        "g": {},
+        "m": 162,
+        "w": 71,
+        "l": 91,
+        "t": 84225,
+        "k": 1.53,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-3"
+        }
+      },
+      {
+        "d": "2026-09-16",
+        "g": {},
+        "m": 162,
+        "w": 71,
+        "l": 91,
+        "t": 84225,
+        "k": 1.53,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-3"
+        }
+      },
+      {
+        "d": "2026-09-17",
+        "g": {},
+        "m": 162,
+        "w": 71,
+        "l": 91,
+        "t": 84225,
+        "k": 1.53,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-3"
+        }
+      },
+      {
+        "d": "2026-09-18",
+        "g": {},
+        "m": 162,
+        "w": 71,
+        "l": 91,
+        "t": 84225,
+        "k": 1.53,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-3"
+        }
+      },
+      {
+        "d": "2026-09-19",
+        "g": {},
+        "m": 162,
+        "w": 71,
+        "l": 91,
+        "t": 84225,
+        "k": 1.53,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-3"
+        }
+      },
+      {
+        "d": "2026-09-20",
+        "g": {},
+        "m": 162,
+        "w": 71,
+        "l": 91,
+        "t": 84225,
+        "k": 1.53,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-3"
+        }
+      },
+      {
+        "d": "2026-09-21",
+        "g": {},
+        "m": 162,
+        "w": 71,
+        "l": 91,
+        "t": 84225,
+        "k": 1.53,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-3"
+        }
+      },
+      {
+        "d": "2026-09-22",
+        "g": {},
+        "m": 162,
+        "w": 71,
+        "l": 91,
+        "t": 84225,
+        "k": 1.53,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-3"
+        }
+      },
+      {
+        "d": "2026-09-23",
+        "g": {},
+        "m": 162,
+        "w": 71,
+        "l": 91,
+        "t": 84225,
+        "k": 1.53,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-3"
+        }
+      },
+      {
         "d": "2026-09-24",
         "g": {
           "anran": 1,
@@ -24910,6 +32998,16 @@ const PLAYERS_ALL = [
           "soldier-76": 1,
           "zenyatta": 1,
           "cassidy": 1
+        },
+        "m": 169,
+        "w": 75,
+        "l": 94,
+        "t": 87253,
+        "k": 1.53,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-3"
         }
       },
       {
@@ -24923,6 +33021,16 @@ const PLAYERS_ALL = [
           "junkrat": 1,
           "lifeweaver": 1,
           "wuyang": 1
+        },
+        "m": 184,
+        "w": 80,
+        "l": 104,
+        "t": 97221,
+        "k": 1.49,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-3"
         }
       },
       {
@@ -24938,6 +33046,16 @@ const PLAYERS_ALL = [
           "cassidy": 2,
           "jetpack-cat": 1,
           "torbjorn": 1
+        },
+        "m": 202,
+        "w": 90,
+        "l": 112,
+        "t": 106385,
+        "k": 1.49,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-2"
         }
       },
       {
@@ -24953,6 +33071,16 @@ const PLAYERS_ALL = [
           "soldier-76": 2,
           "zenyatta": 1,
           "tracer": 1
+        },
+        "m": 222,
+        "w": 98,
+        "l": 124,
+        "t": 117023,
+        "k": 1.5,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-1"
         }
       },
       {
@@ -24963,6 +33091,219 @@ const PLAYERS_ALL = [
           "mizuki": 1,
           "moira": 2,
           "reaper": 2
+        },
+        "m": 229,
+        "w": 101,
+        "l": 128,
+        "t": 120699,
+        "k": 1.52,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-1"
+        }
+      },
+      {
+        "d": "2026-09-29",
+        "g": {},
+        "m": 237,
+        "w": 102,
+        "l": 135,
+        "t": 125579,
+        "k": 1.5,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-4",
+          "Support": "silver-1"
+        }
+      },
+      {
+        "d": "2026-09-30",
+        "g": {},
+        "m": 256,
+        "w": 110,
+        "l": 146,
+        "t": 135234,
+        "k": 1.49,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-4",
+          "Support": "silver-2"
+        }
+      },
+      {
+        "d": "2026-10-01",
+        "g": {},
+        "m": 256,
+        "w": 110,
+        "l": 146,
+        "t": 135234,
+        "k": 1.49,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-4",
+          "Support": "silver-2"
+        }
+      },
+      {
+        "d": "2026-10-02",
+        "g": {},
+        "m": 256,
+        "w": 110,
+        "l": 146,
+        "t": 135234,
+        "k": 1.49,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-4",
+          "Support": "silver-2"
+        }
+      },
+      {
+        "d": "2026-10-03",
+        "g": {},
+        "m": 261,
+        "w": 113,
+        "l": 148,
+        "t": 138634,
+        "k": 1.48,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-2"
+        }
+      },
+      {
+        "d": "2026-10-04",
+        "g": {},
+        "m": 261,
+        "w": 113,
+        "l": 148,
+        "t": 138634,
+        "k": 1.48,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-2"
+        }
+      },
+      {
+        "d": "2026-10-05",
+        "g": {},
+        "m": 261,
+        "w": 113,
+        "l": 148,
+        "t": 138634,
+        "k": 1.48,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-2"
+        }
+      },
+      {
+        "d": "2026-10-06",
+        "g": {},
+        "m": 261,
+        "w": 113,
+        "l": 148,
+        "t": 138634,
+        "k": 1.48,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-2"
+        }
+      },
+      {
+        "d": "2026-10-07",
+        "g": {},
+        "m": 261,
+        "w": 113,
+        "l": 148,
+        "t": 138634,
+        "k": 1.48,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-2"
+        }
+      },
+      {
+        "d": "2026-10-08",
+        "g": {},
+        "m": 261,
+        "w": 113,
+        "l": 148,
+        "t": 138634,
+        "k": 1.48,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-2"
+        }
+      },
+      {
+        "d": "2026-10-09",
+        "g": {},
+        "m": 268,
+        "w": 113,
+        "l": 155,
+        "t": 142079,
+        "k": 1.47,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-2"
+        }
+      },
+      {
+        "d": "2026-10-10",
+        "g": {},
+        "m": 280,
+        "w": 121,
+        "l": 159,
+        "t": 149388,
+        "k": 1.48,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-2"
+        }
+      },
+      {
+        "d": "2026-10-11",
+        "g": {},
+        "m": 280,
+        "w": 121,
+        "l": 159,
+        "t": 149388,
+        "k": 1.48,
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-2"
+        }
+      },
+      {
+        "d": "2026-10-12",
+        "g": {},
+        "m": 296,
+        "w": 127,
+        "l": 169,
+        "t": 158539,
+        "k": 1.53,
+        "tot": {
+          "e": 2798,
+          "a": 236,
+          "dd": 1987,
+          "dm": 1558954,
+          "he": 1197305
+        },
+        "r": {
+          "Tank": null,
+          "Damage": "silver-5",
+          "Support": "silver-2"
         }
       }
     ]
@@ -25001,7 +33342,14 @@ const PLAYERS_ALL = [
       "deaths": 7.04,
       "dmg": 6798.42,
       "heal": 4028.99,
-      "time": 1000739
+      "time": 1000739,
+      "tot": {
+        "e": 20825,
+        "a": 3184,
+        "dd": 11745,
+        "dm": 11339068,
+        "he": 6719946
+      }
     },
     "roles": {
       "Tank": {
@@ -27641,6 +35989,20 @@ const PLAYERS_ALL = [
     },
     "recent": [
       {
+        "d": "2026-09-20",
+        "g": {},
+        "m": 1739,
+        "w": 848,
+        "l": 891,
+        "t": 868726,
+        "k": 2.01,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
         "d": "2026-09-21",
         "g": {
           "brigitte": 1,
@@ -27649,6 +36011,16 @@ const PLAYERS_ALL = [
           "baptiste": 1,
           "echo": 1,
           "hanzo": 1
+        },
+        "m": 1746,
+        "w": 850,
+        "l": 896,
+        "t": 873250,
+        "k": 2.01,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
         }
       },
       {
@@ -27667,6 +36039,16 @@ const PLAYERS_ALL = [
           "ashe": 2,
           "echo": 1,
           "illari": 1
+        },
+        "m": 1766,
+        "w": 861,
+        "l": 905,
+        "t": 881956,
+        "k": 2.02,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
         }
       },
       {
@@ -27682,6 +36064,16 @@ const PLAYERS_ALL = [
           "sierra": 1,
           "winston": 1,
           "zarya": 2
+        },
+        "m": 1778,
+        "w": 864,
+        "l": 914,
+        "t": 888946,
+        "k": 2.02,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
         }
       },
       {
@@ -27694,6 +36086,16 @@ const PLAYERS_ALL = [
           "juno": 1,
           "mauga": 1,
           "sigma": 1
+        },
+        "m": 1785,
+        "w": 864,
+        "l": 921,
+        "t": 894008,
+        "k": 2.02,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
         }
       },
       {
@@ -27706,6 +36108,16 @@ const PLAYERS_ALL = [
           "zenyatta": 1,
           "baptiste": 1,
           "wuyang": 1
+        },
+        "m": 1794,
+        "w": 867,
+        "l": 927,
+        "t": 900555,
+        "k": 2.01,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
         }
       },
       {
@@ -27719,6 +36131,16 @@ const PLAYERS_ALL = [
           "ashe": 1,
           "orisa": 1,
           "wuyang": 1
+        },
+        "m": 1808,
+        "w": 874,
+        "l": 934,
+        "t": 908296,
+        "k": 2.01,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
         }
       },
       {
@@ -27739,6 +36161,16 @@ const PLAYERS_ALL = [
           "hanzo": 1,
           "lucio": 1,
           "sigma": 1
+        },
+        "m": 1829,
+        "w": 885,
+        "l": 944,
+        "t": 919219,
+        "k": 2.01,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
         }
       },
       {
@@ -27753,47 +36185,219 @@ const PLAYERS_ALL = [
           "emre": 1,
           "juno": 1,
           "lucio": 1
+        },
+        "m": 1838,
+        "w": 891,
+        "l": 947,
+        "t": 923608,
+        "k": 2.01,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
+        "d": "2026-09-29",
+        "g": {},
+        "m": 1855,
+        "w": 897,
+        "l": 958,
+        "t": 933408,
+        "k": 2.01,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
+        "d": "2026-09-30",
+        "g": {},
+        "m": 1860,
+        "w": 900,
+        "l": 960,
+        "t": 936159,
+        "k": 2.01,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
+        "d": "2026-10-01",
+        "g": {},
+        "m": 1870,
+        "w": 904,
+        "l": 966,
+        "t": 941148,
+        "k": 2.01,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
+        "d": "2026-10-02",
+        "g": {},
+        "m": 1870,
+        "w": 904,
+        "l": 966,
+        "t": 941148,
+        "k": 2.01,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
+        "d": "2026-10-03",
+        "g": {},
+        "m": 1886,
+        "w": 915,
+        "l": 971,
+        "t": 947714,
+        "k": 2.01,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
+        "d": "2026-10-04",
+        "g": {},
+        "m": 1886,
+        "w": 915,
+        "l": 971,
+        "t": 947714,
+        "k": 2.01,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
+        "d": "2026-10-05",
+        "g": {},
+        "m": 1886,
+        "w": 915,
+        "l": 971,
+        "t": 947714,
+        "k": 2.01,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
+        "d": "2026-10-06",
+        "g": {},
+        "m": 1895,
+        "w": 919,
+        "l": 976,
+        "t": 953467,
+        "k": 2.01,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-3"
+        }
+      },
+      {
+        "d": "2026-10-07",
+        "g": {},
+        "m": 1907,
+        "w": 925,
+        "l": 982,
+        "t": 960989,
+        "k": 2.01,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-4"
+        }
+      },
+      {
+        "d": "2026-10-08",
+        "g": {},
+        "m": 1927,
+        "w": 940,
+        "l": 987,
+        "t": 970664,
+        "k": 2.03,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-4"
+        }
+      },
+      {
+        "d": "2026-10-09",
+        "g": {},
+        "m": 1927,
+        "w": 940,
+        "l": 987,
+        "t": 970664,
+        "k": 2.03,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-4"
+        }
+      },
+      {
+        "d": "2026-10-10",
+        "g": {},
+        "m": 1943,
+        "w": 947,
+        "l": 996,
+        "t": 979481,
+        "k": 2.03,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-4"
+        }
+      },
+      {
+        "d": "2026-10-11",
+        "g": {},
+        "m": 1967,
+        "w": 962,
+        "l": 1005,
+        "t": 990515,
+        "k": 2.04,
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-4"
         }
       },
       {
         "d": "2026-10-12",
-        "g": {
-          "ana": 18,
-          "ashe": 2,
-          "baptiste": 2,
-          "bastion": 1,
-          "brigitte": 3,
-          "cassidy": 3,
-          "genji": 1,
-          "jetpack-cat": 1,
-          "junkrat": 43,
-          "kiriko": 4,
-          "mizuki": 1,
-          "moira": 5,
-          "pharah": 1,
-          "sojourn": 1,
-          "soldier-76": 1,
-          "sombra": 3,
-          "symmetra": 1,
-          "tracer": 1,
-          "zenyatta": 1,
-          "dmon": 3,
-          "doctrine": 4,
-          "doomfist": 4,
-          "dva": 3,
-          "echo": 1,
-          "hazard": 3,
-          "hanzo": 1,
-          "illari": 1,
-          "junker-queen": 5,
-          "lucio": 3,
-          "reinhardt": 2,
-          "roadhog": 5,
-          "sigma": 2,
-          "sierra": 1,
-          "winston": 2,
-          "wuyang": 13,
-          "zarya": 1
+        "g": {},
+        "m": 1985,
+        "w": 970,
+        "l": 1015,
+        "t": 1000739,
+        "k": 2.04,
+        "tot": {
+          "e": 20825,
+          "a": 3184,
+          "dd": 11745,
+          "dm": 11339068,
+          "he": 6719946
+        },
+        "r": {
+          "Tank": null,
+          "Damage": "gold-4",
+          "Support": "gold-4"
         }
       }
     ]
@@ -27836,7 +36440,14 @@ const PLAYERS_ALL = [
       "deaths": 5.77,
       "dmg": 7067.94,
       "heal": 3814.68,
-      "time": 507958
+      "time": 507958,
+      "tot": {
+        "e": 11022,
+        "a": 930,
+        "dd": 4883,
+        "dm": 5983695,
+        "he": 3229493
+      }
     },
     "roles": {
       "Tank": {
@@ -29948,11 +38559,35 @@ const PLAYERS_ALL = [
     },
     "recent": [
       {
+        "d": "2026-09-20",
+        "g": {},
+        "m": 897,
+        "w": 450,
+        "l": 447,
+        "t": 461425,
+        "k": 2.37,
+        "r": {
+          "Tank": "silver-5",
+          "Damage": null,
+          "Support": "silver-5"
+        }
+      },
+      {
         "d": "2026-09-21",
         "g": {
           "kiriko": 3,
           "sigma": 4,
           "winston": 7
+        },
+        "m": 922,
+        "w": 460,
+        "l": 462,
+        "t": 475727,
+        "k": 2.39,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": null,
+          "Support": "silver-5"
         }
       },
       {
@@ -29962,12 +38597,32 @@ const PLAYERS_ALL = [
           "sigma": 1,
           "winston": 1,
           "baptiste": 1
+        },
+        "m": 926,
+        "w": 463,
+        "l": 463,
+        "t": 477742,
+        "k": 2.4,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": null,
+          "Support": "silver-5"
         }
       },
       {
         "d": "2026-09-23",
         "g": {
           "kiriko": 5
+        },
+        "m": 931,
+        "w": 464,
+        "l": 467,
+        "t": 480771,
+        "k": 2.4,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": null,
+          "Support": "bronze-1"
         }
       },
       {
@@ -29989,6 +38644,16 @@ const PLAYERS_ALL = [
           "mizuki": 1,
           "shion": 1,
           "symmetra": 1
+        },
+        "m": 967,
+        "w": 479,
+        "l": 488,
+        "t": 498361,
+        "k": 2.41,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": null,
+          "Support": "bronze-1"
         }
       },
       {
@@ -30006,6 +38671,16 @@ const PLAYERS_ALL = [
           "mauga": 1,
           "mizuki": 1,
           "roadhog": 2
+        },
+        "m": 995,
+        "w": 499,
+        "l": 496,
+        "t": 511255,
+        "k": 2.44,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": null,
+          "Support": "bronze-1"
         }
       },
       {
@@ -30019,6 +38694,16 @@ const PLAYERS_ALL = [
           "sigma": 2,
           "winston": 2,
           "roadhog": 1
+        },
+        "m": 1010,
+        "w": 506,
+        "l": 504,
+        "t": 520035,
+        "k": 2.45,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": null,
+          "Support": "silver-5"
         }
       },
       {
@@ -30031,6 +38716,16 @@ const PLAYERS_ALL = [
           "lifeweaver": 1,
           "soldier-76": 2,
           "tracer": 1
+        },
+        "m": 1025,
+        "w": 519,
+        "l": 506,
+        "t": 529953,
+        "k": 2.47,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": null,
+          "Support": "silver-5"
         }
       },
       {
@@ -30042,34 +38737,219 @@ const PLAYERS_ALL = [
           "sigma": 1,
           "winston": 2,
           "baptiste": 1
+        },
+        "m": 1038,
+        "w": 527,
+        "l": 511,
+        "t": 539714,
+        "k": 2.48,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": null,
+          "Support": "silver-4"
+        }
+      },
+      {
+        "d": "2026-09-29",
+        "g": {},
+        "m": 1061,
+        "w": 534,
+        "l": 527,
+        "t": 551094,
+        "k": 2.45,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": null,
+          "Support": "silver-4"
+        }
+      },
+      {
+        "d": "2026-09-30",
+        "g": {},
+        "m": 1070,
+        "w": 537,
+        "l": 533,
+        "t": 557011,
+        "k": 2.45,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": "bronze-1",
+          "Support": "silver-4"
+        }
+      },
+      {
+        "d": "2026-10-01",
+        "g": {},
+        "m": 1077,
+        "w": 539,
+        "l": 538,
+        "t": 561082,
+        "k": 2.44,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": "bronze-1",
+          "Support": "silver-5"
+        }
+      },
+      {
+        "d": "2026-10-02",
+        "g": {},
+        "m": 1108,
+        "w": 561,
+        "l": 547,
+        "t": 576068,
+        "k": 2.47,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": "bronze-1",
+          "Support": "silver-5"
+        }
+      },
+      {
+        "d": "2026-10-03",
+        "g": {},
+        "m": 1119,
+        "w": 567,
+        "l": 552,
+        "t": 581089,
+        "k": 2.48,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": "bronze-1",
+          "Support": "silver-5"
+        }
+      },
+      {
+        "d": "2026-10-04",
+        "g": {},
+        "m": 1142,
+        "w": 584,
+        "l": 558,
+        "t": 595309,
+        "k": 2.48,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": "bronze-1",
+          "Support": "silver-5"
+        }
+      },
+      {
+        "d": "2026-10-05",
+        "g": {},
+        "m": 1144,
+        "w": 585,
+        "l": 559,
+        "t": 596597,
+        "k": 2.49,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": "bronze-1",
+          "Support": "silver-5"
+        }
+      },
+      {
+        "d": "2026-10-06",
+        "g": {},
+        "m": 1148,
+        "w": 588,
+        "l": 560,
+        "t": 598601,
+        "k": 2.49,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": "bronze-1",
+          "Support": "silver-5"
+        }
+      },
+      {
+        "d": "2026-10-07",
+        "g": {},
+        "m": 1148,
+        "w": 588,
+        "l": 560,
+        "t": 598601,
+        "k": 2.49,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": "bronze-1",
+          "Support": "silver-5"
+        }
+      },
+      {
+        "d": "2026-10-08",
+        "g": {},
+        "m": 1171,
+        "w": 604,
+        "l": 567,
+        "t": 610946,
+        "k": 2.5,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": "bronze-1",
+          "Support": "silver-5"
+        }
+      },
+      {
+        "d": "2026-10-09",
+        "g": {},
+        "m": 1185,
+        "w": 611,
+        "l": 574,
+        "t": 618874,
+        "k": 2.5,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": "bronze-1",
+          "Support": "silver-5"
+        }
+      },
+      {
+        "d": "2026-10-10",
+        "g": {},
+        "m": 1010,
+        "w": 527,
+        "l": 483,
+        "t": 504187,
+        "k": 2.45,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": "bronze-1",
+          "Support": "silver-5"
+        }
+      },
+      {
+        "d": "2026-10-11",
+        "g": {},
+        "m": 1010,
+        "w": 527,
+        "l": 483,
+        "t": 504187,
+        "k": 2.45,
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": "bronze-1",
+          "Support": "silver-5"
         }
       },
       {
         "d": "2026-10-12",
-        "g": {
-          "reaper": 1,
-          "sombra": 3,
-          "tracer": 11,
-          "ana": 6,
-          "baptiste": 2,
-          "cassidy": 1,
-          "dmon": 1,
-          "doctrine": 5,
-          "emre": 1,
-          "genji": 1,
-          "hazard": 1,
-          "jetpack-cat": 1,
-          "juno": 2,
-          "lifeweaver": 3,
-          "mizuki": 2,
-          "orisa": 2,
-          "roadhog": 3,
-          "shion": 3,
-          "sojourn": 3,
-          "soldier-76": 7,
-          "wuyang": 3,
-          "zarya": 1,
-          "zenyatta": 1
+        "g": {},
+        "m": 1018,
+        "w": 530,
+        "l": 488,
+        "t": 507958,
+        "k": 2.45,
+        "tot": {
+          "e": 11022,
+          "a": 930,
+          "dd": 4883,
+          "dm": 5983695,
+          "he": 3229493
+        },
+        "r": {
+          "Tank": "bronze-1",
+          "Damage": "bronze-1",
+          "Support": "silver-5"
         }
       }
     ]

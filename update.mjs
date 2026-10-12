@@ -263,6 +263,11 @@ function mergeStats(list) {
 }
 function toPlayerStats(merged) {
   const overall = toFields(merged.general);
+  /* 累計値(試合/勝敗/時間/キル/アシスト/デス/ダメージ/回復)も保持する。
+     「直近◯日の戦績」は日次スナップショットの差分で作るため、この累計が必要 */
+  const gg = merged.general || {};
+  const nz = (v) => Math.round(Number(v) || 0);
+  const tot = { e: nz(gg.elims), a: nz(gg.assists), dd: nz(gg.deaths), dm: nz(gg.dmg), he: nz(gg.heal) };
   const roles = {};
   for (const role of PLAYER_ORDER) {
     const key = role.toLowerCase();
@@ -281,7 +286,8 @@ function toPlayerStats(merged) {
   heroes.sort((a, b) => b.g - a.g);
   return {
     overall: { matches: overall.g, wins: overall.w, losses: overall.l, wr: overall.wr, kda: overall.kda,
-      elim: overall.elim, deaths: overall.deaths, dmg: overall.dmg, heal: overall.heal, time: overall.time },
+      elim: overall.elim, deaths: overall.deaths, dmg: overall.dmg, heal: overall.heal, time: overall.time,
+      tot },
     roles, heroes
   };
 }
@@ -697,12 +703,28 @@ function applyRecentHeroes(recs, prevList, poolOf) {
       if (diff > 0) gains[slug] = diff;            // 増えたヒーローだけ記録(ファイルを軽く保つ)
     }
     const hist = (Array.isArray(rec.recent) ? rec.recent : []).filter((e) => e && e.d).slice();
-    if (!Object.keys(gains).length) { rec.recent = hist.slice(-RECENT_MAX); continue; }
-    const entry = { d: today, g: gains };
+    /* その日の累計値も記録する(直近の戦績 = 累計の差分で算出する)。
+       試合が無かった日も1行残すことで、日次の推移と期間集計が正確になる */
+    const ov = rec.overall || {};
+    const entry = {
+      d: today, g: gains,
+      m: ov.matches, w: ov.wins, l: ov.losses, t: ov.time, k: ov.kda,
+      tot: ov.tot || null,
+      r: rankSnapshot(rec.ranks)
+    };
     const i = hist.findIndex((e) => e.d === today);
     if (i >= 0) hist[i] = entry; else hist.push(entry);   // 同じ日に複数回走ったら上書き
     rec.recent = hist.slice(-RECENT_MAX);
   }
+}
+/* その日のランク(区分-tier)を短く記録する */
+function rankSnapshot(ranks) {
+  const out = {};
+  for (const r of PLAYER_ORDER) {
+    const rk = ranks && ranks[r];
+    out[r] = rk && rk.division ? `${rk.division}-${rk.tier ?? ''}` : null;
+  }
+  return out;
 }
 
 /* ---------------- serialize ---------------- */
@@ -761,6 +783,8 @@ if (!DRY) {
   applyHeroRankDelta(RECS.map((r) => r.comp).filter(Boolean), PREV.comp, (p) => p.bscore);
   // 最近練習しているキャラ(前回スナップショットとの試合数差分の履歴)
   applyRecentHeroes(RECS.map((r) => r.all).filter(Boolean), PREV.all, (p) => p.bscoreAll || p.bscore);
+  // ランク(コンペ)側にも同じ日次履歴を作る(「直近のランクの戦績」用)
+  applyRecentHeroes(RECS.map((r) => r.comp).filter(Boolean), PREV.comp, (p) => p.bscore);
 }
 const COMP_OUT = RECS.map((r) => r.comp);
 const ALL_OUT = RECS.map((r) => r.all);
