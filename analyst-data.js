@@ -17,7 +17,7 @@ const AZ_TAG_LABEL = {
   antiheal: '回復阻害', sustain: '自己回復', burst: '瞬間火力', aoe: '範囲攻撃',
   ultWipe: '複数キルウルト', cleanse: '状態異常解除', immortal: '無敵・蘇生',
   matrix: '飛来物を消す', deflect: '弾き', turret: '設置物', staticHeal: '設置回復',
-  longHeal: '遠距離回復', shortHeal: '近距離回復', speed: '速度ブースト',
+  longHeal: '遠距離回復', shortHeal: '近距離回復', speed: '速度・攻撃速度ブースト',
   wall: '壁・分断', boop: 'ノックバック', hack: 'ハック', pick: '単体キル'
 };
 
@@ -32,7 +32,7 @@ const AZ_HERO_TAGS = {
   orisa:          ['poke', 'shield', 'cc', 'antiDive', 'sustain'],
   ramattra:       ['shield', 'poke', 'rush', 'brawl', 'cc'],
   reinhardt:      ['shield', 'rush', 'brawl', 'burst', 'ultWipe', 'cc'],
-  roadhog:        ['sustain', 'pick', 'cc', 'burst', 'immobile'],
+  roadhog:        ['sustain', 'pick', 'cc', 'burst', 'immobile', 'matrix'],   // Season 5: Trash Compactor で投射物を吸収
   sigma:          ['shield', 'poke', 'cc', 'aoe', 'ultWipe', 'matrix', 'immobile'],
   winston:        ['dive', 'mobile', 'shield', 'beam', 'brawl', 'ultWipe'],
   'wrecking-ball':['dive', 'mobile', 'cc', 'aoe', 'ultWipe', 'shield', 'boop'],
@@ -52,7 +52,9 @@ const AZ_HERO_TAGS = {
   reaper:         ['flanker', 'brawl', 'burst', 'sustain', 'ultWipe', 'immobile'],
   sojourn:        ['hitscan', 'poke', 'burst', 'mobile', 'pick'],
   'soldier-76':   ['hitscan', 'poke', 'sustain', 'mobile', 'barrierBreak'],
-  sombra:         ['flanker', 'mobile', 'hack', 'burst', 'pick'],
+  /* Season 5 でサポート化。Hack(基本アビリティ)は廃止され、Hotfix(味方を継続回復+設置物ハック)と
+     Cyberspace(敵を弱体化しつつ範囲回復)に。EMP(ウルト)は健在で敵をハックしバリアを剥がす */
+  sombra:         ['shortHeal', 'aoe', 'mobile', 'burst', 'sustain', 'hack'],
   symmetra:       ['beam', 'turret', 'barrierBreak', 'cc', 'immobile', 'aoe'],
   torbjorn:       ['projectile', 'turret', 'antiDive', 'barrierBreak', 'burst'],
   tracer:         ['flanker', 'mobile', 'dive', 'burst', 'pick'],
@@ -76,18 +78,20 @@ const AZ_HERO_TAGS = {
   /* --- 新しいヒーロー(タグは暫定。AZ_TENTATIVE に載せると画面に注記が出る) --- */
   anran:          ['projectile', 'burst', 'mobile'],
   dmon:           ['brawl', 'sustain'],
-  doctrine:       ['longHeal', 'sustain'],
   domina:         ['poke', 'shield'],
   emre:           ['hitscan', 'burst'],
   'jetpack-cat':  ['flyer', 'mobile', 'longHeal'],
   mizuki:         ['shortHeal', 'mobile'],
   shion:          ['flanker', 'mobile', 'burst'],
   sierra:         ['hitscan', 'mobile'],
-  vendetta:       ['brawl', 'mobile', 'burst']
+  vendetta:       ['brawl', 'mobile', 'burst'],
+
+  /* --- Season 5 の新サポート(公式アナウンスのキットから。通常のSupportに分類) --- */
+  doctrine:       ['longHeal', 'poke', 'staticHeal', 'speed', 'sustain']
 };
 
 /* タグが暫定(実装が新しく情報が薄い)ヒーロー: 画面上で注記する */
-const AZ_TENTATIVE = ['anran', 'dmon', 'doctrine', 'domina', 'emre', 'jetpack-cat', 'mizuki', 'shion', 'sierra', 'vendetta'];
+const AZ_TENTATIVE = ['anran', 'dmon', 'domina', 'emre', 'jetpack-cat', 'mizuki', 'shion', 'sierra', 'vendetta'];
 
 /* タグ相性: 自分のタグ a が 相手のタグ b に対して有利(+) / 不利(−) */
 const AZ_COUNTER_TAG = [
@@ -174,13 +178,11 @@ const AZ_COUNTER_TAG = [
 
 /* ヒーロー単位の明確な相性(a が b に対して有利なら正) */
 const AZ_COUNTER_PAIR = [
-  /* ソンブラ: ハックで機動力・アビリティを止める */
-  { a: 'sombra', b: 'doomfist', v: 2.0, why: 'ハックで機動力を止められる' },
-  { a: 'sombra', b: 'wrecking-ball', v: 2.0, why: 'ハックで機動力を止められる' },
-  { a: 'sombra', b: 'genji', v: 1.5, why: 'ハックでブレードを止められる' },
-  { a: 'sombra', b: 'tracer', v: 1.5, why: 'ハックで機動力を止められる' },
-  { a: 'sombra', b: 'pharah', v: 1.5, why: 'ハックで飛行を落とせる' },
-  { a: 'sombra', b: 'sigma', v: 1.0, why: 'ハックでグラスプ/シールドを封じられる' },
+  /* ソンブラ(Season 5 でサポート化)。基本アビリティのHackは廃止されたので、
+     旧「ハックで機動力を止める」個別カウンターは削除。残っているのはEMP(ウルト)によるものだけ */
+  { a: 'sombra', b: 'reinhardt', v: 1.0, why: 'EMPでバリアを剥がして一気に押し込める' },
+  { a: 'sombra', b: 'sigma', v: 1.0, why: 'EMPでバリアを剥がせる' },
+  { a: 'sombra', b: 'winston', v: 1.0, why: 'EMPでバリアを剥がせる' },
   /* アナ: アンチヒールとスリープ */
   { a: 'ana', b: 'roadhog', v: 2.0, why: 'アンチヒールとスリープが刺さる' },
   { a: 'ana', b: 'mauga', v: 1.5, why: 'アンチヒールで自己回復を止められる' },
@@ -330,7 +332,7 @@ const AZ_SYNERGY_PAIR = [
   { a: 'zarya', b: 'pharah', v: 1.0, why: 'バリア+バレージで押し切れる' },
   { a: 'zarya', b: 'hanzo', v: 1.0, why: 'グラビトン+龍撃剣が重なる' },
   { a: 'sombra', b: 'genji', v: 1.0, why: 'EMP+ブレードが重なる' },
-  { a: 'sombra', b: 'tracer', v: 1.0, why: 'ハックから集中攻撃できる' },
+  { a: 'sombra', b: 'tracer', v: 1.0, why: 'EMPから集中攻撃できる' },
   { a: 'sombra', b: 'dva', v: 1.0, why: 'EMP+自爆が重なる' },
   { a: 'sombra', b: 'reaper', v: 1.0, why: 'EMP+デスブロッサムが重なる' },
   { a: 'mei', b: 'junkrat', v: 1.0, why: '壁で閉じ込めて範囲攻撃を重ねられる' },
@@ -346,7 +348,7 @@ const AZ_SYNERGY_PAIR = [
   { a: 'winston', b: 'genji', v: 1.0, why: 'ダイブのテンポが揃う' },
   { a: 'winston', b: 'tracer', v: 1.0, why: 'ダイブのテンポが揃う' },
   { a: 'winston', b: 'dva', v: 1.0, why: 'ダブルダイブで後衛を潰せる' },
-  { a: 'doomfist', b: 'sombra', v: 1.0, why: 'ハックから飛び込める' },
+  { a: 'doomfist', b: 'sombra', v: 1.0, why: 'EMPに合わせて飛び込める' },
   { a: 'doomfist', b: 'tracer', v: 1.0, why: 'ダイブのテンポが揃う' },
   { a: 'orisa', b: 'torbjorn', v: 1.0, why: '据え置きで守り切れる' },
   { a: 'orisa', b: 'baptiste', v: 1.0, why: '無敵フィールドで粘れる' },
@@ -366,7 +368,7 @@ const AZ_COMP_RULES = [
   { tag: 'immobile', min: 2, text: '機動力が低い相手が{n}枚。ダイブ/フランカーで狙いやすい', need: ['dive', 'flanker'] },
   { tag: 'ultWipe', min: 3, text: '範囲ウルトが{n}枚。分散とクレンズ(キリコ)で被害を減らしたい', need: ['cleanse'] },
   { tag: 'staticHeal', min: 1, text: '設置回復がある。遠距離から壊せるポークが有効', need: ['poke', 'aoe'] },
-  { tag: 'matrix', min: 1, text: '飛来物を消す能力(D.Va/シグマ)がある。ビームや近距離が通りやすい', need: ['beam', 'brawl'] },
+  { tag: 'matrix', min: 1, text: '飛来物を消す能力(D.Va/シグマ/ロードホッグ)がある。ビームや近距離が通りやすい', need: ['beam', 'brawl'] },
   { tag: 'turret', min: 1, text: '設置物がある。射線を通す前に処理したい', need: ['poke', 'aoe'] },
   { tag: 'poke', min: 3, text: '遠距離ポークが{n}枚。遮蔽を取って詰める構成(ダイブ/前押し)が有効', need: ['dive', 'rush'] },
   { tag: 'brawl', min: 3, text: '近距離戦が{n}枚。距離を保てるポークと飛行が有効', need: ['poke', 'flyer'] },
@@ -411,9 +413,9 @@ const AZ_TAG_USE = {
   staticHeal: '設置回復を壊されない位置に置き、拠点を維持する',
   longHeal: '射線の通る位置から回復を届け、前の味方を落とさない',
   shortHeal: '前で味方と一緒に動き、接近戦の回復を担う',
-  speed: 'スピードで前押しと離脱を支える',
+  speed: 'スピード・攻撃速度ブーストで味方の押し込みを支える',
   wall: '壁で敵を分断し、数の有利を作る',
   boop: '落下地点や狭い通路で突き落とす',
-  hack: '飛び込みやウルトの起点をハックで止め、先に仕掛ける',
+  hack: 'EMPで敵をハックしてバリアを剥がし、体力パックや設置物も確保する',
   pick: '先に1枚落として数的有利を作る(逃げ道を切ってから)'
 };

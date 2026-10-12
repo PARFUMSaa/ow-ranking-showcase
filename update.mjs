@@ -114,22 +114,35 @@ function upsertMetaEntry(src, mapName, key, val) {
 async function syncHeroMeta() {
   const list = await apiGet(`${API}/heroes`);
   if (!Array.isArray(list) || !list.length) return;
-  // 未登録 or 情報が欠けている(ロール・アイコン未設定)ヒーローを対象に
-  const targets = list.filter((h) => h && h.key && (!META.role[h.key] || !META.url[h.key]));
+  /* APIのロール表記(tank/damage/support)をサイト表記(Tank/Damage/Support)に揃える */
+  const normRole = (r) => {
+    const v = String(r || '').toLowerCase();
+    return v === 'tank' ? 'Tank' : v === 'damage' ? 'Damage' : v === 'support' ? 'Support' : '';
+  };
+  // 未登録 / 情報欠け(ロール・アイコン) / ロールが変わった ヒーローを対象に
+  const targets = list.filter((h) => {
+    if (!h || !h.key) return false;
+    const role = normRole(h.role);
+    if (!META.role[h.key] || !META.url[h.key]) return true;
+    return !!role && role !== META.role[h.key];        // ロール変更(再ワーク時)にも追随する
+  });
   if (!targets.length) return;
   const file = resolve(ROOT, 'heroes-meta.js');
   let src = readFileSync(file, 'utf8');
   for (const h of targets) {
     const name = h.name || META.name[h.key] || h.key;
-    const role = h.role || META.role[h.key] || '';
-    const before = !META.role[h.key] ? '新規' : '情報補完';
-    if (!META.role[h.key]) src = upsertMetaEntry(src, 'SLUG_ROLE', h.key, role);
+    const role = normRole(h.role) || META.role[h.key] || '';
+    const roleChanged = !!META.role[h.key] && !!role && role !== META.role[h.key];
+    const isNew = !META.role[h.key];
+    const label = isNew ? '新規' : (roleChanged ? 'ロール変更' : '情報補完');
+    if (isNew || roleChanged) src = upsertMetaEntry(src, 'SLUG_ROLE', h.key, role);
     if (!META.name[h.key]) src = upsertMetaEntry(src, 'SLUG_NAME', h.key, name);
     if (!META.url[h.key] && h.portrait) src = upsertMetaEntry(src, 'SLUG_URL', h.key, h.portrait);
+    if (roleChanged) console.log(`  ↻ ヒーローのロール変更: ${h.key}(${name}) ${META.role[h.key]} → ${role}`);
+    else console.log(`  ＋ ヒーロー情報を heroes-meta.js に${label}: ${h.key}(${name} / ${role || 'ロール不明'})`);
     META.role[h.key] = role;
     META.name[h.key] = name;
     if (h.portrait) META.url[h.key] = h.portrait;
-    console.log(`  ＋ ヒーロー情報を heroes-meta.js に${before}: ${h.key}(${name} / ${role || 'ロール不明'})`);
   }
   if (!DRY) writeFileSync(file, src, 'utf8');
 }
