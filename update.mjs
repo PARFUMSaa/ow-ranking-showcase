@@ -713,7 +713,19 @@ function applyRecentHeroes(recs, prevList, poolOf) {
       r: rankSnapshot(rec.ranks)
     };
     const i = hist.findIndex((e) => e.d === today);
-    if (i >= 0) hist[i] = entry; else hist.push(entry);   // 同じ日に複数回走ったら上書き
+    if (i >= 0) {
+      /* 同じ日に2回以上走ったときは、その日のキャラ増加を「足し合わせる」。
+         上書きすると最後の実行ぶんだけが残り、1時間ごとに走らせた場合は
+         ほぼ空(その日のキャラが分からない)になってしまう */
+      const old = hist[i];
+      const merged = {};
+      for (const s of Object.keys(old.g || {})) merged[s] = Number(old.g[s]) || 0;
+      for (const s of Object.keys(gains)) merged[s] = (merged[s] || 0) + gains[s];
+      entry.g = merged;
+      hist[i] = entry;
+    } else {
+      hist.push(entry);
+    }
     rec.recent = hist.slice(-RECENT_MAX);
   }
 }

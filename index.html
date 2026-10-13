@@ -264,12 +264,13 @@ table.mini td:first-child{text-align:left;white-space:nowrap}
 .fq-nm .fq-tot{margin-left:auto;font-size:10px;font-weight:800;color:#64748b;font-variant-numeric:tabular-nums;white-space:nowrap}
 .fq-nm .fq-tot u{text-decoration:none;font-size:9px;font-weight:600;color:#a8b3c2}
 .fq-nm.on{color:#1d4ed8}
-.fq-c{width:14px;height:14px;border-radius:3px;background:#eef2f7;display:block}
-.fq-c.l1{background:#dbeafe}
-.fq-c.l2{background:#93c5fd}
-.fq-c.l3{background:#3b82f6}
-.fq-c.l4{background:#1d4ed8}
-.fq-c.na{background:repeating-linear-gradient(45deg,#eef2f7,#eef2f7 3px,#f8fafc 3px,#f8fafc 6px)}
+.fq-c{width:14px;height:14px;border-radius:4px;background:#e9eef5;display:block}
+.fq-c.l1{background:#ffe8cc}
+.fq-c.l2{background:#ffd09b}
+.fq-c.l3{background:#fdb15c}
+.fq-c.l4{background:#fa9c1e}
+.fq-c.na{background:#fbfcfe;box-shadow:inset 0 0 0 1px #dfe6ef}
+.fq-c.out{background:transparent;box-shadow:none}
 .fq-c.on{box-shadow:0 0 0 1.5px #1d4ed8}
 .fq-c.fq-cx{cursor:help}
 /* 1人ぶんの GitHub 風カレンダー(縦=曜日 / 横=週) */
@@ -281,10 +282,12 @@ table.mini td:first-child{text-align:left;white-space:nowrap}
 .fq-cal .fq-mh{font-size:9.5px;font-weight:700;color:#94a3b8;line-height:1;padding-bottom:2px}
 .fq-cal .fq-dw{font-size:9.5px;color:#a8b3c2;text-align:right;line-height:1;padding-right:5px;white-space:nowrap}
 .fq-cal .fq-dw.we{color:#8fa3bb;font-weight:800}
-.fq-c.big{width:26px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:9.5px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1}
-.fq-c.big.l1,.fq-c.big.l2{color:#1e3a8a}
-.fq-c.big.l3,.fq-c.big.l4{color:#fff}
-.fq-c.out{background:#fbfcfe;box-shadow:inset 0 0 0 1px #f1f4f9;cursor:default}
+.fq-c.big{width:26px;height:26px;border-radius:7px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:9.5px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1;transition:transform .12s ease,box-shadow .12s ease}
+/* 濃さは「白 → オレンジ」のヒートマップ。いちばん濃い色(#FA9C1E)が 20試合以上 */
+.fq-c.big.l1,.fq-c.big.l2,.fq-c.big.l3,.fq-c.big.l4{color:#5f2409}
+.fq-c.big.l4{box-shadow:0 1px 3px rgba(250,156,30,.45)}
+.fq-c.big.na{background:#fbfcfe;border:1px dashed #dde5ee;cursor:default}
+.fq-c.big.out{background:transparent;border:0;box-shadow:none}
 .fq-side{flex:1 1 340px;min-width:250px;display:flex;flex-direction:column;gap:11px}
 .fq-stats{display:grid;grid-template-columns:1fr;gap:4px}
 .fq-stat{display:flex;gap:8px;align-items:baseline;font-size:11.5px;color:#334155;flex-wrap:wrap;min-width:0}
@@ -294,16 +297,34 @@ table.mini td:first-child{text-align:left;white-space:nowrap}
 .fq-charts{display:flex;gap:22px;flex-wrap:wrap;align-items:flex-end}
 .fq-chart{flex:1 1 230px;min-width:186px;max-width:560px}
 .fq-ch-t{font-size:10px;font-weight:800;color:#94a3b8;margin-bottom:4px}
+/* クリックした日の戦績パネル */
+.fq-day{display:flex;flex-wrap:wrap;align-items:center;gap:3px 12px;padding:8px 11px;border:1px dashed #d6deea;border-radius:10px;background:#fbfcfe;font-size:11.5px;color:#334155}
+.fq-day-has{border-style:solid;border-color:#cfe0f7;background:#f6faff}
+.fq-day-d{font-weight:800;color:#1d4ed8;font-size:11.5px;white-space:nowrap}
+.fq-day-wl{display:inline-flex;align-items:baseline;gap:7px;font-weight:900;font-size:17px;line-height:1.1;font-variant-numeric:tabular-nums}
+.fq-day-wl .w{color:#047857}
+.fq-day-wl .l{color:#b91c1c}
+.fq-day-sub{color:#64748b;font-size:11px;white-space:nowrap}
+.fq-day-sub b{color:#0f172a;font-weight:800;font-variant-numeric:tabular-nums}
+.fq-day-h{display:inline-flex;flex-wrap:wrap;align-items:center;gap:5px}
+.fq-day-none{color:#94a3b8;font-size:11px}
+.fq-cal button.fq-c{padding:0;border:0;font:inherit;color:inherit;appearance:none;cursor:pointer}
+.fq-cal button.fq-c:hover{transform:scale(1.08);box-shadow:0 1px 5px rgba(15,23,42,.18)}
+.fq-cal button.fq-c:focus-visible{outline:2px solid #b45309;outline-offset:1px}
+.fq-c.sel{outline:2.5px solid #0f172a;outline-offset:1px}
 .fq-bars{display:flex;gap:7px;align-items:flex-end;justify-content:space-between}
 .fq-db{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:2px;height:74px;flex:1 1 0;max-width:44px;cursor:help}
-.fq-db i{display:block;width:16px;max-width:100%;background:linear-gradient(180deg,#93c5fd,#2563eb);border-radius:3px 3px 0 0;min-height:2px}
-.fq-db i.zero{background:#eef2f7}
+.fq-db i{display:block;width:16px;max-width:100%;background:linear-gradient(180deg,#fdc27f,#fa9c1e);border-radius:4px 4px 0 0;min-height:2px}
+.fq-db i.zero{background:#e9eef5}
 .fq-db u{text-decoration:none;font-size:9px;color:#a8b3c2;line-height:1;white-space:nowrap;font-variant-numeric:tabular-nums}
 .fq-team{margin-top:10px;border-top:1px solid #eef1f6;padding-top:8px}
 .fq-team summary{cursor:pointer;font-size:11.5px;font-weight:800;color:#475569;user-select:none}
 .fq-team[open] summary{color:#1d4ed8;margin-bottom:7px}
 .fq-legend{display:flex;align-items:center;gap:4px;flex-wrap:wrap;font-size:10.5px;color:#94a3b8;margin-top:8px}
-.fq-legend .fq-c{width:12px;height:12px}
+.fq-legend .fq-c{width:12px;height:12px;border-radius:4px}
+.fq-legend .fq-sh{font-size:9.5px;color:#a8b3c2;font-variant-numeric:tabular-nums}
+.fq-legend .fq-c.na{background:#fbfcfe;border:1px dashed #dde5ee;box-sizing:border-box;box-shadow:none}
+.fq-legend .fq-c.out{background:#fbfcfe;box-shadow:inset 0 0 0 1px #e6ecf3}
 .fq-legend .fq-sep{display:inline-block;width:1px;height:12px;background:#e5eaf2;margin:0 4px}
 .fq-legend .fq-lk{padding-right:2px}
 .fq-legend .fq-vs{font-variant-numeric:tabular-nums}
@@ -1141,7 +1162,7 @@ function kdaCls(v){const n=num(v);return n>3.0?'kda-good':n<1.5?'kda-bad':''}
 function wrCell(v,label){const n=v===null||v===undefined?null:num(v);return `<td class="num cell ${n===null?'':wrCls(n)}" ${label?`data-label="${label}"`:''}>${n===null?'—':fmt1(n)+'%'}</td>`}
 function kdaCell(v,label){const n=v===null||v===undefined?null:num(v);return `<td class="num cell ${n===null?'':kdaCls(n)}" ${label?`data-label="${label}"`:''}>${n===null?'—':fmt2(n)}</td>`}
 
-const state={filter:'All',sortKey:'rank',sortAsc:false,open:new Set(),focus:'hiyori',powerKey:'rate',powerAsc:false,powerOpen:new Set(),mode:'all',exMakky:false,hbSort:'power'};
+const state={filter:'All',sortKey:'rank',sortAsc:false,open:new Set(),focus:'hiyori',powerKey:'rate',powerAsc:false,powerOpen:new Set(),mode:'all',exMakky:false,hbSort:'power',fqDay:'',fqDayPid:''};
 
 /* ランク順ソート用(division階層 + tierは小さいほど上位) */
 const DIV_ORDER=['bronze','silver','gold','platinum','emerald','diamond','master','grandmaster'];
@@ -1591,24 +1612,56 @@ const FQ_DAYS = 30;
 const FQ_DOW = ['日', '月', '火', '水', '木', '金', '土'];
 /* 色の濃さ(1日の試合数)。実データは1日あたり中央値14・最大36程度なので 4/9/19 で区切る */
 function fqLevel(n) { return n >= 20 ? 4 : n >= 10 ? 3 : n >= 5 ? 2 : n >= 1 ? 1 : 0; }
-/* 日次の増分(前回スナップショットとの差)。同日に複数回更新されていれば合算 */
-function fqIncMap(p) {
+/* 日ごとの記録(前回スナップショットとの差分)。
+   m=その日の試合数 / w=勝 / l=敗 / t=プレイ秒 / k=KDA / g={ヒーロー:試合増}
+   カウンタが減った日(=シーズン切替)は reset:true にして戦績なし扱いにする */
+function fqDayMap(p) {
   const hist = (Array.isArray(p.recent) ? p.recent : []).filter((e) => e && e.d).slice().sort((a, b) => (a.d < b.d ? -1 : 1));
-  const inc = {};
+  const days = {};
   let prev = null;
   for (const e of hist) {
-    if (prev && typeof e.m === 'number') {
-      const v = e.m - prev.m;
-      if (v > 0) inc[e.d] = (inc[e.d] || 0) + v;
+    if (prev && typeof e.m === 'number' && typeof prev.m === 'number') {
+      const dm = num(e.m) - num(prev.m);
+      if (dm < 0) {
+        days[e.d] = { reset: true, m: 0, w: 0, l: 0, t: 0, k: null, g: {} };
+      } else {
+        const g = {};
+        for (const s of Object.keys(e.g || {})) { const v = Number(e.g[s]) || 0; if (v > 0) g[s] = v; }
+        days[e.d] = {
+          reset: false, m: dm,
+          w: Math.max(0, num(e.w) - num(prev.w)),
+          l: Math.max(0, num(e.l) - num(prev.l)),
+          t: Math.max(0, num(e.t) - num(prev.t)),
+          k: typeof e.k === 'number' ? e.k : null,
+          g
+        };
+      }
     }
     if (typeof e.m === 'number') prev = e;
   }
-  if (prev) {                            // 記録後の再更新ぶんの保険
-    const today = rsToday();
-    const add = num(p.overall && p.overall.matches) - prev.m;
-    if (add > 0 && today) inc[today] = (inc[today] || 0) + add;
+  /* 記録後の再更新ぶんの保険(同日にもう一度更新されていた場合) */
+  const today = rsToday();
+  if (prev && today) {
+    const ov = p.overall || {};
+    const add = num(ov.matches) - num(prev.m);
+    if (add > 0) {
+      const cur = days[today] || { reset: false, m: 0, w: 0, l: 0, t: 0, k: null, g: {} };
+      cur.m += add;
+      cur.w += Math.max(0, num(ov.wins) - num(prev.w));
+      cur.l += Math.max(0, num(ov.losses) - num(prev.l));
+      cur.t += Math.max(0, num(ov.time) - num(prev.t));
+      cur.reset = false;
+      days[today] = cur;
+    }
   }
-  return { inc, firstD: hist.length ? hist[0].d : '', count: hist.length };
+  return { days, firstD: hist.length ? hist[0].d : '', count: hist.length };
+}
+/* 日ごとの試合数だけを取り出したもの(コントリビューショングラフ用) */
+function fqIncMap(p) {
+  const d = fqDayMap(p);
+  const inc = {};
+  for (const k of Object.keys(d.days)) inc[k] = d.days[k].m || 0;
+  return { inc, days: d.days, firstD: d.firstD, count: d.count };
 }
 function playFreq(days) {
   const n = days || FQ_DAYS;
@@ -1648,7 +1701,7 @@ function fqCalOf(p, days) {
   const today = rsToday();
   if (!today) return null;
   const from = rsShiftDays(today, -(n - 1));
-  const { inc, firstD } = fqIncMap(p);
+  const { inc, days: dayMap, firstD } = fqIncMap(p);
   const md = (d) => `${Number(d.slice(5, 7))}/${Number(d.slice(8, 10))}`;
   /* 週の区切りに合わせて、開始日を含む週の日曜〜今日を含む週の土曜までを格子にする */
   const gridFrom = rsShiftDays(from, -new Date(`${from}T00:00:00Z`).getUTCDay());
@@ -1661,7 +1714,7 @@ function fqCalOf(p, days) {
       const range = d >= from && d <= today;          // 集計期間(直近n日)の中か
       const na = !firstD || d <= firstD;              // 比較できる前日データが無い日
       const v = range ? (inc[d] || 0) : 0;
-      const c = { d, md: md(d), n: v, l: fqLevel(v), na, range };
+      const c = { d, md: md(d), n: v, l: fqLevel(v), na, range, rec: (range && !na) ? (dayMap[d] || null) : null };
       col.push(c);
       if (range && !na) known.push(c);
     }
@@ -1696,8 +1749,34 @@ function fqCalOf(p, days) {
   });
   return { p, n, today, from, firstD, weeks, labels, known, total, plays, best, longest, cur, dow, wk, naDays: weeks.reduce((s, col) => s + col.filter((c) => c.range && c.na).length, 0) };
 }
+/* クリックした日の戦績パネル(マス = 1日) */
+function fqDayHtml(p, sel) {
+  if (!sel) {
+    return `<div class="fq-day fq-day-hint"><span class="fq-day-d">📅 日別の戦績</span><span class="fq-day-none">カレンダーのマスをクリックすると、その日の戦績(例: 10W 10L)を表示します</span></div>`;
+  }
+  const head = `<span class="fq-day-d">📅 ${esc(sel.md)}(${sel.dow}) の戦績</span>`;
+  const r = sel.rec;
+  if (!r || r.reset || !r.m) {
+    const why = (r && r.reset)
+      ? 'この日はシーズン切替でカウンタがリセットされたため、戦績を記録できません'
+      : 'この日は試合の記録がありません';
+    return `<div class="fq-day fq-day-hint">${head}<span class="fq-day-none">${why}</span></div>`;
+  }
+  const heroes = Object.entries(r.g).sort((a, b) => b[1] - a[1]).slice(0, 4);
+  const rest = r.m - r.w - r.l;
+  return `<div class="fq-day fq-day-has" title="前回のスナップショットからの増加分(おおよそ1日ぶん)です">
+    ${head}
+    <span class="fq-day-wl"><b class="w">${r.w}W</b><b class="l">${r.l}L</b></span>
+    <span class="fq-day-sub"><b>${r.m}</b>試合 ・ 勝率 <b>${fmt1(r.m ? r.w / r.m * 100 : 0)}%</b></span>
+    ${r.k !== null ? `<span class="fq-day-sub">KDA <b>${fmt2(r.k)}</b></span>` : ''}
+    ${r.t ? `<span class="fq-day-sub">プレイ <b>${rsFmtDur(r.t)}</b></span>` : ''}
+    ${rest > 0 ? `<span class="fq-day-sub">ほか <b>${rest}</b>試合(勝敗の記録なし)</span>` : ''}
+    ${heroes.length ? `<span class="fq-day-h">${heroes.map(([s, n]) => rsHeroChip(s, n, `${sel.md}の使用`)).join('')}</span>` : ''}
+  </div>`;
+}
 function fqCalHtml(c) {
   const p = c.p;
+  const selD = (typeof state !== 'undefined' && state && state.fqDay) || '';
   const cols = `26px repeat(${c.weeks.length},26px)`;
   let g = '<span></span>' + c.labels.map((l) => `<span class="fq-mh">${l}</span>`).join('');
   for (let i = 0; i < 7; i++) {
@@ -1707,7 +1786,8 @@ function fqCalHtml(c) {
       const x = col[i];
       if (!x.range) { g += '<i class="fq-c big out"></i>'; continue; }
       if (x.na) { g += `<i class="fq-c big na fq-cx" title="${esc(p.name)} ${x.md}: 記録なし(集計対象外)"></i>`; continue; }
-      g += `<i class="fq-c big fq-cx ${x.l ? 'l' + x.l : ''}" title="${esc(p.name)} ${x.md}(${FQ_DOW[i]}): ${x.n}試合">${x.n > 0 ? x.n : ''}</i>`;
+      const sel = x.d === selD;
+      g += `<button type="button" class="fq-c big fq-cx ${x.l ? 'l' + x.l : ''}${sel ? ' sel' : ''}" data-fqd="${x.d}" aria-pressed="${sel ? 'true' : 'false'}" aria-label="${esc(p.name)} ${x.md}(${FQ_DOW[i]}): ${x.n}試合" title="${esc(p.name)} ${x.md}(${FQ_DOW[i]}): ${x.n}試合 ・ クリックでこの日の戦績"></button>`;
     }
   }
   const avg = c.plays ? c.total / c.plays : 0;
@@ -1726,7 +1806,18 @@ function fqCalHtml(c) {
        <div class="fq-stat"><span class="fq-sk">1日あたり</span><span class="fq-sv">平均 <b>${fmt1(avg)}</b>試合 ・ 最多 <b>${c.best.n}</b>試合<span class="fq-sub2">(${c.best.md})</span></span></div>
        <div class="fq-stat"><span class="fq-sk">連続プレイ</span><span class="fq-sv">最長 <b>${c.longest}</b>日 ・ いま <b>${c.cur}</b>日</span></div>`
     : `<div class="fq-stat"><span class="fq-sk">直近${c.n}日</span><span class="fq-sv">この期間のプレイ記録はありません</span></div>`;
-  return `<div class="fq-head">🗓 プレイ頻度 <span class="fq-who">${esc(p.name)}</span><span class="fq-note">全モード(ライバル+クイックプレイ) ・ 直近${c.n}日${c.total ? ` ・ ${c.total}試合` : ''} ・ 1マス = 1日(数字は試合数) ・ 濃いほど多くプレイ</span></div>
+  /* 選択中の日(マスをクリック) */
+  let picked = null;
+  if (selD) {
+    outer: for (let i = 0; i < 7; i++) {
+      for (const col of c.weeks) {
+        const x = col[i];
+        if (x.range && x.d === selD) { picked = { d: x.d, md: x.md, n: x.n, dow: FQ_DOW[i], rec: x.rec }; break outer; }
+      }
+    }
+  }
+  const dayPanel = fqDayHtml(p, picked);
+  return `<div class="fq-head">🗓 プレイ頻度 <span class="fq-who">${esc(p.name)}</span><span class="fq-note">全モード(ライバル+クイックプレイ) ・ 直近${c.n}日${c.total ? ` ・ ${c.total}試合` : ''} ・ 1マス = 1日、濃いほど多くプレイ ・ マスをクリックでその日の戦績</span></div>
   <div class="fq-calwrap">
     <div class="fq-calbox"><div class="fq-calscroll"><div class="fq-cal" style="grid-template-columns:${cols}">${g}</div></div></div>
     <div class="fq-side">
@@ -1735,12 +1826,14 @@ function fqCalHtml(c) {
         <div class="fq-chart"><div class="fq-ch-t">曜日別の合計(日〜土)</div><div class="fq-bars">${dowBars}</div></div>
         <div class="fq-chart"><div class="fq-ch-t">週ごとの合計(週の開始日)</div><div class="fq-bars">${wkBars}</div></div>
       </div>
+      ${dayPanel}
     </div>
   </div>
   <div class="fq-legend"><span class="fq-lk">少ない</span><i class="fq-c"></i><i class="fq-c l1"></i><i class="fq-c l2"></i><i class="fq-c l3"></i><i class="fq-c l4"></i><span class="fq-lk">多い</span>
     <span class="fq-sep"></span><span class="fq-vs">0 / 1〜4 / 5〜9 / 10〜19 / 20試合以上</span>
     <span class="fq-sep"></span><i class="fq-c na"></i><span>記録なし</span>
-    <span class="fq-sep"></span><i class="fq-c out"></i><span>集計期間外</span></div>
+    <span class="fq-sep"></span><i class="fq-c out"></i><span>集計期間外</span>
+    <span class="fq-sep"></span><span>マスをクリックでその日の戦績(もう一度で解除)</span></div>
   <div class="fq-note2">毎日のスナップショットで記録した累計試合数の増加分を1日ごとに並べています(OverFast に試合履歴が無いため)。マスにカーソルを合わせると日付と試合数が出ます。0の日は「その日の増加が確認できなかった日」で、未プレイのほかに更新が無かった日も含みます。斜線のマスは比較できる前日データが無い日(記録開始前なので試合数が不明)、うすいマスは集計期間外の日です。連続日数と曜日別・週ごとの集計は「記録がある日」だけで計算しています(記録開始 ${esc(c.firstD || '—')}${c.naDays ? ` ・ 記録なし${c.naDays}日` : ''})</div>`;
 }
 function fqTeamHtml(d) {
@@ -1777,6 +1870,8 @@ function renderFreq() {
   const box = $('#freqBox');
   if (!box) return;
   const p = (typeof focusPlayer === 'function') ? focusPlayer() : null;
+  /* プレイヤーを切り替えたら選択中の日は解除する */
+  if (state.fqDayPid && state.fqDayPid !== (p && p.id)) { state.fqDay = ''; state.fqDayPid = ''; }
   const cal = p ? fqCalOf(p, FQ_DAYS) : null;
   const team = playFreq(FQ_DAYS);
   if (!cal && !team.rows.length) { box.innerHTML = ''; return; }
@@ -2944,6 +3039,15 @@ $('#pfSel').addEventListener('click',e=>{
   state.focus=b.dataset.pid;
   $('#pfSel').querySelectorAll('.filter-btn').forEach(x=>x.classList.toggle('active',x===b));
   renderProfile(focusPlayer());
+});
+/* プレイ頻度カレンダーのマス = その日の戦績を表示(もう一度クリックで解除) */
+$('#freqBox').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-fqd]');
+  if(!b)return;
+  const d=b.dataset.fqd;
+  state.fqDay=(state.fqDay===d)?'':d;
+  state.fqDayPid=(focusPlayer()||{}).id||'';
+  renderFreq();
 });
 $('#powerBody').addEventListener('click',e=>{
   const sortBtn=e.target.closest('.sortable[data-pkey]');
