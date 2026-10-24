@@ -1,7 +1,7 @@
 'use strict';
 
 /* 生成データ: update.mjs が自動生成(手編集は上書き) ・ 元データ: OverFast API */
-const LAST_UPDATED_ISO = "2026-10-23T21:59:59.465Z";
+const LAST_UPDATED_ISO = "2026-10-24T00:31:37.515Z";
 /* ライバル・プレイ(コンペティティブ)のみ */
 const PLAYERS_COMP = [
   {
@@ -10597,8 +10597,7 @@ const PLAYERS_ALL = [
           "as10": 1.63875,
           "wa": 34.125,
           "ca": 17.25
-        },
-        "rankDeltaPower": -1
+        }
       },
       "sierra": {
         "finalScore": 53.97,
@@ -11398,8 +11397,7 @@ const PLAYERS_ALL = [
           "as10": 0.11,
           "wa": 32,
           "ca": 11
-        },
-        "rankDeltaPower": 1
+        }
       },
       "vendetta": {
         "finalScore": 35.01,
@@ -11641,8 +11639,7 @@ const PLAYERS_ALL = [
           "as10": 1.63875,
           "wa": 34.125,
           "ca": 17.25
-        },
-        "rankDeltaPower": -1
+        }
       },
       "sierra": {
         "finalScore": 53.97,
@@ -12442,8 +12439,7 @@ const PLAYERS_ALL = [
           "as10": 0.11,
           "wa": 32,
           "ca": 11
-        },
-        "rankDeltaPower": 1
+        }
       },
       "vendetta": {
         "finalScore": 35.01,
