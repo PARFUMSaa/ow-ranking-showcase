@@ -1,7 +1,7 @@
 'use strict';
 
 /* 生成データ: update.mjs が自動生成(手編集は上書き) ・ 元データ: OverFast API */
-const LAST_UPDATED_ISO = "2026-10-25T20:37:11.808Z";
+const LAST_UPDATED_ISO = "2026-10-25T23:06:27.465Z";
 /* ライバル・プレイ(コンペティティブ)のみ */
 const PLAYERS_COMP = [
   {
@@ -11552,8 +11552,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 42.19,
-        "battleScore": 43.02,
+        "finalScore": 42.15,
+        "battleScore": 42.98,
         "coeff": 1,
         "matchCoef": 0.98,
         "gamesPlayed": 20,
@@ -12594,8 +12594,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 42.19,
-        "battleScore": 43.02,
+        "finalScore": 42.15,
+        "battleScore": 42.98,
         "coeff": 1,
         "matchCoef": 0.98,
         "gamesPlayed": 20,
@@ -14745,8 +14745,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 50.66,
-        "battleScore": 44.71,
+        "finalScore": 50.64,
+        "battleScore": 44.69,
         "coeff": 1.21,
         "matchCoef": 0.94,
         "gamesPlayed": 12,
@@ -15827,8 +15827,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 50.66,
-        "battleScore": 44.71,
+        "finalScore": 50.64,
+        "battleScore": 44.69,
         "coeff": 1.21,
         "matchCoef": 0.94,
         "gamesPlayed": 12,
@@ -17531,8 +17531,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 57.79,
-        "battleScore": 42.74,
+        "finalScore": 57.74,
+        "battleScore": 42.7,
         "coeff": 1.33,
         "matchCoef": 1.02,
         "gamesPlayed": 30,
@@ -18473,8 +18473,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 57.79,
-        "battleScore": 42.74,
+        "finalScore": 57.74,
+        "battleScore": 42.7,
         "coeff": 1.33,
         "matchCoef": 1.02,
         "gamesPlayed": 30,
@@ -19884,36 +19884,36 @@ const PLAYERS_ALL = [
     },
     "rankTier": "Master 5",
     "overall": {
-      "matches": 10294,
-      "wins": 5369,
+      "matches": 10295,
+      "wins": 5370,
       "losses": 4925,
       "wr": 52.16,
       "kda": 3.22,
-      "elim": 15.09,
+      "elim": 15.1,
       "deaths": 5.53,
-      "dmg": 7806.76,
-      "heal": 4222.08,
-      "time": 5394202,
+      "dmg": 7807.69,
+      "heal": 4221.72,
+      "time": 5394775,
       "tot": {
-        "e": 135701,
-        "a": 24327,
-        "dd": 49750,
-        "dm": 70185402,
-        "he": 37957922
+        "e": 135736,
+        "a": 24335,
+        "dd": 49753,
+        "dm": 70201232,
+        "he": 37958731
       }
     },
     "roles": {
       "Tank": {
-        "g": 1457,
-        "w": 777,
+        "g": 1458,
+        "w": 778,
         "l": 680,
-        "time": 772722,
-        "wr": 53.33,
-        "kda": 3.94,
-        "elim": 19.84,
+        "time": 773295,
+        "wr": 53.36,
+        "kda": 3.95,
+        "elim": 19.85,
         "deaths": 5.41,
-        "dmg": 12180.21,
-        "heal": 613.56
+        "dmg": 12183.46,
+        "heal": 613.73
       },
       "Damage": {
         "g": 4029,
@@ -20089,9 +20089,9 @@ const PLAYERS_ALL = [
         "slug": "orisa",
         "n": "Orisa",
         "role": "Tank",
-        "g": 124,
-        "wr": 52.42,
-        "kda": 4.3
+        "g": 125,
+        "wr": 52.8,
+        "kda": 4.35
       },
       {
         "slug": "ramattra",
@@ -20525,8 +20525,7 @@ const PLAYERS_ALL = [
           "as10": 0.1985705003248863,
           "wa": 29.014294996751136,
           "ca": 10
-        },
-        "rankDelta": -1
+        }
       },
       "illari": {
         "finalScore": 130.53,
@@ -20646,7 +20645,8 @@ const PLAYERS_ALL = [
           "as10": 2.282456140350877,
           "wa": 24.035087719298247,
           "ca": 9.017543859649123
-        }
+        },
+        "rankDelta": -1
       },
       "reaper": {
         "finalScore": 127.53,
@@ -20946,8 +20946,7 @@ const PLAYERS_ALL = [
           "as10": 7.8,
           "wa": 28,
           "ca": 9
-        },
-        "rankDelta": 1
+        }
       },
       "emre": {
         "finalScore": 108.37,
@@ -21087,7 +21086,8 @@ const PLAYERS_ALL = [
           "as10": 12.9,
           "wa": 29,
           "ca": 11
-        }
+        },
+        "rankDelta": -1
       },
       "lucio": {
         "finalScore": 139.31,
@@ -21190,24 +21190,25 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 128.49,
-        "battleScore": 45.21,
+        "finalScore": 129.14,
+        "battleScore": 45.78,
         "coeff": 1.61,
         "matchCoef": 1.36,
-        "gamesPlayed": 124,
+        "gamesPlayed": 125,
         "rankIndex": 5,
         "det": {
-          "g": 124,
-          "time": 68001,
-          "wr": 52,
-          "el10": 20.43,
-          "de10": 5.66,
-          "dm10": 12092,
-          "he10": 45.17,
-          "as10": 3.95,
+          "g": 125,
+          "time": 68574,
+          "wr": 53,
+          "el10": 20.56,
+          "de10": 5.64,
+          "dm10": 12111,
+          "he10": 51.87,
+          "as10": 3.99,
           "wa": 34,
           "ca": 8
-        }
+        },
+        "rankDelta": 4
       },
       "reinhardt": {
         "finalScore": 129.28,
@@ -21307,7 +21308,8 @@ const PLAYERS_ALL = [
           "as10": 1.23,
           "wa": 27,
           "ca": 8
-        }
+        },
+        "rankDelta": -1
       },
       "vendetta": {
         "finalScore": 91.11,
@@ -21427,7 +21429,8 @@ const PLAYERS_ALL = [
           "as10": 15.25,
           "wa": 26,
           "ca": 10
-        }
+        },
+        "rankDelta": -1
       }
     },
     "bscoreAll": {
@@ -21589,8 +21592,7 @@ const PLAYERS_ALL = [
           "as10": 0.1985705003248863,
           "wa": 29.014294996751136,
           "ca": 10
-        },
-        "rankDelta": -1
+        }
       },
       "illari": {
         "finalScore": 130.53,
@@ -21710,7 +21712,8 @@ const PLAYERS_ALL = [
           "as10": 2.282456140350877,
           "wa": 24.035087719298247,
           "ca": 9.017543859649123
-        }
+        },
+        "rankDelta": -1
       },
       "reaper": {
         "finalScore": 127.53,
@@ -22010,8 +22013,7 @@ const PLAYERS_ALL = [
           "as10": 7.8,
           "wa": 28,
           "ca": 9
-        },
-        "rankDelta": 1
+        }
       },
       "emre": {
         "finalScore": 108.37,
@@ -22151,7 +22153,8 @@ const PLAYERS_ALL = [
           "as10": 12.9,
           "wa": 29,
           "ca": 11
-        }
+        },
+        "rankDelta": -1
       },
       "lucio": {
         "finalScore": 139.31,
@@ -22254,24 +22257,25 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 128.49,
-        "battleScore": 45.21,
+        "finalScore": 129.14,
+        "battleScore": 45.78,
         "coeff": 1.61,
         "matchCoef": 1.36,
-        "gamesPlayed": 124,
+        "gamesPlayed": 125,
         "rankIndex": 5,
         "det": {
-          "g": 124,
-          "time": 68001,
-          "wr": 52,
-          "el10": 20.43,
-          "de10": 5.66,
-          "dm10": 12092,
-          "he10": 45.17,
-          "as10": 3.95,
+          "g": 125,
+          "time": 68574,
+          "wr": 53,
+          "el10": 20.56,
+          "de10": 5.64,
+          "dm10": 12111,
+          "he10": 51.87,
+          "as10": 3.99,
           "wa": 34,
           "ca": 8
-        }
+        },
+        "rankDelta": 4
       },
       "reinhardt": {
         "finalScore": 129.28,
@@ -22371,7 +22375,8 @@ const PLAYERS_ALL = [
           "as10": 1.23,
           "wa": 27,
           "ca": 8
-        }
+        },
+        "rankDelta": -1
       },
       "vendetta": {
         "finalScore": 91.11,
@@ -22491,7 +22496,8 @@ const PLAYERS_ALL = [
           "as10": 15.25,
           "wa": 26,
           "ca": 10
-        }
+        },
+        "rankDelta": -1
       }
     },
     "recent": [
@@ -23077,19 +23083,20 @@ const PLAYERS_ALL = [
       {
         "d": "2026-10-26",
         "g": {
-          "zarya": 1
+          "zarya": 1,
+          "orisa": 1
         },
-        "m": 10294,
-        "w": 5369,
+        "m": 10295,
+        "w": 5370,
         "l": 4925,
-        "t": 5394202,
+        "t": 5394775,
         "k": 3.22,
         "tot": {
-          "e": 135701,
-          "a": 24327,
-          "dd": 49750,
-          "dm": 70185402,
-          "he": 37957922
+          "e": 135736,
+          "a": 24335,
+          "dd": 49753,
+          "dm": 70201232,
+          "he": 37958731
         },
         "r": {
           "Tank": null,
@@ -24312,8 +24319,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 39.49,
-        "battleScore": 36.61,
+        "finalScore": 39.47,
+        "battleScore": 36.59,
         "coeff": 1.1,
         "matchCoef": 0.98,
         "gamesPlayed": 20,
@@ -25394,8 +25401,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 39.49,
-        "battleScore": 36.61,
+        "finalScore": 39.47,
+        "battleScore": 36.59,
         "coeff": 1.1,
         "matchCoef": 0.98,
         "gamesPlayed": 20,
@@ -27386,8 +27393,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 46.85,
-        "battleScore": 34.55,
+        "finalScore": 46.81,
+        "battleScore": 34.52,
         "coeff": 1.33,
         "matchCoef": 1.02,
         "gamesPlayed": 31,
@@ -28368,8 +28375,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 46.85,
-        "battleScore": 34.55,
+        "finalScore": 46.81,
+        "battleScore": 34.52,
         "coeff": 1.33,
         "matchCoef": 1.02,
         "gamesPlayed": 31,
@@ -30161,8 +30168,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 28.2,
-        "battleScore": 32.77,
+        "finalScore": 28.18,
+        "battleScore": 32.75,
         "coeff": 1,
         "matchCoef": 0.86,
         "gamesPlayed": 5,
@@ -30983,8 +30990,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 28.2,
-        "battleScore": 32.77,
+        "finalScore": 28.18,
+        "battleScore": 32.75,
         "coeff": 1,
         "matchCoef": 0.86,
         "gamesPlayed": 5,
@@ -33782,7 +33789,7 @@ const PLAYERS_ALL = [
       },
       "orisa": {
         "finalScore": 37.06,
-        "battleScore": 43.6,
+        "battleScore": 43.59,
         "coeff": 1,
         "matchCoef": 0.85,
         "gamesPlayed": 3,
@@ -34484,7 +34491,7 @@ const PLAYERS_ALL = [
       },
       "orisa": {
         "finalScore": 37.06,
-        "battleScore": 43.6,
+        "battleScore": 43.59,
         "coeff": 1,
         "matchCoef": 0.85,
         "gamesPlayed": 3,
@@ -36501,7 +36508,7 @@ const PLAYERS_ALL = [
       },
       "orisa": {
         "finalScore": 30.69,
-        "battleScore": 33.66,
+        "battleScore": 33.67,
         "coeff": 1,
         "matchCoef": 0.91,
         "gamesPlayed": 9,
@@ -37583,7 +37590,7 @@ const PLAYERS_ALL = [
       },
       "orisa": {
         "finalScore": 30.69,
-        "battleScore": 33.66,
+        "battleScore": 33.67,
         "coeff": 1,
         "matchCoef": 0.91,
         "gamesPlayed": 9,
@@ -39098,8 +39105,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 40.91,
-        "battleScore": 38.59,
+        "finalScore": 40.88,
+        "battleScore": 38.57,
         "coeff": 1,
         "matchCoef": 1.06,
         "gamesPlayed": 50,
@@ -39960,8 +39967,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 40.91,
-        "battleScore": 38.59,
+        "finalScore": 40.88,
+        "battleScore": 38.57,
         "coeff": 1,
         "matchCoef": 1.06,
         "gamesPlayed": 50,
@@ -42597,8 +42604,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 46.58,
-        "battleScore": 38.37,
+        "finalScore": 46.55,
+        "battleScore": 38.34,
         "coeff": 1.21,
         "matchCoef": 1,
         "gamesPlayed": 26,
@@ -43679,8 +43686,8 @@ const PLAYERS_ALL = [
         }
       },
       "orisa": {
-        "finalScore": 46.58,
-        "battleScore": 38.37,
+        "finalScore": 46.55,
+        "battleScore": 38.34,
         "coeff": 1.21,
         "matchCoef": 1,
         "gamesPlayed": 26,
