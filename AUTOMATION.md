@@ -13,6 +13,9 @@ ow-ranking-showcase/
 ├── analyst-data.js       … チームアナリストの相性ルール(タグ/数値/理由。編集してOK)
 ├── banners/              … バナー画像の置き場(現在は未使用。`p.namecard` はAPIの画像URLを使用)
 ├── icons/                … ランクのとなりに出す外部リンクのアイコン(任意)
+├── WORKSHOP.md           … カスタムゲーム(ワークショップ)でヒーロースコアによるピック制限を作る手順書
+├── DESIGN.md             … プロジェクト全体の設計書(構成/データ/スコア/画面/制約)
+├── power-v6.mjs          … Power Rating の計算本体(update.mjs から import)
 ├── update.mjs            … 取得&生成スクリプト(Node 18+ / 依存なし)
 ├── package.json
 └── .github/workflows/update-data.yml … 1時間ごとに自動実行(GitHub Actions)

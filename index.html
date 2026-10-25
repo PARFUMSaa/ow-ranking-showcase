@@ -54,6 +54,28 @@ body{font-family:"Inter","Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Yu 
 .pf-ext:hover{border-color:#1d4ed8;box-shadow:0 2px 6px rgba(29,78,216,.25);transform:translateY(-1px)}
 .pf-ext:focus-visible{outline:3px solid #1d4ed8;outline-offset:2px}
 
+/* ワークショップ用ヒーロースコア表(プレイヤー別) */
+.dd-sec{margin-top:18px}
+.dd-sum{cursor:pointer;font-size:15px;font-weight:800;color:#1d4ed8;user-select:none;letter-spacing:.01em}
+.dd-sec[open] .dd-sum{margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #eef1f6}
+.dd-head{display:flex;flex-direction:column;gap:8px;margin-bottom:10px}
+.dd-note{font-size:11.5px;color:#64748b;line-height:1.55}
+.dd-ctl{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;font-size:11.5px;color:#475569}
+.dd-f{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:#64748b;white-space:nowrap}
+.dd-list{display:flex;flex-direction:column}
+.dd-p{display:flex;align-items:flex-start;gap:8px;padding:5px 0;border-bottom:1px solid #f4f7fb}
+.dd-p:last-child{border-bottom:0}
+.dd-pname{flex:0 0 158px;display:flex;align-items:center;gap:5px;font-size:11.5px;font-weight:800;color:#0f172a;min-width:0}
+.dd-pname .pl-av{width:16px;height:16px;font-size:9px;border-radius:5px}
+.dd-pname span.nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dd-chips{flex:1 1 auto;display:flex;flex-wrap:wrap;gap:4px;min-width:0}
+.dd-chip{display:inline-flex;align-items:center;gap:4px;border:1px solid #e8eef7;border-radius:99px;padding:0 7px;font-size:10.5px;background:#fff;white-space:nowrap;color:#334155}
+.dd-chip b{font-weight:800;color:#0f172a;font-variant-numeric:tabular-nums}
+.dd-chip.top{border-color:#fde68a;background:#fffbeb}
+.dd-sumv{flex:0 0 auto;font-size:10.5px;font-weight:800;color:#64748b;font-variant-numeric:tabular-nums;padding-left:8px;white-space:nowrap}
+.dd-out{width:100%;box-sizing:border-box;margin-top:10px;height:150px;padding:9px 11px;border:1px dashed #d6deea;border-radius:9px;background:#fbfcfe;font:11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:#334155;resize:vertical;white-space:pre}
+.dd-note2{font-size:10.5px;color:#a8b3c2;margin-top:7px;line-height:1.55}
+
 /* テーブル周辺 */
 .table-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:26px 0 4px}
 .table-head h2{font-size:18px;font-weight:800;letter-spacing:-.01em}
@@ -1074,6 +1096,32 @@ details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px
       </div>
       <div id="azBody"></div>
     </div>
+
+    <!-- ワークショップ用:プレイヤー別ヒーロースコア表 -->
+    <details class="power-sec dd-sec" id="ddSec">
+      <summary class="dd-sum">🎲 カスタムゲーム用ヒーロースコア表(プレイヤー別・ピック制限の数値)</summary>
+      <div class="dd-body">
+        <div class="dd-head">
+          <div class="dd-note">ワークショップに入れる数値です。<b>プレイヤーごとに、その人が使ったヒーローの Power</b>(ヒーロー別パワーランキングの値)を並べています。カスタムゲームでは「選んだヒーローの合計 ≤ 予算」でピックを制限します。</div>
+          <div class="dd-ctl">
+            <label class="dd-f">コピーに含める体数
+              <select id="ddN" class="power-sel">
+                <option value="4">上位4体</option>
+                <option value="6">上位6体</option>
+                <option value="8" selected>上位8体</option>
+                <option value="10">上位10体</option>
+                <option value="12">上位12体</option>
+                <option value="99">全部</option>
+              </select>
+            </label>
+            <button class="filter-btn" id="ddCopy" title="ワークショップに貼り付けられるテキストをコピーします">📋 貼り付け用コピー</button>
+          </div>
+        </div>
+        <div id="ddPlayers" class="dd-list"></div>
+        <textarea id="ddOut" class="dd-out" readonly spellcheck="false" aria-label="ワークショップ貼り付け用テキスト"></textarea>
+        <div class="dd-note2">※ 予算の目安: その人の「上位N体の合計」の 30〜50% くらいにすると、3〜5体ぶんになります(例: 合計 380 なら予算 120〜190)。ワークショップは外部データを読めないので、この数値をモードに直接入れてください。</div>
+      </div>
+    </details>
 
     <div class="foot">
       ※ 緑=勝率55%超 / 赤=勝率40%未満 / 青=KDA3.0超 / 橙=KDA1.5未満<br />
@@ -3311,6 +3359,79 @@ $('#teamBody').addEventListener('click',e=>{
   renderTeam();
 });
 
+/* =====================================================================
+ * ワークショップ用ヒーロースコア表(プレイヤー別)
+ *   各プレイヤーが使ったヒーローの Power(ヒーロー別パワーランキングの値)を並べる。
+ *   カスタムゲーム側は「選んだヒーローの合計 ≤ 予算」でピックを制限する想定。
+ *   ワークショップは外部データを読めないので、ここで貼り付け用テキストを作る。
+ * =================================================================== */
+function ddHeroesOf(p) {
+  const pool = p && (p.bscoreAll || p.bscore);
+  if (!pool) return [];
+  const out = [];
+  for (const h of (p.heroes || [])) {
+    const b = pool[h.slug];
+    if (!b || typeof b.finalScore !== 'number') continue;
+    out.push({
+      slug: h.slug,
+      n: h.n || SLUG_NAME[h.slug] || h.slug,
+      role: h.role || SLUG_ROLE[h.slug] || '',
+      v: Math.round(b.finalScore * 10) / 10,
+      g: b.gamesPlayed || h.g || 0
+    });
+  }
+  out.sort((a, b) => b.v - a.v);
+  return out;
+}
+function ddData() {
+  const sel = $('#ddN');
+  const N = sel ? Math.max(1, Number(sel.value) || 8) : 8;
+  const rows = PLAYERS.map((p) => {
+    const all = ddHeroesOf(p);
+    const top = all.slice(0, Math.min(N, all.length));
+    return {
+      p, all, top,
+      sumTop: top.reduce((s, h) => s + h.v, 0),
+      sumAll: all.reduce((s, h) => s + h.v, 0)
+    };
+  }).sort((a, b) => b.sumAll - a.sumAll);
+  return { rows, N };
+}
+function ddCopyText(d) {
+  const lines = ['# プレイヤー別ヒーロースコア(上位' + d.N + '体)'];
+  d.rows.forEach((r, i) => {
+    lines.push(`P${i + 1}  ${r.p.name}  (上位${d.N}体合計 ${Math.round(r.sumTop * 10) / 10} / 目安予算 ${Math.round(r.sumTop * 0.3)}〜${Math.round(r.sumTop * 0.5)})`);
+    r.top.forEach((h) => lines.push(`    ${h.n}\t${h.v}`));
+    lines.push('');
+  });
+  return lines.join('\n');
+}
+function ddRender() {
+  const box = $('#ddPlayers'), out = $('#ddOut');
+  if (!box) return;
+  const d = ddData();
+  box.innerHTML = d.rows.map((r, i) => {
+    const chips = r.top.map((h, j) => `<span class="dd-chip${j === 0 ? ' top' : ''}" title="${esc(h.n)} ・ ${esc(h.role)} ・ ${h.g}試合">${esc(h.n)}<b>${fmt1(h.v)}</b></span>`).join('');
+    const more = r.all.length > r.top.length ? `<span class="dd-chip" style="color:#94a3b8">ほか${r.all.length - r.top.length}体</span>` : '';
+    return `<div class="dd-p">
+      <div class="dd-pname"><span class="pl-av ${roleCls(r.p.role)}">${faceMarkup(r.p)}</span><span class="nm">P${i + 1} ${esc(r.p.name)}</span></div>
+      <div class="dd-chips">${chips}${more}</div>
+      <div class="dd-sumv" title="コピーに含める上位Nの合計 / 予算の目安(30〜50%)">Σ ${Math.round(r.sumTop * 10) / 10} ・ 予算目安 ${Math.round(r.sumTop * 0.3)}〜${Math.round(r.sumTop * 0.5)}</div>
+    </div>`;
+  }).join('');
+  if (out) out.value = ddCopyText(d);
+}
+if ($('#ddN')) $('#ddN').addEventListener('change', ddRender);
+if ($('#ddCopy')) $('#ddCopy').addEventListener('click', () => {
+  const out = $('#ddOut'), btn = $('#ddCopy');
+  if (!out) return;
+  const txt = out.value;
+  const done = () => { const t = btn.textContent; btn.textContent = '✓ コピーしました'; setTimeout(() => { btn.textContent = t; }, 1400); };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(txt).then(done, () => { out.select(); done(); });
+  } else { out.select(); done(); }
+});
+
 renderSel();
 renderProfile(focusPlayer());
 renderTable();
@@ -3318,6 +3439,7 @@ updateArrows();
 setMode();      // 常に全モード(コンペ表示は廃止)
 renderTeam();   // チームビルダー初期描画
 azRender();     // チームアナリスト初期描画
+ddRender();     // カスタムゲーム用ドラフト表
 
 /* 最終更新日(players-data.js の LAST_UPDATED_ISO)を表示 */
 (function(){
