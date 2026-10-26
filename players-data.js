@@ -1,7 +1,7 @@
 'use strict';
 
 /* 生成データ: update.mjs が自動生成(手編集は上書き) ・ 元データ: OverFast API */
-const LAST_UPDATED_ISO = "2026-10-25T23:06:27.465Z";
+const LAST_UPDATED_ISO = "2026-10-26T00:11:46.375Z";
 /* ライバル・プレイ(コンペティティブ)のみ */
 const PLAYERS_COMP = [
   {
@@ -20645,8 +20645,7 @@ const PLAYERS_ALL = [
           "as10": 2.282456140350877,
           "wa": 24.035087719298247,
           "ca": 9.017543859649123
-        },
-        "rankDelta": -1
+        }
       },
       "reaper": {
         "finalScore": 127.53,
@@ -21086,8 +21085,7 @@ const PLAYERS_ALL = [
           "as10": 12.9,
           "wa": 29,
           "ca": 11
-        },
-        "rankDelta": -1
+        }
       },
       "lucio": {
         "finalScore": 139.31,
@@ -21207,8 +21205,7 @@ const PLAYERS_ALL = [
           "as10": 3.99,
           "wa": 34,
           "ca": 8
-        },
-        "rankDelta": 4
+        }
       },
       "reinhardt": {
         "finalScore": 129.28,
@@ -21308,8 +21305,7 @@ const PLAYERS_ALL = [
           "as10": 1.23,
           "wa": 27,
           "ca": 8
-        },
-        "rankDelta": -1
+        }
       },
       "vendetta": {
         "finalScore": 91.11,
@@ -21429,8 +21425,7 @@ const PLAYERS_ALL = [
           "as10": 15.25,
           "wa": 26,
           "ca": 10
-        },
-        "rankDelta": -1
+        }
       }
     },
     "bscoreAll": {
@@ -21712,8 +21707,7 @@ const PLAYERS_ALL = [
           "as10": 2.282456140350877,
           "wa": 24.035087719298247,
           "ca": 9.017543859649123
-        },
-        "rankDelta": -1
+        }
       },
       "reaper": {
         "finalScore": 127.53,
@@ -22153,8 +22147,7 @@ const PLAYERS_ALL = [
           "as10": 12.9,
           "wa": 29,
           "ca": 11
-        },
-        "rankDelta": -1
+        }
       },
       "lucio": {
         "finalScore": 139.31,
@@ -22274,8 +22267,7 @@ const PLAYERS_ALL = [
           "as10": 3.99,
           "wa": 34,
           "ca": 8
-        },
-        "rankDelta": 4
+        }
       },
       "reinhardt": {
         "finalScore": 129.28,
@@ -22375,8 +22367,7 @@ const PLAYERS_ALL = [
           "as10": 1.23,
           "wa": 27,
           "ca": 8
-        },
-        "rankDelta": -1
+        }
       },
       "vendetta": {
         "finalScore": 91.11,
@@ -22496,8 +22487,7 @@ const PLAYERS_ALL = [
           "as10": 15.25,
           "wa": 26,
           "ca": 10
-        },
-        "rankDelta": -1
+        }
       }
     },
     "recent": [
