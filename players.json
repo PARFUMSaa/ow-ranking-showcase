@@ -11,6 +11,7 @@
     { "id": "p9",       "name": "Miyasho", "playerId": "df57b58ba07994e0b8a122a7d7|cd6cf51152735dd8913954bd8b4cd0e6" },
     { "id": "p10",      "name": "Nnware", "playerId": "dc50bb8ba174d6fcbea623|78615f6a87b43682d09d448bafb3b022" },
     { "id": "p11",      "name": "PIPURO", "playerId": "c2779cbf815ed6febaa823|5c92c86a83e8c0634c7f082bbed0d680" },
-    { "id": "p12",      "name": "生パスタ", "playerId": "75aa53095080184f3073952fc902af0f4d|ed637dce0ee40261b2c48f4f336bbfff" }
+    { "id": "p12",      "name": "生パスタ", "playerId": "75aa53095080184f3073952fc902af0f4d|ed637dce0ee40261b2c48f4f336bbfff" },
+    { "id": "marumaru", "name": "marumaru", "playerId": "ff5fbe9fbe7089b8a4a326a7d409|e7e78316653930bd938974d2868c63ef" }
   ]
 }
