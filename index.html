@@ -775,8 +775,27 @@ details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px
 .mfound-sub span{animation:mfSubIn .45s ease .25s backwards}
 @keyframes mfSubIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 
+/* ルーレット中:Canvasで溶接風の火花を描く(回転中スロットの縁から) + 八角柱ドラムが回る */
+.tr-ply{position:relative;overflow:hidden}
+.trfx{position:fixed;inset:0;z-index:9990;pointer-events:none}
+/* 8面の柱(ドラム)。面は rotateX(k*45deg) translateZ(半径) で円筒状に並べる */
+.tr-reel{display:block;flex:1 1 auto;width:100%;min-width:0;position:relative;height:30px;overflow:hidden;perspective:210px;perspective-origin:50% 50%}
+.tr-reel::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(15,23,42,.34),rgba(15,23,42,0) 40%,rgba(15,23,42,0) 60%,rgba(15,23,42,.34))}
+.tr-reel-in{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
+.tr-line{position:absolute;left:0;top:0;width:100%;height:30px;min-height:30px;display:flex;align-items:center;gap:8px;white-space:nowrap;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform-origin:50% 50%}
+/* 表示時間を伸ばした分、待ち時間が「止まって見えない」ようにゆるく脈打たせる */
+.mf-scanlines{animation:mfFlicker 1.2s steps(3,end) .1s infinite}
+.mfound-t{animation:mfoundPop .5s cubic-bezier(.2,1.35,.35,1),mfPulse 1.5s ease-in-out .55s infinite}
+@keyframes mfPulse{
+  0%,100%{text-shadow:0 0 22px rgba(255,70,85,.55),0 0 3px rgba(255,255,255,.9)}
+  50%{text-shadow:0 0 36px rgba(255,70,85,.9),0 0 7px rgba(255,255,255,1)}
+}
+.mfound.quick .mfound-t{animation:mfoundPop .5s cubic-bezier(.2,1.35,.35,1),mfPulse 1.2s ease-in-out .5s infinite}
+.mfound.quick .mfound-t{text-shadow:0 0 20px rgba(255,70,85,.5),0 0 3px rgba(255,255,255,.85)}
+
 @media(prefers-reduced-motion:reduce){
   .mf-flash,.mf-scan,.mf-ring,.mf-streaks,.mf-scanlines{display:none}
+  .trfx{display:none}
   .mfound-in,.mfound-t,.mfound-line,.mfound-kicker,.mfound-sub span{animation:none!important}
   .mfound-t::before,.mfound-t::after{animation:none!important;opacity:.35}
 }
@@ -3094,6 +3113,19 @@ function trbRender() {
 }
 /* 効果音(リポジトリ内の mp3) */
 const TRB_SND_SRC = { match: 'sounds/matchfound.mp3', lock: 'sounds/decide.mp3' };
+/* 演出の長さ・音量(ここで一括調整) */
+const TRB_T = {
+  matchHold: 2000,    // MATCH FOUND を出しておく時間(0.4秒短縮)
+  matchFade: 800,     // フェードアウト
+  spinMs: 1800,       // 1ロールあたりのルーレット回転時間(伸ばした)
+  tick: 55,           // コマ送り間隔
+  lockStagger: 120,   // 決定をずらす間隔
+  lockHold: 1700,     // TEAM LOCKED を出しておく時間
+  lockFade: 700,
+  volLock: 0.35,      // プレイヤー決定音(小さめ)
+  volLockSpin: 0.22,  // 各ロールの決定音
+  volMatch: 0.22      // MATCH FOUND の音
+};
 const trbSnd = {};
 function trbPreloadSounds() {
   Object.keys(TRB_SND_SRC).forEach((k) => {
@@ -3132,12 +3164,12 @@ function trbDecided(onDone) {
       <div class="mfound-sub"><span>TEAM A 5</span><i>VS</i><span>TEAM B 5</span></div>
     </div>`;
   document.body.appendChild(box);
-  trbPlaySnd('lock', 0.9);
-  setTimeout(() => { box.classList.add('out'); }, 900);
+  trbPlaySnd('lock', TRB_T.volLock);
+  setTimeout(() => { box.classList.add('out'); }, TRB_T.lockHold);
   setTimeout(() => {
     if (box.parentNode) box.remove();
     if (typeof onDone === 'function') onDone();
-  }, 1420);
+  }, TRB_T.lockHold + TRB_T.lockFade);
 }
 /* MATCH FOUND のオーバーレイ(確定時に一瞬出す) */
 function trbMatchFound(teams, onReveal) {
@@ -3156,15 +3188,169 @@ function trbMatchFound(teams, onReveal) {
       <div class="mfound-sub"><span>TEAM A ${teams[0].length}</span><i>VS</i><span>TEAM B ${teams[1].length}</span></div>
     </div>`;
   document.body.appendChild(box);
-  trbPlaySnd('match', 0.22);
+  trbPlaySnd('match', TRB_T.volMatch);
   /* フェードを始めるタイミングでルーレットを開始(全画面 → スロットへ) */
   setTimeout(() => {
     box.classList.add('out');
     if (typeof onReveal === 'function') onReveal();
-  }, 1500);
-  setTimeout(() => { if (box.parentNode) box.remove(); }, 2080);
+  }, TRB_T.matchHold);
+  setTimeout(() => { if (box.parentNode) box.remove(); }, TRB_T.matchHold + TRB_T.matchFade);
 }
 /* ルーレット: MATCH FOUND(全画面) → ロールごとに回転 → 決定エフェクト */
+/* =====================================================================
+ * ルーレット用:溶接風の火花(Canvas)
+ *   回転中のスロットの縁から火花が飛び散る。ルーレットが減速すると弱まる。
+ *   白いカード上でも見えるよう、暗いオレンジの光輪 + 明るい芯の2段描き。
+ * =================================================================== */
+const TRFX = (function () {
+  const noop = { add() {}, setIntensity() {}, remove() {}, stop() {} };
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return noop;
+
+  const CFG = { gravity: 1500, drag: 0.45, fade: 0.30, ratePerSlot: 150, max: 900 };
+  const PAL = [[255, 255, 235], [255, 240, 150], [255, 178, 55], [255, 105, 22], [185, 45, 8], [80, 12, 4]];
+  const STEPS = 40;
+  const rand = (a, b) => a + Math.random() * (b - a);
+  const clamp = (v, a, b) => (v < a ? a : v > b ? b : v);
+  const colorOf = (t) => {
+    t = clamp(t, 0, 1);
+    const n = PAL.length - 1, x = t * n, i = Math.floor(x), f = x - i;
+    const a = PAL[Math.min(n, i)], b = PAL[Math.min(n, i + 1)];
+    return [Math.round(a[0] + (b[0] - a[0]) * f), Math.round(a[1] + (b[1] - a[1]) * f), Math.round(a[2] + (b[2] - a[2]) * f)];
+  };
+  const COLORS = [];
+  for (let i = 0; i < STEPS; i++) { const c = colorOf(i / (STEPS - 1)); COLORS.push(`rgb(${c[0]},${c[1]},${c[2]})`); }
+
+  let cv = null, ctx = null, W = 0, H = 0, DPR = 1, raf = 0, last = 0, idleMs = 0;
+  const slots = [];   // { el, k }
+  const ps = [];      // 粒子
+
+  function ensure() {
+    if (cv) return;
+    cv = document.createElement('canvas');
+    cv.className = 'trfx';
+    document.body.appendChild(cv);
+    ctx = cv.getContext('2d');
+    resize();
+    window.addEventListener('resize', resize);
+    last = performance.now();
+    raf = requestAnimationFrame(loop);
+  }
+  function resize() {
+    if (!cv) return;
+    W = window.innerWidth; H = window.innerHeight;
+    /* 画素数の上限(約800万)を超える大画面ではDPRを落としてメモリ・塗り負荷を抑える */
+    const raw = Math.min(window.devicePixelRatio || 1, 2);
+    const budget = 8e6;
+    DPR = Math.max(0.75, Math.min(raw, Math.sqrt(budget / Math.max(1, W * H))));
+    cv.width = Math.floor(W * DPR); cv.height = Math.floor(H * DPR);
+    cv.style.width = W + 'px'; cv.style.height = H + 'px';
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    ctx.clearRect(0, 0, W, H);
+  }
+  function spawn(x, y, vx, vy) {
+    if (ps.length >= CFG.max) return;
+    ps.push({ x, y, px: x, py: y, vx, vy, life: 0, max: rand(0.3, 0.95), size: rand(0.8, 2.2) });
+  }
+  /* スロットの縁から外側へ火花を出す */
+  function emit(s, dt) {
+    const el = s.el;
+    if (!el || !el.isConnected) { s.k = 0; return; }
+    const r = el.getBoundingClientRect();
+    if (!r.width || !r.height) { s.k = 0; return; }
+    const n = Math.round(CFG.ratePerSlot * s.k * dt);
+    for (let i = 0; i < n; i++) {
+      const edge = Math.floor(Math.random() * 4);
+      let x, y, vx, vy;
+      if (edge === 0) { x = r.left + Math.random() * r.width; y = r.top; vx = rand(-130, 130); vy = rand(-340, -60); }
+      else if (edge === 1) { x = r.right; y = r.top + Math.random() * r.height; vx = rand(60, 340); vy = rand(-150, 150); }
+      else if (edge === 2) { x = r.left + Math.random() * r.width; y = r.bottom; vx = rand(-130, 130); vy = rand(60, 340); }
+      else { x = r.left; y = r.top + Math.random() * r.height; vx = rand(-340, -60); vy = rand(-150, 150); }
+      const sp = 1 + Math.random() * 1.5;      // 勢い(たまに大きく飛ぶ)
+      spawn(x, y, vx * sp, vy * sp);
+    }
+  }
+  function draw(s) {
+    const heat = clamp(1 - s.life / s.max, 0, 1);
+    if (heat <= 0.02) return;
+    const a = Math.min(1, heat * 2.2);
+    const col = COLORS[Math.min(STEPS - 1, (heat * (STEPS - 1)) | 0)];
+    /* 光輪(暗いオレンジ・太め) */
+    ctx.globalAlpha = a * 0.5;
+    ctx.strokeStyle = 'rgba(150,55,0,.55)';
+    ctx.lineWidth = s.size * 3.2;
+    ctx.beginPath(); ctx.moveTo(s.px, s.py); ctx.lineTo(s.x, s.y); ctx.stroke();
+    /* 芯(明るい) */
+    ctx.globalAlpha = a;
+    ctx.strokeStyle = col;
+    ctx.lineWidth = s.size * (0.4 + heat * 0.9);
+    ctx.beginPath(); ctx.moveTo(s.px, s.py); ctx.lineTo(s.x, s.y); ctx.stroke();
+    /* 高温の粒は白い点 */
+    if (heat > 0.6) {
+      ctx.globalAlpha = a;
+      ctx.fillStyle = 'rgba(255,255,240,.95)';
+      ctx.beginPath(); ctx.arc(s.x, s.y, s.size * 0.7, 0, Math.PI * 2); ctx.fill();
+    }
+  }
+  function loop(now) {
+    const dt = Math.min(now - last, 50) / 1000;
+    last = now;
+    /* 残像(透明のまま薄く消す) */
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = `rgba(0,0,0,${CFG.fade})`;
+    ctx.fillRect(0, 0, W, H);
+    ctx.globalCompositeOperation = 'source-over';
+
+    /* 発生 */
+    let strength = 0;
+    for (const s of slots.slice()) { if (s.k > 0.01) { emit(s, dt); strength += s.k; } }
+    /* 物理 */
+    for (let i = ps.length - 1; i >= 0; i--) {
+      const s = ps[i];
+      s.px = s.x; s.py = s.y;
+      s.vy += CFG.gravity * dt;
+      const d = Math.pow(CFG.drag, dt);
+      s.vx *= d; s.vy *= d;
+      s.x += s.vx * dt; s.y += s.vy * dt;
+      s.life += dt;
+      if (s.life >= s.max || s.y > H + 40 || s.x < -120 || s.x > W + 120) { ps.splice(i, 1); continue; }
+      draw(s);
+    }
+    ctx.globalAlpha = 1;
+
+    /* 終了判定:スロットも粒子も無くなったら片付ける */
+    const live = slots.filter((s) => s.k > 0.01 || s.el && s.el.isConnected).length;
+    if (!live && ps.length === 0) {
+      idleMs += dt * 1000;
+      if (idleMs > 700) { cleanup(); return; }
+    } else idleMs = 0;
+    raf = requestAnimationFrame(loop);
+  }
+  function cleanup() {
+    if (raf) { cancelAnimationFrame(raf); raf = 0; }
+    window.removeEventListener('resize', resize);
+    if (cv && cv.parentNode) cv.parentNode.removeChild(cv);
+    cv = null; ctx = null;
+    slots.length = 0; ps.length = 0;
+  }
+  return {
+    add(el) {
+      if (!el) return;
+      ensure();
+      if (!slots.some((s) => s.el === el)) slots.push({ el, k: 1 });
+    },
+    setIntensity(el, k) {
+      const s = slots.find((x) => x.el === el);
+      if (s) s.k = clamp(k, 0, 1);
+    },
+    remove(el) {
+      const i = slots.findIndex((x) => x.el === el);
+      if (i >= 0) slots.splice(i, 1);
+    },
+    stop() { slots.length = 0; }
+  };
+})();
+
 function trbSpin() {
   if (trb.spinning || !trb.opts || !trb.opts.length) return;
   const idx = trbDeckNext();
@@ -3190,20 +3376,56 @@ function trbSpin() {
   const wait = (ms) => new Promise((res) => { trb.timer = setTimeout(res, ms); });
   const finalFor = (i) => (i < 5 ? finalTeams[0][i] : finalTeams[1][i - 5]);
   const htmlOf = (p, role) => `<span class="pl-av ${roleCls(p.role)}">${faceMarkup(p)}</span><span class="tr-nm">${esc(p.name)}</span><span class="tr-rk">${trRankChip(p, role)}</span>`;
-  const paint = (role, idxs) => {
+  /* 八角柱ドラムを回す:序盤は高速 → 中盤で減速 → 終盤はゆっくり回りながら止まる */
+  const reelRun = (el, role) => {
     const ord = pool.slice();
     for (let i = ord.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       const t = ord[i]; ord[i] = ord[j]; ord[j] = t;
     }
-    idxs.forEach((i, k) => { if (slots[i]) slots[i].innerHTML = htmlOf(ord[k % ord.length], role); });
+    const NF = 8;                        // 八角柱の面数
+    const FACE = 360 / NF;               // 45deg
+    const items = [];
+    for (let k = 0; k < NF; k++) items.push(`<span class="tr-line">${htmlOf(ord[k % ord.length], role)}</span>`);
+    el.innerHTML = `<span class="tr-reel"><span class="tr-reel-in">${items.join('')}</span></span>`;
+    const inEl = el.querySelector('.tr-reel-in');
+    const lines = el.querySelectorAll('.tr-line');
+    const lineH = lines.length ? lines[0].offsetHeight || 30 : 30;
+    const rad = (lineH / 2) / Math.tan(Math.PI / NF);   // 面がちょうど接する円の半径(30px面なら36.2px)
+    const PERS = 210;                                   // CSSの perspective と揃える
+    const sc = (PERS / (PERS + rad)) * 0.97;            // 透視で拡大される分を打ち消し、正面の面を枠内に収める
+    for (let k = 0; k < lines.length; k++) {
+      lines[k].style.transform = `rotateX(${(k * FACE).toFixed(2)}deg) translateZ(${rad.toFixed(2)}px)`;
+    }
+    const spinDeg = FACE * NF * 3;       // 3回転
+    const dur = TRB_T.spinMs;
+    /* 動きを減らす設定なら回さず、正面の面を表示 */
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      inEl.style.transform = `scale3d(${sc.toFixed(4)},${sc.toFixed(4)},${sc.toFixed(4)})`;
+      return () => {};
+    }
+    const t0 = performance.now();
+    let raf = 0;
+    const step = (now) => {
+      const p = Math.max(0, Math.min(1, (now - t0) / dur));   // 念のため0未満をクリップ
+      /* 序盤=高速 → 中盤で減速 → 終盤はゆっくり回りながら止まる(段差なしで連続) */
+      const e = p >= 1 ? 1 : 1 - Math.pow(1 - p, 2.6);
+      const deg = spinDeg * e;
+      inEl.style.transform = `rotateX(${deg.toFixed(2)}deg) scale3d(${sc.toFixed(4)},${sc.toFixed(4)},${sc.toFixed(4)})`;
+      TRFX.setIntensity(el, 1 - p * 0.82);            // 止まるにつれて火花を弱める
+      if (p < 1) raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
   };
+
   const lockOne = (i, role, delay) => new Promise((res) => {
     setTimeout(() => {
       const el = slots[i];
       const x = finalFor(i);
       if (el && x) {
         el.innerHTML = htmlOf(x.p, role);
+        TRFX.remove(el);
         const row = el.closest('.tr-slot');
         if (row) row.classList.add('lock');
       }
@@ -3228,13 +3450,20 @@ function trbSpin() {
     });
   };
   const run = async () => {
+    const cancels = {};
     for (const g of GROUPS) {
       setHeads(g.label + ' 抽選中…');
-      const t0 = Date.now();
-      while (Date.now() - t0 < 560) { paint(g.role, g.idx); await wait(55); }
+      g.idx.forEach((i) => {
+        const el = slots[i];
+        if (!el) return;
+        TRFX.add(el);                    // このスロットの縁から火花を出す
+        cancels[i] = reelRun(el, g.role); // 下へ流れるリール(終盤は減速)
+      });
+      await wait(TRB_T.spinMs);
       setHeads(g.label + ' ✓');
-      trbPlaySnd('lock', 0.55);
-      await Promise.all(g.idx.map((i, k) => lockOne(i, g.role, k * 90)));
+      g.idx.forEach((i) => { if (cancels[i]) { cancels[i](); cancels[i] = null; } });
+      trbPlaySnd('lock', TRB_T.volLockSpin);
+      await Promise.all(g.idx.map((i, k) => lockOne(i, g.role, k * TRB_T.lockStagger)));
       await wait(150);
     }
     finish();
