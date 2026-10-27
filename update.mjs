@@ -676,6 +676,17 @@ function suspiciousJump(prevRec, rec) {
   if (typeof a !== 'number' || typeof b !== 'number' || a <= 0) return false;
   return Math.abs(b - a) > Math.max(50, a * 0.25);
 }
+/* その日のヒーロースコア(Power Rating)を丸めて記録する。
+   後から「このヒーローのスコア推移」を折れ線で描けるようにするための履歴 */
+function heroScoreSnapshot(pool) {
+  const out = {};
+  if (!pool) return out;
+  for (const slug of Object.keys(pool)) {
+    const v = pool[slug] && pool[slug].finalScore;
+    if (typeof v === 'number' && isFinite(v)) out[slug] = Math.round(v * 10) / 10;
+  }
+  return out;
+}
 function applyRecentHeroes(recs, prevList, poolOf) {
   const prevById = new Map();
   for (const p of (prevList || [])) if (p && p.id) prevById.set(p.id, p);
@@ -710,7 +721,8 @@ function applyRecentHeroes(recs, prevList, poolOf) {
       d: today, g: gains,
       m: ov.matches, w: ov.wins, l: ov.losses, t: ov.time, k: ov.kda,
       tot: ov.tot || null,
-      r: rankSnapshot(rec.ranks)
+      r: rankSnapshot(rec.ranks),
+      s: heroScoreSnapshot(pool)      /* その日のヒーロースコア(スコア推移グラフ用) */
     };
     const i = hist.findIndex((e) => e.d === today);
     if (i >= 0) {

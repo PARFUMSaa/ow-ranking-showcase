@@ -6,6 +6,14 @@
 <title>OW2 PLAYER RANKINGS | 身内ランキング(β)</title>
 <link rel="icon" type="image/svg+xml" href="icons/favicon.svg" />
 <link rel="mask-icon" href="icons/favicon.svg" color="#f28f1d" />
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#f28f1d" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="オーバーツ" />
+<meta name="application-name" content="オーバーツ" />
+<link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png" />
 <style>
 /* ============ 共通 ============ */
 :root{--blue:#2563eb;--border:#e5e7eb}
@@ -1362,7 +1370,7 @@ html.intro-lock{overflow:hidden}
 #toc a:hover{background:#f4f7fb;border-color:#dbe3ee;color:#0f172a}
 #toc a.on{background:#eef4ff;border-color:#bfdbfe;color:#1d4ed8}
 #toc a.top{margin-left:auto;color:#8a94a3}
-#pfSel,#profileBox,#sec-rank,#sec-power,#sec-tb,#sec-tr{scroll-margin-top:70px}
+#pfSel,#profileBox,#sec-rank,#sec-power,#sec-tb,#sec-tr,#sec-osint{scroll-margin-top:70px}
 @media(max-width:560px){
   #toc{gap:4px;padding:6px 8px}
   #toc a{font-size:11px;padding:4px 8px}
@@ -1401,6 +1409,220 @@ html.intro-lock{overflow:hidden}
   border:1px solid #e8eef7;border-radius:9px;background:#f8fbff;font-size:11px;color:#64748b;font-weight:700}
 .dd-meta b{color:#0f172a;font-size:12.5px;font-variant-numeric:tabular-nums}
 .dd-chip.nos{background:#fef2f2;border-color:#fecaca;color:#b91c1c;font-weight:800}
+
+
+/* ===== ヒーロースコア推移モーダル ===== */
+.heroes-cell .hl-click{cursor:pointer;border-radius:8px;transition:background .12s}
+.heroes-cell .hl-click:hover{background:#eef4ff}
+.hs-modal{position:fixed;inset:0;z-index:30000;display:none;align-items:center;justify-content:center;
+  background:rgba(15,23,42,.45);padding:16px}
+.hs-modal.on{display:flex}
+.hs-card{position:relative;width:min(640px,100%);max-height:90vh;overflow:auto;background:#fff;border-radius:16px;
+  box-shadow:0 20px 60px rgba(15,23,42,.28);padding:16px 18px 14px;border:1px solid #e5e7eb}
+.hs-x{position:absolute;right:10px;top:8px;border:0;background:transparent;font-size:22px;line-height:1;color:#94a3b8;cursor:pointer;padding:4px 8px;border-radius:8px}
+.hs-x:hover{background:#f1f5f9;color:#0f172a}
+.hs-hd{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding-right:28px;margin-bottom:10px}
+.hs-who{display:flex;align-items:center;gap:7px;font-weight:800;font-size:13px;color:#334155}
+.hs-hero{display:flex;align-items:center;gap:7px;font-weight:800;font-size:15px;color:#0f172a;margin-left:auto}
+.hs-kpi{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.hs-k{display:flex;align-items:baseline;gap:4px;border:1px solid #e8eef7;background:#f8fbff;border-radius:10px;padding:6px 11px;font-size:11px;color:#64748b;font-weight:700}
+.hs-k b{font-size:16px;color:#0f172a;font-variant-numeric:tabular-nums}
+.hs-k i{font-size:10px;color:#94a3b8;font-style:normal}
+.hs-kmeta{border-style:dashed;color:#94a3b8;font-weight:600}
+.hs-chart{border:1px solid #eef2f8;border-radius:12px;padding:4px;background:#fff}
+.hs-empty{display:flex;flex-direction:column;gap:6px;align-items:center;text-align:center;padding:26px 12px;
+  border:1px dashed #d6deea;border-radius:12px;background:#fbfcfe;color:#64748b;font-size:12px}
+.hs-empty b{font-size:14px;color:#334155}
+.hs-empty .hs-cur{margin-top:4px;font-size:13px;color:#0f172a}
+.hs-empty .hs-cur b{font-size:20px;color:#2563eb}
+.hs-legend{margin-top:6px;font-size:10.5px;color:#94a3b8;text-align:right}
+@media(max-width:560px){
+  .hs-card{padding:12px}
+  .hs-hero{margin-left:0;font-size:14px}
+  .hs-k b{font-size:15px}
+}
+
+
+/* ===== OSINT ===== */
+.os-sec{margin-top:24px}
+.os-ctl{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:10px 0}
+.os-f{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:800;color:#64748b}
+.os-roles{display:inline-flex;gap:4px}
+.os-roles button{appearance:none;border:1px solid #e2e8f0;background:#fff;color:#64748b;font:inherit;font-size:11px;font-weight:800;padding:3px 10px;border-radius:99px;cursor:pointer}
+.os-roles button:hover{border-color:#94a3b8;color:#0f172a}
+.os-roles button.on{background:#111827;color:#fff;border-color:#111827}
+.os-count{margin-left:auto;font-size:11px;color:#94a3b8;font-weight:700}
+.os-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(238px,1fr));gap:6px;margin-bottom:14px}
+.os-h{display:flex;align-items:center;gap:5px;padding:6px 9px;border:1px solid #e8eef7;border-radius:10px;background:#fff;
+  cursor:pointer;font:inherit;text-align:left;transition:.12s;min-width:0}
+.os-h:hover{border-color:#93b4f7;background:#f5f9ff;transform:translateY(-1px)}
+.os-h.on{border-color:#2563eb;background:#dbeafe;box-shadow:0 0 0 1px #2563eb inset}
+.os-h .nm{flex:1 1 auto;min-width:0;font-size:11.5px;font-weight:800;color:#0f172a;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.os-h .sc{font-size:12px;font-weight:900;font-variant-numeric:tabular-nums;color:#1d4ed8}
+.os-h .sp{flex:0 0 40px;display:block;line-height:0;width:40px}
+.os-h .dl{flex:0 0 30px;text-align:right;font-size:10px;font-weight:800;font-variant-numeric:tabular-nums}
+.os-h .dl.up{color:#16a34a}.os-h .dl.dn{color:#dc2626}.os-h .dl.eq{color:#94a3b8}
+.os-detail{border:1px solid var(--border);border-radius:14px;background:#fff;padding:14px 16px}
+.os-dt-hd{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.os-dt-nm{font-size:17px;font-weight:900;color:#0f172a}
+.os-dt-sub{font-size:11px;color:#94a3b8;font-weight:700}
+.os-kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:6px;margin-bottom:12px}
+.os-kpi{border:1px solid #eef2f8;border-radius:10px;padding:7px 10px;background:#f8fbff}
+.os-kpi .k{font-size:10px;font-weight:800;color:#94a3b8;letter-spacing:.04em}
+.os-kpi .v{font-size:16px;font-weight:900;color:#0f172a;font-variant-numeric:tabular-nums;line-height:1.25}
+.os-kpi .s{font-size:10px;color:#94a3b8;font-weight:700}
+.os-chart{border:1px solid #eef2f8;border-radius:12px;padding:4px;background:#fff}
+.os-empty{padding:18px;text-align:center;color:#94a3b8;font-size:12px;border:1px dashed #e2e8f0;border-radius:10px}
+.os-note{margin-top:8px;font-size:11px;color:#92400e;background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:6px 9px}
+@media(max-width:560px){
+  .os-grid{grid-template-columns:1fr;gap:5px}
+  .os-h .nm{font-size:12.5px}
+  .os-h .dl{display:none}
+  .os-kpis{grid-template-columns:repeat(auto-fill,minmax(104px,1fr))}
+}
+
+
+.os-charts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.os-card{border:1px solid #eef2f8;border-radius:12px;padding:8px 10px 10px;background:#fff}
+.os-card.wide{grid-column:1 / -1}
+.os-card-hd{font-size:11.5px;font-weight:900;color:#334155;margin-bottom:6px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.os-card-sub{font-size:10px;font-weight:700;color:#a8b3c2}
+.os-radar{display:block}
+.os-brow{display:grid;grid-template-columns:96px 1fr 44px 46px;align-items:center;gap:6px;padding:2px 0}
+.os-brow.me .os-bnm{color:#1d4ed8}
+.os-brow.me .os-btrack i{background:linear-gradient(90deg,#2563eb,#60a5fa)}
+.os-bnm{font-size:10.5px;font-weight:800;color:#475569;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.os-btrack{height:8px;background:#f1f5f9;border-radius:99px;overflow:hidden}
+.os-btrack i{display:block;height:100%;background:linear-gradient(90deg,#94a3b8,#cbd5e1);border-radius:99px}
+.os-bv{font-size:11px;font-weight:900;color:#0f172a;font-variant-numeric:tabular-nums;text-align:right}
+.os-bg{font-size:9.5px;color:#94a3b8;text-align:right;font-weight:700}
+.os-days{display:flex;align-items:flex-end;gap:2px;height:78px;padding-top:2px}
+.os-dcol{flex:1 1 0;display:flex;align-items:flex-end;justify-content:center;height:100%}
+.os-dcol i{display:block;width:100%;max-width:10px;border-radius:2px 2px 0 0;background:linear-gradient(180deg,#60a5fa,#2563eb)}
+.os-days-x{display:flex;justify-content:space-between;gap:8px;font-size:9.5px;color:#94a3b8;font-weight:700;margin-top:4px}
+@media(max-width:700px){
+  .os-charts{grid-template-columns:1fr}
+  .os-brow{grid-template-columns:84px 1fr 40px 42px}
+}
+
+
+.os-bd-bar{position:relative;height:16px;background:#f1f5f9;border-radius:99px;overflow:hidden;margin-bottom:2px}
+.os-bd-bar i{display:block;height:100%;background:linear-gradient(90deg,#fbbf24,#f28f1d);border-radius:99px}
+.os-bd-bar span{position:absolute;right:6px;top:0;line-height:16px;font-size:9.5px;font-weight:900;color:#78350f}
+.os-bd-scale{display:flex;justify-content:space-between;font-size:9px;color:#a8b3c2;font-weight:700;margin-bottom:7px}
+.os-bd-row{display:grid;grid-template-columns:74px 52px 1fr;align-items:baseline;gap:4px;padding:2px 0;font-size:10.5px;color:#64748b;font-weight:700}
+.os-bd-row b{font-size:12.5px;color:#0f172a;font-variant-numeric:tabular-nums}
+.os-bd-row i{font-style:normal;font-size:9.5px;color:#a8b3c2}
+.os-bd-fin{display:flex;justify-content:space-between;align-items:baseline;margin-top:6px;padding-top:6px;border-top:1px solid #eef2f8;font-size:11px;font-weight:800;color:#334155}
+.os-bd-fin b{font-size:17px;color:#1d4ed8;font-variant-numeric:tabular-nums}
+
+
+/* OSINT: プレイヤーアイコンチップ */
+.os-ppl-row{display:flex;align-items:flex-start;gap:8px;margin:8px 0}
+.os-ppl-lbl{flex:0 0 62px;font-size:11px;font-weight:800;color:#64748b;padding-top:7px}
+.os-ppl{display:flex;flex-wrap:wrap;gap:5px;flex:1 1 auto;min-width:0}
+.os-pchip{display:inline-flex;align-items:center;gap:6px;padding:3px 10px 3px 3px;border:1px solid #e2e8f0;background:#fff;
+  border-radius:999px;cursor:pointer;font:inherit;font-size:11.5px;font-weight:800;color:#475569;line-height:1.2;transition:.12s}
+.os-pchip .pl-av{width:22px;height:22px;font-size:9px}
+.os-pchip:hover{border-color:#93b4f7;background:#f5f9ff;transform:translateY(-1px)}
+.os-pchip.on{border-color:#2563eb;background:#dbeafe;color:#1e3a8a;box-shadow:0 0 0 1px #2563eb inset}
+.os-pchip .nm{white-space:nowrap}
+#osCompare .os-pchip.on{border-color:#f28f1d;background:#fff3e0;color:#8a4b00;box-shadow:0 0 0 1px #f28f1d inset}
+.os-vsbadge{margin-left:auto;font-size:11px;font-weight:800;color:#8a4b00;background:#fff3e0;border:1px solid #f7c98b;border-radius:999px;padding:4px 10px}
+.os-radar-lg{display:flex;gap:12px;justify-content:center;margin-top:2px;font-size:10px;font-weight:800;color:#64748b}
+.os-radar-lg i{font-style:normal;display:inline-flex;align-items:center;gap:4px}
+.os-radar-lg .lg-me::before{content:'';width:10px;height:3px;border-radius:2px;background:#2563eb;display:inline-block}
+.os-radar-lg .lg-ot::before{content:'';width:10px;height:3px;border-radius:2px;background:#f28f1d;display:inline-block}
+/* 比較テーブル */
+.os-cmp{border:1px solid #eef2f8;border-radius:10px;overflow:hidden}
+.os-cmp-h{display:grid;grid-template-columns:1fr 40px 1fr;align-items:center;padding:6px 8px;background:#f8fbff;font-size:10.5px;font-weight:900;color:#334155;gap:4px}
+.os-cmp-h .vs{text-align:center;color:#94a3b8;font-size:9.5px}
+.os-cmp-h .oth{text-align:right}
+.os-cmp-row{display:grid;grid-template-columns:1fr 62px 1fr;align-items:center;padding:3px 8px;font-size:11px;border-top:1px solid #f4f7fb}
+.os-cmp-row .k{text-align:center;color:#94a3b8;font-size:9.5px;font-weight:800}
+.os-cmp-row .a{text-align:left;color:#64748b;font-weight:800;font-variant-numeric:tabular-nums}
+.os-cmp-row .b{text-align:right;color:#64748b;font-weight:800;font-variant-numeric:tabular-nums}
+.os-cmp-row .a.win{color:#1d4ed8}
+.os-cmp-row .b.win{color:#b45309}
+.os-brow.cmp .os-btrack i{background:linear-gradient(90deg,#f28f1d,#fbbf24)}
+.os-brow.cmp .os-bnm{color:#b45309}
+/* 順位カード */
+.os-rk{display:flex;flex-direction:column;gap:6px}
+.os-rk-row{display:grid;grid-template-columns:96px 1fr auto;align-items:baseline;gap:6px;font-size:11px;color:#64748b;font-weight:700}
+.os-rk-row b{font-size:15px;color:#0f172a;font-variant-numeric:tabular-nums}
+.os-rk-row b small{font-size:10px;color:#94a3b8;font-weight:800;margin-left:1px}
+.os-rk-row i{font-style:normal;font-size:10px;color:#94a3b8;font-weight:800}
+
+
+/* プレイヤー/比較相手を横並び */
+.os-ppl-wrap{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;margin:8px 0 4px}
+.os-ppl-col{min-width:0;border:1px solid #eef2f8;border-radius:12px;padding:7px 9px;background:#fcfdff}
+.os-ppl-col.cmp{background:#fffdf8;border-color:#f6e6cd}
+.os-ppl-hd{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:900;color:#475569;margin-bottom:6px}
+.os-ppl-hd .hint{font-size:9.5px;font-weight:700;color:#a8b3c2}
+.os-ppl-hd .dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.os-ppl-hd .dot.me{background:#2563eb}
+.os-ppl-hd .dot.ot{background:#f28f1d}
+@media(max-width:760px){ .os-ppl-wrap{grid-template-columns:1fr} }
+/* 比較(詳細) */
+.os-cmp{border:1px solid #eef2f8;border-radius:12px;overflow:hidden;background:#fff}
+.os-cmp-h{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;padding:9px 12px;background:#f8fbff;border-bottom:1px solid #eef2f8}
+.os-cmp-h .side{font-size:12.5px;font-weight:900;color:#334155;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.os-cmp-h .side.a{color:#1d4ed8}
+.os-cmp-h .side.b{color:#b45309;text-align:right}
+.os-cmp-h .score{font-size:15px;font-weight:900;color:#0f172a;font-variant-numeric:tabular-nums;white-space:nowrap}
+.os-cmp-verdict{text-align:center;font-size:11px;font-weight:800;color:#64748b;padding:5px 8px;background:#fcfdff;border-bottom:1px solid #f4f7fb}
+.os-mrow{display:grid;grid-template-columns:82px 64px 1fr 64px;align-items:center;gap:8px;padding:5px 12px;border-top:1px solid #f4f7fb}
+.os-mrow:first-of-type{border-top:0}
+.os-mrow .lbl{font-size:10.5px;font-weight:800;color:#94a3b8}
+.os-mrow .va{text-align:right;font-size:13px;font-weight:900;color:#475569;font-variant-numeric:tabular-nums}
+.os-mrow .vb{text-align:left;font-size:13px;font-weight:900;color:#475569;font-variant-numeric:tabular-nums}
+.os-mrow .va.win{color:#1d4ed8}
+.os-mrow .vb.win{color:#b45309}
+.os-mbar{display:flex;height:9px;border-radius:99px;overflow:hidden;background:#f1f5f9}
+.os-mbar .ia{background:linear-gradient(90deg,#93c5fd,#2563eb);height:100%}
+.os-mbar .ib{background:linear-gradient(90deg,#f28f1d,#fbbf24);height:100%}
+.os-cmp-foot{display:flex;align-items:center;gap:4px;flex-wrap:wrap;padding:7px 12px;font-size:9.5px;color:#a8b3c2;font-weight:700;border-top:1px solid #f4f7fb}
+.os-cmp-foot i{width:12px;height:3px;border-radius:2px;display:inline-block}
+.os-cmp-foot .lg-a{background:#2563eb;margin-left:2px}
+.os-cmp-foot .lg-b{background:#f28f1d;margin-left:6px}
+.os-chart-lg{display:flex;align-items:center;gap:5px;justify-content:flex-end;font-size:10px;font-weight:800;color:#64748b;margin-top:4px}
+.os-chart-lg i{width:12px;height:3px;border-radius:2px;display:inline-block}
+.os-chart-lg .lg-me{background:#2563eb}
+.os-chart-lg .lg-ot{background:#f28f1d;margin-left:8px}
+
+
+.os-rk-row.cmp{grid-template-columns:96px 1fr 1fr}
+.os-rk-row.head{font-size:10px;color:#94a3b8;padding-bottom:2px;border-bottom:1px solid #eef2f8}
+.os-rk-row.head b{font-size:11px;font-weight:900}
+.os-rk-row.cmp b.me{color:#1d4ed8;justify-self:start}
+.os-rk-row.cmp b.ot{color:#b45309;justify-self:end;text-align:right}
+.os-rk-row.cmp b.win{background:#eef4ff;border-radius:6px;padding:1px 7px}
+.os-rk-row.cmp b.ot.win{background:#fff3e0}
+.os-rk-row.head b.me{color:#1d4ed8;justify-self:start}
+.os-rk-row.head b.ot{color:#b45309;justify-self:end;text-align:right}
+
+
+/* 比較のアニメーション(画面に入ったとき .os-play を付けて再生) */
+@keyframes osBarIn{from{width:0}}
+@keyframes osRowIn{from{opacity:0;transform:translateY(4px)}}
+@keyframes osRadarIn{from{opacity:0;transform:scale(.72)}}
+@keyframes osDotIn{from{opacity:0;transform:scale(.2)}}
+@keyframes osCardPop{from{opacity:0;transform:translateY(6px) scale(.995)}}
+.os-play{animation:osCardPop .45s ease both}
+.os-play .os-mrow{animation:osRowIn .55s cubic-bezier(.2,.9,.25,1) both}
+.os-play .os-mbar i{animation:osBarIn 1s cubic-bezier(.2,.85,.25,1) both}
+.os-play .os-cmp-verdict{animation:osRowIn .45s ease .3s both}
+.os-radar-me,.os-radar-cmp{transform-box:fill-box;transform-origin:50% 50%}
+.os-radar-dot{transform-box:fill-box;transform-origin:50% 50%}
+.os-play .os-radar-me,.os-play .os-radar-cmp{animation:osRadarIn .85s cubic-bezier(.2,.9,.25,1) both}
+.os-play .os-radar-cmp{animation-delay:.22s}
+.os-play .os-radar-dot{animation:osDotIn .5s ease .5s both}
+.os-mrow .lbl em{font-style:normal;font-size:9px;color:#f28f1d;font-weight:900;margin-left:2px}
+@media(prefers-reduced-motion:reduce){
+  .os-play,.os-play *{animation:none!important}
+}
+
 
 </style>
 </head>
@@ -1780,6 +2002,7 @@ html.intro-lock{overflow:hidden}
       <a href="#sec-power">ヒーロー別</a>
       <a href="#sec-tb">チームビルダー</a>
       <a href="#sec-tr">チームランク比較</a>
+      <a href="#sec-osint">OSINT</a>
       <a href="#top" class="top">↑ 先頭へ</a>
     </nav>
 
@@ -2050,6 +2273,28 @@ html.intro-lock{overflow:hidden}
       </div>
       <div id="trBody"></div>
       <div id="trBalBody"></div>
+    </div>
+
+
+    <!-- OSINT: プレイヤー×ヒーロー分析 -->
+    <div class="power-sec os-sec" id="sec-osint">
+      <h2>🔎 OSINT — プレイヤー×ヒーロー分析</h2>
+      <div class="os-ppl-wrap">
+        <div class="os-ppl-col">
+          <div class="os-ppl-hd"><span class="dot me"></span>プレイヤー</div>
+          <div class="os-ppl" id="osPeople"></div>
+        </div>
+        <div class="os-ppl-col cmp">
+          <div class="os-ppl-hd"><span class="dot ot"></span>比較相手<span class="hint">（任意・同じヒーローで比較）</span></div>
+          <div class="os-ppl" id="osCompare"></div>
+        </div>
+      </div>
+      <div class="os-ctl">
+        <span class="os-roles" id="osRoles"></span>
+        <span class="os-count" id="osCount"></span>
+      </div>
+      <div class="os-grid" id="osGrid"></div>
+      <div class="os-detail" id="osDetail"></div>
     </div>
 
     <!-- ワークショップ用:プレイヤー別ヒーロースコア表 -->
@@ -2951,7 +3196,7 @@ function heroesCell(p){
   const top=heroesOfRole(p,state.filter).slice(0,3);
   if(!top.length)return `<div class="heroes-cell"><span style="color:#9ca3af;font-size:12px">—</span></div>`;
   return `<div class="heroes-cell">`+top.map(h=>`
-    <div class="hl">${heroThumb(h.n,20,h.role,h.slug)}
+    <div class="hl hl-click" data-pid="${p.id}" data-hero="${h.slug}" title="${esc(h.n)} のスコア推移を見る">${heroThumb(h.n,20,h.role,h.slug)}
       <span class="hn">${esc(h.n)}</span>${easyBadge(h.slug)}
       <span class="hm">${h.g}試合・${fmt1(h.wr)}%</span></div>`).join('')+`</div>`;
 }
@@ -4321,6 +4566,8 @@ $('#trBalBody').addEventListener('click', (e) => {
 
 /* イベント */
 $('#rankBody').addEventListener('click',e=>{
+  const heroHit=e.target.closest('[data-hero]');
+  if(heroHit){ e.stopPropagation(); hsOpen(heroHit.dataset.pid, heroHit.dataset.hero); return; }
   const sb=e.target.closest('[data-hbsort]');
   if(sb){                                  // Hero Breakdown の並び順(スコア順 / Power Rating順)
     if(state.hbSort!==sb.dataset.hbsort){ state.hbSort=sb.dataset.hbsort; renderTable(); }
@@ -4335,6 +4582,620 @@ $('#rankBody').addEventListener('click',e=>{
   if(state.open.has(id))state.open.delete(id);else state.open.add(id);
   renderTable();
 });
+
+/* =====================================================================
+ * ヒーロースコア推移(折れ線)
+ *   ランキング表のヒーローアイコンをクリックすると、
+ *   そのプレイヤーのそのヒーローの Power Rating 推移を表示する。
+ *   履歴は players-data.js の recent[].s(毎日の自動更新で蓄積)
+ * =================================================================== */
+const hsState = { el: null };
+function hsToday(){
+  const d = new Date(Date.now() + 9 * 3600 * 1000);
+  return d.toISOString().slice(0, 10);
+}
+function heroScoreSeries(p, slug){
+  const out = [];
+  for (const e of (Array.isArray(p.recent) ? p.recent : [])) {
+    if (!e || !e.s) continue;
+    const v = e.s[slug];
+    if (typeof v === 'number' && isFinite(v)) out.push({ d: e.d, v });
+  }
+  out.sort((a, b) => (a.d < b.d ? -1 : a.d > b.d ? 1 : 0));
+  // 今日の値(まだスナップショットが無ければ現在値で補完)
+  const pool = p.bscoreAll || p.bscore || {};
+  const cur = pool[slug] && pool[slug].finalScore;
+  if (typeof cur === 'number') {
+    const t = hsToday(), v = Math.round(cur * 10) / 10;
+    const last = out[out.length - 1];
+    if (!last) out.push({ d: t, v, now: true });
+    else if (last.d < t) out.push({ d: t, v, now: true });
+    else if (last.d === t) last.v = v, last.now = true;
+  }
+  return out;
+}
+function hsChartSvg(pts){
+  const W = 580, H = 190, L = 46, R = 16, T = 16, B = 30;
+  const vs = pts.map(p => p.v);
+  let mn = Math.min(...vs), mx = Math.max(...vs);
+  if (mx - mn < 2) { const m = (mn + mx) / 2; mn = m - 1; mx = m + 1; }
+  const pad = (mx - mn) * 0.16; mn -= pad; mx += pad;
+  const x = i => pts.length === 1 ? (L + (W - L - R) / 2) : L + (W - L - R) * (i / (pts.length - 1));
+  const y = v => T + (H - T - B) * (1 - (v - mn) / (mx - mn));
+  const grid = [0, .5, 1].map(t => {
+    const gy = T + (H - T - B) * t, val = mx - (mx - mn) * t;
+    return `<line x1="${L}" y1="${gy.toFixed(1)}" x2="${W - R}" y2="${gy.toFixed(1)}" stroke="#eef2f8" stroke-width="1"/>` +
+      `<text x="${L - 8}" y="${(gy + 4).toFixed(1)}" text-anchor="end" font-size="10" fill="#9aa5b4">${val.toFixed(1)}</text>`;
+  }).join('');
+  const poly = pts.length > 1
+    ? `<polyline points="${pts.map((p, i) => `${x(i).toFixed(1)},${y(p.v).toFixed(1)}`).join(' ')}" fill="none" stroke="#2563eb" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>`
+    : '';
+  const area = pts.length > 1
+    ? `<polygon points="${L},${y(mn).toFixed(1)} ${pts.map((p, i) => `${x(i).toFixed(1)},${y(p.v).toFixed(1)}`).join(' ')} ${x(pts.length - 1).toFixed(1)},${y(mn).toFixed(1)}" fill="rgba(37,99,235,.08)"/>`
+    : '';
+  const dots = pts.map((p, i) => `<circle cx="${x(i).toFixed(1)}" cy="${y(p.v).toFixed(1)}" r="${p.now ? 4.6 : 3.2}" fill="${p.now ? '#2563eb' : '#fff'}" stroke="#2563eb" stroke-width="2"><title>${p.d} ${p.v}</title></circle>`).join('');
+  const xl = pts.length ? `<text x="${L}" y="${H - 8}" font-size="10" fill="#9aa5b4">${pts[0].d}</text>` +
+    `<text x="${W - R}" y="${H - 8}" text-anchor="end" font-size="10" fill="#9aa5b4">${pts[pts.length - 1].d}</text>` : '';
+  return `<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" role="img" aria-label="スコア推移グラフ">${grid}${area}${poly}${dots}${xl}</svg>`;
+}
+function hsEnsure(){
+  if (hsState.el) return hsState.el;
+  const wrap = document.createElement('div');
+  wrap.className = 'hs-modal';
+  wrap.innerHTML = `<div class="hs-card" role="dialog" aria-modal="true" aria-label="ヒーロースコア推移">
+      <button class="hs-x" type="button" aria-label="閉じる">×</button>
+      <div class="hs-hd"></div>
+      <div class="hs-body"></div>
+    </div>`;
+  document.body.appendChild(wrap);
+  wrap.addEventListener('click', ev => {
+    if (ev.target === wrap || ev.target.closest('.hs-x')) hsClose();
+  });
+  document.addEventListener('keydown', ev => { if (ev.key === 'Escape') hsClose(); });
+  hsState.el = wrap;
+  return wrap;
+}
+function hsClose(){ if (hsState.el) hsState.el.classList.remove('on'); }
+function hsOpen(pid, slug){
+  const p = PLAYERS.find(x => x.id === pid) || PLAYERS_ALL.find(x => x.id === pid);
+  if (!p) return;
+  const pool = p.bscoreAll || p.bscore || {};
+  const b = pool[slug] || {};
+  const nm = (SLUG_NAME[slug] || (b.name || slug));
+  const role = b.role || SLUG_ROLE[slug] || '';
+  const pts = heroScoreSeries(p, slug);
+  const cur = pts.length ? pts[pts.length - 1].v : null;
+  const first = pts.length ? pts[0].v : null;
+  const dif = (cur != null && first != null) ? Math.round((cur - first) * 10) / 10 : null;
+  const col = dif > 0 ? '#16a34a' : dif < 0 ? '#dc2626' : '#64748b';
+  const difTxt = dif == null ? '—' : (dif > 0 ? '+' : '') + dif.toFixed(1);
+  const games = b.gamesPlayed != null ? `${b.gamesPlayed}試合` : '';
+  const wr = (typeof b.winRate === 'number') ? `勝率 ${fmt1(b.winRate)}%` : '';
+  const meta = [games, wr].filter(Boolean).join(' ・ ');
+
+  hsEnsure();
+  hsState.el.querySelector('.hs-hd').innerHTML =
+    `<div class="hs-who"><span class="pl-av ${roleCls(p.role)}">${faceMarkup(p)}</span>
+       <span class="hs-nm">${esc(p.name)}</span></div>
+     <div class="hs-hero">${heroThumb(nm, 34, role, slug)}
+       <span class="hs-hn">${esc(nm)}</span>
+       <span class="role-chip ${roleCls(role)}">${roleIcon(role)}</span></div>`;
+
+  let bodyHtml;
+  if (!pts.length) {
+    bodyHtml = `<div class="hs-empty">
+        <b>まだスコア履歴がありません</b>
+        <span>毎日の自動更新で記録されます(このヒーローのデータが取れた翌日以降に推移が出ます)</span>
+        ${cur != null ? `<div class="hs-cur">現在 <b>${fmt1(cur)}</b> pt</div>` : ''}
+      </div>`;
+  } else {
+    bodyHtml = `<div class="hs-kpi">
+        <div class="hs-k"><span>現在</span><b>${cur != null ? fmt1(cur) : '—'}</b><i>pt</i></div>
+        <div class="hs-k"><span>期間の変化</span><b style="color:${col}">${difTxt}</b><i>pt</i></div>
+        <div class="hs-k"><span>データ点数</span><b>${pts.length}</b><i>日</i></div>
+        <div class="hs-k hs-kmeta"><span>${meta || '　'}</span></div>
+      </div>
+      <div class="hs-chart">${hsChartSvg(pts)}</div>
+      <div class="hs-legend">直近${pts.length}日ぶんの記録 ・ 青い点が最新</div>`;
+  }
+  hsState.el.querySelector('.hs-body').innerHTML = bodyHtml;
+  hsState.el.classList.add('on');
+}
+
+
+/* =====================================================================
+ * OSINT: プレイヤー×ヒーロー分析
+ *   ・プレイヤーはアイコンチップで選択 / 比較相手も選べる
+ *   ・全ヒーローのスパークライン + 選択ヒーローの詳細(推移/レーダー/順位/分布)
+ * =================================================================== */
+const os = { pid: null, cmpId: null, slug: null, role: 'All' };
+function osPlayers(){ return (typeof PLAYERS_ALL !== 'undefined' && PLAYERS_ALL.length) ? PLAYERS_ALL : PLAYERS; }
+function osPlayer(){ const list = osPlayers(); return list.find(p => p.id === os.pid) || list[0]; }
+function osPool(p){ return (p && (p.bscoreAll || p.bscore)) || {}; }
+function osHeroList(p){
+  const pool = osPool(p);
+  return (p.heroes || [])
+    .filter(h => h && h.slug && pool[h.slug] && typeof pool[h.slug].finalScore === 'number')
+    .map(h => {
+      const b = pool[h.slug], det = b.det || {};
+      const pts = heroScoreSeries(p, h.slug);
+      return {
+        slug: h.slug, n: h.n || SLUG_NAME[h.slug] || h.slug,
+        role: h.role || SLUG_ROLE[h.slug] || '',
+        v: Math.round(b.finalScore * 10) / 10,
+        g: b.gamesPlayed != null ? b.gamesPlayed : h.g,
+        wr: (typeof det.wr === 'number') ? det.wr : h.wr,
+        det, b, pts,
+        delta: pts.length > 1 ? Math.round((pts[pts.length - 1].v - pts[0].v) * 10) / 10 : null
+      };
+    })
+    .sort((a, b) => b.v - a.v);
+}
+function osSpark(pts, w, h){
+  w = w || 40; h = h || 18;
+  const empty = `<svg class="sp" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"></svg>`;
+  // スコア変動が無い(記録1点だけ / 値が動いていない)キャラは点を出さない
+  if (!pts || pts.length < 2) return empty;
+  const vs = pts.map(p => p.v);
+  const mn = Math.min(...vs), mx = Math.max(...vs);
+  if (!(mx > mn)) return empty;              // 全点同値 = 変動なし
+  const X = i => 2 + (w - 4) * (i / (pts.length - 1));
+  const Y = v => 2 + (h - 4) * (1 - (v - mn) / (mx - mn));
+  const up = pts[pts.length - 1].v >= pts[0].v;
+  const d = pts.map((p, i) => `${X(i).toFixed(1)},${Y(p.v).toFixed(1)}`).join(' ');
+  return `<svg class="sp" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"><polyline points="${d}" fill="none" stroke="${up ? '#16a34a' : '#dc2626'}" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/></svg>`;
+}
+/* --- 同ヒーローを持つ全プレイヤー --- */
+function osGroupRows(slug){
+  const out = [];
+  for (const p2 of osPlayers()) {
+    const b = osPool(p2)[slug];
+    if (!b || typeof b.finalScore !== 'number') continue;
+    const d = b.det || {};
+    out.push({
+      id: p2.id, name: p2.name, role: p2.role, p: p2,
+      v: Math.round(b.finalScore * 10) / 10,
+      g: b.gamesPlayed || 0,
+      wr: d.wr, el10: d.el10, de10: d.de10, dm10: d.dm10, he10: d.he10, as10: d.as10,
+      kda: (d.de10 > 0) ? ((d.el10 || 0) + (d.as10 || 0)) / d.de10 : null
+    });
+  }
+  out.sort((a, b) => b.v - a.v);
+  return out;
+}
+/* --- レーダーの軸(Tank/DamageはHEALの代わりに試合数) --- */
+function osAxes(role){
+  const base = [
+    { k: '勝率',    get: r => r.wr,   fixed: 65 },
+    { k: 'KDA',     get: r => r.kda,  fixed: 6 },
+    { k: 'ELIM/10', get: r => r.el10, fixed: 30 },
+    { k: 'DMG/10',  get: r => r.dm10, fixed: 12000 }
+  ];
+  if (role === 'Support') base.push({ k: 'HEAL/10', get: r => r.he10, fixed: 4000 });
+  else base.push({ k: '試合数', get: r => r.g, fixed: 60 });
+  return base;
+}
+/* --- レーダー(本人 + 比較相手) --- */
+function osRadarSvg(rows, meId, cmpId, role){
+  const axes = osAxes(role);
+  const me = rows.find(r => r.id === meId);
+  if (!me) return '';
+  const other = cmpId ? rows.find(r => r.id === cmpId) : null;
+  const W = 320, H = 258, cx = W / 2, cy = H / 2 + 2, R = 84;
+  const maxOf = a => {
+    let mx = 0;
+    for (const r of rows) { const v = a.get(r); if (typeof v === 'number' && isFinite(v) && v > mx) mx = v; }
+    const base = typeof a.fixed === 'number' ? a.fixed : 1;
+    return mx > 0 ? Math.max(mx, base * 0.35) : base;
+  };
+  const maxes = axes.map(maxOf);
+  const pt = (i, ratio) => {
+    const ang = -Math.PI / 2 + i * 2 * Math.PI / axes.length;
+    return [cx + Math.cos(ang) * R * ratio, cy + Math.sin(ang) * R * ratio];
+  };
+  const ring = t => axes.map((_, i) => pt(i, t).map(n => n.toFixed(1)).join(',')).join(' ');
+  const polyOf = rec => {
+    const vals = axes.map((a, i) => {
+      const v = a.get(rec);
+      return (typeof v === 'number' && isFinite(v) && maxes[i] > 0) ? Math.min(1, v / maxes[i]) : 0;
+    });
+    return vals.map((r, i) => pt(i, Math.max(0.06, r)).map(n => n.toFixed(1)).join(',')).join(' ');
+  };
+  const spokes = axes.map((a, i) => {
+    const [x, y] = pt(i, 1);
+    return `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="#e8eef7"/>`;
+  }).join('');
+  const labels = axes.map((a, i) => {
+    const [x, y] = pt(i, 1.2);
+    const v = a.get(me);
+    const txt = (typeof v === 'number' && isFinite(v)) ? (Math.abs(v) >= 1000 ? Math.round(v).toLocaleString() : (Math.round(v * 10) / 10)) : '—';
+    return `<text x="${x.toFixed(1)}" y="${(y + 3).toFixed(1)}" text-anchor="middle" font-size="9.5" font-weight="800" fill="#64748b">${a.k}</text>` +
+      `<text x="${x.toFixed(1)}" y="${(y + 15).toFixed(1)}" text-anchor="middle" font-size="10.5" font-weight="900" fill="#0f172a">${txt}</text>`;
+  }).join('');
+  const mePoly = polyOf(me);
+  const cmpPoly = other ? polyOf(other) : null;
+  const dots = axes.map((a, i) => {
+    const v = a.get(me);
+    const ratio = (typeof v === 'number' && isFinite(v) && maxes[i] > 0) ? Math.min(1, v / maxes[i]) : 0;
+    const [x, y] = pt(i, Math.max(0.06, ratio));
+    return `<circle class="os-radar-dot" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.8" fill="#2563eb"/>`;
+  }).join('');
+  return `<svg class="os-radar" viewBox="0 0 ${W} ${H}" width="100%" height="${H}" role="img" aria-label="5要素レーダー">
+    ${[0.25, 0.5, 0.75, 1].map(t => `<polygon points="${ring(t)}" fill="none" stroke="#eef2f8"/>`).join('')}
+    ${spokes}
+    ${cmpPoly ? `<polygon class="os-radar-cmp" points="${cmpPoly}" fill="rgba(242,143,29,.14)" stroke="#f28f1d" stroke-width="2" stroke-dasharray="4 3" stroke-linejoin="round"/>` : ''}
+    <polygon class="os-radar-me" points="${mePoly}" fill="rgba(37,99,235,.16)" stroke="#2563eb" stroke-width="2" stroke-linejoin="round"/>
+    ${dots}
+    ${labels}
+  </svg>`;
+}
+/* --- 比較テーブル(本人 vs 相手・指標ごとにバーで比較) --- */
+function osCompareTable(rows, meId, cmpId){
+  if (!cmpId) return '';
+  const me = rows.find(r => r.id === meId), ot = rows.find(r => r.id === cmpId);
+  if (!me || !ot) return '';
+  const n1 = v => (typeof v === 'number' && isFinite(v)) ? (Math.round(v * 10) / 10).toFixed(1) : '—';
+  const n0 = v => (typeof v === 'number' && isFinite(v)) ? Math.round(v).toLocaleString() : '—';
+  const defs = [
+    ['Power Rating', 'v', 1, v => n1(v)],
+    ['勝率', 'wr', 1, v => n1(v) + '%'],
+    ['KDA', 'kda', 1, n1],
+    ['ELIM/10', 'el10', 1, n1],
+    ['DEATH/10', 'de10', -1, n1],
+    ['DMG/10', 'dm10', 1, n0],
+    ['HEAL/10', 'he10', 1, n0],
+    ['AST/10', 'as10', 1, n1],
+    ['試合数', 'g', 0, n0]
+  ];
+  let winA = 0, winB = 0;
+  const rowsHtml = defs.map(([lbl, key, dir, fmt], ri) => {
+    const a = me[key], b = ot[key];
+    const okA = typeof a === 'number' && isFinite(a), okB = typeof b === 'number' && isFinite(b);
+    let share = 50, aWin = false, bWin = false;
+    if (okA && okB && (a + b) > 0) {
+      const raw = a / (a + b);
+      // dir<0 の項目(DEATH/10など)は「低い方が優位」なので、バーの長さも左右反転して優劣を表す
+      share = Math.max(4, Math.min(96, (dir < 0 ? 1 - raw : raw) * 100));
+    }
+    if (okA && okB && dir !== 0) {
+      aWin = dir > 0 ? a > b : a < b;
+      bWin = dir > 0 ? b > a : b < a;
+      if (aWin) winA++; else if (bWin) winB++;
+    }
+    const dly = (ri * 85) + 'ms';
+    return `<div class="os-mrow" style="animation-delay:${dly}">
+      <span class="lbl">${lbl}${dir < 0 ? '<em title="少ない方が優位">↓</em>' : ''}</span>
+      <span class="va ${aWin ? 'win' : ''}">${okA ? fmt(a) : '—'}</span>
+      <span class="os-mbar"><i class="ia" style="width:${share.toFixed(1)}%;animation-delay:${dly}"></i><i class="ib" style="width:${(100 - share).toFixed(1)}%;animation-delay:${dly}"></i></span>
+      <span class="vb ${bWin ? 'win' : ''}">${okB ? fmt(b) : '—'}</span>
+    </div>`;
+  }).join('');
+  const verdict = winA > winB ? `${esc(me.name)} が優勢` : winB > winA ? `${esc(ot.name)} が優勢` : 'ほぼ互角';
+  return `<div class="os-cmp">
+    <div class="os-cmp-h">
+      <span class="side a">${esc(me.name)}</span>
+      <span class="score"><b>${winA}</b> - <b>${winB}</b></span>
+      <span class="side b">${esc(ot.name)}</span>
+    </div>
+    <div class="os-cmp-verdict">${verdict}（比較できる${winA + winB}項目中）</div>
+    ${rowsHtml}
+    <div class="os-cmp-foot"><i class="lg-a"></i>自分<i class="lg-b"></i>相手 ・ 数値が大きい/小さい方が優位な項目で判定（試合数は判定なし）</div>
+  </div>`;
+}
+/* --- 2本の折れ線(自分 + 比較相手) --- */
+function osLine2(a, b, nameA, nameB){
+  const all = (a || []).concat(b || []);
+  if (!all.length) return '';
+  const W = 580, H = 200, L = 46, R = 16, T = 16, B = 30;
+  const dates = Array.from(new Set(all.map(p => p.d))).sort();
+  const vs = all.map(p => p.v);
+  let mn = Math.min(...vs), mx = Math.max(...vs);
+  if (mx - mn < 2) { const m = (mn + mx) / 2; mn = m - 1; mx = m + 1; }
+  const pad = (mx - mn) * 0.16; mn -= pad; mx += pad;
+  const X = d => dates.length === 1 ? (L + (W - L - R) / 2) : L + (W - L - R) * (Math.max(0, dates.indexOf(d)) / (dates.length - 1));
+  const Y = v => T + (H - T - B) * (1 - (v - mn) / (mx - mn));
+  const grid = [0, .5, 1].map(t => {
+    const gy = T + (H - T - B) * t, val = mx - (mx - mn) * t;
+    return `<line x1="${L}" y1="${gy.toFixed(1)}" x2="${W - R}" y2="${gy.toFixed(1)}" stroke="#eef2f8"/>` +
+      `<text x="${L - 8}" y="${(gy + 4).toFixed(1)}" text-anchor="end" font-size="10" fill="#9aa5b4">${val.toFixed(1)}</text>`;
+  }).join('');
+  const line = (arr, color) => {
+    if (!arr || !arr.length) return '';
+    const pts = arr.map(p => `${X(p.d).toFixed(1)},${Y(p.v).toFixed(1)}`).join(' ');
+    const last = arr[arr.length - 1];
+    const poly = arr.length > 1 ? `<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>` : '';
+    const dots = arr.map(p => `<circle cx="${X(p.d).toFixed(1)}" cy="${Y(p.v).toFixed(1)}" r="2.6" fill="#fff" stroke="${color}" stroke-width="1.8"><title>${p.d} ${p.v}</title></circle>`).join('');
+    const big = `<circle cx="${X(last.d).toFixed(1)}" cy="${Y(last.v).toFixed(1)}" r="4.2" fill="${color}"/>`;
+    return poly + dots + big;
+  };
+  const xl = `<text x="${L}" y="${H - 8}" font-size="10" fill="#9aa5b4">${dates[0]}</text>` +
+    `<text x="${W - R}" y="${H - 8}" text-anchor="end" font-size="10" fill="#9aa5b4">${dates[dates.length - 1]}</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" role="img" aria-label="スコア推移(比較)">
+    ${grid}${line(a, '#2563eb')}${line(b, '#f28f1d')}${xl}
+  </svg>`;
+}
+/* --- 横棒: 同ヒーローの他プレイヤー比較 --- */
+function osCompareBars(rows, meId, cmpId){
+  if (rows.length < 2) return '';
+  const mx = Math.max(...rows.map(r => r.v));
+  return rows.map(r => {
+    const w = mx > 0 ? Math.max(4, r.v / mx * 100) : 0;
+    const cls = r.id === meId ? 'me' : (cmpId && r.id === cmpId ? 'cmp' : '');
+    return `<div class="os-brow ${cls}">
+      <span class="os-bnm">${esc(r.name)}</span>
+      <span class="os-btrack"><i style="width:${w.toFixed(1)}%"></i></span>
+      <span class="os-bv">${fmt1(r.v)}</span>
+      <span class="os-bg">${r.g}試合</span>
+    </div>`;
+  }).join('');
+}
+/* --- 縦棒: 日別の使用試合数 --- */
+function osDailyBars(p, slug){
+  const hist = (Array.isArray(p.recent) ? p.recent : []).filter(e => e && e.d).slice(-30);
+  if (!hist.length) return '';
+  let days = hist.map(e => ({ d: e.d, n: Math.max(0, Number((e.g || {})[slug]) || 0) }));
+  let total = days.reduce((a, d) => a + d.n, 0);
+  let fallback = false;
+  if (!total) {
+    fallback = true;
+    let prev = null;
+    days = hist.map(e => {
+      let n = 0;
+      if (prev && typeof e.m === 'number' && typeof prev.m === 'number') n = Math.max(0, e.m - prev.m);
+      if (typeof e.m === 'number') prev = e;
+      return { d: e.d, n };
+    });
+    total = days.reduce((a, d) => a + d.n, 0);
+  }
+  if (!total) return `<div class="os-empty" style="padding:12px">直近30日の記録がありません</div>`;
+  const mx = Math.max(3, ...days.map(d => d.n));
+  const bars = days.map(d => {
+    const h = Math.max(d.n ? 6 : 2, Math.round(d.n / mx * 70));
+    return `<span class="os-dcol" title="${d.d} ・ ${d.n}試合"><i style="height:${h}px;${d.n ? '' : 'opacity:.25'}"></i></span>`;
+  }).join('');
+  return `<div class="os-days">${bars}</div>
+    <div class="os-days-x"><span>${days[0].d}</span><span>${fallback ? 'このヒーローの記録が無いため全体の試合数' : 'このヒーロー'}・合計 ${total} 試合</span><span>${days[days.length - 1].d}</span></div>`;
+}
+/* --- 順位カード(比較相手がいれば並べて表示) --- */
+function osRankInfo(p, h, group){
+  const all = osHeroList(p);
+  const b = osPool(p)[h.slug];
+  const det = (b && b.det) || {};
+  return {
+    idx: (group.findIndex(r => r.id === p.id) + 1) || null,
+    total: group.length,
+    inIdx: (all.findIndex(x => x.slug === h.slug) + 1) || null,
+    inTotal: all.length,
+    g: (b && b.gamesPlayed != null) ? b.gamesPlayed : (h.g != null ? h.g : null),
+    wr: (typeof det.wr === 'number') ? det.wr : (typeof h.wr === 'number' ? h.wr : null)
+  };
+}
+function osRankCard(p, h, group, cmpId){
+  const me = osRankInfo(p, h, group);
+  const cmpP = cmpId ? osPlayers().find(x => x.id === cmpId) : null;
+  const ot = (cmpP && cmpP.id !== p.id) ? osRankInfo(cmpP, h, group) : null;
+  if (!ot) {
+    const row = (lbl, main, sub) => `<div class="os-rk-row"><span>${lbl}</span><b>${main}</b><i>${sub}</i></div>`;
+    return `<div class="os-rk">
+      ${row('同ヒーロー内', me.idx ? `${me.idx}<small>位</small> / ${me.total}人` : '—', me.idx && me.idx <= Math.ceil(me.total / 3) ? '上位' : '中位以下')}
+      ${row('自分のヒーロー内', `${me.inIdx || '—'}<small>番目</small> / ${me.inTotal}体`, 'パワーレート順')}
+      ${row('使用試合数', `${me.g != null ? me.g : '—'}<small>試合</small>`, 'このシーズン累計')}
+      ${row('勝率', `${me.wr != null ? (Math.round(me.wr * 10) / 10) : '—'}<small>%</small>`, me.wr >= 55 ? '高め' : me.wr < 45 ? '低め' : '平均的')}
+    </div>`;
+  }
+  const n = v => (v == null || !isFinite(v)) ? '—' : v;
+  const win = (a, b, big) => {
+    if (big === null || a == null || b == null || a === b) return ['', ''];
+    const aWins = big ? a > b : a < b;
+    return aWins ? ['win', ''] : ['', 'win'];
+  };
+  const row = (lbl, a, b, big) => {
+    const [ca, cb] = win(a, b, big);
+    return `<div class="os-rk-row cmp"><span>${lbl}</span><b class="me ${ca}">${a == null ? '—' : a}</b><b class="ot ${cb}">${b == null ? '—' : b}</b></div>`;
+  };
+  return `<div class="os-rk cmpmode">
+    <div class="os-rk-row head"><span></span><b class="me">${esc(me_name(p))}</b><b class="ot">${esc(me_name(cmpP))}</b></div>
+    ${row('同ヒーロー内', me.idx ? `${me.idx}位/${me.total}人` : '—', ot.idx ? `${ot.idx}位/${ot.total}人` : '—（未使用）', false)}
+    ${row('自分のヒーロー内', me.inIdx ? `${me.inIdx}番目/${me.inTotal}体` : '—', ot.inIdx ? `${ot.inIdx}番目/${ot.inTotal}体` : '—', false)}
+    ${row('使用試合数', me.g != null ? `${me.g}試合` : '—', ot.g != null ? `${ot.g}試合` : '—', null)}
+    ${row('勝率', me.wr != null ? `${Math.round(me.wr * 10) / 10}%` : '—', ot.wr != null ? `${Math.round(ot.wr * 10) / 10}%` : '—', true)}
+  </div>`;
+}
+function me_name(p){ return p && p.name ? p.name : ''; }
+/* --- プレイヤー内ヒーロー分布(上位10) --- */
+function osDistCard(p, curSlug){
+  const all = osHeroList(p).slice(0, 10);
+  if (!all.length) return '';
+  const mx = Math.max(...all.map(h => h.v));
+  return all.map(h => {
+    const w = mx > 0 ? Math.max(6, h.v / mx * 100) : 0;
+    return `<div class="os-brow ${h.slug === curSlug ? 'me' : ''}">
+      <span class="os-bnm">${esc(h.n)}</span>
+      <span class="os-btrack"><i style="width:${w.toFixed(1)}%"></i></span>
+      <span class="os-bv">${fmt1(h.v)}</span>
+      <span class="os-bg">${h.g != null ? h.g : ''}</span>
+    </div>`;
+  }).join('');
+}
+/* --- プレイヤーチップ --- */
+function osChip(p, on, kind){
+  return `<button class="os-pchip ${on ? 'on' : ''}" data-${kind}="${p.id}" title="${esc(p.name)}">
+    <span class="pl-av ${roleCls(p.role)}">${faceMarkup(p)}</span>
+    <span class="nm">${esc(p.name)}</span>
+  </button>`;
+}
+function osRenderPeople(){
+  const a = $('#osPeople'), b = $('#osCompare');
+  const list = osPlayers();
+  if (a) a.innerHTML = list.map(p => osChip(p, p.id === os.pid, 'ospid')).join('');
+  if (b) b.innerHTML = list.map(p => osChip(p, p.id === os.cmpId, 'oscmp')).join('');
+}
+function osRenderRoles(){
+  const box = $('#osRoles');
+  if (!box) return;
+  box.innerHTML = ['All', 'Tank', 'Damage', 'Support'].map(r =>
+    `<button data-osrole="${r}" class="${os.role === r ? 'on' : ''}">${r === 'All' ? 'All' : r[0]}</button>`).join('');
+}
+function osRenderGrid(){
+  const grid = $('#osGrid'), cnt = $('#osCount');
+  if (!grid) return;
+  const p = osPlayer();
+  const all = osHeroList(p);
+  const list = os.role === 'All' ? all : all.filter(h => h.role === os.role);
+  if (cnt) cnt.textContent = `${list.length} ヒーロー / 全${all.length}体`;
+  if (!list.length) { grid.innerHTML = `<div class="os-empty">このプレイヤー・ロールのデータがありません</div>`; return; }
+  grid.innerHTML = list.map(h => {
+    const dl = (h.delta == null || Math.abs(h.delta) < 0.05) ? '' : `${h.delta > 0 ? '+' : ''}${h.delta.toFixed(1)}`;
+    return `<button class="os-h ${h.slug === os.slug ? 'on' : ''}" data-osslug="${h.slug}" title="${esc(h.n)} ・ ${esc(h.role)} ・ ${h.g != null ? h.g + '試合' : ''}">
+      ${heroThumb(h.n, 22, h.role, h.slug)}
+      <span class="nm">${esc(h.n)}</span>
+      <span class="sc">${fmt1(h.v)}</span>
+      ${osSpark(h.pts, 40, 18)}
+      <span class="dl ${(dl ? (h.delta > 0 ? 'up' : 'dn') : 'none')}">${dl || ''}</span>
+    </button>`;
+  }).join('');
+}
+function osRenderDetail(){
+  const box = $('#osDetail');
+  if (!box) return;
+  const p = osPlayer();
+  const all = osHeroList(p);
+  const h = all.find(x => x.slug === os.slug) || all[0];
+  if (!h) { box.innerHTML = `<div class="os-empty">ヒーローを選択してください</div>`; return; }
+  os.slug = h.slug;
+  const d = h.det || {};
+  const n1 = v => (typeof v === 'number' && isFinite(v)) ? (Math.round(v * 10) / 10).toFixed(1) : '—';
+  const n0 = v => (typeof v === 'number' && isFinite(v)) ? Math.round(v).toLocaleString() : '—';
+  const pts = h.pts;
+  const first = pts.length ? pts[0].v : null, cur = pts.length ? pts[pts.length - 1].v : null;
+  const dif = (first != null && cur != null) ? Math.round((cur - first) * 10) / 10 : null;
+  const kpi = (k, v, s) => `<div class="os-kpi"><div class="k">${k}</div><div class="v">${v}</div><div class="s">${s || ''}</div></div>`;
+  const group = osGroupRows(h.slug);
+  const cmpP = os.cmpId ? osPlayers().find(x => x.id === os.cmpId) : null;
+  const cmpName = cmpP ? cmpP.name : '';
+  const cmpPts = (cmpP && cmpP.id !== p.id) ? heroScoreSeries(cmpP, h.slug) : [];
+  const isSupport = h.role === 'Support';
+  box.innerHTML = `
+    <div class="os-dt-hd">
+      ${heroThumb(h.n, 44, h.role, h.slug)}
+      <div>
+        <div class="os-dt-nm">${esc(h.n)}</div>
+        <div class="os-dt-sub">${esc(p.name)} ・ <span class="role-chip ${roleCls(h.role)}">${roleIcon(h.role)} ${esc(h.role)}</span> ・ Power ${fmt1(h.v)} ・ 係数 ×${(h.b.coeff || 1).toFixed(2)}</div>
+      </div>
+      ${os.cmpId ? `<div class="os-vsbadge">比較中: ${esc((osPlayers().find(x => x.id === os.cmpId) || {}).name || '')}</div>` : ''}
+    </div>
+    <div class="os-kpis">
+      ${kpi('パワーレート', fmt1(h.v), 'Power Rating')}
+      ${kpi('試合数', n0(h.g), 'このヒーロー')}
+      ${kpi('勝率', n1(d.wr) + '%', '勝率')}
+      ${kpi('KDA', n1((d.de10 > 0) ? ((d.el10 || 0) + (d.as10 || 0)) / d.de10 : null), 'エリム+アシスト / デス')}
+      ${kpi('ELIM/10', n1(d.el10), '10分あたり')}
+      ${kpi('DEATH/10', n1(d.de10), '10分あたり')}
+      ${kpi('DMG/10', n0(d.dm10), '10分あたり')}
+      ${kpi('HEAL/10', n0(d.he10), '10分あたり')}
+      ${kpi('AST/10', n1(d.as10), '10分あたり')}
+      ${kpi('プレイ時間', fmtTime(d.time || 0), 'このヒーロー')}
+      ${kpi('スコア変化', dif == null ? '—' : ((dif > 0 ? '+' : '') + dif.toFixed(1)), '記録期間の差')}
+      ${kpi('記録点数', pts.length, '日ぶん')}
+    </div>
+    <div class="os-charts">
+      <div class="os-card wide">
+        <div class="os-card-hd">📈 スコア推移${cmpPts ? `` : ''}</div>
+        ${(pts.length || cmpPts.length) ? `<div class="os-chart">${osLine2(pts, cmpPts, p.name, cmpName)}</div>` : `<div class="os-empty">スコア推移の記録がまだありません</div>`}
+        ${cmpPts.length ? `<div class="os-chart-lg"><i class="lg-me"></i>${esc(p.name)}<i class="lg-ot"></i>${esc(cmpName)}</div>` : ''}
+        ${(os.cmpId && !cmpPts.length) ? `<div class="os-note">比較相手(${esc(cmpName)})はこのヒーローのスコア履歴がまだありません。</div>` : ''}
+      </div>
+      <div class="os-card os-anim">
+        <div class="os-card-hd">🕸 5要素バランス</div>
+        ${osRadarSvg(group, p.id, os.cmpId, h.role) || `<div class="os-empty">比較データなし</div>`}
+        ${os.cmpId ? `<div class="os-radar-lg"><i class="lg-me">自分</i><i class="lg-ot">比較相手</i></div>` : ''}
+      </div>
+      <div class="os-card">
+        <div class="os-card-hd">🏆 順位</div>
+        ${osRankCard(p, h, group, os.cmpId)}
+      </div>
+      <div class="os-card ${os.cmpId ? 'wide' : ''} os-anim">
+        <div class="os-card-hd">⚖ ${os.cmpId ? '比較' : '他プレイヤーとの比較'}</div>
+        ${os.cmpId ? osCompareTable(group, p.id, os.cmpId) : `<div class="os-empty" style="padding:14px">右上の「比較相手」から選手を選ぶと、指標ごとの比較が出ます</div>`}
+      </div>
+      <div class="os-card">
+        <div class="os-card-hd">🥇 同ヒーローの他プレイヤー比較</div>
+        ${osCompareBars(group, p.id, os.cmpId) || `<div class="os-empty">このヒーローを使っているのは1人だけです</div>`}
+      </div>
+      <div class="os-card">
+        <div class="os-card-hd">📊 得意ヒーロー(上位10)</div>
+        ${osDistCard(p, h.slug)}
+      </div>
+      <div class="os-card wide">
+        <div class="os-card-hd">📅 日別の使用試合数</div>
+        ${osDailyBars(p, h.slug)}
+      </div>
+    </div>
+  `;
+  osWatchAnim();
+}
+
+/* 画面に入ったときだけ比較アニメを再生(スクロールで到達したら動く) */
+let osAnimIO = null;
+function osWatchAnim(){
+  if (osAnimIO) { osAnimIO.disconnect(); osAnimIO = null; }
+  const targets = document.querySelectorAll('#osDetail .os-anim');
+  if (!targets.length) return;
+  targets.forEach(t => t.classList.remove('os-play'));
+  if (!('IntersectionObserver' in window)) { targets.forEach(t => t.classList.add('os-play')); return; }
+  osAnimIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('os-play');
+      else e.target.classList.remove('os-play');   // 画面外に出たら戻す(再入場で再生)
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -40px 0px' });
+  targets.forEach(t => osAnimIO.observe(t));
+}
+
+function osRenderAll(){
+  osRenderPeople();
+  osRenderRoles();
+  osRenderGrid();
+  osRenderDetail();
+}
+function osInit(){
+  const people = $('#osPeople'), cmpBox = $('#osCompare');
+  if (!people) return;
+  const list = osPlayers();
+  if (!os.pid) os.pid = list[0] && list[0].id;
+  people.addEventListener('click', e => {
+    const b = e.target.closest('[data-ospid]');
+    if (!b) return;
+    os.pid = b.dataset.ospid;
+    if (os.cmpId === os.pid) os.cmpId = null;
+    os.slug = null;
+    osRenderAll();
+  });
+  if (cmpBox) cmpBox.addEventListener('click', e => {
+    const b = e.target.closest('[data-oscmp]');
+    if (!b) return;
+    const id = b.dataset.oscmp;
+    os.cmpId = (os.cmpId === id) ? null : id;
+    osRenderPeople();
+    osRenderDetail();
+  });
+  const roles = $('#osRoles');
+  if (roles) roles.addEventListener('click', e => {
+    const b = e.target.closest('[data-osrole]');
+    if (!b) return;
+    os.role = b.dataset.osrole;
+    osRenderRoles(); osRenderGrid();
+  });
+  const grid = $('#osGrid');
+  if (grid) grid.addEventListener('click', e => {
+    const b = e.target.closest('[data-osslug]');
+    if (!b) return;
+    os.slug = b.dataset.osslug;
+    osRenderGrid(); osRenderDetail();
+  });
+  osRenderAll();
+}
+
 $('#rankTable thead').addEventListener('click',e=>{
   const b=e.target.closest('.sortable');
   if(!b)return;
@@ -4733,6 +5594,7 @@ if ($('#ddCopy')) $('#ddCopy').addEventListener('click', () => {
   } else { out.select(); done(); }
 });
 
+osInit();
 renderSel();
 renderProfile(focusPlayer());
 renderTable();
@@ -4787,6 +5649,16 @@ ddRender();     // カスタムゲーム用ドラフト表
   document.documentElement.classList.add('intro-lock');
   timer = setTimeout(finish, DUR[v] || 4650);
   /* タップ・クリック等でのスキップは無効(演出は最後まで再生) */
+})();
+</script>
+
+<!-- PWA: ホーム画面に追加 / オフライン対応 -->
+<script>
+(function(){
+  if(!('serviceWorker' in navigator)) return;
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('service-worker.js').catch(function(){ /* 失敗しても通常表示 */ });
+  });
 })();
 </script>
 
