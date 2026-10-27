@@ -1,5 +1,5 @@
 /* オーバーツ: Service Worker(オフライン対応 + ホーム画面追加) */
-const VERSION = 'owz-v1';
+const VERSION = 'owz-v3';
 const SHELL = [
   './',
   'index.html',
