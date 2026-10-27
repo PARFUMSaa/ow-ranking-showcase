@@ -4,7 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>OW2 PLAYER RANKINGS | 身内ランキング(β)</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%AF%3C/text%3E%3C/svg%3E" />
+<link rel="icon" type="image/svg+xml" href="icons/favicon.svg" />
+<link rel="mask-icon" href="icons/favicon.svg" color="#f28f1d" />
 <style>
 /* ============ 共通 ============ */
 :root{--blue:#2563eb;--border:#e5e7eb}
@@ -942,9 +943,762 @@ details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px
   .dg-op{flex:0 0 100%;height:14px}
   .pf-bar .note{display:none}
 }
+
+/* ===== 起動演出(?intro=1..6) ===== */
+@property --owdeg{syntax:'<angle>';inherits:false;initial-value:0deg}
+html.intro-lock{overflow:hidden}
+#owIntro{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;overflow:hidden;
+  background:radial-gradient(115% 100% at 50% 42%,#ffffff 0%,#fbfaf6 55%,#f2f0e9 100%);
+  animation:owIntroFade .62s ease 3.98s both}
+#owIntro.done{display:none}
+#owIntro[data-v="2"]{animation:owIntroFade .6s ease 3.9s both}
+#owIntro[data-v="10"]{animation:owIntroFade .6s ease 3.05s both}
+#owIntro[data-v="11"]{animation:v11Slide .95s cubic-bezier(.6,0,.3,1) 2.55s forwards}
+#owIntro[data-v="12"]{animation:owIntroFade .55s ease 2.7s both}
+#owIntro[data-v="13"]{animation:owIntroFade .6s ease 3.5s both}
+#owIntro[data-v="14"]{animation:owIntroFade .6s ease 3.0s both}
+#owIntro[data-v="15"]{animation:owIntroFade .55s ease 2.5s both}
+#owIntro[data-v="16"]{animation:owIntroFade .6s ease 3.05s both}
+#owIntro[data-v="17"]{animation:owIntroFade .6s ease 3.65s both}   /* 上下分割でサイトが見える */   /* 左右分割 */
+.iv{position:absolute;inset:0;display:none;place-items:center;overflow:hidden}
+.iv.on{display:grid}
+@keyframes owIntroFade{from{opacity:1}to{opacity:0}}
+@keyframes owRingPulse{0%{opacity:.9;transform:scale(.82)}100%{opacity:0;transform:scale(1.9)}}
+@keyframes owFlashPulse{0%{opacity:0}22%{opacity:.8}100%{opacity:0}}
+
+/* ---- 案1: 円形スイープ ---- */
+.ow-wrap{position:relative;width:min(54vmin,390px);aspect-ratio:1;display:grid;place-items:center;
+  animation:owWrapIn .9s cubic-bezier(.2,.9,.25,1) .05s both, owWrapOut .72s cubic-bezier(.4,.05,.6,.25) 3.42s forwards}
+.ow-mark{display:block;width:100%;height:100%;
+  -webkit-mask-image:conic-gradient(from -90deg,#000 var(--owdeg),transparent 0);
+  mask-image:conic-gradient(from -90deg,#000 var(--owdeg),transparent 0);
+  animation:owSweep 1.85s cubic-bezier(.18,.85,.3,1) .22s both, owBreath 1.5s ease-in-out 2.5s 2}
+.ow-glow{position:absolute;inset:-14%;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,rgba(242,143,29,.20) 0%,rgba(242,143,29,.10) 45%,rgba(242,143,29,0) 68%);
+  opacity:0;animation:owGlowIn 1.1s ease 1.35s both}
+.ow-hand{position:absolute;inset:-1%;border-radius:50%;pointer-events:none;opacity:0;
+  background:conic-gradient(from -90deg,transparent 0deg,rgba(242,143,29,0) 322deg,rgba(255,160,40,.95) 358deg,rgba(255,255,255,0) 360deg);
+  -webkit-mask-image:radial-gradient(circle,transparent 84%,#000 90%,#000 97%,transparent 100%);
+  mask-image:radial-gradient(circle,transparent 84%,#000 90%,#000 97%,transparent 100%);
+  animation:owHand 1.85s cubic-bezier(.18,.85,.3,1) .22s forwards}
+.ow-ripple{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(242,143,29,.5);
+  opacity:0;animation:owRipple 1.25s ease-out 2.35s forwards}
+.ow-ripple.b{border-color:rgba(120,110,90,.3);animation-delay:2.72s}
+.ow-spin{position:absolute;inset:-9%;border-radius:50%;opacity:0;border:1.5px dashed rgba(242,143,29,.45);
+  animation:owSpinRing 1.5s cubic-bezier(.2,.8,.3,1) 2.35s both}
+.ow-burst{position:absolute;inset:0;border-radius:50%;border:3px solid rgba(242,143,29,.85);
+  opacity:0;animation:owBurst .95s cubic-bezier(.2,.7,.3,1) 3.5s forwards}
+.ow-burst.b{border-width:2px;border-color:rgba(120,110,90,.5);animation-delay:3.62s}
+.ow-flash{position:absolute;inset:0;pointer-events:none;opacity:0;
+  background:radial-gradient(circle at 50% 50%,rgba(255,255,255,.9) 0%,rgba(255,246,232,.45) 34%,rgba(255,255,255,0) 68%);
+  animation:owFlash .85s ease 3.66s both}
+@keyframes owSweep{from{--owdeg:0deg}to{--owdeg:360deg}}
+@keyframes owHand{0%{opacity:1;transform:rotate(0deg)}94%{opacity:1}100%{opacity:0;transform:rotate(360deg)}}
+@keyframes owGlowIn{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+@keyframes owBreath{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+@keyframes owRipple{0%{opacity:.9;transform:scale(.7)}100%{opacity:0;transform:scale(1.6)}}
+@keyframes owSpinRing{0%{opacity:0;transform:rotate(-40deg) scale(.9)}35%{opacity:.9}100%{opacity:0;transform:rotate(90deg) scale(1.12)}}
+@keyframes owWrapIn{0%{opacity:0;transform:scale(.76)}100%{opacity:1;transform:scale(1)}}
+@keyframes owWrapOut{0%{opacity:1;transform:scale(1) rotate(0);filter:blur(0)}
+  55%{opacity:1;transform:scale(1.8) rotate(22deg);filter:blur(0)}
+  100%{opacity:0;transform:scale(2.7) rotate(48deg);filter:blur(7px)}}
+@keyframes owBurst{0%{opacity:.95;transform:scale(.92)}65%{opacity:.4}100%{opacity:0;transform:scale(3.6)}}
+@keyframes owFlash{0%{opacity:0}22%{opacity:.75}100%{opacity:0}}
+
+/* ---- 案2: パーツ飛来して組立 ---- */
+.iv2{background:radial-gradient(115% 100% at 50% 42%,#ffffff 0%,#fbf9f4 58%,#f1eee5 100%)}
+.v2-stage{position:relative;width:min(50vmin,350px);aspect-ratio:1;display:grid;place-items:center;
+  animation:v2Out .72s cubic-bezier(.4,.05,.6,.25) 3.5s forwards}
+.v2-mark{width:100%;height:100%;display:block;filter:drop-shadow(0 14px 30px rgba(120,90,30,.18))}
+.v2-mark .ow-p{transform-box:fill-box;transform-origin:center}
+.v2-mark .ow-p1{animation:v2In1 1.45s cubic-bezier(.16,1.05,.25,1) .1s both}
+.v2-mark .ow-p2{animation:v2In2 1.45s cubic-bezier(.16,1.05,.25,1) .34s both}
+.v2-mark .ow-p3{animation:v2In3 1.45s cubic-bezier(.16,1.05,.25,1) .58s both}
+.v2-ring{position:absolute;width:min(50vmin,350px);aspect-ratio:1;border-radius:50%;
+  border:2px solid rgba(242,143,29,.62);opacity:0;animation:owRingPulse 1.3s ease-out 2.05s forwards}
+.v2-ring.b{border-color:rgba(120,110,90,.32);animation-delay:2.35s}
+.v2-flash{position:absolute;inset:0;pointer-events:none;opacity:0;
+  background:radial-gradient(circle at 50% 50%,rgba(255,196,110,.5) 0%,rgba(242,143,29,.12) 42%,rgba(255,255,255,0) 72%);
+  animation:owFlashPulse .9s ease 3.62s forwards}
+@keyframes v2In1{0%{opacity:0;transform:translate(-230px,-130px) rotate(-160deg) scale(1.35)}45%{opacity:1}100%{opacity:1;transform:none}}
+@keyframes v2In2{0%{opacity:0;transform:translate(250px,110px) rotate(150deg)}45%{opacity:1}100%{opacity:1;transform:none}}
+@keyframes v2In3{0%{opacity:0;transform:translate(-40px,210px) rotate(-90deg) scale(.45)}45%{opacity:1}100%{opacity:1;transform:none}}
+@keyframes v2Out{0%{opacity:1;transform:scale(1)}55%{opacity:1;transform:scale(1.5) rotate(10deg)}100%{opacity:0;transform:scale(2.3) rotate(30deg);filter:blur(6px)}}
+
+/* ---- 案3: バイブレーション ---- */
+.iv3{background:radial-gradient(115% 100% at 50% 42%,#ffffff 0%,#fbf9f4 58%,#f1eee5 100%)}
+.iv3.on{animation:v3Screen .11s linear .55s 17}
+.v3-stage{position:relative;width:min(52vmin,360px);aspect-ratio:1;display:grid;place-items:center}
+.v3-markwrap{position:relative;width:100%;height:100%;
+  animation:v3In .45s cubic-bezier(.2,.9,.25,1) .08s both,
+            v3Vib 1.9s linear .55s forwards,
+            v3Settle .55s cubic-bezier(.2,1.4,.4,1) 2.45s forwards,
+            v3Hold 1.4s ease-in-out 3.0s forwards,
+            v3Out .62s cubic-bezier(.5,0,.7,.2) 3.42s forwards}
+.v3-mark{position:absolute;inset:0;width:100%;height:100%;display:block;
+  filter:drop-shadow(0 14px 28px rgba(120,90,30,.20))}
+.v3-ghost{opacity:.3;filter:blur(1.6px) saturate(.9);animation:v3Vib 1.9s linear .52s forwards}
+.v3-ring{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(242,143,29,.5);
+  opacity:0;animation:owRingPulse 1.05s ease-out both}
+.v3-ring.r1{animation-delay:.75s}
+.v3-ring.r2{animation-delay:1.15s;border-color:rgba(120,110,90,.32)}
+.v3-ring.r3{animation-delay:1.55s}
+.v3-flash{position:absolute;inset:0;pointer-events:none;opacity:0;
+  background:radial-gradient(circle at 50% 50%,rgba(255,196,110,.55) 0%,rgba(242,143,29,.14) 40%,rgba(255,255,255,0) 70%);
+  animation:owFlashPulse .85s ease 2.42s forwards}
+@keyframes v3Screen{0%{transform:translate(0,0)}25%{transform:translate(-1.2px,.8px)}50%{transform:translate(1.2px,-.6px)}75%{transform:translate(-.8px,-.8px)}100%{transform:translate(0,0)}}
+@keyframes v3In{0%{opacity:0;transform:scale(.9)}100%{opacity:1;transform:scale(1)}}
+@keyframes v3Vib{
+  0%{transform:translate(0,0) rotate(0deg)}
+  4%{transform:translate(-1.4px,1.1px) rotate(-.26deg)}
+  8%{transform:translate(1.6px,-1.3px) rotate(.3deg)}
+  12%{transform:translate(-2.2px,1.6px) rotate(-.38deg)}
+  16%{transform:translate(2.6px,-1.9px) rotate(.44deg)}
+  20%{transform:translate(-3.1px,2.2px) rotate(-.52deg)}
+  24%{transform:translate(3.4px,-2.4px) rotate(.58deg)}
+  28%{transform:translate(-4px,2.8px) rotate(-.66deg)}
+  32%{transform:translate(4.3px,-3px) rotate(.72deg)}
+  36%{transform:translate(-4.9px,3.3px) rotate(-.8deg)}
+  40%{transform:translate(5.2px,-3.6px) rotate(.86deg)}
+  44%{transform:translate(-5.8px,3.9px) rotate(-.94deg)}
+  48%{transform:translate(6.2px,-4.2px) rotate(1deg)}
+  52%{transform:translate(-6.6px,4.5px) rotate(-1.06deg)}
+  56%{transform:translate(7px,-4.8px) rotate(1.12deg)}
+  60%{transform:translate(-7.4px,5px) rotate(-1.18deg)}
+  64%{transform:translate(7.8px,-5.2px) rotate(1.24deg)}
+  68%{transform:translate(-6px,4px) rotate(-.95deg)}
+  72%{transform:translate(4.6px,-3.2px) rotate(.72deg)}
+  76%{transform:translate(-3.2px,2.2px) rotate(-.5deg)}
+  80%{transform:translate(2px,-1.4px) rotate(.34deg)}
+  84%{transform:translate(-1.2px,.9px) rotate(-.2deg)}
+  88%{transform:translate(.7px,-.5px) rotate(.12deg)}
+  92%{transform:translate(-6.5px,4.6px) rotate(-.9deg)}
+  96%{transform:translate(2.4px,-1.6px) rotate(.36deg)}
+  100%{transform:translate(0,0) rotate(0deg)}
+}
+@keyframes v3Settle{0%{transform:translate(0,0) scale(1)}45%{transform:translate(0,0) scale(1.06)}100%{transform:translate(0,0) scale(1)}}
+@keyframes v3Hold{0%,100%{transform:scale(1)}50%{transform:scale(1.02)}}
+@keyframes v3Out{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.9);filter:blur(6px)}}
+
+
+/* ---- 案4: 順番に描画(外→中→内→中心) ---- */
+@property --s1{syntax:'<angle>';inherits:false;initial-value:0deg}
+@property --s2{syntax:'<angle>';inherits:false;initial-value:0deg}
+@property --s3{syntax:'<angle>';inherits:false;initial-value:0deg}
+.iv4{background:radial-gradient(115% 100% at 50% 42%,#ffffff 0%,#fbf9f4 58%,#f1eee5 100%)}
+.v4-stage{position:relative;width:min(52vmin,360px);aspect-ratio:1;display:grid;place-items:center;
+  animation:v4Out .68s cubic-bezier(.5,0,.7,.2) 3.4s forwards}
+.v4-c{position:absolute;inset:0;width:100%;height:100%;display:block}
+.v4-c1{-webkit-mask-image:conic-gradient(from -90deg,#000 var(--s1),transparent 0);mask-image:conic-gradient(from -90deg,#000 var(--s1),transparent 0);
+  animation:v4W1 .95s linear .12s both}
+.v4-c2{-webkit-mask-image:conic-gradient(from -90deg,#000 var(--s2),transparent 0);mask-image:conic-gradient(from -90deg,#000 var(--s2),transparent 0);
+  animation:v4W2 .95s linear .95s both}
+.v4-c3{opacity:0;animation:v4Pop .5s cubic-bezier(.2,1.6,.4,1) 1.85s forwards}
+.v4-ring{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(242,143,29,.5);opacity:0;
+  animation:owRingPulse 1.1s ease-out 1.9s forwards}
+@keyframes v4W1{from{--s1:0deg}to{--s1:360deg}}
+@keyframes v4W2{from{--s2:0deg}to{--s2:360deg}}
+@keyframes v4Pop{0%{opacity:0;transform:scale(.4)}100%{opacity:1;transform:scale(1)}}
+@keyframes v4Out{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.7);filter:blur(5px)}}
+
+/* ---- 案5: ダイヤルロック(3つの弧が別速度で回って12時で揃う) ---- */
+.iv5{background:radial-gradient(115% 100% at 50% 42%,#ffffff 0%,#fbf9f4 58%,#f1eee5 100%)}
+.v5-stage{position:relative;width:min(52vmin,360px);aspect-ratio:1;display:grid;place-items:center;
+  animation:v5Out .68s cubic-bezier(.5,0,.7,.2) 3.45s forwards}
+.v5-c{position:absolute;inset:0;width:100%;height:100%;display:block;
+  filter:drop-shadow(0 12px 26px rgba(120,90,30,.16))}
+.v5-c1{animation:v5Dial1 1.9s cubic-bezier(.25,.9,.2,1) .1s both}
+.v5-c2{animation:v5Dial2 1.7s cubic-bezier(.25,.9,.2,1) .22s both}
+.v5-c3{animation:v5Dial3 1.5s cubic-bezier(.25,.9,.2,1) .34s both}
+.v5-lock{position:absolute;inset:-6%;border-radius:50%;border:2px solid rgba(242,143,29,.6);opacity:0;
+  animation:owRingPulse .9s ease-out 2.05s forwards}
+@keyframes v5Dial1{0%{opacity:0;transform:rotate(-760deg) scale(.9)}12%{opacity:1}100%{opacity:1;transform:rotate(0) scale(1)}}
+@keyframes v5Dial2{0%{opacity:0;transform:rotate(620deg) scale(.92)}12%{opacity:1}100%{opacity:1;transform:rotate(0) scale(1)}}
+@keyframes v5Dial3{0%{opacity:0;transform:rotate(-300deg) scale(.94)}12%{opacity:1}100%{opacity:1;transform:rotate(0) scale(1)}}
+@keyframes v5Out{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.6) rotate(8deg);filter:blur(5px)}}
+
+/* ---- 案6: 基準線ドロップ(12時の縦線が落ちて弧が展開) ---- */
+.iv6{background:radial-gradient(115% 100% at 50% 42%,#ffffff 0%,#fbf9f4 58%,#f1eee5 100%)}
+.v6-stage{position:relative;width:min(52vmin,360px);aspect-ratio:1;display:grid;place-items:center;
+  animation:v6Out .68s cubic-bezier(.5,0,.7,.2) 3.35s forwards}
+.v6-drop{position:absolute;left:50%;top:-34%;width:3px;height:34%;margin-left:-1.5px;border-radius:3px;
+  background:linear-gradient(180deg,rgba(242,143,29,0),rgba(242,143,29,.95));
+  box-shadow:0 0 14px rgba(242,143,29,.65);opacity:0;
+  animation:v6Drop .55s cubic-bezier(.5,0,.2,1) .12s forwards}
+.v6-mark{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;
+  transform-origin:50% 0%;
+  filter:drop-shadow(0 14px 26px rgba(120,90,30,.18));
+  animation:v6Unfold .95s cubic-bezier(.2,.9,.25,1) .6s forwards}
+.v6-ring{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(242,143,29,.5);opacity:0;
+  animation:owRingPulse 1.1s ease-out 1.75s forwards}
+@keyframes v6Drop{0%{opacity:0;transform:translateY(-45%)}25%{opacity:1}100%{opacity:1;transform:translateY(0)}}
+@keyframes v6Unfold{0%{opacity:0;transform:scaleY(.12) rotate(-5deg)}
+  55%{opacity:1}
+  70%{transform:scaleY(1.04) rotate(0)}
+  100%{opacity:1;transform:scaleY(1) rotate(0)}}
+@keyframes v6Out{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.55);filter:blur(5px)}}
+
+/* ---- 案7: 円形ワイプ(中心から濃グレーが全画面へ) ---- */
+.iv7{background:radial-gradient(115% 100% at 50% 42%,#ffffff 0%,#fbf9f4 58%,#f1eee5 100%)}
+.v7-stage{position:relative;width:min(52vmin,360px);aspect-ratio:1;display:grid;place-items:center;
+  animation:v7MarkIn .8s cubic-bezier(.2,.9,.25,1) .1s both}
+.v7-mark{width:100%;height:100%;display:block;filter:drop-shadow(0 14px 28px rgba(120,90,30,.18))}
+.v7-wipe{position:absolute;left:50%;top:50%;width:40px;height:40px;border-radius:50%;background:#3d3a34;
+  transform:translate(-50%,-50%) scale(0);
+  animation:v7Wipe 1.25s cubic-bezier(.6,0,.35,1) 2.05s forwards}
+@keyframes v7MarkIn{0%{opacity:0;transform:scale(.86) rotate(-8deg)}100%{opacity:1;transform:scale(1)}}
+@keyframes v7Wipe{0%{transform:translate(-50%,-50%) scale(0);opacity:.92}
+  70%{opacity:1}
+  100%{transform:translate(-50%,-50%) scale(46);opacity:1}}
+
+/* ---- 案8: 点火(グレー→オレンジが灯る) ---- */
+@property --ig{syntax:'<percentage>';inherits:false;initial-value:100%}
+.iv8{background:radial-gradient(115% 100% at 50% 42%,#ffffff 0%,#fbf9f4 58%,#f1eee5 100%)}
+.v8-stage{position:relative;width:min(52vmin,360px);aspect-ratio:1;display:grid;place-items:center;
+  animation:v8Out .68s cubic-bezier(.5,0,.7,.2) 3.5s forwards}
+.v8-grey,.v8-hot{position:absolute;inset:0;width:100%;height:100%;display:block}
+.v8-grey{filter:grayscale(1) brightness(.92) contrast(.95);opacity:0;
+  animation:v8GreyIn .6s ease .15s forwards}
+.v8-hot{filter:drop-shadow(0 16px 30px rgba(242,143,29,.35));
+  -webkit-mask-image:radial-gradient(circle at 50% 50%,transparent var(--ig),#000 calc(var(--ig) + 1%));
+  mask-image:radial-gradient(circle at 50% 50%,transparent var(--ig),#000 calc(var(--ig) + 1%));
+  animation:v8Ignite 1.9s cubic-bezier(.4,0,.3,1) .7s forwards}
+.v8-ring{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(242,143,29,.5);opacity:0;
+  animation:owRingPulse 1.2s ease-out 2.15s forwards}
+@keyframes v8GreyIn{from{opacity:0}to{opacity:1}}
+@keyframes v8Ignite{from{--ig:100%}to{--ig:0%}}
+@keyframes v8Out{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.6);filter:blur(5px)}}
+
+/* ---- 案9: 線画→塗り(輪郭を描いてから色が流れ込む) ---- */
+.iv9{background:radial-gradient(115% 100% at 50% 42%,#ffffff 0%,#fbf9f4 58%,#f1eee5 100%)}
+.v9-stage{position:relative;width:min(52vmin,360px);aspect-ratio:1;display:grid;place-items:center;
+  animation:v9Out .68s cubic-bezier(.5,0,.7,.2) 3.4s forwards}
+.v9-line,.v9-fill{position:absolute;inset:0;width:100%;height:100%;display:block}
+.v9-line{fill:none;stroke:#8d8577;stroke-width:10;stroke-linejoin:round;stroke-linecap:round;
+  stroke-dasharray:3400;stroke-dashoffset:3400;
+  animation:v9Draw 1.75s cubic-bezier(.5,0,.45,1) .15s forwards}
+.v9-fill{opacity:0;filter:drop-shadow(0 14px 26px rgba(120,90,30,.18));
+  animation:v9Fill .6s ease 1.5s forwards}
+.v9-ring{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(242,143,29,.5);opacity:0;
+  animation:owRingPulse 1.15s ease-out 2.05s forwards}
+@keyframes v9Draw{to{stroke-dashoffset:0}}
+@keyframes v9Fill{0%{opacity:0;transform:scale(.97)}100%{opacity:1;transform:scale(1)}}
+@keyframes v9Out{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.5);filter:blur(5px)}}
+
+
+
+/* ===== 案22: パックマン・ダイニング ===== */
+.iv10{background:radial-gradient(115% 100% at 50% 42%,#ffffff 0%,#fbf9f4 58%,#f1eee5 100%)}
+.v10-stage{position:relative;width:min(52vmin,360px);aspect-ratio:1;display:grid;place-items:center;
+  animation:v10Out .68s cubic-bezier(.5,0,.7,.2) 2.95s forwards}
+.v10-c{position:absolute;inset:0;width:100%;height:100%;display:block}
+.v10-c1{animation:v10Spin 1s cubic-bezier(.3,1.15,.4,1) 1.75s both}
+.v10-c2{animation:v10Chomp .28s ease-in-out .18s 6 both}
+.v10-c3{opacity:0;animation:v10Pop .45s cubic-bezier(.2,1.7,.4,1) 2.5s forwards}
+.v10-dot{position:absolute;left:50%;top:50%;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;border-radius:50%;
+  background:radial-gradient(circle,#f7b733,#e98416);box-shadow:0 0 8px rgba(242,143,29,.5);
+  opacity:0;animation:v10Fly 1.45s cubic-bezier(.45,0,.7,1) both}
+.v10-dot.b{background:radial-gradient(circle,#cfc8ba,#a89f8e);box-shadow:none}
+.v10-dot:nth-of-type(2){animation-delay:.22s}
+.v10-dot:nth-of-type(3){animation-delay:.44s}
+.v10-dot:nth-of-type(4){animation-delay:.66s}
+.v10-dot:nth-of-type(5){animation-delay:.88s}
+.v10-dot:nth-of-type(6){animation-delay:1.1s}
+@keyframes v10Fly{
+  0%{opacity:0;transform:translate(-215px,-72px) scale(.55)}
+  18%{opacity:1}
+  70%{opacity:1;transform:translate(-80px,-14px) scale(1)}
+  100%{opacity:0;transform:translate(-54px,4px) scale(.15)}
+}
+@keyframes v10Chomp{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.05) rotate(5deg)}}
+@keyframes v10Spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+@keyframes v10Pop{0%{opacity:0;transform:scale(.4)}100%{opacity:1;transform:scale(1)}}
+@keyframes v10Out{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.5);filter:blur(5px)}}
+
+/* ===== 案23: ドアノブ・アンロック ===== */
+.iv11{background:radial-gradient(115% 100% at 50% 42%,#ffffff 0%,#fbf9f4 58%,#f1eee5 100%)}
+.v11-stage{position:relative;width:min(52vmin,360px);aspect-ratio:1;display:grid;place-items:center;
+  animation:v11In .6s ease .1s both}
+.v11-c{position:absolute;inset:0;width:100%;height:100%;display:block}
+.v11-knob{transform-origin:50% 50%;animation:v11Knock .75s ease-in-out .5s both, v11Turn .95s cubic-bezier(.4,0,.3,1) 1.35s forwards}
+@keyframes v11Knock{0%,100%{transform:translate(0,0)}22%{transform:translate(7px,-5px)}44%{transform:translate(0,0)}66%{transform:translate(7px,-5px)}88%{transform:translate(0,0)}}
+@keyframes v11Turn{0%{transform:rotate(0)}100%{transform:rotate(92deg)}}
+@keyframes v11In{0%{opacity:0;transform:scale(.94)}100%{opacity:1;transform:scale(1)}}
+@keyframes v11Slide{0%{transform:translateX(0)}100%{transform:translateX(-101%)}}
+
+/* ===== 案25: カメラの絞り ===== */
+.iv12{background:radial-gradient(115% 100% at 50% 42%,#ffffff 0%,#fbf9f4 58%,#f1eee5 100%)}
+.v12-stage{position:relative;width:min(52vmin,360px);aspect-ratio:1;display:grid;place-items:center;
+  animation:v12Out .65s cubic-bezier(.5,0,.7,.2) 2.55s forwards}
+.v12-c{position:absolute;inset:0;width:100%;height:100%;display:block}
+.v12-c3{transform-origin:50% 50%;animation:v12Aperture 1.9s cubic-bezier(.3,.9,.3,1) .2s both}
+.v12-c1{animation:v12Ring 2.4s ease both}
+.v12-c2{animation:v12Ring 2.4s ease .08s both}
+.v12-flash{position:absolute;inset:-20%;pointer-events:none;opacity:0;background:#fff;
+  animation:v12Flash .55s ease 1.85s forwards}
+@keyframes v12Aperture{0%{transform:rotate(0) scale(1)}55%{transform:rotate(120deg) scale(1.22)}100%{transform:rotate(0) scale(1)}}
+@keyframes v12Ring{0%{transform:scale(1)}100%{transform:scale(1.1)}}
+@keyframes v12Flash{0%{opacity:0}30%{opacity:.92}100%{opacity:0}}
+@keyframes v12Out{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.5);filter:blur(5px)}}
+
+/* ===== 案26: ブレイクショット ===== */
+.iv13{background:radial-gradient(115% 100% at 50% 42%,#ffffff 0%,#fbf9f4 58%,#f1eee5 100%)}
+.v13-stage{position:relative;width:min(52vmin,360px);aspect-ratio:1;display:grid;place-items:center;
+  animation:v13Out .68s cubic-bezier(.5,0,.7,.2) 3.4s forwards}
+.v13-c{position:absolute;inset:0;width:100%;height:100%;display:block}
+.v13-c1{animation:v13Ball1 1.25s cubic-bezier(.2,.9,.25,1) .38s both}
+.v13-c2{animation:v13Ball2 1.25s cubic-bezier(.2,.9,.25,1) .5s both}
+.v13-c3{animation:v13Cue 1.15s cubic-bezier(.3,.12,.35,1) .05s both}
+.v13-hit{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(242,143,29,.7);opacity:0;
+  animation:owRingPulse 1s ease-out .62s forwards}
+@keyframes v13Ball1{0%{opacity:0;transform:translate(-280px,130px) rotate(-220deg) scale(.7)}
+  55%{opacity:1}
+  100%{opacity:1;transform:none}}
+@keyframes v13Ball2{0%{opacity:0;transform:translate(250px,-150px) rotate(190deg) scale(.7)}
+  55%{opacity:1}
+  100%{opacity:1;transform:none}}
+@keyframes v13Cue{0%{opacity:0;transform:translate(430px,-90px) rotate(560deg) scale(.8)}
+  60%{opacity:1}
+  100%{opacity:1;transform:none}}
+@keyframes v13Out{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.5);filter:blur(5px)}}
+
+
+/* ===== 案28: パズル・フィット ===== */
+.iv14{background:radial-gradient(115% 100% at 50% 42%,#ffffff 0%,#fbf9f4 58%,#f1eee5 100%)}
+.v14-stage{position:relative;width:min(52vmin,360px);aspect-ratio:1;display:grid;place-items:center;
+  animation:v14Bounce .6s cubic-bezier(.2,1.6,.4,1) 1.95s both, v14Out .68s cubic-bezier(.5,0,.7,.2) 2.9s forwards}
+.v14-c{position:absolute;inset:0;width:100%;height:100%;display:block}
+.v14-c1{animation:v14In1 .9s cubic-bezier(.2,.9,.25,1) .15s both}
+.v14-c2{animation:v14In2 .9s cubic-bezier(.2,.9,.25,1) .65s both}
+.v14-c3{animation:v14In3 .8s cubic-bezier(.2,1.3,.4,1) 1.2s both}
+@keyframes v14In1{0%{opacity:0;transform:translate(-210px,-150px) rotate(-32deg)}60%{opacity:1}100%{opacity:1;transform:none}}
+@keyframes v14In2{0%{opacity:0;transform:translate(230px,130px) rotate(26deg)}60%{opacity:1}100%{opacity:1;transform:none}}
+@keyframes v14In3{0%{opacity:0;transform:translate(0,210px) scale(.6)}60%{opacity:1}100%{opacity:1;transform:none}}
+@keyframes v14Bounce{0%,100%{transform:scale(1)}45%{transform:scale(1.06)}}
+@keyframes v14Out{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.5);filter:blur(5px)}}
+
+/* ===== 案29: まばたき/絞り ===== */
+.iv15{background:radial-gradient(115% 100% at 50% 42%,#ffffff 0%,#fbf9f4 58%,#f1eee5 100%)}
+.v15-stage{position:relative;width:min(52vmin,360px);aspect-ratio:1;display:grid;place-items:center;
+  animation:v15Out .65s cubic-bezier(.5,0,.7,.2) 2.4s forwards}
+.v15-line{position:absolute;left:6%;right:6%;top:50%;height:3px;margin-top:-1.5px;border-radius:3px;
+  background:linear-gradient(90deg,rgba(242,143,29,0),rgba(242,143,29,.85),rgba(242,143,29,0));
+  box-shadow:0 0 14px rgba(242,143,29,.7);animation:v15Line .5s ease 1.35s forwards}
+.v15-rings,.v15-pupil{position:absolute;inset:0;width:100%;height:100%;display:block;
+  transform-origin:50% 50%;animation:v15Open .55s cubic-bezier(.2,1.4,.4,1) .55s both}
+.v15-pupil{animation:v15Open .55s cubic-bezier(.2,1.4,.4,1) .6s both, v15Look 1.1s ease-in-out 1.15s both}
+@keyframes v15Line{0%{opacity:1;transform:scaleX(1)}100%{opacity:0;transform:scaleX(.2)}}
+@keyframes v15Open{0%{opacity:0;transform:scaleY(.02)}70%{opacity:1}100%{opacity:1;transform:scaleY(1)}}
+@keyframes v15Look{0%{transform:translate(0,0)}20%{transform:translate(-10px,2px)}45%{transform:translate(9px,-3px)}70%{transform:translate(-4px,1px)}100%{transform:translate(0,0)}}
+@keyframes v15Out{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.45);filter:blur(4px)}}
+
+/* ===== 案30: ダーツ・ブル ===== */
+.iv16{background:radial-gradient(115% 100% at 50% 42%,#ffffff 0%,#fbf9f4 58%,#f1eee5 100%)}
+.v16-stage{position:relative;width:min(52vmin,360px);aspect-ratio:1;display:grid;place-items:center;
+  animation:v16Out .68s cubic-bezier(.5,0,.7,.2) 2.95s forwards}
+.v16-c{position:absolute;inset:0;width:100%;height:100%;display:block}
+.v16-c1{animation:v16Ring1 .8s cubic-bezier(.2,.9,.25,1) .1s both}
+.v16-c2{animation:v16Ring2 .8s cubic-bezier(.2,.9,.25,1) .22s both}
+.v16-c3{animation:v16Bull .5s cubic-bezier(.2,1.6,.4,1) 1.62s both}
+.v16-shake{position:absolute;inset:0;width:100%;height:100%;animation:v16Shake .5s ease-out 1.85s 5 both}
+.v16-dart{position:absolute;left:52%;top:52%;width:4px;height:120px;margin:-120px 0 0 -2px;
+  background:linear-gradient(180deg,rgba(74,75,76,.2),rgba(74,75,76,.95));
+  transform-origin:50% 100%;opacity:0;
+  animation:v16Dart .42s cubic-bezier(.3,.05,.4,1) 1.35s forwards}
+.v16-dart::after{content:'';position:absolute;top:-14px;left:-9px;width:22px;height:16px;
+  background:linear-gradient(135deg,#f28f1d,#b47631);clip-path:polygon(50% 0,100% 100%,0 100%)}
+@keyframes v16Ring1{0%{opacity:0;transform:translate(-280px,-120px) scale(.8)}60%{opacity:1}100%{opacity:1;transform:none}}
+@keyframes v16Ring2{0%{opacity:0;transform:translate(260px,140px) scale(.8)}60%{opacity:1}100%{opacity:1;transform:none}}
+@keyframes v16Bull{0%{opacity:0;transform:scale(.6)}100%{opacity:1;transform:scale(1)}}
+@keyframes v16Dart{0%{opacity:0;transform:translate(240px,-210px) rotate(52deg) scale(1.5)}70%{opacity:1}100%{opacity:1;transform:rotate(24deg) scale(1)}}
+@keyframes v16Shake{0%,100%{transform:translate(0,0)}20%{transform:translate(-4px,2px)}40%{transform:translate(4px,-2px)}60%{transform:translate(-2px,-2px)}80%{transform:translate(2px,1px)}}
+@keyframes v16Out{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.5);filter:blur(5px)}}
+
+/* ===== 案32: コンパス/製図 ===== */
+@property --r32{syntax:'<angle>';inherits:false;initial-value:0deg}
+.iv17{background:radial-gradient(115% 100% at 50% 42%,#ffffff 0%,#fbf9f4 58%,#f1eee5 100%)}
+.v17-stage{position:relative;width:min(52vmin,360px);aspect-ratio:1;display:grid;place-items:center;
+  animation:v17Out .68s cubic-bezier(.5,0,.7,.2) 3.55s forwards}
+.v17-c{position:absolute;inset:0;width:100%;height:100%;display:block}
+.v17-c1,.v17-c2{-webkit-mask-image:conic-gradient(from -90deg,#000 var(--r32),transparent 0);
+  mask-image:conic-gradient(from -90deg,#000 var(--r32),transparent 0);
+  animation:v17Draw 1.6s linear .5s both;filter:grayscale(1) brightness(.55)}
+.v17-c3{animation:v17Needle .5s cubic-bezier(.2,1.5,.4,1) .1s both}
+.v17-guides{position:absolute;inset:-8%;opacity:0;animation:v17Guides 1s ease 2.05s forwards}
+.v17-guides::before,.v17-guides::after{content:'';position:absolute;left:50%;top:50%;background:rgba(120,110,90,.35)}
+.v17-guides::before{width:100%;height:1px;margin-top:-.5px}
+.v17-guides::after{width:1px;height:100%;margin-left:-.5px}
+.v17-arm{position:absolute;left:50%;top:50%;width:2px;height:50%;margin-left:-1px;bottom:50%;
+  transform-origin:50% 100%;background:linear-gradient(180deg,rgba(120,110,90,.85),rgba(120,110,90,.15));
+  animation:v17Arm 1.6s linear .5s both}
+.v17-color{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;
+  animation:v17Color .7s ease 2.15s forwards}
+@keyframes v17Needle{0%{opacity:0;transform:scale(.5)}100%{opacity:1;transform:scale(1)}}
+@keyframes v17Draw{from{--r32:0deg}to{--r32:360deg}}
+@keyframes v17Arm{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+@keyframes v17Guides{0%{opacity:0}30%{opacity:1}100%{opacity:0}}
+@keyframes v17Color{from{opacity:0}to{opacity:1}}
+@keyframes v17Out{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.5);filter:blur(5px)}}
+
 </style>
 </head>
 <body>
+
+
+<!-- 起動演出(全17案 / 既定はランダム・?intro=N で固定) -->
+<div id="owIntro" aria-hidden="true">
+
+  <div class="iv iv1 on">
+    <div class="ow-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" class="ow-mark" width="100%" height="100%" fill="none" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="g1" x1="55.19" x2="34.24" y1="18.43" y2="57.31" transform="scale(12.8)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4D4D4D" offset="0"/>
+      <stop stop-color="#86653E" offset=".4375"/>
+      <stop stop-color="#B47631" offset=".7396"/>
+      <stop stop-color="#F28F1D" offset="1"/>
+    </linearGradient>
+  </defs>
+  <path class="ow-p ow-p1" d="m512.3 166.5v68.22c148.5-1.28 266.8 116.9 266.8 259.2 0 142.5-120.8 253.3-279 255.6-145.7 0-252.7-114.2-256.8-250.2h-76.42c1.28 186 148.2 333.1 333.2 333.1 51.33 0 108.5-12.29 151.9-32.13 122.6-57.98 200.7-173.8 200.7-303.5 1.28-181.5-151.3-332.3-340.4-330.2z" fill="url(#g1)"/>
+  <path class="ow-p ow-p2" d="m512.3 274.2v60.03c86.27-2.176 159.4 69.25 159.4 153 0 91.52-84.48 151-159.5 151.6v66.05c123.6-2.176 228.7-96.51 228.7-215 0-120.8-106.9-219.4-228.6-215.6z" fill="#F38F1E"/>
+  <path class="ow-p ow-p3" d="m512.3 370.7v129.3h126.7c7.552-70.14-57.98-133.6-126.7-129.3z" fill="#4A4B4C"/>
+</svg>
+      <div class="ow-glow"></div>
+      <div class="ow-hand"></div>
+      <div class="ow-ripple"></div>
+      <div class="ow-ripple b"></div>
+      <div class="ow-spin"></div>
+      <div class="ow-burst"></div>
+      <div class="ow-burst b"></div>
+    </div>
+    <div class="ow-flash"></div>
+  </div>
+
+  <div class="iv iv2">
+    <div class="v2-stage">
+      <svg xmlns="http://www.w3.org/2000/svg" class="v2-mark" width="100%" height="100%" fill="none" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="g2" x1="55.19" x2="34.24" y1="18.43" y2="57.31" transform="scale(12.8)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4D4D4D" offset="0"/>
+      <stop stop-color="#86653E" offset=".4375"/>
+      <stop stop-color="#B47631" offset=".7396"/>
+      <stop stop-color="#F28F1D" offset="1"/>
+    </linearGradient>
+  </defs>
+  <path class="ow-p ow-p1" d="m512.3 166.5v68.22c148.5-1.28 266.8 116.9 266.8 259.2 0 142.5-120.8 253.3-279 255.6-145.7 0-252.7-114.2-256.8-250.2h-76.42c1.28 186 148.2 333.1 333.2 333.1 51.33 0 108.5-12.29 151.9-32.13 122.6-57.98 200.7-173.8 200.7-303.5 1.28-181.5-151.3-332.3-340.4-330.2z" fill="url(#g2)"/>
+  <path class="ow-p ow-p2" d="m512.3 274.2v60.03c86.27-2.176 159.4 69.25 159.4 153 0 91.52-84.48 151-159.5 151.6v66.05c123.6-2.176 228.7-96.51 228.7-215 0-120.8-106.9-219.4-228.6-215.6z" fill="#F38F1E"/>
+  <path class="ow-p ow-p3" d="m512.3 370.7v129.3h126.7c7.552-70.14-57.98-133.6-126.7-129.3z" fill="#4A4B4C"/>
+</svg>
+      <div class="v2-ring"></div>
+      <div class="v2-ring b"></div>
+    </div>
+    <div class="v2-flash"></div>
+  </div>
+
+  <div class="iv iv3">
+    <div class="v3-stage">
+      <div class="v3-markwrap">
+        <svg xmlns="http://www.w3.org/2000/svg" class="v3-mark" width="100%" height="100%" fill="none" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="g3" x1="55.19" x2="34.24" y1="18.43" y2="57.31" transform="scale(12.8)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4D4D4D" offset="0"/>
+      <stop stop-color="#86653E" offset=".4375"/>
+      <stop stop-color="#B47631" offset=".7396"/>
+      <stop stop-color="#F28F1D" offset="1"/>
+    </linearGradient>
+  </defs>
+  <path class="ow-p ow-p1" d="m512.3 166.5v68.22c148.5-1.28 266.8 116.9 266.8 259.2 0 142.5-120.8 253.3-279 255.6-145.7 0-252.7-114.2-256.8-250.2h-76.42c1.28 186 148.2 333.1 333.2 333.1 51.33 0 108.5-12.29 151.9-32.13 122.6-57.98 200.7-173.8 200.7-303.5 1.28-181.5-151.3-332.3-340.4-330.2z" fill="url(#g3)"/>
+  <path class="ow-p ow-p2" d="m512.3 274.2v60.03c86.27-2.176 159.4 69.25 159.4 153 0 91.52-84.48 151-159.5 151.6v66.05c123.6-2.176 228.7-96.51 228.7-215 0-120.8-106.9-219.4-228.6-215.6z" fill="#F38F1E"/>
+  <path class="ow-p ow-p3" d="m512.3 370.7v129.3h126.7c7.552-70.14-57.98-133.6-126.7-129.3z" fill="#4A4B4C"/>
+</svg>
+      </div>
+      <div class="v3-ring r1"></div>
+      <div class="v3-ring r2"></div>
+      <div class="v3-ring r3"></div>
+      <div class="v3-flash"></div>
+    </div>
+  </div>
+
+  <div class="iv iv4">
+    <div class="v4-stage">
+      <svg xmlns="http://www.w3.org/2000/svg" class="v4-c v4-c1" width="100%" height="100%" fill="none" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="g4a" x1="55.19" x2="34.24" y1="18.43" y2="57.31" gradientTransform="scale(12.8)" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#4D4D4D" offset="0"/><stop stop-color="#86653E" offset=".4375"/>
+    <stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/>
+  </linearGradient></defs>
+  <path class="ow-p ow-p1" d="m512.3 166.5v68.22c148.5-1.28 266.8 116.9 266.8 259.2 0 142.5-120.8 253.3-279 255.6-145.7 0-252.7-114.2-256.8-250.2h-76.42c1.28 186 148.2 333.1 333.2 333.1 51.33 0 108.5-12.29 151.9-32.13 122.6-57.98 200.7-173.8 200.7-303.5 1.28-181.5-151.3-332.3-340.4-330.2z" fill="url(#g4a)"/>
+</svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="v4-c v4-c2" width="100%" height="100%" fill="none" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="g4b" x1="55.19" x2="34.24" y1="18.43" y2="57.31" gradientTransform="scale(12.8)" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#4D4D4D" offset="0"/><stop stop-color="#86653E" offset=".4375"/>
+    <stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/>
+  </linearGradient></defs>
+  <path class="ow-p ow-p2" d="m512.3 274.2v60.03c86.27-2.176 159.4 69.25 159.4 153 0 91.52-84.48 151-159.5 151.6v66.05c123.6-2.176 228.7-96.51 228.7-215 0-120.8-106.9-219.4-228.6-215.6z" fill="#F38F1E"/>
+</svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="v4-c v4-c3" width="100%" height="100%" fill="none" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="g4c" x1="55.19" x2="34.24" y1="18.43" y2="57.31" gradientTransform="scale(12.8)" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#4D4D4D" offset="0"/><stop stop-color="#86653E" offset=".4375"/>
+    <stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/>
+  </linearGradient></defs>
+  <path class="ow-p ow-p3" d="m512.3 370.7v129.3h126.7c7.552-70.14-57.98-133.6-126.7-129.3z" fill="#4A4B4C"/>
+</svg>
+      <div class="v4-ring"></div>
+    </div>
+  </div>
+
+  <div class="iv iv5">
+    <div class="v5-stage">
+      <svg xmlns="http://www.w3.org/2000/svg" class="v5-c v5-c1" width="100%" height="100%" fill="none" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="g5a" x1="55.19" x2="34.24" y1="18.43" y2="57.31" gradientTransform="scale(12.8)" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#4D4D4D" offset="0"/><stop stop-color="#86653E" offset=".4375"/>
+    <stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/>
+  </linearGradient></defs>
+  <path class="ow-p ow-p1" d="m512.3 166.5v68.22c148.5-1.28 266.8 116.9 266.8 259.2 0 142.5-120.8 253.3-279 255.6-145.7 0-252.7-114.2-256.8-250.2h-76.42c1.28 186 148.2 333.1 333.2 333.1 51.33 0 108.5-12.29 151.9-32.13 122.6-57.98 200.7-173.8 200.7-303.5 1.28-181.5-151.3-332.3-340.4-330.2z" fill="url(#g5a)"/>
+</svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="v5-c v5-c2" width="100%" height="100%" fill="none" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="g5b" x1="55.19" x2="34.24" y1="18.43" y2="57.31" gradientTransform="scale(12.8)" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#4D4D4D" offset="0"/><stop stop-color="#86653E" offset=".4375"/>
+    <stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/>
+  </linearGradient></defs>
+  <path class="ow-p ow-p2" d="m512.3 274.2v60.03c86.27-2.176 159.4 69.25 159.4 153 0 91.52-84.48 151-159.5 151.6v66.05c123.6-2.176 228.7-96.51 228.7-215 0-120.8-106.9-219.4-228.6-215.6z" fill="#F38F1E"/>
+</svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="v5-c v5-c3" width="100%" height="100%" fill="none" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="g5c" x1="55.19" x2="34.24" y1="18.43" y2="57.31" gradientTransform="scale(12.8)" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#4D4D4D" offset="0"/><stop stop-color="#86653E" offset=".4375"/>
+    <stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/>
+  </linearGradient></defs>
+  <path class="ow-p ow-p3" d="m512.3 370.7v129.3h126.7c7.552-70.14-57.98-133.6-126.7-129.3z" fill="#4A4B4C"/>
+</svg>
+      <div class="v5-lock"></div>
+    </div>
+  </div>
+
+  <div class="iv iv6">
+    <div class="v6-stage">
+      <div class="v6-drop"></div>
+      <svg xmlns="http://www.w3.org/2000/svg" class="v6-mark" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="g6" x1="55.19" x2="34.24" y1="18.43" y2="57.31" gradientTransform="scale(12.8)" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/>
+  </linearGradient></defs>
+  <path class="ow-p ow-p1" d="m512.3 166.5v68.22c148.5-1.28 266.8 116.9 266.8 259.2 0 142.5-120.8 253.3-279 255.6-145.7 0-252.7-114.2-256.8-250.2h-76.42c1.28 186 148.2 333.1 333.2 333.1 51.33 0 108.5-12.29 151.9-32.13 122.6-57.98 200.7-173.8 200.7-303.5 1.28-181.5-151.3-332.3-340.4-330.2z" fill="url(#g6)"/>
+  <path class="ow-p ow-p2" d="m512.3 274.2v60.03c86.27-2.176 159.4 69.25 159.4 153 0 91.52-84.48 151-159.5 151.6v66.05c123.6-2.176 228.7-96.51 228.7-215 0-120.8-106.9-219.4-228.6-215.6z" fill="#F38F1E"/>
+  <path class="ow-p ow-p3" d="m512.3 370.7v129.3h126.7c7.552-70.14-57.98-133.6-126.7-129.3z" fill="#4A4B4C"/>
+</svg>
+      <div class="v6-ring"></div>
+    </div>
+  </div>
+
+  <div class="iv iv7">
+    <div class="v7-stage">
+      <svg xmlns="http://www.w3.org/2000/svg" class="v7-mark" width="100%" height="100%" fill="none" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="g7" x1="55.19" x2="34.24" y1="18.43" y2="57.31" gradientTransform="scale(12.8)" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#4D4D4D" offset="0"/><stop stop-color="#86653E" offset=".4375"/>
+    <stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/>
+  </linearGradient></defs>
+  <path class="ow-p ow-p1" d="m512.3 166.5v68.22c148.5-1.28 266.8 116.9 266.8 259.2 0 142.5-120.8 253.3-279 255.6-145.7 0-252.7-114.2-256.8-250.2h-76.42c1.28 186 148.2 333.1 333.2 333.1 51.33 0 108.5-12.29 151.9-32.13 122.6-57.98 200.7-173.8 200.7-303.5 1.28-181.5-151.3-332.3-340.4-330.2z" fill="url(#g7)"/>
+  <path class="ow-p ow-p2" d="m512.3 274.2v60.03c86.27-2.176 159.4 69.25 159.4 153 0 91.52-84.48 151-159.5 151.6v66.05c123.6-2.176 228.7-96.51 228.7-215 0-120.8-106.9-219.4-228.6-215.6z" fill="#F38F1E"/>
+  <path class="ow-p ow-p3" d="m512.3 370.7v129.3h126.7c7.552-70.14-57.98-133.6-126.7-129.3z" fill="#4A4B4C"/>
+</svg>
+    </div>
+    <div class="v7-wipe"></div>
+  </div>
+
+  <div class="iv iv8">
+    <div class="v8-stage">
+      <svg xmlns="http://www.w3.org/2000/svg" class="v8-grey" width="100%" height="100%" fill="none" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="g8a" x1="55.19" x2="34.24" y1="18.43" y2="57.31" gradientTransform="scale(12.8)" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#4D4D4D" offset="0"/><stop stop-color="#86653E" offset=".4375"/>
+    <stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/>
+  </linearGradient></defs>
+  <path class="ow-p ow-p1" d="m512.3 166.5v68.22c148.5-1.28 266.8 116.9 266.8 259.2 0 142.5-120.8 253.3-279 255.6-145.7 0-252.7-114.2-256.8-250.2h-76.42c1.28 186 148.2 333.1 333.2 333.1 51.33 0 108.5-12.29 151.9-32.13 122.6-57.98 200.7-173.8 200.7-303.5 1.28-181.5-151.3-332.3-340.4-330.2z" fill="url(#g8a)"/>
+  <path class="ow-p ow-p2" d="m512.3 274.2v60.03c86.27-2.176 159.4 69.25 159.4 153 0 91.52-84.48 151-159.5 151.6v66.05c123.6-2.176 228.7-96.51 228.7-215 0-120.8-106.9-219.4-228.6-215.6z" fill="#F38F1E"/>
+  <path class="ow-p ow-p3" d="m512.3 370.7v129.3h126.7c7.552-70.14-57.98-133.6-126.7-129.3z" fill="#4A4B4C"/>
+</svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="v8-hot" width="100%" height="100%" fill="none" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="g8b" x1="55.19" x2="34.24" y1="18.43" y2="57.31" gradientTransform="scale(12.8)" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#4D4D4D" offset="0"/><stop stop-color="#86653E" offset=".4375"/>
+    <stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/>
+  </linearGradient></defs>
+  <path class="ow-p ow-p1" d="m512.3 166.5v68.22c148.5-1.28 266.8 116.9 266.8 259.2 0 142.5-120.8 253.3-279 255.6-145.7 0-252.7-114.2-256.8-250.2h-76.42c1.28 186 148.2 333.1 333.2 333.1 51.33 0 108.5-12.29 151.9-32.13 122.6-57.98 200.7-173.8 200.7-303.5 1.28-181.5-151.3-332.3-340.4-330.2z" fill="url(#g8b)"/>
+  <path class="ow-p ow-p2" d="m512.3 274.2v60.03c86.27-2.176 159.4 69.25 159.4 153 0 91.52-84.48 151-159.5 151.6v66.05c123.6-2.176 228.7-96.51 228.7-215 0-120.8-106.9-219.4-228.6-215.6z" fill="#F38F1E"/>
+  <path class="ow-p ow-p3" d="m512.3 370.7v129.3h126.7c7.552-70.14-57.98-133.6-126.7-129.3z" fill="#4A4B4C"/>
+</svg>
+      <div class="v8-ring"></div>
+    </div>
+  </div>
+
+  <div class="iv iv9">
+    <div class="v9-stage">
+      <svg xmlns="http://www.w3.org/2000/svg" class="v9-line" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="g9a" x1="55.19" x2="34.24" y1="18.43" y2="57.31" gradientTransform="scale(12.8)" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/>
+  </linearGradient></defs>
+  <path class="ow-p ow-p1" d="m512.3 166.5v68.22c148.5-1.28 266.8 116.9 266.8 259.2 0 142.5-120.8 253.3-279 255.6-145.7 0-252.7-114.2-256.8-250.2h-76.42c1.28 186 148.2 333.1 333.2 333.1 51.33 0 108.5-12.29 151.9-32.13 122.6-57.98 200.7-173.8 200.7-303.5 1.28-181.5-151.3-332.3-340.4-330.2z" fill="none"/>
+  <path class="ow-p ow-p2" d="m512.3 274.2v60.03c86.27-2.176 159.4 69.25 159.4 153 0 91.52-84.48 151-159.5 151.6v66.05c123.6-2.176 228.7-96.51 228.7-215 0-120.8-106.9-219.4-228.6-215.6z" fill="none"/>
+  <path class="ow-p ow-p3" d="m512.3 370.7v129.3h126.7c7.552-70.14-57.98-133.6-126.7-129.3z" fill="none"/>
+</svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="v9-fill" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="g9b" x1="55.19" x2="34.24" y1="18.43" y2="57.31" gradientTransform="scale(12.8)" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/>
+  </linearGradient></defs>
+  <path class="ow-p ow-p1" d="m512.3 166.5v68.22c148.5-1.28 266.8 116.9 266.8 259.2 0 142.5-120.8 253.3-279 255.6-145.7 0-252.7-114.2-256.8-250.2h-76.42c1.28 186 148.2 333.1 333.2 333.1 51.33 0 108.5-12.29 151.9-32.13 122.6-57.98 200.7-173.8 200.7-303.5 1.28-181.5-151.3-332.3-340.4-330.2z" fill="url(#g9b)"/>
+  <path class="ow-p ow-p2" d="m512.3 274.2v60.03c86.27-2.176 159.4 69.25 159.4 153 0 91.52-84.48 151-159.5 151.6v66.05c123.6-2.176 228.7-96.51 228.7-215 0-120.8-106.9-219.4-228.6-215.6z" fill="#F38F1E"/>
+  <path class="ow-p ow-p3" d="m512.3 370.7v129.3h126.7c7.552-70.14-57.98-133.6-126.7-129.3z" fill="#4A4B4C"/>
+</svg>
+      <div class="v9-ring"></div>
+    </div>
+  </div>
+
+
+
+  <div class="iv iv10">
+    <div class="v10-stage">
+      <svg xmlns="http://www.w3.org/2000/svg" class="v10-c v10-c1" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="k10a" gradientUnits="userSpaceOnUse" x1="55.19" y1="18.43" x2="34.24" y2="57.31" transform="scale(12.8)"><stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/></linearGradient></defs>
+  <path class="ow-p ow-p1" d="m512.3 166.5v68.22c148.5-1.28 266.8 116.9 266.8 259.2 0 142.5-120.8 253.3-279 255.6-145.7 0-252.7-114.2-256.8-250.2h-76.42c1.28 186 148.2 333.1 333.2 333.1 51.33 0 108.5-12.29 151.9-32.13 122.6-57.98 200.7-173.8 200.7-303.5 1.28-181.5-151.3-332.3-340.4-330.2z" fill="url(#k10a)"/>
+</svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="v10-c v10-c2" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="k10b" gradientUnits="userSpaceOnUse" x1="55.19" y1="18.43" x2="34.24" y2="57.31" transform="scale(12.8)"><stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/></linearGradient></defs>
+  <path class="ow-p ow-p2" d="m512.3 274.2v60.03c86.27-2.176 159.4 69.25 159.4 153 0 91.52-84.48 151-159.5 151.6v66.05c123.6-2.176 228.7-96.51 228.7-215 0-120.8-106.9-219.4-228.6-215.6z" fill="#F38F1E"/>
+</svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="v10-c v10-c3" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="k10c" gradientUnits="userSpaceOnUse" x1="55.19" y1="18.43" x2="34.24" y2="57.31" transform="scale(12.8)"><stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/></linearGradient></defs>
+  <path class="ow-p ow-p3" d="m512.3 370.7v129.3h126.7c7.552-70.14-57.98-133.6-126.7-129.3z" fill="#4A4B4C"/>
+</svg>
+      <div class="v10-dot"></div><div class="v10-dot b"></div><div class="v10-dot"></div>
+      <div class="v10-dot b"></div><div class="v10-dot"></div><div class="v10-dot b"></div>
+    </div>
+  </div>
+
+  <div class="iv iv11">
+    <div class="v11-stage">
+      <svg xmlns="http://www.w3.org/2000/svg" class="v11-c" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="k11a" gradientUnits="userSpaceOnUse" x1="55.19" y1="18.43" x2="34.24" y2="57.31" transform="scale(12.8)"><stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/></linearGradient></defs>
+  <path class="ow-p ow-p1" d="m512.3 166.5v68.22c148.5-1.28 266.8 116.9 266.8 259.2 0 142.5-120.8 253.3-279 255.6-145.7 0-252.7-114.2-256.8-250.2h-76.42c1.28 186 148.2 333.1 333.2 333.1 51.33 0 108.5-12.29 151.9-32.13 122.6-57.98 200.7-173.8 200.7-303.5 1.28-181.5-151.3-332.3-340.4-330.2z" fill="url(#k11a)"/>
+  <path class="ow-p ow-p2" d="m512.3 274.2v60.03c86.27-2.176 159.4 69.25 159.4 153 0 91.52-84.48 151-159.5 151.6v66.05c123.6-2.176 228.7-96.51 228.7-215 0-120.8-106.9-219.4-228.6-215.6z" fill="#F38F1E"/>
+</svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="v11-c v11-knob" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="k11b" gradientUnits="userSpaceOnUse" x1="55.19" y1="18.43" x2="34.24" y2="57.31" transform="scale(12.8)"><stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/></linearGradient></defs>
+  <path class="ow-p ow-p3" d="m512.3 370.7v129.3h126.7c7.552-70.14-57.98-133.6-126.7-129.3z" fill="#4A4B4C"/>
+</svg>
+    </div>
+  </div>
+
+  <div class="iv iv12">
+    <div class="v12-stage">
+      <svg xmlns="http://www.w3.org/2000/svg" class="v12-c v12-c1" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="k12a" gradientUnits="userSpaceOnUse" x1="55.19" y1="18.43" x2="34.24" y2="57.31" transform="scale(12.8)"><stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/></linearGradient></defs>
+  <path class="ow-p ow-p1" d="m512.3 166.5v68.22c148.5-1.28 266.8 116.9 266.8 259.2 0 142.5-120.8 253.3-279 255.6-145.7 0-252.7-114.2-256.8-250.2h-76.42c1.28 186 148.2 333.1 333.2 333.1 51.33 0 108.5-12.29 151.9-32.13 122.6-57.98 200.7-173.8 200.7-303.5 1.28-181.5-151.3-332.3-340.4-330.2z" fill="url(#k12a)"/>
+</svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="v12-c v12-c2" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="k12b" gradientUnits="userSpaceOnUse" x1="55.19" y1="18.43" x2="34.24" y2="57.31" transform="scale(12.8)"><stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/></linearGradient></defs>
+  <path class="ow-p ow-p2" d="m512.3 274.2v60.03c86.27-2.176 159.4 69.25 159.4 153 0 91.52-84.48 151-159.5 151.6v66.05c123.6-2.176 228.7-96.51 228.7-215 0-120.8-106.9-219.4-228.6-215.6z" fill="#F38F1E"/>
+</svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="v12-c v12-c3" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="k12c" gradientUnits="userSpaceOnUse" x1="55.19" y1="18.43" x2="34.24" y2="57.31" transform="scale(12.8)"><stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/></linearGradient></defs>
+  <path class="ow-p ow-p3" d="m512.3 370.7v129.3h126.7c7.552-70.14-57.98-133.6-126.7-129.3z" fill="#4A4B4C"/>
+</svg>
+      <div class="v12-flash"></div>
+    </div>
+  </div>
+
+  <div class="iv iv13">
+    <div class="v13-stage">
+      <svg xmlns="http://www.w3.org/2000/svg" class="v13-c v13-c1" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="k13a" gradientUnits="userSpaceOnUse" x1="55.19" y1="18.43" x2="34.24" y2="57.31" transform="scale(12.8)"><stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/></linearGradient></defs>
+  <path class="ow-p ow-p1" d="m512.3 166.5v68.22c148.5-1.28 266.8 116.9 266.8 259.2 0 142.5-120.8 253.3-279 255.6-145.7 0-252.7-114.2-256.8-250.2h-76.42c1.28 186 148.2 333.1 333.2 333.1 51.33 0 108.5-12.29 151.9-32.13 122.6-57.98 200.7-173.8 200.7-303.5 1.28-181.5-151.3-332.3-340.4-330.2z" fill="url(#k13a)"/>
+</svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="v13-c v13-c2" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="k13b" gradientUnits="userSpaceOnUse" x1="55.19" y1="18.43" x2="34.24" y2="57.31" transform="scale(12.8)"><stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/></linearGradient></defs>
+  <path class="ow-p ow-p2" d="m512.3 274.2v60.03c86.27-2.176 159.4 69.25 159.4 153 0 91.52-84.48 151-159.5 151.6v66.05c123.6-2.176 228.7-96.51 228.7-215 0-120.8-106.9-219.4-228.6-215.6z" fill="#F38F1E"/>
+</svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="v13-c v13-c3" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="k13c" gradientUnits="userSpaceOnUse" x1="55.19" y1="18.43" x2="34.24" y2="57.31" transform="scale(12.8)"><stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/></linearGradient></defs>
+  <path class="ow-p ow-p3" d="m512.3 370.7v129.3h126.7c7.552-70.14-57.98-133.6-126.7-129.3z" fill="#4A4B4C"/>
+</svg>
+      <div class="v13-hit"></div>
+    </div>
+  </div>
+
+
+  <div class="iv iv14">
+    <div class="v14-stage">
+      <svg xmlns="http://www.w3.org/2000/svg" class="v14-c v14-c1" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="m28a" gradientUnits="userSpaceOnUse" x1="55.19" y1="18.43" x2="34.24" y2="57.31" transform="scale(12.8)"><stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/></linearGradient></defs>
+  <path class="ow-p ow-p1" d="m512.3 166.5v68.22c148.5-1.28 266.8 116.9 266.8 259.2 0 142.5-120.8 253.3-279 255.6-145.7 0-252.7-114.2-256.8-250.2h-76.42c1.28 186 148.2 333.1 333.2 333.1 51.33 0 108.5-12.29 151.9-32.13 122.6-57.98 200.7-173.8 200.7-303.5 1.28-181.5-151.3-332.3-340.4-330.2z" fill="url(#m28a)"/>
+</svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="v14-c v14-c2" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="m28b" gradientUnits="userSpaceOnUse" x1="55.19" y1="18.43" x2="34.24" y2="57.31" transform="scale(12.8)"><stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/></linearGradient></defs>
+  <path class="ow-p ow-p2" d="m512.3 274.2v60.03c86.27-2.176 159.4 69.25 159.4 153 0 91.52-84.48 151-159.5 151.6v66.05c123.6-2.176 228.7-96.51 228.7-215 0-120.8-106.9-219.4-228.6-215.6z" fill="#F38F1E"/>
+</svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="v14-c v14-c3" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="m28c" gradientUnits="userSpaceOnUse" x1="55.19" y1="18.43" x2="34.24" y2="57.31" transform="scale(12.8)"><stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/></linearGradient></defs>
+  <path class="ow-p ow-p3" d="m512.3 370.7v129.3h126.7c7.552-70.14-57.98-133.6-126.7-129.3z" fill="#4A4B4C"/>
+</svg>
+    </div>
+  </div>
+
+  <div class="iv iv15">
+    <div class="v15-stage">
+      <div class="v15-line"></div>
+      <svg xmlns="http://www.w3.org/2000/svg" class="v15-rings" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="m29a" gradientUnits="userSpaceOnUse" x1="55.19" y1="18.43" x2="34.24" y2="57.31" transform="scale(12.8)"><stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/></linearGradient></defs>
+  <path class="ow-p ow-p1" d="m512.3 166.5v68.22c148.5-1.28 266.8 116.9 266.8 259.2 0 142.5-120.8 253.3-279 255.6-145.7 0-252.7-114.2-256.8-250.2h-76.42c1.28 186 148.2 333.1 333.2 333.1 51.33 0 108.5-12.29 151.9-32.13 122.6-57.98 200.7-173.8 200.7-303.5 1.28-181.5-151.3-332.3-340.4-330.2z" fill="url(#m29a)"/>
+  <path class="ow-p ow-p2" d="m512.3 274.2v60.03c86.27-2.176 159.4 69.25 159.4 153 0 91.52-84.48 151-159.5 151.6v66.05c123.6-2.176 228.7-96.51 228.7-215 0-120.8-106.9-219.4-228.6-215.6z" fill="#F38F1E"/>
+</svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="v15-pupil" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="m29b" gradientUnits="userSpaceOnUse" x1="55.19" y1="18.43" x2="34.24" y2="57.31" transform="scale(12.8)"><stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/></linearGradient></defs>
+  <path class="ow-p ow-p3" d="m512.3 370.7v129.3h126.7c7.552-70.14-57.98-133.6-126.7-129.3z" fill="#4A4B4C"/>
+</svg>
+    </div>
+  </div>
+
+  <div class="iv iv16">
+    <div class="v16-stage">
+      <div class="v16-shake">
+        <svg xmlns="http://www.w3.org/2000/svg" class="v16-c v16-c1" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="m30a" gradientUnits="userSpaceOnUse" x1="55.19" y1="18.43" x2="34.24" y2="57.31" transform="scale(12.8)"><stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/></linearGradient></defs>
+  <path class="ow-p ow-p1" d="m512.3 166.5v68.22c148.5-1.28 266.8 116.9 266.8 259.2 0 142.5-120.8 253.3-279 255.6-145.7 0-252.7-114.2-256.8-250.2h-76.42c1.28 186 148.2 333.1 333.2 333.1 51.33 0 108.5-12.29 151.9-32.13 122.6-57.98 200.7-173.8 200.7-303.5 1.28-181.5-151.3-332.3-340.4-330.2z" fill="url(#m30a)"/>
+</svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="v16-c v16-c2" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="m30b" gradientUnits="userSpaceOnUse" x1="55.19" y1="18.43" x2="34.24" y2="57.31" transform="scale(12.8)"><stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/></linearGradient></defs>
+  <path class="ow-p ow-p2" d="m512.3 274.2v60.03c86.27-2.176 159.4 69.25 159.4 153 0 91.52-84.48 151-159.5 151.6v66.05c123.6-2.176 228.7-96.51 228.7-215 0-120.8-106.9-219.4-228.6-215.6z" fill="#F38F1E"/>
+</svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="v16-c v16-c3" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="m30c" gradientUnits="userSpaceOnUse" x1="55.19" y1="18.43" x2="34.24" y2="57.31" transform="scale(12.8)"><stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/></linearGradient></defs>
+  <path class="ow-p ow-p3" d="m512.3 370.7v129.3h126.7c7.552-70.14-57.98-133.6-126.7-129.3z" fill="#4A4B4C"/>
+</svg>
+      </div>
+      <div class="v16-dart"></div>
+    </div>
+  </div>
+
+  <div class="iv iv17">
+    <div class="v17-stage">
+      <svg xmlns="http://www.w3.org/2000/svg" class="v17-c v17-c1" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="m32a" gradientUnits="userSpaceOnUse" x1="55.19" y1="18.43" x2="34.24" y2="57.31" transform="scale(12.8)"><stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/></linearGradient></defs>
+  <path class="ow-p ow-p1" d="m512.3 166.5v68.22c148.5-1.28 266.8 116.9 266.8 259.2 0 142.5-120.8 253.3-279 255.6-145.7 0-252.7-114.2-256.8-250.2h-76.42c1.28 186 148.2 333.1 333.2 333.1 51.33 0 108.5-12.29 151.9-32.13 122.6-57.98 200.7-173.8 200.7-303.5 1.28-181.5-151.3-332.3-340.4-330.2z" fill="url(#m32a)"/>
+</svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="v17-c v17-c2" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="m32b" gradientUnits="userSpaceOnUse" x1="55.19" y1="18.43" x2="34.24" y2="57.31" transform="scale(12.8)"><stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/></linearGradient></defs>
+  <path class="ow-p ow-p2" d="m512.3 274.2v60.03c86.27-2.176 159.4 69.25 159.4 153 0 91.52-84.48 151-159.5 151.6v66.05c123.6-2.176 228.7-96.51 228.7-215 0-120.8-106.9-219.4-228.6-215.6z" fill="#F38F1E"/>
+</svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="v17-c v17-c3" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="m32c" gradientUnits="userSpaceOnUse" x1="55.19" y1="18.43" x2="34.24" y2="57.31" transform="scale(12.8)"><stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/></linearGradient></defs>
+  <path class="ow-p ow-p3" d="m512.3 370.7v129.3h126.7c7.552-70.14-57.98-133.6-126.7-129.3z" fill="#4A4B4C"/>
+</svg>
+      <div class="v17-guides"></div>
+      <div class="v17-arm"></div>
+      <svg xmlns="http://www.w3.org/2000/svg" class="v17-color" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs><linearGradient id="m32d" gradientUnits="userSpaceOnUse" x1="55.19" y1="18.43" x2="34.24" y2="57.31" transform="scale(12.8)"><stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/></linearGradient></defs>
+  <path class="ow-p ow-p1" d="m512.3 166.5v68.22c148.5-1.28 266.8 116.9 266.8 259.2 0 142.5-120.8 253.3-279 255.6-145.7 0-252.7-114.2-256.8-250.2h-76.42c1.28 186 148.2 333.1 333.2 333.1 51.33 0 108.5-12.29 151.9-32.13 122.6-57.98 200.7-173.8 200.7-303.5 1.28-181.5-151.3-332.3-340.4-330.2z" fill="url(#m32d)"/>
+  <path class="ow-p ow-p2" d="m512.3 274.2v60.03c86.27-2.176 159.4 69.25 159.4 153 0 91.52-84.48 151-159.5 151.6v66.05c123.6-2.176 228.7-96.51 228.7-215 0-120.8-106.9-219.4-228.6-215.6z" fill="#F38F1E"/>
+  <path class="ow-p ow-p3" d="m512.3 370.7v129.3h126.7c7.552-70.14-57.98-133.6-126.7-129.3z" fill="#4A4B4C"/>
+</svg>
+    </div>
+  </div>
+
+</div>
 
 <main class="content">
   <div class="wrap">
@@ -3896,6 +4650,53 @@ ddRender();     // カスタムゲーム用ドラフト表
         +' (JST)';
     }else{ el.textContent='—'; }
   }catch(e){ el.textContent='—'; }
+})();
+</script>
+
+<!-- 起動演出の制御 -->
+<script>
+(function(){
+  var el = document.getElementById('owIntro');
+  if(!el) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var timer = 0;
+  function finish(){
+    if(!el || el.classList.contains('done')) return;
+    el.classList.add('done');
+    document.documentElement.classList.remove('intro-lock');
+    el = null;
+  }
+  function skip(){
+    if(!el) return;
+    clearTimeout(timer);
+    el.style.animation = 'none';
+    el.style.transition = 'opacity .26s ease';
+    el.style.opacity = '0';
+    el.style.pointerEvents = 'none';
+    timer = setTimeout(finish, 280);
+  }
+  if(reduce){ finish(); return; }
+  var mv = /(?:^|[?&])intro=(1[0-7]|[1-9])(?:&|$)/.exec(location.search);
+  /* 既定は毎回ランダム(?intro=N を付けると固定) */
+  var allIv = el.querySelectorAll('.iv'), keys = [];
+  for(var k0=0;k0<allIv.length;k0++){ var km = /iv(\d+)/.exec(allIv[k0].className); if(km) keys.push(km[1]); }
+  var v = mv ? mv[1] : keys[Math.floor(Math.random() * keys.length)];
+  var ivs = el.querySelectorAll('.iv');
+  for(var i=0;i<ivs.length;i++){ ivs[i].classList.toggle('on', ivs[i].className.indexOf('iv' + v) >= 0); }
+  el.setAttribute('data-v', v);
+
+
+
+  var DUR = { '1': 4650, '2': 4620, '3': 4620, '4': 4200, '5': 4250, '6': 4300, '7': 3700, '8': 4300, '9': 4300, '10': 3700, '11': 4300, '12': 3400, '13': 4200, '14': 3700, '15': 3200, '16': 3700, '17': 4400 };
+  document.documentElement.classList.add('intro-lock');
+  timer = setTimeout(finish, DUR[v] || 4650);
+  el.addEventListener('click', skip);
+  el.addEventListener('wheel', skip, { passive: true });
+  el.addEventListener('touchstart', skip, { passive: true });
+  window.addEventListener('keydown', function(e){
+    if(e.key === 'Tab' || e.key === 'Shift') return;
+    skip();
+  });
 })();
 </script>
 </body>
