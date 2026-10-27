@@ -11,7 +11,8 @@
 :root{--blue:#2563eb;--border:#e5e7eb}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:"Inter","Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Yu Gothic UI",Meiryo,system-ui,sans-serif;color:#111827;background:#fff;overflow-x:hidden}
+body{font-family:"Inter","Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Yu Gothic UI",Meiryo,system-ui,sans-serif;color:#111827;background:#fff;overflow-x:clip}
+@supports not (overflow-x:clip){body{overflow-x:hidden}}
 .num{font-variant-numeric:tabular-nums}
 .hidden{display:none!important}
 
@@ -1340,6 +1341,67 @@ html.intro-lock{overflow:hidden}
 @keyframes v17Color{from{opacity:0}to{opacity:1}}
 @keyframes v17Out{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.5);filter:blur(5px)}}
 
+
+/* ===== 目次(追従ナビ) ===== */
+#toc{
+  position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:6px;
+  margin:10px 0 16px;padding:7px 10px;border-radius:12px;
+  background:rgba(255,255,255,.97);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  border:1px solid var(--border);box-shadow:0 2px 10px rgba(16,24,40,.06);
+  overflow-x:auto;scrollbar-width:none;
+}
+#toc::-webkit-scrollbar{display:none}
+#toc .ttl{flex:0 0 auto;font-size:10px;font-weight:800;letter-spacing:.14em;color:#9ca3af;
+  padding-right:8px;margin-right:2px;border-right:1px solid var(--border)}
+#toc a{
+  flex:0 0 auto;font-size:12px;font-weight:700;color:#4b5563;text-decoration:none;
+  padding:5px 10px;border-radius:999px;border:1px solid transparent;white-space:nowrap;
+  transition:background .12s,color .12s,border-color .12s;
+}
+#toc a:hover{background:#f4f7fb;border-color:#dbe3ee;color:#0f172a}
+#toc a.on{background:#eef4ff;border-color:#bfdbfe;color:#1d4ed8}
+#toc a.top{margin-left:auto;color:#8a94a3}
+#pfSel,#profileBox,#sec-rank,#sec-power,#sec-tb,#sec-tr{scroll-margin-top:70px}
+@media(max-width:560px){
+  #toc{gap:4px;padding:6px 8px}
+  #toc a{font-size:11px;padding:4px 8px}
+  #toc .ttl{display:none}
+}
+
+
+/* ===== チームビルダー: メンバー選択UI ===== */
+.tb-picker{border:1px solid var(--border);border-radius:12px;background:#f8fafc;padding:10px 12px}
+.tb-picker-hd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.tb-picker-hd .ttl{font-size:12px;font-weight:800;color:#334155}
+.tb-picker-hd .cnt{font-size:11px;color:#64748b;font-variant-numeric:tabular-nums}
+.tb-picker-hd .cnt b{font-size:13px;color:#0f172a}
+.tb-picker-hd .acts{margin-left:auto;display:flex;gap:5px}
+.tb-mchips{display:flex;flex-wrap:wrap;gap:6px}
+.tb-mchip{
+  display:inline-flex;align-items:center;gap:6px;padding:5px 11px 5px 6px;border-radius:999px;
+  border:1px solid #dbe3ee;background:#fff;color:#334155;font:inherit;font-size:12.5px;font-weight:700;
+  cursor:pointer;line-height:1.2;transition:.12s;
+}
+.tb-mchip:hover{border-color:#93b4f7;background:#f5f9ff;transform:translateY(-1px)}
+.tb-mchip .ck{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;
+  background:#eef2f7;color:#94a3b8;font-size:10px;font-weight:900;flex:none}
+.tb-mchip .nm{white-space:nowrap}
+.tb-mchip .tb-mav{width:20px;height:20px;font-size:9px}
+.tb-mchip.on{border-color:#2563eb;background:#dbeafe;color:#1e3a8a;box-shadow:0 0 0 1px #2563eb inset}
+.tb-mchip.on .ck{background:#2563eb;color:#fff}
+.tb-mchip.on:hover{background:#dbeafe}
+@media(max-width:560px){
+  .tb-mchip{font-size:12px;padding:6px 10px 6px 6px}
+  .tb-picker-hd .acts{margin-left:0}
+}
+
+
+.dd-meta{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center;margin:2px 0 8px;padding:6px 10px;
+  border:1px solid #e8eef7;border-radius:9px;background:#f8fbff;font-size:11px;color:#64748b;font-weight:700}
+.dd-meta b{color:#0f172a;font-size:12.5px;font-variant-numeric:tabular-nums}
+.dd-chip.nos{background:#fef2f2;border-color:#fecaca;color:#b91c1c;font-weight:800}
+
 </style>
 </head>
 <body>
@@ -1710,6 +1772,17 @@ html.intro-lock{overflow:hidden}
       <span class="upd-note">OverFast API / 全モード(ライバル+QP) / GitHub Actions で毎日自動更新</span>
     </div>
 
+    <!-- 目次 -->
+    <nav id="toc" aria-label="目次">
+      <span class="ttl">目次</span>
+      <a href="#pfSel">プレイヤー詳細</a>
+      <a href="#sec-rank">ランキング</a>
+      <a href="#sec-power">ヒーロー別</a>
+      <a href="#sec-tb">チームビルダー</a>
+      <a href="#sec-tr">チームランク比較</a>
+      <a href="#top" class="top">↑ 先頭へ</a>
+    </nav>
+
     <!-- プレイヤー選択 & 要約 -->
     <div class="pf-sel" id="pfSel"></div>
     <div class="profile" id="profileBox"></div>
@@ -1719,7 +1792,7 @@ html.intro-lock{overflow:hidden}
     <div id="freqBox"></div>
 
     <!-- テーブル -->
-    <div class="table-head">
+    <div class="table-head" id="sec-rank">
       <div>
         <h2>Player Rankings — Overwatch 2</h2>
         <div class="sub">出典: OverFast API(2025年1月時点) / 列ヘッダークリックでソート / <b>行クリックでヒーロー別詳細+バトルスコア チャート</b></div>
@@ -1758,7 +1831,7 @@ html.intro-lock{overflow:hidden}
     <div class="note" id="filterInfo" style="margin-top:8px"></div>
 
     <!-- ヒーロー別パワーランキング -->
-    <div class="power-sec">
+    <div class="power-sec" id="sec-power">
       <div class="power-head">
         <div>
           <h2>🎖️ Hero Power Rankings</h2>
@@ -1938,7 +2011,7 @@ html.intro-lock{overflow:hidden}
 
 
     <!-- チームビルダー(ポイント制限) -->
-    <div class="power-sec" style="margin-top:24px">
+    <div class="power-sec" style="margin-top:24px" id="sec-tb">
       <div class="power-head">
         <div>
           <h2>⚔️ チームビルダー(ポイント制限)</h2>
@@ -1964,7 +2037,7 @@ html.intro-lock{overflow:hidden}
       <div id="teamBody"></div>
     </div>
     <!-- チームランク比較(ロール別ランク・平均差・レンジ) -->
-    <div class="power-sec" style="margin-top:24px">
+    <div class="power-sec" style="margin-top:24px" id="sec-tr">
       <div class="power-head">
         <div>
           <h2>🧠 チームランク比較</h2>
@@ -3153,7 +3226,7 @@ function renderPower() {
 /* =====================================================================
  * チームビルダー(ポイント制限付きヒーロードラフト)
  * =================================================================== */
-const tb = { mode: 'all', cap: 250, roleLock: false, dupBan: true, members: null, picks: {}, roleF: {} };
+const tb = { mode: 'all', cap: 250, roleLock: false, dupBan: true, members: [], picks: {}, roleF: {} };
 const TB_ROLE_CAP = { Tank: 1, Damage: 2, Support: 2 };
 function tbPool() {
   if (typeof PLAYERS_ALL !== 'undefined') return PLAYERS_ALL; // 常に全モード(コンペは廃止)
@@ -3165,8 +3238,7 @@ function tbScore(p, slug) {
 }
 function tbMembersArr() {
   const pool = tbPool();
-  let ids = tb.members;
-  if (ids === null) ids = pool.map(p => p.id); // 未操作 = 全員
+  const ids = tb.members || [];   // 未選択 = 空(選んだ人だけ表示)
   return ids.map(id => pool.find(p => p.id === id)).filter(Boolean);
 }
 function tbNum(v) { return Math.round((Number(v) || 0) * 10) / 10; }
@@ -3258,7 +3330,7 @@ function tbLocks() {
 function tbPrune() {
   const pool = tbPool();
   // メンバー外・モードに無いピックを破棄
-  const ids = new Set((tb.members && tb.members.length ? tb.members : pool.map(p => p.id)));
+  const ids = new Set(tb.members || []);
   const locks = tbLocks();
   // メンバー順で制約を再検証(重複ヒーロー → 先勝ち / ロール枠 → 先勝ち)
   const seen = new Set(), roles = { Tank: 0, Damage: 0, Support: 0 };
@@ -3296,7 +3368,10 @@ function renderTeam() {
   // --- メンバー選択チップ ---
   const memChips = pool.map(p => {
     const on = members.some(m => m.id === p.id);
-    return `<button class="filter-btn ${on ? 'active' : ''}" data-tbid="${p.id}">${esc(p.name)}</button>`;
+    return `<button class="tb-mchip ${on ? 'on' : ''}" data-tbid="${p.id}" aria-pressed="${on}">` +
+      `<span class="ck">${on ? '✓' : '＋'}</span>` +
+      `<span class="pl-av ${roleCls(p.role)} tb-mav">${faceMarkup(p)}</span>` +
+      `<span class="nm">${esc(p.name)}</span></button>`;
   }).join('');
 
   // --- ロール内訳チップ ---
@@ -3355,7 +3430,17 @@ function renderTeam() {
       </div>
     </div>
     <div class="tb-gauge-spacer" id="tbGaugeSpacer"></div>
-    <div style="display:flex;gap:6px;flex-wrap:wrap">${memChips}</div>`;
+    <div class="tb-picker">
+      <div class="tb-picker-hd">
+        <span class="ttl">メンバーを選ぶ</span>
+        <span class="cnt"><b>${members.length}</b> / ${pool.length} 人</span>
+        <span class="acts">
+          <button class="tb-fbtn" data-tball="all">全員</button>
+          <button class="tb-fbtn" data-tball="none">全解除</button>
+        </span>
+      </div>
+      <div class="tb-mchips">${memChips}</div>
+    </div>`;
 
   // --- 各メンバーのドラフト行 ---
   const rows = members.map((p, i) => {
@@ -3437,7 +3522,7 @@ function renderTeam() {
   }).join('');
 
   body.innerHTML = summary +
-    (rows ? `<div class="tb-rows">${rows}</div>` : `<div class="tb-empty">メンバーがいません(上のメンバーチップで選択)</div>`);
+    (rows ? `<div class="tb-rows">${rows}</div>` : `<div class="tb-empty">上の「メンバーを選ぶ」から選手をタップすると、その人のドラフト行が出ます</div>`);
   tbPinGaugeNow();
 }
 
@@ -4536,11 +4621,18 @@ $('#teamBody').addEventListener('click',e=>{
     tb.roleF[pid] = role;
     renderTeam(); return;
   }
+  const ballB=e.target.closest('[data-tball]');
+  if(ballB){
+    const pool=tbPool();
+    if(ballB.dataset.tball==='all') tb.members=pool.map(p=>p.id);
+    else { tb.members=[]; tb.picks={}; tb.roleF={}; }
+    tbPrune(); renderTeam(); return;
+  }
   const memB=e.target.closest('[data-tbid]');
   if(memB){
     const id=memB.dataset.tbid;
     const pool=tbPool();
-    let cur=tb.members===null?pool.map(p=>p.id):tb.members.slice();
+    let cur=(tb.members||[]).slice();
     if(cur.includes(id)){cur=cur.filter(x=>x!==id);delete tb.picks[id];delete tb.roleF[id];}
     else cur.push(id);
     tb.members=cur; tbPrune(); renderTeam(); return;
@@ -4590,7 +4682,7 @@ function ddData() {
       sumTop: top.reduce((s, h) => s + h.v, 0),
       sumAll: all.reduce((s, h) => s + h.v, 0)
     };
-  }).sort((a, b) => b.sumAll - a.sumAll);
+  }).sort((a, b) => (b.sumTop - a.sumTop) || (b.sumAll - a.sumAll));   // 画面に出ている合計の大きい順
   return { rows, N };
 }
 function ddCopyText(d) {
@@ -4606,8 +4698,21 @@ function ddRender() {
   const box = $('#ddPlayers'), out = $('#ddOut');
   if (!box) return;
   const d = ddData();
-  box.innerHTML = d.rows.map((r, i) => {
-    const chips = r.top.map((h, j) => `<span class="dd-chip${j === 0 ? ' top' : ''}" title="${esc(h.n)} ・ ${esc(h.role)} ・ ${h.g}試合">${esc(h.n)}<b>${fmt1(h.v)}</b></span>`).join('');
+  let stamp = '—';
+  try{
+    if (typeof LAST_UPDATED_ISO !== 'undefined' && LAST_UPDATED_ISO){
+      stamp = new Date(LAST_UPDATED_ISO).toLocaleString('ja-JP',
+        { timeZone:'Asia/Tokyo', year:'numeric', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit' });
+    }
+  }catch(e){}
+  const meta = `<div class="dd-meta">
+      <span>全 <b>${d.rows.length}</b> 人を表示</span>
+      <span>集計: 上位${d.N >= 99 ? '全' : d.N}体</span>
+      <span>データ更新: ${stamp} (JST)</span>
+    </div>`;
+  box.innerHTML = meta + d.rows.map((r, i) => {
+    const chips = (r.top.length ? r.top.map((h, j) => `<span class="dd-chip${j === 0 ? ' top' : ''}" title="${esc(h.n)} ・ ${esc(h.role)} ・ ${h.g}試合">${esc(h.n)}<b>${fmt1(h.v)}</b></span>`).join('')
+      : `<span class="dd-chip nos" title="このプレイヤーはヒーロースコアのデータがありません">データなし</span>`);
     const more = r.all.length > r.top.length ? `<span class="dd-chip" style="color:#94a3b8">ほか${r.all.length - r.top.length}体</span>` : '';
     return `<div class="dd-p">
       <div class="dd-pname"><span class="pl-av ${roleCls(r.p.role)}">${faceMarkup(r.p)}</span><span class="nm">P${i + 1} ${esc(r.p.name)}</span></div>
@@ -4666,15 +4771,6 @@ ddRender();     // カスタムゲーム用ドラフト表
     document.documentElement.classList.remove('intro-lock');
     el = null;
   }
-  function skip(){
-    if(!el) return;
-    clearTimeout(timer);
-    el.style.animation = 'none';
-    el.style.transition = 'opacity .26s ease';
-    el.style.opacity = '0';
-    el.style.pointerEvents = 'none';
-    timer = setTimeout(finish, 280);
-  }
   if(reduce){ finish(); return; }
   var mv = /(?:^|[?&])intro=(1[0-7]|[1-9])(?:&|$)/.exec(location.search);
   /* 既定は毎回ランダム(?intro=N を付けると固定) */
@@ -4690,12 +4786,52 @@ ddRender();     // カスタムゲーム用ドラフト表
   var DUR = { '1': 4650, '2': 4620, '3': 4620, '4': 4200, '5': 4250, '6': 4300, '7': 3700, '8': 4300, '9': 4300, '10': 3700, '11': 4300, '12': 3400, '13': 4200, '14': 3700, '15': 3200, '16': 3700, '17': 4400 };
   document.documentElement.classList.add('intro-lock');
   timer = setTimeout(finish, DUR[v] || 4650);
-  el.addEventListener('click', skip);
-  el.addEventListener('wheel', skip, { passive: true });
-  el.addEventListener('touchstart', skip, { passive: true });
-  window.addEventListener('keydown', function(e){
-    if(e.key === 'Tab' || e.key === 'Shift') return;
-    skip();
+  /* タップ・クリック等でのスキップは無効(演出は最後まで再生) */
+})();
+</script>
+
+<!-- 目次: 現在地のハイライトとスムーズスクロール -->
+<script>
+(function(){
+  var toc = document.getElementById('toc');
+  if(!toc) return;
+  var links = Array.prototype.slice.call(toc.querySelectorAll('a[href^="#"]'));
+  function setActive(id){
+    links.forEach(function(a){ a.classList.toggle('on', a.getAttribute('href') === '#' + id); });
+  }
+  var secs = [];
+  links.forEach(function(a){
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if(el && id !== 'top') secs.push(el);
+  });
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      var best = null;
+      entries.forEach(function(e){
+        if(!e.isIntersecting) return;
+        if(!best || e.intersectionRatio > best.intersectionRatio) best = e;
+      });
+      if(best) setActive(best.target.id);
+    }, { rootMargin: '-80px 0px -55% 0px', threshold: [0, 0.05, 0.25, 0.6] });
+    secs.forEach(function(el){ io.observe(el); });
+  }
+  links.forEach(function(a){
+    a.addEventListener('click', function(ev){
+      var id = a.getAttribute('href').slice(1);
+      if(id === 'top'){
+        ev.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        links.forEach(function(x){ x.classList.remove('on'); });
+        return;
+      }
+      var el = document.getElementById(id);
+      if(!el) return;
+      ev.preventDefault();
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setActive(id);
+      if(history.replaceState) history.replaceState(null, '', '#' + id);
+    });
   });
 })();
 </script>
