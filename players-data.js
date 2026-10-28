@@ -1,7 +1,7 @@
 'use strict';
 
 /* 生成データ: update.mjs が自動生成(手編集は上書き) ・ 元データ: OverFast API */
-const LAST_UPDATED_ISO = "2026-10-27T23:40:13.732Z";
+const LAST_UPDATED_ISO = "2026-10-28T04:51:32.875Z";
 /* ライバル・プレイ(コンペティティブ)のみ */
 const PLAYERS_COMP = [
   {
@@ -43605,9 +43605,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 25.46153846153846,
           "ca": 10
-        },
-        "rankDelta": 3,
-        "rankDeltaPower": 2
+        }
       },
       "mauga": {
         "finalScore": 62.16,
@@ -43827,9 +43825,7 @@ const PLAYERS_ALL = [
           "as10": 1.52,
           "wa": 23,
           "ca": 3
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "brigitte": {
         "finalScore": 41.68,
@@ -43889,8 +43885,7 @@ const PLAYERS_ALL = [
           "as10": 1.19,
           "wa": 28,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "doctrine": {
         "finalScore": 37.62,
@@ -43950,8 +43945,7 @@ const PLAYERS_ALL = [
           "as10": 3.71,
           "wa": 28,
           "ca": 10
-        },
-        "rankDelta": -1
+        }
       },
       "dva": {
         "finalScore": 41.59,
@@ -44011,8 +44005,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 37,
           "ca": 9
-        },
-        "rankDeltaPower": -1
+        }
       },
       "freja": {
         "finalScore": 47.51,
@@ -44052,8 +44045,7 @@ const PLAYERS_ALL = [
           "as10": 4.86,
           "wa": 28,
           "ca": 6
-        },
-        "rankDeltaPower": 1
+        }
       },
       "hanzo": {
         "finalScore": 38.84,
@@ -44513,8 +44505,7 @@ const PLAYERS_ALL = [
           "as10": 1.36,
           "wa": 31,
           "ca": 12
-        },
-        "rankDelta": -1
+        }
       },
       "sombra": {
         "finalScore": 38.66,
@@ -44696,9 +44687,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 25.46153846153846,
           "ca": 10
-        },
-        "rankDelta": 3,
-        "rankDeltaPower": 2
+        }
       },
       "mauga": {
         "finalScore": 62.16,
@@ -44918,9 +44907,7 @@ const PLAYERS_ALL = [
           "as10": 1.52,
           "wa": 23,
           "ca": 3
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "brigitte": {
         "finalScore": 41.68,
@@ -44980,8 +44967,7 @@ const PLAYERS_ALL = [
           "as10": 1.19,
           "wa": 28,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "doctrine": {
         "finalScore": 37.62,
@@ -45041,8 +45027,7 @@ const PLAYERS_ALL = [
           "as10": 3.71,
           "wa": 28,
           "ca": 10
-        },
-        "rankDelta": -1
+        }
       },
       "dva": {
         "finalScore": 41.59,
@@ -45102,8 +45087,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 37,
           "ca": 9
-        },
-        "rankDeltaPower": -1
+        }
       },
       "freja": {
         "finalScore": 47.51,
@@ -45143,8 +45127,7 @@ const PLAYERS_ALL = [
           "as10": 4.86,
           "wa": 28,
           "ca": 6
-        },
-        "rankDeltaPower": 1
+        }
       },
       "hanzo": {
         "finalScore": 38.84,
@@ -45604,8 +45587,7 @@ const PLAYERS_ALL = [
           "as10": 1.36,
           "wa": 31,
           "ca": 12
-        },
-        "rankDelta": -1
+        }
       },
       "sombra": {
         "finalScore": 38.66,
