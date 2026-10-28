@@ -85,6 +85,7 @@ body{font-family:"Inter","Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Yu 
 .dd-sumv{flex:0 0 auto;font-size:10.5px;font-weight:800;color:#64748b;font-variant-numeric:tabular-nums;padding-left:8px;white-space:nowrap}
 .dd-out{width:100%;box-sizing:border-box;margin-top:10px;height:150px;padding:9px 11px;border:1px dashed #d6deea;border-radius:9px;background:#fbfcfe;font:11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:#334155;resize:vertical;white-space:pre}
 .dd-note2{font-size:10.5px;color:#a8b3c2;margin-top:7px;line-height:1.55}
+.dd-ovr{font-size:9.5px;font-weight:800;color:#7c3aed;background:#f5f3ff;border:1px solid #ddd6fe;border-radius:99px;padding:0 6px;margin-left:6px}
 
 /* テーブル周辺 */
 .table-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:26px 0 4px}
@@ -1350,6 +1351,7 @@ html.intro-lock{overflow:hidden}
 @keyframes v17Out{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.5);filter:blur(5px)}}
 
 
+
 /* ===== 目次(追従ナビ) ===== */
 #toc{
   position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:6px;
@@ -2238,7 +2240,7 @@ html.intro-lock{overflow:hidden}
       <div class="power-head">
         <div>
           <h2>⚔️ チームビルダー(ポイント制限)</h2>
-          <div class="sub">各ヒーローの Power Rating をポイントとして使用。メンバーを選んで予算(ポイント制限)を決め、上のプレイヤーから順にヒーローを選ぶと残りポイントに応じて「選べるヒーロー」が自動で絞られます。ヒーローを選ぶと<b>そのヒーローのロール</b>の、未選択なら行の<b>T/D/S</b>で選んだロールの<b>4番目に高いスコア</b>を紫で表示し(Makkyはそのロールの平均)、合計をポイントゲージの上限の下に「4番目合計」として出します</div>
+          <div class="sub">各ヒーローの Power Rating をポイントとして使用(<b style="color:#7c3aed">Makky はカスタム用に調整</b>: タンク300 / DPS 70〜300 / サポート 60〜180)。メンバーを選んで予算(ポイント制限)を決め、上のプレイヤーから順にヒーローを選ぶと残りポイントに応じて「選べるヒーロー」が自動で絞られます。ヒーローを選ぶと<b>そのヒーローのロール</b>の、未選択なら行の<b>T/D/S</b>で選んだロールの<b>4番目に高いスコア</b>を紫で表示し(Makkyはそのロールの平均)、合計をポイントゲージの上限の下に「4番目合計」として出します</div>
         </div>
         <div class="power-controls" id="teamCtl">
           <span class="filter-btn active mode-static" title="コンペ(ライバル・プレイのみ)表示は廃止しました">全モード(ライバル+QP)</span>
@@ -2302,7 +2304,7 @@ html.intro-lock{overflow:hidden}
       <summary class="dd-sum">🎲 カスタムゲーム用ヒーロースコア表(プレイヤー別・ピック制限の数値)</summary>
       <div class="dd-body">
         <div class="dd-head">
-          <div class="dd-note">ワークショップに入れる数値です。<b>プレイヤーごとに、その人が使ったヒーローの Power</b>(ヒーロー別パワーランキングの値)を並べています。カスタムゲームでは「選んだヒーローの合計 ≤ 予算」でピックを制限します。</div>
+          <div class="dd-note">ワークショップに入れる数値です。<b>プレイヤーごとに、その人が使ったヒーローの Power</b>(ヒーロー別パワーランキングの値)を並べています。カスタムゲームでは「選んだヒーローの合計 ≤ 予算」でピックを制限します。<br /><b style="color:#7c3aed">※ Makky だけカスタム用に調整</b>(タンク一律300 / DPS 70〜300 / サポート 60〜180)</div>
           <div class="dd-ctl">
             <label class="dd-f">コピーに含める体数
               <select id="ddN" class="power-sel">
@@ -3477,9 +3479,54 @@ function tbPool() {
   if (typeof PLAYERS_ALL !== 'undefined') return PLAYERS_ALL; // 常に全モード(コンペは廃止)
   return PLAYERS;
 }
+/* =====================================================================
+ * カスタム用スコア調整(Makky)
+ *   カスタムゲームのポイント制(チームビルダー / ワークショップ表)だけに適用。
+ *   ランキング表・ヒーロー別パワーの実測値はそのまま。
+ *   Tank  : 全ヒーロー一律 300(タンクにランクがあると壊れるため Diamond 3 想定)
+ *   Damage: not carry 70 / 普通 95〜135 / キャリー 150〜300
+ *   Support: キャリー 100〜180 / 普通 95〜125 / not carry 60〜93
+ * =================================================================== */
+const CUSTOM_OVR = {
+  makky: {
+    Tank: 300,
+    Damage: {
+      /* キャリー */
+      genji: 250, tracer: 200, ashe: 160, sojourn: 180, cassidy: 160,
+      freja: 300, vendetta: 160, widowmaker: 300, echo: 150,
+      /* 普通(現在の順位を保って 135 → 95) */
+      pharah: 135, reaper: 131, hanzo: 126, junkrat: 122, bastion: 117,
+      venture: 113, emre: 108, 'soldier-76': 104, shion: 99, anran: 95,
+      /* not carry */
+      symmetra: 70, mei: 70, torbjorn: 70
+    },
+    Support: {
+      /* キャリー */
+      illari: 180, zenyatta: 180, sombra: 160, ana: 130, wuyang: 110, 'jetpack-cat': 100,
+      /* 普通(現在の順位を保って 125 → 95) */
+      moira: 125, brigitte: 118, baptiste: 110, mizuki: 103, doctrine: 95,
+      /* not carry */
+      kiriko: 93, lucio: 65, juno: 65, mercy: 60, lifeweaver: 60
+    }
+  }
+};
+/* 調整後の finalScore(無ければ実測値) */
+function customFinalScore(p, slug, base) {
+  const ov = CUSTOM_OVR[p && p.id];
+  if (!ov) return base;
+  const v = ov[SLUG_ROLE[slug] || ''];
+  if (v === undefined || v === null) return base;
+  const val = (typeof v === 'number') ? v : v[slug];
+  return (typeof val === 'number') ? val : base;
+}
+function customAdjusted(p) { return !!(p && CUSTOM_OVR[p.id]); }
+
 function tbScore(p, slug) {
   const pool = p && (p.bscoreAll || p.bscore);
-  return pool && pool[slug] ? pool[slug] : null;
+  const b = pool && pool[slug];
+  if (!b) return null;
+  const v = customFinalScore(p, slug, b.finalScore);
+  return (v === b.finalScore) ? b : Object.assign({}, b, { finalScore: v, custom: v !== b.finalScore });
 }
 function tbMembersArr() {
   const pool = tbPool();
@@ -3493,7 +3540,7 @@ function tbMinRate(p) {
   if (!pool) return null;
   let mn = null;
   for (const s of Object.keys(pool)) {
-    const v = pool[s] && pool[s].finalScore;
+    const v = customFinalScore(p, s, pool[s] && pool[s].finalScore);
     if (typeof v !== 'number') continue;
     if (mn === null || v < mn) mn = v;
   }
@@ -5525,8 +5572,9 @@ function ddHeroesOf(p) {
       slug: h.slug,
       n: h.n || SLUG_NAME[h.slug] || h.slug,
       role: h.role || SLUG_ROLE[h.slug] || '',
-      v: Math.round(b.finalScore * 10) / 10,
-      g: b.gamesPlayed || h.g || 0
+      v: Math.round(customFinalScore(p, h.slug, b.finalScore) * 10) / 10,
+      g: b.gamesPlayed || h.g || 0,
+      custom: customFinalScore(p, h.slug, b.finalScore) !== b.finalScore
     });
   }
   out.sort((a, b) => b.v - a.v);
@@ -5576,7 +5624,7 @@ function ddRender() {
       : `<span class="dd-chip nos" title="このプレイヤーはヒーロースコアのデータがありません">データなし</span>`);
     const more = r.all.length > r.top.length ? `<span class="dd-chip" style="color:#94a3b8">ほか${r.all.length - r.top.length}体</span>` : '';
     return `<div class="dd-p">
-      <div class="dd-pname"><span class="pl-av ${roleCls(r.p.role)}">${faceMarkup(r.p)}</span><span class="nm">P${i + 1} ${esc(r.p.name)}</span></div>
+      <div class="dd-pname"><span class="pl-av ${roleCls(r.p.role)}">${faceMarkup(r.p)}</span><span class="nm">P${i + 1} ${esc(r.p.name)}</span>${customAdjusted(r.p) ? '<span class="dd-ovr" title="カスタム用にスコアを調整しています(タンク一律300 / DPS 70〜300 / サポート 60〜180)">調整</span>' : ''}</div>
       <div class="dd-chips">${chips}${more}</div>
       <div class="dd-sumv" title="コピーに含める上位Nの合計 / 予算の目安(30〜50%)">Σ ${Math.round(r.sumTop * 10) / 10} ・ 予算目安 ${Math.round(r.sumTop * 0.3)}〜${Math.round(r.sumTop * 0.5)}</div>
     </div>`;
@@ -5640,7 +5688,11 @@ ddRender();     // カスタムゲーム用ドラフト表
   for(var k0=0;k0<allIv.length;k0++){ var km = /iv(\d+)/.exec(allIv[k0].className); if(km) keys.push(km[1]); }
   var v = mv ? mv[1] : keys[Math.floor(Math.random() * keys.length)];
   var ivs = el.querySelectorAll('.iv');
-  for(var i=0;i<ivs.length;i++){ ivs[i].classList.toggle('on', ivs[i].className.indexOf('iv' + v) >= 0); }
+  /* iv1 が iv10〜iv19 にも一致してしまうのを避けるため、番号を完全一致で比較する */
+  for(var i=0;i<ivs.length;i++){
+    var num = /iv(\d+)/.exec(ivs[i].className);
+    ivs[i].classList.toggle('on', !!num && num[1] === String(v));
+  }
   el.setAttribute('data-v', v);
 
 
