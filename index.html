@@ -539,6 +539,17 @@ details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px
 .tb-depth.avg{border-style:dashed}
 /* 上限の下に出す「4番目の合計」 */
 .tb-capline{display:inline-flex;flex-direction:column;line-height:1.25}
+.tb-depthpick{display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:8px 12px;background:#f8fafc;border:1px solid var(--border);border-radius:10px}
+.tb-depthpick .lbl{font-size:11px;font-weight:800;color:#64748b}
+.tb-dp{font:inherit;font-size:11.5px;font-weight:800;color:#5b21b6;background:#f7f3ff;border:1px solid #e0d4ff;
+  border-radius:999px;padding:2px 10px;cursor:pointer}
+.tb-dp:hover{background:#efe7ff}
+.tb-dp.on{background:#6d28d9;border-color:#6d28d9;color:#fff}
+.tb-dpnote{font-size:10.5px;color:#94a3b8;font-weight:700}
+.tb-dpnum{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:800;color:#5b21b6}
+.tb-dpinput{width:52px;font:inherit;font-size:12px;font-weight:900;color:#5b21b6;text-align:center;
+  background:#fff;border:1px solid #d9c9ff;border-radius:8px;padding:3px 4px}
+.tb-dpinput:focus{outline:none;border-color:#7c3aed;box-shadow:0 0 0 2px #ede9fe}
 .tb-4thsum{font-size:10.5px;font-weight:800;color:#6d28d9;white-space:nowrap}
 .tb-4thsum b{font-size:12px;font-variant-numeric:tabular-nums;color:#5b21b6}
 .tb-row .tb-pid{padding-right:2px}
@@ -615,6 +626,10 @@ details.pformula[open] summary{border-bottom:1px solid #eef1f6;margin-bottom:6px
 .tr-team.enemy{background:#fff7f7;border-color:#fbd5d5}
 .tr-thead{font-size:12px;font-weight:800;color:#334155;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center}
 .tr-thead span{color:#94a3b8;font-weight:700}
+.tr-th4{margin-left:auto;margin-right:8px;font-style:normal;font-size:10px;font-weight:800;color:#6d28d9;
+  background:#f5f0ff;border:1px solid #e3d7ff;border-radius:6px;padding:1px 6px;white-space:nowrap}
+.tr-th4 b{font-size:11.5px;color:#5b21b6;font-variant-numeric:tabular-nums}
+.tr-4thsum b.plus{color:#1d4ed8}.tr-4thsum b.minus{color:#c2410c}.tr-4thsum b.even{color:#6b7280}
 .tr-slot{display:flex;align-items:center;gap:6px;padding:3px 0}
 .tr-role{flex:0 0 64px;font-size:10.5px;font-weight:800;border-radius:6px;padding:1px 0;text-align:center}
 .tr-role.tank{background:#fee2e2;color:#b91c1c}
@@ -1665,6 +1680,24 @@ html.intro-lock{overflow:hidden}
 .tr-slot.lock .tr-ply.slam-l{animation:trSlamL .4s cubic-bezier(.16,.84,.28,1) both}
 .tr-slot.lock .tr-ply.slam-r{animation:trSlamR .4s cubic-bezier(.16,.84,.28,1) both}
 
+
+/* チームランク比較: そのロールの4番目に高いスコア */
+.tr-4th{font-size:9.5px;font-weight:800;color:#6d28d9;background:#f5f0ff;border:1px solid #e3d7ff;
+  border-radius:6px;padding:1px 4px;white-space:nowrap;flex:0 0 auto;font-variant-numeric:tabular-nums}
+.tr-4th b{font-size:10.5px;color:#5b21b6}
+.tr-4thsum{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:8px;padding:7px 10px;
+  border:1px solid #e6dcff;background:#faf7ff;border-radius:8px;font-size:12px;color:#4c1d95}
+.tr-4thsum-k{font-weight:900;color:#6d28d9}
+.tr-4thsum b{font-size:14px;font-variant-numeric:tabular-nums}
+.tr-4thsum b.ally{color:#2563eb}
+.tr-4thsum b.enemy{color:#e0721b}
+.tr-4thsum i{font-style:normal;color:#a79ec4;font-weight:800}
+.tr-4thsum-d{font-weight:800;font-size:11px;color:#6b7280}
+.tr-4thsum-d.plus{color:#1d4ed8}
+.tr-4thsum-d.minus{color:#c2410c}
+.tr-4thsum-d.even{color:#6b7280}
+@media (max-width:560px){.tr-4th{display:none}}
+
 </style>
 </head>
 <body>
@@ -2281,7 +2314,7 @@ html.intro-lock{overflow:hidden}
       <div class="power-head">
         <div>
           <h2>⚔️ チームビルダー(ポイント制限)</h2>
-          <div class="sub">各ヒーローの Power Rating をポイントとして使用(<b style="color:#7c3aed">カスタム用スコア</b>に全員ぶん調整済み: タンク・DPS・サポート別の個別値)。メンバーを選んで予算(ポイント制限)を決め、上のプレイヤーから順にヒーローを選ぶと残りポイントに応じて「選べるヒーロー」が自動で絞られます。ヒーローを選ぶと<b>そのヒーローのロール</b>の、未選択なら行の<b>T/D/S</b>で選んだロールの<b>4番目に高いスコア</b>を紫で表示し(Makkyはそのロールの平均)、合計をポイントゲージの上限の下に「4番目合計」として出します</div>
+          <div class="sub">各ヒーローの Power Rating をポイントとして使用(<b style="color:#7c3aed">カスタム用スコア</b>に全員ぶん調整済み: タンク・DPS・サポート別の個別値)。メンバーを選んで予算(ポイント制限)を決め、上のプレイヤーから順にヒーローを選ぶと残りポイントに応じて「選べるヒーロー」が自動で絞られます。ヒーローを選ぶと<b>そのヒーローのロール</b>の、未選択なら行の<b>T/D/S</b>で選んだロールの<b>3〜5番目に高いスコア</b>(または<b>平均</b>)を紫で表示し、合計をポイントゲージの下に「4番目合計」などとして出します。指標は「指標」ボタンで切り替えできます</div>
         </div>
         <div class="power-controls" id="teamCtl">
           <span class="filter-btn active mode-static" title="コンペ(ライバル・プレイのみ)表示は廃止しました">全モード(ライバル+QP)</span>
@@ -3516,7 +3549,7 @@ function renderPower() {
 /* =====================================================================
  * チームビルダー(ポイント制限付きヒーロードラフト)
  * =================================================================== */
-const tb = { mode: 'all', cap: 250, roleLock: false, dupBan: true, members: [], picks: {}, roleF: {} };
+const tb = { mode: 'all', cap: 250, roleLock: false, dupBan: true, members: [], picks: {}, roleF: {}, depth: 4 };
 const TB_ROLE_CAP = { Tank: 1, Damage: 2, Support: 2 };
 function tbPool() {
   if (typeof PLAYERS_ALL !== 'undefined') return PLAYERS_ALL; // 常に全モード(コンペは廃止)
@@ -3787,29 +3820,58 @@ function tbMinRate(p) {
   return mn;
 }
 /* そのロールで「実際に使った」ヒーローの Power Rating を高い順に(未使用キャラは含めない) */
+/* そのプレイヤー・ロールの「入力した値」のマップ(未入力ならnull) */
+function customRoleMap(p, role) {
+  const ov = CUSTOM_OVR[p && p.id];
+  if (!ov) return null;
+  const v = ov[role];
+  if (v === undefined || v === null) return null;
+  return (typeof v === 'number') ? { __all: v } : v;
+}
 function tbRoleScores(p, role) {
   const out = [];
   if (!p || !role || role === 'All') return out;
+  const cm = customRoleMap(p, role);   // 入力した値(このロールぶん)
   for (const h of (p.heroes || [])) {
-    const sc = tbScore(p, h.slug);
-    if (!sc || typeof sc.finalScore !== 'number') continue;
     const r = h.role || SLUG_ROLE[h.slug] || '';
     if (r !== role) continue;
-    out.push({ slug: h.slug, n: h.n || SLUG_NAME[h.slug] || h.slug, v: sc.finalScore });
+    /* 入力値があるロールは、入力した値のあるヒーローだけで並べる(順番も入力値どおり) */
+    let v = null;
+    if (cm) {
+      if (cm.__all !== undefined) v = cm.__all;
+      else if (typeof cm[h.slug] === 'number') v = cm[h.slug];
+      else continue;
+    } else {
+      const sc = tbScore(p, h.slug);
+      if (!sc || typeof sc.finalScore !== 'number') continue;
+      v = sc.finalScore;
+    }
+    out.push({ slug: h.slug, n: h.n || SLUG_NAME[h.slug] || h.slug, v });
   }
   out.sort((a, b) => b.v - a.v);
   return out;
 }
-/* ロール絞り込み中の指標: 通常=そのロールの4番目に高いスコア / Makky=そのロールの平均 */
+/* 指標の名前(3番目 / 4番目 / 5番目 / 平均) */
+function tbDepthName(p) { return (tb.depth === 'avg' || (p && p.id === 'makky')) ? '平均' : `${Number(tb.depth)}番目`; }
+function tbDepthShort(p) {
+  if (tb.depth === 'avg' || (p && p.id === 'makky')) return '平均';
+  const n = Number(tb.depth) || 4;
+  const teen = (n % 100 >= 11 && n % 100 <= 13);
+  const suf = teen ? 'th' : n % 10 === 1 ? 'st' : n % 10 === 2 ? 'nd' : n % 10 === 3 ? 'rd' : 'th';
+  return n + suf;
+}
+/* ロール絞り込み中の指標: 既定=そのロールの4番目に高いスコア / 平均も選べる */
 function tbDepth(p, role) {
   const a = tbRoleScores(p, role);
   if (!a.length) return null;
-  if (p.id === 'makky') {
+  const mode = (p.id === 'makky') ? 'avg' : (tb.depth || 4);   // Makky は特別扱いで常に平均
+  if (mode === 'avg') {
     const avg = a.reduce((s, x) => s + x.v, 0) / a.length;
     return { kind: 'avg', value: avg, total: a.length };
   }
-  const i = Math.min(3, a.length - 1); // 4体未満なら最下位を参考表示
-  return { kind: 'nth', rank: i + 1, value: a[i].v, hero: a[i], total: a.length };
+  const want = Math.max(1, Number(mode) || 4);
+  const i = Math.min(want - 1, a.length - 1); // 体数が足りなければ最下位を参考表示
+  return { kind: 'nth', rank: i + 1, value: a[i].v, hero: a[i], total: a.length, thin: a.length < want, want };
 }
 /* フレンド全体で使われているヒーロー(未使用キャラの母集団) */
 function tbUniverse() {
@@ -3940,8 +4002,8 @@ function renderTeam() {
   const depthN = depthMap.size;
   const depthSumTxt = depthN ? `<b>${tbNum(depthSum)}</b>pt` : '<b>—</b>';
   const depthSumTitle = depthN
-    ? `${depthN}人分の「4番目に高いスコア」の合計(ロールを選んだ行 + Allでヒーローを選んだ行 / Makkyはそのロールの平均)`
-    : '行の T/D/S を選ぶか、All のままヒーローを選ぶと、そのロールの「4番目に高いスコア」の合計が出ます';
+    ? `${depthN}人分の「${tb.depth === 'avg' ? 'そのロールの平均' : tbDepthName() + 'に高いスコア'}」の合計(ロールを選んだ行 + Allでヒーローを選んだ行 / Makkyは平均)`
+    : `行の T/D/S を選ぶか、All のままヒーローを選ぶと、そのロールの「${tb.depth === 'avg' ? '平均' : tbDepthName() + 'に高いスコア'}」の合計が出ます`;
 
   // --- ポイントバー ---
   const pct = tb.cap > 0 ? Math.min(100, sumCost / tb.cap * 100) : 100;
@@ -3950,7 +4012,7 @@ function renderTeam() {
   const summary = `
     <div class="tb-gauge" id="tbGauge">
       <div class="tb-bar">
-        <span>合計</span><b class="pts ${over ? 'over' : ''}">${tbNum(sumCost)}</b><span class="tb-capline"><span>/ 上限 ${tb.cap} pt</span><span class="tb-4thsum" title="${depthSumTitle}">4番目合計 ${depthSumTxt}</span></span>
+        <span>合計</span><b class="pts ${over ? 'over' : ''}">${tbNum(sumCost)}</b><span class="tb-capline"><span>/ 上限 ${tb.cap} pt</span><span class="tb-4thsum" title="${depthSumTitle}">${tb.depth === 'avg' ? '平均合計' : tbDepthName() + '合計'} ${depthSumTxt}</span></span>
         ${meter}
         <span>残り <b class="pts ${over ? 'over' : ''}">${over ? '-' + tbNum(Math.abs(tb.cap - sumCost)) : rem}</b> pt</span>
         ${over ? '<span style="color:#dc2626;font-weight:800">⚠ 予算超過</span>' : (allLocked ? '<span style="color:#16a34a;font-weight:800">✓ チーム完成(予算内)</span>' : '')}
@@ -3962,6 +4024,17 @@ function renderTeam() {
       </div>
     </div>
     <div class="tb-gauge-spacer" id="tbGaugeSpacer"></div>
+      <div class="tb-depthpick">
+        <span class="lbl">指標</span>
+        ${[3, 4, 5].map((n) => `<button class="tb-dp ${tb.depth === n ? 'on' : ''}" data-tbdepth="${n}">${n}番目</button>`).join('')}
+        <span class="tb-dpnum">
+          <input class="tb-dpinput" id="tbDepthNum" type="number" min="1" max="30" step="1" inputmode="numeric"
+                 value="${Number(tb.depth) || 4}" title="何番目に高いスコアを使うか(1〜30)" />
+          <span>番目</span>
+        </span>
+        <button class="tb-dp ${tb.depth === 'avg' ? 'on' : ''}" data-tbdepth="avg">平均</button>
+        <span class="tb-dpnote">${tb.depth === 'avg' ? 'そのロールで使ったヒーローの平均' : `そのロールで${Number(tb.depth)}番目に高いスコア`}(各行のロール選択に適用 / Makkyは常に平均)</span>
+      </div>
     <div class="tb-picker">
       <div class="tb-picker-hd">
         <span class="ttl">メンバーを選ぶ</span>
@@ -4024,10 +4097,10 @@ function renderTeam() {
         ? `選んだヒーロー(${esc(depth.pickedName || '')})のロール ${depth.role} `
         : `${depth.role} `;
       if (depth.kind === 'avg') {
-        depthBadge = `<span class="tb-depth avg" title="Makky: ${why}で実際に使ったヒーロー${depth.total}体の Power Rating 平均(4番目の代わりに平均で表示)">${roleTag}平均 <b>${tbNum(depth.value)}</b>pt</span>`;
+        depthBadge = `<span class="tb-depth avg" title="${why}で実際に使ったヒーロー${depth.total}体の Power Rating 平均">${roleTag}平均 <b>${tbNum(depth.value)}</b>pt</span>`;
       } else {
         const thin = depth.total < 4;
-        depthBadge = `<span class="tb-depth" title="${why}で実際に使ったヒーロー${depth.total}体の中で${depth.rank}番目に高い Power Rating ・ ${esc(depth.hero.n)} ${tbNum(depth.value)}pt${thin ? `(${depth.total}体しかいないため4番目はありません)` : ''}">${roleTag}${thin ? depth.total + '体目' : '4番目'} <b>${tbNum(depth.value)}</b>pt</span>`;
+        depthBadge = `<span class="tb-depth" title="${why}で実際に使ったヒーロー${depth.total}体の中で${depth.rank}番目に高い Power Rating ・ ${esc(depth.hero.n)} ${tbNum(depth.value)}pt${thin ? `(${depth.total}体しかいないため${tbDepthName()}はありません)` : ''}">${roleTag}${thin ? depth.total + '体目' : tbDepthName()} <b>${tbNum(depth.value)}</b>pt</span>`;
       }
     }
     const heroArea = opts.length
@@ -4142,6 +4215,23 @@ function trStats(side) {
   };
 }
 /* そのロールのランクチップ(未ランクはブロンズ扱いの注記つき) */
+/* そのロールの「4番目に高いスコア」(チームビルダーと同じ指標 / Makkyは平均) */
+function trFourth(p, role) {
+  try {
+    const d = tbDepth(p, role);
+    return (d && typeof d.value === 'number') ? d : null;
+  } catch (e) { return null; }
+}
+function trFourthSum(side) {
+  const st = trStats(side);
+  let n = 0, sum = 0;
+  st.rows.forEach((r) => {
+    if (!r) return;
+    const d = trFourth(r.p, r.role);
+    if (d) { sum += d.value; n++; }
+  });
+  return n ? { n, sum } : { n: 0, sum: 0 };
+}
 function trRankChip(p, role) {
   const rk = trRankOf(p, role);
   if (rk) return rankChip(p, role);
@@ -4153,7 +4243,15 @@ function trSlotHtml(side, i) {
   const editing = tr.pick && tr.pick.side === side && tr.pick.idx === i;
   const rkTxt = p ? (trRankOf(p, role) ? rankName(trRankOf(p, role)) : 'アンランク(ブロンズ5扱い)') : '';
   const inner = p
-    ? `<span class="pl-av ${roleCls(p.role)}">${faceMarkup(p)}</span><span class="tr-nm">${esc(p.name)}</span><span class="tr-rk">${trRankChip(p, role)}</span>`
+    ? `<span class="pl-av ${roleCls(p.role)}">${faceMarkup(p)}</span><span class="tr-nm">${esc(p.name)}</span>${(() => {
+        const d = trFourth(p, role);
+        if (!d) return '';
+        const lbl = tbDepthShort(p);
+        const tip = d.kind === 'avg'
+          ? `${TR_ROLE_JA[role]}で使った${d.total}体の Power Rating 平均`
+          : `${TR_ROLE_JA[role]}で使った${d.total}体の中で${d.rank}番目に高い Power Rating`;
+        return `<span class="tr-4th" title="${tip}: ${tbNum(d.value)}pt">${lbl} <b>${tbNum(d.value)}</b></span>`;
+      })()}<span class="tr-rk">${trRankChip(p, role)}</span>`
     : `<span class="tr-ph">＋ ${TR_ROLE_JA[role]}を選ぶ</span>`;
   return `<div class="tr-slot">
     <span class="tr-role ${roleCls(role)}">${TR_ROLE_JA[role]}</span>
@@ -4225,10 +4323,22 @@ function trSumHtml() {
       <div class="tr-rval">${st.n ? `<b>${trLabel(st.min)}</b><span class="tr-tilde">〜</span><b>${trLabel(st.max)}</b>` : '<span class="tr-dash">—</span>'}</div>
       ${st.n ? `<div class="tr-rbar ${cls}" title="${st.min}〜${st.max}(0=Bronze 5 / 39=Grandmaster 1)"><i style="left:${st.min / TR_MAX * 100}%;width:${Math.max(2, (st.span / TR_MAX) * 100)}%"></i></div>` : ''}
     </div>`;
+  const F4A = trFourthSum('ally'), F4B = trFourthSum('enemy');
+  const f4Html = (F4A.n && F4B.n) ? (() => {
+    const d = F4A.sum - F4B.sum;
+    const cls = Math.abs(d) < 1 ? 'even' : (d > 0 ? 'plus' : 'minus');
+    const who = Math.abs(d) < 1 ? '互角' : `${d > 0 ? '自分たち' : '相手'}が上`;
+    return `<div class="tr-4thsum">
+      <span class="tr-4thsum-k">${tb.depth === 'avg' ? '平均合計' : tbDepthName() + '合計'}の差</span>
+      <b class="${cls}">${d > 0 ? '+' : ''}${tbNum(d)}</b>
+      <span class="tr-4thsum-d ${cls}">${who}</span>
+    </div>`;
+  })() : '';
   return `<div class="tr-sum">
     <div class="tr-sumhead"><span>平均ランク</span><span class="tr-scale">0 = Bronze 5 〜 39 = Grandmaster 1</span></div>
     ${row('ally', '自分たち', A)}${row('enemy', '相手', B)}
     ${diffHtml}
+    ${f4Html}
     <div class="tr-ranges">${rbox('ally', '自分たち', A)}${rbox('enemy', '相手', B)}</div>
     ${(A.n < 5 || B.n < 5) ? '<div class="tr-note">※ 5人そろっていないチームは、入っている人数で計算しています</div>' : ''}
   </div>`;
@@ -4237,9 +4347,11 @@ function trRender() {
   const body = $('#trBody');
   if (!body) return;
   const A = trStats('ally'), B = trStats('enemy');
+  const F4A = trFourthSum('ally'), F4B = trFourthSum('enemy');
+  const th4 = (f) => `<em class="tr-th4">${tb.depth === 'avg' ? '平均合計' : tbDepthName() + '合計'} <b>${f.n ? tbNum(f.sum) : '—'}</b></em>`;
   body.innerHTML = `<div class="tr-teams">
-      <div class="tr-team ally"><div class="tr-thead">自分たちのチーム <span>${A.n}/5</span></div>${[0, 1, 2, 3, 4].map((i) => trSlotHtml('ally', i)).join('')}</div>
-      <div class="tr-team enemy"><div class="tr-thead">相手チーム <span>${B.n}/5</span></div>${[0, 1, 2, 3, 4].map((i) => trSlotHtml('enemy', i)).join('')}</div>
+      <div class="tr-team ally"><div class="tr-thead">自分たちのチーム ${th4(F4A)} <span>${A.n}/5</span></div>${[0, 1, 2, 3, 4].map((i) => trSlotHtml('ally', i)).join('')}</div>
+      <div class="tr-team enemy"><div class="tr-thead">相手チーム ${th4(F4B)} <span>${B.n}/5</span></div>${[0, 1, 2, 3, 4].map((i) => trSlotHtml('enemy', i)).join('')}</div>
     </div>${trPickerHtml()}${trSumHtml()}`;
   trUpdateSendBtn();
 }
@@ -4362,11 +4474,20 @@ function trPosterBlob() {
         /* 名前 */
         g.fillStyle = '#1F2328'; g.font = F(900, 20);
         g.fillText(p.name, pn.x + 82, ry + 35);
-        /* ランク */
+        /* ランク(先に幅を測って、4thはその左に置く) */
+        const rkText = rkTxt + (rk && rk.assumed ? ' 推定' : '');
         g.textAlign = 'right';
-        g.fillStyle = rk ? (rk.assumed ? '#B45309' : '#5B5548') : '#9A9486';
         g.font = F(900, 15);
-        g.fillText(rkTxt + (rk && rk.assumed ? ' 推定' : ''), pn.x + pn.w - 18, ry + 34);
+        const rkW = g.measureText(rkText).width;
+        g.fillStyle = rk ? (rk.assumed ? '#B45309' : '#5B5548') : '#9A9486';
+        g.fillText(rkText, pn.x + pn.w - 18, ry + 34);
+        /* 4番目(または平均)スコア */
+        const f4 = trFourth(p, role);
+        if (f4) {
+          g.fillStyle = '#7C3AED';
+          g.font = F(900, 12.5);
+          g.fillText(tbDepthShort(p) + ' ' + trNum(f4.value), pn.x + pn.w - 18 - rkW - 14, ry + 33);
+        }
         g.textAlign = 'left';
       } else {
         g.fillStyle = '#EFECE4';
@@ -4381,7 +4502,13 @@ function trPosterBlob() {
     }
   });
 
-  /* フッター */
+  /* フッター: 4番目合計 */
+  const f4a = trFourthSum('ally'), f4b = trFourthSum('enemy');
+  if (f4a.n && f4b.n) {
+    const d = f4a.sum - f4b.sum;
+    g.fillStyle = '#6D28D9'; g.font = F(900, 13);
+    g.fillText((tb.depth === 'avg' ? '平均合計  ' : tbDepthName() + '合計  ') + trNum(f4a.sum) + '  vs  ' + trNum(f4b.sum) + '   差 ' + (d > 0 ? '+' : '') + trNum(d), 40, H - 54);
+  }
   g.fillStyle = '#8A8578'; g.font = F(800, 12);
   g.textAlign = 'center';
   g.fillText('オーバーツ / OW2 身内ランキング', W / 2, H - 26);
@@ -5079,6 +5206,22 @@ $('#trBalBody').addEventListener('click', (e) => {
   if (e.target.closest('[data-trbroll]')) { trbSpin(); }
 });
 
+/* 指標の数値入力 */
+document.addEventListener('change', (e) => {
+  const t = e.target;
+  if (!t || t.id !== 'tbDepthNum') return;
+  const v = Math.max(1, Math.min(30, Math.round(Number(t.value) || 4)));
+  tb.depth = v;
+  renderTeam();
+});
+document.addEventListener('keydown', (e) => {
+  const t = e.target;
+  if (!t || t.id !== 'tbDepthNum') return;
+  if (e.key === 'Enter') {
+    const v = Math.max(1, Math.min(30, Math.round(Number(t.value) || 4)));
+    tb.depth = v; renderTeam();
+  }
+});
 /* イベント */
 $('#rankBody').addEventListener('click',e=>{
   const heroHit=e.target.closest('[data-hero]');
@@ -5997,6 +6140,15 @@ $('#teamBody').addEventListener('click',e=>{
   if(rfB){
     const [pid, role] = rfB.dataset.tbf.split('|');
     tb.roleF[pid] = role;
+    renderTeam(); return;
+  }
+  const numB=e.target.closest('#tbDepthNum');
+  /* 数値入力は change で確定(入力中に再描画するとフォーカスが外れるため) */
+  if(numB){ return; }
+  const dpB=e.target.closest('[data-tbdepth]');
+  if(dpB){
+    const v=dpB.dataset.tbdepth;
+    tb.depth=(v==='avg')?'avg':Number(v);
     renderTeam(); return;
   }
   const ballB=e.target.closest('[data-tball]');
