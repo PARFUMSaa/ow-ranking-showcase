@@ -365,7 +365,7 @@ table.mini td:first-child{text-align:left;white-space:nowrap}
 @media(max-width:640px){.fq-grid{--fqn:104px}}
 .upd{color:#6b7280;font-size:11px}
 /* ページ最上部の更新日バー */
-.upd-top{display:flex;align-items:center;gap:9px;flex-wrap:wrap;background:#f8fafc;border:1px solid var(--border);border-radius:10px;padding:7px 12px;margin:0 0 12px;font-size:12px;color:#64748b}
+.upd-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:#f8fafc;border:1px solid var(--border);border-radius:10px;padding:5px 10px;margin:0 0 10px;font-size:12px;color:#64748b}
 .upd-top .upd-tag{font-size:10.5px;font-weight:900;color:#047857;background:#d9f3e4;border-radius:99px;padding:2px 9px;letter-spacing:.02em;white-space:nowrap}
 .upd-top b{color:#0f172a;font-size:13px;font-variant-numeric:tabular-nums}
 .upd-top .upd-note{color:#94a3b8;font-size:11px}
@@ -1446,15 +1446,15 @@ html.intro-lock{overflow:hidden}
 
 
 /* ===== OSINT ===== */
-.os-sec{margin-top:24px}
-.os-ctl{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:10px 0}
+.os-sec{margin-top:14px}
+.os-ctl{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:6px 0 2px}
 .os-f{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:800;color:#64748b}
 .os-roles{display:inline-flex;gap:4px}
 .os-roles button{appearance:none;border:1px solid #e2e8f0;background:#fff;color:#64748b;font:inherit;font-size:11px;font-weight:800;padding:3px 10px;border-radius:99px;cursor:pointer}
 .os-roles button:hover{border-color:#94a3b8;color:#0f172a}
 .os-roles button.on{background:#111827;color:#fff;border-color:#111827}
 .os-count{margin-left:auto;font-size:11px;color:#94a3b8;font-weight:700}
-.os-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(238px,1fr));gap:6px;margin-bottom:14px}
+.os-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(238px,1fr));gap:5px;margin-bottom:8px}
 .os-h{display:flex;align-items:center;gap:5px;padding:6px 9px;border:1px solid #e8eef7;border-radius:10px;background:#fff;
   cursor:pointer;font:inherit;text-align:left;transition:.12s;min-width:0}
 .os-h:hover{border-color:#93b4f7;background:#f5f9ff;transform:translateY(-1px)}
@@ -1464,30 +1464,35 @@ html.intro-lock{overflow:hidden}
 .os-h .sp{flex:0 0 40px;display:block;line-height:0;width:40px}
 .os-h .dl{flex:0 0 30px;text-align:right;font-size:10px;font-weight:800;font-variant-numeric:tabular-nums}
 .os-h .dl.up{color:#16a34a}.os-h .dl.dn{color:#dc2626}.os-h .dl.eq{color:#94a3b8}
-.os-detail{border:1px solid var(--border);border-radius:14px;background:#fff;padding:14px 16px}
-.os-dt-hd{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.os-detail{border:1px solid var(--border);border-radius:12px;background:#fff;padding:9px 11px}
+.os-dt-hd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
 .os-dt-nm{font-size:17px;font-weight:900;color:#0f172a}
 .os-dt-sub{font-size:11px;color:#94a3b8;font-weight:700}
-.os-kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:6px;margin-bottom:12px}
-.os-kpi{border:1px solid #eef2f8;border-radius:10px;padding:7px 10px;background:#f8fbff}
+.os-kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:5px;margin-bottom:8px}
+.os-kpi{border:1px solid #eef2f8;border-radius:9px;padding:5px 8px;background:#f8fbff}
 .os-kpi .k{font-size:10px;font-weight:800;color:#94a3b8;letter-spacing:.04em}
 .os-kpi .v{font-size:16px;font-weight:900;color:#0f172a;font-variant-numeric:tabular-nums;line-height:1.25}
 .os-kpi .s{font-size:10px;color:#94a3b8;font-weight:700}
-.os-chart{border:1px solid #eef2f8;border-radius:12px;padding:4px;background:#fff}
+.os-chart{border:1px solid #eef2f8;border-radius:10px;padding:2px;background:#fff}
 .os-empty{padding:18px;text-align:center;color:#94a3b8;font-size:12px;border:1px dashed #e2e8f0;border-radius:10px}
 .os-note{margin-top:8px;font-size:11px;color:#92400e;background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:6px 9px}
 @media(max-width:560px){
-  .os-grid{grid-template-columns:1fr;gap:5px}
-  .os-h .nm{font-size:12.5px}
+  #osGrid.os-grid,#osGrid.os-grid.no-spark{grid-template-columns:1fr 1fr;gap:4px}
+  .os-h{padding:5px 7px;gap:5px}
+  .os-h .nm{font-size:11.5px}
+  .os-h .sc{font-size:11.5px}
   .os-h .dl{display:none}
   .os-kpis{grid-template-columns:repeat(auto-fill,minmax(104px,1fr))}
 }
+@media(max-width:345px){
+  #osGrid.os-grid,#osGrid.os-grid.no-spark{grid-template-columns:1fr}
+}
 
 
-.os-charts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
-.os-card{border:1px solid #eef2f8;border-radius:12px;padding:8px 10px 10px;background:#fff}
+.os-charts{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px;align-items:start}
+.os-card{border:1px solid #eef2f8;border-radius:10px;padding:5px 8px 7px;background:#fff}
 .os-card.wide{grid-column:1 / -1}
-.os-card-hd{font-size:11.5px;font-weight:900;color:#334155;margin-bottom:6px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.os-card-hd{font-size:11.5px;font-weight:900;color:#334155;margin-bottom:4px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
 .os-card-sub{font-size:10px;font-weight:700;color:#a8b3c2}
 .os-radar{display:block}
 .os-brow{display:grid;grid-template-columns:96px 1fr 44px 46px;align-items:center;gap:6px;padding:2px 0}
@@ -1498,7 +1503,7 @@ html.intro-lock{overflow:hidden}
 .os-btrack i{display:block;height:100%;background:linear-gradient(90deg,#94a3b8,#cbd5e1);border-radius:99px}
 .os-bv{font-size:11px;font-weight:900;color:#0f172a;font-variant-numeric:tabular-nums;text-align:right}
 .os-bg{font-size:9.5px;color:#94a3b8;text-align:right;font-weight:700}
-.os-days{display:flex;align-items:flex-end;gap:2px;height:78px;padding-top:2px}
+.os-days{display:flex;align-items:flex-end;gap:2px;height:64px;padding-top:2px}
 .os-dcol{flex:1 1 0;display:flex;align-items:flex-end;justify-content:center;height:100%}
 .os-dcol i{display:block;width:100%;max-width:10px;border-radius:2px 2px 0 0;background:linear-gradient(180deg,#60a5fa,#2563eb)}
 .os-days-x{display:flex;justify-content:space-between;gap:8px;font-size:9.5px;color:#94a3b8;font-weight:700;margin-top:4px}
@@ -1549,7 +1554,7 @@ html.intro-lock{overflow:hidden}
 .os-brow.cmp .os-btrack i{background:linear-gradient(90deg,#f28f1d,#fbbf24)}
 .os-brow.cmp .os-bnm{color:#b45309}
 /* 順位カード */
-.os-rk{display:flex;flex-direction:column;gap:6px}
+.os-rk{display:flex;flex-direction:column;gap:4px}
 .os-rk-row{display:grid;grid-template-columns:96px 1fr auto;align-items:baseline;gap:6px;font-size:11px;color:#64748b;font-weight:700}
 .os-rk-row b{font-size:15px;color:#0f172a;font-variant-numeric:tabular-nums}
 .os-rk-row b small{font-size:10px;color:#94a3b8;font-weight:800;margin-left:1px}
@@ -1557,10 +1562,10 @@ html.intro-lock{overflow:hidden}
 
 
 /* プレイヤー/比較相手を横並び */
-.os-ppl-wrap{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;margin:8px 0 4px}
-.os-ppl-col{min-width:0;border:1px solid #eef2f8;border-radius:12px;padding:7px 9px;background:#fcfdff}
+.os-ppl-wrap{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px;margin:6px 0 2px}
+.os-ppl-col{min-width:0;border:1px solid #eef2f8;border-radius:10px;padding:5px 8px;background:#fcfdff}
 .os-ppl-col.cmp{background:#fffdf8;border-color:#f6e6cd}
-.os-ppl-hd{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:900;color:#475569;margin-bottom:6px}
+.os-ppl-hd{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:900;color:#475569;margin-bottom:4px}
 .os-ppl-hd .hint{font-size:9.5px;font-weight:700;color:#a8b3c2}
 .os-ppl-hd .dot{width:8px;height:8px;border-radius:50%;display:inline-block}
 .os-ppl-hd .dot.me{background:#2563eb}
@@ -1574,7 +1579,7 @@ html.intro-lock{overflow:hidden}
 .os-cmp-h .side.b{color:#b45309;text-align:right}
 .os-cmp-h .score{font-size:15px;font-weight:900;color:#0f172a;font-variant-numeric:tabular-nums;white-space:nowrap}
 .os-cmp-verdict{text-align:center;font-size:11px;font-weight:800;color:#64748b;padding:5px 8px;background:#fcfdff;border-bottom:1px solid #f4f7fb}
-.os-mrow{display:grid;grid-template-columns:82px 64px 1fr 64px;align-items:center;gap:8px;padding:5px 12px;border-top:1px solid #f4f7fb}
+.os-mrow{display:grid;grid-template-columns:82px 64px 1fr 64px;align-items:center;gap:8px;padding:4px 11px;border-top:1px solid #f4f7fb}
 .os-mrow:first-of-type{border-top:0}
 .os-mrow .lbl{font-size:10.5px;font-weight:800;color:#94a3b8}
 .os-mrow .va{text-align:right;font-size:13px;font-weight:900;color:#475569;font-variant-numeric:tabular-nums}
@@ -1625,6 +1630,40 @@ html.intro-lock{overflow:hidden}
   .os-play,.os-play *{animation:none!important}
 }
 
+
+
+.os-grid.no-spark{grid-template-columns:repeat(auto-fill,minmax(206px,1fr))}
+.os-grid.no-spark .sp,.os-grid.no-spark .dl{display:none}
+
+
+/* 目次バー内のロゴ */
+@media(max-width:560px){
+    }
+
+
+/* 更新行のロゴ */
+.upd-brand{display:inline-flex;align-items:center;justify-content:center;flex:none;width:26px;height:26px;border-radius:8px;text-decoration:none}
+.upd-brand:hover{background:#eef4ff}
+.upd-brand svg{display:block;width:100%;height:100%;filter:drop-shadow(0 1px 3px rgba(120,90,30,.18))}
+
+
+
+
+
+.tr-send{border-color:#f2b06a;background:#fff7ec;color:#8a4b00}
+.tr-send:hover:not(:disabled){background:#ffefd8;border-color:#e08b2c}
+.tr-send:disabled{opacity:.45;cursor:not-allowed}
+
+
+/* 10倍速: スロットが左右から突っ込む */
+@keyframes trSlamL{0%{opacity:0;transform:translateX(-115%) scale(.88)}70%{opacity:1;transform:translateX(4%) scale(1.02)}100%{opacity:1;transform:none}}
+@keyframes trSlamR{0%{opacity:0;transform:translateX(115%) scale(.88)}70%{opacity:1;transform:translateX(-4%) scale(1.02)}100%{opacity:1;transform:none}}
+.tr-ply.slam-l{animation:trSlamL .4s cubic-bezier(.16,.84,.28,1) both}
+.tr-ply.slam-r{animation:trSlamR .4s cubic-bezier(.16,.84,.28,1) both}
+.trb .tr-ply.slam-l,.trb .tr-ply.slam-r{will-change:transform,opacity}
+/* lock のポップ(trbLock)より突っ込みを優先させる */
+.tr-slot.lock .tr-ply.slam-l{animation:trSlamL .4s cubic-bezier(.16,.84,.28,1) both}
+.tr-slot.lock .tr-ply.slam-r{animation:trSlamR .4s cubic-bezier(.16,.84,.28,1) both}
 
 </style>
 </head>
@@ -1984,16 +2023,18 @@ html.intro-lock{overflow:hidden}
     </div>
   </div>
 
+
 </div>
 
 <main class="content">
   <div class="wrap">
 
+
     <!-- ページ最上部: データ更新日 -->
-    <div class="upd-top">
-      <span class="upd-tag">最終データ更新</span>
+    <div class="upd-top" id="top">
+      <a class="upd-brand" href="#top" aria-label="ページ先頭へ"><span class="brand-mark"><svg class="brand-svg" viewBox="0 0 1024 1024" width="100%" height="100%" aria-hidden="true"><defs><linearGradient id="brandLogo" gradientUnits="userSpaceOnUse" x1="55.19" y1="18.43" x2="34.24" y2="57.31" transform="scale(12.8)"><stop stop-color="#4D4D4D"/><stop stop-color="#86653E" offset=".4375"/><stop stop-color="#B47631" offset=".7396"/><stop stop-color="#F28F1D" offset="1"/></linearGradient></defs><path d="m512.3 166.5v68.22c148.5-1.28 266.8 116.9 266.8 259.2 0 142.5-120.8 253.3-279 255.6-145.7 0-252.7-114.2-256.8-250.2h-76.42c1.28 186 148.2 333.1 333.2 333.1 51.33 0 108.5-12.29 151.9-32.13 122.6-57.98 200.7-173.8 200.7-303.5 1.28-181.5-151.3-332.3-340.4-330.2z" fill="url(#brandLogo)"/><path d="m512.3 274.2v60.03c86.27-2.176 159.4 69.25 159.4 153 0 91.52-84.48 151-159.5 151.6v66.05c123.6-2.176 228.7-96.51 228.7-215 0-120.8-106.9-219.4-228.6-215.6z" fill="#F38F1E"/><path d="m512.3 370.7v129.3h126.7c7.552-70.14-57.98-133.6-126.7-129.3z" fill="#4A4B4C"/></svg></span></a>
       <b id="lastUpd">—</b>
-      <span class="upd-note">OverFast API / 全モード(ライバル+QP) / GitHub Actions で毎日自動更新</span>
+      <span class="upd-note">毎日自動更新</span>
     </div>
 
     <!-- 目次 -->
@@ -2240,7 +2281,7 @@ html.intro-lock{overflow:hidden}
       <div class="power-head">
         <div>
           <h2>⚔️ チームビルダー(ポイント制限)</h2>
-          <div class="sub">各ヒーローの Power Rating をポイントとして使用(<b style="color:#7c3aed">Makky はカスタム用に調整</b>: タンク300 / DPS 70〜300 / サポート 60〜180)。メンバーを選んで予算(ポイント制限)を決め、上のプレイヤーから順にヒーローを選ぶと残りポイントに応じて「選べるヒーロー」が自動で絞られます。ヒーローを選ぶと<b>そのヒーローのロール</b>の、未選択なら行の<b>T/D/S</b>で選んだロールの<b>4番目に高いスコア</b>を紫で表示し(Makkyはそのロールの平均)、合計をポイントゲージの上限の下に「4番目合計」として出します</div>
+          <div class="sub">各ヒーローの Power Rating をポイントとして使用(<b style="color:#7c3aed">カスタム用スコア</b>に全員ぶん調整済み: タンク・DPS・サポート別の個別値)。メンバーを選んで予算(ポイント制限)を決め、上のプレイヤーから順にヒーローを選ぶと残りポイントに応じて「選べるヒーロー」が自動で絞られます。ヒーローを選ぶと<b>そのヒーローのロール</b>の、未選択なら行の<b>T/D/S</b>で選んだロールの<b>4番目に高いスコア</b>を紫で表示し(Makkyはそのロールの平均)、合計をポイントゲージの上限の下に「4番目合計」として出します</div>
         </div>
         <div class="power-controls" id="teamCtl">
           <span class="filter-btn active mode-static" title="コンペ(ライバル・プレイのみ)表示は廃止しました">全モード(ライバル+QP)</span>
@@ -2271,6 +2312,7 @@ html.intro-lock{overflow:hidden}
         <div class="power-controls" id="trCtl">
           <button class="filter-btn" data-azsample="1">例を入れる</button>
           <button class="filter-btn" data-azreset="1">リセット</button>
+          <button class="filter-btn tr-send" id="trSendBtn" disabled title="この編成の画像をDiscordへ送信します">📤 Discordに送信</button>
         </div>
       </div>
       <div id="trBody"></div>
@@ -2304,7 +2346,7 @@ html.intro-lock{overflow:hidden}
       <summary class="dd-sum">🎲 カスタムゲーム用ヒーロースコア表(プレイヤー別・ピック制限の数値)</summary>
       <div class="dd-body">
         <div class="dd-head">
-          <div class="dd-note">ワークショップに入れる数値です。<b>プレイヤーごとに、その人が使ったヒーローの Power</b>(ヒーロー別パワーランキングの値)を並べています。カスタムゲームでは「選んだヒーローの合計 ≤ 予算」でピックを制限します。<br /><b style="color:#7c3aed">※ Makky だけカスタム用に調整</b>(タンク一律300 / DPS 70〜300 / サポート 60〜180)</div>
+          <div class="dd-note">ワークショップに入れる数値です。<b>プレイヤーごとに、その人が使ったヒーローの Power</b>(ヒーロー別パワーランキングの値)を並べています。カスタムゲームでは「選んだヒーローの合計 ≤ 予算」でピックを制限します。<br /><b style="color:#7c3aed">※ 全員カスタム用スコアに調整済み</b>(プレイヤー×ヒーローごとの個別値)</div>
           <div class="dd-ctl">
             <label class="dd-f">コピーに含める体数
               <select id="ddN" class="power-sel">
@@ -3480,7 +3522,7 @@ function tbPool() {
   return PLAYERS;
 }
 /* =====================================================================
- * カスタム用スコア調整(Makky)
+ * カスタム用スコア調整(全プレイヤー)
  *   カスタムゲームのポイント制(チームビルダー / ワークショップ表)だけに適用。
  *   ランキング表・ヒーロー別パワーの実測値はそのまま。
  *   Tank  : 全ヒーロー一律 300(タンクにランクがあると壊れるため Diamond 3 想定)
@@ -3489,26 +3531,223 @@ function tbPool() {
  * =================================================================== */
 const CUSTOM_OVR = {
   makky: {
-    Tank: 300,
+    Tank: {
+      dmon:300, domina:300, doomfist:300, dva:300, hazard:300, 'junker-queen':300,
+      mauga:300, orisa:300, ramattra:300, reinhardt:300, roadhog:300, sigma:300,
+      winston:300, 'wrecking-ball':300, zarya:300
+    },
     Damage: {
-      /* キャリー */
-      genji: 250, tracer: 200, ashe: 160, sojourn: 180, cassidy: 160,
-      freja: 300, vendetta: 160, widowmaker: 300, echo: 150,
-      /* 普通(現在の順位を保って 135 → 95) */
-      pharah: 135, reaper: 131, hanzo: 126, junkrat: 122, bastion: 117,
-      venture: 113, emre: 108, 'soldier-76': 104, shion: 99, anran: 95,
-      /* not carry */
-      symmetra: 70, mei: 70, torbjorn: 70
+      freja:300, widowmaker:300, genji:250, tracer:200, sojourn:180, ashe:160,
+      cassidy:160, vendetta:160, echo:150, pharah:135, reaper:131, hanzo:126,
+      junkrat:122, bastion:117, venture:113, emre:108, 'soldier-76':104, shion:99,
+      anran:95, mei:70, symmetra:70, torbjorn:70
     },
     Support: {
-      /* キャリー */
-      illari: 180, zenyatta: 180, sombra: 160, ana: 130, wuyang: 110, 'jetpack-cat': 100,
-      /* 普通(現在の順位を保って 125 → 95) */
-      moira: 125, brigitte: 118, baptiste: 110, mizuki: 103, doctrine: 95,
-      /* not carry */
-      kiriko: 93, lucio: 65, juno: 65, mercy: 60, lifeweaver: 60
-    }
-  }
+      illari:180, zenyatta:180, sombra:160, ana:130, moira:125, brigitte:118,
+      baptiste:110, wuyang:110, mizuki:103, 'jetpack-cat':100, doctrine:95, kiriko:93,
+      juno:65, lucio:65, lifeweaver:60, mercy:60
+    },
+  },
+  voidglove: {
+    Tank: {
+      mauga:59.4, doomfist:58.7, dva:58.6, roadhog:58.3, sigma:57.7, ramattra:56.5,
+      dmon:56.2, 'wrecking-ball':54.7, zarya:53.3, reinhardt:51.7, hazard:51.6, domina:50.8,
+      winston:50.8, orisa:50.7, 'junker-queen':40.5
+    },
+    Damage: {
+      cassidy:65.3, reaper:63.8, shion:63.3, bastion:63.2, sojourn:63.1, genji:62.3,
+      anran:61.8, widowmaker:60.6, tracer:59.5, vendetta:59, pharah:58.9, freja:58.3,
+      echo:56.9, ashe:55.4, mei:54.5, 'soldier-76':52.8, torbjorn:52.4, sierra:52.1,
+      junkrat:48.9, emre:47.8, symmetra:46.9, hanzo:45.7, venture:43.3
+    },
+    Support: {
+      moira:65.4, doctrine:62.2, ana:60, 'jetpack-cat':58, brigitte:57.6, kiriko:57.3,
+      illari:54.8, zenyatta:54.5, wuyang:54.3, juno:53.5, sombra:53.4, mizuki:50.4,
+      lucio:46.5, baptiste:45.1, lifeweaver:44.6, mercy:38.3
+    },
+  },
+  maru: {
+    Tank: {
+      mauga:64.4, winston:62.3, reinhardt:61.1, roadhog:60.7, ramattra:60.2, sigma:59.3,
+      orisa:57.2, zarya:53.9, dva:52.7, hazard:47.7, domina:44.9, dmon:43.5,
+      'junker-queen':43.4, doomfist:37.4
+    },
+    Damage: {
+      anran:66.8, bastion:61.8, vendetta:59.4, reaper:58.6, junkrat:55.5, freja:52.6,
+      widowmaker:52.5, symmetra:52.2, 'soldier-76':51.2, sierra:50.8, shion:49.4, cassidy:49,
+      ashe:48, pharah:45, echo:44.6, sojourn:44.6, torbjorn:41.9, hanzo:40.5,
+      emre:39.9, tracer:36.8
+    },
+    Support: {
+      moira:68.7, sombra:63, doctrine:62.3, mizuki:57.9, lifeweaver:57.6, kiriko:53.5,
+      zenyatta:52.2, ana:51.7, wuyang:51, 'jetpack-cat':50.9, baptiste:45.9, juno:44.8,
+      brigitte:38.9, mercy:38.7, illari:36.8
+    },
+  },
+  marumaru: {
+    Tank: {
+      mauga:61, sigma:60.1, ramattra:57.6, winston:55.8, orisa:55.6, zarya:49.4,
+      'junker-queen':44.6, dva:42.2, roadhog:41.5, reinhardt:40, doomfist:37.1, domina:36.5,
+      hazard:33.2
+    },
+    Damage: {
+      bastion:66.4, anran:65.7, reaper:63.7, hanzo:60.4, ashe:56.8, emre:55.9,
+      cassidy:54.9, genji:53.3, torbjorn:53.2, symmetra:51.7, mei:51.4, 'soldier-76':51,
+      sojourn:50.8, tracer:49, pharah:47.2, widowmaker:45.3, sierra:44.9, shion:44.7,
+      vendetta:43.6, freja:41.9, junkrat:39, echo:35.8
+    },
+    Support: {
+      moira:63.5, ana:61.7, kiriko:59, zenyatta:58.9, illari:57.4, juno:55.9,
+      baptiste:55.5, mizuki:55.5, 'jetpack-cat':49.9, brigitte:49.6, doctrine:45.5, wuyang:45,
+      lifeweaver:44.4, sombra:43.3, lucio:36.9
+    },
+  },
+  p12: {
+    Tank: {
+      'wrecking-ball':64.4, mauga:62.2, hazard:58.7, ramattra:56.6, sigma:56.5, reinhardt:55.8,
+      zarya:54.8, domina:51.7, 'junker-queen':49.8, dmon:48.5, orisa:46.4, winston:46.1,
+      doomfist:44.5, roadhog:43.6, dva:41.6
+    },
+    Damage: {
+      anran:59.8, bastion:58.7, reaper:57.4, venture:56.9, sojourn:56, mei:55.8,
+      pharah:52.8, vendetta:52.1, tracer:50.7, sierra:48.9, genji:48.3, emre:48.2,
+      echo:48.1, symmetra:47.7, freja:47.5, torbjorn:46.6, 'soldier-76':45, cassidy:44.5,
+      junkrat:40.4, hanzo:38.8, ashe:37.3, shion:36.5, widowmaker:33.6
+    },
+    Support: {
+      moira:56.7, wuyang:48, ana:41.4, brigitte:41.3, illari:41.1, lifeweaver:40.6,
+      sombra:38.7, kiriko:37.4, lucio:37.4, doctrine:37.3, 'jetpack-cat':37, juno:36.7,
+      mizuki:36.1, zenyatta:34.2, baptiste:30.9, mercy:27.3
+    },
+  },
+  p10: {
+    Tank: {
+      sigma:56.9, mauga:53.7, ramattra:52.2, zarya:49.1, reinhardt:42.4, 'junker-queen':42.1,
+      roadhog:41.2, dmon:39.7, domina:38, winston:36.9, hazard:36.4, dva:34.1,
+      doomfist:32.1, orisa:30.5, 'wrecking-ball':26
+    },
+    Damage: {
+      anran:59.8, junkrat:59, bastion:58.3, reaper:58.3, hanzo:58.1, tracer:51,
+      emre:49.9, freja:49.1, 'soldier-76':49.1, genji:46.7, cassidy:46.2, symmetra:45.8,
+      ashe:45.2, vendetta:44.6, pharah:43, sojourn:42.8, mei:42.5, sierra:42.3,
+      echo:42.1, widowmaker:41.9, torbjorn:41.8, venture:41.5, shion:33.3
+    },
+    Support: {
+      moira:62.7, illari:57, mizuki:56.8, ana:55.8, kiriko:53.2, lucio:51.7,
+      baptiste:51.5, zenyatta:51.5, lifeweaver:50.9, wuyang:50.9, sombra:49.2, 'jetpack-cat':48.8,
+      juno:48.2, brigitte:44.2, doctrine:41, mercy:32.5
+    },
+  },
+  p6: {
+    Tank: {
+      sigma:62.4, mauga:58.1, doomfist:55.6, ramattra:55.5, zarya:54.2, 'junker-queen':51.8,
+      dmon:50, orisa:46.7, domina:45.6, reinhardt:44.8, winston:43.4, dva:38.6,
+      'wrecking-ball':36.7, hazard:35.6, roadhog:34.5
+    },
+    Damage: {
+      anran:62.4, genji:59.3, reaper:58.8, bastion:57.5, vendetta:54.8, pharah:50.8,
+      ashe:49.8, junkrat:49, shion:48.3, tracer:47.2, 'soldier-76':46.8, sojourn:45.8,
+      mei:45.1, hanzo:44.8, echo:43.7, freja:42.5, torbjorn:42.4, symmetra:41.1,
+      sierra:39.9, cassidy:32.3
+    },
+    Support: {
+      moira:64.4, ana:59.1, 'jetpack-cat':51.7, lucio:51.3, baptiste:49.8, mercy:49.7,
+      wuyang:49.5, zenyatta:47.6, kiriko:46.4, juno:42.3, mizuki:42.3, sombra:40.8,
+      illari:38.5, brigitte:36.4
+    },
+  },
+  hiyori: {
+    Tank: {
+      sigma:57.8, mauga:57.4, ramattra:53.7, zarya:49.5, domina:49.3, dva:45,
+      'junker-queen':43.1, orisa:42.4, 'wrecking-ball':39.1, winston:36.9, roadhog:36.2, doomfist:35,
+      dmon:33.6, reinhardt:33, hazard:31.9
+    },
+    Damage: {
+      'soldier-76':61.6, bastion:60.8, anran:60.2, tracer:55.5, cassidy:55.2, reaper:55.1,
+      shion:54.8, sojourn:54.8, sierra:54.5, echo:53.4, pharah:51.3, ashe:49.8,
+      emre:47.6, symmetra:47.6, junkrat:47.1, mei:46.1, hanzo:45.9, widowmaker:45.4,
+      genji:41.1, freja:40, venture:39.3, torbjorn:35.7, vendetta:35
+    },
+    Support: {
+      moira:58.8, baptiste:41.5, lucio:41.4, juno:40.9, zenyatta:39.4, illari:39.2,
+      brigitte:38.4, kiriko:37, sombra:36.9, lifeweaver:36.7, mizuki:35.9, ana:34.6,
+      mercy:31, doctrine:27.1
+    },
+  },
+  p5: {
+    Tank: {
+      sigma:58.8, mauga:56.7, ramattra:51.7, doomfist:51.4, zarya:47.8, roadhog:47.1,
+      reinhardt:44.8, domina:42.2, winston:39.9, orisa:39.3, dmon:38.3, hazard:38.1,
+      'wrecking-ball':37.5, dva:37.4, 'junker-queen':36
+    },
+    Damage: {
+      bastion:58.1, anran:57.2, reaper:54.8, junkrat:45.9, torbjorn:41.4, hanzo:40.3,
+      genji:39.8, mei:39.5, cassidy:39.1, symmetra:38.8, venture:38.7, ashe:38,
+      'soldier-76':37.7, shion:37.1, echo:37, sierra:36.1, vendetta:35.9, sojourn:33.6,
+      pharah:32.8, widowmaker:32.5, emre:31.9, freja:31.9, tracer:31.8
+    },
+    Support: {
+      moira:61, ana:44.3, sombra:43.2, zenyatta:43, lifeweaver:42.6, lucio:41.3,
+      illari:38.7, brigitte:37.1, juno:37.1, mizuki:35, wuyang:35, 'jetpack-cat':34.7,
+      kiriko:34.2, baptiste:33.3, doctrine:32.6, mercy:30
+    },
+  },
+  p11: {
+    Tank: {
+      sigma:56.8, winston:56, mauga:55, ramattra:51.2, zarya:47.5, orisa:44.8,
+      roadhog:41.2, dva:36.6, reinhardt:35.9, hazard:34.9, dmon:34, doomfist:32.7,
+      domina:31.9
+    },
+    Damage: {
+      reaper:57.1, bastion:54.7, tracer:43, 'soldier-76':38.7, emre:38.6, symmetra:37.7,
+      hanzo:37.2, cassidy:35.5, torbjorn:35.3, sojourn:32.6, genji:31.4, junkrat:28.3,
+      mei:27.8, shion:25.5, ashe:23.6
+    },
+    Support: {
+      moira:61.8, ana:48.3, juno:48.3, kiriko:47.2, lifeweaver:45.2, zenyatta:43.5,
+      sombra:42.6, brigitte:40.1, wuyang:38.3, mizuki:37.2, doctrine:34.6, baptiste:34.4,
+      'jetpack-cat':34.4, illari:30.2, mercy:30, lucio:25.6
+    },
+  },
+  p7: {
+    Tank: {
+      mauga:54.3, sigma:50.4, ramattra:48.2, zarya:42.8, dva:37.9, domina:31,
+      reinhardt:30.3, winston:29.6, orisa:28, 'junker-queen':24, roadhog:23.7
+    },
+    Damage: {
+      anran:54.8, bastion:54.8, reaper:51.8, 'soldier-76':42, cassidy:36, mei:35.9,
+      sojourn:34.1, shion:33.2, freja:32.7, junkrat:30.5, ashe:30.3, emre:30.2,
+      tracer:30.2, venture:30, widowmaker:29.3, vendetta:28.5, symmetra:26.8, hanzo:23.9
+    },
+    Support: {
+      moira:58.2, ana:42, kiriko:37.3, doctrine:37.2, mercy:34.9, juno:31,
+      brigitte:30.1, mizuki:28.3, lifeweaver:28.2, baptiste:26.7, 'jetpack-cat':24.8, zenyatta:24.3
+    },
+  },
+  p9: {
+    Tank: {
+      mauga:52.4, sigma:51.6, dva:42.7, winston:38.5, orisa:36.3, hazard:31.2,
+      roadhog:31.2
+    },
+    Damage: {
+      anran:55.9, bastion:54.4, reaper:54, sierra:44.8, torbjorn:36.3, pharah:32.2,
+      genji:32.1, cassidy:32, 'soldier-76':31.1, emre:31, sojourn:31, shion:30.8,
+      echo:29.9, tracer:29.3, mei:27.3, junkrat:25.8, symmetra:25.6, freja:24.2
+    },
+    Support: {
+      moira:59.6, zenyatta:44.2, kiriko:40.1, sombra:39, wuyang:38.2, lucio:35.6,
+      doctrine:33.3, mizuki:32.2, ana:30.9, juno:28.4, brigitte:26.9, lifeweaver:26.5,
+      'jetpack-cat':24.9
+    },
+  },
+  p8: {
+    Damage: {
+      reaper:52.8, emre:36.7, sojourn:33.1, cassidy:28.8, widowmaker:28, 'soldier-76':25.6
+    },
+    Support: {
+      moira:58, kiriko:33.3, ana:33.1
+    },
+  },
 };
 /* 調整後の finalScore(無ければ実測値) */
 function customFinalScore(p, slug, base) {
@@ -4001,7 +4240,170 @@ function trRender() {
       <div class="tr-team ally"><div class="tr-thead">自分たちのチーム <span>${A.n}/5</span></div>${[0, 1, 2, 3, 4].map((i) => trSlotHtml('ally', i)).join('')}</div>
       <div class="tr-team enemy"><div class="tr-thead">相手チーム <span>${B.n}/5</span></div>${[0, 1, 2, 3, 4].map((i) => trSlotHtml('enemy', i)).join('')}</div>
     </div>${trPickerHtml()}${trSumHtml()}`;
+  trUpdateSendBtn();
 }
+/* Discord送信ボタンの有効/無効(両チーム5人そろったときだけ押せる) */
+function trUpdateSendBtn() {
+  const b = document.getElementById('trSendBtn');
+  if (!b) return;
+  const ready = tr.ally.every(Boolean) && tr.enemy.every(Boolean);
+  b.disabled = !ready || !!b.dataset.busy;
+}
+
+/* =====================================================================
+ * チーム編成をDiscordへ送信(画像付き)
+ *   ・ルーレット後の編成をCanvasで1枚の画像にしてWebhookへPOST
+ *   ・画像はcanvas.toBlob(クライアント生成)なので外部ライブラリ不要
+ * =================================================================== */
+const TR_WEBHOOK = 'https://discord.com/api/webhooks/1565701065423327382/YTlHY0M7SxtQGgUCOdQ8hPraibYhh5yUtSX_lycqBbd7ifP4MdI2kAW3Phz-XwUydCeT';
+/* 送信先のスレッド(チャンネルのスレッドID)。スレッドへ送る場合は thread_id を付ける */
+const TR_THREAD_ID = '1565700963770175538';
+
+function trPosterBlob() {
+  const W = 1040, H = 600, SC = 2;
+  const cv = document.createElement('canvas');
+  cv.width = W * SC; cv.height = H * SC;
+  const g = cv.getContext('2d');
+  g.scale(SC, SC);
+
+  const A = trStats('ally'), B = trStats('enemy');
+  const F = (w, sz) => `${w} ${sz}px "Hiragino Kaku Gothic ProN","Yu Gothic UI",Meiryo,system-ui,sans-serif`;
+
+  /* 背景 */
+  g.fillStyle = '#FBF9F4'; g.fillRect(0, 0, W, H);
+  g.strokeStyle = '#E7E1D5'; g.lineWidth = 2; g.strokeRect(1, 1, W - 2, H - 2);
+
+  /* ヘッダー: ロゴ(リング) + タイトル */
+  g.save();
+  g.translate(52, 52);
+  g.lineWidth = 7; g.lineCap = 'round';
+  g.strokeStyle = '#4A4B4C';
+  g.beginPath(); g.arc(0, 0, 20, -Math.PI / 2, Math.PI * 0.42); g.stroke();
+  g.strokeStyle = '#F28F1D';
+  g.beginPath(); g.arc(0, 0, 12, -Math.PI / 2, Math.PI * 1.62); g.stroke();
+  g.restore();
+  g.fillStyle = '#1F2328'; g.font = F(900, 30); g.textBaseline = 'alphabetic';
+  g.fillText('チーム編成', 92, 54);
+  g.fillStyle = '#8A8578'; g.font = F(800, 13);
+  g.fillText('オーバーツ ・ TEAM COMPOSITION', 92, 76);
+  if (A.n && B.n) {
+    const d = A.avg - B.avg;
+    const verdict = Math.abs(d) < 0.5 ? 'ほぼ互角' : (d > 0 ? '自分たちが上' : '相手が上');
+    g.textAlign = 'right';
+    g.fillStyle = '#6B6558'; g.font = F(900, 16);
+    g.fillText(`平均差 ${d > 0 ? '+' : ''}${trNum(d)}段階 ・ ${verdict}`, W - 44, 62);
+    g.textAlign = 'left';
+  }
+  g.strokeStyle = '#E7E1D5'; g.lineWidth = 2;
+  g.beginPath(); g.moveTo(40, 100); g.lineTo(W - 40, 100); g.stroke();
+
+  /* チームパネル */
+  const panels = [
+    { x: 40, w: 470, st: A, title: 'TEAM A / 自分たち', color: '#2563EB', tint: '#EFF4FF', slot: 'ally' },
+    { x: 530, w: 470, st: B, title: 'TEAM B / 相手', color: '#F28F1D', tint: '#FFF6EA', slot: 'enemy' }
+  ];
+  const ROLE_JA = { Tank: 'TANK', Damage: 'DPS', Support: 'SUP' };
+  const ROLE_BG = { Tank: '#FDE8C8', Damage: '#FCE3E1', Support: '#DDF3E6' };
+  const ROLE_FG = { Tank: '#9A5B00', Damage: '#B23A2A', Support: '#0F7A46' };
+
+  panels.forEach((pn) => {
+    const y0 = 122;
+    /* パネル枠 */
+    g.fillStyle = '#FFFFFF';
+    g.beginPath(); g.roundRect(pn.x, y0, pn.w, 400, 14); g.fill();
+    g.strokeStyle = '#EBE5D9'; g.stroke();
+    /* ヘッダー帯 */
+    g.fillStyle = pn.color;
+    g.beginPath(); g.roundRect(pn.x, y0, pn.w, 52, [14, 14, 0, 0]); g.fill();
+    g.fillStyle = '#FFFFFF'; g.font = F(900, 17);
+    g.fillText(pn.title, pn.x + 20, y0 + 33);
+    g.textAlign = 'right'; g.font = F(900, 18);
+    g.fillText(pn.st.n ? trLabel(pn.st.avg) : '—', pn.x + pn.w - 20, y0 + 33);
+    g.font = F(800, 11); g.fillStyle = 'rgba(255,255,255,.82)';
+    g.fillText(pn.st.n ? `avg ${trNum(pn.st.avg)} / ${TR_MAX}` : '', pn.x + pn.w - 20, y0 + 47);
+    g.textAlign = 'left';
+
+    /* 5枠 */
+    for (let i = 0; i < 5; i++) {
+      const id = tr[pn.slot][i];
+      const p = id ? trPlyOf(id) : null;
+      const role = TR_SLOTS[i];
+      const ry = y0 + 52 + 12 + i * 66;
+      if (p) {
+        const rk = trRankOf(p, role);
+        const rkTxt = rk ? rankName(rk) : 'アンランク';
+        /* ロール */
+        g.fillStyle = ROLE_BG[role] || '#EEE';
+        g.beginPath(); g.roundRect(pn.x + 16, ry + 14, 54, 26, 7); g.fill();
+        g.fillStyle = ROLE_FG[role] || '#333'; g.font = F(900, 12);
+        g.fillText(ROLE_JA[role] || role, pn.x + 26, ry + 32);
+        /* 名前 */
+        g.fillStyle = '#1F2328'; g.font = F(900, 20);
+        g.fillText(p.name, pn.x + 82, ry + 35);
+        /* ランク */
+        g.textAlign = 'right';
+        g.fillStyle = rk ? (rk.assumed ? '#B45309' : '#5B5548') : '#9A9486';
+        g.font = F(900, 15);
+        g.fillText(rkTxt + (rk && rk.assumed ? ' 推定' : ''), pn.x + pn.w - 18, ry + 34);
+        g.textAlign = 'left';
+      } else {
+        g.fillStyle = '#EFECE4';
+        g.beginPath(); g.roundRect(pn.x + 16, ry + 12, pn.w - 32, 40, 10); g.fill();
+        g.fillStyle = '#A9A296'; g.font = F(800, 14);
+        g.fillText('（空き）', pn.x + 32, ry + 38);
+      }
+      if (i < 4) {
+        g.strokeStyle = '#F2EEE5'; g.lineWidth = 1;
+        g.beginPath(); g.moveTo(pn.x + 16, ry + 60); g.lineTo(pn.x + pn.w - 16, ry + 60); g.stroke();
+      }
+    }
+  });
+
+  /* フッター */
+  g.fillStyle = '#8A8578'; g.font = F(800, 12);
+  g.textAlign = 'center';
+  g.fillText('オーバーツ / OW2 身内ランキング', W / 2, H - 26);
+  g.textAlign = 'left';
+
+  return new Promise((res) => cv.toBlob((b) => res(b), 'image/png'));
+}
+
+async function trSendToDiscord() {
+  const btn = document.getElementById('trSendBtn');
+  if (!btn || btn.disabled) return;
+  const ready = tr.ally.every(Boolean) && tr.enemy.every(Boolean);
+  if (!ready) return;
+  btn.dataset.busy = '1'; btn.disabled = true;
+  const label = btn.textContent;
+  btn.textContent = '送信中…';
+  try {
+    const blob = await trPosterBlob();
+    if (!blob) throw new Error('画像の生成に失敗しました');
+    const A = trStats('ally'), B = trStats('enemy');
+    const diff = (A.n && B.n) ? trNum(A.avg - B.avg) : null;
+    const lines = [
+      '**チーム編成**',
+      A.n ? `TEAM A 平均 ${trLabel(A.avg)} (${trNum(A.avg)})` : 'TEAM A —',
+      B.n ? `TEAM B 平均 ${trLabel(B.avg)} (${trNum(B.avg)})` : 'TEAM B —',
+      diff === null ? '' : `平均差 ${diff > 0 ? '+' : ''}${diff}段階`
+    ].filter(Boolean);
+    const fd = new FormData();
+    fd.append('payload_json', JSON.stringify({ content: lines.join('\n'), username: 'オーバーツ' }));
+    fd.append('files[0]', blob, 'team-composition.png');
+    const res = await fetch(TR_WEBHOOK + '?wait=true&thread_id=' + encodeURIComponent(TR_THREAD_ID), { method: 'POST', body: fd });
+    if (!res.ok) throw new Error('Discordが受け付けませんでした (HTTP ' + res.status + ')');
+    btn.textContent = '✅ 送信しました';
+    setTimeout(() => { btn.textContent = label; btn.dataset.busy = ''; trUpdateSendBtn(); }, 1800);
+  } catch (err) {
+    btn.textContent = '⚠ 送信失敗';
+    btn.title = String(err && err.message || err);
+    setTimeout(() => { btn.textContent = label; btn.dataset.busy = ''; trUpdateSendBtn(); }, 2600);
+  }
+}
+document.addEventListener('click', (e) => {
+  if (e.target.closest('#trSendBtn')) { e.preventDefault(); trSendToDiscord(); }
+});
+
 /* 例を入れる: 各枠をそのロールが本職の選手で埋める(両チームで重複なし) */
 function trFillExample() {
   const pool = trPlayers();
@@ -4057,9 +4459,10 @@ $('#trCtl').addEventListener('click', (e) => {
  * =================================================================== */
 const TRB_POOL = 24;
 const TRB_TOL = 1.0;          // 最小差からこの段階までの候補を残す
+const TRB_TANK_TOL = 2.0;     // タンク同士のランク差の許容(小さい案を優先)
 const TRB_CH = ['tank', 'damage', 'support'];
 const TRB_JA = ['タンク', 'ダメージ', 'サポート'];
-const trb = { present: null, opts: null, key: '', ms: 0, deck: [], spinning: false, revealed: -1, timer: 0, sound: true };
+const trb = { present: null, opts: null, key: '', ms: 0, deck: [], spinning: false, revealed: -1, timer: 0, sound: true, fast: false };
 
 function trbPlayers() { return trPlayers(); }
 function trbPresent() {
@@ -4117,7 +4520,7 @@ function trbEnumerate(sc, sink) {
         for (const ss of sSplits) {
           const a = tankA + ds.a + ss.a;
           const b = tankB + ds.b + ss.b;
-          sink(Math.abs(a - b), a, b, T, ds.da, ds.db, ss.sa, ss.sb);
+          sink(Math.abs(a - b), a, b, T, ds.da, ds.db, ss.sa, ss.sb, Math.abs(tankA - tankB));
         }
       }
     }
@@ -4142,7 +4545,7 @@ function trbSolve() {
   trbEnumerate(sc, (d) => { if (d < minDiff) minDiff = d; });
   const cands = [];
   let minZero = 99;
-  trbEnumerate(sc, (d, a, b, T, da, db, sa, sb) => {
+  trbEnumerate(sc, (d, a, b, T, da, db, sa, sb, tg) => {
     if (d > minDiff + TRB_TOL) return;
     let z = 0;
     if (!hasRank[T[0]][0]) z++;
@@ -4152,11 +4555,17 @@ function trbSolve() {
     for (const i of sa) if (!hasRank[i][2]) z++;
     for (const i of sb) if (!hasRank[i][2]) z++;
     if (z < minZero) minZero = z;
-    cands.push({ diff: d, a, b, z, s: trbCode(T, da, db, sa, sb) });
+    cands.push({ diff: d, a, b, z, tg, s: trbCode(T, da, db, sa, sb) });
   });
   /* 未ランク枠は最少+2まで許す(最少に固定すると、ランクが1ロールしか無い人が毎回同じロールになる) */
-  const keep = cands.filter((c) => c.z <= minZero + 2);
-  keep.sort((x, y) => (x.diff - y.diff) || (x.z - y.z) || ((y.a + y.b) - (x.a + x.b)));
+  let keep = cands.filter((c) => c.z <= minZero + 2);
+  /* タンク同士のランク差が開くと試合が崩れるので、差が小さい案を優先して残す */
+  if (keep.length) {
+    const minTG = keep.reduce((m, c) => (c.tg < m ? c.tg : m), Infinity);
+    const tkeep = keep.filter((c) => c.tg <= minTG + TRB_TANK_TOL);
+    if (tkeep.length) keep = tkeep;
+  }
+  keep.sort((x, y) => (x.diff - y.diff) || (x.tg - y.tg) || (x.z - y.z) || ((y.a + y.b) - (x.a + x.b)));
   const pool2 = keep.slice(0, 1500);
   const picked = [];
   if (pool2.length) picked.push(pool2[0]);
@@ -4227,6 +4636,7 @@ function trbRender() {
       <div class="trb-ctl">
         <button class="filter-btn ${trb.spinning ? '' : 'active'}" data-trbroll="1" ${trb.spinning ? 'disabled' : ''}>${roll}</button>
         <button class="filter-btn" data-trbsound="1" title="MATCH FOUND の効果音">${trb.sound ? '🔊 音あり' : '🔇 音なし'}</button>
+        <button class="filter-btn ${trb.fast ? 'active' : ''}" data-trbfast="1" title="演出を10倍速で再生(一瞬でチームが決まります)">⚡ 10倍速</button>
         <span class="trb-note" style="margin:0">10枠が回って1案が決まります(どの案もほぼ同じランク差)</span>
       </div>`;
   }
@@ -4234,7 +4644,7 @@ function trbRender() {
     <div class="trb-head"><h3>⚖ オートバランス</h3><span class="trb-count ${can ? 'ok' : 'ng'}">参加 ${n}/10</span>
       ${trb.ms ? `<span class="trb-time">${trb.ms}ms</span>` : ''}
     </div>
-    <div class="trb-note">いない人はクリックで外してください。<b>残った10人</b>を「Tank1 / Damage2 / Support2」の両チームに、<b>合計ランクの差が最小</b>になるように分けます。同じロールばかりにならないよう、役割の組み合わせが違う案を用意し、<b>ルーレット</b>で1案ずつ発表します。</div>
+    <div class="trb-note">いない人はクリックで外してください。<b>残った10人</b>を「Tank1 / Damage2 / Support2」の両チームに、<b>合計ランクの差が最小</b>になるように分けます(<b>タンク同士のランク差</b>も小さくなるよう優先)。同じロールばかりにならないよう、役割の組み合わせが違う案を用意し、<b>ルーレット</b>で1案ずつ発表します。</div>
     <div class="trb-members">${chips}</div>
     <div class="trb-ctl">
       <button class="filter-btn ${can && !trb.spinning ? 'active' : ''}" data-trbrun="1" ${can && !trb.spinning ? '' : 'disabled'}>オートバランス</button>
@@ -4280,7 +4690,8 @@ function trbPlaySnd(key, vol) {
   } catch (e) { /* 音が出せない環境では無視 */ }
 }
 /* 決定エフェクト(全画面・短め) */
-function trbDecided(onDone) {
+function trbDecided(onDone, sp) {
+  const SP = sp || 1;
   const old = document.querySelector('.mfound');
   if (old) old.remove();
   const box = document.createElement('div');
@@ -4296,14 +4707,15 @@ function trbDecided(onDone) {
     </div>`;
   document.body.appendChild(box);
   trbPlaySnd('lock', TRB_T.volLock);
-  setTimeout(() => { box.classList.add('out'); }, TRB_T.lockHold);
+  setTimeout(() => { box.classList.add('out'); }, TRB_T.lockHold / SP);
   setTimeout(() => {
     if (box.parentNode) box.remove();
     if (typeof onDone === 'function') onDone();
-  }, TRB_T.lockHold + TRB_T.lockFade);
+  }, (TRB_T.lockHold + TRB_T.lockFade) / SP);
 }
 /* MATCH FOUND のオーバーレイ(確定時に一瞬出す) */
-function trbMatchFound(teams, onReveal) {
+function trbMatchFound(teams, onReveal, sp) {
+  const SP = sp || 1;
   const old = document.querySelector('.mfound');
   if (old) old.remove();
   const box = document.createElement('div');
@@ -4324,8 +4736,8 @@ function trbMatchFound(teams, onReveal) {
   setTimeout(() => {
     box.classList.add('out');
     if (typeof onReveal === 'function') onReveal();
-  }, TRB_T.matchHold);
-  setTimeout(() => { if (box.parentNode) box.remove(); }, TRB_T.matchHold + TRB_T.matchFade);
+  }, TRB_T.matchHold / SP);
+  setTimeout(() => { if (box.parentNode) box.remove(); }, (TRB_T.matchHold + TRB_T.matchFade) / SP);
 }
 /* ルーレット: MATCH FOUND(全画面) → ロールごとに回転 → 決定エフェクト */
 /* =====================================================================
@@ -4484,6 +4896,7 @@ const TRFX = (function () {
 
 function trbSpin() {
   if (trb.spinning || !trb.opts || !trb.opts.length) return;
+  const SP = trb.fast ? 10 : 1;   // 10倍速
   const idx = trbDeckNext();
   const finalTeams = trbTeams(trb.opts[idx]);
   const pool = trbPresent().slice().sort().map(trPlyOf);
@@ -4529,7 +4942,7 @@ function trbSpin() {
       lines[k].style.transform = `rotateX(${(k * FACE).toFixed(2)}deg) translateZ(${rad.toFixed(2)}px)`;
     }
     const spinDeg = FACE * NF * 3;       // 3回転
-    const dur = TRB_T.spinMs;
+    const dur = TRB_T.spinMs / SP;
     /* 動きを減らす設定なら回さず、正面の面を表示 */
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       inEl.style.transform = `scale3d(${sc.toFixed(4)},${sc.toFixed(4)},${sc.toFixed(4)})`;
@@ -4563,7 +4976,7 @@ function trbSpin() {
       res();
     }, delay);
   });
-  const finish = () => {
+  const finish = (skipFx) => {
     trb.spinning = false;
     trb.revealed = idx;
     tr.ally = finalTeams[0].map((x) => x.p.id);
@@ -4572,13 +4985,14 @@ function trbSpin() {
     if (b) b.classList.remove('spinning');
     trRender();
     trbRender();
+    if (skipFx) return;          /* 10倍速では TEAM LOCKED を出さない */
     trbDecided(() => {
       const b2 = document.getElementById('trBody');
       if (!b2) return;
       Array.prototype.forEach.call(b2.querySelectorAll('.tr-slot'), (el, k) => {
-        setTimeout(() => { el.classList.add('hl'); setTimeout(() => el.classList.remove('hl'), 900); }, k * 60);
+        setTimeout(() => { el.classList.add('hl'); setTimeout(() => el.classList.remove('hl'), 900 / SP); }, k * 60 / SP);
       });
-    });
+    }, SP);
   };
   const run = async () => {
     const cancels = {};
@@ -4590,17 +5004,30 @@ function trbSpin() {
         TRFX.add(el);                    // このスロットの縁から火花を出す
         cancels[i] = reelRun(el, g.role); // 下へ流れるリール(終盤は減速)
       });
-      await wait(TRB_T.spinMs);
+      await wait(TRB_T.spinMs / SP);
       setHeads(g.label + ' ✓');
       g.idx.forEach((i) => { if (cancels[i]) { cancels[i](); cancels[i] = null; } });
       trbPlaySnd('lock', TRB_T.volLockSpin);
-      await Promise.all(g.idx.map((i, k) => lockOne(i, g.role, k * TRB_T.lockStagger)));
-      await wait(150);
+      await Promise.all(g.idx.map((i, k) => lockOne(i, g.role, k * TRB_T.lockStagger / SP)));
+      await wait(150 / SP);
     }
     finish();
   };
   /* 全画面の MATCH FOUND がフェードし始めたらロール抽選スタート */
-  trbMatchFound(finalTeams, () => { run(); });
+  /* 10倍速: ルーレットは回さず、10枠が一斉に左右から突っ込む(チーム1=左から / チーム2=右から) */
+  if (SP > 1) {
+    slots.forEach((el, i) => {
+      const x = finalFor(i);
+      if (!el || !x) return;
+      el.innerHTML = htmlOf(x.p, TR_SLOTS[i]);
+      el.classList.add(i < 5 ? 'slam-l' : 'slam-r');
+      const row = el.closest('.tr-slot');
+      if (row) row.classList.add('lock');
+    });
+    setTimeout(() => { finish(true); }, 500);    /* 10倍速は全部で0.5秒 */
+    return;
+  }
+  trbMatchFound(finalTeams, () => { run(); }, SP);
 }
 $('#trBalBody').addEventListener('click', (e) => {
   if (trb.spinning) return;
@@ -4608,6 +5035,7 @@ $('#trBalBody').addEventListener('click', (e) => {
   if (chip) { trbToggle(chip.dataset.trbid); trbRender(); return; }
   if (e.target.closest('[data-trbrun]')) { trb.opts = null; trbSolve(); trbRender(); return; }
   if (e.target.closest('[data-trbsound]')) { trb.sound = !trb.sound; trbRender(); return; }
+  if (e.target.closest('[data-trbfast]')) { trb.fast = !trb.fast; trbRender(); return; }
   if (e.target.closest('[data-trbroll]')) { trbSpin(); }
 });
 
@@ -4828,7 +5256,7 @@ function osRadarSvg(rows, meId, cmpId, role){
   const me = rows.find(r => r.id === meId);
   if (!me) return '';
   const other = cmpId ? rows.find(r => r.id === cmpId) : null;
-  const W = 320, H = 258, cx = W / 2, cy = H / 2 + 2, R = 84;
+  const W = 320, H = 226, cx = W / 2, cy = H / 2 + 2, R = 74;
   const maxOf = a => {
     let mx = 0;
     for (const r of rows) { const v = a.get(r); if (typeof v === 'number' && isFinite(v) && v > mx) mx = v; }
@@ -4933,7 +5361,7 @@ function osCompareTable(rows, meId, cmpId){
 function osLine2(a, b, nameA, nameB){
   const all = (a || []).concat(b || []);
   if (!all.length) return '';
-  const W = 580, H = 200, L = 46, R = 16, T = 16, B = 30;
+  const W = 580, H = 172, L = 46, R = 16, T = 12, B = 26;
   const dates = Array.from(new Set(all.map(p => p.d))).sort();
   const vs = all.map(p => p.v);
   let mn = Math.min(...vs), mx = Math.max(...vs);
@@ -5091,6 +5519,8 @@ function osRenderGrid(){
   const list = os.role === 'All' ? all : all.filter(h => h.role === os.role);
   if (cnt) cnt.textContent = `${list.length} ヒーロー / 全${all.length}体`;
   if (!list.length) { grid.innerHTML = `<div class="os-empty">このプレイヤー・ロールのデータがありません</div>`; return; }
+  const anySpark = list.some(h => h.pts && h.pts.length > 1 && new Set(h.pts.map(p => p.v)).size > 1);
+  grid.classList.toggle('no-spark', !anySpark);
   grid.innerHTML = list.map(h => {
     const dl = (h.delta == null || Math.abs(h.delta) < 0.05) ? '' : `${h.delta > 0 ? '+' : ''}${h.delta.toFixed(1)}`;
     return `<button class="os-h ${h.slug === os.slug ? 'on' : ''}" data-osslug="${h.slug}" title="${esc(h.n)} ・ ${esc(h.role)} ・ ${h.g != null ? h.g + '試合' : ''}">
@@ -5624,7 +6054,7 @@ function ddRender() {
       : `<span class="dd-chip nos" title="このプレイヤーはヒーロースコアのデータがありません">データなし</span>`);
     const more = r.all.length > r.top.length ? `<span class="dd-chip" style="color:#94a3b8">ほか${r.all.length - r.top.length}体</span>` : '';
     return `<div class="dd-p">
-      <div class="dd-pname"><span class="pl-av ${roleCls(r.p.role)}">${faceMarkup(r.p)}</span><span class="nm">P${i + 1} ${esc(r.p.name)}</span>${customAdjusted(r.p) ? '<span class="dd-ovr" title="カスタム用にスコアを調整しています(タンク一律300 / DPS 70〜300 / サポート 60〜180)">調整</span>' : ''}</div>
+      <div class="dd-pname"><span class="pl-av ${roleCls(r.p.role)}">${faceMarkup(r.p)}</span><span class="nm">P${i + 1} ${esc(r.p.name)}</span>${customAdjusted(r.p) ? '<span class="dd-ovr" title="カスタム用スコアに調整しています(この表の数値)">調整</span>' : ''}</div>
       <div class="dd-chips">${chips}${more}</div>
       <div class="dd-sumv" title="コピーに含める上位Nの合計 / 予算の目安(30〜50%)">Σ ${Math.round(r.sumTop * 10) / 10} ・ 予算目安 ${Math.round(r.sumTop * 0.3)}〜${Math.round(r.sumTop * 0.5)}</div>
     </div>`;
