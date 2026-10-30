@@ -2313,6 +2313,7 @@ html.intro-lock{overflow:hidden}
           <button class="filter-btn" data-azsample="1">例を入れる</button>
           <button class="filter-btn" data-azreset="1">リセット</button>
           <button class="filter-btn tr-send" id="trSendBtn" disabled title="この編成の画像をDiscordへ送信します">📤 Discordに送信</button>
+          <button class="filter-btn" id="trKeyBtn" title="送信キー（合言葉）を設定・変更">🔑</button>
         </div>
       </div>
       <div id="trBody"></div>
@@ -4248,6 +4249,11 @@ function trUpdateSendBtn() {
   if (!b) return;
   const ready = tr.ally.every(Boolean) && tr.enemy.every(Boolean);
   b.disabled = !ready || !!b.dataset.busy;
+  b.title = !TR_SEND_ENDPOINT
+    ? '送信先が未設定(WorkerのURLを入れてください)'
+    : (trTokenGet() ? 'この編成の画像をDiscordへ送信します' : '初回は合言葉の入力が必要です');
+  const k = document.getElementById('trKeyBtn');
+  if (k) k.classList.toggle('active', !!trTokenGet());
 }
 
 /* =====================================================================
@@ -4255,9 +4261,25 @@ function trUpdateSendBtn() {
  *   ・ルーレット後の編成をCanvasで1枚の画像にしてWebhookへPOST
  *   ・画像はcanvas.toBlob(クライアント生成)なので外部ライブラリ不要
  * =================================================================== */
-const TR_WEBHOOK = 'https://discord.com/api/webhooks/1565701065423327382/YTlHY0M7SxtQGgUCOdQ8hPraibYhh5yUtSX_lycqBbd7ifP4MdI2kAW3Phz-XwUydCeT';
-/* 送信先のスレッド(チャンネルのスレッドID)。スレッドへ送る場合は thread_id を付ける */
-const TR_THREAD_ID = '1565700963770175538';
+/* Discord送信は Cloudflare Worker 経由(Webhook URL はWorker側に隠す)。
+   Worker をデプロイしたら、その URL を下に入れてください(例: https://owz-webhook.xxxx.workers.dev/) */
+var TR_SEND_ENDPOINT = 'https://owz-webhook.osirenakyunde.workers.dev/';
+/* 合言葉の保存キー(ブラウザのlocalStorageに保存) */
+const TR_TOKEN_KEY = 'owz_tr_token';
+function trTokenGet() { try { return localStorage.getItem(TR_TOKEN_KEY) || ''; } catch (e) { return ''; } }
+function trTokenSet(v) {
+  try { if (v) localStorage.setItem(TR_TOKEN_KEY, v); else localStorage.removeItem(TR_TOKEN_KEY); } catch (e) {}
+}
+/* 合言葉を聞く(空でOKなら削除) */
+function trAskToken() {
+  const cur = trTokenGet();
+  const v = window.prompt('送信キー（合言葉）を入力してください\n空欄でOKを押すと登録を解除します', cur ? '' : '');
+  if (v === null) return null;
+  const t = v.trim();
+  trTokenSet(t);
+  trUpdateSendBtn();
+  return t || null;
+}
 
 function trPosterBlob() {
   const W = 1040, H = 600, SC = 2;
@@ -4373,6 +4395,14 @@ async function trSendToDiscord() {
   if (!btn || btn.disabled) return;
   const ready = tr.ally.every(Boolean) && tr.enemy.every(Boolean);
   if (!ready) return;
+  if (!TR_SEND_ENDPOINT) {
+    btn.textContent = '⚠ 送信先が未設定';
+    btn.title = 'index.html の TR_SEND_ENDPOINT に Worker の URL を入れてください';
+    setTimeout(() => { btn.textContent = '📤 Discordに送信'; }, 2600);
+    return;
+  }
+  let token = trTokenGet();
+  if (!token) { token = trAskToken(); if (!token) return; }
   btn.dataset.busy = '1'; btn.disabled = true;
   const label = btn.textContent;
   btn.textContent = '送信中…';
@@ -4390,8 +4420,17 @@ async function trSendToDiscord() {
     const fd = new FormData();
     fd.append('payload_json', JSON.stringify({ content: lines.join('\n'), username: 'オーバーツ' }));
     fd.append('files[0]', blob, 'team-composition.png');
-    const res = await fetch(TR_WEBHOOK + '?wait=true&thread_id=' + encodeURIComponent(TR_THREAD_ID), { method: 'POST', body: fd });
-    if (!res.ok) throw new Error('Discordが受け付けませんでした (HTTP ' + res.status + ')');
+    const res = await fetch(TR_SEND_ENDPOINT, {
+      method: 'POST',
+      headers: { Authorization: 'Bearer ' + token },
+      body: fd
+    });
+    if (res.status === 401 || res.status === 403) {
+      trTokenSet('');
+      throw new Error(res.status === 401 ? '合言葉が違います(🔑 で入れ直してください)' : '送信が許可されていません');
+    }
+    if (res.status === 429) throw new Error('送信が連続しています。少し待ってから送ってください');
+    if (!res.ok) throw new Error('送信に失敗しました (HTTP ' + res.status + ')');
     btn.textContent = '✅ 送信しました';
     setTimeout(() => { btn.textContent = label; btn.dataset.busy = ''; trUpdateSendBtn(); }, 1800);
   } catch (err) {
@@ -4401,7 +4440,8 @@ async function trSendToDiscord() {
   }
 }
 document.addEventListener('click', (e) => {
-  if (e.target.closest('#trSendBtn')) { e.preventDefault(); trSendToDiscord(); }
+  if (e.target.closest('#trSendBtn')) { e.preventDefault(); trSendToDiscord(); return; }
+  if (e.target.closest('#trKeyBtn')) { e.preventDefault(); trAskToken(); }
 });
 
 /* 例を入れる: 各枠をそのロールが本職の選手で埋める(両チームで重複なし) */
