@@ -1,7 +1,7 @@
 'use strict';
 
 /* 生成データ: update.mjs が自動生成(手編集は上書き) ・ 元データ: OverFast API */
-const LAST_UPDATED_ISO = "2026-10-30T20:35:28.266Z";
+const LAST_UPDATED_ISO = "2026-10-31T00:35:18.278Z";
 /* ライバル・プレイ(コンペティティブ)のみ */
 const PLAYERS_COMP = [
   {
@@ -19917,8 +19917,7 @@ const PLAYERS_ALL = [
           "as10": 18.692777777777778,
           "wa": 55.166666666666664,
           "ca": 0
-        },
-        "rankDeltaPower": 1
+        }
       },
       "dva": {
         "finalScore": 52.47,
@@ -20138,8 +20137,7 @@ const PLAYERS_ALL = [
           "as10": 1.6408510638297873,
           "wa": 0,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "roadhog": {
         "finalScore": 60.45,
@@ -20901,8 +20899,7 @@ const PLAYERS_ALL = [
           "as10": 18.692777777777778,
           "wa": 55.166666666666664,
           "ca": 0
-        },
-        "rankDeltaPower": 1
+        }
       },
       "dva": {
         "finalScore": 52.47,
@@ -21122,8 +21119,7 @@ const PLAYERS_ALL = [
           "as10": 1.6408510638297873,
           "wa": 0,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "roadhog": {
         "finalScore": 60.45,
@@ -33404,8 +33400,7 @@ const PLAYERS_ALL = [
           "as10": 0.39,
           "wa": 37,
           "ca": 15
-        },
-        "rankDelta": 1
+        }
       },
       "baptiste": {
         "finalScore": 29.39,
@@ -33825,8 +33820,7 @@ const PLAYERS_ALL = [
           "as10": 0.9,
           "wa": 0,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "roadhog": {
         "finalScore": 23.66,
@@ -34228,8 +34222,7 @@ const PLAYERS_ALL = [
           "as10": 0.39,
           "wa": 37,
           "ca": 15
-        },
-        "rankDelta": 1
+        }
       },
       "baptiste": {
         "finalScore": 29.39,
@@ -34649,8 +34642,7 @@ const PLAYERS_ALL = [
           "as10": 0.9,
           "wa": 0,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "roadhog": {
         "finalScore": 23.66,
@@ -43584,8 +43576,7 @@ const PLAYERS_ALL = [
           "as10": 14.296842105263156,
           "wa": 26.25263157894737,
           "ca": 14.936842105263159
-        },
-        "rankDelta": 1
+        }
       },
       "moira": {
         "finalScore": 62.17,
@@ -43945,8 +43936,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 25,
           "ca": 13
-        },
-        "rankDelta": 1
+        }
       },
       "hazard": {
         "finalScore": 34.85,
@@ -43966,8 +43956,7 @@ const PLAYERS_ALL = [
           "as10": 2.63,
           "wa": 26,
           "ca": 11
-        },
-        "rankDelta": 1
+        }
       },
       "hanzo": {
         "finalScore": 40.9,
@@ -44227,9 +44216,7 @@ const PLAYERS_ALL = [
           "as10": 0.42,
           "wa": 0,
           "ca": 0
-        },
-        "rankDelta": -3,
-        "rankDeltaPower": -1
+        }
       },
       "roadhog": {
         "finalScore": 41.21,
@@ -44289,8 +44276,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 29,
           "ca": 10
-        },
-        "rankDeltaPower": 1
+        }
       },
       "soldier-76": {
         "finalScore": 42.57,
@@ -44472,8 +44458,7 @@ const PLAYERS_ALL = [
           "as10": 14.296842105263156,
           "wa": 26.25263157894737,
           "ca": 14.936842105263159
-        },
-        "rankDelta": 1
+        }
       },
       "moira": {
         "finalScore": 62.17,
@@ -44833,8 +44818,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 25,
           "ca": 13
-        },
-        "rankDelta": 1
+        }
       },
       "hazard": {
         "finalScore": 34.85,
@@ -44854,8 +44838,7 @@ const PLAYERS_ALL = [
           "as10": 2.63,
           "wa": 26,
           "ca": 11
-        },
-        "rankDelta": 1
+        }
       },
       "hanzo": {
         "finalScore": 40.9,
@@ -45115,9 +45098,7 @@ const PLAYERS_ALL = [
           "as10": 0.42,
           "wa": 0,
           "ca": 0
-        },
-        "rankDelta": -3,
-        "rankDeltaPower": -1
+        }
       },
       "roadhog": {
         "finalScore": 41.21,
@@ -45177,8 +45158,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 29,
           "ca": 10
-        },
-        "rankDeltaPower": 1
+        }
       },
       "soldier-76": {
         "finalScore": 42.57,
