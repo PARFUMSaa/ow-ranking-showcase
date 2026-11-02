@@ -1,7 +1,7 @@
 'use strict';
 
 /* 生成データ: update.mjs が自動生成(手編集は上書き) ・ 元データ: OverFast API */
-const LAST_UPDATED_ISO = "2026-11-02T09:05:15.324Z";
+const LAST_UPDATED_ISO = "2026-11-02T11:22:38.593Z";
 /* ライバル・プレイ(コンペティティブ)のみ */
 const PLAYERS_COMP = [
   {
@@ -41669,8 +41669,7 @@ const PLAYERS_ALL = [
           "as10": 11.123553299492386,
           "wa": 51.984771573604064,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "ashe": {
         "finalScore": 45.14,
@@ -41770,8 +41769,7 @@ const PLAYERS_ALL = [
           "as10": 2.2732031249999998,
           "wa": 25,
           "ca": 0
-        },
-        "rankDelta": 1
+        }
       },
       "mizuki": {
         "finalScore": 56.69,
@@ -41871,8 +41869,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 30.902439024390244,
           "ca": 10
-        },
-        "rankDelta": -1
+        }
       },
       "wuyang": {
         "finalScore": 51.53,
@@ -41892,8 +41889,7 @@ const PLAYERS_ALL = [
           "as10": 14.445064935064938,
           "wa": 24.92207792207792,
           "ca": 0
-        },
-        "rankDeltaPower": 1
+        }
       },
       "anran": {
         "finalScore": 59.72,
@@ -41933,8 +41929,7 @@ const PLAYERS_ALL = [
           "as10": 11.08,
           "wa": 30,
           "ca": 11
-        },
-        "rankDeltaPower": -1
+        }
       },
       "bastion": {
         "finalScore": 58.46,
@@ -42374,8 +42369,7 @@ const PLAYERS_ALL = [
           "as10": 12.85,
           "wa": 0,
           "ca": 0
-        },
-        "rankDelta": 3
+        }
       },
       "orisa": {
         "finalScore": 30.49,
@@ -42615,8 +42609,7 @@ const PLAYERS_ALL = [
           "as10": 2.68,
           "wa": 0,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "venture": {
         "finalScore": 41.47,
@@ -42736,8 +42729,7 @@ const PLAYERS_ALL = [
           "as10": 15.75,
           "wa": 26,
           "ca": 12
-        },
-        "rankDelta": -1
+        }
       }
     },
     "bscoreAll": {
@@ -42759,8 +42751,7 @@ const PLAYERS_ALL = [
           "as10": 11.123553299492386,
           "wa": 51.984771573604064,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "ashe": {
         "finalScore": 45.14,
@@ -42860,8 +42851,7 @@ const PLAYERS_ALL = [
           "as10": 2.2732031249999998,
           "wa": 25,
           "ca": 0
-        },
-        "rankDelta": 1
+        }
       },
       "mizuki": {
         "finalScore": 56.69,
@@ -42961,8 +42951,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 30.902439024390244,
           "ca": 10
-        },
-        "rankDelta": -1
+        }
       },
       "wuyang": {
         "finalScore": 51.53,
@@ -42982,8 +42971,7 @@ const PLAYERS_ALL = [
           "as10": 14.445064935064938,
           "wa": 24.92207792207792,
           "ca": 0
-        },
-        "rankDeltaPower": 1
+        }
       },
       "anran": {
         "finalScore": 59.72,
@@ -43023,8 +43011,7 @@ const PLAYERS_ALL = [
           "as10": 11.08,
           "wa": 30,
           "ca": 11
-        },
-        "rankDeltaPower": -1
+        }
       },
       "bastion": {
         "finalScore": 58.46,
@@ -43464,8 +43451,7 @@ const PLAYERS_ALL = [
           "as10": 12.85,
           "wa": 0,
           "ca": 0
-        },
-        "rankDelta": 3
+        }
       },
       "orisa": {
         "finalScore": 30.49,
@@ -43705,8 +43691,7 @@ const PLAYERS_ALL = [
           "as10": 2.68,
           "wa": 0,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "venture": {
         "finalScore": 41.47,
@@ -43826,8 +43811,7 @@ const PLAYERS_ALL = [
           "as10": 15.75,
           "wa": 26,
           "ca": 12
-        },
-        "rankDelta": -1
+        }
       }
     },
     "recent": [
