@@ -4375,6 +4375,20 @@ function trUpdateSendBtn() {
  * =================================================================== */
 /* Discord送信は Cloudflare Worker 経由(Webhook URL はWorker側に隠す)。
    Worker をデプロイしたら、その URL を下に入れてください(例: https://owz-webhook.xxxx.workers.dev/) */
+/* プレイヤー番号(P1〜P13) — Discord画像に表示 */
+const TR_PNO = {
+  makky: 1, voidglove: 2, maru: 3, marumaru: 4, p12: 5, p10: 6, p6: 7,
+  hiyori: 8, p5: 9, p11: 10, p7: 11, p9: 12, p8: 13
+};
+const TR_PNO_NAME = {
+  'ぼいどぐらぶ': 2, 'まる熊': 3, 'marumaru': 4, '生パスタ': 5, 'Nnware': 6,
+  'ぼんやりリッチ': 7, 'ひよりっつぁっん': 8, 'monsterlumix': 9, 'PIPURO': 10,
+  'りんご': 11, 'Miyasho': 12, 'センチネル後藤': 13
+};
+function trPlayerNo(p) {
+  if (!p) return '';
+  return TR_PNO[p.id] || TR_PNO_NAME[p.name] || '';
+}
 var TR_SEND_ENDPOINT = 'https://owz-webhook.osirenakyunde.workers.dev/';
 /* 合言葉の保存キー(ブラウザのlocalStorageに保存) */
 const TR_TOKEN_KEY = 'owz_tr_token';
@@ -4471,9 +4485,19 @@ function trPosterBlob() {
         g.beginPath(); g.roundRect(pn.x + 16, ry + 14, 54, 26, 7); g.fill();
         g.fillStyle = ROLE_FG[role] || '#333'; g.font = F(900, 12);
         g.fillText(ROLE_JA[role] || role, pn.x + 26, ry + 32);
+        /* プレイヤー番号 */
+        const no = trPlayerNo(p);
+        if (no) {
+          g.fillStyle = '#EDE7FB';
+          g.beginPath(); g.roundRect(pn.x + 78, ry + 15, 34, 24, 6); g.fill();
+          g.fillStyle = '#5B21B6'; g.font = F(900, 12);
+          g.textAlign = 'center';
+          g.fillText('P' + no, pn.x + 95, ry + 31);
+          g.textAlign = 'left';
+        }
         /* 名前 */
         g.fillStyle = '#1F2328'; g.font = F(900, 20);
-        g.fillText(p.name, pn.x + 82, ry + 35);
+        g.fillText(p.name, pn.x + (no ? 120 : 82), ry + 35);
         /* ランク(先に幅を測って、4thはその左に置く) */
         const rkText = rkTxt + (rk && rk.assumed ? ' 推定' : '');
         g.textAlign = 'right';
