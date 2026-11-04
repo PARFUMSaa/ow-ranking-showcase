@@ -1,7 +1,7 @@
 'use strict';
 
 /* 生成データ: update.mjs が自動生成(手編集は上書き) ・ 元データ: OverFast API */
-const LAST_UPDATED_ISO = "2026-11-03T23:54:35.802Z";
+const LAST_UPDATED_ISO = "2026-11-04T05:33:02.311Z";
 /* ライバル・プレイ(コンペティティブ)のみ */
 const PLAYERS_COMP = [
   {
@@ -26005,8 +26005,7 @@ const PLAYERS_ALL = [
           "as10": 0.4435643564356435,
           "wa": 24.88118811881188,
           "ca": 10.297029702970297
-        },
-        "rankDeltaPower": -1
+        }
       },
       "genji": {
         "finalScore": 151.31,
@@ -26866,8 +26865,7 @@ const PLAYERS_ALL = [
           "as10": 2.14,
           "wa": 38,
           "ca": 13
-        },
-        "rankDeltaPower": 1
+        }
       },
       "wrecking-ball": {
         "finalScore": 118.67,
@@ -27069,8 +27067,7 @@ const PLAYERS_ALL = [
           "as10": 0.4435643564356435,
           "wa": 24.88118811881188,
           "ca": 10.297029702970297
-        },
-        "rankDeltaPower": -1
+        }
       },
       "genji": {
         "finalScore": 151.31,
@@ -27930,8 +27927,7 @@ const PLAYERS_ALL = [
           "as10": 2.14,
           "wa": 38,
           "ca": 13
-        },
-        "rankDeltaPower": 1
+        }
       },
       "wrecking-ball": {
         "finalScore": 118.67,
@@ -37154,8 +37150,7 @@ const PLAYERS_ALL = [
           "as10": 12.46,
           "wa": 21,
           "ca": 10
-        },
-        "rankDelta": 1
+        }
       },
       "mauga": {
         "finalScore": 54.11,
@@ -37455,8 +37450,7 @@ const PLAYERS_ALL = [
           "as10": 1.2,
           "wa": 0,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "venture": {
         "finalScore": 30.03,
@@ -37998,8 +37992,7 @@ const PLAYERS_ALL = [
           "as10": 12.46,
           "wa": 21,
           "ca": 10
-        },
-        "rankDelta": 1
+        }
       },
       "mauga": {
         "finalScore": 54.11,
@@ -38299,8 +38292,7 @@ const PLAYERS_ALL = [
           "as10": 1.2,
           "wa": 0,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "venture": {
         "finalScore": 30.03,
@@ -55120,8 +55112,7 @@ const PLAYERS_ALL = [
           "as10": 0.05,
           "wa": 25,
           "ca": 11
-        },
-        "rankDeltaPower": -1
+        }
       },
       "hazard": {
         "finalScore": 33.09,
@@ -55581,8 +55572,7 @@ const PLAYERS_ALL = [
           "as10": 0.9,
           "wa": 24,
           "ca": 10
-        },
-        "rankDeltaPower": 1
+        }
       },
       "tracer": {
         "finalScore": 48.83,
@@ -56124,8 +56114,7 @@ const PLAYERS_ALL = [
           "as10": 0.05,
           "wa": 25,
           "ca": 11
-        },
-        "rankDeltaPower": -1
+        }
       },
       "hazard": {
         "finalScore": 33.09,
@@ -56585,8 +56574,7 @@ const PLAYERS_ALL = [
           "as10": 0.9,
           "wa": 24,
           "ca": 10
-        },
-        "rankDeltaPower": 1
+        }
       },
       "tracer": {
         "finalScore": 48.83,
