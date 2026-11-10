@@ -1,7 +1,7 @@
 'use strict';
 
 /* 生成データ: update.mjs が自動生成(手編集は上書き) ・ 元データ: OverFast API */
-const LAST_UPDATED_ISO = "2026-11-10T17:35:00.442Z";
+const LAST_UPDATED_ISO = "2026-11-10T23:00:18.827Z";
 /* ライバル・プレイ(コンペティティブ)のみ */
 const PLAYERS_COMP = [
   {
@@ -1509,9 +1509,7 @@ const PLAYERS_COMP = [
           "as10": 13.15,
           "wa": 31,
           "ca": 9
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "kiriko": {
         "finalScore": 57.31,
@@ -1571,9 +1569,7 @@ const PLAYERS_COMP = [
           "as10": 0,
           "wa": 26,
           "ca": 12
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        }
       },
       "tracer": {
         "finalScore": 45.94,
@@ -14064,8 +14060,7 @@ const PLAYERS_COMP = [
           "as10": 0,
           "wa": 34,
           "ca": 11
-        },
-        "rankDeltaPower": -1
+        }
       },
       "cassidy": {
         "finalScore": 39,
@@ -14105,8 +14100,7 @@ const PLAYERS_COMP = [
           "as10": 0.3,
           "wa": 24,
           "ca": 10
-        },
-        "rankDelta": 1
+        }
       },
       "genji": {
         "finalScore": 50.33,
@@ -14126,8 +14120,7 @@ const PLAYERS_COMP = [
           "as10": 0,
           "wa": 27,
           "ca": 9
-        },
-        "rankDelta": -2
+        }
       },
       "lucio": {
         "finalScore": 29.61,
@@ -14247,9 +14240,7 @@ const PLAYERS_COMP = [
           "as10": 0,
           "wa": 27,
           "ca": 10
-        },
-        "rankDelta": 5,
-        "rankDeltaPower": 1
+        }
       },
       "sierra": {
         "finalScore": 41.75,
@@ -14269,8 +14260,7 @@ const PLAYERS_COMP = [
           "as10": 0.91,
           "wa": 28,
           "ca": 8
-        },
-        "rankDelta": -1
+        }
       },
       "sojourn": {
         "finalScore": 47.59,
@@ -14290,8 +14280,7 @@ const PLAYERS_COMP = [
           "as10": 0,
           "wa": 25,
           "ca": 10
-        },
-        "rankDelta": -1
+        }
       },
       "symmetra": {
         "finalScore": 46.14,
@@ -14331,8 +14320,7 @@ const PLAYERS_COMP = [
           "as10": 0,
           "wa": 30,
           "ca": 7
-        },
-        "rankDelta": -1
+        }
       },
       "vendetta": {
         "finalScore": 42.28,
@@ -14352,8 +14340,7 @@ const PLAYERS_COMP = [
           "as10": 1.78,
           "wa": 0,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "venture": {
         "finalScore": 46.56,
@@ -16984,8 +16971,7 @@ const PLAYERS_ALL = [
           "as10": 0.5968421052631578,
           "wa": 22.263157894736842,
           "ca": 10.68421052631579
-        },
-        "rankDelta": 1
+        }
       },
       "ashe": {
         "finalScore": 54.58,
@@ -17025,8 +17011,7 @@ const PLAYERS_ALL = [
           "as10": 1.715384615384615,
           "wa": 25.423076923076923,
           "ca": 3.1153846153846154
-        },
-        "rankDelta": -1
+        }
       },
       "cassidy": {
         "finalScore": 61.69,
@@ -17406,8 +17391,7 @@ const PLAYERS_ALL = [
           "as10": 4.6,
           "wa": 27,
           "ca": 7
-        },
-        "rankDelta": -1
+        }
       },
       "hanzo": {
         "finalScore": 50.52,
@@ -17427,8 +17411,7 @@ const PLAYERS_ALL = [
           "as10": 4.65,
           "wa": 24,
           "ca": 14
-        },
-        "rankDelta": 1
+        }
       },
       "illari": {
         "finalScore": 38.95,
@@ -17488,9 +17471,7 @@ const PLAYERS_ALL = [
           "as10": 3.66,
           "wa": 27,
           "ca": 0
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        }
       },
       "juno": {
         "finalScore": 40.66,
@@ -17510,8 +17491,7 @@ const PLAYERS_ALL = [
           "as10": 12.74,
           "wa": 34,
           "ca": 8
-        },
-        "rankDelta": 1
+        }
       },
       "kiriko": {
         "finalScore": 37.16,
@@ -17531,8 +17511,7 @@ const PLAYERS_ALL = [
           "as10": 13.49,
           "wa": 26,
           "ca": 13
-        },
-        "rankDelta": 1
+        }
       },
       "lifeweaver": {
         "finalScore": 36.37,
@@ -17832,9 +17811,7 @@ const PLAYERS_ALL = [
           "as10": 4.74,
           "wa": 36,
           "ca": 0
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "torbjorn": {
         "finalScore": 39.35,
@@ -17874,8 +17851,7 @@ const PLAYERS_ALL = [
           "as10": 0.11,
           "wa": 32,
           "ca": 11
-        },
-        "rankDelta": -1
+        }
       },
       "vendetta": {
         "finalScore": 39.32,
@@ -17995,8 +17971,7 @@ const PLAYERS_ALL = [
           "as10": 3.96,
           "wa": 48,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "zenyatta": {
         "finalScore": 38.8,
@@ -18038,8 +18013,7 @@ const PLAYERS_ALL = [
           "as10": 0.5968421052631578,
           "wa": 22.263157894736842,
           "ca": 10.68421052631579
-        },
-        "rankDelta": 1
+        }
       },
       "ashe": {
         "finalScore": 54.58,
@@ -18079,8 +18053,7 @@ const PLAYERS_ALL = [
           "as10": 1.715384615384615,
           "wa": 25.423076923076923,
           "ca": 3.1153846153846154
-        },
-        "rankDelta": -1
+        }
       },
       "cassidy": {
         "finalScore": 61.69,
@@ -18460,8 +18433,7 @@ const PLAYERS_ALL = [
           "as10": 4.6,
           "wa": 27,
           "ca": 7
-        },
-        "rankDelta": -1
+        }
       },
       "hanzo": {
         "finalScore": 50.52,
@@ -18481,8 +18453,7 @@ const PLAYERS_ALL = [
           "as10": 4.65,
           "wa": 24,
           "ca": 14
-        },
-        "rankDelta": 1
+        }
       },
       "illari": {
         "finalScore": 38.95,
@@ -18542,9 +18513,7 @@ const PLAYERS_ALL = [
           "as10": 3.66,
           "wa": 27,
           "ca": 0
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        }
       },
       "juno": {
         "finalScore": 40.66,
@@ -18564,8 +18533,7 @@ const PLAYERS_ALL = [
           "as10": 12.74,
           "wa": 34,
           "ca": 8
-        },
-        "rankDelta": 1
+        }
       },
       "kiriko": {
         "finalScore": 37.16,
@@ -18585,8 +18553,7 @@ const PLAYERS_ALL = [
           "as10": 13.49,
           "wa": 26,
           "ca": 13
-        },
-        "rankDelta": 1
+        }
       },
       "lifeweaver": {
         "finalScore": 36.37,
@@ -18886,9 +18853,7 @@ const PLAYERS_ALL = [
           "as10": 4.74,
           "wa": 36,
           "ca": 0
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "torbjorn": {
         "finalScore": 39.35,
@@ -18928,8 +18893,7 @@ const PLAYERS_ALL = [
           "as10": 0.11,
           "wa": 32,
           "ca": 11
-        },
-        "rankDelta": -1
+        }
       },
       "vendetta": {
         "finalScore": 39.32,
@@ -19049,8 +19013,7 @@ const PLAYERS_ALL = [
           "as10": 3.96,
           "wa": 48,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "zenyatta": {
         "finalScore": 38.8,
@@ -21296,8 +21259,7 @@ const PLAYERS_ALL = [
           "as10": 10.597619047619048,
           "wa": 27.19047619047619,
           "ca": 8.047619047619047
-        },
-        "rankDeltaPower": 1
+        }
       },
       "kiriko": {
         "finalScore": 58.23,
@@ -21377,8 +21339,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 31.894736842105264,
           "ca": 9.982456140350877
-        },
-        "rankDelta": -2
+        }
       },
       "vendetta": {
         "finalScore": 60.42,
@@ -21578,8 +21539,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 33,
           "ca": 11
-        },
-        "rankDeltaPower": -1
+        }
       },
       "hazard": {
         "finalScore": 51.49,
@@ -21719,8 +21679,7 @@ const PLAYERS_ALL = [
           "as10": 12.19,
           "wa": 27,
           "ca": 14
-        },
-        "rankDeltaPower": 1
+        }
       },
       "lucio": {
         "finalScore": 46.56,
@@ -21740,8 +21699,7 @@ const PLAYERS_ALL = [
           "as10": 10.66,
           "wa": 26,
           "ca": 9
-        },
-        "rankDeltaPower": 1
+        }
       },
       "mauga": {
         "finalScore": 59.24,
@@ -21761,8 +21719,7 @@ const PLAYERS_ALL = [
           "as10": 8.82,
           "wa": 31,
           "ca": 11
-        },
-        "rankDeltaPower": -1
+        }
       },
       "mei": {
         "finalScore": 55.06,
@@ -22022,8 +21979,7 @@ const PLAYERS_ALL = [
           "as10": 0.77,
           "wa": 32,
           "ca": 12
-        },
-        "rankDelta": 1
+        }
       },
       "sombra": {
         "finalScore": 53.81,
@@ -22063,8 +22019,7 @@ const PLAYERS_ALL = [
           "as10": 4.27,
           "wa": 34,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "torbjorn": {
         "finalScore": 52.32,
@@ -22144,8 +22099,7 @@ const PLAYERS_ALL = [
           "as10": 3.82,
           "wa": 60,
           "ca": 0
-        },
-        "rankDelta": 1
+        }
       },
       "wrecking-ball": {
         "finalScore": 56.12,
@@ -22387,8 +22341,7 @@ const PLAYERS_ALL = [
           "as10": 10.597619047619048,
           "wa": 27.19047619047619,
           "ca": 8.047619047619047
-        },
-        "rankDeltaPower": 1
+        }
       },
       "kiriko": {
         "finalScore": 58.23,
@@ -22468,8 +22421,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 31.894736842105264,
           "ca": 9.982456140350877
-        },
-        "rankDelta": -2
+        }
       },
       "vendetta": {
         "finalScore": 60.42,
@@ -22669,8 +22621,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 33,
           "ca": 11
-        },
-        "rankDeltaPower": -1
+        }
       },
       "hazard": {
         "finalScore": 51.49,
@@ -22810,8 +22761,7 @@ const PLAYERS_ALL = [
           "as10": 12.19,
           "wa": 27,
           "ca": 14
-        },
-        "rankDeltaPower": 1
+        }
       },
       "lucio": {
         "finalScore": 46.56,
@@ -22831,8 +22781,7 @@ const PLAYERS_ALL = [
           "as10": 10.66,
           "wa": 26,
           "ca": 9
-        },
-        "rankDeltaPower": 1
+        }
       },
       "mauga": {
         "finalScore": 59.24,
@@ -22852,8 +22801,7 @@ const PLAYERS_ALL = [
           "as10": 8.82,
           "wa": 31,
           "ca": 11
-        },
-        "rankDeltaPower": -1
+        }
       },
       "mei": {
         "finalScore": 55.06,
@@ -23113,8 +23061,7 @@ const PLAYERS_ALL = [
           "as10": 0.77,
           "wa": 32,
           "ca": 12
-        },
-        "rankDelta": 1
+        }
       },
       "sombra": {
         "finalScore": 53.81,
@@ -23154,8 +23101,7 @@ const PLAYERS_ALL = [
           "as10": 4.27,
           "wa": 34,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "torbjorn": {
         "finalScore": 52.32,
@@ -23235,8 +23181,7 @@ const PLAYERS_ALL = [
           "as10": 3.82,
           "wa": 60,
           "ca": 0
-        },
-        "rankDelta": 1
+        }
       },
       "wrecking-ball": {
         "finalScore": 56.12,
@@ -25411,8 +25356,7 @@ const PLAYERS_ALL = [
           "as10": 11.309056603773584,
           "wa": 53.339622641509436,
           "ca": 0
-        },
-        "rankDeltaPower": 2
+        }
       },
       "anran": {
         "finalScore": 67.78,
@@ -25452,9 +25396,7 @@ const PLAYERS_ALL = [
           "as10": 1.6724,
           "wa": 24.64,
           "ca": 2.88
-        },
-        "rankDelta": 5,
-        "rankDeltaPower": 1
+        }
       },
       "brigitte": {
         "finalScore": 40.89,
@@ -25474,9 +25416,7 @@ const PLAYERS_ALL = [
           "as10": 10.94,
           "wa": 0,
           "ca": 0
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "cassidy": {
         "finalScore": 48.66,
@@ -25496,8 +25436,7 @@ const PLAYERS_ALL = [
           "as10": 1.5747826086956522,
           "wa": 40.130434782608695,
           "ca": 9.826086956521738
-        },
-        "rankDelta": -1
+        }
       },
       "doctrine": {
         "finalScore": 67.31,
@@ -25537,8 +25476,7 @@ const PLAYERS_ALL = [
           "as10": 3.496923076923077,
           "wa": 50.46153846153846,
           "ca": 9.384615384615385
-        },
-        "rankDeltaPower": -1
+        }
       },
       "dva": {
         "finalScore": 51.74,
@@ -25558,8 +25496,7 @@ const PLAYERS_ALL = [
           "as10": 6.890000000000001,
           "wa": 24,
           "ca": 6.2
-        },
-        "rankDeltaPower": -1
+        }
       },
       "echo": {
         "finalScore": 44.37,
@@ -25579,9 +25516,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 27.2,
           "ca": 6.2
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "freja": {
         "finalScore": 58.08,
@@ -25601,9 +25536,7 @@ const PLAYERS_ALL = [
           "as10": 0.5095454545454545,
           "wa": 26,
           "ca": 13.727272727272727
-        },
-        "rankDelta": 2,
-        "rankDeltaPower": 2
+        }
       },
       "hazard": {
         "finalScore": 51.19,
@@ -25623,8 +25556,7 @@ const PLAYERS_ALL = [
           "as10": 5.41625,
           "wa": 33.875,
           "ca": 9.75
-        },
-        "rankDelta": 1
+        }
       },
       "junkrat": {
         "finalScore": 55.7,
@@ -25644,8 +25576,7 @@ const PLAYERS_ALL = [
           "as10": 2.4572727272727275,
           "wa": 23.272727272727273,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "juno": {
         "finalScore": 59.45,
@@ -25665,9 +25596,7 @@ const PLAYERS_ALL = [
           "as10": 15.627142857142857,
           "wa": 37.714285714285715,
           "ca": 8.238095238095237
-        },
-        "rankDelta": -4,
-        "rankDeltaPower": -1
+        }
       },
       "kiriko": {
         "finalScore": 60.2,
@@ -25707,9 +25636,7 @@ const PLAYERS_ALL = [
           "as10": 12.57818181818182,
           "wa": 27.87878787878788,
           "ca": 8.030303030303031
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": -1
+        }
       },
       "mauga": {
         "finalScore": 64.1,
@@ -25729,8 +25656,7 @@ const PLAYERS_ALL = [
           "as10": 7.644615384615384,
           "wa": 30.76923076923077,
           "ca": 10.923076923076923
-        },
-        "rankDelta": -1
+        }
       },
       "mizuki": {
         "finalScore": 65.03,
@@ -25750,8 +25676,7 @@ const PLAYERS_ALL = [
           "as10": 10.31,
           "wa": 34.77777777777778,
           "ca": 7.777777777777778
-        },
-        "rankDelta": -1
+        }
       },
       "moira": {
         "finalScore": 73.31,
@@ -25791,8 +25716,7 @@ const PLAYERS_ALL = [
           "as10": 3.890277777777778,
           "wa": 32,
           "ca": 10
-        },
-        "rankDeltaPower": -1
+        }
       },
       "ramattra": {
         "finalScore": 60.12,
@@ -25812,8 +25736,7 @@ const PLAYERS_ALL = [
           "as10": 2.381875,
           "wa": 25.0625,
           "ca": 10.625
-        },
-        "rankDelta": -1
+        }
       },
       "reinhardt": {
         "finalScore": 61.65,
@@ -25853,8 +25776,7 @@ const PLAYERS_ALL = [
           "as10": 3.91,
           "wa": 26.833333333333332,
           "ca": 14.5
-        },
-        "rankDelta": -1
+        }
       },
       "sigma": {
         "finalScore": 59.23,
@@ -25874,9 +25796,7 @@ const PLAYERS_ALL = [
           "as10": 1.5217391304347827,
           "wa": 46.04347826086956,
           "ca": 0
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "sierra": {
         "finalScore": 51.66,
@@ -25896,9 +25816,7 @@ const PLAYERS_ALL = [
           "as10": 0.873030303030303,
           "wa": 25.060606060606062,
           "ca": 8.818181818181818
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "sombra": {
         "finalScore": 68.27,
@@ -25938,9 +25856,7 @@ const PLAYERS_ALL = [
           "as10": 4.846666666666667,
           "wa": 36.666666666666664,
           "ca": 0
-        },
-        "rankDelta": 9,
-        "rankDeltaPower": 8
+        }
       },
       "torbjorn": {
         "finalScore": 50.09,
@@ -25960,8 +25876,7 @@ const PLAYERS_ALL = [
           "as10": 0.5583333333333333,
           "wa": 29.5,
           "ca": 7.833333333333333
-        },
-        "rankDelta": 1
+        }
       },
       "vendetta": {
         "finalScore": 60.2,
@@ -25981,8 +25896,7 @@ const PLAYERS_ALL = [
           "as10": 1.5222857142857142,
           "wa": 0,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "winston": {
         "finalScore": 64.58,
@@ -26002,8 +25916,7 @@ const PLAYERS_ALL = [
           "as10": 4.938723404255319,
           "wa": 60.59574468085106,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "zarya": {
         "finalScore": 53.58,
@@ -26023,9 +25936,7 @@ const PLAYERS_ALL = [
           "as10": 1.26,
           "wa": 39.21052631578947,
           "ca": 0
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "zenyatta": {
         "finalScore": 56.03,
@@ -26045,9 +25956,7 @@ const PLAYERS_ALL = [
           "as10": 14.784285714285716,
           "wa": 26.142857142857142,
           "ca": 10.714285714285714
-        },
-        "rankDelta": -2,
-        "rankDeltaPower": -2
+        }
       },
       "ashe": {
         "finalScore": 47.94,
@@ -26067,8 +25976,7 @@ const PLAYERS_ALL = [
           "as10": 1.27,
           "wa": 41,
           "ca": 16
-        },
-        "rankDelta": -1
+        }
       },
       "baptiste": {
         "finalScore": 50.71,
@@ -26128,9 +26036,7 @@ const PLAYERS_ALL = [
           "as10": 0.91,
           "wa": 27,
           "ca": 8
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "emre": {
         "finalScore": 39.9,
@@ -26150,8 +26056,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 36,
           "ca": 7
-        },
-        "rankDelta": -1
+        }
       },
       "hanzo": {
         "finalScore": 48.79,
@@ -26191,9 +26096,7 @@ const PLAYERS_ALL = [
           "as10": 7.94,
           "wa": 34,
           "ca": 10
-        },
-        "rankDelta": 8,
-        "rankDeltaPower": 4
+        }
       },
       "jetpack-cat": {
         "finalScore": 56.06,
@@ -26233,8 +26136,7 @@ const PLAYERS_ALL = [
           "as10": 9.48,
           "wa": 36,
           "ca": 12
-        },
-        "rankDelta": -1
+        }
       },
       "mercy": {
         "finalScore": 42.62,
@@ -26254,9 +26156,7 @@ const PLAYERS_ALL = [
           "as10": 16.36,
           "wa": 0,
           "ca": 0
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "pharah": {
         "finalScore": 44.97,
@@ -26276,8 +26176,7 @@ const PLAYERS_ALL = [
           "as10": 2.82,
           "wa": 39,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "reaper": {
         "finalScore": 58.54,
@@ -26297,8 +26196,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 32,
           "ca": 12
-        },
-        "rankDelta": -1
+        }
       },
       "shion": {
         "finalScore": 49.44,
@@ -26318,8 +26216,7 @@ const PLAYERS_ALL = [
           "as10": 1.66,
           "wa": 30,
           "ca": 10
-        },
-        "rankDelta": -1
+        }
       },
       "sojourn": {
         "finalScore": 44.56,
@@ -26339,9 +26236,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 30,
           "ca": 9
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "soldier-76": {
         "finalScore": 51.18,
@@ -26381,9 +26276,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 35,
           "ca": 8
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        }
       },
       "widowmaker": {
         "finalScore": 54.62,
@@ -26403,8 +26296,7 @@ const PLAYERS_ALL = [
           "as10": 3.2,
           "wa": 38,
           "ca": 13
-        },
-        "rankDeltaPower": -1
+        }
       },
       "wuyang": {
         "finalScore": 55.52,
@@ -26424,9 +26316,7 @@ const PLAYERS_ALL = [
           "as10": 15.34,
           "wa": 28,
           "ca": 0
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       }
     },
     "bscoreAll": {
@@ -26448,8 +26338,7 @@ const PLAYERS_ALL = [
           "as10": 11.309056603773584,
           "wa": 53.339622641509436,
           "ca": 0
-        },
-        "rankDeltaPower": 2
+        }
       },
       "anran": {
         "finalScore": 67.78,
@@ -26489,9 +26378,7 @@ const PLAYERS_ALL = [
           "as10": 1.6724,
           "wa": 24.64,
           "ca": 2.88
-        },
-        "rankDelta": 5,
-        "rankDeltaPower": 1
+        }
       },
       "brigitte": {
         "finalScore": 40.89,
@@ -26511,9 +26398,7 @@ const PLAYERS_ALL = [
           "as10": 10.94,
           "wa": 0,
           "ca": 0
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "cassidy": {
         "finalScore": 48.66,
@@ -26533,8 +26418,7 @@ const PLAYERS_ALL = [
           "as10": 1.5747826086956522,
           "wa": 40.130434782608695,
           "ca": 9.826086956521738
-        },
-        "rankDelta": -1
+        }
       },
       "doctrine": {
         "finalScore": 67.31,
@@ -26574,8 +26458,7 @@ const PLAYERS_ALL = [
           "as10": 3.496923076923077,
           "wa": 50.46153846153846,
           "ca": 9.384615384615385
-        },
-        "rankDeltaPower": -1
+        }
       },
       "dva": {
         "finalScore": 51.74,
@@ -26595,8 +26478,7 @@ const PLAYERS_ALL = [
           "as10": 6.890000000000001,
           "wa": 24,
           "ca": 6.2
-        },
-        "rankDeltaPower": -1
+        }
       },
       "echo": {
         "finalScore": 44.37,
@@ -26616,9 +26498,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 27.2,
           "ca": 6.2
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "freja": {
         "finalScore": 58.08,
@@ -26638,9 +26518,7 @@ const PLAYERS_ALL = [
           "as10": 0.5095454545454545,
           "wa": 26,
           "ca": 13.727272727272727
-        },
-        "rankDelta": 2,
-        "rankDeltaPower": 2
+        }
       },
       "hazard": {
         "finalScore": 51.19,
@@ -26660,8 +26538,7 @@ const PLAYERS_ALL = [
           "as10": 5.41625,
           "wa": 33.875,
           "ca": 9.75
-        },
-        "rankDelta": 1
+        }
       },
       "junkrat": {
         "finalScore": 55.7,
@@ -26681,8 +26558,7 @@ const PLAYERS_ALL = [
           "as10": 2.4572727272727275,
           "wa": 23.272727272727273,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "juno": {
         "finalScore": 59.45,
@@ -26702,9 +26578,7 @@ const PLAYERS_ALL = [
           "as10": 15.627142857142857,
           "wa": 37.714285714285715,
           "ca": 8.238095238095237
-        },
-        "rankDelta": -4,
-        "rankDeltaPower": -1
+        }
       },
       "kiriko": {
         "finalScore": 60.2,
@@ -26744,9 +26618,7 @@ const PLAYERS_ALL = [
           "as10": 12.57818181818182,
           "wa": 27.87878787878788,
           "ca": 8.030303030303031
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": -1
+        }
       },
       "mauga": {
         "finalScore": 64.1,
@@ -26766,8 +26638,7 @@ const PLAYERS_ALL = [
           "as10": 7.644615384615384,
           "wa": 30.76923076923077,
           "ca": 10.923076923076923
-        },
-        "rankDelta": -1
+        }
       },
       "mizuki": {
         "finalScore": 65.03,
@@ -26787,8 +26658,7 @@ const PLAYERS_ALL = [
           "as10": 10.31,
           "wa": 34.77777777777778,
           "ca": 7.777777777777778
-        },
-        "rankDelta": -1
+        }
       },
       "moira": {
         "finalScore": 73.31,
@@ -26828,8 +26698,7 @@ const PLAYERS_ALL = [
           "as10": 3.890277777777778,
           "wa": 32,
           "ca": 10
-        },
-        "rankDeltaPower": -1
+        }
       },
       "ramattra": {
         "finalScore": 60.12,
@@ -26849,8 +26718,7 @@ const PLAYERS_ALL = [
           "as10": 2.381875,
           "wa": 25.0625,
           "ca": 10.625
-        },
-        "rankDelta": -1
+        }
       },
       "reinhardt": {
         "finalScore": 61.65,
@@ -26890,8 +26758,7 @@ const PLAYERS_ALL = [
           "as10": 3.91,
           "wa": 26.833333333333332,
           "ca": 14.5
-        },
-        "rankDelta": -1
+        }
       },
       "sigma": {
         "finalScore": 59.23,
@@ -26911,9 +26778,7 @@ const PLAYERS_ALL = [
           "as10": 1.5217391304347827,
           "wa": 46.04347826086956,
           "ca": 0
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "sierra": {
         "finalScore": 51.66,
@@ -26933,9 +26798,7 @@ const PLAYERS_ALL = [
           "as10": 0.873030303030303,
           "wa": 25.060606060606062,
           "ca": 8.818181818181818
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "sombra": {
         "finalScore": 68.27,
@@ -26975,9 +26838,7 @@ const PLAYERS_ALL = [
           "as10": 4.846666666666667,
           "wa": 36.666666666666664,
           "ca": 0
-        },
-        "rankDelta": 9,
-        "rankDeltaPower": 8
+        }
       },
       "torbjorn": {
         "finalScore": 50.09,
@@ -26997,8 +26858,7 @@ const PLAYERS_ALL = [
           "as10": 0.5583333333333333,
           "wa": 29.5,
           "ca": 7.833333333333333
-        },
-        "rankDelta": 1
+        }
       },
       "vendetta": {
         "finalScore": 60.2,
@@ -27018,8 +26878,7 @@ const PLAYERS_ALL = [
           "as10": 1.5222857142857142,
           "wa": 0,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "winston": {
         "finalScore": 64.58,
@@ -27039,8 +26898,7 @@ const PLAYERS_ALL = [
           "as10": 4.938723404255319,
           "wa": 60.59574468085106,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "zarya": {
         "finalScore": 53.58,
@@ -27060,9 +26918,7 @@ const PLAYERS_ALL = [
           "as10": 1.26,
           "wa": 39.21052631578947,
           "ca": 0
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "zenyatta": {
         "finalScore": 56.03,
@@ -27082,9 +26938,7 @@ const PLAYERS_ALL = [
           "as10": 14.784285714285716,
           "wa": 26.142857142857142,
           "ca": 10.714285714285714
-        },
-        "rankDelta": -2,
-        "rankDeltaPower": -2
+        }
       },
       "ashe": {
         "finalScore": 47.94,
@@ -27104,8 +26958,7 @@ const PLAYERS_ALL = [
           "as10": 1.27,
           "wa": 41,
           "ca": 16
-        },
-        "rankDelta": -1
+        }
       },
       "baptiste": {
         "finalScore": 50.71,
@@ -27165,9 +27018,7 @@ const PLAYERS_ALL = [
           "as10": 0.91,
           "wa": 27,
           "ca": 8
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "emre": {
         "finalScore": 39.9,
@@ -27187,8 +27038,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 36,
           "ca": 7
-        },
-        "rankDelta": -1
+        }
       },
       "hanzo": {
         "finalScore": 48.79,
@@ -27228,9 +27078,7 @@ const PLAYERS_ALL = [
           "as10": 7.94,
           "wa": 34,
           "ca": 10
-        },
-        "rankDelta": 8,
-        "rankDeltaPower": 4
+        }
       },
       "jetpack-cat": {
         "finalScore": 56.06,
@@ -27270,8 +27118,7 @@ const PLAYERS_ALL = [
           "as10": 9.48,
           "wa": 36,
           "ca": 12
-        },
-        "rankDelta": -1
+        }
       },
       "mercy": {
         "finalScore": 42.62,
@@ -27291,9 +27138,7 @@ const PLAYERS_ALL = [
           "as10": 16.36,
           "wa": 0,
           "ca": 0
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "pharah": {
         "finalScore": 44.97,
@@ -27313,8 +27158,7 @@ const PLAYERS_ALL = [
           "as10": 2.82,
           "wa": 39,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "reaper": {
         "finalScore": 58.54,
@@ -27334,8 +27178,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 32,
           "ca": 12
-        },
-        "rankDelta": -1
+        }
       },
       "shion": {
         "finalScore": 49.44,
@@ -27355,8 +27198,7 @@ const PLAYERS_ALL = [
           "as10": 1.66,
           "wa": 30,
           "ca": 10
-        },
-        "rankDelta": -1
+        }
       },
       "sojourn": {
         "finalScore": 44.56,
@@ -27376,9 +27218,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 30,
           "ca": 9
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "soldier-76": {
         "finalScore": 51.18,
@@ -27418,9 +27258,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 35,
           "ca": 8
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        }
       },
       "widowmaker": {
         "finalScore": 54.62,
@@ -27440,8 +27278,7 @@ const PLAYERS_ALL = [
           "as10": 3.2,
           "wa": 38,
           "ca": 13
-        },
-        "rankDeltaPower": -1
+        }
       },
       "wuyang": {
         "finalScore": 55.52,
@@ -27461,9 +27298,7 @@ const PLAYERS_ALL = [
           "as10": 15.34,
           "wa": 28,
           "ca": 0
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       }
     },
     "recent": [
@@ -29956,8 +29791,7 @@ const PLAYERS_ALL = [
           "as10": 0.44,
           "wa": 25,
           "ca": 10
-        },
-        "rankDeltaPower": 1
+        }
       },
       "hazard": {
         "finalScore": 109.4,
@@ -29997,8 +29831,7 @@ const PLAYERS_ALL = [
           "as10": 4.08,
           "wa": 33,
           "ca": 10
-        },
-        "rankDeltaPower": -1
+        }
       },
       "illari": {
         "finalScore": 131.26,
@@ -30478,8 +30311,7 @@ const PLAYERS_ALL = [
           "as10": 2.81,
           "wa": 36,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "torbjorn": {
         "finalScore": 108.11,
@@ -30619,8 +30451,7 @@ const PLAYERS_ALL = [
           "as10": 9.53,
           "wa": 34,
           "ca": 0
-        },
-        "rankDelta": 1
+        }
       },
       "zarya": {
         "finalScore": 136.64,
@@ -31022,8 +30853,7 @@ const PLAYERS_ALL = [
           "as10": 0.44,
           "wa": 25,
           "ca": 10
-        },
-        "rankDeltaPower": 1
+        }
       },
       "hazard": {
         "finalScore": 109.4,
@@ -31063,8 +30893,7 @@ const PLAYERS_ALL = [
           "as10": 4.08,
           "wa": 33,
           "ca": 10
-        },
-        "rankDeltaPower": -1
+        }
       },
       "illari": {
         "finalScore": 131.26,
@@ -31544,8 +31373,7 @@ const PLAYERS_ALL = [
           "as10": 2.81,
           "wa": 36,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "torbjorn": {
         "finalScore": 108.11,
@@ -31685,8 +31513,7 @@ const PLAYERS_ALL = [
           "as10": 9.53,
           "wa": 34,
           "ca": 0
-        },
-        "rankDelta": 1
+        }
       },
       "zarya": {
         "finalScore": 136.64,
@@ -33967,8 +33794,7 @@ const PLAYERS_ALL = [
           "as10": 3.397241379310345,
           "wa": 41,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "anran": {
         "finalScore": 58.05,
@@ -34008,8 +33834,7 @@ const PLAYERS_ALL = [
           "as10": 3.38,
           "wa": 35,
           "ca": 11
-        },
-        "rankDelta": -1
+        }
       },
       "baptiste": {
         "finalScore": 33.39,
@@ -34089,9 +33914,7 @@ const PLAYERS_ALL = [
           "as10": 2.16,
           "wa": 38,
           "ca": 7
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        }
       },
       "dmon": {
         "finalScore": 38.08,
@@ -34191,8 +34014,7 @@ const PLAYERS_ALL = [
           "as10": 0.4,
           "wa": 24,
           "ca": 10
-        },
-        "rankDelta": 1
+        }
       },
       "emre": {
         "finalScore": 31.94,
@@ -34312,8 +34134,7 @@ const PLAYERS_ALL = [
           "as10": 9.24,
           "wa": 38,
           "ca": 12
-        },
-        "rankDeltaPower": -1
+        }
       },
       "jetpack-cat": {
         "finalScore": 34.75,
@@ -34413,8 +34234,7 @@ const PLAYERS_ALL = [
           "as10": 14.41,
           "wa": 27,
           "ca": 12
-        },
-        "rankDelta": 1
+        }
       },
       "lifeweaver": {
         "finalScore": 42.46,
@@ -34434,8 +34254,7 @@ const PLAYERS_ALL = [
           "as10": 14.26,
           "wa": 27,
           "ca": 12
-        },
-        "rankDelta": 1
+        }
       },
       "lucio": {
         "finalScore": 41.38,
@@ -34675,8 +34494,7 @@ const PLAYERS_ALL = [
           "as10": 0.79,
           "wa": 25,
           "ca": 10
-        },
-        "rankDelta": -1
+        }
       },
       "soldier-76": {
         "finalScore": 37.67,
@@ -34736,8 +34554,7 @@ const PLAYERS_ALL = [
           "as10": 5.81,
           "wa": 36,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "torbjorn": {
         "finalScore": 41.4,
@@ -34777,8 +34594,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 25,
           "ca": 8
-        },
-        "rankDelta": -1
+        }
       },
       "vendetta": {
         "finalScore": 36.51,
@@ -34818,8 +34634,7 @@ const PLAYERS_ALL = [
           "as10": 1.49,
           "wa": 48,
           "ca": 0
-        },
-        "rankDeltaPower": 1
+        }
       },
       "widowmaker": {
         "finalScore": 32.42,
@@ -35061,8 +34876,7 @@ const PLAYERS_ALL = [
           "as10": 3.397241379310345,
           "wa": 41,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "anran": {
         "finalScore": 58.05,
@@ -35102,8 +34916,7 @@ const PLAYERS_ALL = [
           "as10": 3.38,
           "wa": 35,
           "ca": 11
-        },
-        "rankDelta": -1
+        }
       },
       "baptiste": {
         "finalScore": 33.39,
@@ -35183,9 +34996,7 @@ const PLAYERS_ALL = [
           "as10": 2.16,
           "wa": 38,
           "ca": 7
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        }
       },
       "dmon": {
         "finalScore": 38.08,
@@ -35285,8 +35096,7 @@ const PLAYERS_ALL = [
           "as10": 0.4,
           "wa": 24,
           "ca": 10
-        },
-        "rankDelta": 1
+        }
       },
       "emre": {
         "finalScore": 31.94,
@@ -35406,8 +35216,7 @@ const PLAYERS_ALL = [
           "as10": 9.24,
           "wa": 38,
           "ca": 12
-        },
-        "rankDeltaPower": -1
+        }
       },
       "jetpack-cat": {
         "finalScore": 34.75,
@@ -35507,8 +35316,7 @@ const PLAYERS_ALL = [
           "as10": 14.41,
           "wa": 27,
           "ca": 12
-        },
-        "rankDelta": 1
+        }
       },
       "lifeweaver": {
         "finalScore": 42.46,
@@ -35528,8 +35336,7 @@ const PLAYERS_ALL = [
           "as10": 14.26,
           "wa": 27,
           "ca": 12
-        },
-        "rankDelta": 1
+        }
       },
       "lucio": {
         "finalScore": 41.38,
@@ -35769,8 +35576,7 @@ const PLAYERS_ALL = [
           "as10": 0.79,
           "wa": 25,
           "ca": 10
-        },
-        "rankDelta": -1
+        }
       },
       "soldier-76": {
         "finalScore": 37.67,
@@ -35830,8 +35636,7 @@ const PLAYERS_ALL = [
           "as10": 5.81,
           "wa": 36,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "torbjorn": {
         "finalScore": 41.4,
@@ -35871,8 +35676,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 25,
           "ca": 8
-        },
-        "rankDelta": -1
+        }
       },
       "vendetta": {
         "finalScore": 36.51,
@@ -35912,8 +35716,7 @@ const PLAYERS_ALL = [
           "as10": 1.49,
           "wa": 48,
           "ca": 0
-        },
-        "rankDeltaPower": 1
+        }
       },
       "widowmaker": {
         "finalScore": 32.42,
@@ -38119,8 +37922,7 @@ const PLAYERS_ALL = [
           "as10": 1.72,
           "wa": 41,
           "ca": 11
-        },
-        "rankDelta": 1
+        }
       },
       "baptiste": {
         "finalScore": 49.84,
@@ -38300,8 +38102,7 @@ const PLAYERS_ALL = [
           "as10": 0.43,
           "wa": 29,
           "ca": 1
-        },
-        "rankDelta": 1
+        }
       },
       "genji": {
         "finalScore": 58.3,
@@ -38361,8 +38162,7 @@ const PLAYERS_ALL = [
           "as10": 2.21,
           "wa": 25,
           "ca": 7
-        },
-        "rankDelta": 1
+        }
       },
       "illari": {
         "finalScore": 38.13,
@@ -38442,8 +38242,7 @@ const PLAYERS_ALL = [
           "as10": 2.41,
           "wa": 25,
           "ca": 0
-        },
-        "rankDelta": 1
+        }
       },
       "juno": {
         "finalScore": 42.17,
@@ -38563,8 +38362,7 @@ const PLAYERS_ALL = [
           "as10": 6.38,
           "wa": 36,
           "ca": 11
-        },
-        "rankDelta": -2
+        }
       },
       "orisa": {
         "finalScore": 46.7,
@@ -38844,8 +38642,7 @@ const PLAYERS_ALL = [
           "as10": 0.06,
           "wa": 32,
           "ca": 8
-        },
-        "rankDelta": -2
+        }
       },
       "vendetta": {
         "finalScore": 56.32,
@@ -39107,8 +38904,7 @@ const PLAYERS_ALL = [
           "as10": 1.72,
           "wa": 41,
           "ca": 11
-        },
-        "rankDelta": 1
+        }
       },
       "baptiste": {
         "finalScore": 49.84,
@@ -39288,8 +39084,7 @@ const PLAYERS_ALL = [
           "as10": 0.43,
           "wa": 29,
           "ca": 1
-        },
-        "rankDelta": 1
+        }
       },
       "genji": {
         "finalScore": 58.3,
@@ -39349,8 +39144,7 @@ const PLAYERS_ALL = [
           "as10": 2.21,
           "wa": 25,
           "ca": 7
-        },
-        "rankDelta": 1
+        }
       },
       "illari": {
         "finalScore": 38.13,
@@ -39430,8 +39224,7 @@ const PLAYERS_ALL = [
           "as10": 2.41,
           "wa": 25,
           "ca": 0
-        },
-        "rankDelta": 1
+        }
       },
       "juno": {
         "finalScore": 42.17,
@@ -39551,8 +39344,7 @@ const PLAYERS_ALL = [
           "as10": 6.38,
           "wa": 36,
           "ca": 11
-        },
-        "rankDelta": -2
+        }
       },
       "orisa": {
         "finalScore": 46.7,
@@ -39832,8 +39624,7 @@ const PLAYERS_ALL = [
           "as10": 0.06,
           "wa": 32,
           "ca": 8
-        },
-        "rankDelta": -2
+        }
       },
       "vendetta": {
         "finalScore": 56.32,
@@ -42352,8 +42143,7 @@ const PLAYERS_ALL = [
           "as10": 0.9,
           "wa": 0,
           "ca": 0
-        },
-        "rankDeltaPower": 1
+        }
       },
       "roadhog": {
         "finalScore": 23.66,
@@ -42493,8 +42283,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 24,
           "ca": 8
-        },
-        "rankDeltaPower": -1
+        }
       },
       "vendetta": {
         "finalScore": 29.14,
@@ -43196,8 +42985,7 @@ const PLAYERS_ALL = [
           "as10": 0.9,
           "wa": 0,
           "ca": 0
-        },
-        "rankDeltaPower": 1
+        }
       },
       "roadhog": {
         "finalScore": 23.66,
@@ -43337,8 +43125,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 24,
           "ca": 8
-        },
-        "rankDeltaPower": -1
+        }
       },
       "vendetta": {
         "finalScore": 29.14,
@@ -45012,8 +44799,7 @@ const PLAYERS_ALL = [
           "as10": 13.15,
           "wa": 23,
           "ca": 14
-        },
-        "rankDeltaPower": -1
+        }
       },
       "moira": {
         "finalScore": 62.27,
@@ -45073,8 +44859,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 27,
           "ca": 9
-        },
-        "rankDeltaPower": 1
+        }
       },
       "soldier-76": {
         "finalScore": 25.51,
@@ -45196,8 +44981,7 @@ const PLAYERS_ALL = [
           "as10": 13.15,
           "wa": 23,
           "ca": 14
-        },
-        "rankDeltaPower": -1
+        }
       },
       "moira": {
         "finalScore": 62.27,
@@ -45257,8 +45041,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 27,
           "ca": 9
-        },
-        "rankDeltaPower": 1
+        }
       },
       "soldier-76": {
         "finalScore": 25.51,
@@ -46513,8 +46296,7 @@ const PLAYERS_ALL = [
           "as10": 8.056000000000001,
           "wa": 41.8,
           "ca": 0
-        },
-        "rankDelta": 1
+        }
       },
       "anran": {
         "finalScore": 56.78,
@@ -46594,9 +46376,7 @@ const PLAYERS_ALL = [
           "as10": 0.18333333333333335,
           "wa": 21,
           "ca": 6
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        }
       },
       "genji": {
         "finalScore": 31.54,
@@ -46716,8 +46496,7 @@ const PLAYERS_ALL = [
           "as10": 2.9994444444444444,
           "wa": 37.27777777777778,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "reaper": {
         "finalScore": 53.63,
@@ -47017,8 +46796,7 @@ const PLAYERS_ALL = [
           "as10": 2.05,
           "wa": 42,
           "ca": 2
-        },
-        "rankDelta": -1
+        }
       },
       "lifeweaver": {
         "finalScore": 26.41,
@@ -47218,8 +46996,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 38,
           "ca": 4
-        },
-        "rankDeltaPower": -1
+        }
       },
       "vendetta": {
         "finalScore": 25.58,
@@ -47301,8 +47078,7 @@ const PLAYERS_ALL = [
           "as10": 8.056000000000001,
           "wa": 41.8,
           "ca": 0
-        },
-        "rankDelta": 1
+        }
       },
       "anran": {
         "finalScore": 56.78,
@@ -47382,9 +47158,7 @@ const PLAYERS_ALL = [
           "as10": 0.18333333333333335,
           "wa": 21,
           "ca": 6
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": 1
+        }
       },
       "genji": {
         "finalScore": 31.54,
@@ -47504,8 +47278,7 @@ const PLAYERS_ALL = [
           "as10": 2.9994444444444444,
           "wa": 37.27777777777778,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "reaper": {
         "finalScore": 53.63,
@@ -47805,8 +47578,7 @@ const PLAYERS_ALL = [
           "as10": 2.05,
           "wa": 42,
           "ca": 2
-        },
-        "rankDelta": -1
+        }
       },
       "lifeweaver": {
         "finalScore": 26.41,
@@ -48006,8 +47778,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 38,
           "ca": 4
-        },
-        "rankDeltaPower": -1
+        }
       },
       "vendetta": {
         "finalScore": 25.58,
@@ -49939,8 +49710,7 @@ const PLAYERS_ALL = [
           "as10": 11.05318407960199,
           "wa": 52,
           "ca": 0
-        },
-        "rankDelta": -2
+        }
       },
       "ashe": {
         "finalScore": 49.5,
@@ -49960,8 +49730,7 @@ const PLAYERS_ALL = [
           "as10": 0.8075675675675675,
           "wa": 38.08108108108108,
           "ca": 14.972972972972974
-        },
-        "rankDelta": 1
+        }
       },
       "bastion": {
         "finalScore": 60.1,
@@ -49981,8 +49750,7 @@ const PLAYERS_ALL = [
           "as10": 1.8385185185185184,
           "wa": 24.77777777777778,
           "ca": 2.037037037037037
-        },
-        "rankDelta": 2
+        }
       },
       "brigitte": {
         "finalScore": 43.36,
@@ -50002,8 +49770,7 @@ const PLAYERS_ALL = [
           "as10": 13.444736842105264,
           "wa": 0,
           "ca": 0
-        },
-        "rankDelta": 1
+        }
       },
       "cassidy": {
         "finalScore": 50.53,
@@ -50023,8 +49790,7 @@ const PLAYERS_ALL = [
           "as10": 1.6276271186440676,
           "wa": 40.79661016949152,
           "ca": 10.101694915254237
-        },
-        "rankDeltaPower": -1
+        }
       },
       "doctrine": {
         "finalScore": 45.86,
@@ -50044,8 +49810,7 @@ const PLAYERS_ALL = [
           "as10": 14.232499999999998,
           "wa": 53.25,
           "ca": 0
-        },
-        "rankDelta": -3
+        }
       },
       "echo": {
         "finalScore": 50.35,
@@ -50065,9 +49830,7 @@ const PLAYERS_ALL = [
           "as10": 0.33381818181818185,
           "wa": 26.01818181818182,
           "ca": 9.018181818181818
-        },
-        "rankDelta": -3,
-        "rankDeltaPower": -2
+        }
       },
       "genji": {
         "finalScore": 50.55,
@@ -50087,8 +49850,7 @@ const PLAYERS_ALL = [
           "as10": 0.144,
           "wa": 26.28,
           "ca": 10.04
-        },
-        "rankDeltaPower": 3
+        }
       },
       "junkrat": {
         "finalScore": 64.42,
@@ -50108,8 +49870,7 @@ const PLAYERS_ALL = [
           "as10": 2.309624060150376,
           "wa": 24.954887218045112,
           "ca": 0
-        },
-        "rankDelta": 1
+        }
       },
       "mizuki": {
         "finalScore": 56.61,
@@ -50129,8 +49890,7 @@ const PLAYERS_ALL = [
           "as10": 15.187260273972603,
           "wa": 30,
           "ca": 10
-        },
-        "rankDeltaPower": 1
+        }
       },
       "reaper": {
         "finalScore": 60.38,
@@ -50170,8 +49930,7 @@ const PLAYERS_ALL = [
           "as10": 1.7090909090909092,
           "wa": 27.454545454545453,
           "ca": 7
-        },
-        "rankDelta": 1
+        }
       },
       "sojourn": {
         "finalScore": 47.34,
@@ -50191,8 +49950,7 @@ const PLAYERS_ALL = [
           "as10": 0.4947368421052632,
           "wa": 27,
           "ca": 9.210526315789474
-        },
-        "rankDelta": -2
+        }
       },
       "sombra": {
         "finalScore": 50.49,
@@ -50212,9 +49970,7 @@ const PLAYERS_ALL = [
           "as10": 11.789,
           "wa": 31.8,
           "ca": 8
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": 3
+        }
       },
       "tracer": {
         "finalScore": 55.51,
@@ -50234,8 +49990,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 30.878048780487806,
           "ca": 10
-        },
-        "rankDelta": -1
+        }
       },
       "vendetta": {
         "finalScore": 50.3,
@@ -50255,8 +50010,7 @@ const PLAYERS_ALL = [
           "as10": 2.3909090909090907,
           "wa": 0,
           "ca": 0
-        },
-        "rankDeltaPower": -2
+        }
       },
       "wuyang": {
         "finalScore": 53.68,
@@ -50276,9 +50030,7 @@ const PLAYERS_ALL = [
           "as10": 14.637142857142857,
           "wa": 25.88095238095238,
           "ca": 0
-        },
-        "rankDelta": 6,
-        "rankDeltaPower": 2
+        }
       },
       "zenyatta": {
         "finalScore": 51.78,
@@ -50298,8 +50050,7 @@ const PLAYERS_ALL = [
           "as10": 15.879354838709677,
           "wa": 27.06451612903226,
           "ca": 12
-        },
-        "rankDelta": -1
+        }
       },
       "anran": {
         "finalScore": 62.1,
@@ -50339,8 +50090,7 @@ const PLAYERS_ALL = [
           "as10": 11.08,
           "wa": 30,
           "ca": 11
-        },
-        "rankDelta": -1
+        }
       },
       "dmon": {
         "finalScore": 39.44,
@@ -50360,8 +50110,7 @@ const PLAYERS_ALL = [
           "as10": 2.73,
           "wa": 28,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "domina": {
         "finalScore": 37.62,
@@ -50461,8 +50210,7 @@ const PLAYERS_ALL = [
           "as10": 0.41,
           "wa": 27,
           "ca": 5
-        },
-        "rankDelta": 1
+        }
       },
       "hazard": {
         "finalScore": 36.39,
@@ -50502,8 +50250,7 @@ const PLAYERS_ALL = [
           "as10": 4.78,
           "wa": 21,
           "ca": 12
-        },
-        "rankDelta": 1
+        }
       },
       "illari": {
         "finalScore": 56.44,
@@ -50523,9 +50270,7 @@ const PLAYERS_ALL = [
           "as10": 7.69,
           "wa": 37,
           "ca": 15
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "jetpack-cat": {
         "finalScore": 48.36,
@@ -50545,8 +50290,7 @@ const PLAYERS_ALL = [
           "as10": 8.52,
           "wa": 32,
           "ca": 6
-        },
-        "rankDelta": -2
+        }
       },
       "junker-queen": {
         "finalScore": 42.81,
@@ -50586,8 +50330,7 @@ const PLAYERS_ALL = [
           "as10": 8.83,
           "wa": 38,
           "ca": 4
-        },
-        "rankDelta": -1
+        }
       },
       "kiriko": {
         "finalScore": 53.39,
@@ -50607,9 +50350,7 @@ const PLAYERS_ALL = [
           "as10": 14.65,
           "wa": 28,
           "ca": 13
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": -1
+        }
       },
       "lifeweaver": {
         "finalScore": 50.79,
@@ -50669,8 +50410,7 @@ const PLAYERS_ALL = [
           "as10": 7.99,
           "wa": 27,
           "ca": 11
-        },
-        "rankDeltaPower": -1
+        }
       },
       "mei": {
         "finalScore": 47.03,
@@ -50690,8 +50430,7 @@ const PLAYERS_ALL = [
           "as10": 6.98,
           "wa": 47,
           "ca": 0
-        },
-        "rankDelta": 2
+        }
       },
       "mercy": {
         "finalScore": 32.21,
@@ -50731,8 +50470,7 @@ const PLAYERS_ALL = [
           "as10": 12.95,
           "wa": 0,
           "ca": 0
-        },
-        "rankDelta": 2
+        }
       },
       "orisa": {
         "finalScore": 30.63,
@@ -50912,9 +50650,7 @@ const PLAYERS_ALL = [
           "as10": 5.74,
           "wa": 33,
           "ca": 0
-        },
-        "rankDelta": -3,
-        "rankDeltaPower": -1
+        }
       },
       "torbjorn": {
         "finalScore": 46.24,
@@ -50974,8 +50710,7 @@ const PLAYERS_ALL = [
           "as10": 3.04,
           "wa": 37,
           "ca": 14
-        },
-        "rankDelta": 1
+        }
       },
       "winston": {
         "finalScore": 36.89,
@@ -51057,8 +50792,7 @@ const PLAYERS_ALL = [
           "as10": 11.05318407960199,
           "wa": 52,
           "ca": 0
-        },
-        "rankDelta": -2
+        }
       },
       "ashe": {
         "finalScore": 49.5,
@@ -51078,8 +50812,7 @@ const PLAYERS_ALL = [
           "as10": 0.8075675675675675,
           "wa": 38.08108108108108,
           "ca": 14.972972972972974
-        },
-        "rankDelta": 1
+        }
       },
       "bastion": {
         "finalScore": 60.1,
@@ -51099,8 +50832,7 @@ const PLAYERS_ALL = [
           "as10": 1.8385185185185184,
           "wa": 24.77777777777778,
           "ca": 2.037037037037037
-        },
-        "rankDelta": 2
+        }
       },
       "brigitte": {
         "finalScore": 43.36,
@@ -51120,8 +50852,7 @@ const PLAYERS_ALL = [
           "as10": 13.444736842105264,
           "wa": 0,
           "ca": 0
-        },
-        "rankDelta": 1
+        }
       },
       "cassidy": {
         "finalScore": 50.53,
@@ -51141,8 +50872,7 @@ const PLAYERS_ALL = [
           "as10": 1.6276271186440676,
           "wa": 40.79661016949152,
           "ca": 10.101694915254237
-        },
-        "rankDeltaPower": -1
+        }
       },
       "doctrine": {
         "finalScore": 45.86,
@@ -51162,8 +50892,7 @@ const PLAYERS_ALL = [
           "as10": 14.232499999999998,
           "wa": 53.25,
           "ca": 0
-        },
-        "rankDelta": -3
+        }
       },
       "echo": {
         "finalScore": 50.35,
@@ -51183,9 +50912,7 @@ const PLAYERS_ALL = [
           "as10": 0.33381818181818185,
           "wa": 26.01818181818182,
           "ca": 9.018181818181818
-        },
-        "rankDelta": -3,
-        "rankDeltaPower": -2
+        }
       },
       "genji": {
         "finalScore": 50.55,
@@ -51205,8 +50932,7 @@ const PLAYERS_ALL = [
           "as10": 0.144,
           "wa": 26.28,
           "ca": 10.04
-        },
-        "rankDeltaPower": 3
+        }
       },
       "junkrat": {
         "finalScore": 64.42,
@@ -51226,8 +50952,7 @@ const PLAYERS_ALL = [
           "as10": 2.309624060150376,
           "wa": 24.954887218045112,
           "ca": 0
-        },
-        "rankDelta": 1
+        }
       },
       "mizuki": {
         "finalScore": 56.61,
@@ -51247,8 +50972,7 @@ const PLAYERS_ALL = [
           "as10": 15.187260273972603,
           "wa": 30,
           "ca": 10
-        },
-        "rankDeltaPower": 1
+        }
       },
       "reaper": {
         "finalScore": 60.38,
@@ -51288,8 +51012,7 @@ const PLAYERS_ALL = [
           "as10": 1.7090909090909092,
           "wa": 27.454545454545453,
           "ca": 7
-        },
-        "rankDelta": 1
+        }
       },
       "sojourn": {
         "finalScore": 47.34,
@@ -51309,8 +51032,7 @@ const PLAYERS_ALL = [
           "as10": 0.4947368421052632,
           "wa": 27,
           "ca": 9.210526315789474
-        },
-        "rankDelta": -2
+        }
       },
       "sombra": {
         "finalScore": 50.49,
@@ -51330,9 +51052,7 @@ const PLAYERS_ALL = [
           "as10": 11.789,
           "wa": 31.8,
           "ca": 8
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": 3
+        }
       },
       "tracer": {
         "finalScore": 55.51,
@@ -51352,8 +51072,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 30.878048780487806,
           "ca": 10
-        },
-        "rankDelta": -1
+        }
       },
       "vendetta": {
         "finalScore": 50.3,
@@ -51373,8 +51092,7 @@ const PLAYERS_ALL = [
           "as10": 2.3909090909090907,
           "wa": 0,
           "ca": 0
-        },
-        "rankDeltaPower": -2
+        }
       },
       "wuyang": {
         "finalScore": 53.68,
@@ -51394,9 +51112,7 @@ const PLAYERS_ALL = [
           "as10": 14.637142857142857,
           "wa": 25.88095238095238,
           "ca": 0
-        },
-        "rankDelta": 6,
-        "rankDeltaPower": 2
+        }
       },
       "zenyatta": {
         "finalScore": 51.78,
@@ -51416,8 +51132,7 @@ const PLAYERS_ALL = [
           "as10": 15.879354838709677,
           "wa": 27.06451612903226,
           "ca": 12
-        },
-        "rankDelta": -1
+        }
       },
       "anran": {
         "finalScore": 62.1,
@@ -51457,8 +51172,7 @@ const PLAYERS_ALL = [
           "as10": 11.08,
           "wa": 30,
           "ca": 11
-        },
-        "rankDelta": -1
+        }
       },
       "dmon": {
         "finalScore": 39.44,
@@ -51478,8 +51192,7 @@ const PLAYERS_ALL = [
           "as10": 2.73,
           "wa": 28,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "domina": {
         "finalScore": 37.62,
@@ -51579,8 +51292,7 @@ const PLAYERS_ALL = [
           "as10": 0.41,
           "wa": 27,
           "ca": 5
-        },
-        "rankDelta": 1
+        }
       },
       "hazard": {
         "finalScore": 36.39,
@@ -51620,8 +51332,7 @@ const PLAYERS_ALL = [
           "as10": 4.78,
           "wa": 21,
           "ca": 12
-        },
-        "rankDelta": 1
+        }
       },
       "illari": {
         "finalScore": 56.44,
@@ -51641,9 +51352,7 @@ const PLAYERS_ALL = [
           "as10": 7.69,
           "wa": 37,
           "ca": 15
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "jetpack-cat": {
         "finalScore": 48.36,
@@ -51663,8 +51372,7 @@ const PLAYERS_ALL = [
           "as10": 8.52,
           "wa": 32,
           "ca": 6
-        },
-        "rankDelta": -2
+        }
       },
       "junker-queen": {
         "finalScore": 42.81,
@@ -51704,8 +51412,7 @@ const PLAYERS_ALL = [
           "as10": 8.83,
           "wa": 38,
           "ca": 4
-        },
-        "rankDelta": -1
+        }
       },
       "kiriko": {
         "finalScore": 53.39,
@@ -51725,9 +51432,7 @@ const PLAYERS_ALL = [
           "as10": 14.65,
           "wa": 28,
           "ca": 13
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": -1
+        }
       },
       "lifeweaver": {
         "finalScore": 50.79,
@@ -51787,8 +51492,7 @@ const PLAYERS_ALL = [
           "as10": 7.99,
           "wa": 27,
           "ca": 11
-        },
-        "rankDeltaPower": -1
+        }
       },
       "mei": {
         "finalScore": 47.03,
@@ -51808,8 +51512,7 @@ const PLAYERS_ALL = [
           "as10": 6.98,
           "wa": 47,
           "ca": 0
-        },
-        "rankDelta": 2
+        }
       },
       "mercy": {
         "finalScore": 32.21,
@@ -51849,8 +51552,7 @@ const PLAYERS_ALL = [
           "as10": 12.95,
           "wa": 0,
           "ca": 0
-        },
-        "rankDelta": 2
+        }
       },
       "orisa": {
         "finalScore": 30.63,
@@ -52030,9 +51732,7 @@ const PLAYERS_ALL = [
           "as10": 5.74,
           "wa": 33,
           "ca": 0
-        },
-        "rankDelta": -3,
-        "rankDeltaPower": -1
+        }
       },
       "torbjorn": {
         "finalScore": 46.24,
@@ -52092,8 +51792,7 @@ const PLAYERS_ALL = [
           "as10": 3.04,
           "wa": 37,
           "ca": 14
-        },
-        "rankDelta": 1
+        }
       },
       "winston": {
         "finalScore": 36.89,
@@ -54552,8 +54251,7 @@ const PLAYERS_ALL = [
           "as10": 0.5,
           "wa": 25,
           "ca": 2
-        },
-        "rankDelta": -1
+        }
       },
       "doctrine": {
         "finalScore": 35.79,
@@ -54913,8 +54611,7 @@ const PLAYERS_ALL = [
           "as10": 8.89,
           "wa": 28,
           "ca": 11
-        },
-        "rankDelta": 1
+        }
       },
       "ramattra": {
         "finalScore": 51.16,
@@ -55054,8 +54751,7 @@ const PLAYERS_ALL = [
           "as10": 2.62,
           "wa": 31,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "torbjorn": {
         "finalScore": 38.76,
@@ -55135,8 +54831,7 @@ const PLAYERS_ALL = [
           "as10": 15.79,
           "wa": 26,
           "ca": 14
-        },
-        "rankDelta": 1
+        }
       }
     },
     "bscoreAll": {
@@ -55438,8 +55133,7 @@ const PLAYERS_ALL = [
           "as10": 0.5,
           "wa": 25,
           "ca": 2
-        },
-        "rankDelta": -1
+        }
       },
       "doctrine": {
         "finalScore": 35.79,
@@ -55799,8 +55493,7 @@ const PLAYERS_ALL = [
           "as10": 8.89,
           "wa": 28,
           "ca": 11
-        },
-        "rankDelta": 1
+        }
       },
       "ramattra": {
         "finalScore": 51.16,
@@ -55940,8 +55633,7 @@ const PLAYERS_ALL = [
           "as10": 2.62,
           "wa": 31,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "torbjorn": {
         "finalScore": 38.76,
@@ -56021,8 +55713,7 @@ const PLAYERS_ALL = [
           "as10": 15.79,
           "wa": 26,
           "ca": 14
-        },
-        "rankDelta": 1
+        }
       }
     },
     "recent": [
@@ -58068,8 +57759,7 @@ const PLAYERS_ALL = [
           "as10": 1.5662068965517242,
           "wa": 43.48275862068966,
           "ca": 8.793103448275861
-        },
-        "rankDelta": -1
+        }
       },
       "echo": {
         "finalScore": 49.19,
@@ -58109,8 +57799,7 @@ const PLAYERS_ALL = [
           "as10": 0.014250000000000002,
           "wa": 25.575,
           "ca": 9
-        },
-        "rankDeltaPower": -1
+        }
       },
       "lucio": {
         "finalScore": 37.23,
@@ -58170,8 +57859,7 @@ const PLAYERS_ALL = [
           "as10": 4.255,
           "wa": 48.65,
           "ca": 0
-        },
-        "rankDelta": 2
+        }
       },
       "mizuki": {
         "finalScore": 38.63,
@@ -58211,9 +57899,7 @@ const PLAYERS_ALL = [
           "as10": 4.280952380952381,
           "wa": 42.857142857142854,
           "ca": 0
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": 2
+        }
       },
       "reaper": {
         "finalScore": 57.59,
@@ -58293,8 +57979,7 @@ const PLAYERS_ALL = [
           "as10": 6.637499999999999,
           "wa": 35.083333333333336,
           "ca": 0
-        },
-        "rankDelta": -2
+        }
       },
       "tracer": {
         "finalScore": 55.22,
@@ -58314,8 +57999,7 @@ const PLAYERS_ALL = [
           "as10": 0.014871794871794871,
           "wa": 29.628205128205128,
           "ca": 7.371794871794871
-        },
-        "rankDeltaPower": 1
+        }
       },
       "vendetta": {
         "finalScore": 52.21,
@@ -58335,8 +58019,7 @@ const PLAYERS_ALL = [
           "as10": 2.614705882352941,
           "wa": 0,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "venture": {
         "finalScore": 57.17,
@@ -58356,8 +58039,7 @@ const PLAYERS_ALL = [
           "as10": 1.7992857142857142,
           "wa": 50.107142857142854,
           "ca": 0
-        },
-        "rankDelta": 1
+        }
       },
       "wrecking-ball": {
         "finalScore": 66.28,
@@ -58577,8 +58259,7 @@ const PLAYERS_ALL = [
           "as10": 3.84,
           "wa": 28,
           "ca": 10
-        },
-        "rankDeltaPower": 1
+        }
       },
       "dva": {
         "finalScore": 44.66,
@@ -58598,9 +58279,7 @@ const PLAYERS_ALL = [
           "as10": 6.81,
           "wa": 22,
           "ca": 8
-        },
-        "rankDelta": -2,
-        "rankDeltaPower": -2
+        }
       },
       "emre": {
         "finalScore": 48.16,
@@ -58880,8 +58559,7 @@ const PLAYERS_ALL = [
           "as10": 3.28,
           "wa": 34,
           "ca": 10
-        },
-        "rankDeltaPower": 1
+        }
       },
       "ramattra": {
         "finalScore": 56.57,
@@ -58941,8 +58619,7 @@ const PLAYERS_ALL = [
           "as10": 3.99,
           "wa": 21,
           "ca": 12
-        },
-        "rankDelta": 1
+        }
       },
       "shion": {
         "finalScore": 36.51,
@@ -58982,8 +58659,7 @@ const PLAYERS_ALL = [
           "as10": 2.33,
           "wa": 43,
           "ca": 0
-        },
-        "rankDelta": 2
+        }
       },
       "soldier-76": {
         "finalScore": 44.99,
@@ -59003,8 +58679,7 @@ const PLAYERS_ALL = [
           "as10": 1.36,
           "wa": 31,
           "ca": 12
-        },
-        "rankDeltaPower": 1
+        }
       },
       "sombra": {
         "finalScore": 38.64,
@@ -59044,9 +58719,7 @@ const PLAYERS_ALL = [
           "as10": 0.3,
           "wa": 19,
           "ca": 11
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": -1
+        }
       },
       "widowmaker": {
         "finalScore": 33.15,
@@ -59086,8 +58759,7 @@ const PLAYERS_ALL = [
           "as10": 5.03,
           "wa": 48,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "zarya": {
         "finalScore": 54.9,
@@ -59107,8 +58779,7 @@ const PLAYERS_ALL = [
           "as10": 4.16,
           "wa": 35,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "zenyatta": {
         "finalScore": 35.07,
@@ -59170,8 +58841,7 @@ const PLAYERS_ALL = [
           "as10": 1.5662068965517242,
           "wa": 43.48275862068966,
           "ca": 8.793103448275861
-        },
-        "rankDelta": -1
+        }
       },
       "echo": {
         "finalScore": 49.19,
@@ -59211,8 +58881,7 @@ const PLAYERS_ALL = [
           "as10": 0.014250000000000002,
           "wa": 25.575,
           "ca": 9
-        },
-        "rankDeltaPower": -1
+        }
       },
       "lucio": {
         "finalScore": 37.23,
@@ -59272,8 +58941,7 @@ const PLAYERS_ALL = [
           "as10": 4.255,
           "wa": 48.65,
           "ca": 0
-        },
-        "rankDelta": 2
+        }
       },
       "mizuki": {
         "finalScore": 38.63,
@@ -59313,9 +58981,7 @@ const PLAYERS_ALL = [
           "as10": 4.280952380952381,
           "wa": 42.857142857142854,
           "ca": 0
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": 2
+        }
       },
       "reaper": {
         "finalScore": 57.59,
@@ -59395,8 +59061,7 @@ const PLAYERS_ALL = [
           "as10": 6.637499999999999,
           "wa": 35.083333333333336,
           "ca": 0
-        },
-        "rankDelta": -2
+        }
       },
       "tracer": {
         "finalScore": 55.22,
@@ -59416,8 +59081,7 @@ const PLAYERS_ALL = [
           "as10": 0.014871794871794871,
           "wa": 29.628205128205128,
           "ca": 7.371794871794871
-        },
-        "rankDeltaPower": 1
+        }
       },
       "vendetta": {
         "finalScore": 52.21,
@@ -59437,8 +59101,7 @@ const PLAYERS_ALL = [
           "as10": 2.614705882352941,
           "wa": 0,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "venture": {
         "finalScore": 57.17,
@@ -59458,8 +59121,7 @@ const PLAYERS_ALL = [
           "as10": 1.7992857142857142,
           "wa": 50.107142857142854,
           "ca": 0
-        },
-        "rankDelta": 1
+        }
       },
       "wrecking-ball": {
         "finalScore": 66.28,
@@ -59679,8 +59341,7 @@ const PLAYERS_ALL = [
           "as10": 3.84,
           "wa": 28,
           "ca": 10
-        },
-        "rankDeltaPower": 1
+        }
       },
       "dva": {
         "finalScore": 44.66,
@@ -59700,9 +59361,7 @@ const PLAYERS_ALL = [
           "as10": 6.81,
           "wa": 22,
           "ca": 8
-        },
-        "rankDelta": -2,
-        "rankDeltaPower": -2
+        }
       },
       "emre": {
         "finalScore": 48.16,
@@ -59982,8 +59641,7 @@ const PLAYERS_ALL = [
           "as10": 3.28,
           "wa": 34,
           "ca": 10
-        },
-        "rankDeltaPower": 1
+        }
       },
       "ramattra": {
         "finalScore": 56.57,
@@ -60043,8 +59701,7 @@ const PLAYERS_ALL = [
           "as10": 3.99,
           "wa": 21,
           "ca": 12
-        },
-        "rankDelta": 1
+        }
       },
       "shion": {
         "finalScore": 36.51,
@@ -60084,8 +59741,7 @@ const PLAYERS_ALL = [
           "as10": 2.33,
           "wa": 43,
           "ca": 0
-        },
-        "rankDelta": 2
+        }
       },
       "soldier-76": {
         "finalScore": 44.99,
@@ -60105,8 +59761,7 @@ const PLAYERS_ALL = [
           "as10": 1.36,
           "wa": 31,
           "ca": 12
-        },
-        "rankDeltaPower": 1
+        }
       },
       "sombra": {
         "finalScore": 38.64,
@@ -60146,9 +59801,7 @@ const PLAYERS_ALL = [
           "as10": 0.3,
           "wa": 19,
           "ca": 11
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": -1
+        }
       },
       "widowmaker": {
         "finalScore": 33.15,
@@ -60188,8 +59841,7 @@ const PLAYERS_ALL = [
           "as10": 5.03,
           "wa": 48,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "zarya": {
         "finalScore": 54.9,
@@ -60209,8 +59861,7 @@ const PLAYERS_ALL = [
           "as10": 4.16,
           "wa": 35,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "zenyatta": {
         "finalScore": 35.07,
@@ -62260,8 +61911,7 @@ const PLAYERS_ALL = [
           "as10": 10.902543352601155,
           "wa": 53.04624277456647,
           "ca": 0
-        },
-        "rankDelta": -2
+        }
       },
       "baptiste": {
         "finalScore": 54.15,
@@ -62341,9 +61991,7 @@ const PLAYERS_ALL = [
           "as10": 11.593333333333334,
           "wa": 54.111111111111114,
           "ca": 0
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": -1
+        }
       },
       "freja": {
         "finalScore": 43.39,
@@ -62363,8 +62011,7 @@ const PLAYERS_ALL = [
           "as10": 0.16875,
           "wa": 28.375,
           "ca": 9.75
-        },
-        "rankDelta": -1
+        }
       },
       "kiriko": {
         "finalScore": 59.31,
@@ -62404,8 +62051,7 @@ const PLAYERS_ALL = [
           "as10": 9.24032258064516,
           "wa": 32.70967741935484,
           "ca": 13
-        },
-        "rankDelta": 2
+        }
       },
       "mei": {
         "finalScore": 50.97,
@@ -62505,8 +62151,7 @@ const PLAYERS_ALL = [
           "as10": 1.8729032258064517,
           "wa": 25.258064516129032,
           "ca": 16.258064516129032
-        },
-        "rankDelta": 1
+        }
       },
       "reaper": {
         "finalScore": 63.62,
@@ -62546,8 +62191,7 @@ const PLAYERS_ALL = [
           "as10": 2.3935294117647063,
           "wa": 47,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "torbjorn": {
         "finalScore": 52.2,
@@ -62627,8 +62271,7 @@ const PLAYERS_ALL = [
           "as10": 16.770243902439024,
           "wa": 24.853658536585368,
           "ca": 12.195121951219512
-        },
-        "rankDeltaPower": 1
+        }
       },
       "anran": {
         "finalScore": 66.18,
@@ -62908,9 +62551,7 @@ const PLAYERS_ALL = [
           "as10": 8.92,
           "wa": 36,
           "ca": 11
-        },
-        "rankDelta": 3,
-        "rankDeltaPower": 6
+        }
       },
       "junkrat": {
         "finalScore": 39.07,
@@ -62970,8 +62611,7 @@ const PLAYERS_ALL = [
           "as10": 11.98,
           "wa": 26,
           "ca": 16
-        },
-        "rankDeltaPower": -1
+        }
       },
       "lucio": {
         "finalScore": 36.91,
@@ -63071,9 +62711,7 @@ const PLAYERS_ALL = [
           "as10": 0.95,
           "wa": 31,
           "ca": 14
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "sierra": {
         "finalScore": 44.6,
@@ -63093,9 +62731,7 @@ const PLAYERS_ALL = [
           "as10": 0.1,
           "wa": 27,
           "ca": 10
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "sojourn": {
         "finalScore": 50.77,
@@ -63175,8 +62811,7 @@ const PLAYERS_ALL = [
           "as10": 3.75,
           "wa": 38,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "tracer": {
         "finalScore": 48.77,
@@ -63196,8 +62831,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 31,
           "ca": 10
-        },
-        "rankDelta": -1
+        }
       },
       "widowmaker": {
         "finalScore": 44.99,
@@ -63217,8 +62851,7 @@ const PLAYERS_ALL = [
           "as10": 2.4,
           "wa": 36,
           "ca": 18
-        },
-        "rankDeltaPower": -1
+        }
       },
       "wuyang": {
         "finalScore": 44.88,
@@ -63238,8 +62871,7 @@ const PLAYERS_ALL = [
           "as10": 11.18,
           "wa": 29,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "zarya": {
         "finalScore": 49.43,
@@ -63281,8 +62913,7 @@ const PLAYERS_ALL = [
           "as10": 10.902543352601155,
           "wa": 53.04624277456647,
           "ca": 0
-        },
-        "rankDelta": -2
+        }
       },
       "baptiste": {
         "finalScore": 54.15,
@@ -63362,9 +62993,7 @@ const PLAYERS_ALL = [
           "as10": 11.593333333333334,
           "wa": 54.111111111111114,
           "ca": 0
-        },
-        "rankDelta": 1,
-        "rankDeltaPower": -1
+        }
       },
       "freja": {
         "finalScore": 43.39,
@@ -63384,8 +63013,7 @@ const PLAYERS_ALL = [
           "as10": 0.16875,
           "wa": 28.375,
           "ca": 9.75
-        },
-        "rankDelta": -1
+        }
       },
       "kiriko": {
         "finalScore": 59.31,
@@ -63425,8 +63053,7 @@ const PLAYERS_ALL = [
           "as10": 9.24032258064516,
           "wa": 32.70967741935484,
           "ca": 13
-        },
-        "rankDelta": 2
+        }
       },
       "mei": {
         "finalScore": 50.97,
@@ -63526,8 +63153,7 @@ const PLAYERS_ALL = [
           "as10": 1.8729032258064517,
           "wa": 25.258064516129032,
           "ca": 16.258064516129032
-        },
-        "rankDelta": 1
+        }
       },
       "reaper": {
         "finalScore": 63.62,
@@ -63567,8 +63193,7 @@ const PLAYERS_ALL = [
           "as10": 2.3935294117647063,
           "wa": 47,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "torbjorn": {
         "finalScore": 52.2,
@@ -63648,8 +63273,7 @@ const PLAYERS_ALL = [
           "as10": 16.770243902439024,
           "wa": 24.853658536585368,
           "ca": 12.195121951219512
-        },
-        "rankDeltaPower": 1
+        }
       },
       "anran": {
         "finalScore": 66.18,
@@ -63929,9 +63553,7 @@ const PLAYERS_ALL = [
           "as10": 8.92,
           "wa": 36,
           "ca": 11
-        },
-        "rankDelta": 3,
-        "rankDeltaPower": 6
+        }
       },
       "junkrat": {
         "finalScore": 39.07,
@@ -63991,8 +63613,7 @@ const PLAYERS_ALL = [
           "as10": 11.98,
           "wa": 26,
           "ca": 16
-        },
-        "rankDeltaPower": -1
+        }
       },
       "lucio": {
         "finalScore": 36.91,
@@ -64092,9 +63713,7 @@ const PLAYERS_ALL = [
           "as10": 0.95,
           "wa": 31,
           "ca": 14
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "sierra": {
         "finalScore": 44.6,
@@ -64114,9 +63733,7 @@ const PLAYERS_ALL = [
           "as10": 0.1,
           "wa": 27,
           "ca": 10
-        },
-        "rankDelta": -1,
-        "rankDeltaPower": -1
+        }
       },
       "sojourn": {
         "finalScore": 50.77,
@@ -64196,8 +63813,7 @@ const PLAYERS_ALL = [
           "as10": 3.75,
           "wa": 38,
           "ca": 0
-        },
-        "rankDelta": -1
+        }
       },
       "tracer": {
         "finalScore": 48.77,
@@ -64217,8 +63833,7 @@ const PLAYERS_ALL = [
           "as10": 0,
           "wa": 31,
           "ca": 10
-        },
-        "rankDelta": -1
+        }
       },
       "widowmaker": {
         "finalScore": 44.99,
@@ -64238,8 +63853,7 @@ const PLAYERS_ALL = [
           "as10": 2.4,
           "wa": 36,
           "ca": 18
-        },
-        "rankDeltaPower": -1
+        }
       },
       "wuyang": {
         "finalScore": 44.88,
@@ -64259,8 +63873,7 @@ const PLAYERS_ALL = [
           "as10": 11.18,
           "wa": 29,
           "ca": 0
-        },
-        "rankDeltaPower": -1
+        }
       },
       "zarya": {
         "finalScore": 49.43,
