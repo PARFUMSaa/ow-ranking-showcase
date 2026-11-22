@@ -1,7 +1,7 @@
 'use strict';
 
 /* 生成データ: update.mjs が自動生成(手編集は上書き) ・ 元データ: OverFast API */
-const LAST_UPDATED_ISO = "2026-11-22T10:56:04.829Z";
+const LAST_UPDATED_ISO = "2026-11-22T18:21:49.153Z";
 /* ライバル・プレイ(コンペティティブ)のみ */
 const PLAYERS_COMP = [
   {
@@ -354,29 +354,6 @@ const PLAYERS_COMP = [
       }
     },
     "recent": [
-      {
-        "d": "2026-10-24",
-        "g": {
-          "soldier-76": 1
-        },
-        "m": 17,
-        "w": 5,
-        "l": 12,
-        "t": 9117,
-        "k": 2.02,
-        "tot": {
-          "e": 252,
-          "a": 0,
-          "dd": 125,
-          "dm": 176322,
-          "he": 9673
-        },
-        "r": {
-          "Tank": null,
-          "Damage": "gold-1",
-          "Support": null
-        }
-      },
       {
         "d": "2026-10-25",
         "g": {},
@@ -1285,6 +1262,39 @@ const PLAYERS_COMP = [
           "sojourn": 54.8,
           "soldier-76": 47.7
         }
+      },
+      {
+        "d": "2026-11-23",
+        "g": {},
+        "m": 26,
+        "w": 8,
+        "l": 18,
+        "t": 14308,
+        "k": 2.07,
+        "tot": {
+          "e": 401,
+          "a": 0,
+          "dd": 194,
+          "dm": 244566,
+          "he": 51606
+        },
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-5",
+          "Support": null
+        },
+        "s": {
+          "anran": 57.7,
+          "ashe": 38.5,
+          "bastion": 59,
+          "cassidy": 48.6,
+          "doctrine": 33.3,
+          "reaper": 53.3,
+          "shion": 41.7,
+          "sierra": 42.5,
+          "sojourn": 54.8,
+          "soldier-76": 47.7
+        }
       }
     ]
   },
@@ -1798,27 +1808,6 @@ const PLAYERS_COMP = [
       }
     },
     "recent": [
-      {
-        "d": "2026-10-24",
-        "g": {},
-        "m": 7,
-        "w": 6,
-        "l": 1,
-        "t": 5148,
-        "k": 4.04,
-        "tot": {
-          "e": 186,
-          "a": 0,
-          "dd": 46,
-          "dm": 85444,
-          "he": 362
-        },
-        "r": {
-          "Tank": "gold-3",
-          "Damage": "platinum-4",
-          "Support": "platinum-4"
-        }
-      },
       {
         "d": "2026-10-25",
         "g": {},
@@ -2786,6 +2775,44 @@ const PLAYERS_COMP = [
       },
       {
         "d": "2026-11-22",
+        "g": {},
+        "m": 30,
+        "w": 23,
+        "l": 7,
+        "t": 18792,
+        "k": 3.82,
+        "tot": {
+          "e": 625,
+          "a": 13,
+          "dd": 167,
+          "dm": 294262,
+          "he": 33636
+        },
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-3",
+          "Support": "platinum-4"
+        },
+        "s": {
+          "ana": 41.5,
+          "anran": 57.5,
+          "bastion": 57.2,
+          "cassidy": 48.4,
+          "dmon": 44.9,
+          "doomfist": 51.7,
+          "freja": 51.7,
+          "genji": 50.1,
+          "jetpack-cat": 52.5,
+          "kiriko": 57.3,
+          "sierra": 44.2,
+          "sojourn": 52.9,
+          "tracer": 46,
+          "vendetta": 54.9,
+          "widowmaker": 49.7
+        }
+      },
+      {
+        "d": "2026-11-23",
         "g": {},
         "m": 30,
         "w": 23,
@@ -3866,30 +3893,6 @@ const PLAYERS_COMP = [
       }
     },
     "recent": [
-      {
-        "d": "2026-10-24",
-        "g": {
-          "sigma": 1,
-          "winston": 1
-        },
-        "m": 48,
-        "w": 29,
-        "l": 19,
-        "t": 31915,
-        "k": 3.27,
-        "tot": {
-          "e": 983,
-          "a": 98,
-          "dd": 331,
-          "dm": 574812,
-          "he": 136689
-        },
-        "r": {
-          "Tank": "platinum-4",
-          "Damage": "platinum-5",
-          "Support": "platinum-1"
-        }
-      },
       {
         "d": "2026-10-25",
         "g": {},
@@ -5452,6 +5455,63 @@ const PLAYERS_COMP = [
           "zarya": 56.4,
           "zenyatta": 46.8
         }
+      },
+      {
+        "d": "2026-11-23",
+        "g": {},
+        "m": 216,
+        "w": 112,
+        "l": 104,
+        "t": 133871,
+        "k": 2.83,
+        "tot": {
+          "e": 3651,
+          "a": 339,
+          "dd": 1409,
+          "dm": 2181218,
+          "he": 820801
+        },
+        "r": {
+          "Tank": "platinum-4",
+          "Damage": "platinum-4",
+          "Support": "platinum-3"
+        },
+        "s": {
+          "ana": 50,
+          "anran": 66,
+          "bastion": 55.4,
+          "brigitte": 42.9,
+          "cassidy": 40.6,
+          "doctrine": 43.7,
+          "domina": 58.8,
+          "dva": 44.1,
+          "echo": 52.1,
+          "freja": 44.9,
+          "hazard": 42.1,
+          "illari": 41.5,
+          "junker-queen": 53.3,
+          "junkrat": 49.3,
+          "juno": 50.8,
+          "kiriko": 48.6,
+          "lifeweaver": 40.3,
+          "mauga": 59.5,
+          "mizuki": 45.3,
+          "moira": 62.9,
+          "orisa": 51.4,
+          "ramattra": 64.1,
+          "reinhardt": 49.5,
+          "roadhog": 47.2,
+          "sigma": 62.3,
+          "sierra": 52.7,
+          "soldier-76": 42.1,
+          "sombra": 45.2,
+          "symmetra": 49.3,
+          "torbjorn": 52.1,
+          "vendetta": 49.5,
+          "winston": 65.7,
+          "zarya": 56.4,
+          "zenyatta": 46.8
+        }
       }
     ]
   },
@@ -5657,27 +5717,6 @@ const PLAYERS_COMP = [
       }
     },
     "recent": [
-      {
-        "d": "2026-10-24",
-        "g": {},
-        "m": 99,
-        "w": 54,
-        "l": 45,
-        "t": 62200,
-        "k": 2.77,
-        "tot": {
-          "e": 1691,
-          "a": 146,
-          "dd": 664,
-          "dm": 904736,
-          "he": 265819
-        },
-        "r": {
-          "Tank": null,
-          "Damage": "diamond-5",
-          "Support": "master-5"
-        }
-      },
       {
         "d": "2026-10-25",
         "g": {},
@@ -6638,6 +6677,34 @@ const PLAYERS_COMP = [
           "sojourn": 62,
           "tracer": 53.7
         }
+      },
+      {
+        "d": "2026-11-23",
+        "g": {},
+        "m": 15,
+        "w": 11,
+        "l": 4,
+        "t": 9547,
+        "k": 3.13,
+        "tot": {
+          "e": 322,
+          "a": 0,
+          "dd": 103,
+          "dm": 154115,
+          "he": 1451
+        },
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-4",
+          "Support": "master-5"
+        },
+        "s": {
+          "cassidy": 75.9,
+          "echo": 51.3,
+          "genji": 52.6,
+          "sojourn": 62,
+          "tracer": 53.7
+        }
       }
     ]
   },
@@ -6919,27 +6986,6 @@ const PLAYERS_COMP = [
       }
     },
     "recent": [
-      {
-        "d": "2026-10-24",
-        "g": {},
-        "m": 17,
-        "w": 8,
-        "l": 9,
-        "t": 11621,
-        "k": 3.8,
-        "tot": {
-          "e": 358,
-          "a": 37,
-          "dd": 104,
-          "dm": 183529,
-          "he": 37597
-        },
-        "r": {
-          "Tank": "silver-2",
-          "Damage": null,
-          "Support": null
-        }
-      },
       {
         "d": "2026-10-25",
         "g": {},
@@ -7782,6 +7828,36 @@ const PLAYERS_COMP = [
           "sigma": 50.3,
           "winston": 36.8
         }
+      },
+      {
+        "d": "2026-11-23",
+        "g": {},
+        "m": 17,
+        "w": 8,
+        "l": 9,
+        "t": 11621,
+        "k": 3.8,
+        "tot": {
+          "e": 358,
+          "a": 37,
+          "dd": 104,
+          "dm": 183529,
+          "he": 37597
+        },
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        },
+        "s": {
+          "ana": 29.8,
+          "doomfist": 44.2,
+          "mauga": 60.5,
+          "reaper": 51.2,
+          "reinhardt": 43.4,
+          "sigma": 50.3,
+          "winston": 36.8
+        }
       }
     ]
   },
@@ -8018,27 +8094,6 @@ const PLAYERS_COMP = [
       }
     },
     "recent": [
-      {
-        "d": "2026-10-24",
-        "g": {},
-        "m": 7,
-        "w": 4,
-        "l": 3,
-        "t": 6323,
-        "k": 3.32,
-        "tot": {
-          "e": 183,
-          "a": 46,
-          "dd": 69,
-          "dm": 98825,
-          "he": 30312
-        },
-        "r": {
-          "Tank": "platinum-5",
-          "Damage": "platinum-5",
-          "Support": "platinum-5"
-        }
-      },
       {
         "d": "2026-10-25",
         "g": {},
@@ -8827,6 +8882,34 @@ const PLAYERS_COMP = [
           "moira": 60,
           "soldier-76": 36.9
         }
+      },
+      {
+        "d": "2026-11-23",
+        "g": {},
+        "m": 6,
+        "w": 3,
+        "l": 3,
+        "t": 3851,
+        "k": 2.38,
+        "tot": {
+          "e": 106,
+          "a": 8,
+          "dd": 48,
+          "dm": 58009,
+          "he": 21287
+        },
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        },
+        "s": {
+          "ana": 47.2,
+          "bastion": 47,
+          "mauga": 53.3,
+          "moira": 60,
+          "soldier-76": 36.9
+        }
       }
     ]
   },
@@ -9096,30 +9179,6 @@ const PLAYERS_COMP = [
       }
     },
     "recent": [
-      {
-        "d": "2026-10-24",
-        "g": {
-          "ana": 1,
-          "doctrine": 1
-        },
-        "m": 8,
-        "w": 6,
-        "l": 2,
-        "t": 4595,
-        "k": 2,
-        "tot": {
-          "e": 64,
-          "a": 36,
-          "dd": 50,
-          "dm": 29039,
-          "he": 47294
-        },
-        "r": {
-          "Tank": null,
-          "Damage": null,
-          "Support": null
-        }
-      },
       {
         "d": "2026-10-25",
         "g": {},
@@ -9957,6 +10016,36 @@ const PLAYERS_COMP = [
           "moira": 50.9,
           "sojourn": 40.1
         }
+      },
+      {
+        "d": "2026-11-23",
+        "g": {},
+        "m": 22,
+        "w": 15,
+        "l": 7,
+        "t": 12976,
+        "k": 2.19,
+        "tot": {
+          "e": 221,
+          "a": 109,
+          "dd": 151,
+          "dm": 96401,
+          "he": 120094
+        },
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": "silver-4"
+        },
+        "s": {
+          "ana": 41,
+          "brigitte": 34.3,
+          "doctrine": 34.7,
+          "kiriko": 32.2,
+          "mercy": 34,
+          "moira": 50.9,
+          "sojourn": 40.1
+        }
       }
     ]
   },
@@ -10042,27 +10131,6 @@ const PLAYERS_COMP = [
       }
     },
     "recent": [
-      {
-        "d": "2026-10-24",
-        "g": {},
-        "m": 2,
-        "w": 1,
-        "l": 1,
-        "t": 1773,
-        "k": 2.55,
-        "tot": {
-          "e": 51,
-          "a": 0,
-          "dd": 20,
-          "dm": 27662,
-          "he": 1901
-        },
-        "r": {
-          "Tank": null,
-          "Damage": null,
-          "Support": null
-        }
-      },
       {
         "d": "2026-10-25",
         "g": {},
@@ -10749,6 +10817,30 @@ const PLAYERS_COMP = [
         "s": {
           "emre": 34.1
         }
+      },
+      {
+        "d": "2026-11-23",
+        "g": {},
+        "m": 2,
+        "w": 1,
+        "l": 1,
+        "t": 1773,
+        "k": 2.55,
+        "tot": {
+          "e": 51,
+          "a": 0,
+          "dd": 20,
+          "dm": 27662,
+          "he": 1901
+        },
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        },
+        "s": {
+          "emre": 34.1
+        }
       }
     ]
   },
@@ -11302,30 +11394,6 @@ const PLAYERS_COMP = [
       }
     },
     "recent": [
-      {
-        "d": "2026-10-24",
-        "g": {
-          "bastion": 1,
-          "sierra": 1
-        },
-        "m": 44,
-        "w": 20,
-        "l": 24,
-        "t": 28545,
-        "k": 1.65,
-        "tot": {
-          "e": 502,
-          "a": 47,
-          "dd": 333,
-          "dm": 299326,
-          "he": 286344
-        },
-        "r": {
-          "Tank": null,
-          "Damage": "bronze-1",
-          "Support": "silver-2"
-        }
-      },
       {
         "d": "2026-10-25",
         "g": {},
@@ -12441,6 +12509,46 @@ const PLAYERS_COMP = [
           "torbjorn": 33.5,
           "wuyang": 35.2
         }
+      },
+      {
+        "d": "2026-11-23",
+        "g": {},
+        "m": 60,
+        "w": 27,
+        "l": 33,
+        "t": 38745,
+        "k": 1.65,
+        "tot": {
+          "e": 694,
+          "a": 75,
+          "dd": 466,
+          "dm": 409140,
+          "he": 355180
+        },
+        "r": {
+          "Tank": null,
+          "Damage": "bronze-1",
+          "Support": "silver-3"
+        },
+        "s": {
+          "ana": 29.7,
+          "anran": 54,
+          "bastion": 47.7,
+          "doctrine": 29.9,
+          "echo": 24.6,
+          "genji": 31.6,
+          "kiriko": 35.1,
+          "lucio": 34.8,
+          "mizuki": 35.1,
+          "moira": 53.6,
+          "pharah": 31.9,
+          "reaper": 52.2,
+          "shion": 27.4,
+          "sierra": 34.1,
+          "sombra": 39.3,
+          "torbjorn": 33.5,
+          "wuyang": 35.2
+        }
       }
     ]
   },
@@ -13190,29 +13298,6 @@ const PLAYERS_COMP = [
       }
     },
     "recent": [
-      {
-        "d": "2026-10-24",
-        "g": {
-          "junkrat": 1
-        },
-        "m": 25,
-        "w": 21,
-        "l": 4,
-        "t": 17183,
-        "k": 2.44,
-        "tot": {
-          "e": 393,
-          "a": 71,
-          "dd": 190,
-          "dm": 211226,
-          "he": 82868
-        },
-        "r": {
-          "Tank": null,
-          "Damage": "gold-2",
-          "Support": "gold-2"
-        }
-      },
       {
         "d": "2026-10-25",
         "g": {},
@@ -14383,6 +14468,53 @@ const PLAYERS_COMP = [
           "wuyang": 48.7,
           "zenyatta": 37.5
         }
+      },
+      {
+        "d": "2026-11-23",
+        "g": {},
+        "m": 82,
+        "w": 53,
+        "l": 29,
+        "t": 50746,
+        "k": 1.93,
+        "tot": {
+          "e": 1005,
+          "a": 158,
+          "dd": 602,
+          "dm": 525905,
+          "he": 381531
+        },
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        },
+        "s": {
+          "ana": 47.2,
+          "anran": 58.3,
+          "ashe": 41.3,
+          "bastion": 51.3,
+          "brigitte": 44.7,
+          "cassidy": 42.3,
+          "doctrine": 45.9,
+          "echo": 38.9,
+          "emre": 44.7,
+          "genji": 47.9,
+          "junkrat": 57,
+          "kiriko": 42,
+          "lifeweaver": 45.7,
+          "mizuki": 52.4,
+          "moira": 60.1,
+          "reaper": 63.2,
+          "sierra": 41.8,
+          "sojourn": 45.3,
+          "sombra": 47.3,
+          "symmetra": 36.5,
+          "tracer": 45,
+          "vendetta": 39.5,
+          "wuyang": 48.7,
+          "zenyatta": 37.5
+        }
       }
     ]
   },
@@ -14812,27 +14944,6 @@ const PLAYERS_COMP = [
       }
     },
     "recent": [
-      {
-        "d": "2026-10-24",
-        "g": {},
-        "m": 16,
-        "w": 10,
-        "l": 6,
-        "t": 9149,
-        "k": 3.32,
-        "tot": {
-          "e": 254,
-          "a": 18,
-          "dd": 82,
-          "dm": 122238,
-          "he": 58986
-        },
-        "r": {
-          "Tank": "bronze-1",
-          "Damage": "bronze-1",
-          "Support": "silver-4"
-        }
-      },
       {
         "d": "2026-10-25",
         "g": {
@@ -15832,6 +15943,41 @@ const PLAYERS_COMP = [
           "tracer": 35.7,
           "winston": 51.5
         }
+      },
+      {
+        "d": "2026-11-23",
+        "g": {},
+        "m": 97,
+        "w": 57,
+        "l": 40,
+        "t": 63552,
+        "k": 3.42,
+        "tot": {
+          "e": 1754,
+          "a": 120,
+          "dd": 548,
+          "dm": 833783,
+          "he": 400638
+        },
+        "r": {
+          "Tank": "silver-5",
+          "Damage": "silver-5",
+          "Support": "silver-2"
+        },
+        "s": {
+          "ana": 37.4,
+          "brigitte": 28.8,
+          "cassidy": 33.2,
+          "dmon": 40.8,
+          "kiriko": 45.6,
+          "moira": 56.4,
+          "orisa": 36.8,
+          "reaper": 57.6,
+          "sigma": 54,
+          "sombra": 37.4,
+          "tracer": 35.7,
+          "winston": 51.5
+        }
       }
     ]
   },
@@ -16481,31 +16627,6 @@ const PLAYERS_COMP = [
       }
     },
     "recent": [
-      {
-        "d": "2026-10-24",
-        "g": {
-          "genji": 2,
-          "sojourn": 1,
-          "vendetta": 1
-        },
-        "m": 10,
-        "w": 9,
-        "l": 1,
-        "t": 6538,
-        "k": 4.03,
-        "tot": {
-          "e": 238,
-          "a": 12,
-          "dd": 62,
-          "dm": 124494,
-          "he": 9651
-        },
-        "r": {
-          "Tank": "gold-3",
-          "Damage": "gold-5",
-          "Support": null
-        }
-      },
       {
         "d": "2026-10-25",
         "g": {
@@ -17585,6 +17706,49 @@ const PLAYERS_COMP = [
       },
       {
         "d": "2026-11-22",
+        "g": {},
+        "m": 126,
+        "w": 74,
+        "l": 52,
+        "t": 78148,
+        "k": 2.28,
+        "tot": {
+          "e": 2220,
+          "a": 18,
+          "dd": 981,
+          "dm": 1138732,
+          "he": 50438
+        },
+        "r": {
+          "Tank": "gold-3",
+          "Damage": "gold-1",
+          "Support": null
+        },
+        "s": {
+          "anran": 57.3,
+          "ashe": 42.7,
+          "cassidy": 40.8,
+          "echo": 45.4,
+          "genji": 50.3,
+          "lucio": 29.6,
+          "mauga": 65.3,
+          "mei": 36.9,
+          "mizuki": 38.2,
+          "pharah": 40.5,
+          "reaper": 57.4,
+          "shion": 49.9,
+          "sierra": 41.9,
+          "sojourn": 48,
+          "symmetra": 47.3,
+          "tracer": 52.7,
+          "vendetta": 42.6,
+          "venture": 46.6,
+          "wrecking-ball": 49.1,
+          "wuyang": 38.8
+        }
+      },
+      {
+        "d": "2026-11-23",
         "g": {},
         "m": 126,
         "w": 74,
@@ -19271,6 +19435,48 @@ const PLAYERS_COMP = [
       },
       {
         "d": "2026-11-22",
+        "g": {},
+        "m": 89,
+        "w": 44,
+        "l": 45,
+        "t": 50643,
+        "k": 2.54,
+        "tot": {
+          "e": 1307,
+          "a": 146,
+          "dd": 571,
+          "dm": 865880,
+          "he": 355769
+        },
+        "r": {
+          "Tank": "gold-3",
+          "Damage": "platinum-5",
+          "Support": "gold-1"
+        },
+        "s": {
+          "ana": 46.2,
+          "baptiste": 36.1,
+          "bastion": 58.3,
+          "cassidy": 43.4,
+          "doctrine": 35.3,
+          "freja": 41.1,
+          "kiriko": 40.6,
+          "mauga": 61.3,
+          "mei": 44.5,
+          "mizuki": 38.2,
+          "moira": 58.8,
+          "orisa": 48,
+          "ramattra": 61.4,
+          "reaper": 57.5,
+          "sigma": 61.8,
+          "torbjorn": 37.5,
+          "vendetta": 33.7,
+          "winston": 42.8,
+          "zenyatta": 43.5
+        }
+      },
+      {
+        "d": "2026-11-23",
         "g": {},
         "m": 89,
         "w": 44,
@@ -21897,35 +22103,6 @@ const PLAYERS_ALL = [
     },
     "recent": [
       {
-        "d": "2026-10-24",
-        "g": {
-          "tracer": 2,
-          "bastion": 1,
-          "cassidy": 4,
-          "mizuki": 2,
-          "zenyatta": 1,
-          "soldier-76": 1,
-          "widowmaker": 1
-        },
-        "m": 1250,
-        "w": 625,
-        "l": 625,
-        "t": 629837,
-        "k": 2.34,
-        "tot": {
-          "e": 17416,
-          "a": 1491,
-          "dd": 8068,
-          "dm": 10259028,
-          "he": 2260346
-        },
-        "r": {
-          "Tank": null,
-          "Damage": "gold-1",
-          "Support": null
-        }
-      },
-      {
         "d": "2026-10-25",
         "g": {},
         "m": 1250,
@@ -23940,6 +24117,81 @@ const PLAYERS_ALL = [
       },
       {
         "d": "2026-11-22",
+        "g": {},
+        "m": 1334,
+        "w": 666,
+        "l": 668,
+        "t": 672819,
+        "k": 2.33,
+        "tot": {
+          "e": 18634,
+          "a": 1549,
+          "dd": 8655,
+          "dm": 10942942,
+          "he": 2406550
+        },
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-5",
+          "Support": null
+        },
+        "s": {
+          "anran": 62.8,
+          "ashe": 55,
+          "bastion": 63.5,
+          "cassidy": 61.5,
+          "doctrine": 32.1,
+          "reaper": 56.6,
+          "shion": 59.7,
+          "sierra": 60.4,
+          "sojourn": 62.4,
+          "soldier-76": 67.5,
+          "ana": 35.5,
+          "baptiste": 41.5,
+          "brigitte": 38.4,
+          "dmon": 33.6,
+          "domina": 48.3,
+          "doomfist": 34.5,
+          "dva": 44.8,
+          "echo": 58.8,
+          "emre": 52.5,
+          "freja": 45.3,
+          "genji": 44.8,
+          "hazard": 31.5,
+          "hanzo": 49.7,
+          "illari": 38.8,
+          "junker-queen": 43,
+          "junkrat": 51.8,
+          "juno": 40.4,
+          "kiriko": 37.1,
+          "lifeweaver": 36.4,
+          "lucio": 41.5,
+          "mauga": 57.1,
+          "mei": 50.1,
+          "mercy": 30.9,
+          "mizuki": 36.1,
+          "moira": 58.6,
+          "orisa": 43.1,
+          "pharah": 56.5,
+          "ramattra": 53.8,
+          "reinhardt": 33,
+          "roadhog": 36.2,
+          "sigma": 56.7,
+          "sombra": 36.9,
+          "symmetra": 51.5,
+          "torbjorn": 39.2,
+          "tracer": 61,
+          "vendetta": 39.3,
+          "venture": 42.9,
+          "widowmaker": 50.6,
+          "winston": 36.9,
+          "wrecking-ball": 39.1,
+          "zarya": 49.3,
+          "zenyatta": 38.8
+        }
+      },
+      {
+        "d": "2026-11-23",
         "g": {},
         "m": 1334,
         "w": 666,
@@ -26700,30 +26952,6 @@ const PLAYERS_ALL = [
     },
     "recent": [
       {
-        "d": "2026-10-24",
-        "g": {
-          "genji": 4,
-          "widowmaker": 1
-        },
-        "m": 1125,
-        "w": 602,
-        "l": 523,
-        "t": 579673,
-        "k": 2.95,
-        "tot": {
-          "e": 15765,
-          "a": 1527,
-          "dd": 5860,
-          "dm": 8150773,
-          "he": 2705588
-        },
-        "r": {
-          "Tank": "gold-3",
-          "Damage": "platinum-4",
-          "Support": "platinum-4"
-        }
-      },
-      {
         "d": "2026-10-25",
         "g": {
           "cassidy": 1,
@@ -28827,6 +29055,83 @@ const PLAYERS_ALL = [
           "mizuki": 1,
           "reaper": 1
         },
+        "m": 1268,
+        "w": 684,
+        "l": 584,
+        "t": 658074,
+        "k": 2.97,
+        "tot": {
+          "e": 17885,
+          "a": 1707,
+          "dd": 6604,
+          "dm": 9189103,
+          "he": 3101809
+        },
+        "r": {
+          "Tank": "gold-2",
+          "Damage": "platinum-3",
+          "Support": "platinum-4"
+        },
+        "s": {
+          "ana": 60.5,
+          "anran": 61.9,
+          "bastion": 63.8,
+          "cassidy": 64.9,
+          "dmon": 55.7,
+          "doomfist": 61.5,
+          "freja": 59.4,
+          "genji": 63.3,
+          "jetpack-cat": 60.4,
+          "kiriko": 58.9,
+          "sierra": 51.6,
+          "sojourn": 61.9,
+          "tracer": 59.6,
+          "vendetta": 60.9,
+          "widowmaker": 61.6,
+          "ashe": 55.3,
+          "baptiste": 48.4,
+          "brigitte": 58.3,
+          "doctrine": 61.8,
+          "domina": 50,
+          "dva": 59.6,
+          "echo": 56.7,
+          "emre": 47.9,
+          "hazard": 51.4,
+          "hanzo": 44.8,
+          "illari": 54.6,
+          "junker-queen": 40.4,
+          "junkrat": 48.5,
+          "juno": 53.2,
+          "lifeweaver": 47.9,
+          "lucio": 46.3,
+          "mauga": 59.3,
+          "mei": 54.4,
+          "mercy": 40.3,
+          "mizuki": 50.7,
+          "moira": 65.2,
+          "orisa": 51.4,
+          "pharah": 60.7,
+          "ramattra": 56.7,
+          "reaper": 63.7,
+          "reinhardt": 51.7,
+          "roadhog": 58.3,
+          "shion": 62.5,
+          "sigma": 56.5,
+          "soldier-76": 52.9,
+          "sombra": 55.4,
+          "symmetra": 45.7,
+          "torbjorn": 52.2,
+          "venture": 45,
+          "winston": 50.5,
+          "wrecking-ball": 56.2,
+          "wuyang": 54.6,
+          "zarya": 53.8,
+          "zenyatta": 54.5
+        }
+      },
+      {
+        "d": "2026-11-23",
+        "g": {},
         "m": 1268,
         "w": 684,
         "l": 584,
@@ -31444,35 +31749,6 @@ const PLAYERS_ALL = [
     },
     "recent": [
       {
-        "d": "2026-10-24",
-        "g": {
-          "anran": 1,
-          "junkrat": 1,
-          "sigma": 1,
-          "vendetta": 1,
-          "winston": 1,
-          "juno": 1,
-          "lifeweaver": 1
-        },
-        "m": 852,
-        "w": 440,
-        "l": 412,
-        "t": 439313,
-        "k": 2.63,
-        "tot": {
-          "e": 11186,
-          "a": 1183,
-          "dd": 4697,
-          "dm": 6614145,
-          "he": 2784886
-        },
-        "r": {
-          "Tank": "platinum-4",
-          "Damage": "platinum-5",
-          "Support": "platinum-1"
-        }
-      },
-      {
         "d": "2026-10-25",
         "g": {
           "ana": 1,
@@ -33577,6 +33853,80 @@ const PLAYERS_ALL = [
           "pharah": 1,
           "tracer": 1
         },
+        "m": 1167,
+        "w": 600,
+        "l": 567,
+        "t": 619289,
+        "k": 2.73,
+        "tot": {
+          "e": 16156,
+          "a": 1668,
+          "dd": 6540,
+          "dm": 9565939,
+          "he": 3947254
+        },
+        "r": {
+          "Tank": "platinum-4",
+          "Damage": "platinum-4",
+          "Support": "platinum-3"
+        },
+        "s": {
+          "ana": 55.2,
+          "anran": 67.8,
+          "bastion": 62.3,
+          "brigitte": 41.9,
+          "cassidy": 48.8,
+          "doctrine": 58.3,
+          "domina": 66.9,
+          "dva": 51.9,
+          "echo": 46.2,
+          "freja": 57.6,
+          "hazard": 52.2,
+          "illari": 44.6,
+          "junker-queen": 59.5,
+          "junkrat": 56.8,
+          "juno": 55.7,
+          "kiriko": 54.9,
+          "lifeweaver": 56.9,
+          "mauga": 64.2,
+          "mizuki": 58.8,
+          "moira": 68.4,
+          "orisa": 57.7,
+          "ramattra": 60.3,
+          "reinhardt": 61.5,
+          "roadhog": 61.3,
+          "sigma": 58.7,
+          "sierra": 51.6,
+          "soldier-76": 51.1,
+          "sombra": 62.6,
+          "symmetra": 59.6,
+          "torbjorn": 51,
+          "vendetta": 59.9,
+          "winston": 65.3,
+          "zarya": 53.2,
+          "zenyatta": 52.5,
+          "ashe": 47.8,
+          "baptiste": 48.4,
+          "dmon": 48.3,
+          "doomfist": 45.6,
+          "emre": 39.9,
+          "genji": 36.5,
+          "hanzo": 47.6,
+          "jetpack-cat": 53.9,
+          "mei": 48.2,
+          "mercy": 38.8,
+          "pharah": 46.5,
+          "reaper": 58.9,
+          "shion": 49.2,
+          "sojourn": 45.5,
+          "tracer": 38,
+          "widowmaker": 55.8,
+          "wuyang": 50.8
+        }
+      },
+      {
+        "d": "2026-11-23",
+        "g": {},
         "m": 1167,
         "w": 600,
         "l": 567,
@@ -36283,32 +36633,6 @@ const PLAYERS_ALL = [
     },
     "recent": [
       {
-        "d": "2026-10-24",
-        "g": {
-          "ana": 2,
-          "brigitte": 1,
-          "kiriko": 1,
-          "sombra": 1
-        },
-        "m": 10289,
-        "w": 5366,
-        "l": 4923,
-        "t": 5390956,
-        "k": 3.22,
-        "tot": {
-          "e": 135607,
-          "a": 24315,
-          "dd": 49725,
-          "dm": 70132364,
-          "he": 37936485
-        },
-        "r": {
-          "Tank": null,
-          "Damage": "diamond-5",
-          "Support": "master-5"
-        }
-      },
-      {
         "d": "2026-10-25",
         "g": {
           "ana": 2,
@@ -38373,6 +38697,82 @@ const PLAYERS_ALL = [
           "juno": 1,
           "kiriko": 3
         },
+        "m": 10353,
+        "w": 5403,
+        "l": 4950,
+        "t": 5415558,
+        "k": 3.22,
+        "tot": {
+          "e": 136529,
+          "a": 24390,
+          "dd": 49950,
+          "dm": 70572996,
+          "he": 38062089
+        },
+        "r": {
+          "Tank": null,
+          "Damage": "diamond-4",
+          "Support": "master-5"
+        },
+        "s": {
+          "cassidy": 137.7,
+          "echo": 126.4,
+          "genji": 150.8,
+          "sojourn": 138.3,
+          "tracer": 143.9,
+          "ana": 152.2,
+          "anran": 92.7,
+          "ashe": 139.4,
+          "baptiste": 135.8,
+          "bastion": 113.3,
+          "brigitte": 142.5,
+          "dmon": 90,
+          "doctrine": 100.8,
+          "domina": 90.6,
+          "doomfist": 131.6,
+          "dva": 124.7,
+          "emre": 108.5,
+          "freja": 123.4,
+          "hazard": 109.3,
+          "hanzo": 123.4,
+          "illari": 131.6,
+          "jetpack-cat": 92.6,
+          "junker-queen": 127.2,
+          "junkrat": 115.6,
+          "juno": 131.8,
+          "kiriko": 153.1,
+          "lifeweaver": 99.7,
+          "lucio": 140.3,
+          "mauga": 130.1,
+          "mei": 104.5,
+          "mercy": 116.1,
+          "mizuki": 103.7,
+          "moira": 152.6,
+          "orisa": 129.2,
+          "pharah": 130.3,
+          "ramattra": 138.9,
+          "reaper": 126.4,
+          "reinhardt": 129.4,
+          "roadhog": 116,
+          "shion": 98.5,
+          "sigma": 150.1,
+          "soldier-76": 99.9,
+          "sombra": 119.4,
+          "symmetra": 118.7,
+          "torbjorn": 108,
+          "vendetta": 91.4,
+          "venture": 111.1,
+          "widowmaker": 123.8,
+          "winston": 128.3,
+          "wrecking-ball": 118.6,
+          "wuyang": 120.2,
+          "zarya": 136.6,
+          "zenyatta": 130.7
+        }
+      },
+      {
+        "d": "2026-11-23",
+        "g": {},
         "m": 10353,
         "w": 5403,
         "l": 4950,
@@ -41125,27 +41525,6 @@ const PLAYERS_ALL = [
     },
     "recent": [
       {
-        "d": "2026-10-24",
-        "g": {},
-        "m": 999,
-        "w": 513,
-        "l": 486,
-        "t": 491738,
-        "k": 2.32,
-        "tot": {
-          "e": 11455,
-          "a": 1597,
-          "dd": 5627,
-          "dm": 6633276,
-          "he": 2585479
-        },
-        "r": {
-          "Tank": "silver-2",
-          "Damage": null,
-          "Support": null
-        }
-      },
-      {
         "d": "2026-10-25",
         "g": {},
         "m": 999,
@@ -43144,6 +43523,83 @@ const PLAYERS_ALL = [
       },
       {
         "d": "2026-11-22",
+        "g": {},
+        "m": 1006,
+        "w": 518,
+        "l": 488,
+        "t": 496173,
+        "k": 2.32,
+        "tot": {
+          "e": 11559,
+          "a": 1601,
+          "dd": 5665,
+          "dm": 6699399,
+          "he": 2603782
+        },
+        "r": {
+          "Tank": "silver-2",
+          "Damage": null,
+          "Support": null
+        },
+        "s": {
+          "ana": 44,
+          "doomfist": 51,
+          "mauga": 56.5,
+          "reaper": 54.8,
+          "reinhardt": 44,
+          "sigma": 57.6,
+          "winston": 39.9,
+          "anran": 58.1,
+          "ashe": 38,
+          "baptiste": 33.2,
+          "bastion": 58.4,
+          "brigitte": 37.3,
+          "cassidy": 39,
+          "dmon": 38.3,
+          "doctrine": 35,
+          "domina": 42,
+          "dva": 37.2,
+          "echo": 36.9,
+          "emre": 32,
+          "freja": 32.1,
+          "genji": 39.3,
+          "hazard": 38,
+          "hanzo": 39.8,
+          "illari": 38.3,
+          "jetpack-cat": 34.8,
+          "junker-queen": 35.4,
+          "junkrat": 45.8,
+          "juno": 36.8,
+          "kiriko": 34.1,
+          "lifeweaver": 42.5,
+          "lucio": 41,
+          "mei": 39.3,
+          "mercy": 29.8,
+          "mizuki": 35.1,
+          "moira": 60.8,
+          "orisa": 39,
+          "pharah": 32.7,
+          "ramattra": 51.5,
+          "roadhog": 47.4,
+          "shion": 36.9,
+          "sierra": 38.3,
+          "sojourn": 33.6,
+          "soldier-76": 37.7,
+          "sombra": 42.8,
+          "symmetra": 39,
+          "torbjorn": 41.3,
+          "tracer": 31.8,
+          "vendetta": 36.5,
+          "venture": 38.8,
+          "widowmaker": 32.4,
+          "wrecking-ball": 37.5,
+          "wuyang": 34.9,
+          "zarya": 47.6,
+          "zenyatta": 43.1
+        }
+      },
+      {
+        "d": "2026-11-23",
         "g": {},
         "m": 1006,
         "w": 518,
@@ -45669,27 +46125,6 @@ const PLAYERS_ALL = [
     },
     "recent": [
       {
-        "d": "2026-10-24",
-        "g": {},
-        "m": 804,
-        "w": 381,
-        "l": 423,
-        "t": 412202,
-        "k": 2.06,
-        "tot": {
-          "e": 9897,
-          "a": 1229,
-          "dd": 5401,
-          "dm": 6192544,
-          "he": 1896150
-        },
-        "r": {
-          "Tank": "platinum-5",
-          "Damage": "platinum-5",
-          "Support": "platinum-5"
-        }
-      },
-      {
         "d": "2026-10-25",
         "g": {},
         "m": 804,
@@ -47558,6 +47993,78 @@ const PLAYERS_ALL = [
       },
       {
         "d": "2026-11-22",
+        "g": {},
+        "m": 803,
+        "w": 380,
+        "l": 423,
+        "t": 409730,
+        "k": 2.05,
+        "tot": {
+          "e": 9820,
+          "a": 1191,
+          "dd": 5380,
+          "dm": 6151728,
+          "he": 1887125
+        },
+        "r": {
+          "Tank": "platinum-5",
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        },
+        "s": {
+          "ana": 58.3,
+          "bastion": 56.9,
+          "mauga": 57.4,
+          "moira": 64.3,
+          "soldier-76": 46.6,
+          "anran": 63.1,
+          "ashe": 49.6,
+          "baptiste": 49.8,
+          "brigitte": 35.7,
+          "cassidy": 32.1,
+          "dmon": 50.2,
+          "domina": 45.8,
+          "doomfist": 55.4,
+          "dva": 38.4,
+          "echo": 44.4,
+          "freja": 43,
+          "genji": 59.4,
+          "hazard": 35.5,
+          "hanzo": 44.2,
+          "illari": 38.5,
+          "jetpack-cat": 51.5,
+          "junker-queen": 50.9,
+          "junkrat": 49,
+          "juno": 42.2,
+          "kiriko": 46.6,
+          "lucio": 50.8,
+          "mei": 44.7,
+          "mercy": 49.8,
+          "mizuki": 42.4,
+          "orisa": 46,
+          "pharah": 50.8,
+          "ramattra": 55.6,
+          "reaper": 58.8,
+          "reinhardt": 44.8,
+          "roadhog": 34.6,
+          "shion": 48.1,
+          "sigma": 60.6,
+          "sierra": 39.6,
+          "sojourn": 45.8,
+          "sombra": 40.5,
+          "symmetra": 41.6,
+          "torbjorn": 42.5,
+          "tracer": 47.3,
+          "vendetta": 56.4,
+          "winston": 43.4,
+          "wrecking-ball": 36.7,
+          "wuyang": 49.7,
+          "zarya": 53.9,
+          "zenyatta": 47.6
+        }
+      },
+      {
+        "d": "2026-11-23",
         "g": {},
         "m": 803,
         "w": 380,
@@ -49731,30 +50238,6 @@ const PLAYERS_ALL = [
     },
     "recent": [
       {
-        "d": "2026-10-24",
-        "g": {
-          "ana": 3,
-          "doctrine": 1
-        },
-        "m": 391,
-        "w": 182,
-        "l": 209,
-        "t": 195856,
-        "k": 1.92,
-        "tot": {
-          "e": 3935,
-          "a": 658,
-          "dd": 2397,
-          "dm": 2192662,
-          "he": 911970
-        },
-        "r": {
-          "Tank": null,
-          "Damage": null,
-          "Support": null
-        }
-      },
-      {
         "d": "2026-10-25",
         "g": {},
         "m": 391,
@@ -51546,6 +52029,71 @@ const PLAYERS_ALL = [
           "zarya": 42.5,
           "zenyatta": 28.3
         }
+      },
+      {
+        "d": "2026-11-23",
+        "g": {},
+        "m": 475,
+        "w": 223,
+        "l": 252,
+        "t": 242929,
+        "k": 1.95,
+        "tot": {
+          "e": 4794,
+          "a": 1004,
+          "dd": 2972,
+          "dm": 2620707,
+          "he": 1250453
+        },
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": "silver-4"
+        },
+        "s": {
+          "ana": 47.5,
+          "brigitte": 40.1,
+          "doctrine": 39.6,
+          "kiriko": 38.9,
+          "mercy": 38.3,
+          "moira": 59,
+          "sojourn": 37,
+          "anran": 55.8,
+          "ashe": 30.1,
+          "baptiste": 29.8,
+          "bastion": 54.7,
+          "cassidy": 36.1,
+          "domina": 30.6,
+          "dva": 37.8,
+          "emre": 30.3,
+          "freja": 32.2,
+          "hanzo": 25.6,
+          "jetpack-cat": 27.4,
+          "junker-queen": 23.9,
+          "junkrat": 30.6,
+          "juno": 33.9,
+          "lifeweaver": 30.9,
+          "mauga": 54,
+          "mei": 35.7,
+          "mizuki": 31.1,
+          "orisa": 34.1,
+          "ramattra": 48.3,
+          "reaper": 51.7,
+          "reinhardt": 29.6,
+          "roadhog": 23.6,
+          "shion": 33.1,
+          "sigma": 48.6,
+          "soldier-76": 42,
+          "symmetra": 26.7,
+          "torbjorn": 28.4,
+          "tracer": 30.3,
+          "vendetta": 29.2,
+          "venture": 29.7,
+          "widowmaker": 31,
+          "winston": 29.6,
+          "zarya": 42.5,
+          "zenyatta": 28.3
+        }
       }
     ]
   },
@@ -52049,27 +52597,6 @@ const PLAYERS_ALL = [
       }
     },
     "recent": [
-      {
-        "d": "2026-10-24",
-        "g": {},
-        "m": 167,
-        "w": 66,
-        "l": 101,
-        "t": 82059,
-        "k": 1.4,
-        "tot": {
-          "e": 1267,
-          "a": 140,
-          "dd": 1005,
-          "dm": 669354,
-          "he": 573324
-        },
-        "r": {
-          "Tank": null,
-          "Damage": null,
-          "Support": null
-        }
-      },
       {
         "d": "2026-10-25",
         "g": {},
@@ -52935,6 +53462,38 @@ const PLAYERS_ALL = [
       },
       {
         "d": "2026-11-22",
+        "g": {},
+        "m": 167,
+        "w": 66,
+        "l": 101,
+        "t": 82059,
+        "k": 1.4,
+        "tot": {
+          "e": 1267,
+          "a": 140,
+          "dd": 1005,
+          "dm": 669354,
+          "he": 573324
+        },
+        "r": {
+          "Tank": null,
+          "Damage": null,
+          "Support": null
+        },
+        "s": {
+          "emre": 36.8,
+          "ana": 33.1,
+          "cassidy": 28.7,
+          "kiriko": 33,
+          "moira": 57.7,
+          "reaper": 52.7,
+          "sojourn": 33.1,
+          "soldier-76": 25.5,
+          "widowmaker": 27.8
+        }
+      },
+      {
+        "d": "2026-11-23",
         "g": {},
         "m": 167,
         "w": 66,
@@ -54928,31 +55487,6 @@ const PLAYERS_ALL = [
     },
     "recent": [
       {
-        "d": "2026-10-24",
-        "g": {
-          "bastion": 1,
-          "sierra": 1,
-          "cassidy": 1
-        },
-        "m": 321,
-        "w": 142,
-        "l": 179,
-        "t": 167537,
-        "k": 1.6,
-        "tot": {
-          "e": 2941,
-          "a": 289,
-          "dd": 2024,
-          "dm": 1694946,
-          "he": 1198275
-        },
-        "r": {
-          "Tank": null,
-          "Damage": "bronze-1",
-          "Support": "silver-2"
-        }
-      },
-      {
         "d": "2026-10-25",
         "g": {},
         "m": 321,
@@ -56599,6 +57133,68 @@ const PLAYERS_ALL = [
       },
       {
         "d": "2026-11-22",
+        "g": {},
+        "m": 368,
+        "w": 163,
+        "l": 205,
+        "t": 192294,
+        "k": 1.61,
+        "tot": {
+          "e": 3412,
+          "a": 356,
+          "dd": 2337,
+          "dm": 2017344,
+          "he": 1323949
+        },
+        "r": {
+          "Tank": null,
+          "Damage": "bronze-1",
+          "Support": "silver-3"
+        },
+        "s": {
+          "ana": 31,
+          "anran": 56.9,
+          "bastion": 54.8,
+          "doctrine": 33.3,
+          "echo": 29.4,
+          "genji": 32,
+          "kiriko": 39.8,
+          "lucio": 35.3,
+          "mizuki": 32.9,
+          "moira": 59.6,
+          "pharah": 32.5,
+          "reaper": 53.6,
+          "shion": 30.5,
+          "sierra": 44.9,
+          "sombra": 39.9,
+          "torbjorn": 35.9,
+          "wuyang": 38,
+          "brigitte": 25.9,
+          "cassidy": 31.6,
+          "dva": 42.6,
+          "emre": 31.1,
+          "freja": 23.8,
+          "hazard": 31.1,
+          "jetpack-cat": 25.2,
+          "junkrat": 25.9,
+          "juno": 28.4,
+          "lifeweaver": 26.4,
+          "mauga": 52.2,
+          "mei": 27.9,
+          "orisa": 36.3,
+          "roadhog": 31.3,
+          "sigma": 50.4,
+          "sojourn": 30.8,
+          "soldier-76": 30.7,
+          "symmetra": 26.7,
+          "tracer": 29.2,
+          "vendetta": 25.6,
+          "winston": 38.5,
+          "zenyatta": 43.7
+        }
+      },
+      {
+        "d": "2026-11-23",
         "g": {},
         "m": 368,
         "w": 163,
@@ -59342,34 +59938,6 @@ const PLAYERS_ALL = [
     },
     "recent": [
       {
-        "d": "2026-10-24",
-        "g": {
-          "ashe": 1,
-          "junkrat": 2,
-          "tracer": 1,
-          "wuyang": 1,
-          "brigitte": 1,
-          "winston": 1
-        },
-        "m": 2054,
-        "w": 1017,
-        "l": 1037,
-        "t": 1030999,
-        "k": 2.07,
-        "tot": {
-          "e": 21623,
-          "a": 3315,
-          "dd": 12019,
-          "dm": 11785565,
-          "he": 6801516
-        },
-        "r": {
-          "Tank": null,
-          "Damage": "gold-2",
-          "Support": "gold-2"
-        }
-      },
-      {
         "d": "2026-10-25",
         "g": {
           "ana": 8,
@@ -61558,6 +62126,83 @@ const PLAYERS_ALL = [
           "sombra": 4,
           "tracer": 1
         },
+        "m": 2340,
+        "w": 1171,
+        "l": 1169,
+        "t": 1185611,
+        "k": 2.1,
+        "tot": {
+          "e": 24962,
+          "a": 3899,
+          "dd": 13760,
+          "dm": 13404640,
+          "he": 8060956
+        },
+        "r": {
+          "Tank": null,
+          "Damage": "platinum-5",
+          "Support": "platinum-5"
+        },
+        "s": {
+          "ana": 61.4,
+          "anran": 61.9,
+          "ashe": 48.9,
+          "bastion": 60.7,
+          "brigitte": 49.4,
+          "cassidy": 49.9,
+          "doctrine": 50.5,
+          "echo": 52.7,
+          "emre": 55.4,
+          "genji": 51.9,
+          "junkrat": 65,
+          "kiriko": 59,
+          "lifeweaver": 56.1,
+          "mizuki": 63.2,
+          "moira": 64.6,
+          "reaper": 60.4,
+          "sierra": 50.5,
+          "sojourn": 46.7,
+          "sombra": 57,
+          "symmetra": 51.2,
+          "tracer": 56.3,
+          "vendetta": 49.6,
+          "wuyang": 59.6,
+          "zenyatta": 56.5,
+          "baptiste": 56.7,
+          "dmon": 41.2,
+          "domina": 37.4,
+          "doomfist": 31.6,
+          "dva": 35.2,
+          "freja": 54.6,
+          "hazard": 36,
+          "hanzo": 61.2,
+          "illari": 61.5,
+          "jetpack-cat": 52.8,
+          "junker-queen": 43,
+          "juno": 53.6,
+          "lucio": 56.3,
+          "mauga": 53.7,
+          "mei": 48.7,
+          "mercy": 34.9,
+          "orisa": 30.7,
+          "pharah": 46.8,
+          "ramattra": 52.1,
+          "reinhardt": 42,
+          "roadhog": 42.3,
+          "shion": 36.2,
+          "sigma": 55.7,
+          "soldier-76": 54.4,
+          "torbjorn": 47,
+          "venture": 44.7,
+          "widowmaker": 47.3,
+          "winston": 36.9,
+          "wrecking-ball": 25.9,
+          "zarya": 48.9
+        }
+      },
+      {
+        "d": "2026-11-23",
+        "g": {},
         "m": 2340,
         "w": 1171,
         "l": 1169,
@@ -63887,27 +64532,6 @@ const PLAYERS_ALL = [
     },
     "recent": [
       {
-        "d": "2026-10-24",
-        "g": {},
-        "m": 1068,
-        "w": 551,
-        "l": 517,
-        "t": 533295,
-        "k": 2.46,
-        "tot": {
-          "e": 11671,
-          "a": 966,
-          "dd": 5147,
-          "dm": 6307954,
-          "he": 3336219
-        },
-        "r": {
-          "Tank": "bronze-1",
-          "Damage": "bronze-1",
-          "Support": "silver-4"
-        }
-      },
-      {
         "d": "2026-10-25",
         "g": {
           "ana": 2,
@@ -65812,6 +66436,74 @@ const PLAYERS_ALL = [
           "kiriko": 2,
           "juno": 1
         },
+        "m": 1332,
+        "w": 698,
+        "l": 634,
+        "t": 681554,
+        "k": 2.56,
+        "tot": {
+          "e": 15499,
+          "a": 1277,
+          "dd": 6546,
+          "dm": 8194405,
+          "he": 4108100
+        },
+        "r": {
+          "Tank": "silver-5",
+          "Damage": "silver-5",
+          "Support": "silver-2"
+        },
+        "s": {
+          "ana": 47.7,
+          "brigitte": 37.1,
+          "cassidy": 40.3,
+          "dmon": 44.8,
+          "kiriko": 48.9,
+          "moira": 61.8,
+          "orisa": 44,
+          "reaper": 58.9,
+          "sigma": 56.1,
+          "sombra": 43.6,
+          "tracer": 51.4,
+          "winston": 57.7,
+          "ashe": 27.9,
+          "baptiste": 33.8,
+          "bastion": 56.1,
+          "doctrine": 35.6,
+          "domina": 31.5,
+          "doomfist": 30.4,
+          "dva": 37.1,
+          "echo": 37,
+          "emre": 42.5,
+          "genji": 48.8,
+          "hazard": 38.3,
+          "hanzo": 40.5,
+          "illari": 30,
+          "jetpack-cat": 35.3,
+          "junkrat": 30.1,
+          "juno": 47.7,
+          "lifeweaver": 46.2,
+          "lucio": 24.6,
+          "mauga": 54.9,
+          "mei": 34.6,
+          "mercy": 29.5,
+          "mizuki": 37,
+          "ramattra": 51,
+          "reinhardt": 36.9,
+          "roadhog": 41.3,
+          "shion": 27.7,
+          "sojourn": 36.2,
+          "soldier-76": 42.8,
+          "symmetra": 40.3,
+          "torbjorn": 38.5,
+          "wuyang": 39,
+          "zarya": 47.9,
+          "zenyatta": 42.1
+        }
+      },
+      {
+        "d": "2026-11-23",
+        "g": {},
         "m": 1332,
         "w": 698,
         "l": 634,
@@ -68560,36 +69252,6 @@ const PLAYERS_ALL = [
     },
     "recent": [
       {
-        "d": "2026-10-24",
-        "g": {
-          "genji": 2,
-          "wrecking-ball": 1,
-          "ana": 1,
-          "dmon": 1,
-          "hazard": 1,
-          "lifeweaver": 1,
-          "sojourn": 1,
-          "vendetta": 1
-        },
-        "m": 1202,
-        "w": 620,
-        "l": 582,
-        "t": 600255,
-        "k": 2.54,
-        "tot": {
-          "e": 16474,
-          "a": 1521,
-          "dd": 7085,
-          "dm": 10237555,
-          "he": 2281399
-        },
-        "r": {
-          "Tank": "gold-3",
-          "Damage": "gold-5",
-          "Support": null
-        }
-      },
-      {
         "d": "2026-10-25",
         "g": {
           "genji": 11,
@@ -70726,6 +71388,83 @@ const PLAYERS_ALL = [
           "sigma": 1,
           "winston": 1
         },
+        "m": 1538,
+        "w": 797,
+        "l": 741,
+        "t": 787983,
+        "k": 2.5,
+        "tot": {
+          "e": 21529,
+          "a": 1772,
+          "dd": 9323,
+          "dm": 12942783,
+          "he": 2676736
+        },
+        "r": {
+          "Tank": "gold-3",
+          "Damage": "gold-1",
+          "Support": null
+        },
+        "s": {
+          "anran": 60.5,
+          "ashe": 44.5,
+          "cassidy": 44.4,
+          "echo": 49.3,
+          "genji": 52.3,
+          "lucio": 37.1,
+          "mauga": 61.9,
+          "mei": 54.6,
+          "mizuki": 38.8,
+          "pharah": 52.3,
+          "reaper": 57.2,
+          "shion": 51.7,
+          "sierra": 49.1,
+          "sojourn": 55.7,
+          "symmetra": 49.3,
+          "tracer": 55.1,
+          "vendetta": 52.6,
+          "venture": 57.5,
+          "wrecking-ball": 66.2,
+          "wuyang": 48,
+          "ana": 41.3,
+          "baptiste": 30.9,
+          "bastion": 58.6,
+          "brigitte": 42.2,
+          "dmon": 48.6,
+          "doctrine": 35.7,
+          "domina": 51,
+          "doomfist": 44.3,
+          "dva": 44.2,
+          "emre": 48.2,
+          "freja": 47.8,
+          "hazard": 59.6,
+          "hanzo": 40.7,
+          "illari": 40.6,
+          "jetpack-cat": 38.7,
+          "junker-queen": 51.2,
+          "junkrat": 40.5,
+          "juno": 36.1,
+          "kiriko": 36.9,
+          "lifeweaver": 41,
+          "mercy": 26.4,
+          "moira": 56.4,
+          "orisa": 46.7,
+          "ramattra": 56.8,
+          "reinhardt": 56.2,
+          "roadhog": 43.9,
+          "sigma": 56.8,
+          "soldier-76": 45,
+          "sombra": 39.6,
+          "torbjorn": 49.6,
+          "widowmaker": 32.6,
+          "winston": 46.1,
+          "zarya": 54.5,
+          "zenyatta": 35.1
+        }
+      },
+      {
+        "d": "2026-11-23",
+        "g": {},
         "m": 1538,
         "w": 797,
         "l": 741,
@@ -75343,6 +76082,81 @@ const PLAYERS_ALL = [
       },
       {
         "d": "2026-11-22",
+        "g": {},
+        "m": 1549,
+        "w": 763,
+        "l": 786,
+        "t": 780455,
+        "k": 2.34,
+        "tot": {
+          "e": 18193,
+          "a": 2181,
+          "dd": 8717,
+          "dm": 11425623,
+          "he": 4332700
+        },
+        "r": {
+          "Tank": "gold-3",
+          "Damage": "platinum-5",
+          "Support": "gold-1"
+        },
+        "s": {
+          "ana": 55.7,
+          "baptiste": 50.4,
+          "bastion": 66.7,
+          "cassidy": 55.9,
+          "doctrine": 41.7,
+          "freja": 43.4,
+          "kiriko": 53.6,
+          "mauga": 61.3,
+          "mei": 50.7,
+          "mizuki": 50.6,
+          "moira": 61.7,
+          "orisa": 55.6,
+          "ramattra": 57.9,
+          "reaper": 63.6,
+          "sigma": 59.8,
+          "torbjorn": 52,
+          "vendetta": 43.6,
+          "winston": 55,
+          "zenyatta": 55.1,
+          "anran": 66.1,
+          "ashe": 56.7,
+          "brigitte": 44.7,
+          "dmon": 34.8,
+          "domina": 36.5,
+          "doomfist": 37.5,
+          "dva": 42.7,
+          "echo": 35.8,
+          "emre": 56.3,
+          "genji": 52.3,
+          "hazard": 33,
+          "hanzo": 60.3,
+          "illari": 51.6,
+          "jetpack-cat": 45.2,
+          "junker-queen": 44.3,
+          "junkrat": 39.1,
+          "juno": 50.6,
+          "lifeweaver": 40.3,
+          "lucio": 42.5,
+          "pharah": 47.4,
+          "reinhardt": 40.4,
+          "roadhog": 41.6,
+          "shion": 44.4,
+          "sierra": 44.5,
+          "sojourn": 50.8,
+          "soldier-76": 51.4,
+          "sombra": 39.2,
+          "symmetra": 52.5,
+          "tracer": 48.9,
+          "venture": 42.5,
+          "widowmaker": 45.2,
+          "wuyang": 40.8,
+          "zarya": 49.1
+        }
+      },
+      {
+        "d": "2026-11-23",
         "g": {},
         "m": 1549,
         "w": 763,
