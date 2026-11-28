@@ -1,7 +1,7 @@
 'use strict';
 
 /* 生成データ: update.mjs が自動生成(手編集は上書き) ・ 元データ: OverFast API */
-const LAST_UPDATED_ISO = "2026-11-28T01:21:10.431Z";
+const LAST_UPDATED_ISO = "2026-11-28T09:59:13.229Z";
 /* ライバル・プレイ(コンペティティブ)のみ */
 const PLAYERS_COMP = [
   {
@@ -3217,36 +3217,36 @@ const PLAYERS_COMP = [
     },
     "rankTier": "Platinum 2",
     "overall": {
-      "matches": 264,
-      "wins": 141,
+      "matches": 265,
+      "wins": 142,
       "losses": 123,
-      "wr": 53.41,
-      "kda": 2.91,
-      "elim": 16.43,
-      "deaths": 6.17,
-      "dmg": 10215.02,
-      "heal": 3646.49,
-      "time": 163186,
+      "wr": 53.58,
+      "kda": 2.92,
+      "elim": 16.45,
+      "deaths": 6.16,
+      "dmg": 10228.46,
+      "heal": 3647.73,
+      "time": 163583,
       "tot": {
-        "e": 4468,
+        "e": 4484,
         "a": 414,
-        "dd": 1679,
-        "dm": 2778247,
-        "he": 991760
+        "dd": 1680,
+        "dm": 2788671,
+        "he": 994510
       }
     },
     "roles": {
       "Tank": {
-        "g": 139,
-        "w": 78,
+        "g": 140,
+        "w": 79,
         "l": 61,
-        "time": 85527,
-        "wr": 56.12,
-        "kda": 3.34,
-        "elim": 19.1,
-        "deaths": 6.1,
-        "dmg": 12922.38,
-        "heal": 1560.71
+        "time": 85924,
+        "wr": 56.43,
+        "kda": 3.36,
+        "elim": 19.13,
+        "deaths": 6.08,
+        "dmg": 12935.47,
+        "heal": 1572.7
       },
       "Damage": {
         "g": 40,
@@ -3278,9 +3278,9 @@ const PLAYERS_COMP = [
         "slug": "domina",
         "n": "Domina",
         "role": "Tank",
-        "g": 33,
-        "wr": 69.7,
-        "kda": 4.27
+        "g": 34,
+        "wr": 70.59,
+        "kda": 4.34
       },
       {
         "slug": "reinhardt",
@@ -3713,24 +3713,25 @@ const PLAYERS_COMP = [
         }
       },
       "domina": {
-        "finalScore": 65.3,
-        "battleScore": 47.91,
+        "finalScore": 66.03,
+        "battleScore": 48.32,
         "coeff": 1.33,
-        "matchCoef": 1.02,
-        "gamesPlayed": 33,
+        "matchCoef": 1.03,
+        "gamesPlayed": 34,
         "rankIndex": 3,
         "det": {
-          "g": 33,
-          "time": 18902,
-          "wr": 69,
-          "el10": 20.73,
-          "de10": 4.86,
-          "dm10": 12458,
-          "he10": 3055,
-          "as10": 4.63,
+          "g": 34,
+          "time": 19299,
+          "wr": 70,
+          "el10": 20.8,
+          "de10": 4.79,
+          "dm10": 12468,
+          "he10": 3077,
+          "as10": 4.6,
           "wa": 50,
           "ca": 11
-        }
+        },
+        "rankDelta": 1
       },
       "dva": {
         "finalScore": 42.84,
@@ -4250,7 +4251,8 @@ const PLAYERS_COMP = [
           "as10": 4.67,
           "wa": 63,
           "ca": 0
-        }
+        },
+        "rankDelta": -1
       },
       "wuyang": {
         "finalScore": 46.58,
@@ -6048,18 +6050,20 @@ const PLAYERS_COMP = [
       },
       {
         "d": "2026-11-28",
-        "g": {},
-        "m": 264,
-        "w": 141,
+        "g": {
+          "domina": 1
+        },
+        "m": 265,
+        "w": 142,
         "l": 123,
-        "t": 163186,
-        "k": 2.91,
+        "t": 163583,
+        "k": 2.92,
         "tot": {
-          "e": 4468,
+          "e": 4484,
           "a": 414,
-          "dd": 1679,
-          "dm": 2778247,
-          "he": 991760
+          "dd": 1680,
+          "dm": 2788671,
+          "he": 994510
         },
         "r": {
           "Tank": "platinum-2",
@@ -6074,7 +6078,7 @@ const PLAYERS_COMP = [
           "brigitte": 42.7,
           "cassidy": 40.7,
           "doctrine": 48,
-          "domina": 65.3,
+          "domina": 66,
           "dva": 42.8,
           "echo": 51.7,
           "freja": 44.9,
@@ -26755,7 +26759,7 @@ const PLAYERS_ALL = [
       },
       "domina": {
         "finalScore": 50.02,
-        "battleScore": 48.63,
+        "battleScore": 48.64,
         "coeff": 1.21,
         "matchCoef": 0.85,
         "gamesPlayed": 3,
@@ -27837,7 +27841,7 @@ const PLAYERS_ALL = [
       },
       "domina": {
         "finalScore": 50.02,
-        "battleScore": 48.63,
+        "battleScore": 48.64,
         "coeff": 1.21,
         "matchCoef": 0.85,
         "gamesPlayed": 3,
@@ -30917,36 +30921,36 @@ const PLAYERS_ALL = [
     },
     "rankTier": "Platinum 2",
     "overall": {
-      "matches": 1278,
-      "wins": 669,
+      "matches": 1279,
+      "wins": 670,
       "losses": 609,
-      "wr": 52.35,
+      "wr": 52.38,
       "kda": 2.78,
-      "elim": 15.8,
-      "deaths": 6.26,
-      "dmg": 9486.91,
-      "heal": 3800.79,
-      "time": 681427,
+      "elim": 15.81,
+      "deaths": 6.25,
+      "dmg": 9490.56,
+      "heal": 3800.99,
+      "time": 681824,
       "tot": {
-        "e": 17948,
+        "e": 17964,
         "a": 1820,
-        "dd": 7107,
-        "dm": 10774393,
-        "he": 4316597
+        "dd": 7108,
+        "dm": 10784817,
+        "he": 4319347
       }
     },
     "roles": {
       "Tank": {
-        "g": 454,
-        "w": 235,
+        "g": 455,
+        "w": 236,
         "l": 219,
-        "time": 246026,
-        "wr": 51.76,
-        "kda": 3.34,
+        "time": 246423,
+        "wr": 51.87,
+        "kda": 3.35,
         "elim": 18.79,
-        "deaths": 6.13,
-        "dmg": 12650.84,
-        "heal": 1377.19
+        "deaths": 6.12,
+        "dmg": 12655.84,
+        "heal": 1381.66
       },
       "Damage": {
         "g": 340,
@@ -31018,9 +31022,9 @@ const PLAYERS_ALL = [
         "slug": "domina",
         "n": "Domina",
         "role": "Tank",
-        "g": 53,
-        "wr": 66.04,
-        "kda": 4.53
+        "g": 54,
+        "wr": 66.67,
+        "kda": 4.58
       },
       {
         "slug": "anran",
@@ -31525,23 +31529,23 @@ const PLAYERS_ALL = [
         }
       },
       "domina": {
-        "finalScore": 76.75,
-        "battleScore": 54.14,
+        "finalScore": 77.28,
+        "battleScore": 54.43,
         "coeff": 1.33,
         "matchCoef": 1.07,
-        "gamesPlayed": 53,
+        "gamesPlayed": 54,
         "rankIndex": 3,
         "det": {
-          "g": 53,
-          "time": 29957,
-          "wr": 65.22641509433963,
-          "el10": 21.692264150943398,
-          "de10": 4.788301886792453,
-          "dm10": 12749.698113207547,
-          "he10": 2979.5283018867926,
-          "as10": 4.460188679245283,
+          "g": 54,
+          "time": 30354,
+          "wr": 65.92592592592592,
+          "el10": 21.718518518518522,
+          "de10": 4.745555555555556,
+          "dm10": 12750.592592592593,
+          "he10": 2994.777777777778,
+          "as10": 4.444444444444444,
           "wa": 50,
-          "ca": 10.622641509433961
+          "ca": 10.62962962962963
         }
       },
       "dva": {
@@ -32547,23 +32551,23 @@ const PLAYERS_ALL = [
         }
       },
       "domina": {
-        "finalScore": 76.75,
-        "battleScore": 54.14,
+        "finalScore": 77.28,
+        "battleScore": 54.43,
         "coeff": 1.33,
         "matchCoef": 1.07,
-        "gamesPlayed": 53,
+        "gamesPlayed": 54,
         "rankIndex": 3,
         "det": {
-          "g": 53,
-          "time": 29957,
-          "wr": 65.22641509433963,
-          "el10": 21.692264150943398,
-          "de10": 4.788301886792453,
-          "dm10": 12749.698113207547,
-          "he10": 2979.5283018867926,
-          "as10": 4.460188679245283,
+          "g": 54,
+          "time": 30354,
+          "wr": 65.92592592592592,
+          "el10": 21.718518518518522,
+          "de10": 4.745555555555556,
+          "dm10": 12750.592592592593,
+          "he10": 2994.777777777778,
+          "as10": 4.444444444444444,
           "wa": 50,
-          "ca": 10.622641509433961
+          "ca": 10.62962962962963
         }
       },
       "dva": {
@@ -35808,18 +35812,20 @@ const PLAYERS_ALL = [
       },
       {
         "d": "2026-11-28",
-        "g": {},
-        "m": 1278,
-        "w": 669,
+        "g": {
+          "domina": 1
+        },
+        "m": 1279,
+        "w": 670,
         "l": 609,
-        "t": 681427,
+        "t": 681824,
         "k": 2.78,
         "tot": {
-          "e": 17948,
+          "e": 17964,
           "a": 1820,
-          "dd": 7107,
-          "dm": 10774393,
-          "he": 4316597
+          "dd": 7108,
+          "dm": 10784817,
+          "he": 4319347
         },
         "r": {
           "Tank": "platinum-2",
@@ -35834,7 +35840,7 @@ const PLAYERS_ALL = [
           "brigitte": 44.3,
           "cassidy": 48.8,
           "doctrine": 60.2,
-          "domina": 76.8,
+          "domina": 77.3,
           "dva": 51.3,
           "echo": 46.1,
           "freja": 57.3,
@@ -66057,8 +66063,8 @@ const PLAYERS_ALL = [
         }
       },
       "domina": {
-        "finalScore": 31.53,
-        "battleScore": 33.72,
+        "finalScore": 31.52,
+        "battleScore": 33.71,
         "coeff": 1.1,
         "matchCoef": 0.85,
         "gamesPlayed": 2,
@@ -66959,8 +66965,8 @@ const PLAYERS_ALL = [
         }
       },
       "domina": {
-        "finalScore": 31.53,
-        "battleScore": 33.72,
+        "finalScore": 31.52,
+        "battleScore": 33.71,
         "coeff": 1.1,
         "matchCoef": 0.85,
         "gamesPlayed": 2,
@@ -70844,8 +70850,8 @@ const PLAYERS_ALL = [
         }
       },
       "domina": {
-        "finalScore": 50.88,
-        "battleScore": 46.65,
+        "finalScore": 50.87,
+        "battleScore": 46.64,
         "coeff": 1.21,
         "matchCoef": 0.9,
         "gamesPlayed": 8,
@@ -71926,8 +71932,8 @@ const PLAYERS_ALL = [
         }
       },
       "domina": {
-        "finalScore": 50.88,
-        "battleScore": 46.65,
+        "finalScore": 50.87,
+        "battleScore": 46.64,
         "coeff": 1.21,
         "matchCoef": 0.9,
         "gamesPlayed": 8,
